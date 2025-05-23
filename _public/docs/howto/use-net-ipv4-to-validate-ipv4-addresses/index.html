@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="This Commented CUE demonstrates how to use the built-in function net.IPv4 to check that values represent valid IPv4 addresses as strings or lists of bytes. …">
+<meta name="description" content="This Commented CUE demonstrates how to use the built-in function net.IPv4 to check that values represent valid IPv4 addresses as strings or lists of bytes.">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,19 +21,17 @@
 <title>Using &#34;net.IPv4&#34; to validate IPv4 addresses | CUE</title><meta property="og:url" content="/docs/howto/use-net-ipv4-to-validate-ipv4-addresses/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Using &#34;net.IPv4&#34; to validate IPv4 addresses">
-  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function net.IPv4 to check that values represent valid IPv4 addresses as strings or lists of bytes.
-Copied! file.cue Copy code Copied! package example import &#34;net&#34; // All top-level fields must represent valid IPv4 addresses. [_]: net.IPv4 // These fields represent the same valid IPv4 address. v4String: &#34;198.51.100.14&#34; v4Bytes: [198, 51, 100, 14] // Some invalid IPv4 addresses. tooManyOctets: &#34;198.51.100.14.0&#34; octetTooLarge: [300, 51, 100, 14] v6NotV4: &#34;2001:0db8:85a3::8a2e:0370:7334&#34; TERMINAL Copy code Copied!">
+  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function net.IPv4 to check that values represent valid IPv4 addresses as strings or lists of bytes.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-04-08T13:31:31+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Using &#34;net.IPv4&#34; to validate IPv4 addresses">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function net.IPv4 to check that values represent valid IPv4 addresses as strings or lists of bytes.
-Copied! file.cue Copy code Copied! package example import &#34;net&#34; // All top-level fields must represent valid IPv4 addresses. [_]: net.IPv4 // These fields represent the same valid IPv4 address. v4String: &#34;198.51.100.14&#34; v4Bytes: [198, 51, 100, 14] // Some invalid IPv4 addresses. tooManyOctets: &#34;198.51.100.14.0&#34; octetTooLarge: [300, 51, 100, 14] v6NotV4: &#34;2001:0db8:85a3::8a2e:0370:7334&#34; TERMINAL Copy code Copied!">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function net.IPv4 to check that values represent valid IPv4 addresses as strings or lists of bytes.">
 
 
 
@@ -54,11 +52,14 @@ Copied! file.cue Copy code Copied! package example import &#34;net&#34; // All t
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Using &#34;net.IPv4&#34; to validate IPv4 addresses">
-<meta itemprop="description" content="This Commented CUE demonstrates how to use the built-in function net.IPv4 to check that values represent valid IPv4 addresses as strings or lists of bytes.
-Copied! file.cue Copy code Copied! package example import &#34;net&#34; // All top-level fields must represent valid IPv4 addresses. [_]: net.IPv4 // These fields represent the same valid IPv4 address. v4String: &#34;198.51.100.14&#34; v4Bytes: [198, 51, 100, 14] // Some invalid IPv4 addresses. tooManyOctets: &#34;198.51.100.14.0&#34; octetTooLarge: [300, 51, 100, 14] v6NotV4: &#34;2001:0db8:85a3::8a2e:0370:7334&#34; TERMINAL Copy code Copied!">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to use the built-in function
+net.IPv4
+to check that values represent valid IPv4 addresses as strings or lists of
+bytes.">
 
     
-        <meta itemprop="dateModified" content="2025-04-08T13:31:31+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -364,7 +365,6 @@ Related content
 The net built-in package
 How-to Guide: Using &#34;net.IP&#34; to validate IP addresses
 How-to Guide: Using &#34;net.IPCIDR&#34; to validate IP CIDR ranges
-
 ">
 <meta itemprop="wordCount" content="136">
 
@@ -573,14 +573,13 @@ v6NotV4: invalid value &#34;2001:0db8:85a3::8a2e:0370:7334&#34; (does not satisf
 <li>How-to Guide: <a href="/docs/howto/use-net-ip-to-validate-ip-addresses/">Using &#34;net.IP&#34; to validate IP addresses</a></li>
 <li>How-to Guide: <a href="/docs/howto/use-net-ipcidr-to-validate-ip-cidr-ranges/">Using &#34;net.IPCIDR&#34; to validate IP CIDR ranges</a></li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7c104835c2bd9731b5a6b8cd703b905b2a4896aa">
-                Last modified April 8, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -629,7 +628,7 @@ v6NotV4: invalid value &#34;2001:0db8:85a3::8a2e:0370:7334&#34; (does not satisf
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-net-ipv4-to-validate-ipv4-addresses/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20net.IPv4%20to%20check%20that%20values%20represent%20valid%20IPv4%20addresses%20as%20strings%20or%20lists%20of%20bytes.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;net&amp;#34;%20//%20All%20top-level%20fields%20must%20represent%20valid%20IPv4%20addresses.%20[_]:%20net.IPv4%20//%20These%20fields%20represent%20the%20same%20valid%20IPv4%20address.%20v4String:%20&amp;#34;198.51.100.14&amp;#34;%20v4Bytes:%20[198,%2051,%20100,%2014]%20//%20Some%20invalid%20IPv4%20addresses.%20tooManyOctets:%20&amp;#34;198.51.100.14.0&amp;#34;%20octetTooLarge:%20[300,%2051,%20100,%2014]%20v6NotV4:%20&amp;#34;2001:0db8:85a3::8a2e:0370:7334&amp;#34;%20TERMINAL%20Copy%20code%20Copied!">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-net-ipv4-to-validate-ipv4-addresses/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/net#IPv4%22%3e%3ccode%3enet.IPv4%3c/code%3e%3c/a%3e%0ato%20check%20that%20values%20represent%20valid%20IPv4%20addresses%20as%20strings%20or%20lists%20of%0abytes.%3c/p%3e">
                 
 
 
@@ -645,7 +644,7 @@ v6NotV4: invalid value &#34;2001:0db8:85a3::8a2e:0370:7334&#34; (does not satisf
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-net-ipv4-to-validate-ipv4-addresses/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20net.IPv4%20to%20check%20that%20values%20represent%20valid%20IPv4%20addresses%20as%20strings%20or%20lists%20of%20bytes.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;net&amp;#34;%20//%20All%20top-level%20fields%20must%20represent%20valid%20IPv4%20addresses.%20[_]:%20net.IPv4%20//%20These%20fields%20represent%20the%20same%20valid%20IPv4%20address.%20v4String:%20&amp;#34;198.51.100.14&amp;#34;%20v4Bytes:%20[198,%2051,%20100,%2014]%20//%20Some%20invalid%20IPv4%20addresses.%20tooManyOctets:%20&amp;#34;198.51.100.14.0&amp;#34;%20octetTooLarge:%20[300,%2051,%20100,%2014]%20v6NotV4:%20&amp;#34;2001:0db8:85a3::8a2e:0370:7334&amp;#34;%20TERMINAL%20Copy%20code%20Copied!">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-net-ipv4-to-validate-ipv4-addresses/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/net#IPv4%22%3e%3ccode%3enet.IPv4%3c/code%3e%3c/a%3e%0ato%20check%20that%20values%20represent%20valid%20IPv4%20addresses%20as%20strings%20or%20lists%20of%0abytes.%3c/p%3e">
                 
 
 

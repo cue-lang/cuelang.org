@@ -23,12 +23,11 @@
   <meta property="og:title" content="References and Scopes">
   <meta property="og:description" content="A reference refers to the value of the field defined within the nearest enclosing scope.
 If a reference doesn’t match a field within the same file, then it may match a top-level field defined in any other file making up the same CUE package.
-If there is still no match then it may match a predefined value, such as a predefined bound.
-Copied! file.cue Copy code Copied! val: 1 A: { val: 2 B: val // Matches the inner val } A: { C: val // Matches the top-level val } B: val // Matches the top-level val TERMINAL Copy code Copied!">
+If there is still no match then it may match a predefined value, such as a predefined bound.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-01-30T12:47:40+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -36,8 +35,7 @@ Copied! file.cue Copy code Copied! val: 1 A: { val: 2 B: val // Matches the inne
   <meta name="twitter:title" content="References and Scopes">
   <meta name="twitter:description" content="A reference refers to the value of the field defined within the nearest enclosing scope.
 If a reference doesn’t match a field within the same file, then it may match a top-level field defined in any other file making up the same CUE package.
-If there is still no match then it may match a predefined value, such as a predefined bound.
-Copied! file.cue Copy code Copied! val: 1 A: { val: 2 B: val // Matches the inner val } A: { C: val // Matches the top-level val } B: val // Matches the top-level val TERMINAL Copy code Copied!">
+If there is still no match then it may match a predefined value, such as a predefined bound.">
 
 
 
@@ -58,13 +56,16 @@ Copied! file.cue Copy code Copied! val: 1 A: { val: 2 B: val // Matches the inne
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="References and Scopes">
-<meta itemprop="description" content="A reference refers to the value of the field defined within the nearest enclosing scope.
-If a reference doesn&rsquo;t match a field within the same file, then it may match a top-level field defined in any other file making up the same CUE package.
-If there is still no match then it may match a predefined value, such as a predefined bound.
-Copied! file.cue Copy code Copied! val: 1 A: { val: 2 B: val // Matches the inner val } A: { C: val // Matches the top-level val } B: val // Matches the top-level val TERMINAL Copy code Copied!">
+<meta itemprop="description" content="A reference refers to the value of the field defined within the nearest
+enclosing scope.
+If a reference doesn&rsquo;t match a field within the same file,
+then it may match a top-level field defined in any other file making up the
+same CUE package.
+If there is still no match then it may match a predefined value, such as a
+predefined bound.">
 
     
-        <meta itemprop="dateModified" content="2025-01-30T12:47:40+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -357,8 +358,6 @@ B: 1
 
 
 
-
-
 ">
 <meta itemprop="wordCount" content="119">
 
@@ -466,14 +465,12 @@ B: 1</code></pre></div>
 </div>
 
 </div></div>
-
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7bada8ab2714d65c8b62b3bb9a4966e4d935a124">
-                Last modified January 30, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -512,7 +509,7 @@ B: 1</code></pre></div>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/references/scopes/&text=A%20reference%20refers%20to%20the%20value%20of%20the%20field%20defined%20within%20the%20nearest%20enclosing%20scope.%0aIf%20a%20reference%20doesn&amp;rsquo;t%20match%20a%20field%20within%20the%20same%20file,%20then%20it%20may%20match%20a%20top-level%20field%20defined%20in%20any%20other%20file%20making%20up%20the%20same%20CUE%20package.%0aIf%20there%20is%20still%20no%20match%20then%20it%20may%20match%20a%20predefined%20value,%20such%20as%20a%20predefined%20bound.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20val:%201%20A:%20%7b%20val:%202%20B:%20val%20//%20Matches%20the%20inner%20val%20%7d%20A:%20%7b%20C:%20val%20//%20Matches%20the%20top-level%20val%20%7d%20B:%20val%20//%20Matches%20the%20top-level%20val%20TERMINAL%20Copy%20code%20Copied!">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/references/scopes/&text=%3cp%3eA%20%3cstrong%3ereference%3c/strong%3e%20refers%20to%20the%20value%20of%20the%20field%20defined%20within%20the%20nearest%0aenclosing%20%3cstrong%3escope%3c/strong%3e.%3c/p%3e%0a%3cp%3eIf%20a%20reference%20doesn&amp;rsquo;t%20match%20a%20field%20within%20the%20same%20file,%0athen%20it%20may%20match%20a%20top-level%20field%20defined%20in%20any%20other%20file%20making%20up%20the%0asame%20CUE%20package.%3c/p%3e%0a%3cp%3eIf%20there%20is%20still%20no%20match%20then%20it%20may%20match%20a%20predefined%20value,%20such%20as%20a%0a%3ca%20href=%22/docs/tour/types/bounddef/%22%3epredefined%20bound%3c/a%3e.%3c/p%3e">
                 
 
 
@@ -528,7 +525,7 @@ B: 1</code></pre></div>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/references/scopes/&summary=A%20reference%20refers%20to%20the%20value%20of%20the%20field%20defined%20within%20the%20nearest%20enclosing%20scope.%0aIf%20a%20reference%20doesn&amp;rsquo;t%20match%20a%20field%20within%20the%20same%20file,%20then%20it%20may%20match%20a%20top-level%20field%20defined%20in%20any%20other%20file%20making%20up%20the%20same%20CUE%20package.%0aIf%20there%20is%20still%20no%20match%20then%20it%20may%20match%20a%20predefined%20value,%20such%20as%20a%20predefined%20bound.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20val:%201%20A:%20%7b%20val:%202%20B:%20val%20//%20Matches%20the%20inner%20val%20%7d%20A:%20%7b%20C:%20val%20//%20Matches%20the%20top-level%20val%20%7d%20B:%20val%20//%20Matches%20the%20top-level%20val%20TERMINAL%20Copy%20code%20Copied!">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/references/scopes/&summary=%3cp%3eA%20%3cstrong%3ereference%3c/strong%3e%20refers%20to%20the%20value%20of%20the%20field%20defined%20within%20the%20nearest%0aenclosing%20%3cstrong%3escope%3c/strong%3e.%3c/p%3e%0a%3cp%3eIf%20a%20reference%20doesn&amp;rsquo;t%20match%20a%20field%20within%20the%20same%20file,%0athen%20it%20may%20match%20a%20top-level%20field%20defined%20in%20any%20other%20file%20making%20up%20the%0asame%20CUE%20package.%3c/p%3e%0a%3cp%3eIf%20there%20is%20still%20no%20match%20then%20it%20may%20match%20a%20predefined%20value,%20such%20as%20a%0a%3ca%20href=%22/docs/tour/types/bounddef/%22%3epredefined%20bound%3c/a%3e.%3c/p%3e">
                 
 
 

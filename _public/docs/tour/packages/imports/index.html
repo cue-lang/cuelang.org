@@ -23,11 +23,11 @@
   <meta property="og:title" content="Imports">
   <meta property="og:description" content="A CUE file may import definitions from CUE’s built-in packages and user-defined packages.
 The packages required by a file are declared in an import statement at the top of the file, after any package clause. A file does not need to be part of a package to use imports. Multiple import statements are permitted, but it’s good style to use a factored import statement that combines them using parentheses.
-An import statement can optionally define a named import, which specifies the identifer that must be used when referencing the imported package inside the file.">
+An import statement can optionally define a named import, which specifies the identifer that must be used when referencing the imported package inside the file. Named imports can help avoid variable shadowing.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-08T21:13:44+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@ An import statement can optionally define a named import, which specifies the id
   <meta name="twitter:title" content="Imports">
   <meta name="twitter:description" content="A CUE file may import definitions from CUE’s built-in packages and user-defined packages.
 The packages required by a file are declared in an import statement at the top of the file, after any package clause. A file does not need to be part of a package to use imports. Multiple import statements are permitted, but it’s good style to use a factored import statement that combines them using parentheses.
-An import statement can optionally define a named import, which specifies the identifer that must be used when referencing the imported package inside the file.">
+An import statement can optionally define a named import, which specifies the identifer that must be used when referencing the imported package inside the file. Named imports can help avoid variable shadowing.">
 
 
 
@@ -56,12 +56,21 @@ An import statement can optionally define a named import, which specifies the id
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Imports">
-<meta itemprop="description" content="A CUE file may import definitions from CUE&rsquo;s built-in packages and user-defined packages.
-The packages required by a file are declared in an import statement at the top of the file, after any package clause. A file does not need to be part of a package to use imports. Multiple import statements are permitted, but it&rsquo;s good style to use a factored import statement that combines them using parentheses.
-An import statement can optionally define a named import, which specifies the identifer that must be used when referencing the imported package inside the file.">
+<meta itemprop="description" content="A CUE file may import definitions from CUE&rsquo;s built-in packages and
+user-defined packages.
+The packages required by a file are declared in an import statement at the
+top of the file, after any package clause.
+A file does not need to be part of a package to use imports.
+Multiple import statements are permitted,
+but it&rsquo;s good style to use
+a factored import statement that combines them using parentheses.
+An import statement can optionally define a named import,
+which specifies the identifer that must be used when
+referencing the imported package inside the file.
+Named imports can help avoid variable shadowing.">
 
     
-        <meta itemprop="dateModified" content="2024-03-08T21:13:44+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -356,8 +365,6 @@ list: L.Sort([3, 2, 1, math.Pi], L.Ascending)
 
 
 
-
-
 ">
 <meta itemprop="wordCount" content="143">
 
@@ -467,14 +474,12 @@ Named imports can help avoid variable shadowing.</p>
 </div>
 
 </div></div>
-
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/4daf9f02620819349d8fde1b68956c000d8e4f21">
-                Last modified March 8, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -513,7 +518,7 @@ Named imports can help avoid variable shadowing.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/packages/imports/&text=A%20CUE%20file%20may%20import%20definitions%20from%20CUE&amp;rsquo;s%20built-in%20packages%20and%20user-defined%20packages.%0aThe%20packages%20required%20by%20a%20file%20are%20declared%20in%20an%20import%20statement%20at%20the%20top%20of%20the%20file,%20after%20any%20package%20clause.%20A%20file%20does%20not%20need%20to%20be%20part%20of%20a%20package%20to%20use%20imports.%20Multiple%20import%20statements%20are%20permitted,%20but%20it&amp;rsquo;s%20good%20style%20to%20use%20a%20factored%20import%20statement%20that%20combines%20them%20using%20parentheses.%0aAn%20import%20statement%20can%20optionally%20define%20a%20named%20import,%20which%20specifies%20the%20identifer%20that%20must%20be%20used%20when%20referencing%20the%20imported%20package%20inside%20the%20file.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/packages/imports/&text=%3cp%3eA%20CUE%20file%20may%20%3cstrong%3eimport%3c/strong%3e%20definitions%20from%20CUE&amp;rsquo;s%20built-in%20packages%20and%0auser-defined%20packages.%3c/p%3e%0a%3cp%3eThe%20packages%20required%20by%20a%20file%20are%20declared%20in%20an%20%3ccode%3eimport%3c/code%3e%20statement%20at%20the%0atop%20of%20the%20file,%20after%20any%20package%20clause.%0aA%20file%20does%20not%20need%20to%20be%20part%20of%20a%20package%20to%20use%20imports.%0aMultiple%20import%20statements%20are%20permitted,%0abut%20it&amp;rsquo;s%20good%20style%20to%20use%0aa%20%3cem%3efactored%3c/em%3e%20import%20statement%20that%20combines%20them%20using%20parentheses.%3c/p%3e%0a%3cp%3eAn%20import%20statement%20can%20optionally%20define%20a%20%3cstrong%3enamed%20import%3c/strong%3e,%0awhich%20specifies%20the%20identifer%20that%20%3cem%3emust%3c/em%3e%20be%20used%20when%0areferencing%20the%20imported%20package%20inside%20the%20file.%0aNamed%20imports%20can%20help%20avoid%20variable%20shadowing.%3c/p%3e">
                 
 
 
@@ -529,7 +534,7 @@ Named imports can help avoid variable shadowing.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/packages/imports/&summary=A%20CUE%20file%20may%20import%20definitions%20from%20CUE&amp;rsquo;s%20built-in%20packages%20and%20user-defined%20packages.%0aThe%20packages%20required%20by%20a%20file%20are%20declared%20in%20an%20import%20statement%20at%20the%20top%20of%20the%20file,%20after%20any%20package%20clause.%20A%20file%20does%20not%20need%20to%20be%20part%20of%20a%20package%20to%20use%20imports.%20Multiple%20import%20statements%20are%20permitted,%20but%20it&amp;rsquo;s%20good%20style%20to%20use%20a%20factored%20import%20statement%20that%20combines%20them%20using%20parentheses.%0aAn%20import%20statement%20can%20optionally%20define%20a%20named%20import,%20which%20specifies%20the%20identifer%20that%20must%20be%20used%20when%20referencing%20the%20imported%20package%20inside%20the%20file.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/packages/imports/&summary=%3cp%3eA%20CUE%20file%20may%20%3cstrong%3eimport%3c/strong%3e%20definitions%20from%20CUE&amp;rsquo;s%20built-in%20packages%20and%0auser-defined%20packages.%3c/p%3e%0a%3cp%3eThe%20packages%20required%20by%20a%20file%20are%20declared%20in%20an%20%3ccode%3eimport%3c/code%3e%20statement%20at%20the%0atop%20of%20the%20file,%20after%20any%20package%20clause.%0aA%20file%20does%20not%20need%20to%20be%20part%20of%20a%20package%20to%20use%20imports.%0aMultiple%20import%20statements%20are%20permitted,%0abut%20it&amp;rsquo;s%20good%20style%20to%20use%0aa%20%3cem%3efactored%3c/em%3e%20import%20statement%20that%20combines%20them%20using%20parentheses.%3c/p%3e%0a%3cp%3eAn%20import%20statement%20can%20optionally%20define%20a%20%3cstrong%3enamed%20import%3c/strong%3e,%0awhich%20specifies%20the%20identifer%20that%20%3cem%3emust%3c/em%3e%20be%20used%20when%0areferencing%20the%20imported%20package%20inside%20the%20file.%0aNamed%20imports%20can%20help%20avoid%20variable%20shadowing.%3c/p%3e">
                 
 
 

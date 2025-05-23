@@ -23,11 +23,11 @@
   <meta property="og:title" content="Definitions">
   <meta property="og:description" content="In CUE, schemas are typically written as definitions. A definition is a field whose identifier starts with # or _#.
 Because CUE knows that definitions are used for validation, they aren’t output as data. It’s normal for definitions to specify fields that don’t have concrete values, such as types.
-A definition also tells CUE the complete set of allowed fields, meaning that evaluations will fail if any additional fields are specified.">
+A definition also tells CUE the complete set of allowed fields, meaning that evaluations will fail if any additional fields are specified. We say that such a definition defines a closed struct. Including a ... in a struct keeps it open.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@ A definition also tells CUE the complete set of allowed fields, meaning that eva
   <meta name="twitter:title" content="Definitions">
   <meta name="twitter:description" content="In CUE, schemas are typically written as definitions. A definition is a field whose identifier starts with # or _#.
 Because CUE knows that definitions are used for validation, they aren’t output as data. It’s normal for definitions to specify fields that don’t have concrete values, such as types.
-A definition also tells CUE the complete set of allowed fields, meaning that evaluations will fail if any additional fields are specified.">
+A definition also tells CUE the complete set of allowed fields, meaning that evaluations will fail if any additional fields are specified. We say that such a definition defines a closed struct. Including a ... in a struct keeps it open.">
 
 
 
@@ -56,12 +56,20 @@ A definition also tells CUE the complete set of allowed fields, meaning that eva
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Definitions">
-<meta itemprop="description" content="In CUE, schemas are typically written as definitions. A definition is a field whose identifier starts with # or _#.
-Because CUE knows that definitions are used for validation, they aren&rsquo;t output as data. It&rsquo;s normal for definitions to specify fields that don&rsquo;t have concrete values, such as types.
-A definition also tells CUE the complete set of allowed fields, meaning that evaluations will fail if any additional fields are specified.">
+<meta itemprop="description" content="In CUE, schemas are typically written as definitions.
+A definition is a field whose identifier starts with # or _#.
+Because CUE knows that definitions are used for validation,
+they aren&rsquo;t output as data.
+It&rsquo;s normal for definitions to specify fields that don&rsquo;t have concrete values,
+such as types.
+A definition also tells CUE the complete set of allowed fields,
+meaning that evaluations 
+will fail if any additional fields are specified.
+We say that such a definition defines a  closed struct.
+Including a ... in a struct keeps it open.">
 
     
-        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -360,8 +368,6 @@ lossy.timeout: field not allowed:
 
 
 
-
-
 ">
 <meta itemprop="wordCount" content="157">
 
@@ -475,14 +481,12 @@ lossy.timeout: field not allowed:
 </div>
 
 </div></div>
-
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
-                Last modified May 22, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -521,7 +525,7 @@ lossy.timeout: field not allowed:
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/basics/definitions/&text=In%20CUE,%20schemas%20are%20typically%20written%20as%20definitions.%20A%20definition%20is%20a%20field%20whose%20identifier%20starts%20with%20#%20or%20_#.%0aBecause%20CUE%20knows%20that%20definitions%20are%20used%20for%20validation,%20they%20aren&amp;rsquo;t%20output%20as%20data.%20It&amp;rsquo;s%20normal%20for%20definitions%20to%20specify%20fields%20that%20don&amp;rsquo;t%20have%20concrete%20values,%20such%20as%20types.%0aA%20definition%20also%20tells%20CUE%20the%20complete%20set%20of%20allowed%20fields,%20meaning%20that%20evaluations%20will%20fail%20if%20any%20additional%20fields%20are%20specified.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/basics/definitions/&text=%3cp%3eIn%20CUE,%20schemas%20are%20typically%20written%20as%20%3cstrong%3edefinitions%3c/strong%3e.%0aA%20definition%20is%20a%20field%20whose%20identifier%20starts%20with%20%3ccode%3e#%3c/code%3e%20or%20%3ccode%3e_#%3c/code%3e.%3c/p%3e%0a%3cp%3eBecause%20CUE%20knows%20that%20definitions%20are%20used%20for%20validation,%0athey%20aren&amp;rsquo;t%20output%20as%20data.%0aIt&amp;rsquo;s%20normal%20for%20definitions%20to%20specify%20fields%20that%20don&amp;rsquo;t%20have%20concrete%20values,%0asuch%20as%20types.%3c/p%3e%0a%3cp%3eA%20definition%20also%20tells%20CUE%20the%20complete%20set%20of%20allowed%20fields,%0ameaning%20that%20evaluations%20%3c!--%20TODO:%20explain%20%22evaluation%22%20here,%20or%20before%20this%20point?%20Swap%20with%20%22export%22?%20--%3e%0awill%20fail%20if%20any%20additional%20fields%20are%20specified.%0aWe%20say%20that%20such%20a%20definition%20defines%20a%20%20%3cstrong%3eclosed%3c/strong%3e%20struct.%0aIncluding%20a%20%3ccode%3e...%3c/code%3e%20in%20a%20struct%20keeps%20it%20%3cstrong%3eopen%3c/strong%3e.%3c/p%3e">
                 
 
 
@@ -537,7 +541,7 @@ lossy.timeout: field not allowed:
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/basics/definitions/&summary=In%20CUE,%20schemas%20are%20typically%20written%20as%20definitions.%20A%20definition%20is%20a%20field%20whose%20identifier%20starts%20with%20#%20or%20_#.%0aBecause%20CUE%20knows%20that%20definitions%20are%20used%20for%20validation,%20they%20aren&amp;rsquo;t%20output%20as%20data.%20It&amp;rsquo;s%20normal%20for%20definitions%20to%20specify%20fields%20that%20don&amp;rsquo;t%20have%20concrete%20values,%20such%20as%20types.%0aA%20definition%20also%20tells%20CUE%20the%20complete%20set%20of%20allowed%20fields,%20meaning%20that%20evaluations%20will%20fail%20if%20any%20additional%20fields%20are%20specified.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/basics/definitions/&summary=%3cp%3eIn%20CUE,%20schemas%20are%20typically%20written%20as%20%3cstrong%3edefinitions%3c/strong%3e.%0aA%20definition%20is%20a%20field%20whose%20identifier%20starts%20with%20%3ccode%3e#%3c/code%3e%20or%20%3ccode%3e_#%3c/code%3e.%3c/p%3e%0a%3cp%3eBecause%20CUE%20knows%20that%20definitions%20are%20used%20for%20validation,%0athey%20aren&amp;rsquo;t%20output%20as%20data.%0aIt&amp;rsquo;s%20normal%20for%20definitions%20to%20specify%20fields%20that%20don&amp;rsquo;t%20have%20concrete%20values,%0asuch%20as%20types.%3c/p%3e%0a%3cp%3eA%20definition%20also%20tells%20CUE%20the%20complete%20set%20of%20allowed%20fields,%0ameaning%20that%20evaluations%20%3c!--%20TODO:%20explain%20%22evaluation%22%20here,%20or%20before%20this%20point?%20Swap%20with%20%22export%22?%20--%3e%0awill%20fail%20if%20any%20additional%20fields%20are%20specified.%0aWe%20say%20that%20such%20a%20definition%20defines%20a%20%20%3cstrong%3eclosed%3c/strong%3e%20struct.%0aIncluding%20a%20%3ccode%3e...%3c/code%3e%20in%20a%20struct%20keeps%20it%20%3cstrong%3eopen%3c/strong%3e.%3c/p%3e">
                 
 
 

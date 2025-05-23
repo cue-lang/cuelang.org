@@ -21,19 +21,19 @@
 <title>Alias and reference scopes | CUE</title><meta property="og:url" content="/docs/concept/alias-and-reference-scopes/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Alias and reference scopes">
-  <meta property="og:description" content="Problem #1 A user asked for help with a problem they were having with their CUE:
-Can you help me with problem1.cue? I&#39;m trying to get YAML that looks like expected.yaml, but instead I end up with these &#34;incomplete value&#34; errors! Copied! problem1.cue Copy code Copied! #Metadata: { name: string namespace: string } #BaseConfig: { metadata: #Metadata } #Config: { metadata: #Metadata serviceA: #BaseConfig &amp; { metadata: metadata } serviceB: #BaseConfig &amp; { metadata: metadata } } config: #Config &amp; { metadata: { name: &#34;test&#34; namespace: &#34;dev&#34; } } Copied!">
+  <meta property="og:description" content=" Problem #1 A user asked for help with a problem they were having with their CUE:
+Can you help me with problem1.cue? I&#39;m trying to get YAML that looks like expected.yaml, but instead I end up with these &#34;incomplete value&#34; errors! ">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Alias and reference scopes">
-  <meta name="twitter:description" content="Problem #1 A user asked for help with a problem they were having with their CUE:
-Can you help me with problem1.cue? I&#39;m trying to get YAML that looks like expected.yaml, but instead I end up with these &#34;incomplete value&#34; errors! Copied! problem1.cue Copy code Copied! #Metadata: { name: string namespace: string } #BaseConfig: { metadata: #Metadata } #Config: { metadata: #Metadata serviceA: #BaseConfig &amp; { metadata: metadata } serviceB: #BaseConfig &amp; { metadata: metadata } } config: #Config &amp; { metadata: { name: &#34;test&#34; namespace: &#34;dev&#34; } } Copied!">
+  <meta name="twitter:description" content=" Problem #1 A user asked for help with a problem they were having with their CUE:
+Can you help me with problem1.cue? I&#39;m trying to get YAML that looks like expected.yaml, but instead I end up with these &#34;incomplete value&#34; errors! ">
 
 
 
@@ -54,11 +54,28 @@ Can you help me with problem1.cue? I&#39;m trying to get YAML that looks like ex
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Alias and reference scopes">
-<meta itemprop="description" content="Problem #1 A user asked for help with a problem they were having with their CUE:
-Can you help me with problem1.cue? I&#39;m trying to get YAML that looks like expected.yaml, but instead I end up with these &#34;incomplete value&#34; errors! Copied! problem1.cue Copy code Copied! #Metadata: { name: string namespace: string } #BaseConfig: { metadata: #Metadata } #Config: { metadata: #Metadata serviceA: #BaseConfig &amp; { metadata: metadata } serviceB: #BaseConfig &amp; { metadata: metadata } } config: #Config &amp; { metadata: { name: &#34;test&#34; namespace: &#34;dev&#34; } } Copied!">
+<meta itemprop="description" content="
+    
+
+
+
 
     
-        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+
+Problem #1
+A user asked for help with a problem they were having with their CUE:
+
+    
+Can you help me with problem1.cue? I&#39;m trying to get YAML that
+looks like expected.yaml, but instead I end up with these
+&#34;incomplete value&#34; errors!
+
+
+    
+">
+
+    
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -795,8 +812,7 @@ struct:
 
 The alias M then refers to the constraints of #Config.metadata and
 #Metadata, and the concrete values of config.metadata, all unified
-together - giving us output that successfully matches expected.yaml!
-">
+together - giving us output that successfully matches expected.yaml!">
 <meta itemprop="wordCount" content="846">
 
 
@@ -1551,14 +1567,13 @@ struct:</p>
 <p>The alias <code>M</code> then refers to the constraints of <code>#Config.metadata</code> and
 <code>#Metadata</code>, and the concrete values of <code>config.metadata</code>, <strong>all unified
 together</strong> - giving us output that successfully matches <code>expected.yaml</code>!</p>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
-                Last modified May 22, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -1607,7 +1622,7 @@ together</strong> - giving us output that successfully matches <code>expected.ya
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/alias-and-reference-scopes/&text=Problem%20#1%20A%20user%20asked%20for%20help%20with%20a%20problem%20they%20were%20having%20with%20their%20CUE:%0aCan%20you%20help%20me%20with%20problem1.cue?%20I%27m%20trying%20to%20get%20YAML%20that%20looks%20like%20expected.yaml,%20but%20instead%20I%20end%20up%20with%20these%20%22incomplete%20value%22%20errors!%20Copied!%20problem1.cue%20Copy%20code%20Copied!%20#Metadata:%20%7b%20name:%20string%20namespace:%20string%20%7d%20#BaseConfig:%20%7b%20metadata:%20#Metadata%20%7d%20#Config:%20%7b%20metadata:%20#Metadata%20serviceA:%20#BaseConfig%20&amp;amp;%20%7b%20metadata:%20metadata%20%7d%20serviceB:%20#BaseConfig%20&amp;amp;%20%7b%20metadata:%20metadata%20%7d%20%7d%20config:%20#Config%20&amp;amp;%20%7b%20metadata:%20%7b%20name:%20&amp;#34;test&amp;#34;%20namespace:%20&amp;#34;dev&amp;#34;%20%7d%20%7d%20Copied!">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/alias-and-reference-scopes/&text=%3ch2%20id=%22problem-1%22%3e%0a%20%20%20%20%3ca%20href=%22#problem-1%22%20class=%22anchor%22%20aria-label=%22Anchor%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20anchor__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--link%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3c/a%3eProblem%20#1%3c/h2%3e%0a%3cp%3eA%20user%20asked%20for%20help%20with%20a%20problem%20they%20were%20having%20with%20their%20CUE:%3c/p%3e%0a%3cblockquote%20class=%22quote%22%3e%0a%20%20%20%20%3cp%3e%0aCan%20you%20help%20me%20with%20%3ccode%3eproblem1.cue%3c/code%3e?%20I%27m%20trying%20to%20get%20YAML%20that%0alooks%20like%20%3ccode%3eexpected.yaml%3c/code%3e,%20but%20instead%20I%20end%20up%20with%20these%0a%22incomplete%20value%22%20errors!%0a%3c/p%3e%0a%0a%20%20%20%20%0a%3c/blockquote%3e">
                 
 
 
@@ -1623,7 +1638,7 @@ together</strong> - giving us output that successfully matches <code>expected.ya
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/alias-and-reference-scopes/&summary=Problem%20#1%20A%20user%20asked%20for%20help%20with%20a%20problem%20they%20were%20having%20with%20their%20CUE:%0aCan%20you%20help%20me%20with%20problem1.cue?%20I%27m%20trying%20to%20get%20YAML%20that%20looks%20like%20expected.yaml,%20but%20instead%20I%20end%20up%20with%20these%20%22incomplete%20value%22%20errors!%20Copied!%20problem1.cue%20Copy%20code%20Copied!%20#Metadata:%20%7b%20name:%20string%20namespace:%20string%20%7d%20#BaseConfig:%20%7b%20metadata:%20#Metadata%20%7d%20#Config:%20%7b%20metadata:%20#Metadata%20serviceA:%20#BaseConfig%20&amp;amp;%20%7b%20metadata:%20metadata%20%7d%20serviceB:%20#BaseConfig%20&amp;amp;%20%7b%20metadata:%20metadata%20%7d%20%7d%20config:%20#Config%20&amp;amp;%20%7b%20metadata:%20%7b%20name:%20&amp;#34;test&amp;#34;%20namespace:%20&amp;#34;dev&amp;#34;%20%7d%20%7d%20Copied!">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/alias-and-reference-scopes/&summary=%3ch2%20id=%22problem-1%22%3e%0a%20%20%20%20%3ca%20href=%22#problem-1%22%20class=%22anchor%22%20aria-label=%22Anchor%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20anchor__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--link%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3c/a%3eProblem%20#1%3c/h2%3e%0a%3cp%3eA%20user%20asked%20for%20help%20with%20a%20problem%20they%20were%20having%20with%20their%20CUE:%3c/p%3e%0a%3cblockquote%20class=%22quote%22%3e%0a%20%20%20%20%3cp%3e%0aCan%20you%20help%20me%20with%20%3ccode%3eproblem1.cue%3c/code%3e?%20I%27m%20trying%20to%20get%20YAML%20that%0alooks%20like%20%3ccode%3eexpected.yaml%3c/code%3e,%20but%20instead%20I%20end%20up%20with%20these%0a%22incomplete%20value%22%20errors!%0a%3c/p%3e%0a%0a%20%20%20%20%0a%3c/blockquote%3e">
                 
 
 

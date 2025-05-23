@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="This Commented CUE demonstrates constraining the sum of a list of numbers.Copied! schema.cue Copy code Copied! package example import &amp;#34;list&amp;#34; // both data …">
+<meta name="description" content="This Commented CUE demonstrates constraining the sum of a list of numbers.">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,19 +21,17 @@
 <title>Constraining the sum of a list of numbers | CUE</title><meta property="og:url" content="/docs/howto/constrain-the-sum-of-a-list-of-numbers/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Constraining the sum of a list of numbers">
-  <meta property="og:description" content="This Commented CUE demonstrates constraining the sum of a list of numbers.
-Copied! schema.cue Copy code Copied! package example import &#34;list&#34; // both data fields are lists of numbers good_list: [...number] bad_list: [...number] // We introduce a hidden CUE field for each list // we want to check. Each hidden field unifies // the relevant value constraint with the list&#39;s // sum _good_sum: &lt;=100 &amp; list.Sum(good_list) _bad_sum: &lt;=99.5 &amp; list.Sum(bad_list) Copied!">
+  <meta property="og:description" content="This Commented CUE demonstrates constraining the sum of a list of numbers.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-04-08T13:31:31+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Constraining the sum of a list of numbers">
-  <meta name="twitter:description" content="This Commented CUE demonstrates constraining the sum of a list of numbers.
-Copied! schema.cue Copy code Copied! package example import &#34;list&#34; // both data fields are lists of numbers good_list: [...number] bad_list: [...number] // We introduce a hidden CUE field for each list // we want to check. Each hidden field unifies // the relevant value constraint with the list&#39;s // sum _good_sum: &lt;=100 &amp; list.Sum(good_list) _bad_sum: &lt;=99.5 &amp; list.Sum(bad_list) Copied!">
+  <meta name="twitter:description" content="This Commented CUE demonstrates constraining the sum of a list of numbers.">
 
 
 
@@ -54,11 +52,11 @@ Copied! schema.cue Copy code Copied! package example import &#34;list&#34; // bo
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Constraining the sum of a list of numbers">
-<meta itemprop="description" content="This Commented CUE demonstrates constraining the sum of a list of numbers.
-Copied! schema.cue Copy code Copied! package example import &#34;list&#34; // both data fields are lists of numbers good_list: [...number] bad_list: [...number] // We introduce a hidden CUE field for each list // we want to check. Each hidden field unifies // the relevant value constraint with the list&#39;s // sum _good_sum: &lt;=100 &amp; list.Sum(good_list) _bad_sum: &lt;=99.5 &amp; list.Sum(bad_list) Copied!">
+<meta itemprop="description" content="This Commented CUE
+demonstrates constraining the sum of a list of numbers.">
 
     
-        <meta itemprop="dateModified" content="2025-04-08T13:31:31+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -376,7 +374,6 @@ _bad_sum: invalid value 106.5 (out of bound &lt;=99.5):
 
 
 
-
 ">
 <meta itemprop="wordCount" content="103">
 
@@ -608,14 +605,13 @@ _bad_sum: invalid value 106.5 (out of bound &lt;=99.5):
 <!-- - [How-to Guide](TODO): Constraining data at source, allowing it to be imported
   across package boundaries along with its constraint -->
 <!-- - TODO: CUE stdlib package tour, `list` package page -->
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7c104835c2bd9731b5a6b8cd703b905b2a4896aa">
-                Last modified April 8, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -668,7 +664,7 @@ _bad_sum: invalid value 106.5 (out of bound &lt;=99.5):
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/constrain-the-sum-of-a-list-of-numbers/&text=This%20Commented%20CUE%20demonstrates%20constraining%20the%20sum%20of%20a%20list%20of%20numbers.%0aCopied!%20schema.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;list&amp;#34;%20//%20both%20data%20fields%20are%20lists%20of%20numbers%20good_list:%20[...number]%20bad_list:%20[...number]%20//%20We%20introduce%20a%20hidden%20CUE%20field%20for%20each%20list%20//%20we%20want%20to%20check.%20Each%20hidden%20field%20unifies%20//%20the%20relevant%20value%20constraint%20with%20the%20list&amp;#39;s%20//%20sum%20_good_sum:%20&amp;lt;=100%20&amp;amp;%20list.Sum%28good_list%29%20_bad_sum:%20&amp;lt;=99.5%20&amp;amp;%20list.Sum%28bad_list%29%20Copied!">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/constrain-the-sum-of-a-list-of-numbers/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20constraining%20the%20sum%20of%20a%20list%20of%20numbers.%3c/p%3e">
                 
 
 
@@ -684,7 +680,7 @@ _bad_sum: invalid value 106.5 (out of bound &lt;=99.5):
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/constrain-the-sum-of-a-list-of-numbers/&summary=This%20Commented%20CUE%20demonstrates%20constraining%20the%20sum%20of%20a%20list%20of%20numbers.%0aCopied!%20schema.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;list&amp;#34;%20//%20both%20data%20fields%20are%20lists%20of%20numbers%20good_list:%20[...number]%20bad_list:%20[...number]%20//%20We%20introduce%20a%20hidden%20CUE%20field%20for%20each%20list%20//%20we%20want%20to%20check.%20Each%20hidden%20field%20unifies%20//%20the%20relevant%20value%20constraint%20with%20the%20list&amp;#39;s%20//%20sum%20_good_sum:%20&amp;lt;=100%20&amp;amp;%20list.Sum%28good_list%29%20_bad_sum:%20&amp;lt;=99.5%20&amp;amp;%20list.Sum%28bad_list%29%20Copied!">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/constrain-the-sum-of-a-list-of-numbers/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20constraining%20the%20sum%20of%20a%20list%20of%20numbers.%3c/p%3e">
                 
 
 

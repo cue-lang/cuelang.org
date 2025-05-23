@@ -22,18 +22,20 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Templates">
   <meta property="og:description" content="Templating is a highly effective way to reduce boilerplate by specifying optional fields in bulk. It allows the specification of constraints, or templates, which are unified with every field of a struct that matches a given pattern.
-A template’s pattern is an expression in square brackets that selects which fields will be constrained. Each combination of the pattern and a constraint that it applies is called a pattern constraint. Currently, patterns must either be instances of string, or must be _.">
+A template’s pattern is an expression in square brackets that selects which fields will be constrained. Each combination of the pattern and a constraint that it applies is called a pattern constraint. Currently, patterns must either be instances of string, or must be _.
+Including an alias in the pattern’s square brackets makes the label of each matched field available inside the template.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-01-30T12:47:40+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Templates">
   <meta name="twitter:description" content="Templating is a highly effective way to reduce boilerplate by specifying optional fields in bulk. It allows the specification of constraints, or templates, which are unified with every field of a struct that matches a given pattern.
-A template’s pattern is an expression in square brackets that selects which fields will be constrained. Each combination of the pattern and a constraint that it applies is called a pattern constraint. Currently, patterns must either be instances of string, or must be _.">
+A template’s pattern is an expression in square brackets that selects which fields will be constrained. Each combination of the pattern and a constraint that it applies is called a pattern constraint. Currently, patterns must either be instances of string, or must be _.
+Including an alias in the pattern’s square brackets makes the label of each matched field available inside the template.">
 
 
 
@@ -54,11 +56,20 @@ A template’s pattern is an expression in square brackets that selects which fi
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Templates">
-<meta itemprop="description" content="Templating is a highly effective way to reduce boilerplate by specifying optional fields in bulk. It allows the specification of constraints, or templates, which are unified with every field of a struct that matches a given pattern.
-A template&rsquo;s pattern is an expression in square brackets that selects which fields will be constrained. Each combination of the pattern and a constraint that it applies is called a pattern constraint. Currently, patterns must either be instances of string, or must be _.">
+<meta itemprop="description" content="Templating is a highly effective way to reduce boilerplate
+by specifying optional fields in bulk.
+It allows the specification of constraints, or templates,
+which are unified with every field of a struct that matches a given pattern.
+A template&rsquo;s pattern is an expression in square brackets that selects which
+fields will be constrained.
+Each combination of the pattern and a constraint that it applies is called a
+pattern constraint.
+Currently, patterns must either be instances of string, or must be _.
+Including an alias in the pattern&rsquo;s square brackets makes the label of each
+matched field available inside the template.">
 
     
-        <meta itemprop="dateModified" content="2025-01-30T12:47:40+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -383,8 +394,6 @@ job: [#DB]: replicas: &gt;=3
 
 
 
-
-
 ">
 <meta itemprop="wordCount" content="226">
 
@@ -524,14 +533,12 @@ matched field available inside the template.</p>
 </div>
 
 </div></div>
-
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7bada8ab2714d65c8b62b3bb9a4966e4d935a124">
-                Last modified January 30, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -570,7 +577,7 @@ matched field available inside the template.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/types/templates/&text=Templating%20is%20a%20highly%20effective%20way%20to%20reduce%20boilerplate%20by%20specifying%20optional%20fields%20in%20bulk.%20It%20allows%20the%20specification%20of%20constraints,%20or%20templates,%20which%20are%20unified%20with%20every%20field%20of%20a%20struct%20that%20matches%20a%20given%20pattern.%0aA%20template&amp;rsquo;s%20pattern%20is%20an%20expression%20in%20square%20brackets%20that%20selects%20which%20fields%20will%20be%20constrained.%20Each%20combination%20of%20the%20pattern%20and%20a%20constraint%20that%20it%20applies%20is%20called%20a%20pattern%20constraint.%20Currently,%20patterns%20must%20either%20be%20instances%20of%20string,%20or%20must%20be%20_.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/types/templates/&text=%3cp%3e%3cstrong%3eTemplating%3c/strong%3e%20is%20a%20highly%20effective%20way%20to%20reduce%20boilerplate%0aby%20specifying%20optional%20fields%20in%20bulk.%0aIt%20allows%20the%20specification%20of%20constraints,%20or%20%3cstrong%3etemplates%3c/strong%3e,%0awhich%20are%20unified%20with%20every%20field%20of%20a%20struct%20that%20matches%20a%20given%20pattern.%3c/p%3e%0a%3cp%3eA%20template&amp;rsquo;s%20pattern%20is%20an%20expression%20in%20square%20brackets%20that%20selects%20which%0afields%20will%20be%20constrained.%0aEach%20combination%20of%20the%20pattern%20and%20a%20constraint%20that%20it%20applies%20is%20called%20a%0a%3ca%20href=%22/docs/tour/basics/folding-structs/%22%3e%3cstrong%3epattern%20constraint%3c/strong%3e%3c/a%3e.%0aCurrently,%20patterns%20must%20either%20be%20instances%20of%20%3ccode%3estring%3c/code%3e,%20or%20must%20be%20%3ccode%3e_%3c/code%3e.%3c/p%3e%0a%3cp%3eIncluding%20an%20alias%20in%20the%20pattern&amp;rsquo;s%20square%20brackets%20makes%20the%20label%20of%20each%0amatched%20field%20available%20inside%20the%20template.%3c/p%3e">
                 
 
 
@@ -586,7 +593,7 @@ matched field available inside the template.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/types/templates/&summary=Templating%20is%20a%20highly%20effective%20way%20to%20reduce%20boilerplate%20by%20specifying%20optional%20fields%20in%20bulk.%20It%20allows%20the%20specification%20of%20constraints,%20or%20templates,%20which%20are%20unified%20with%20every%20field%20of%20a%20struct%20that%20matches%20a%20given%20pattern.%0aA%20template&amp;rsquo;s%20pattern%20is%20an%20expression%20in%20square%20brackets%20that%20selects%20which%20fields%20will%20be%20constrained.%20Each%20combination%20of%20the%20pattern%20and%20a%20constraint%20that%20it%20applies%20is%20called%20a%20pattern%20constraint.%20Currently,%20patterns%20must%20either%20be%20instances%20of%20string,%20or%20must%20be%20_.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/types/templates/&summary=%3cp%3e%3cstrong%3eTemplating%3c/strong%3e%20is%20a%20highly%20effective%20way%20to%20reduce%20boilerplate%0aby%20specifying%20optional%20fields%20in%20bulk.%0aIt%20allows%20the%20specification%20of%20constraints,%20or%20%3cstrong%3etemplates%3c/strong%3e,%0awhich%20are%20unified%20with%20every%20field%20of%20a%20struct%20that%20matches%20a%20given%20pattern.%3c/p%3e%0a%3cp%3eA%20template&amp;rsquo;s%20pattern%20is%20an%20expression%20in%20square%20brackets%20that%20selects%20which%0afields%20will%20be%20constrained.%0aEach%20combination%20of%20the%20pattern%20and%20a%20constraint%20that%20it%20applies%20is%20called%20a%0a%3ca%20href=%22/docs/tour/basics/folding-structs/%22%3e%3cstrong%3epattern%20constraint%3c/strong%3e%3c/a%3e.%0aCurrently,%20patterns%20must%20either%20be%20instances%20of%20%3ccode%3estring%3c/code%3e,%20or%20must%20be%20%3ccode%3e_%3c/code%3e.%3c/p%3e%0a%3cp%3eIncluding%20an%20alias%20in%20the%20pattern&amp;rsquo;s%20square%20brackets%20makes%20the%20label%20of%20each%0amatched%20field%20available%20inside%20the%20template.%3c/p%3e">
                 
 
 

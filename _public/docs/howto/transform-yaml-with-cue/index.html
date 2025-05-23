@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="This Commented CUE demonstrates how to transform YAML by reshaping some input data into different output.Copied! file.cue Copy code Copied! package example // …">
+<meta name="description" content="This Commented CUE demonstrates how to transform YAML by reshaping some input data into different output.">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,19 +21,17 @@
 <title>Transforming YAML with CUE | CUE</title><meta property="og:url" content="/docs/howto/transform-yaml-with-cue/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Transforming YAML with CUE">
-  <meta property="og:description" content="This Commented CUE demonstrates how to transform YAML by reshaping some input data into different output.
-Copied! file.cue Copy code Copied! package example // place the yaml input here with &#34;-l&#34; input: _ // validate the input against a schema input: #Schema #Schema: { owner?: { name!: string address?: string } pets?: [...#Pet] #Pet: { name!: string species!: string &amp; or(#Species) breed?: string age?: int &amp; &lt;50 // years } } #Species: [&#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;] // transform the input into the output output: location: *input.">
+  <meta property="og:description" content="This Commented CUE demonstrates how to transform YAML by reshaping some input data into different output.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Transforming YAML with CUE">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to transform YAML by reshaping some input data into different output.
-Copied! file.cue Copy code Copied! package example // place the yaml input here with &#34;-l&#34; input: _ // validate the input against a schema input: #Schema #Schema: { owner?: { name!: string address?: string } pets?: [...#Pet] #Pet: { name!: string species!: string &amp; or(#Species) breed?: string age?: int &amp; &lt;50 // years } } #Species: [&#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;] // transform the input into the output output: location: *input.">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to transform YAML by reshaping some input data into different output.">
 
 
 
@@ -54,11 +52,12 @@ Copied! file.cue Copy code Copied! package example // place the yaml input here 
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Transforming YAML with CUE">
-<meta itemprop="description" content="This Commented CUE demonstrates how to transform YAML by reshaping some input data into different output.
-Copied! file.cue Copy code Copied! package example // place the yaml input here with &#34;-l&#34; input: _ // validate the input against a schema input: #Schema #Schema: { owner?: { name!: string address?: string } pets?: [...#Pet] #Pet: { name!: string species!: string &amp; or(#Species) breed?: string age?: int &amp; &lt;50 // years } } #Species: [&#34;cat&#34;, &#34;dog&#34;, &#34;goldfish&#34;] // transform the input into the output output: location: *input.">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to transform YAML by reshaping some input data into different
+output.">
 
     
-        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -432,7 +431,6 @@ petsBySpecies:
 
 
 
-
 ">
 <meta itemprop="wordCount" content="241">
 
@@ -723,14 +721,13 @@ petsBySpecies:
 ## Related content
 
 -->
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
-                Last modified May 22, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -783,7 +780,7 @@ petsBySpecies:
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/transform-yaml-with-cue/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20transform%20YAML%20by%20reshaping%20some%20input%20data%20into%20different%20output.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20//%20place%20the%20yaml%20input%20here%20with%20&amp;#34;-l&amp;#34;%20input:%20_%20//%20validate%20the%20input%20against%20a%20schema%20input:%20#Schema%20#Schema:%20%7b%20owner?:%20%7b%20name!:%20string%20address?:%20string%20%7d%20pets?:%20[...#Pet]%20#Pet:%20%7b%20name!:%20string%20species!:%20string%20&amp;amp;%20or%28#Species%29%20breed?:%20string%20age?:%20int%20&amp;amp;%20&amp;lt;50%20//%20years%20%7d%20%7d%20#Species:%20[&amp;#34;cat&amp;#34;,%20&amp;#34;dog&amp;#34;,%20&amp;#34;goldfish&amp;#34;]%20//%20transform%20the%20input%20into%20the%20output%20output:%20location:%20*input.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/transform-yaml-with-cue/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20transform%20YAML%20by%20reshaping%20some%20input%20data%20into%20different%0aoutput.%3c/p%3e">
                 
 
 
@@ -799,7 +796,7 @@ petsBySpecies:
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/transform-yaml-with-cue/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20transform%20YAML%20by%20reshaping%20some%20input%20data%20into%20different%20output.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20//%20place%20the%20yaml%20input%20here%20with%20&amp;#34;-l&amp;#34;%20input:%20_%20//%20validate%20the%20input%20against%20a%20schema%20input:%20#Schema%20#Schema:%20%7b%20owner?:%20%7b%20name!:%20string%20address?:%20string%20%7d%20pets?:%20[...#Pet]%20#Pet:%20%7b%20name!:%20string%20species!:%20string%20&amp;amp;%20or%28#Species%29%20breed?:%20string%20age?:%20int%20&amp;amp;%20&amp;lt;50%20//%20years%20%7d%20%7d%20#Species:%20[&amp;#34;cat&amp;#34;,%20&amp;#34;dog&amp;#34;,%20&amp;#34;goldfish&amp;#34;]%20//%20transform%20the%20input%20into%20the%20output%20output:%20location:%20*input.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/transform-yaml-with-cue/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20transform%20YAML%20by%20reshaping%20some%20input%20data%20into%20different%0aoutput.%3c/p%3e">
                 
 
 

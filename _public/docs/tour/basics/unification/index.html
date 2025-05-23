@@ -22,18 +22,20 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Unification">
   <meta property="og:description" content="CUE allows fields to be specified multiple times, so long as all the values don’t conflict. If the values don’t conflict we say they unify successfully. Unification is the process of checking that values don’t conflict, and it happens implicitly whenever any field is redeclared. It also happens when the &amp; operator is used, as shown on the next page.
-For concrete data, unification of basic types requires that all values specified for a field must be equal.">
+For concrete data, unification of basic types requires that all values specified for a field must be equal.
+Within structs, fields are unified recursively. Similarly, within lists, elements are unified recursively.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-04-18T14:25:23+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Unification">
   <meta name="twitter:description" content="CUE allows fields to be specified multiple times, so long as all the values don’t conflict. If the values don’t conflict we say they unify successfully. Unification is the process of checking that values don’t conflict, and it happens implicitly whenever any field is redeclared. It also happens when the &amp; operator is used, as shown on the next page.
-For concrete data, unification of basic types requires that all values specified for a field must be equal.">
+For concrete data, unification of basic types requires that all values specified for a field must be equal.
+Within structs, fields are unified recursively. Similarly, within lists, elements are unified recursively.">
 
 
 
@@ -54,11 +56,19 @@ For concrete data, unification of basic types requires that all values specified
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Unification">
-<meta itemprop="description" content="CUE allows fields to be specified multiple times, so long as all the values don’t conflict. If the values don’t conflict we say they unify successfully. Unification is the process of checking that values don&rsquo;t conflict, and it happens implicitly whenever any field is redeclared. It also happens when the &amp; operator is used, as shown on the next page.
-For concrete data, unification of basic types requires that all values specified for a field must be equal.">
+<meta itemprop="description" content="CUE allows fields to be specified multiple times, so long as all the values
+don’t conflict.
+If the values don’t conflict we say they unify successfully.
+Unification is the process of checking that values don&rsquo;t conflict,
+and it happens implicitly whenever any field is redeclared. It also happens when the &amp;
+operator is used, as shown on the next page.
+For concrete data, unification of basic types requires that
+all values specified for a field must be equal.
+Within structs, fields are unified recursively.
+Similarly, within lists, elements are unified recursively.">
 
     
-        <meta itemprop="dateModified" content="2025-04-18T14:25:23+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -352,8 +362,6 @@ C:
 
 
 
-
-
 ">
 <meta itemprop="wordCount" content="143">
 
@@ -462,14 +470,12 @@ C:
 </div>
 
 </div></div>
-
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/558b3599e4dbaa790ee11d6130c287dc9a896509">
-                Last modified April 18, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -508,7 +514,7 @@ C:
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/basics/unification/&text=CUE%20allows%20fields%20to%20be%20specified%20multiple%20times,%20so%20long%20as%20all%20the%20values%20don%e2%80%99t%20conflict.%20If%20the%20values%20don%e2%80%99t%20conflict%20we%20say%20they%20unify%20successfully.%20Unification%20is%20the%20process%20of%20checking%20that%20values%20don&amp;rsquo;t%20conflict,%20and%20it%20happens%20implicitly%20whenever%20any%20field%20is%20redeclared.%20It%20also%20happens%20when%20the%20&amp;amp;%20operator%20is%20used,%20as%20shown%20on%20the%20next%20page.%0aFor%20concrete%20data,%20unification%20of%20basic%20types%20requires%20that%20all%20values%20specified%20for%20a%20field%20must%20be%20equal.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/basics/unification/&text=%3cp%3eCUE%20allows%20fields%20to%20be%20specified%20multiple%20times,%20so%20long%20as%20all%20the%20values%0adon%e2%80%99t%20conflict.%0aIf%20the%20values%20don%e2%80%99t%20conflict%20we%20say%20they%20%3cstrong%3eunify%3c/strong%3e%20successfully.%0a%3cstrong%3eUnification%3c/strong%3e%20is%20the%20process%20of%20checking%20that%20values%20don&amp;rsquo;t%20conflict,%0aand%20it%20happens%20implicitly%20whenever%20any%20field%20is%20redeclared.%20It%20also%20happens%20when%20the%20%3ccode%3e&amp;amp;%3c/code%3e%0aoperator%20is%20used,%20as%20shown%20on%20the%20next%20page.%3c/p%3e%0a%3cp%3eFor%20concrete%20data,%20unification%20of%20basic%20types%20requires%20that%0aall%20values%20specified%20for%20a%20field%20must%20be%20equal.%3cbr%3e%0aWithin%20structs,%20fields%20are%20unified%20recursively.%0aSimilarly,%20within%20lists,%20elements%20are%20unified%20recursively.%3c/p%3e">
                 
 
 
@@ -524,7 +530,7 @@ C:
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/basics/unification/&summary=CUE%20allows%20fields%20to%20be%20specified%20multiple%20times,%20so%20long%20as%20all%20the%20values%20don%e2%80%99t%20conflict.%20If%20the%20values%20don%e2%80%99t%20conflict%20we%20say%20they%20unify%20successfully.%20Unification%20is%20the%20process%20of%20checking%20that%20values%20don&amp;rsquo;t%20conflict,%20and%20it%20happens%20implicitly%20whenever%20any%20field%20is%20redeclared.%20It%20also%20happens%20when%20the%20&amp;amp;%20operator%20is%20used,%20as%20shown%20on%20the%20next%20page.%0aFor%20concrete%20data,%20unification%20of%20basic%20types%20requires%20that%20all%20values%20specified%20for%20a%20field%20must%20be%20equal.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/basics/unification/&summary=%3cp%3eCUE%20allows%20fields%20to%20be%20specified%20multiple%20times,%20so%20long%20as%20all%20the%20values%0adon%e2%80%99t%20conflict.%0aIf%20the%20values%20don%e2%80%99t%20conflict%20we%20say%20they%20%3cstrong%3eunify%3c/strong%3e%20successfully.%0a%3cstrong%3eUnification%3c/strong%3e%20is%20the%20process%20of%20checking%20that%20values%20don&amp;rsquo;t%20conflict,%0aand%20it%20happens%20implicitly%20whenever%20any%20field%20is%20redeclared.%20It%20also%20happens%20when%20the%20%3ccode%3e&amp;amp;%3c/code%3e%0aoperator%20is%20used,%20as%20shown%20on%20the%20next%20page.%3c/p%3e%0a%3cp%3eFor%20concrete%20data,%20unification%20of%20basic%20types%20requires%20that%0aall%20values%20specified%20for%20a%20field%20must%20be%20equal.%3cbr%3e%0aWithin%20structs,%20fields%20are%20unified%20recursively.%0aSimilarly,%20within%20lists,%20elements%20are%20unified%20recursively.%3c/p%3e">
                 
 
 

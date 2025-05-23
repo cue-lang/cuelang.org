@@ -24,11 +24,12 @@
   <meta property="og:description" content="In its simplest form, CUE looks a lot like JSON. This is because CUE is a superset of JSON.
 Or, put differently: all valid JSON is CUE (but not vice versa).
 CUE significantly reduces the pain of dealing with JSON by introducing several conveniences, including:
-C-style comments are allowed field names without special characters don’t need to be quoted commas after a field are optional (and are usually omitted) commas after the final element of a list are allowed the outermost curly braces in a CUE file are optional JSON objects are called structs or maps in CUE.">
+C-style comments are allowed field names without special characters don’t need to be quoted commas after a field are optional (and are usually omitted) commas after the final element of a list are allowed the outermost curly braces in a CUE file are optional JSON objects are called structs or maps in CUE. JSON arrays are called lists
+Object members are called fields, which link their name, or label, to a value.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-01T21:02:36+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -37,7 +38,8 @@ C-style comments are allowed field names without special characters don’t need
   <meta name="twitter:description" content="In its simplest form, CUE looks a lot like JSON. This is because CUE is a superset of JSON.
 Or, put differently: all valid JSON is CUE (but not vice versa).
 CUE significantly reduces the pain of dealing with JSON by introducing several conveniences, including:
-C-style comments are allowed field names without special characters don’t need to be quoted commas after a field are optional (and are usually omitted) commas after the final element of a list are allowed the outermost curly braces in a CUE file are optional JSON objects are called structs or maps in CUE.">
+C-style comments are allowed field names without special characters don’t need to be quoted commas after a field are optional (and are usually omitted) commas after the final element of a list are allowed the outermost curly braces in a CUE file are optional JSON objects are called structs or maps in CUE. JSON arrays are called lists
+Object members are called fields, which link their name, or label, to a value.">
 
 
 
@@ -58,13 +60,24 @@ C-style comments are allowed field names without special characters don’t need
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="JSON Superset">
-<meta itemprop="description" content="In its simplest form, CUE looks a lot like JSON. This is because CUE is a superset of JSON.
+<meta itemprop="description" content="In its simplest form, CUE looks a lot like JSON.
+This is because CUE is a superset of JSON.
 Or, put differently: all valid JSON is CUE (but not vice versa).
-CUE significantly reduces the pain of dealing with JSON by introducing several conveniences, including:
-C-style comments are allowed field names without special characters don&rsquo;t need to be quoted commas after a field are optional (and are usually omitted) commas after the final element of a list are allowed the outermost curly braces in a CUE file are optional JSON objects are called structs or maps in CUE.">
+CUE significantly reduces the pain of dealing with JSON
+by introducing several conveniences, including:
+
+C-style comments are allowed
+field names without special characters don&rsquo;t need to be quoted
+commas after a field are optional (and are usually omitted)
+commas after the final element of a list are allowed
+the outermost curly braces in a CUE file are optional
+
+JSON objects are called structs or maps in CUE.
+JSON arrays are called lists
+Object members are called fields, which link their name, or label, to a value.">
 
     
-        <meta itemprop="dateModified" content="2024-03-01T21:02:36+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -397,8 +410,6 @@ aList: [
 
 
 
-
-
 ">
 <meta itemprop="wordCount" content="262">
 
@@ -547,14 +558,12 @@ Here&rsquo;s an example that uses <code>cue export</code> to turn <code>file.cue
 </div>
 
 </div></div>
-
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/1583abec9401e2150ee73148b3a3e3fa35c529c6">
-                Last modified March 1, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -593,7 +602,7 @@ Here&rsquo;s an example that uses <code>cue export</code> to turn <code>file.cue
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/basics/json-superset/&text=In%20its%20simplest%20form,%20CUE%20looks%20a%20lot%20like%20JSON.%20This%20is%20because%20CUE%20is%20a%20superset%20of%20JSON.%0aOr,%20put%20differently:%20all%20valid%20JSON%20is%20CUE%20%28but%20not%20vice%20versa%29.%0aCUE%20significantly%20reduces%20the%20pain%20of%20dealing%20with%20JSON%20by%20introducing%20several%20conveniences,%20including:%0aC-style%20comments%20are%20allowed%20field%20names%20without%20special%20characters%20don&amp;rsquo;t%20need%20to%20be%20quoted%20commas%20after%20a%20field%20are%20optional%20%28and%20are%20usually%20omitted%29%20commas%20after%20the%20final%20element%20of%20a%20list%20are%20allowed%20the%20outermost%20curly%20braces%20in%20a%20CUE%20file%20are%20optional%20JSON%20objects%20are%20called%20structs%20or%20maps%20in%20CUE.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/basics/json-superset/&text=%3cp%3eIn%20its%20simplest%20form,%20CUE%20looks%20a%20lot%20like%20JSON.%0aThis%20is%20because%20CUE%20is%20a%20superset%20of%20JSON.%3cbr%3e%0aOr,%20put%20differently:%20%3cstrong%3eall%20valid%20JSON%20is%20CUE%3c/strong%3e%20%28but%20not%20vice%20versa%29.%3c/p%3e%0a%3cp%3eCUE%20significantly%20reduces%20the%20pain%20of%20dealing%20with%20JSON%0aby%20introducing%20several%20conveniences,%20including:%3c/p%3e%0a%3cul%3e%0a%3cli%3eC-style%20%3cstrong%3ecomments%3c/strong%3e%20are%20allowed%3c/li%3e%0a%3cli%3efield%20names%20without%20special%20characters%20don&amp;rsquo;t%20need%20to%20be%20quoted%3c/li%3e%0a%3cli%3ecommas%20after%20a%20field%20are%20optional%20%28and%20are%20usually%20omitted%29%3c/li%3e%0a%3cli%3ecommas%20after%20the%20final%20element%20of%20a%20list%20are%20allowed%3c/li%3e%0a%3cli%3ethe%20outermost%20curly%20braces%20in%20a%20CUE%20file%20are%20optional%3c/li%3e%0a%3c/ul%3e%0a%3cp%3eJSON%20%3cem%3eobjects%3c/em%3e%20are%20called%20%3cstrong%3estructs%3c/strong%3e%20or%20%3cstrong%3emaps%3c/strong%3e%20in%20CUE.%0aJSON%20%3cem%3earrays%3c/em%3e%20are%20called%20%3cstrong%3elists%3c/strong%3e%3cbr%3e%0aObject%20%3cem%3emembers%3c/em%3e%20are%20called%20%3cstrong%3efields%3c/strong%3e,%20which%20link%20their%20%3cstrong%3ename%3c/strong%3e,%20or%20%3cstrong%3elabel%3c/strong%3e,%20to%20a%20%3cstrong%3evalue%3c/strong%3e.%3c/p%3e">
                 
 
 
@@ -609,7 +618,7 @@ Here&rsquo;s an example that uses <code>cue export</code> to turn <code>file.cue
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/basics/json-superset/&summary=In%20its%20simplest%20form,%20CUE%20looks%20a%20lot%20like%20JSON.%20This%20is%20because%20CUE%20is%20a%20superset%20of%20JSON.%0aOr,%20put%20differently:%20all%20valid%20JSON%20is%20CUE%20%28but%20not%20vice%20versa%29.%0aCUE%20significantly%20reduces%20the%20pain%20of%20dealing%20with%20JSON%20by%20introducing%20several%20conveniences,%20including:%0aC-style%20comments%20are%20allowed%20field%20names%20without%20special%20characters%20don&amp;rsquo;t%20need%20to%20be%20quoted%20commas%20after%20a%20field%20are%20optional%20%28and%20are%20usually%20omitted%29%20commas%20after%20the%20final%20element%20of%20a%20list%20are%20allowed%20the%20outermost%20curly%20braces%20in%20a%20CUE%20file%20are%20optional%20JSON%20objects%20are%20called%20structs%20or%20maps%20in%20CUE.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/basics/json-superset/&summary=%3cp%3eIn%20its%20simplest%20form,%20CUE%20looks%20a%20lot%20like%20JSON.%0aThis%20is%20because%20CUE%20is%20a%20superset%20of%20JSON.%3cbr%3e%0aOr,%20put%20differently:%20%3cstrong%3eall%20valid%20JSON%20is%20CUE%3c/strong%3e%20%28but%20not%20vice%20versa%29.%3c/p%3e%0a%3cp%3eCUE%20significantly%20reduces%20the%20pain%20of%20dealing%20with%20JSON%0aby%20introducing%20several%20conveniences,%20including:%3c/p%3e%0a%3cul%3e%0a%3cli%3eC-style%20%3cstrong%3ecomments%3c/strong%3e%20are%20allowed%3c/li%3e%0a%3cli%3efield%20names%20without%20special%20characters%20don&amp;rsquo;t%20need%20to%20be%20quoted%3c/li%3e%0a%3cli%3ecommas%20after%20a%20field%20are%20optional%20%28and%20are%20usually%20omitted%29%3c/li%3e%0a%3cli%3ecommas%20after%20the%20final%20element%20of%20a%20list%20are%20allowed%3c/li%3e%0a%3cli%3ethe%20outermost%20curly%20braces%20in%20a%20CUE%20file%20are%20optional%3c/li%3e%0a%3c/ul%3e%0a%3cp%3eJSON%20%3cem%3eobjects%3c/em%3e%20are%20called%20%3cstrong%3estructs%3c/strong%3e%20or%20%3cstrong%3emaps%3c/strong%3e%20in%20CUE.%0aJSON%20%3cem%3earrays%3c/em%3e%20are%20called%20%3cstrong%3elists%3c/strong%3e%3cbr%3e%0aObject%20%3cem%3emembers%3c/em%3e%20are%20called%20%3cstrong%3efields%3c/strong%3e,%20which%20link%20their%20%3cstrong%3ename%3c/strong%3e,%20or%20%3cstrong%3elabel%3c/strong%3e,%20to%20a%20%3cstrong%3evalue%3c/strong%3e.%3c/p%3e">
                 
 
 

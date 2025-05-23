@@ -21,19 +21,17 @@
 <title>Using &#34;strings.Replace&#34; | CUE</title><meta property="og:url" content="/docs/howto/use-strings-replace/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Using &#34;strings.Replace&#34;">
-  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function strings.Replace to make copies of strings with specific substring replacements, without using regular expressions.
-Copied! file.cue Copy code Copied! package example import &#34;strings&#34; // func Replace(source, old, new string, count int) string replace: strings.Replace(&#34;This string repeats the word &#39;JSON&#39;: JSON, JSON, JSON.&#34;, &#34;JSON&#34;, &#34;YAML&#34;, 3) // A negative value for the count parameter means unlimited replacements. replaceAll: strings.Replace(&#34;one one one one one one one&#34;, &#34;one&#34;, &#34;two&#34;, -1) // The old and new parameters are fixed values, not regular expressions.">
+  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function strings.Replace to make copies of strings with specific substring replacements, without using regular expressions.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-14T11:20:40+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Using &#34;strings.Replace&#34;">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function strings.Replace to make copies of strings with specific substring replacements, without using regular expressions.
-Copied! file.cue Copy code Copied! package example import &#34;strings&#34; // func Replace(source, old, new string, count int) string replace: strings.Replace(&#34;This string repeats the word &#39;JSON&#39;: JSON, JSON, JSON.&#34;, &#34;JSON&#34;, &#34;YAML&#34;, 3) // A negative value for the count parameter means unlimited replacements. replaceAll: strings.Replace(&#34;one one one one one one one&#34;, &#34;one&#34;, &#34;two&#34;, -1) // The old and new parameters are fixed values, not regular expressions.">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function strings.Replace to make copies of strings with specific substring replacements, without using regular expressions.">
 
 
 
@@ -54,11 +52,14 @@ Copied! file.cue Copy code Copied! package example import &#34;strings&#34; // f
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Using &#34;strings.Replace&#34;">
-<meta itemprop="description" content="This Commented CUE demonstrates how to use the built-in function strings.Replace to make copies of strings with specific substring replacements, without using regular expressions.
-Copied! file.cue Copy code Copied! package example import &#34;strings&#34; // func Replace(source, old, new string, count int) string replace: strings.Replace(&#34;This string repeats the word &#39;JSON&#39;: JSON, JSON, JSON.&#34;, &#34;JSON&#34;, &#34;YAML&#34;, 3) // A negative value for the count parameter means unlimited replacements. replaceAll: strings.Replace(&#34;one one one one one one one&#34;, &#34;one&#34;, &#34;two&#34;, -1) // The old and new parameters are fixed values, not regular expressions.">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to use the built-in function
+strings.Replace
+to make copies of strings with specific substring replacements, without using
+regular expressions.">
 
     
-        <meta itemprop="dateModified" content="2024-03-14T11:20:40+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -355,7 +356,6 @@ fixed: strings.Replace(&#34;Parameters are fixed strings values.&#34;, &#34;.*&#
 Related content
 
 The strings built-in package
-
 ">
 <meta itemprop="wordCount" content="137">
 
@@ -555,14 +555,13 @@ regular expressions.</p>
 <ul>
 <li>The <a href="https://pkg.go.dev/cuelang.org/go/pkg/strings"><code>strings</code></a> built-in package</li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/f093edc6d6d54a94416381e09e19d69c0580b51b">
-                Last modified March 14, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -611,7 +610,7 @@ regular expressions.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-strings-replace/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20strings.Replace%20to%20make%20copies%20of%20strings%20with%20specific%20substring%20replacements,%20without%20using%20regular%20expressions.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;strings&amp;#34;%20//%20func%20Replace%28source,%20old,%20new%20string,%20count%20int%29%20string%20replace:%20strings.Replace%28&amp;#34;This%20string%20repeats%20the%20word%20&amp;#39;JSON&amp;#39;:%20JSON,%20JSON,%20JSON.&amp;#34;,%20&amp;#34;JSON&amp;#34;,%20&amp;#34;YAML&amp;#34;,%203%29%20//%20A%20negative%20value%20for%20the%20count%20parameter%20means%20unlimited%20replacements.%20replaceAll:%20strings.Replace%28&amp;#34;one%20one%20one%20one%20one%20one%20one&amp;#34;,%20&amp;#34;one&amp;#34;,%20&amp;#34;two&amp;#34;,%20-1%29%20//%20The%20old%20and%20new%20parameters%20are%20fixed%20values,%20not%20regular%20expressions.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-strings-replace/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/strings#Replace%22%3e%3ccode%3estrings.Replace%3c/code%3e%3c/a%3e%0ato%20make%20copies%20of%20strings%20with%20specific%20substring%20replacements,%20%3cem%3ewithout%3c/em%3e%20using%0aregular%20expressions.%3c/p%3e">
                 
 
 
@@ -627,7 +626,7 @@ regular expressions.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-strings-replace/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20strings.Replace%20to%20make%20copies%20of%20strings%20with%20specific%20substring%20replacements,%20without%20using%20regular%20expressions.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;strings&amp;#34;%20//%20func%20Replace%28source,%20old,%20new%20string,%20count%20int%29%20string%20replace:%20strings.Replace%28&amp;#34;This%20string%20repeats%20the%20word%20&amp;#39;JSON&amp;#39;:%20JSON,%20JSON,%20JSON.&amp;#34;,%20&amp;#34;JSON&amp;#34;,%20&amp;#34;YAML&amp;#34;,%203%29%20//%20A%20negative%20value%20for%20the%20count%20parameter%20means%20unlimited%20replacements.%20replaceAll:%20strings.Replace%28&amp;#34;one%20one%20one%20one%20one%20one%20one&amp;#34;,%20&amp;#34;one&amp;#34;,%20&amp;#34;two&amp;#34;,%20-1%29%20//%20The%20old%20and%20new%20parameters%20are%20fixed%20values,%20not%20regular%20expressions.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-strings-replace/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/strings#Replace%22%3e%3ccode%3estrings.Replace%3c/code%3e%3c/a%3e%0ato%20make%20copies%20of%20strings%20with%20specific%20substring%20replacements,%20%3cem%3ewithout%3c/em%3e%20using%0aregular%20expressions.%3c/p%3e">
                 
 
 

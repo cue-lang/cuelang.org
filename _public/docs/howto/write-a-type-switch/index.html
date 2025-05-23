@@ -21,19 +21,17 @@
 <title>Writing a type switch | CUE</title><meta property="og:url" content="/docs/howto/write-a-type-switch/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Writing a type switch">
-  <meta property="og:description" content="This Commented CUE demonstrates how to write a type switch, where output needs to differ based on the type of data being processed. Because the CUE language does not include a switch statement, a mechanism is shown that behaves like a switch statement in some other languages.
-Copied! file.cue Copy code Copied! package example input: [ 42, 139.4, &#34;some string&#34;, [&#34;some&#34;, &#34;list&#34;], {some: &#34;struct&#34;}, true, false, ] // output is derived from input, and adheres to the following schema: output: [.">
+  <meta property="og:description" content="This Commented CUE demonstrates how to write a type switch, where output needs to differ based on the type of data being processed. Because the CUE language does not include a switch statement, a mechanism is shown that behaves like a switch statement in some other languages.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-14T11:20:40+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Writing a type switch">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to write a type switch, where output needs to differ based on the type of data being processed. Because the CUE language does not include a switch statement, a mechanism is shown that behaves like a switch statement in some other languages.
-Copied! file.cue Copy code Copied! package example input: [ 42, 139.4, &#34;some string&#34;, [&#34;some&#34;, &#34;list&#34;], {some: &#34;struct&#34;}, true, false, ] // output is derived from input, and adheres to the following schema: output: [.">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to write a type switch, where output needs to differ based on the type of data being processed. Because the CUE language does not include a switch statement, a mechanism is shown that behaves like a switch statement in some other languages.">
 
 
 
@@ -54,11 +52,14 @@ Copied! file.cue Copy code Copied! package example input: [ 42, 139.4, &#34;some
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Writing a type switch">
-<meta itemprop="description" content="This Commented CUE demonstrates how to write a type switch, where output needs to differ based on the type of data being processed. Because the CUE language does not include a switch statement, a mechanism is shown that behaves like a switch statement in some other languages.
-Copied! file.cue Copy code Copied! package example input: [ 42, 139.4, &#34;some string&#34;, [&#34;some&#34;, &#34;list&#34;], {some: &#34;struct&#34;}, true, false, ] // output is derived from input, and adheres to the following schema: output: [.">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to write a type switch, where output needs to differ based
+on the type of data being processed. Because the CUE language does not include
+a switch statement, a mechanism is shown that behaves like a switch statement
+in some other languages.">
 
     
-        <meta itemprop="dateModified" content="2024-03-14T11:20:40+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -409,8 +410,6 @@ issue #943 is implemented, such as isconcrete.
 The builtins mentioned in that issue are not yet available, but we mention
 them here to help guide the implementation choices you make in the interim.
 
-
-
 ">
 <meta itemprop="wordCount" content="350">
 
@@ -664,15 +663,13 @@ replaced by tests using more specific and precise builtins when
 them here to help guide the implementation choices you make in the interim.</p>
 </div>
 </div>
-
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/f093edc6d6d54a94416381e09e19d69c0580b51b">
-                Last modified March 14, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -721,7 +718,7 @@ them here to help guide the implementation choices you make in the interim.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/write-a-type-switch/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20write%20a%20type%20switch,%20where%20output%20needs%20to%20differ%20based%20on%20the%20type%20of%20data%20being%20processed.%20Because%20the%20CUE%20language%20does%20not%20include%20a%20switch%20statement,%20a%20mechanism%20is%20shown%20that%20behaves%20like%20a%20switch%20statement%20in%20some%20other%20languages.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20input:%20[%2042,%20139.4,%20&amp;#34;some%20string&amp;#34;,%20[&amp;#34;some&amp;#34;,%20&amp;#34;list&amp;#34;],%20%7bsome:%20&amp;#34;struct&amp;#34;%7d,%20true,%20false,%20]%20//%20output%20is%20derived%20from%20input,%20and%20adheres%20to%20the%20following%20schema:%20output:%20[.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/write-a-type-switch/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20write%20a%20%3cstrong%3etype%20switch%3c/strong%3e,%20where%20output%20needs%20to%20differ%20based%0aon%20the%20type%20of%20data%20being%20processed.%20Because%20the%20CUE%20language%20does%20not%20include%0aa%20switch%20statement,%20a%20mechanism%20is%20shown%20that%20%3cem%3ebehaves%3c/em%3e%20like%20a%20switch%20statement%0ain%20some%20other%20languages.%3c/p%3e">
                 
 
 
@@ -737,7 +734,7 @@ them here to help guide the implementation choices you make in the interim.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/write-a-type-switch/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20write%20a%20type%20switch,%20where%20output%20needs%20to%20differ%20based%20on%20the%20type%20of%20data%20being%20processed.%20Because%20the%20CUE%20language%20does%20not%20include%20a%20switch%20statement,%20a%20mechanism%20is%20shown%20that%20behaves%20like%20a%20switch%20statement%20in%20some%20other%20languages.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20input:%20[%2042,%20139.4,%20&amp;#34;some%20string&amp;#34;,%20[&amp;#34;some&amp;#34;,%20&amp;#34;list&amp;#34;],%20%7bsome:%20&amp;#34;struct&amp;#34;%7d,%20true,%20false,%20]%20//%20output%20is%20derived%20from%20input,%20and%20adheres%20to%20the%20following%20schema:%20output:%20[.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/write-a-type-switch/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20write%20a%20%3cstrong%3etype%20switch%3c/strong%3e,%20where%20output%20needs%20to%20differ%20based%0aon%20the%20type%20of%20data%20being%20processed.%20Because%20the%20CUE%20language%20does%20not%20include%0aa%20switch%20statement,%20a%20mechanism%20is%20shown%20that%20%3cem%3ebehaves%3c/em%3e%20like%20a%20switch%20statement%0ain%20some%20other%20languages.%3c/p%3e">
                 
 
 

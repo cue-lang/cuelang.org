@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Field comprehensions can be used to add fields conditionally.Copied! file.cue Copy code Copied! price: number // High prices require a reason and the name of …">
+<meta name="description" content="Field comprehensions can be used to add fields conditionally.">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,19 +21,17 @@
 <title>Conditional Fields | CUE</title><meta property="og:url" content="/docs/tour/expressions/conditional/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Conditional Fields">
-  <meta property="og:description" content="Field comprehensions can be used to add fields conditionally.
-Copied! file.cue Copy code Copied! price: number // High prices require a reason and the name of // the authorising person. if price &gt; 100 { reason!: string authorisedBy!: string } Copied! stock.yaml Copy code Copied! price: 200 TERMINAL Copy code Copied! $ cue export file.cue stock.yaml authorisedBy: field is required but not present reason: field is required but not present When cue export processes multiple files it unifies their contents.">
+  <meta property="og:description" content="Field comprehensions can be used to add fields conditionally.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Conditional Fields">
-  <meta name="twitter:description" content="Field comprehensions can be used to add fields conditionally.
-Copied! file.cue Copy code Copied! price: number // High prices require a reason and the name of // the authorising person. if price &gt; 100 { reason!: string authorisedBy!: string } Copied! stock.yaml Copy code Copied! price: 200 TERMINAL Copy code Copied! $ cue export file.cue stock.yaml authorisedBy: field is required but not present reason: field is required but not present When cue export processes multiple files it unifies their contents.">
+  <meta name="twitter:description" content="Field comprehensions can be used to add fields conditionally.">
 
 
 
@@ -54,11 +52,10 @@ Copied! file.cue Copy code Copied! price: number // High prices require a reason
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Conditional Fields">
-<meta itemprop="description" content="Field comprehensions can be used to add fields conditionally.
-Copied! file.cue Copy code Copied! price: number // High prices require a reason and the name of // the authorising person. if price &gt; 100 { reason!: string authorisedBy!: string } Copied! stock.yaml Copy code Copied! price: 200 TERMINAL Copy code Copied! $ cue export file.cue stock.yaml authorisedBy: field is required but not present reason: field is required but not present When cue export processes multiple files it unifies their contents.">
+<meta itemprop="description" content="Field comprehensions can be used to add fields conditionally.">
 
     
-        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -379,8 +376,6 @@ reason: field is required but not present
 When cue export processes multiple files it unifies their contents.
 The value of the price field in stock.yaml is available inside file.cue,
 and triggers the conditional inclusion of the required fields.
-
-
 ">
 <meta itemprop="wordCount" content="101">
 
@@ -524,14 +519,12 @@ reason: field is required but not present</code></pre></div>
 The value of the <code>price</code> field in <code>stock.yaml</code> is available inside <code>file.cue</code>,
 and triggers the conditional inclusion of the required fields.</div>
 </div>
-
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
-                Last modified May 22, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -570,7 +563,7 @@ and triggers the conditional inclusion of the required fields.</div>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/expressions/conditional/&text=Field%20comprehensions%20can%20be%20used%20to%20add%20fields%20conditionally.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20price:%20number%20//%20High%20prices%20require%20a%20reason%20and%20the%20name%20of%20//%20the%20authorising%20person.%20if%20price%20&amp;gt;%20100%20%7b%20reason!:%20string%20authorisedBy!:%20string%20%7d%20Copied!%20stock.yaml%20Copy%20code%20Copied!%20price:%20200%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20export%20file.cue%20stock.yaml%20authorisedBy:%20field%20is%20required%20but%20not%20present%20reason:%20field%20is%20required%20but%20not%20present%20When%20cue%20export%20processes%20multiple%20files%20it%20unifies%20their%20contents.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/expressions/conditional/&text=%3cp%3eField%20comprehensions%20can%20be%20used%20to%20add%20fields%20conditionally.%3c/p%3e">
                 
 
 
@@ -586,7 +579,7 @@ and triggers the conditional inclusion of the required fields.</div>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/expressions/conditional/&summary=Field%20comprehensions%20can%20be%20used%20to%20add%20fields%20conditionally.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20price:%20number%20//%20High%20prices%20require%20a%20reason%20and%20the%20name%20of%20//%20the%20authorising%20person.%20if%20price%20&amp;gt;%20100%20%7b%20reason!:%20string%20authorisedBy!:%20string%20%7d%20Copied!%20stock.yaml%20Copy%20code%20Copied!%20price:%20200%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20export%20file.cue%20stock.yaml%20authorisedBy:%20field%20is%20required%20but%20not%20present%20reason:%20field%20is%20required%20but%20not%20present%20When%20cue%20export%20processes%20multiple%20files%20it%20unifies%20their%20contents.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/expressions/conditional/&summary=%3cp%3eField%20comprehensions%20can%20be%20used%20to%20add%20fields%20conditionally.%3c/p%3e">
                 
 
 

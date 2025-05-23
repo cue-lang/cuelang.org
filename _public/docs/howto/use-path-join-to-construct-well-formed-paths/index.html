@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="This Commented CUE demonstrates how to use the built-in function path.Join to construct well-formed paths from their individual string components.Copied! …">
+<meta name="description" content="This Commented CUE demonstrates how to use the built-in function path.Join to construct well-formed paths from their individual string components.">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,19 +21,17 @@
 <title>Using &#34;path.Join&#34; to construct well-formed paths | CUE</title><meta property="og:url" content="/docs/howto/use-path-join-to-construct-well-formed-paths/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Using &#34;path.Join&#34; to construct well-formed paths">
-  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function path.Join to construct well-formed paths from their individual string components.
-Copied! file.cue Copy code Copied! package example import &#34;path&#34; join: path.Join([&#34;foo&#34;, &#34;bar&#34;, &#34;baz&#34;], path.Unix) unix: path.Join(_components, path.Unix) windows: path.Join(_components, path.Windows) _components: [ &#34;foo&#34;, &#34;bar&#34;, &#34;baz&#34;, &#34;..&#34;, &#34;quux&#34;, ] TERMINAL Copy code Copied! $ cue export { &#34;join&#34;: &#34;foo/bar/baz&#34;, &#34;unix&#34;: &#34;foo/bar/quux&#34;, &#34;windows&#34;: &#34;foo\\bar\\quux&#34; } Related content The path built-in package ">
+  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function path.Join to construct well-formed paths from their individual string components.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-14T11:20:40+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Using &#34;path.Join&#34; to construct well-formed paths">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function path.Join to construct well-formed paths from their individual string components.
-Copied! file.cue Copy code Copied! package example import &#34;path&#34; join: path.Join([&#34;foo&#34;, &#34;bar&#34;, &#34;baz&#34;], path.Unix) unix: path.Join(_components, path.Unix) windows: path.Join(_components, path.Windows) _components: [ &#34;foo&#34;, &#34;bar&#34;, &#34;baz&#34;, &#34;..&#34;, &#34;quux&#34;, ] TERMINAL Copy code Copied! $ cue export { &#34;join&#34;: &#34;foo/bar/baz&#34;, &#34;unix&#34;: &#34;foo/bar/quux&#34;, &#34;windows&#34;: &#34;foo\\bar\\quux&#34; } Related content The path built-in package ">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function path.Join to construct well-formed paths from their individual string components.">
 
 
 
@@ -54,11 +52,13 @@ Copied! file.cue Copy code Copied! package example import &#34;path&#34; join: p
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Using &#34;path.Join&#34; to construct well-formed paths">
-<meta itemprop="description" content="This Commented CUE demonstrates how to use the built-in function path.Join to construct well-formed paths from their individual string components.
-Copied! file.cue Copy code Copied! package example import &#34;path&#34; join: path.Join([&#34;foo&#34;, &#34;bar&#34;, &#34;baz&#34;], path.Unix) unix: path.Join(_components, path.Unix) windows: path.Join(_components, path.Windows) _components: [ &#34;foo&#34;, &#34;bar&#34;, &#34;baz&#34;, &#34;..&#34;, &#34;quux&#34;, ] TERMINAL Copy code Copied! $ cue export { &#34;join&#34;: &#34;foo/bar/baz&#34;, &#34;unix&#34;: &#34;foo/bar/quux&#34;, &#34;windows&#34;: &#34;foo\\bar\\quux&#34; } Related content The path built-in package ">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to use the built-in function
+path.Join
+to construct well-formed paths from their individual string components.">
 
     
-        <meta itemprop="dateModified" content="2024-03-14T11:20:40+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -358,7 +358,6 @@ _components: [
 Related content
 
 The path built-in package
-
 ">
 <meta itemprop="wordCount" content="69">
 
@@ -561,14 +560,13 @@ to construct well-formed paths from their individual string components.</p>
 <ul>
 <li>The <a href="https://pkg.go.dev/cuelang.org/go/pkg/path"><code>path</code></a> built-in package</li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/f093edc6d6d54a94416381e09e19d69c0580b51b">
-                Last modified March 14, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -617,7 +615,7 @@ to construct well-formed paths from their individual string components.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-path-join-to-construct-well-formed-paths/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20path.Join%20to%20construct%20well-formed%20paths%20from%20their%20individual%20string%20components.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;path&amp;#34;%20join:%20path.Join%28[&amp;#34;foo&amp;#34;,%20&amp;#34;bar&amp;#34;,%20&amp;#34;baz&amp;#34;],%20path.Unix%29%20unix:%20path.Join%28_components,%20path.Unix%29%20windows:%20path.Join%28_components,%20path.Windows%29%20_components:%20[%20&amp;#34;foo&amp;#34;,%20&amp;#34;bar&amp;#34;,%20&amp;#34;baz&amp;#34;,%20&amp;#34;..&amp;#34;,%20&amp;#34;quux&amp;#34;,%20]%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20export%20%7b%20&amp;#34;join&amp;#34;:%20&amp;#34;foo/bar/baz&amp;#34;,%20&amp;#34;unix&amp;#34;:%20&amp;#34;foo/bar/quux&amp;#34;,%20&amp;#34;windows&amp;#34;:%20&amp;#34;foo%5c%5cbar%5c%5cquux&amp;#34;%20%7d%20Related%20content%20The%20path%20built-in%20package%20">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-path-join-to-construct-well-formed-paths/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/path#Join%22%3e%3ccode%3epath.Join%3c/code%3e%3c/a%3e%0ato%20construct%20well-formed%20paths%20from%20their%20individual%20string%20components.%3c/p%3e">
                 
 
 
@@ -633,7 +631,7 @@ to construct well-formed paths from their individual string components.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-path-join-to-construct-well-formed-paths/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20path.Join%20to%20construct%20well-formed%20paths%20from%20their%20individual%20string%20components.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;path&amp;#34;%20join:%20path.Join%28[&amp;#34;foo&amp;#34;,%20&amp;#34;bar&amp;#34;,%20&amp;#34;baz&amp;#34;],%20path.Unix%29%20unix:%20path.Join%28_components,%20path.Unix%29%20windows:%20path.Join%28_components,%20path.Windows%29%20_components:%20[%20&amp;#34;foo&amp;#34;,%20&amp;#34;bar&amp;#34;,%20&amp;#34;baz&amp;#34;,%20&amp;#34;..&amp;#34;,%20&amp;#34;quux&amp;#34;,%20]%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20export%20%7b%20&amp;#34;join&amp;#34;:%20&amp;#34;foo/bar/baz&amp;#34;,%20&amp;#34;unix&amp;#34;:%20&amp;#34;foo/bar/quux&amp;#34;,%20&amp;#34;windows&amp;#34;:%20&amp;#34;foo%5c%5cbar%5c%5cquux&amp;#34;%20%7d%20Related%20content%20The%20path%20built-in%20package%20">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-path-join-to-construct-well-formed-paths/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/path#Join%22%3e%3ccode%3epath.Join%3c/code%3e%3c/a%3e%0ato%20construct%20well-formed%20paths%20from%20their%20individual%20string%20components.%3c/p%3e">
                 
 
 

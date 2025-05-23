@@ -22,18 +22,18 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Logging statistics from the CUE evaluator">
   <meta property="og:description" content="The cue command can log various summary statistics about each evaluation it performs, in order to assist with the diagnosis of performance-related and other issues. The command logs statistics when the CUE_STATS_FILE environment variable is set to a filename.
-The filename is interpreted through the same rules that cue export applies to its --outfile argument, which are explained in cue help filetypes. Statistics for each evaluation are written into the named file using the file’s implied data format.">
+The filename is interpreted through the same rules that cue export applies to its --outfile argument, which are explained in cue help filetypes. Statistics for each evaluation are written into the named file using the file’s implied data format. The file is overwritten on each cue invocation, without confirmation.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Logging statistics from the CUE evaluator">
   <meta name="twitter:description" content="The cue command can log various summary statistics about each evaluation it performs, in order to assist with the diagnosis of performance-related and other issues. The command logs statistics when the CUE_STATS_FILE environment variable is set to a filename.
-The filename is interpreted through the same rules that cue export applies to its --outfile argument, which are explained in cue help filetypes. Statistics for each evaluation are written into the named file using the file’s implied data format.">
+The filename is interpreted through the same rules that cue export applies to its --outfile argument, which are explained in cue help filetypes. Statistics for each evaluation are written into the named file using the file’s implied data format. The file is overwritten on each cue invocation, without confirmation.">
 
 
 
@@ -54,11 +54,19 @@ The filename is interpreted through the same rules that cue export applies to it
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Logging statistics from the CUE evaluator">
-<meta itemprop="description" content="The cue command can log various summary statistics about each evaluation it performs, in order to assist with the diagnosis of performance-related and other issues. The command logs statistics when the CUE_STATS_FILE environment variable is set to a filename.
-The filename is interpreted through the same rules that cue export applies to its --outfile argument, which are explained in cue help filetypes. Statistics for each evaluation are written into the named file using the file&rsquo;s implied data format.">
+<meta itemprop="description" content="The cue command can log various summary statistics about each evaluation it
+performs, in order to assist with the diagnosis of performance-related and
+other issues. The command logs statistics when the CUE_STATS_FILE environment
+variable is set to a filename.
+The filename is interpreted through the same rules that cue export applies to
+its --outfile argument, which are explained in
+cue help filetypes.
+Statistics for each evaluation are written into the named file using the file&rsquo;s
+implied data format.
+The file is overwritten on each cue invocation, without confirmation.">
 
     
-        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -323,7 +331,6 @@ Related content
 
 Issue #2856 tracks enhancements to the set of statistics captured by cue
 Reference: cue help filetypes
-
 ">
 <meta itemprop="wordCount" content="190">
 
@@ -484,14 +491,13 @@ For example: to emit YAML, specify <code>yaml:-</code>.</p>
 <li><a href="/issue/2856">Issue #2856</a> tracks enhancements to the set of statistics captured by <code>cue</code></li>
 <li>Reference: <a href="/docs/reference/command/cue-help-filetypes/">cue help filetypes</a></li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
-                Last modified May 22, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -544,7 +550,7 @@ For example: to emit YAML, specify <code>yaml:-</code>.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/log-statistics-from-the-cue-evaluator/&text=The%20cue%20command%20can%20log%20various%20summary%20statistics%20about%20each%20evaluation%20it%20performs,%20in%20order%20to%20assist%20with%20the%20diagnosis%20of%20performance-related%20and%20other%20issues.%20The%20command%20logs%20statistics%20when%20the%20CUE_STATS_FILE%20environment%20variable%20is%20set%20to%20a%20filename.%0aThe%20filename%20is%20interpreted%20through%20the%20same%20rules%20that%20cue%20export%20applies%20to%20its%20--outfile%20argument,%20which%20are%20explained%20in%20cue%20help%20filetypes.%20Statistics%20for%20each%20evaluation%20are%20written%20into%20the%20named%20file%20using%20the%20file&amp;rsquo;s%20implied%20data%20format.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/log-statistics-from-the-cue-evaluator/&text=%3cp%3eThe%20%3ccode%3ecue%3c/code%3e%20command%20can%20log%20various%20summary%20statistics%20about%20each%20evaluation%20it%0aperforms,%20in%20order%20to%20assist%20with%20the%20diagnosis%20of%20performance-related%20and%0aother%20issues.%20The%20command%20logs%20statistics%20when%20the%20%3ccode%3eCUE_STATS_FILE%3c/code%3e%20environment%0avariable%20is%20set%20to%20a%20filename.%3c/p%3e%0a%3cp%3eThe%20filename%20is%20interpreted%20through%20the%20same%20rules%20that%20%3ccode%3ecue%20export%3c/code%3e%20applies%20to%0aits%20%3ccode%3e--outfile%3c/code%3e%20argument,%20which%20are%20explained%20in%0a%3ca%20href=%22/docs/reference/command/cue-help-filetypes/%22%3e%3ccode%3ecue%20help%20filetypes%3c/code%3e%3c/a%3e.%0aStatistics%20for%20each%20evaluation%20are%20written%20into%20the%20named%20file%20using%20the%20file&amp;rsquo;s%0aimplied%20data%20format.%0aThe%20file%20is%20overwritten%20on%20each%20%3ccode%3ecue%3c/code%3e%20invocation,%20without%20confirmation.%3c/p%3e">
                 
 
 
@@ -560,7 +566,7 @@ For example: to emit YAML, specify <code>yaml:-</code>.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/log-statistics-from-the-cue-evaluator/&summary=The%20cue%20command%20can%20log%20various%20summary%20statistics%20about%20each%20evaluation%20it%20performs,%20in%20order%20to%20assist%20with%20the%20diagnosis%20of%20performance-related%20and%20other%20issues.%20The%20command%20logs%20statistics%20when%20the%20CUE_STATS_FILE%20environment%20variable%20is%20set%20to%20a%20filename.%0aThe%20filename%20is%20interpreted%20through%20the%20same%20rules%20that%20cue%20export%20applies%20to%20its%20--outfile%20argument,%20which%20are%20explained%20in%20cue%20help%20filetypes.%20Statistics%20for%20each%20evaluation%20are%20written%20into%20the%20named%20file%20using%20the%20file&amp;rsquo;s%20implied%20data%20format.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/log-statistics-from-the-cue-evaluator/&summary=%3cp%3eThe%20%3ccode%3ecue%3c/code%3e%20command%20can%20log%20various%20summary%20statistics%20about%20each%20evaluation%20it%0aperforms,%20in%20order%20to%20assist%20with%20the%20diagnosis%20of%20performance-related%20and%0aother%20issues.%20The%20command%20logs%20statistics%20when%20the%20%3ccode%3eCUE_STATS_FILE%3c/code%3e%20environment%0avariable%20is%20set%20to%20a%20filename.%3c/p%3e%0a%3cp%3eThe%20filename%20is%20interpreted%20through%20the%20same%20rules%20that%20%3ccode%3ecue%20export%3c/code%3e%20applies%20to%0aits%20%3ccode%3e--outfile%3c/code%3e%20argument,%20which%20are%20explained%20in%0a%3ca%20href=%22/docs/reference/command/cue-help-filetypes/%22%3e%3ccode%3ecue%20help%20filetypes%3c/code%3e%3c/a%3e.%0aStatistics%20for%20each%20evaluation%20are%20written%20into%20the%20named%20file%20using%20the%20file&amp;rsquo;s%0aimplied%20data%20format.%0aThe%20file%20is%20overwritten%20on%20each%20%3ccode%3ecue%3c/code%3e%20invocation,%20without%20confirmation.%3c/p%3e">
                 
 
 

@@ -22,18 +22,18 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Building libcue as a shared library">
   <meta property="og:description" content="The library libcue provides a mechanism to use CUE in C and C-like languages. This guide demonstrates how it can be compiled as a shared library, which is a required step before using it with languages such as Java.
-libcue is an experimental technology preview. The library is under development and is subject to change. Prerequisites Go version 1.22 or later with cgo enabled – installation details GCC or Clang – any version shipped with a relatively modern Linux or macOS will be sufficient Git – installation details Set up the build environment 1Enable cgo:">
+libcue is an experimental technology preview. The library is under development and is subject to change. ">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-02-21T04:50:16+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Building libcue as a shared library">
   <meta name="twitter:description" content="The library libcue provides a mechanism to use CUE in C and C-like languages. This guide demonstrates how it can be compiled as a shared library, which is a required step before using it with languages such as Java.
-libcue is an experimental technology preview. The library is under development and is subject to change. Prerequisites Go version 1.22 or later with cgo enabled – installation details GCC or Clang – any version shipped with a relatively modern Linux or macOS will be sufficient Git – installation details Set up the build environment 1Enable cgo:">
+libcue is an experimental technology preview. The library is under development and is subject to change. ">
 
 
 
@@ -54,11 +54,23 @@ libcue is an experimental technology preview. The library is under development a
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Building libcue as a shared library">
-<meta itemprop="description" content="The library libcue provides a mechanism to use CUE in C and C-like languages. This guide demonstrates how it can be compiled as a shared library, which is a required step before using it with languages such as Java.
-libcue is an experimental technology preview. The library is under development and is subject to change. Prerequisites Go version 1.22 or later with cgo enabled &ndash; installation details GCC or Clang &ndash; any version shipped with a relatively modern Linux or macOS will be sufficient Git &ndash; installation details Set up the build environment 1Enable cgo:">
+<meta itemprop="description" content="The library libcue provides a mechanism
+to use CUE in C and C-like languages. This guide demonstrates how it can be
+compiled as a shared library, which is a required step before using it with
+languages such as Java.
+
+
+
+
 
     
-        <meta itemprop="dateModified" content="2025-02-21T04:50:16+00:00" >
+
+libcue is an experimental technology preview.
+The library is under development and is subject to change.
+">
+
+    
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -501,8 +513,7 @@ available system-wide with an appropriate filename.
 
     
 
-Related content
-">
+Related content">
 <meta itemprop="wordCount" content="556">
 
 
@@ -894,13 +905,12 @@ available system-wide with an appropriate filename.</div>
          xlink:href="/img/ui.svg#icon--link"></use>
 </svg>
 </a>Related content</h2>
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/a6777b528e48a294ca589c76d678565f28dcfe94">
-                Last modified February 21, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -939,7 +949,7 @@ available system-wide with an appropriate filename.</div>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/build-libcue-shared-library/&text=The%20library%20libcue%20provides%20a%20mechanism%20to%20use%20CUE%20in%20C%20and%20C-like%20languages.%20This%20guide%20demonstrates%20how%20it%20can%20be%20compiled%20as%20a%20shared%20library,%20which%20is%20a%20required%20step%20before%20using%20it%20with%20languages%20such%20as%20Java.%0alibcue%20is%20an%20experimental%20technology%20preview.%20The%20library%20is%20under%20development%20and%20is%20subject%20to%20change.%20Prerequisites%20Go%20version%201.22%20or%20later%20with%20cgo%20enabled%20&amp;ndash;%20installation%20details%20GCC%20or%20Clang%20&amp;ndash;%20any%20version%20shipped%20with%20a%20relatively%20modern%20Linux%20or%20macOS%20will%20be%20sufficient%20Git%20&amp;ndash;%20installation%20details%20Set%20up%20the%20build%20environment%201Enable%20cgo:">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/build-libcue-shared-library/&text=%3cp%3eThe%20library%20%3ca%20href=%22https://github.com/cue-lang/libcue%22%3e%3ccode%3elibcue%3c/code%3e%3c/a%3e%20provides%20a%20mechanism%0ato%20use%20CUE%20in%20C%20and%20C-like%20languages.%20This%20guide%20demonstrates%20how%20it%20can%20be%0acompiled%20as%20a%20shared%20library,%20which%20is%20a%20required%20step%20before%20using%20it%20with%0alanguages%20such%20as%20Java.%3c/p%3e%0a%3cdiv%20class=%22note%20note--info%22%20role=%22alert%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20note__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--exclamation%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3cdiv%20class=%22note__content%22%3e%3ccode%3elibcue%3c/code%3e%20is%20an%20experimental%20technology%20preview.%0aThe%20library%20is%20under%20development%20and%20is%20subject%20to%20change.%3c/div%3e%0a%3c/div%3e">
                 
 
 
@@ -955,7 +965,7 @@ available system-wide with an appropriate filename.</div>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/build-libcue-shared-library/&summary=The%20library%20libcue%20provides%20a%20mechanism%20to%20use%20CUE%20in%20C%20and%20C-like%20languages.%20This%20guide%20demonstrates%20how%20it%20can%20be%20compiled%20as%20a%20shared%20library,%20which%20is%20a%20required%20step%20before%20using%20it%20with%20languages%20such%20as%20Java.%0alibcue%20is%20an%20experimental%20technology%20preview.%20The%20library%20is%20under%20development%20and%20is%20subject%20to%20change.%20Prerequisites%20Go%20version%201.22%20or%20later%20with%20cgo%20enabled%20&amp;ndash;%20installation%20details%20GCC%20or%20Clang%20&amp;ndash;%20any%20version%20shipped%20with%20a%20relatively%20modern%20Linux%20or%20macOS%20will%20be%20sufficient%20Git%20&amp;ndash;%20installation%20details%20Set%20up%20the%20build%20environment%201Enable%20cgo:">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/build-libcue-shared-library/&summary=%3cp%3eThe%20library%20%3ca%20href=%22https://github.com/cue-lang/libcue%22%3e%3ccode%3elibcue%3c/code%3e%3c/a%3e%20provides%20a%20mechanism%0ato%20use%20CUE%20in%20C%20and%20C-like%20languages.%20This%20guide%20demonstrates%20how%20it%20can%20be%0acompiled%20as%20a%20shared%20library,%20which%20is%20a%20required%20step%20before%20using%20it%20with%0alanguages%20such%20as%20Java.%3c/p%3e%0a%3cdiv%20class=%22note%20note--info%22%20role=%22alert%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20note__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--exclamation%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3cdiv%20class=%22note__content%22%3e%3ccode%3elibcue%3c/code%3e%20is%20an%20experimental%20technology%20preview.%0aThe%20library%20is%20under%20development%20and%20is%20subject%20to%20change.%3c/div%3e%0a%3c/div%3e">
                 
 
 

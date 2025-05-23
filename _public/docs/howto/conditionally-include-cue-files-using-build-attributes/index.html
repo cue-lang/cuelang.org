@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="This guide demonstrates how to include CUE files in an evaluation conditionally, using build attributes.Our example CUE package is composed of four files: …">
+<meta name="description" content="This guide demonstrates how to include CUE files in an evaluation conditionally, using build attributes.">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,21 +21,17 @@
 <title>Conditionally including CUE files using build attributes | CUE</title><meta property="og:url" content="/docs/howto/conditionally-include-cue-files-using-build-attributes/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Conditionally including CUE files using build attributes">
-  <meta property="og:description" content="This guide demonstrates how to include CUE files in an evaluation conditionally, using build attributes.
-Our example CUE package is composed of four files:
-Copied! foo.cue Copied! bar.cue Copied! qux.cue Copy code Copied! @if(foo) package example &#34;data from foo.cue&#34;: true Copy code Copied! @if(!bar) package example &#34;data from bar.cue&#34;: true Copy code Copied! @if((foo &amp;&amp; !bar) || (!foo &amp;&amp; bar)) package example &#34;data from qux.cue&#34;: true Copied! baz.cue Copy code Copied!">
+  <meta property="og:description" content="This guide demonstrates how to include CUE files in an evaluation conditionally, using build attributes.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-04-25T15:11:20+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Conditionally including CUE files using build attributes">
-  <meta name="twitter:description" content="This guide demonstrates how to include CUE files in an evaluation conditionally, using build attributes.
-Our example CUE package is composed of four files:
-Copied! foo.cue Copied! bar.cue Copied! qux.cue Copy code Copied! @if(foo) package example &#34;data from foo.cue&#34;: true Copy code Copied! @if(!bar) package example &#34;data from bar.cue&#34;: true Copy code Copied! @if((foo &amp;&amp; !bar) || (!foo &amp;&amp; bar)) package example &#34;data from qux.cue&#34;: true Copied! baz.cue Copy code Copied!">
+  <meta name="twitter:description" content="This guide demonstrates how to include CUE files in an evaluation conditionally, using build attributes.">
 
 
 
@@ -56,12 +52,11 @@ Copied! foo.cue Copied! bar.cue Copied! qux.cue Copy code Copied! @if(foo) packa
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Conditionally including CUE files using build attributes">
-<meta itemprop="description" content="This guide demonstrates how to include CUE files in an evaluation conditionally, using build attributes.
-Our example CUE package is composed of four files:
-Copied! foo.cue Copied! bar.cue Copied! qux.cue Copy code Copied! @if(foo) package example &#34;data from foo.cue&#34;: true Copy code Copied! @if(!bar) package example &#34;data from bar.cue&#34;: true Copy code Copied! @if((foo &amp;&amp; !bar) || (!foo &amp;&amp; bar)) package example &#34;data from qux.cue&#34;: true Copied! baz.cue Copy code Copied!">
+<meta itemprop="description" content="This guide demonstrates how to include CUE files in an evaluation
+conditionally, using build attributes.">
 
     
-        <meta itemprop="dateModified" content="2025-04-25T15:11:20+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -481,7 +476,6 @@ Related content
 
 Reference: cue help injection
 &ndash; injecting tags and values into cue command invocations
-
 ">
 <meta itemprop="wordCount" content="296">
 
@@ -822,14 +816,13 @@ do not need to overlap in any way &ndash;
 <li>Reference: <a href="/docs/reference/command/cue-help-injection/">cue help injection</a>
 &ndash; injecting tags and values into <code>cue</code> command invocations</li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/2b5cda70cc686e1b10685a2cf836c94a5564f41f">
-                Last modified April 25, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -878,7 +871,7 @@ do not need to overlap in any way &ndash;
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/conditionally-include-cue-files-using-build-attributes/&text=This%20guide%20demonstrates%20how%20to%20include%20CUE%20files%20in%20an%20evaluation%20conditionally,%20using%20build%20attributes.%0aOur%20example%20CUE%20package%20is%20composed%20of%20four%20files:%0aCopied!%20foo.cue%20Copied!%20bar.cue%20Copied!%20qux.cue%20Copy%20code%20Copied!%20@if%28foo%29%20package%20example%20&amp;#34;data%20from%20foo.cue&amp;#34;:%20true%20Copy%20code%20Copied!%20@if%28!bar%29%20package%20example%20&amp;#34;data%20from%20bar.cue&amp;#34;:%20true%20Copy%20code%20Copied!%20@if%28%28foo%20&amp;amp;&amp;amp;%20!bar%29%20%7c%7c%20%28!foo%20&amp;amp;&amp;amp;%20bar%29%29%20package%20example%20&amp;#34;data%20from%20qux.cue&amp;#34;:%20true%20Copied!%20baz.cue%20Copy%20code%20Copied!">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/conditionally-include-cue-files-using-build-attributes/&text=%3cp%3eThis%20guide%20demonstrates%20how%20to%20include%20CUE%20files%20in%20an%20evaluation%0aconditionally,%20using%20build%20attributes.%3c/p%3e">
                 
 
 
@@ -894,7 +887,7 @@ do not need to overlap in any way &ndash;
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/conditionally-include-cue-files-using-build-attributes/&summary=This%20guide%20demonstrates%20how%20to%20include%20CUE%20files%20in%20an%20evaluation%20conditionally,%20using%20build%20attributes.%0aOur%20example%20CUE%20package%20is%20composed%20of%20four%20files:%0aCopied!%20foo.cue%20Copied!%20bar.cue%20Copied!%20qux.cue%20Copy%20code%20Copied!%20@if%28foo%29%20package%20example%20&amp;#34;data%20from%20foo.cue&amp;#34;:%20true%20Copy%20code%20Copied!%20@if%28!bar%29%20package%20example%20&amp;#34;data%20from%20bar.cue&amp;#34;:%20true%20Copy%20code%20Copied!%20@if%28%28foo%20&amp;amp;&amp;amp;%20!bar%29%20%7c%7c%20%28!foo%20&amp;amp;&amp;amp;%20bar%29%29%20package%20example%20&amp;#34;data%20from%20qux.cue&amp;#34;:%20true%20Copied!%20baz.cue%20Copy%20code%20Copied!">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/conditionally-include-cue-files-using-build-attributes/&summary=%3cp%3eThis%20guide%20demonstrates%20how%20to%20include%20CUE%20files%20in%20an%20evaluation%0aconditionally,%20using%20build%20attributes.%3c/p%3e">
                 
 
 

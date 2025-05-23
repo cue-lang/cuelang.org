@@ -23,11 +23,12 @@
   <meta property="og:title" content="Using the built-in function &#34;matchIf&#34; as a field validator">
   <meta property="og:description" content="This guide demonstrates how to use the built-in function matchIf. It may only be used as a field validator and can’t be called as a function that returns a boolean value.
 matchIf requires three arguments:
-the if-value the then-value the else-value The function first checks if a field’s value can unify successfully with the if-value, and then validates the field’s value by performing one of two tests. If the test fails, then the field’s value is invalid:">
+the if-value the then-value the else-value The function first checks if a field’s value can unify successfully with the if-value, and then validates the field’s value by performing one of two tests. If the test fails, then the field’s value is invalid:
+If the field’s value could unify successfully with the if-value, can the field’s value also unify successfully with the then-value? If the field’s value could not unify successfully with the if-value, can the field’s value also unify successfully with the else-value? ">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-04-08T13:31:31+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +36,8 @@ the if-value the then-value the else-value The function first checks if a field�
   <meta name="twitter:title" content="Using the built-in function &#34;matchIf&#34; as a field validator">
   <meta name="twitter:description" content="This guide demonstrates how to use the built-in function matchIf. It may only be used as a field validator and can’t be called as a function that returns a boolean value.
 matchIf requires three arguments:
-the if-value the then-value the else-value The function first checks if a field’s value can unify successfully with the if-value, and then validates the field’s value by performing one of two tests. If the test fails, then the field’s value is invalid:">
+the if-value the then-value the else-value The function first checks if a field’s value can unify successfully with the if-value, and then validates the field’s value by performing one of two tests. If the test fails, then the field’s value is invalid:
+If the field’s value could unify successfully with the if-value, can the field’s value also unify successfully with the then-value? If the field’s value could not unify successfully with the if-value, can the field’s value also unify successfully with the else-value? ">
 
 
 
@@ -56,12 +58,29 @@ the if-value the then-value the else-value The function first checks if a field�
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Using the built-in function &#34;matchIf&#34; as a field validator">
-<meta itemprop="description" content="This guide demonstrates how to use the built-in function matchIf. It may only be used as a field validator and can&rsquo;t be called as a function that returns a boolean value.
+<meta itemprop="description" content="This guide demonstrates how to use the
+built-in
+function matchIf.
+It may only be used as a field validator and
+can&rsquo;t be called as a function that returns a boolean value.
 matchIf requires three arguments:
-the if-value the then-value the else-value The function first checks if a field&rsquo;s value can unify successfully with the if-value, and then validates the field&rsquo;s value by performing one of two tests. If the test fails, then the field&rsquo;s value is invalid:">
+
+the if-value
+the then-value
+the else-value
+
+The function first checks if a field&rsquo;s value can unify successfully with the if-value,
+and then validates the field&rsquo;s value by performing one of two tests.
+If the test fails, then the field&rsquo;s value is invalid:
+
+If the field&rsquo;s value could unify successfully with the if-value, can
+the field&rsquo;s value also unify successfully with the then-value?
+If the field&rsquo;s value could not unify successfully with the if-value,
+can the field&rsquo;s value also unify successfully with the else-value?
+">
 
     
-        <meta itemprop="dateModified" content="2025-04-08T13:31:31+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -455,8 +474,7 @@ A: matchIf(#A, #A, #A) &amp; {
 This behaviour may change with future CUE releases.
 If support for hidden fields or definitions is important to how you would like
 to use matchIf, please join the CUE community
-and tell us about your use case.
-">
+and tell us about your use case.">
 <meta itemprop="wordCount" content="358">
 
 
@@ -754,13 +772,12 @@ when checking for a match with any of its parameters
 If support for hidden fields or definitions is important to how you would like
 to use <code>matchIf</code>, please join <a href="/community/">the CUE community</a>
 and tell us about your use case.</p>
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7c104835c2bd9731b5a6b8cd703b905b2a4896aa">
-                Last modified April 8, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -799,7 +816,7 @@ and tell us about your use case.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-the-built-in-function-matchif/&text=This%20guide%20demonstrates%20how%20to%20use%20the%20built-in%20function%20matchIf.%20It%20may%20only%20be%20used%20as%20a%20field%20validator%20and%20can&amp;rsquo;t%20be%20called%20as%20a%20function%20that%20returns%20a%20boolean%20value.%0amatchIf%20requires%20three%20arguments:%0athe%20if-value%20the%20then-value%20the%20else-value%20The%20function%20first%20checks%20if%20a%20field&amp;rsquo;s%20value%20can%20unify%20successfully%20with%20the%20if-value,%20and%20then%20validates%20the%20field&amp;rsquo;s%20value%20by%20performing%20one%20of%20two%20tests.%20If%20the%20test%20fails,%20then%20the%20field&amp;rsquo;s%20value%20is%20invalid:">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-the-built-in-function-matchif/&text=%3cp%3eThis%20guide%20demonstrates%20how%20to%20use%20the%0a%3ca%20href=%22/docs/reference/glossary/#built-in-functions%22%3ebuilt-in%3c/a%3e%0afunction%20%3ccode%3ematchIf%3c/code%3e.%0aIt%20may%20only%20be%20used%20as%20a%20field%20validator%20and%0acan&amp;rsquo;t%20be%20called%20as%20a%20function%20that%20returns%20a%20boolean%20value.%3c/p%3e%0a%3cp%3e%3ccode%3ematchIf%3c/code%3e%20requires%20three%20arguments:%3c/p%3e%0a%3col%3e%0a%3cli%3ethe%20%3cem%3eif-value%3c/em%3e%3c/li%3e%0a%3cli%3ethe%20%3cem%3ethen-value%3c/em%3e%3c/li%3e%0a%3cli%3ethe%20%3cem%3eelse-value%3c/em%3e%3c/li%3e%0a%3c/ol%3e%0a%3cp%3eThe%20function%20first%20checks%20if%20a%20field&amp;rsquo;s%20value%20can%20unify%20successfully%20with%20the%20%3cem%3eif-value%3c/em%3e,%0aand%20then%20validates%20the%20field&amp;rsquo;s%20value%20by%20performing%20one%20of%20two%20tests.%0aIf%20the%20test%20fails,%20then%20the%20field&amp;rsquo;s%20value%20is%20invalid:%3c/p%3e%0a%3cul%3e%0a%3cli%3eIf%20the%20field&amp;rsquo;s%20value%20%3cstrong%3ecould%3c/strong%3e%20unify%20successfully%20with%20the%20%3cem%3eif-value%3c/em%3e,%20can%0athe%20field&amp;rsquo;s%20value%20also%20unify%20successfully%20with%20the%20%3cem%3ethen-value%3c/em%3e?%3c/li%3e%0a%3cli%3eIf%20the%20field&amp;rsquo;s%20value%20%3cstrong%3ecould%20not%3c/strong%3e%20unify%20successfully%20with%20the%20%3cem%3eif-value%3c/em%3e,%0acan%20the%20field&amp;rsquo;s%20value%20also%20unify%20successfully%20with%20the%20%3cem%3eelse-value%3c/em%3e?%3c/li%3e%0a%3c/ul%3e">
                 
 
 
@@ -815,7 +832,7 @@ and tell us about your use case.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-the-built-in-function-matchif/&summary=This%20guide%20demonstrates%20how%20to%20use%20the%20built-in%20function%20matchIf.%20It%20may%20only%20be%20used%20as%20a%20field%20validator%20and%20can&amp;rsquo;t%20be%20called%20as%20a%20function%20that%20returns%20a%20boolean%20value.%0amatchIf%20requires%20three%20arguments:%0athe%20if-value%20the%20then-value%20the%20else-value%20The%20function%20first%20checks%20if%20a%20field&amp;rsquo;s%20value%20can%20unify%20successfully%20with%20the%20if-value,%20and%20then%20validates%20the%20field&amp;rsquo;s%20value%20by%20performing%20one%20of%20two%20tests.%20If%20the%20test%20fails,%20then%20the%20field&amp;rsquo;s%20value%20is%20invalid:">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-the-built-in-function-matchif/&summary=%3cp%3eThis%20guide%20demonstrates%20how%20to%20use%20the%0a%3ca%20href=%22/docs/reference/glossary/#built-in-functions%22%3ebuilt-in%3c/a%3e%0afunction%20%3ccode%3ematchIf%3c/code%3e.%0aIt%20may%20only%20be%20used%20as%20a%20field%20validator%20and%0acan&amp;rsquo;t%20be%20called%20as%20a%20function%20that%20returns%20a%20boolean%20value.%3c/p%3e%0a%3cp%3e%3ccode%3ematchIf%3c/code%3e%20requires%20three%20arguments:%3c/p%3e%0a%3col%3e%0a%3cli%3ethe%20%3cem%3eif-value%3c/em%3e%3c/li%3e%0a%3cli%3ethe%20%3cem%3ethen-value%3c/em%3e%3c/li%3e%0a%3cli%3ethe%20%3cem%3eelse-value%3c/em%3e%3c/li%3e%0a%3c/ol%3e%0a%3cp%3eThe%20function%20first%20checks%20if%20a%20field&amp;rsquo;s%20value%20can%20unify%20successfully%20with%20the%20%3cem%3eif-value%3c/em%3e,%0aand%20then%20validates%20the%20field&amp;rsquo;s%20value%20by%20performing%20one%20of%20two%20tests.%0aIf%20the%20test%20fails,%20then%20the%20field&amp;rsquo;s%20value%20is%20invalid:%3c/p%3e%0a%3cul%3e%0a%3cli%3eIf%20the%20field&amp;rsquo;s%20value%20%3cstrong%3ecould%3c/strong%3e%20unify%20successfully%20with%20the%20%3cem%3eif-value%3c/em%3e,%20can%0athe%20field&amp;rsquo;s%20value%20also%20unify%20successfully%20with%20the%20%3cem%3ethen-value%3c/em%3e?%3c/li%3e%0a%3cli%3eIf%20the%20field&amp;rsquo;s%20value%20%3cstrong%3ecould%20not%3c/strong%3e%20unify%20successfully%20with%20the%20%3cem%3eif-value%3c/em%3e,%0acan%20the%20field&amp;rsquo;s%20value%20also%20unify%20successfully%20with%20the%20%3cem%3eelse-value%3c/em%3e?%3c/li%3e%0a%3c/ul%3e">
                 
 
 

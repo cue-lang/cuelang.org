@@ -22,20 +22,18 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Handling errors in the Go API">
   <meta property="og:description" content="The CUE Go API contains several functions that might need to communicate runtime errors to their caller, such as problems during evaluation or validation. They do this using the cue/errors.Error type, and the cue/errors package contains functions that allow you to interrogate and manipulate these errors.
-This guide demonstrates how to catch these errors and how to use the cue/errors package to examine their details.
-Set up some CUE code 1If you don’t already have an existing CUE module, initialize one to contain a configuration:">
+This guide demonstrates how to catch these errors and how to use the cue/errors package to examine their details.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Handling errors in the Go API">
   <meta name="twitter:description" content="The CUE Go API contains several functions that might need to communicate runtime errors to their caller, such as problems during evaluation or validation. They do this using the cue/errors.Error type, and the cue/errors package contains functions that allow you to interrogate and manipulate these errors.
-This guide demonstrates how to catch these errors and how to use the cue/errors package to examine their details.
-Set up some CUE code 1If you don’t already have an existing CUE module, initialize one to contain a configuration:">
+This guide demonstrates how to catch these errors and how to use the cue/errors package to examine their details.">
 
 
 
@@ -56,12 +54,18 @@ Set up some CUE code 1If you don’t already have an existing CUE module, initia
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Handling errors in the Go API">
-<meta itemprop="description" content="The CUE Go API contains several functions that might need to communicate runtime errors to their caller, such as problems during evaluation or validation. They do this using the cue/errors.Error type, and the cue/errors package contains functions that allow you to interrogate and manipulate these errors.
-This guide demonstrates how to catch these errors and how to use the cue/errors package to examine their details.
-Set up some CUE code 1If you don&rsquo;t already have an existing CUE module, initialize one to contain a configuration:">
+<meta itemprop="description" content="The CUE Go API contains several functions that might need to communicate
+runtime errors to their caller, such as problems during evaluation or
+validation. They do this using the
+cue/errors.Error type,
+and the cue/errors
+package contains functions that allow you to interrogate and manipulate these
+errors.
+This guide demonstrates how to catch these errors
+and how to use the cue/errors package to examine their details.">
 
     
-        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -545,7 +549,6 @@ Tag:
          &ndash; pages documenting and using the Go API
 Go API: cue/errors
 &ndash; package documentation
-
 ">
 <meta itemprop="wordCount" content="517">
 
@@ -1002,14 +1005,13 @@ method.</p>
 <li>Go API: <a href="https://pkg.go.dev/cuelang.org/go/cue/errors#section-documentation"><code>cue/errors</code></a>
 &ndash; package documentation</li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
-                Last modified May 22, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -1058,7 +1060,7 @@ method.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/handle-errors-go-api/&text=The%20CUE%20Go%20API%20contains%20several%20functions%20that%20might%20need%20to%20communicate%20runtime%20errors%20to%20their%20caller,%20such%20as%20problems%20during%20evaluation%20or%20validation.%20They%20do%20this%20using%20the%20cue/errors.Error%20type,%20and%20the%20cue/errors%20package%20contains%20functions%20that%20allow%20you%20to%20interrogate%20and%20manipulate%20these%20errors.%0aThis%20guide%20demonstrates%20how%20to%20catch%20these%20errors%20and%20how%20to%20use%20the%20cue/errors%20package%20to%20examine%20their%20details.%0aSet%20up%20some%20CUE%20code%201If%20you%20don&amp;rsquo;t%20already%20have%20an%20existing%20CUE%20module,%20initialize%20one%20to%20contain%20a%20configuration:">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/handle-errors-go-api/&text=%3cp%3eThe%20CUE%20Go%20API%20contains%20several%20functions%20that%20might%20need%20to%20communicate%0aruntime%20errors%20to%20their%20caller,%20such%20as%20problems%20during%20evaluation%20or%0avalidation.%20They%20do%20this%20using%20the%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/cue/errors#Error%22%3e%3ccode%3ecue/errors.Error%3c/code%3e%3c/a%3e%20type,%0aand%20the%20%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/cue/errors%22%3e%3ccode%3ecue/errors%3c/code%3e%3c/a%3e%0apackage%20contains%20functions%20that%20allow%20you%20to%20interrogate%20and%20manipulate%20these%0aerrors.%3c/p%3e%0a%3cp%3eThis%20guide%20demonstrates%20how%20to%20catch%20these%20errors%0aand%20how%20to%20use%20the%20%3ccode%3ecue/errors%3c/code%3e%20package%20to%20examine%20their%20details.%3c/p%3e">
                 
 
 
@@ -1074,7 +1076,7 @@ method.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/handle-errors-go-api/&summary=The%20CUE%20Go%20API%20contains%20several%20functions%20that%20might%20need%20to%20communicate%20runtime%20errors%20to%20their%20caller,%20such%20as%20problems%20during%20evaluation%20or%20validation.%20They%20do%20this%20using%20the%20cue/errors.Error%20type,%20and%20the%20cue/errors%20package%20contains%20functions%20that%20allow%20you%20to%20interrogate%20and%20manipulate%20these%20errors.%0aThis%20guide%20demonstrates%20how%20to%20catch%20these%20errors%20and%20how%20to%20use%20the%20cue/errors%20package%20to%20examine%20their%20details.%0aSet%20up%20some%20CUE%20code%201If%20you%20don&amp;rsquo;t%20already%20have%20an%20existing%20CUE%20module,%20initialize%20one%20to%20contain%20a%20configuration:">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/handle-errors-go-api/&summary=%3cp%3eThe%20CUE%20Go%20API%20contains%20several%20functions%20that%20might%20need%20to%20communicate%0aruntime%20errors%20to%20their%20caller,%20such%20as%20problems%20during%20evaluation%20or%0avalidation.%20They%20do%20this%20using%20the%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/cue/errors#Error%22%3e%3ccode%3ecue/errors.Error%3c/code%3e%3c/a%3e%20type,%0aand%20the%20%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/cue/errors%22%3e%3ccode%3ecue/errors%3c/code%3e%3c/a%3e%0apackage%20contains%20functions%20that%20allow%20you%20to%20interrogate%20and%20manipulate%20these%0aerrors.%3c/p%3e%0a%3cp%3eThis%20guide%20demonstrates%20how%20to%20catch%20these%20errors%0aand%20how%20to%20use%20the%20%3ccode%3ecue/errors%3c/code%3e%20package%20to%20examine%20their%20details.%3c/p%3e">
                 
 
 

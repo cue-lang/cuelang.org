@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="This Commented CUE demonstrates how to use the built-in function list.Concat to concatenate a list of lists.Copied! file.cue Copy code Copied! package example …">
+<meta name="description" content="This Commented CUE demonstrates how to use the built-in function list.Concat to concatenate a list of lists.">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,19 +21,17 @@
 <title>Using &#34;list.Concat&#34; to concatenate lists | CUE</title><meta property="og:url" content="/docs/howto/use-list-concat-to-concatenate-lists/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Using &#34;list.Concat&#34; to concatenate lists">
-  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function list.Concat to concatenate a list of lists.
-Copied! file.cue Copy code Copied! package example import &#34;list&#34; output: list.Concat([listA, listB, listC, listB]) listA: [1, 2, 3, 4] listB: [&#34;hello&#34;, &#34;world&#34;] listC: [{ a: 10 b: &#34;10&#34; }, { a: 11 b: &#34;11&#34; }, { a: 12 b: &#34;12&#34; }] TERMINAL Copy code Copied! $ cue export -e output [ 1, 2, 3, 4, &#34;hello&#34;, &#34;world&#34;, { &#34;a&#34;: 10, &#34;b&#34;: &#34;10&#34; }, { &#34;a&#34;: 11, &#34;b&#34;: &#34;11&#34; }, { &#34;a&#34;: 12, &#34;b&#34;: &#34;12&#34; }, &#34;hello&#34;, &#34;world&#34; ] Related content The list built-in package ">
+  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function list.Concat to concatenate a list of lists.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-14T11:20:40+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Using &#34;list.Concat&#34; to concatenate lists">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function list.Concat to concatenate a list of lists.
-Copied! file.cue Copy code Copied! package example import &#34;list&#34; output: list.Concat([listA, listB, listC, listB]) listA: [1, 2, 3, 4] listB: [&#34;hello&#34;, &#34;world&#34;] listC: [{ a: 10 b: &#34;10&#34; }, { a: 11 b: &#34;11&#34; }, { a: 12 b: &#34;12&#34; }] TERMINAL Copy code Copied! $ cue export -e output [ 1, 2, 3, 4, &#34;hello&#34;, &#34;world&#34;, { &#34;a&#34;: 10, &#34;b&#34;: &#34;10&#34; }, { &#34;a&#34;: 11, &#34;b&#34;: &#34;11&#34; }, { &#34;a&#34;: 12, &#34;b&#34;: &#34;12&#34; }, &#34;hello&#34;, &#34;world&#34; ] Related content The list built-in package ">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function list.Concat to concatenate a list of lists.">
 
 
 
@@ -54,11 +52,13 @@ Copied! file.cue Copy code Copied! package example import &#34;list&#34; output:
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Using &#34;list.Concat&#34; to concatenate lists">
-<meta itemprop="description" content="This Commented CUE demonstrates how to use the built-in function list.Concat to concatenate a list of lists.
-Copied! file.cue Copy code Copied! package example import &#34;list&#34; output: list.Concat([listA, listB, listC, listB]) listA: [1, 2, 3, 4] listB: [&#34;hello&#34;, &#34;world&#34;] listC: [{ a: 10 b: &#34;10&#34; }, { a: 11 b: &#34;11&#34; }, { a: 12 b: &#34;12&#34; }] TERMINAL Copy code Copied! $ cue export -e output [ 1, 2, 3, 4, &#34;hello&#34;, &#34;world&#34;, { &#34;a&#34;: 10, &#34;b&#34;: &#34;10&#34; }, { &#34;a&#34;: 11, &#34;b&#34;: &#34;11&#34; }, { &#34;a&#34;: 12, &#34;b&#34;: &#34;12&#34; }, &#34;hello&#34;, &#34;world&#34; ] Related content The list built-in package ">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to use the built-in function
+list.Concat
+to concatenate a list of lists.">
 
     
-        <meta itemprop="dateModified" content="2024-03-14T11:20:40+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -377,7 +377,6 @@ listC: [{
 Related content
 
 The list built-in package
-
 ">
 <meta itemprop="wordCount" content="101">
 
@@ -599,14 +598,13 @@ to concatenate a list of lists.</p>
 <ul>
 <li>The <a href="https://pkg.go.dev/cuelang.org/go/pkg/list"><code>list</code></a> built-in package</li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/f093edc6d6d54a94416381e09e19d69c0580b51b">
-                Last modified March 14, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -655,7 +653,7 @@ to concatenate a list of lists.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-list-concat-to-concatenate-lists/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20list.Concat%20to%20concatenate%20a%20list%20of%20lists.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;list&amp;#34;%20output:%20list.Concat%28[listA,%20listB,%20listC,%20listB]%29%20listA:%20[1,%202,%203,%204]%20listB:%20[&amp;#34;hello&amp;#34;,%20&amp;#34;world&amp;#34;]%20listC:%20[%7b%20a:%2010%20b:%20&amp;#34;10&amp;#34;%20%7d,%20%7b%20a:%2011%20b:%20&amp;#34;11&amp;#34;%20%7d,%20%7b%20a:%2012%20b:%20&amp;#34;12&amp;#34;%20%7d]%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20export%20-e%20output%20[%201,%202,%203,%204,%20&amp;#34;hello&amp;#34;,%20&amp;#34;world&amp;#34;,%20%7b%20&amp;#34;a&amp;#34;:%2010,%20&amp;#34;b&amp;#34;:%20&amp;#34;10&amp;#34;%20%7d,%20%7b%20&amp;#34;a&amp;#34;:%2011,%20&amp;#34;b&amp;#34;:%20&amp;#34;11&amp;#34;%20%7d,%20%7b%20&amp;#34;a&amp;#34;:%2012,%20&amp;#34;b&amp;#34;:%20&amp;#34;12&amp;#34;%20%7d,%20&amp;#34;hello&amp;#34;,%20&amp;#34;world&amp;#34;%20]%20Related%20content%20The%20list%20built-in%20package%20">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-list-concat-to-concatenate-lists/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/list#Concat%22%3e%3ccode%3elist.Concat%3c/code%3e%3c/a%3e%0ato%20concatenate%20a%20list%20of%20lists.%3c/p%3e">
                 
 
 
@@ -671,7 +669,7 @@ to concatenate a list of lists.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-list-concat-to-concatenate-lists/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20list.Concat%20to%20concatenate%20a%20list%20of%20lists.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;list&amp;#34;%20output:%20list.Concat%28[listA,%20listB,%20listC,%20listB]%29%20listA:%20[1,%202,%203,%204]%20listB:%20[&amp;#34;hello&amp;#34;,%20&amp;#34;world&amp;#34;]%20listC:%20[%7b%20a:%2010%20b:%20&amp;#34;10&amp;#34;%20%7d,%20%7b%20a:%2011%20b:%20&amp;#34;11&amp;#34;%20%7d,%20%7b%20a:%2012%20b:%20&amp;#34;12&amp;#34;%20%7d]%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20export%20-e%20output%20[%201,%202,%203,%204,%20&amp;#34;hello&amp;#34;,%20&amp;#34;world&amp;#34;,%20%7b%20&amp;#34;a&amp;#34;:%2010,%20&amp;#34;b&amp;#34;:%20&amp;#34;10&amp;#34;%20%7d,%20%7b%20&amp;#34;a&amp;#34;:%2011,%20&amp;#34;b&amp;#34;:%20&amp;#34;11&amp;#34;%20%7d,%20%7b%20&amp;#34;a&amp;#34;:%2012,%20&amp;#34;b&amp;#34;:%20&amp;#34;12&amp;#34;%20%7d,%20&amp;#34;hello&amp;#34;,%20&amp;#34;world&amp;#34;%20]%20Related%20content%20The%20list%20built-in%20package%20">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-list-concat-to-concatenate-lists/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/list#Concat%22%3e%3ccode%3elist.Concat%3c/code%3e%3c/a%3e%0ato%20concatenate%20a%20list%20of%20lists.%3c/p%3e">
                 
 
 

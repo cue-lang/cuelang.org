@@ -23,12 +23,11 @@
   <meta property="og:title" content="Accessing Fields">
   <meta property="og:description" content="Field values within a struct are accessed with selectors, using dot notation (X.name), or index expressions (X[&#34;name&#34;]).
 Selectors can be used if a field name is a valid CUE identifier.
-In other cases, including computed references and non-valid identifiers, index expressions can be used.
-Copied! file.cue Copy code Copied! one: #n.a &amp; #n[&#34;a&#34;] // Equivalent references two: #n.b // Valid identifer three: #n[&#34;c d&#34;] // Non-valid identifier four: #n[#E&#43;&#34;f&#34;] // Computed reference five: #n.">
+In other cases, including computed references and non-valid identifiers, index expressions can be used.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-06T11:45:24+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -36,8 +35,7 @@ Copied! file.cue Copy code Copied! one: #n.a &amp; #n[&#34;a&#34;] // Equivalent
   <meta name="twitter:title" content="Accessing Fields">
   <meta name="twitter:description" content="Field values within a struct are accessed with selectors, using dot notation (X.name), or index expressions (X[&#34;name&#34;]).
 Selectors can be used if a field name is a valid CUE identifier.
-In other cases, including computed references and non-valid identifiers, index expressions can be used.
-Copied! file.cue Copy code Copied! one: #n.a &amp; #n[&#34;a&#34;] // Equivalent references two: #n.b // Valid identifer three: #n[&#34;c d&#34;] // Non-valid identifier four: #n[#E&#43;&#34;f&#34;] // Computed reference five: #n.">
+In other cases, including computed references and non-valid identifiers, index expressions can be used.">
 
 
 
@@ -58,13 +56,15 @@ Copied! file.cue Copy code Copied! one: #n.a &amp; #n[&#34;a&#34;] // Equivalent
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Accessing Fields">
-<meta itemprop="description" content="Field values within a struct are accessed with selectors, using dot notation (X.name), or index expressions (X[&quot;name&quot;]).
-Selectors can be used if a field name is a valid CUE identifier.
-In other cases, including computed references and non-valid identifiers, index expressions can be used.
-Copied! file.cue Copy code Copied! one: #n.a &amp; #n[&#34;a&#34;] // Equivalent references two: #n.b // Valid identifer three: #n[&#34;c d&#34;] // Non-valid identifier four: #n[#E&#43;&#34;f&#34;] // Computed reference five: #n.">
+<meta itemprop="description" content="Field values within a struct are accessed with selectors,
+using dot notation (X.name), or index expressions (X[&quot;name&quot;]).
+Selectors can be used if a field name is
+a valid CUE identifier.
+In other cases, including computed references and non-valid identifiers,
+index expressions can be used.">
 
     
-        <meta itemprop="dateModified" content="2024-03-06T11:45:24+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -358,8 +358,6 @@ five:  #n.#g          // Valid identifier
 
 
 
-
-
 ">
 <meta itemprop="wordCount" content="113">
 
@@ -468,14 +466,12 @@ index expressions can be used.</p>
 </div>
 
 </div></div>
-
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/501f81c151aae3e0d09f4ac9ba1585b843f215dc">
-                Last modified March 6, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -514,7 +510,7 @@ index expressions can be used.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/references/selectors/&text=Field%20values%20within%20a%20struct%20are%20accessed%20with%20selectors,%20using%20dot%20notation%20%28X.name%29,%20or%20index%20expressions%20%28X[&amp;quot;name&amp;quot;]%29.%0aSelectors%20can%20be%20used%20if%20a%20field%20name%20is%20a%20valid%20CUE%20identifier.%0aIn%20other%20cases,%20including%20computed%20references%20and%20non-valid%20identifiers,%20index%20expressions%20can%20be%20used.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20one:%20#n.a%20&amp;amp;%20#n[&amp;#34;a&amp;#34;]%20//%20Equivalent%20references%20two:%20#n.b%20//%20Valid%20identifer%20three:%20#n[&amp;#34;c%20d&amp;#34;]%20//%20Non-valid%20identifier%20four:%20#n[#E&#43;&amp;#34;f&amp;#34;]%20//%20Computed%20reference%20five:%20#n.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/references/selectors/&text=%3cp%3eField%20values%20within%20a%20struct%20are%20accessed%20with%20%3cstrong%3eselectors%3c/strong%3e,%0ausing%20dot%20notation%20%28%3ccode%3eX.name%3c/code%3e%29,%20or%20%3cstrong%3eindex%20expressions%3c/strong%3e%20%28%3ccode%3eX[&amp;quot;name&amp;quot;]%3c/code%3e%29.%3c/p%3e%0a%3cp%3eSelectors%20can%20be%20used%20if%20a%20field%20name%20is%0a%3ca%20href=%22/docs/reference/spec/#identifiers%22%3ea%20valid%20CUE%20identifier%3c/a%3e.%3c/p%3e%0a%3cp%3eIn%20other%20cases,%20including%20computed%20references%20and%20non-valid%20identifiers,%0aindex%20expressions%20can%20be%20used.%3c/p%3e">
                 
 
 
@@ -530,7 +526,7 @@ index expressions can be used.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/references/selectors/&summary=Field%20values%20within%20a%20struct%20are%20accessed%20with%20selectors,%20using%20dot%20notation%20%28X.name%29,%20or%20index%20expressions%20%28X[&amp;quot;name&amp;quot;]%29.%0aSelectors%20can%20be%20used%20if%20a%20field%20name%20is%20a%20valid%20CUE%20identifier.%0aIn%20other%20cases,%20including%20computed%20references%20and%20non-valid%20identifiers,%20index%20expressions%20can%20be%20used.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20one:%20#n.a%20&amp;amp;%20#n[&amp;#34;a&amp;#34;]%20//%20Equivalent%20references%20two:%20#n.b%20//%20Valid%20identifer%20three:%20#n[&amp;#34;c%20d&amp;#34;]%20//%20Non-valid%20identifier%20four:%20#n[#E&#43;&amp;#34;f&amp;#34;]%20//%20Computed%20reference%20five:%20#n.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/references/selectors/&summary=%3cp%3eField%20values%20within%20a%20struct%20are%20accessed%20with%20%3cstrong%3eselectors%3c/strong%3e,%0ausing%20dot%20notation%20%28%3ccode%3eX.name%3c/code%3e%29,%20or%20%3cstrong%3eindex%20expressions%3c/strong%3e%20%28%3ccode%3eX[&amp;quot;name&amp;quot;]%3c/code%3e%29.%3c/p%3e%0a%3cp%3eSelectors%20can%20be%20used%20if%20a%20field%20name%20is%0a%3ca%20href=%22/docs/reference/spec/#identifiers%22%3ea%20valid%20CUE%20identifier%3c/a%3e.%3c/p%3e%0a%3cp%3eIn%20other%20cases,%20including%20computed%20references%20and%20non-valid%20identifiers,%0aindex%20expressions%20can%20be%20used.%3c/p%3e">
                 
 
 

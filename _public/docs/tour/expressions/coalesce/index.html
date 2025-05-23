@@ -22,18 +22,20 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Null Coalescing">
   <meta property="og:description" content="Null coalescing is a technique that allows your CUE to evaluate successfully, despite data having invalid, unexpected, or missing values. By “null coalescing”, we really mean error (or bottom) coalescing.
-It uses a disjunction’s default marker (*) to prefer the value of an expression that might evaluate to bottom (_|_), alongside an alternative, fallback value that the disjunction will select if the expression does produce bottom. This isn’t a separate language feature, but is the expected outcome from CUE’s design that _|_ | value evaluates to value.">
+It uses a disjunction’s default marker (*) to prefer the value of an expression that might evaluate to bottom (_|_), alongside an alternative, fallback value that the disjunction will select if the expression does produce bottom. This isn’t a separate language feature, but is the expected outcome from CUE’s design that _|_ | value evaluates to value.
+This technique can guard against situations such as list indexes being out of bounds, and type checks, with a fallback in the case of a type mismatch.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-06T17:21:30+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Null Coalescing">
   <meta name="twitter:description" content="Null coalescing is a technique that allows your CUE to evaluate successfully, despite data having invalid, unexpected, or missing values. By “null coalescing”, we really mean error (or bottom) coalescing.
-It uses a disjunction’s default marker (*) to prefer the value of an expression that might evaluate to bottom (_|_), alongside an alternative, fallback value that the disjunction will select if the expression does produce bottom. This isn’t a separate language feature, but is the expected outcome from CUE’s design that _|_ | value evaluates to value.">
+It uses a disjunction’s default marker (*) to prefer the value of an expression that might evaluate to bottom (_|_), alongside an alternative, fallback value that the disjunction will select if the expression does produce bottom. This isn’t a separate language feature, but is the expected outcome from CUE’s design that _|_ | value evaluates to value.
+This technique can guard against situations such as list indexes being out of bounds, and type checks, with a fallback in the case of a type mismatch.">
 
 
 
@@ -54,11 +56,20 @@ It uses a disjunction’s default marker (*) to prefer the value of an expressio
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Null Coalescing">
-<meta itemprop="description" content="Null coalescing is a technique that allows your CUE to evaluate successfully, despite data having invalid, unexpected, or missing values. By &ldquo;null coalescing&rdquo;, we really mean error (or bottom) coalescing.
-It uses a disjunction&rsquo;s default marker (*) to prefer the value of an expression that might evaluate to bottom (_|_), alongside an alternative, fallback value that the disjunction will select if the expression does produce bottom. This isn&rsquo;t a separate language feature, but is the expected outcome from CUE&rsquo;s design that _|_ | value evaluates to value.">
+<meta itemprop="description" content="Null coalescing is a technique that allows your CUE to evaluate successfully,
+despite data having invalid, unexpected, or missing values.
+By &ldquo;null coalescing&rdquo;, we really mean error (or bottom) coalescing.
+It uses a disjunction&rsquo;s default marker (*) to prefer the value of an
+expression that might evaluate to bottom (_|_),
+alongside an alternative, fallback value that the disjunction will select if
+the expression does produce bottom.
+This isn&rsquo;t a separate language feature, but is the expected outcome from CUE&rsquo;s
+design that _|_ | value evaluates to value.
+This technique can guard against situations such as list indexes being out of
+bounds, and type checks, with a fallback in the case of a type mismatch.">
 
     
-        <meta itemprop="dateModified" content="2024-03-06T17:21:30+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -351,8 +362,6 @@ num1: &#34;Not an integer&#34;
 
 
 
-
-
 ">
 <meta itemprop="wordCount" content="189">
 
@@ -460,14 +469,12 @@ num1: &#34;Not an integer&#34;</code></pre></div>
 </div>
 
 </div></div>
-
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/4eb58269bc06a55bc22ff47e121ae4ae6744a14c">
-                Last modified March 6, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -506,7 +513,7 @@ num1: &#34;Not an integer&#34;</code></pre></div>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/expressions/coalesce/&text=Null%20coalescing%20is%20a%20technique%20that%20allows%20your%20CUE%20to%20evaluate%20successfully,%20despite%20data%20having%20invalid,%20unexpected,%20or%20missing%20values.%20By%20&amp;ldquo;null%20coalescing&amp;rdquo;,%20we%20really%20mean%20error%20%28or%20bottom%29%20coalescing.%0aIt%20uses%20a%20disjunction&amp;rsquo;s%20default%20marker%20%28*%29%20to%20prefer%20the%20value%20of%20an%20expression%20that%20might%20evaluate%20to%20bottom%20%28_%7c_%29,%20alongside%20an%20alternative,%20fallback%20value%20that%20the%20disjunction%20will%20select%20if%20the%20expression%20does%20produce%20bottom.%20This%20isn&amp;rsquo;t%20a%20separate%20language%20feature,%20but%20is%20the%20expected%20outcome%20from%20CUE&amp;rsquo;s%20design%20that%20_%7c_%20%7c%20value%20evaluates%20to%20value.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/expressions/coalesce/&text=%3cp%3e%3cstrong%3eNull%20coalescing%3c/strong%3e%20is%20a%20technique%20that%20allows%20your%20CUE%20to%20evaluate%20successfully,%0adespite%20data%20having%20invalid,%20unexpected,%20or%20missing%20values.%0aBy%20&amp;ldquo;null%20coalescing&amp;rdquo;,%20we%20really%20mean%20error%20%28or%20bottom%29%20coalescing.%3c/p%3e%0a%3cp%3eIt%20uses%20a%20disjunction&amp;rsquo;s%20default%20marker%20%28%3ccode%3e*%3c/code%3e%29%20to%20prefer%20the%20value%20of%20an%0aexpression%20that%20%3cem%3emight%3c/em%3e%20evaluate%20to%20bottom%20%28%3ccode%3e_%7c_%3c/code%3e%29,%0aalongside%20an%20alternative,%20fallback%20value%20that%20the%20disjunction%20will%20select%20if%0athe%20expression%20%3cem%3edoes%3c/em%3e%20produce%20bottom.%0aThis%20isn&amp;rsquo;t%20a%20separate%20language%20feature,%20but%20is%20the%20expected%20outcome%20from%20CUE&amp;rsquo;s%0adesign%20that%20%3ccode%3e_%7c_%20%7c%20value%3c/code%3e%20evaluates%20to%20%3ccode%3evalue%3c/code%3e.%3c/p%3e%0a%3cp%3eThis%20technique%20can%20guard%20against%20situations%20such%20as%20list%20indexes%20being%20out%20of%0abounds,%20and%20type%20checks,%20with%20a%20fallback%20in%20the%20case%20of%20a%20type%20mismatch.%3c/p%3e">
                 
 
 
@@ -522,7 +529,7 @@ num1: &#34;Not an integer&#34;</code></pre></div>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/expressions/coalesce/&summary=Null%20coalescing%20is%20a%20technique%20that%20allows%20your%20CUE%20to%20evaluate%20successfully,%20despite%20data%20having%20invalid,%20unexpected,%20or%20missing%20values.%20By%20&amp;ldquo;null%20coalescing&amp;rdquo;,%20we%20really%20mean%20error%20%28or%20bottom%29%20coalescing.%0aIt%20uses%20a%20disjunction&amp;rsquo;s%20default%20marker%20%28*%29%20to%20prefer%20the%20value%20of%20an%20expression%20that%20might%20evaluate%20to%20bottom%20%28_%7c_%29,%20alongside%20an%20alternative,%20fallback%20value%20that%20the%20disjunction%20will%20select%20if%20the%20expression%20does%20produce%20bottom.%20This%20isn&amp;rsquo;t%20a%20separate%20language%20feature,%20but%20is%20the%20expected%20outcome%20from%20CUE&amp;rsquo;s%20design%20that%20_%7c_%20%7c%20value%20evaluates%20to%20value.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/expressions/coalesce/&summary=%3cp%3e%3cstrong%3eNull%20coalescing%3c/strong%3e%20is%20a%20technique%20that%20allows%20your%20CUE%20to%20evaluate%20successfully,%0adespite%20data%20having%20invalid,%20unexpected,%20or%20missing%20values.%0aBy%20&amp;ldquo;null%20coalescing&amp;rdquo;,%20we%20really%20mean%20error%20%28or%20bottom%29%20coalescing.%3c/p%3e%0a%3cp%3eIt%20uses%20a%20disjunction&amp;rsquo;s%20default%20marker%20%28%3ccode%3e*%3c/code%3e%29%20to%20prefer%20the%20value%20of%20an%0aexpression%20that%20%3cem%3emight%3c/em%3e%20evaluate%20to%20bottom%20%28%3ccode%3e_%7c_%3c/code%3e%29,%0aalongside%20an%20alternative,%20fallback%20value%20that%20the%20disjunction%20will%20select%20if%0athe%20expression%20%3cem%3edoes%3c/em%3e%20produce%20bottom.%0aThis%20isn&amp;rsquo;t%20a%20separate%20language%20feature,%20but%20is%20the%20expected%20outcome%20from%20CUE&amp;rsquo;s%0adesign%20that%20%3ccode%3e_%7c_%20%7c%20value%3c/code%3e%20evaluates%20to%20%3ccode%3evalue%3c/code%3e.%3c/p%3e%0a%3cp%3eThis%20technique%20can%20guard%20against%20situations%20such%20as%20list%20indexes%20being%20out%20of%0abounds,%20and%20type%20checks,%20with%20a%20fallback%20in%20the%20case%20of%20a%20type%20mismatch.%3c/p%3e">
                 
 
 

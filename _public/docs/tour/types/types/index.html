@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="CUE defines the following type hierarchy: flowchart TD top[&amp;#34;_&amp;#34;] bottom[&amp;#34;_|_&amp;#34;] struct[&amp;#34;{...}&amp;#34;] list[&amp;#34;[...]&amp;#34;] top --&amp;gt; null --&amp;gt; bottom top --&amp;gt; bool --&amp;gt; bottom top …">
+<meta name="description" content="CUE defines the following type hierarchy:flowchart TD top[&amp;#34;_&amp;#34;] bottom[&amp;#34;_|_&amp;#34;] struct[&amp;#34;{...}&amp;#34;] list[&amp;#34;[...]&amp;#34;] top --&amp;gt; null --&amp;gt; bottom top --&amp;gt; bool --&amp;gt; bottom top …">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,17 +21,23 @@
 <title>Type Hierarchy | CUE</title><meta property="og:url" content="/docs/tour/types/types/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Type Hierarchy">
-  <meta property="og:description" content="CUE defines the following type hierarchy: flowchart TD top[&#34;_&#34;] bottom[&#34;_|_&#34;] struct[&#34;{...}&#34;] list[&#34;[...]&#34;] top --&gt; null --&gt; bottom top --&gt; bool --&gt; bottom top --&gt; string --&gt; bottom top --&gt; bytes --&gt; bottom top --&gt; number --&gt; int &amp; float --&gt; bottom top --&gt; struct --&gt; bottom top --&gt; list --&gt; bottom CUE&#39;s predefined type hierarchy CUE defines the value top (or any), written “_”, such that all types are an instance of top, and the value bottom (or error), written “_|_”, which is an instance of all types.">
+  <meta property="og:description" content="CUE defines the following type hierarchy:
+flowchart TD top[&#34;_&#34;] bottom[&#34;_|_&#34;] struct[&#34;{...}&#34;] list[&#34;[...]&#34;] top --&gt; null --&gt; bottom top --&gt; bool --&gt; bottom top --&gt; string --&gt; bottom top --&gt; bytes --&gt; bottom top --&gt; number --&gt; int &amp; float --&gt; bottom top --&gt; struct --&gt; bottom top --&gt; list --&gt; bottom CUE&#39;s predefined type hierarchy CUE defines the value top (or any), written “_”, such that all types are an instance of top, and the value bottom (or error), written “_|_”, which is an instance of all types.
+We can mix the terms types and values interchangeably because CUE doesn’t distinguish between types and values.
+The term “type” merely refers to the kind of a value, which may or may not be a concrete instance.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-07-02T14:47:55+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Type Hierarchy">
-  <meta name="twitter:description" content="CUE defines the following type hierarchy: flowchart TD top[&#34;_&#34;] bottom[&#34;_|_&#34;] struct[&#34;{...}&#34;] list[&#34;[...]&#34;] top --&gt; null --&gt; bottom top --&gt; bool --&gt; bottom top --&gt; string --&gt; bottom top --&gt; bytes --&gt; bottom top --&gt; number --&gt; int &amp; float --&gt; bottom top --&gt; struct --&gt; bottom top --&gt; list --&gt; bottom CUE&#39;s predefined type hierarchy CUE defines the value top (or any), written “_”, such that all types are an instance of top, and the value bottom (or error), written “_|_”, which is an instance of all types.">
+  <meta name="twitter:description" content="CUE defines the following type hierarchy:
+flowchart TD top[&#34;_&#34;] bottom[&#34;_|_&#34;] struct[&#34;{...}&#34;] list[&#34;[...]&#34;] top --&gt; null --&gt; bottom top --&gt; bool --&gt; bottom top --&gt; string --&gt; bottom top --&gt; bytes --&gt; bottom top --&gt; number --&gt; int &amp; float --&gt; bottom top --&gt; struct --&gt; bottom top --&gt; list --&gt; bottom CUE&#39;s predefined type hierarchy CUE defines the value top (or any), written “_”, such that all types are an instance of top, and the value bottom (or error), written “_|_”, which is an instance of all types.
+We can mix the terms types and values interchangeably because CUE doesn’t distinguish between types and values.
+The term “type” merely refers to the kind of a value, which may or may not be a concrete instance.">
 
 
 
@@ -53,10 +59,41 @@
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Type Hierarchy">
 <meta itemprop="description" content="CUE defines the following type hierarchy:
-flowchart TD top[&#34;_&#34;] bottom[&#34;_|_&#34;] struct[&#34;{...}&#34;] list[&#34;[...]&#34;] top --&gt; null --&gt; bottom top --&gt; bool --&gt; bottom top --&gt; string --&gt; bottom top --&gt; bytes --&gt; bottom top --&gt; number --&gt; int & float --&gt; bottom top --&gt; struct --&gt; bottom top --&gt; list --&gt; bottom CUE&#39;s predefined type hierarchy CUE defines the value top (or any), written &ldquo;_&rdquo;, such that all types are an instance of top, and the value bottom (or error), written &ldquo;_|_&rdquo;, which is an instance of all types.">
+
 
     
-        <meta itemprop="dateModified" content="2024-07-02T14:47:55+01:00" >
+flowchart TD
+
+top[&#34;_&#34;]
+bottom[&#34;_|_&#34;]
+struct[&#34;{...}&#34;]
+list[&#34;[...]&#34;]
+
+top --&gt; null --&gt; bottom
+top --&gt; bool --&gt; bottom
+top --&gt; string --&gt; bottom
+top --&gt; bytes --&gt; bottom
+top --&gt; number --&gt; int & float --&gt; bottom
+top --&gt; struct --&gt; bottom
+top --&gt; list --&gt; bottom
+CUE&#39;s predefined type hierarchy
+
+
+
+CUE defines the value top (or any),
+written &ldquo;_&rdquo;, 
+such that all types are an instance of top,
+and the value bottom (or error),
+written &ldquo;_|_&rdquo;,
+which is an instance of all types.
+We can mix the terms types and values interchangeably because
+CUE doesn&rsquo;t distinguish between
+types and values.
+The term &ldquo;type&rdquo; merely refers to the kind of a value,
+which may or may not be a concrete instance.">
+
+    
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -409,8 +446,6 @@ cue eval.
 This command validates a configuration but, unlike cue export, doesn&rsquo;t
 require it to be completely concrete.
 cue eval produces CUE, not JSON or YAML.
-
-
 ">
 <meta itemprop="wordCount" content="338">
 
@@ -579,14 +614,12 @@ This command validates a configuration but, unlike <code>cue export</code>, does
 require it to be completely concrete.
 <code>cue eval</code> produces CUE, not JSON or YAML.</div>
 </div>
-
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/acfd41157dd9fd9c5d5f7630a21faee0d5446505">
-                Last modified July 2, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -625,7 +658,7 @@ require it to be completely concrete.
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/types/types/&text=CUE%20defines%20the%20following%20type%20hierarchy:%0aflowchart%20TD%20top[%22_%22]%20bottom[%22_%7c_%22]%20struct[%22%7b...%7d%22]%20list[%22[...]%22]%20top%20--%3e%20null%20--%3e%20bottom%20top%20--%3e%20bool%20--%3e%20bottom%20top%20--%3e%20string%20--%3e%20bottom%20top%20--%3e%20bytes%20--%3e%20bottom%20top%20--%3e%20number%20--%3e%20int%20&amp;%20float%20--%3e%20bottom%20top%20--%3e%20struct%20--%3e%20bottom%20top%20--%3e%20list%20--%3e%20bottom%20CUE&amp;#39;s%20predefined%20type%20hierarchy%20CUE%20defines%20the%20value%20top%20%28or%20any%29,%20written%20&amp;ldquo;_&amp;rdquo;,%20such%20that%20all%20types%20are%20an%20instance%20of%20top,%20and%20the%20value%20bottom%20%28or%20error%29,%20written%20&amp;ldquo;_%7c_&amp;rdquo;,%20which%20is%20an%20instance%20of%20all%20types.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/types/types/&text=%3cp%3eCUE%20defines%20the%20following%20type%20hierarchy:%3c/p%3e%0a%0a%3cfigure%20class=%22diagram%22%3e%0a%20%20%20%20%3cdiv%20class=%22diagram__content%20mermaid%22%3e%0aflowchart%20TD%0a%0atop[%22_%22]%0abottom[%22_%7c_%22]%0astruct[%22%7b...%7d%22]%0alist[%22[...]%22]%0a%0atop%20--%3e%20null%20--%3e%20bottom%0atop%20--%3e%20bool%20--%3e%20bottom%0atop%20--%3e%20string%20--%3e%20bottom%0atop%20--%3e%20bytes%20--%3e%20bottom%0atop%20--%3e%20number%20--%3e%20int%20&amp;%20float%20--%3e%20bottom%0atop%20--%3e%20struct%20--%3e%20bottom%0atop%20--%3e%20list%20--%3e%20bottom%0a%3c/div%3e%3cfigcaption%20class=%22diagram__caption%22%3eCUE&amp;#39;s%20predefined%20type%20hierarchy%3c/figcaption%3e%0a%3c/figure%3e%0a%0a%0a%3cp%3eCUE%20defines%20the%20value%20%3cstrong%3etop%3c/strong%3e%20%28or%20any%29,%0awritten%20&amp;ldquo;%3ccode%3e_%3c/code%3e&amp;rdquo;,%20%3c!--%20%60%20vim%20syntax%20highlighting%20hack%20--%3e%0asuch%20that%20all%20types%20are%20an%20instance%20of%20top,%0aand%20the%20value%20%3cstrong%3ebottom%3c/strong%3e%20%28or%20error%29,%0awritten%20&amp;ldquo;%3ccode%3e_%7c_%3c/code%3e&amp;rdquo;,%0awhich%20is%20an%20instance%20of%20all%20types.%3c/p%3e%0a%3cp%3eWe%20can%20mix%20the%20terms%20types%20and%20values%20interchangeably%20because%0aCUE%20doesn&amp;rsquo;t%20distinguish%20between%0a%3ca%20href=%22/docs/tour/basics/types-are-values/%22%3etypes%20and%20values%3c/a%3e.%3cbr%3e%0aThe%20term%20&amp;ldquo;type&amp;rdquo;%20merely%20refers%20to%20the%20%3cem%3ekind%3c/em%3e%20of%20a%20value,%0awhich%20may%20or%20may%20not%20be%20a%20concrete%20instance.%3c/p%3e">
                 
 
 
@@ -641,7 +674,7 @@ require it to be completely concrete.
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/types/types/&summary=CUE%20defines%20the%20following%20type%20hierarchy:%0aflowchart%20TD%20top[%22_%22]%20bottom[%22_%7c_%22]%20struct[%22%7b...%7d%22]%20list[%22[...]%22]%20top%20--%3e%20null%20--%3e%20bottom%20top%20--%3e%20bool%20--%3e%20bottom%20top%20--%3e%20string%20--%3e%20bottom%20top%20--%3e%20bytes%20--%3e%20bottom%20top%20--%3e%20number%20--%3e%20int%20&amp;%20float%20--%3e%20bottom%20top%20--%3e%20struct%20--%3e%20bottom%20top%20--%3e%20list%20--%3e%20bottom%20CUE&amp;#39;s%20predefined%20type%20hierarchy%20CUE%20defines%20the%20value%20top%20%28or%20any%29,%20written%20&amp;ldquo;_&amp;rdquo;,%20such%20that%20all%20types%20are%20an%20instance%20of%20top,%20and%20the%20value%20bottom%20%28or%20error%29,%20written%20&amp;ldquo;_%7c_&amp;rdquo;,%20which%20is%20an%20instance%20of%20all%20types.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/types/types/&summary=%3cp%3eCUE%20defines%20the%20following%20type%20hierarchy:%3c/p%3e%0a%0a%3cfigure%20class=%22diagram%22%3e%0a%20%20%20%20%3cdiv%20class=%22diagram__content%20mermaid%22%3e%0aflowchart%20TD%0a%0atop[%22_%22]%0abottom[%22_%7c_%22]%0astruct[%22%7b...%7d%22]%0alist[%22[...]%22]%0a%0atop%20--%3e%20null%20--%3e%20bottom%0atop%20--%3e%20bool%20--%3e%20bottom%0atop%20--%3e%20string%20--%3e%20bottom%0atop%20--%3e%20bytes%20--%3e%20bottom%0atop%20--%3e%20number%20--%3e%20int%20&amp;%20float%20--%3e%20bottom%0atop%20--%3e%20struct%20--%3e%20bottom%0atop%20--%3e%20list%20--%3e%20bottom%0a%3c/div%3e%3cfigcaption%20class=%22diagram__caption%22%3eCUE&amp;#39;s%20predefined%20type%20hierarchy%3c/figcaption%3e%0a%3c/figure%3e%0a%0a%0a%3cp%3eCUE%20defines%20the%20value%20%3cstrong%3etop%3c/strong%3e%20%28or%20any%29,%0awritten%20&amp;ldquo;%3ccode%3e_%3c/code%3e&amp;rdquo;,%20%3c!--%20%60%20vim%20syntax%20highlighting%20hack%20--%3e%0asuch%20that%20all%20types%20are%20an%20instance%20of%20top,%0aand%20the%20value%20%3cstrong%3ebottom%3c/strong%3e%20%28or%20error%29,%0awritten%20&amp;ldquo;%3ccode%3e_%7c_%3c/code%3e&amp;rdquo;,%0awhich%20is%20an%20instance%20of%20all%20types.%3c/p%3e%0a%3cp%3eWe%20can%20mix%20the%20terms%20types%20and%20values%20interchangeably%20because%0aCUE%20doesn&amp;rsquo;t%20distinguish%20between%0a%3ca%20href=%22/docs/tour/basics/types-are-values/%22%3etypes%20and%20values%3c/a%3e.%3cbr%3e%0aThe%20term%20&amp;ldquo;type&amp;rdquo;%20merely%20refers%20to%20the%20%3cem%3ekind%3c/em%3e%20of%20a%20value,%0awhich%20may%20or%20may%20not%20be%20a%20concrete%20instance.%3c/p%3e">
                 
 
 

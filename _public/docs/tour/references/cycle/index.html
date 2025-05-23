@@ -27,7 +27,7 @@ This can prove useful for template authors who know that a user will provide one
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-06T11:45:24+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -56,12 +56,18 @@ This can prove useful for template authors who know that a user will provide one
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Reference Cycles">
-<meta itemprop="description" content="CUE can handle many types of cycle, resolving and inferring values that depend on each other.
-Because all values are final in CUE, a field with a concrete value (e.g. 200) can only be valid if it is that value. If CUE sees this concrete value being unified with some other expression then the evaluation of that expression is postponed, which often allows cycles to be broken.
-This can prove useful for template authors who know that a user will provide one out of several fields, but they may not know which one.">
+<meta itemprop="description" content="CUE can handle many types of cycle, resolving and inferring values that
+depend on each other.
+Because all values are final in CUE, a field with a concrete value
+(e.g. 200) can only be valid if it is that value.
+If CUE sees this concrete value being unified with some other expression then
+the evaluation of that expression is postponed, which often allows cycles to be
+broken.
+This can prove useful for template authors who know that a user will provide
+one out of several fields, but they may not know which one.">
 
     
-        <meta itemprop="dateModified" content="2024-03-06T11:45:24+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -357,8 +363,7 @@ b: a - 100
 
 This example uses cue eval because the cycle between the a and b fields
 can&rsquo;t be resolved. Using cue export would fail because the fields&rsquo; values
-aren&rsquo;t concrete.
-">
+aren&rsquo;t concrete.">
 <meta itemprop="wordCount" content="197">
 
 
@@ -468,13 +473,12 @@ b: a - 100</code></pre></div>
 <p>This example uses <code>cue eval</code> because the cycle between the <code>a</code> and <code>b</code> fields
 can&rsquo;t be resolved. Using <code>cue export</code> would fail because the fields&rsquo; values
 aren&rsquo;t concrete.</p>
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/501f81c151aae3e0d09f4ac9ba1585b843f215dc">
-                Last modified March 6, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -513,7 +517,7 @@ aren&rsquo;t concrete.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/references/cycle/&text=CUE%20can%20handle%20many%20types%20of%20cycle,%20resolving%20and%20inferring%20values%20that%20depend%20on%20each%20other.%0aBecause%20all%20values%20are%20final%20in%20CUE,%20a%20field%20with%20a%20concrete%20value%20%28e.g.%20200%29%20can%20only%20be%20valid%20if%20it%20is%20that%20value.%20If%20CUE%20sees%20this%20concrete%20value%20being%20unified%20with%20some%20other%20expression%20then%20the%20evaluation%20of%20that%20expression%20is%20postponed,%20which%20often%20allows%20cycles%20to%20be%20broken.%0aThis%20can%20prove%20useful%20for%20template%20authors%20who%20know%20that%20a%20user%20will%20provide%20one%20out%20of%20several%20fields,%20but%20they%20may%20not%20know%20which%20one.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/references/cycle/&text=%3cp%3eCUE%20can%20handle%20many%20types%20of%20%3cstrong%3ecycle%3c/strong%3e,%20resolving%20and%20inferring%20values%20that%0adepend%20on%20each%20other.%3c/p%3e%0a%3cp%3eBecause%20all%20values%20are%20final%20in%20CUE,%20a%20field%20with%20a%20concrete%20value%0a%28e.g.%20%3ccode%3e200%3c/code%3e%29%20can%20only%20be%20valid%20if%20it%20%3cem%3e%3cstrong%3eis%3c/strong%3e%3c/em%3e%20that%20value.%0aIf%20CUE%20sees%20this%20concrete%20value%20being%20unified%20with%20some%20other%20expression%20then%0athe%20evaluation%20of%20that%20expression%20is%20postponed,%20which%20often%20allows%20cycles%20to%20be%0abroken.%3c/p%3e%0a%3cp%3eThis%20can%20prove%20useful%20for%20template%20authors%20who%20know%20that%20a%20user%20will%20provide%0aone%20out%20of%20several%20fields,%20but%20they%20may%20not%20know%20%3cem%3ewhich%3c/em%3e%20one.%3c/p%3e">
                 
 
 
@@ -529,7 +533,7 @@ aren&rsquo;t concrete.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/references/cycle/&summary=CUE%20can%20handle%20many%20types%20of%20cycle,%20resolving%20and%20inferring%20values%20that%20depend%20on%20each%20other.%0aBecause%20all%20values%20are%20final%20in%20CUE,%20a%20field%20with%20a%20concrete%20value%20%28e.g.%20200%29%20can%20only%20be%20valid%20if%20it%20is%20that%20value.%20If%20CUE%20sees%20this%20concrete%20value%20being%20unified%20with%20some%20other%20expression%20then%20the%20evaluation%20of%20that%20expression%20is%20postponed,%20which%20often%20allows%20cycles%20to%20be%20broken.%0aThis%20can%20prove%20useful%20for%20template%20authors%20who%20know%20that%20a%20user%20will%20provide%20one%20out%20of%20several%20fields,%20but%20they%20may%20not%20know%20which%20one.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/references/cycle/&summary=%3cp%3eCUE%20can%20handle%20many%20types%20of%20%3cstrong%3ecycle%3c/strong%3e,%20resolving%20and%20inferring%20values%20that%0adepend%20on%20each%20other.%3c/p%3e%0a%3cp%3eBecause%20all%20values%20are%20final%20in%20CUE,%20a%20field%20with%20a%20concrete%20value%0a%28e.g.%20%3ccode%3e200%3c/code%3e%29%20can%20only%20be%20valid%20if%20it%20%3cem%3e%3cstrong%3eis%3c/strong%3e%3c/em%3e%20that%20value.%0aIf%20CUE%20sees%20this%20concrete%20value%20being%20unified%20with%20some%20other%20expression%20then%0athe%20evaluation%20of%20that%20expression%20is%20postponed,%20which%20often%20allows%20cycles%20to%20be%0abroken.%3c/p%3e%0a%3cp%3eThis%20can%20prove%20useful%20for%20template%20authors%20who%20know%20that%20a%20user%20will%20provide%0aone%20out%20of%20several%20fields,%20but%20they%20may%20not%20know%20%3cem%3ewhich%3c/em%3e%20one.%3c/p%3e">
                 
 
 

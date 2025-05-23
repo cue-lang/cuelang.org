@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Introduction In this tutorial you will use CUE’s Go API to work with a CUE module dependency fetched from the Central Registry.Along the way you will:Login to …">
+<meta name="description" content="Introduction In this tutorial you will use CUE’s Go API to work with a CUE module dependency fetched from the Central Registry.Along the way you will:Login …">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,21 +21,21 @@
 <title>Using modules with the Go API | CUE</title><meta property="og:url" content="/docs/tutorial/using-modules-with-go-api/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Using modules with the Go API">
-  <meta property="og:description" content="Introduction In this tutorial you will use CUE’s Go API to work with a CUE module dependency fetched from the Central Registry.
+  <meta property="og:description" content=" Introduction In this tutorial you will use CUE’s Go API to work with a CUE module dependency fetched from the Central Registry.
 Along the way you will:
-Login to the Central Registry, and authenticate the cue command Create a CUE module that depends on an existing, well-known module Use cue mod tidy to fetch and organise your module’s dependencies Load your CUE using the Go API working in a modules-aware mode Prerequisites Access to the Central Registry – if you need to practise using the Central Registry, then first follow the tutorial Working with modules and the Central Registry A tool to edit text files – any text editor you have will be fine; for example: VSCode or Vim A command terminal – the cue command works on all platforms; use any terminal on Linux or macOS, or PowerShell, cmd.">
+Login to the Central Registry, and authenticate the cue command Create a CUE module that depends on an existing, well-known module Use cue mod tidy to fetch and organise your module’s dependencies Load your CUE using the Go API working in a modules-aware mode ">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-05-22T15:12:54+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Using modules with the Go API">
-  <meta name="twitter:description" content="Introduction In this tutorial you will use CUE’s Go API to work with a CUE module dependency fetched from the Central Registry.
+  <meta name="twitter:description" content=" Introduction In this tutorial you will use CUE’s Go API to work with a CUE module dependency fetched from the Central Registry.
 Along the way you will:
-Login to the Central Registry, and authenticate the cue command Create a CUE module that depends on an existing, well-known module Use cue mod tidy to fetch and organise your module’s dependencies Load your CUE using the Go API working in a modules-aware mode Prerequisites Access to the Central Registry – if you need to practise using the Central Registry, then first follow the tutorial Working with modules and the Central Registry A tool to edit text files – any text editor you have will be fine; for example: VSCode or Vim A command terminal – the cue command works on all platforms; use any terminal on Linux or macOS, or PowerShell, cmd.">
+Login to the Central Registry, and authenticate the cue command Create a CUE module that depends on an existing, well-known module Use cue mod tidy to fetch and organise your module’s dependencies Load your CUE using the Go API working in a modules-aware mode ">
 
 
 
@@ -56,12 +56,27 @@ Login to the Central Registry, and authenticate the cue command Create a CUE mod
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Using modules with the Go API">
-<meta itemprop="description" content="Introduction In this tutorial you will use CUE&rsquo;s Go API to work with a CUE module dependency fetched from the Central Registry.
-Along the way you will:
-Login to the Central Registry, and authenticate the cue command Create a CUE module that depends on an existing, well-known module Use cue mod tidy to fetch and organise your module&rsquo;s dependencies Load your CUE using the Go API working in a modules-aware mode Prerequisites Access to the Central Registry &ndash; if you need to practise using the Central Registry, then first follow the tutorial Working with modules and the Central Registry A tool to edit text files &ndash; any text editor you have will be fine; for example: VSCode or Vim A command terminal &ndash; the cue command works on all platforms; use any terminal on Linux or macOS, or PowerShell, cmd.">
+<meta itemprop="description" content="
+    
+
+
+
 
     
-        <meta itemprop="dateModified" content="2025-05-22T15:12:54+01:00" >
+
+Introduction
+In this tutorial you will
+use CUE&rsquo;s Go API to work with a CUE module dependency fetched from the Central Registry.
+Along the way you will:
+
+Login to the Central Registry, and authenticate the cue command
+Create a CUE module that depends on an existing, well-known module
+Use cue mod tidy to fetch and organise your module&rsquo;s dependencies
+Load your CUE using the Go API working in a modules-aware mode
+">
+
+    
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -657,7 +672,6 @@ Related content
 
 Reference: CUE Modules
 Tutorial: Working with a custom module registry
-
 ">
 <meta itemprop="wordCount" content="728">
 
@@ -1238,14 +1252,13 @@ and then prints a message based on the <code>config</code> field.</p>
 <li>Reference: <a href="/docs/reference/modules/">CUE Modules</a></li>
 <li>Tutorial: <a href="/docs/tutorial/working-with-a-custom-module-registry/">Working with a custom module registry</a></li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/cc85230c039e4a11d0a45fb228e7bafc18ebda99">
-                Last modified May 22, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -1302,7 +1315,7 @@ and then prints a message based on the <code>config</code> field.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tutorial/using-modules-with-go-api/&text=Introduction%20In%20this%20tutorial%20you%20will%20use%20CUE&amp;rsquo;s%20Go%20API%20to%20work%20with%20a%20CUE%20module%20dependency%20fetched%20from%20the%20Central%20Registry.%0aAlong%20the%20way%20you%20will:%0aLogin%20to%20the%20Central%20Registry,%20and%20authenticate%20the%20cue%20command%20Create%20a%20CUE%20module%20that%20depends%20on%20an%20existing,%20well-known%20module%20Use%20cue%20mod%20tidy%20to%20fetch%20and%20organise%20your%20module&amp;rsquo;s%20dependencies%20Load%20your%20CUE%20using%20the%20Go%20API%20working%20in%20a%20modules-aware%20mode%20Prerequisites%20Access%20to%20the%20Central%20Registry%20&amp;ndash;%20if%20you%20need%20to%20practise%20using%20the%20Central%20Registry,%20then%20first%20follow%20the%20tutorial%20Working%20with%20modules%20and%20the%20Central%20Registry%20A%20tool%20to%20edit%20text%20files%20&amp;ndash;%20any%20text%20editor%20you%20have%20will%20be%20fine;%20for%20example:%20VSCode%20or%20Vim%20A%20command%20terminal%20&amp;ndash;%20the%20cue%20command%20works%20on%20all%20platforms;%20use%20any%20terminal%20on%20Linux%20or%20macOS,%20or%20PowerShell,%20cmd.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tutorial/using-modules-with-go-api/&text=%3ch2%20id=%22introduction%22%3e%0a%20%20%20%20%3ca%20href=%22#introduction%22%20class=%22anchor%22%20aria-label=%22Anchor%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20anchor__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--link%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3c/a%3eIntroduction%3c/h2%3e%0a%3cp%3eIn%20this%20tutorial%20you%20will%0ause%20CUE&amp;rsquo;s%20Go%20API%20to%20work%20with%20a%20CUE%20module%20dependency%20fetched%20from%20the%20Central%20Registry.%3c/p%3e%0a%3cp%3eAlong%20the%20way%20you%20will:%3c/p%3e%0a%3cul%3e%0a%3cli%3eLogin%20to%20the%20Central%20Registry,%20and%20authenticate%20the%20%3ccode%3ecue%3c/code%3e%20command%3c/li%3e%0a%3cli%3eCreate%20a%20CUE%20module%20that%20depends%20on%20an%20existing,%20well-known%20module%3c/li%3e%0a%3cli%3eUse%20%3ccode%3ecue%20mod%20tidy%3c/code%3e%20to%20fetch%20and%20organise%20your%20module&amp;rsquo;s%20dependencies%3c/li%3e%0a%3cli%3eLoad%20your%20CUE%20using%20the%20Go%20API%20working%20in%20a%20modules-aware%20mode%3c/li%3e%0a%3c/ul%3e">
                 
 
 
@@ -1318,7 +1331,7 @@ and then prints a message based on the <code>config</code> field.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tutorial/using-modules-with-go-api/&summary=Introduction%20In%20this%20tutorial%20you%20will%20use%20CUE&amp;rsquo;s%20Go%20API%20to%20work%20with%20a%20CUE%20module%20dependency%20fetched%20from%20the%20Central%20Registry.%0aAlong%20the%20way%20you%20will:%0aLogin%20to%20the%20Central%20Registry,%20and%20authenticate%20the%20cue%20command%20Create%20a%20CUE%20module%20that%20depends%20on%20an%20existing,%20well-known%20module%20Use%20cue%20mod%20tidy%20to%20fetch%20and%20organise%20your%20module&amp;rsquo;s%20dependencies%20Load%20your%20CUE%20using%20the%20Go%20API%20working%20in%20a%20modules-aware%20mode%20Prerequisites%20Access%20to%20the%20Central%20Registry%20&amp;ndash;%20if%20you%20need%20to%20practise%20using%20the%20Central%20Registry,%20then%20first%20follow%20the%20tutorial%20Working%20with%20modules%20and%20the%20Central%20Registry%20A%20tool%20to%20edit%20text%20files%20&amp;ndash;%20any%20text%20editor%20you%20have%20will%20be%20fine;%20for%20example:%20VSCode%20or%20Vim%20A%20command%20terminal%20&amp;ndash;%20the%20cue%20command%20works%20on%20all%20platforms;%20use%20any%20terminal%20on%20Linux%20or%20macOS,%20or%20PowerShell,%20cmd.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tutorial/using-modules-with-go-api/&summary=%3ch2%20id=%22introduction%22%3e%0a%20%20%20%20%3ca%20href=%22#introduction%22%20class=%22anchor%22%20aria-label=%22Anchor%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20anchor__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--link%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3c/a%3eIntroduction%3c/h2%3e%0a%3cp%3eIn%20this%20tutorial%20you%20will%0ause%20CUE&amp;rsquo;s%20Go%20API%20to%20work%20with%20a%20CUE%20module%20dependency%20fetched%20from%20the%20Central%20Registry.%3c/p%3e%0a%3cp%3eAlong%20the%20way%20you%20will:%3c/p%3e%0a%3cul%3e%0a%3cli%3eLogin%20to%20the%20Central%20Registry,%20and%20authenticate%20the%20%3ccode%3ecue%3c/code%3e%20command%3c/li%3e%0a%3cli%3eCreate%20a%20CUE%20module%20that%20depends%20on%20an%20existing,%20well-known%20module%3c/li%3e%0a%3cli%3eUse%20%3ccode%3ecue%20mod%20tidy%3c/code%3e%20to%20fetch%20and%20organise%20your%20module&amp;rsquo;s%20dependencies%3c/li%3e%0a%3cli%3eLoad%20your%20CUE%20using%20the%20Go%20API%20working%20in%20a%20modules-aware%20mode%3c/li%3e%0a%3c/ul%3e">
                 
 
 

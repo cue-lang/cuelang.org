@@ -21,19 +21,17 @@
 <title>Using &#34;strings.Contains&#34;, &#34;strings.HasPrefix&#34;, and &#34;strings.HasSuffix&#34; as field validators | CUE</title><meta property="og:url" content="/docs/howto/use-strings-contains-strings-hasprefix-strings-hassuffix-as-field-validators/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Using &#34;strings.Contains&#34;, &#34;strings.HasPrefix&#34;, and &#34;strings.HasSuffix&#34; as field validators">
-  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in functions strings.Contains, strings.HasPrefix, and strings.HasSuffix to validate fields by asserting that their values match specific strings.
-Copied! file.cue Copy code Copied! package example import &#34;strings&#34; prefix: &#34;Some numbers (123) and letters&#34; contains: &#34;Some numbers (123) and letters&#34; suffix: &#34;Some numbers (123) and letters&#34; prefix: strings.HasPrefix(&#34;Some numbers&#34;) prefix: strings.HasPrefix(&#34;incorrect prefix&#34;) contains: strings.Contains(&#34;numbers&#34;) &amp; strings.Contains(&#34;123&#34;) contains: strings.Contains(&#34;punctuation&#34;) suffix: strings.HasSuffix(&#34;letters&#34;) suffix: strings.HasSuffix(&#34;incorrect suffix&#34;) // None of the built-in functions demonstrated here accept regular expressions.">
+  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in functions strings.Contains, strings.HasPrefix, and strings.HasSuffix to validate fields by asserting that their values match specific strings.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-04-08T13:31:31+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Using &#34;strings.Contains&#34;, &#34;strings.HasPrefix&#34;, and &#34;strings.HasSuffix&#34; as field validators">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in functions strings.Contains, strings.HasPrefix, and strings.HasSuffix to validate fields by asserting that their values match specific strings.
-Copied! file.cue Copy code Copied! package example import &#34;strings&#34; prefix: &#34;Some numbers (123) and letters&#34; contains: &#34;Some numbers (123) and letters&#34; suffix: &#34;Some numbers (123) and letters&#34; prefix: strings.HasPrefix(&#34;Some numbers&#34;) prefix: strings.HasPrefix(&#34;incorrect prefix&#34;) contains: strings.Contains(&#34;numbers&#34;) &amp; strings.Contains(&#34;123&#34;) contains: strings.Contains(&#34;punctuation&#34;) suffix: strings.HasSuffix(&#34;letters&#34;) suffix: strings.HasSuffix(&#34;incorrect suffix&#34;) // None of the built-in functions demonstrated here accept regular expressions.">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in functions strings.Contains, strings.HasPrefix, and strings.HasSuffix to validate fields by asserting that their values match specific strings.">
 
 
 
@@ -54,11 +52,15 @@ Copied! file.cue Copy code Copied! package example import &#34;strings&#34; pref
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Using &#34;strings.Contains&#34;, &#34;strings.HasPrefix&#34;, and &#34;strings.HasSuffix&#34; as field validators">
-<meta itemprop="description" content="This Commented CUE demonstrates how to use the built-in functions strings.Contains, strings.HasPrefix, and strings.HasSuffix to validate fields by asserting that their values match specific strings.
-Copied! file.cue Copy code Copied! package example import &#34;strings&#34; prefix: &#34;Some numbers (123) and letters&#34; contains: &#34;Some numbers (123) and letters&#34; suffix: &#34;Some numbers (123) and letters&#34; prefix: strings.HasPrefix(&#34;Some numbers&#34;) prefix: strings.HasPrefix(&#34;incorrect prefix&#34;) contains: strings.Contains(&#34;numbers&#34;) &amp; strings.Contains(&#34;123&#34;) contains: strings.Contains(&#34;punctuation&#34;) suffix: strings.HasSuffix(&#34;letters&#34;) suffix: strings.HasSuffix(&#34;incorrect suffix&#34;) // None of the built-in functions demonstrated here accept regular expressions.">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to use the built-in functions
+strings.Contains,
+strings.HasPrefix, and
+strings.HasSuffix
+to validate fields by asserting that their values match specific strings.">
 
     
-        <meta itemprop="dateModified" content="2025-04-08T13:31:31+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -380,7 +382,6 @@ contains: invalid value &#34;Some numbers (123) and letters&#34; (does not satis
 Related content
 
 The strings built-in package
-
 ">
 <meta itemprop="wordCount" content="164">
 
@@ -605,14 +606,13 @@ contains: invalid value &#34;Some numbers (123) and letters&#34; (does not satis
 <ul>
 <li>The <a href="https://pkg.go.dev/cuelang.org/go/pkg/strings"><code>strings</code></a> built-in package</li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7c104835c2bd9731b5a6b8cd703b905b2a4896aa">
-                Last modified April 8, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -661,7 +661,7 @@ contains: invalid value &#34;Some numbers (123) and letters&#34; (does not satis
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-strings-contains-strings-hasprefix-strings-hassuffix-as-field-validators/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20functions%20strings.Contains,%20strings.HasPrefix,%20and%20strings.HasSuffix%20to%20validate%20fields%20by%20asserting%20that%20their%20values%20match%20specific%20strings.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;strings&amp;#34;%20prefix:%20&amp;#34;Some%20numbers%20%28123%29%20and%20letters&amp;#34;%20contains:%20&amp;#34;Some%20numbers%20%28123%29%20and%20letters&amp;#34;%20suffix:%20&amp;#34;Some%20numbers%20%28123%29%20and%20letters&amp;#34;%20prefix:%20strings.HasPrefix%28&amp;#34;Some%20numbers&amp;#34;%29%20prefix:%20strings.HasPrefix%28&amp;#34;incorrect%20prefix&amp;#34;%29%20contains:%20strings.Contains%28&amp;#34;numbers&amp;#34;%29%20&amp;amp;%20strings.Contains%28&amp;#34;123&amp;#34;%29%20contains:%20strings.Contains%28&amp;#34;punctuation&amp;#34;%29%20suffix:%20strings.HasSuffix%28&amp;#34;letters&amp;#34;%29%20suffix:%20strings.HasSuffix%28&amp;#34;incorrect%20suffix&amp;#34;%29%20//%20None%20of%20the%20built-in%20functions%20demonstrated%20here%20accept%20regular%20expressions.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-strings-contains-strings-hasprefix-strings-hassuffix-as-field-validators/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20functions%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/strings#Contains%22%3e%3ccode%3estrings.Contains%3c/code%3e%3c/a%3e,%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/strings#HasPrefix%22%3e%3ccode%3estrings.HasPrefix%3c/code%3e%3c/a%3e,%20and%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/strings#HasSuffix%22%3e%3ccode%3estrings.HasSuffix%3c/code%3e%3c/a%3e%0ato%20validate%20fields%20by%20asserting%20that%20their%20values%20match%20specific%20strings.%3c/p%3e">
                 
 
 
@@ -677,7 +677,7 @@ contains: invalid value &#34;Some numbers (123) and letters&#34; (does not satis
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-strings-contains-strings-hasprefix-strings-hassuffix-as-field-validators/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20functions%20strings.Contains,%20strings.HasPrefix,%20and%20strings.HasSuffix%20to%20validate%20fields%20by%20asserting%20that%20their%20values%20match%20specific%20strings.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;strings&amp;#34;%20prefix:%20&amp;#34;Some%20numbers%20%28123%29%20and%20letters&amp;#34;%20contains:%20&amp;#34;Some%20numbers%20%28123%29%20and%20letters&amp;#34;%20suffix:%20&amp;#34;Some%20numbers%20%28123%29%20and%20letters&amp;#34;%20prefix:%20strings.HasPrefix%28&amp;#34;Some%20numbers&amp;#34;%29%20prefix:%20strings.HasPrefix%28&amp;#34;incorrect%20prefix&amp;#34;%29%20contains:%20strings.Contains%28&amp;#34;numbers&amp;#34;%29%20&amp;amp;%20strings.Contains%28&amp;#34;123&amp;#34;%29%20contains:%20strings.Contains%28&amp;#34;punctuation&amp;#34;%29%20suffix:%20strings.HasSuffix%28&amp;#34;letters&amp;#34;%29%20suffix:%20strings.HasSuffix%28&amp;#34;incorrect%20suffix&amp;#34;%29%20//%20None%20of%20the%20built-in%20functions%20demonstrated%20here%20accept%20regular%20expressions.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-strings-contains-strings-hasprefix-strings-hassuffix-as-field-validators/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20functions%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/strings#Contains%22%3e%3ccode%3estrings.Contains%3c/code%3e%3c/a%3e,%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/strings#HasPrefix%22%3e%3ccode%3estrings.HasPrefix%3c/code%3e%3c/a%3e,%20and%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/strings#HasSuffix%22%3e%3ccode%3estrings.HasSuffix%3c/code%3e%3c/a%3e%0ato%20validate%20fields%20by%20asserting%20that%20their%20values%20match%20specific%20strings.%3c/p%3e">
                 
 
 

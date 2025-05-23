@@ -23,11 +23,11 @@
   <meta property="og:title" content="Constraints">
   <meta property="og:description" content="Constraints specify what values are allowed. Constraints are values because all types are values.
 Constraints can reduce boilerplate and simplify the specification of data. If a constraint specifies a field then the field and its value are present everywhere the constraint is unified, and don’t need to be repeated.
-In this example, the cue export output includes the data that Viola is a human. This is because the viola field is specified as the unification of a struct which declares Viola’s name and age, and the person constraint which additionally declares the human field.">
+In this example, the cue export output includes the data that Viola is a human. This is because the viola field is specified as the unification of a struct which declares Viola’s name and age, and the person constraint which additionally declares the human field. This specification uses the explicit unification operator: &amp;.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-06-20T14:12:12+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@ In this example, the cue export output includes the data that Viola is a human. 
   <meta name="twitter:title" content="Constraints">
   <meta name="twitter:description" content="Constraints specify what values are allowed. Constraints are values because all types are values.
 Constraints can reduce boilerplate and simplify the specification of data. If a constraint specifies a field then the field and its value are present everywhere the constraint is unified, and don’t need to be repeated.
-In this example, the cue export output includes the data that Viola is a human. This is because the viola field is specified as the unification of a struct which declares Viola’s name and age, and the person constraint which additionally declares the human field.">
+In this example, the cue export output includes the data that Viola is a human. This is because the viola field is specified as the unification of a struct which declares Viola’s name and age, and the person constraint which additionally declares the human field. This specification uses the explicit unification operator: &amp;.">
 
 
 
@@ -56,12 +56,20 @@ In this example, the cue export output includes the data that Viola is a human. 
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Constraints">
-<meta itemprop="description" content="Constraints specify what values are allowed. Constraints are values because all types are values.
-Constraints can reduce boilerplate and simplify the specification of data. If a constraint specifies a field then the field and its value are present everywhere the constraint is unified, and don&rsquo;t need to be repeated.
-In this example, the cue export output includes the data that Viola is a human. This is because the viola field is specified as the unification of a struct which declares Viola&rsquo;s name and age, and the person constraint which additionally declares the human field.">
+<meta itemprop="description" content="Constraints specify what values are allowed.
+Constraints are values because
+all types are values.
+Constraints can reduce boilerplate and simplify the specification of data.
+If a constraint specifies a field then the field and its value are present
+everywhere the constraint is unified, and don&rsquo;t need to be repeated.
+In this example, the cue export output includes the data that Viola is a human.
+This is because the viola field is specified as the unification of a struct
+which declares Viola&rsquo;s name and age, and the person constraint which
+additionally declares the human field.
+This specification uses the explicit unification operator: &amp;.">
 
     
-        <meta itemprop="dateModified" content="2024-06-20T14:12:12+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -358,8 +366,7 @@ viola: person &amp; {
 
 Unification succeeds because person&rsquo;s name field constraint of string
 doesn&rsquo;t conflict with the concrete value &quot;Viola&quot;, and age&rsquo;s unified
-constraint of int &amp; &gt;=0 doesn&rsquo;t conflict with the value 38.
-">
+constraint of int &amp; &gt;=0 doesn&rsquo;t conflict with the value 38.">
 <meta itemprop="wordCount" content="180">
 
 
@@ -470,13 +477,12 @@ This specification uses the <strong>explicit unification operator:</strong> <cod
 <p>Unification succeeds because <code>person</code>&rsquo;s <code>name</code> field constraint of <code>string</code>
 doesn&rsquo;t conflict with the concrete value <code>&quot;Viola&quot;</code>, and <code>age</code>&rsquo;s unified
 constraint of <code>int &amp; &gt;=0</code> doesn&rsquo;t conflict with the value <code>38</code>.</p>
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/9f3ad002707774702479b0b519c026e4d222dc8a">
-                Last modified June 20, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -515,7 +521,7 @@ constraint of <code>int &amp; &gt;=0</code> doesn&rsquo;t conflict with the valu
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/basics/constraints/&text=Constraints%20specify%20what%20values%20are%20allowed.%20Constraints%20are%20values%20because%20all%20types%20are%20values.%0aConstraints%20can%20reduce%20boilerplate%20and%20simplify%20the%20specification%20of%20data.%20If%20a%20constraint%20specifies%20a%20field%20then%20the%20field%20and%20its%20value%20are%20present%20everywhere%20the%20constraint%20is%20unified,%20and%20don&amp;rsquo;t%20need%20to%20be%20repeated.%0aIn%20this%20example,%20the%20cue%20export%20output%20includes%20the%20data%20that%20Viola%20is%20a%20human.%20This%20is%20because%20the%20viola%20field%20is%20specified%20as%20the%20unification%20of%20a%20struct%20which%20declares%20Viola&amp;rsquo;s%20name%20and%20age,%20and%20the%20person%20constraint%20which%20additionally%20declares%20the%20human%20field.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/basics/constraints/&text=%3cp%3e%3cstrong%3eConstraints%3c/strong%3e%20specify%20what%20values%20are%20allowed.%0aConstraints%20are%20values%20because%0a%3ca%20href=%22/docs/tour/basics/types-are-values/%22%3eall%20types%20are%20values%3c/a%3e.%3c/p%3e%0a%3cp%3eConstraints%20can%20%3cstrong%3ereduce%20boilerplate%3c/strong%3e%20and%20simplify%20the%20specification%20of%20data.%0aIf%20a%20constraint%20specifies%20a%20field%20then%20the%20field%20and%20its%20value%20are%20present%0aeverywhere%20the%20constraint%20is%20unified,%20and%20don&amp;rsquo;t%20need%20to%20be%20repeated.%3c/p%3e%0a%3cp%3eIn%20this%20example,%20the%20%3ccode%3ecue%20export%3c/code%3e%20output%20includes%20the%20data%20that%20Viola%20is%20a%20human.%0aThis%20is%20because%20the%20%3ccode%3eviola%3c/code%3e%20field%20is%20specified%20as%20the%20unification%20of%20a%20struct%0awhich%20declares%20Viola&amp;rsquo;s%20name%20and%20age,%20and%20the%20%3ccode%3eperson%3c/code%3e%20constraint%20which%0aadditionally%20declares%20the%20%3ccode%3ehuman%3c/code%3e%20field.%0aThis%20specification%20uses%20the%20%3cstrong%3eexplicit%20unification%20operator:%3c/strong%3e%20%3ccode%3e&amp;amp;%3c/code%3e.%3c/p%3e">
                 
 
 
@@ -531,7 +537,7 @@ constraint of <code>int &amp; &gt;=0</code> doesn&rsquo;t conflict with the valu
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/basics/constraints/&summary=Constraints%20specify%20what%20values%20are%20allowed.%20Constraints%20are%20values%20because%20all%20types%20are%20values.%0aConstraints%20can%20reduce%20boilerplate%20and%20simplify%20the%20specification%20of%20data.%20If%20a%20constraint%20specifies%20a%20field%20then%20the%20field%20and%20its%20value%20are%20present%20everywhere%20the%20constraint%20is%20unified,%20and%20don&amp;rsquo;t%20need%20to%20be%20repeated.%0aIn%20this%20example,%20the%20cue%20export%20output%20includes%20the%20data%20that%20Viola%20is%20a%20human.%20This%20is%20because%20the%20viola%20field%20is%20specified%20as%20the%20unification%20of%20a%20struct%20which%20declares%20Viola&amp;rsquo;s%20name%20and%20age,%20and%20the%20person%20constraint%20which%20additionally%20declares%20the%20human%20field.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/basics/constraints/&summary=%3cp%3e%3cstrong%3eConstraints%3c/strong%3e%20specify%20what%20values%20are%20allowed.%0aConstraints%20are%20values%20because%0a%3ca%20href=%22/docs/tour/basics/types-are-values/%22%3eall%20types%20are%20values%3c/a%3e.%3c/p%3e%0a%3cp%3eConstraints%20can%20%3cstrong%3ereduce%20boilerplate%3c/strong%3e%20and%20simplify%20the%20specification%20of%20data.%0aIf%20a%20constraint%20specifies%20a%20field%20then%20the%20field%20and%20its%20value%20are%20present%0aeverywhere%20the%20constraint%20is%20unified,%20and%20don&amp;rsquo;t%20need%20to%20be%20repeated.%3c/p%3e%0a%3cp%3eIn%20this%20example,%20the%20%3ccode%3ecue%20export%3c/code%3e%20output%20includes%20the%20data%20that%20Viola%20is%20a%20human.%0aThis%20is%20because%20the%20%3ccode%3eviola%3c/code%3e%20field%20is%20specified%20as%20the%20unification%20of%20a%20struct%0awhich%20declares%20Viola&amp;rsquo;s%20name%20and%20age,%20and%20the%20%3ccode%3eperson%3c/code%3e%20constraint%20which%0aadditionally%20declares%20the%20%3ccode%3ehuman%3c/code%3e%20field.%0aThis%20specification%20uses%20the%20%3cstrong%3eexplicit%20unification%20operator:%3c/strong%3e%20%3ccode%3e&amp;amp;%3c/code%3e.%3c/p%3e">
                 
 
 

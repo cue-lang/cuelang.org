@@ -22,22 +22,18 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Symbolic link support in CUE">
   <meta property="og:description" content="Both the cue command and the CUE Go API support symbolic links (“symlinks”) on operating systems where the feature is available. However, symlinks are ignored when they are part of a CUE module published to (or fetched from) a module registry.
-This guide answers some questions about CUE’s support for symlinks.
-Can I use symlinks to help organise my CUE code? Yes.
-When writing your own CUE code you can rely on CUE to respect any filesystem symlinks you put in place.">
+This guide answers some questions about CUE’s support for symlinks.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-11-19T12:31:23+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Symbolic link support in CUE">
   <meta name="twitter:description" content="Both the cue command and the CUE Go API support symbolic links (“symlinks”) on operating systems where the feature is available. However, symlinks are ignored when they are part of a CUE module published to (or fetched from) a module registry.
-This guide answers some questions about CUE’s support for symlinks.
-Can I use symlinks to help organise my CUE code? Yes.
-When writing your own CUE code you can rely on CUE to respect any filesystem symlinks you put in place.">
+This guide answers some questions about CUE’s support for symlinks.">
 
 
 
@@ -58,13 +54,15 @@ When writing your own CUE code you can rely on CUE to respect any filesystem sym
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Symbolic link support in CUE">
-<meta itemprop="description" content="Both the cue command and the CUE Go API support symbolic links (&ldquo;symlinks&rdquo;) on operating systems where the feature is available. However, symlinks are ignored when they are part of a CUE module published to (or fetched from) a module registry.
-This guide answers some questions about CUE&rsquo;s support for symlinks.
-Can I use symlinks to help organise my CUE code? Yes.
-When writing your own CUE code you can rely on CUE to respect any filesystem symlinks you put in place.">
+<meta itemprop="description" content="Both the cue command and the CUE Go API support
+symbolic links
+(&ldquo;symlinks&rdquo;) on operating systems where the feature is available.
+However, symlinks are ignored when they are part of a CUE module published to
+(or fetched from) a module registry.
+This guide answers some questions about CUE&rsquo;s support for symlinks.">
 
     
-        <meta itemprop="dateModified" content="2024-11-19T12:31:23+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -340,8 +338,7 @@ This means that CUE packages in a published module that rely on the presence of
 symlinks to work correctly will not behave as expected, after being fetched
 from a registry.
 Therefore: if your CUE code uses any such package, then your CUE may not work
-as you expect.
-">
+as you expect.">
 <meta itemprop="wordCount" content="302">
 
 
@@ -421,13 +418,12 @@ symlinks to work correctly will not behave as expected, after being fetched
 from a registry.
 Therefore: if your CUE code uses any such package, then your CUE may not work
 as you expect.</p>
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/27637077a4188e832b60f954279ce4517d67a0cd">
-                Last modified November 19, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -466,7 +462,7 @@ as you expect.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/faq/symbolic-link-support/&text=Both%20the%20cue%20command%20and%20the%20CUE%20Go%20API%20support%20symbolic%20links%20%28&amp;ldquo;symlinks&amp;rdquo;%29%20on%20operating%20systems%20where%20the%20feature%20is%20available.%20However,%20symlinks%20are%20ignored%20when%20they%20are%20part%20of%20a%20CUE%20module%20published%20to%20%28or%20fetched%20from%29%20a%20module%20registry.%0aThis%20guide%20answers%20some%20questions%20about%20CUE&amp;rsquo;s%20support%20for%20symlinks.%0aCan%20I%20use%20symlinks%20to%20help%20organise%20my%20CUE%20code?%20Yes.%0aWhen%20writing%20your%20own%20CUE%20code%20you%20can%20rely%20on%20CUE%20to%20respect%20any%20filesystem%20symlinks%20you%20put%20in%20place.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/faq/symbolic-link-support/&text=%3cp%3eBoth%20the%20%3ccode%3ecue%3c/code%3e%20command%20and%20the%20CUE%20Go%20API%20support%0a%3ca%20href=%22https://en.wikipedia.org/wiki/Symbolic_link%22%3esymbolic%20links%3c/a%3e%0a%28&amp;ldquo;symlinks&amp;rdquo;%29%20on%20operating%20systems%20where%20the%20feature%20is%20available.%0aHowever,%20symlinks%20are%20ignored%20when%20they%20are%20part%20of%20a%20CUE%20module%20published%20to%0a%28or%20fetched%20from%29%20a%20module%20registry.%3c/p%3e%0a%3cp%3eThis%20guide%20answers%20some%20questions%20about%20CUE&amp;rsquo;s%20support%20for%20symlinks.%3c/p%3e">
                 
 
 
@@ -482,7 +478,7 @@ as you expect.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/faq/symbolic-link-support/&summary=Both%20the%20cue%20command%20and%20the%20CUE%20Go%20API%20support%20symbolic%20links%20%28&amp;ldquo;symlinks&amp;rdquo;%29%20on%20operating%20systems%20where%20the%20feature%20is%20available.%20However,%20symlinks%20are%20ignored%20when%20they%20are%20part%20of%20a%20CUE%20module%20published%20to%20%28or%20fetched%20from%29%20a%20module%20registry.%0aThis%20guide%20answers%20some%20questions%20about%20CUE&amp;rsquo;s%20support%20for%20symlinks.%0aCan%20I%20use%20symlinks%20to%20help%20organise%20my%20CUE%20code?%20Yes.%0aWhen%20writing%20your%20own%20CUE%20code%20you%20can%20rely%20on%20CUE%20to%20respect%20any%20filesystem%20symlinks%20you%20put%20in%20place.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/faq/symbolic-link-support/&summary=%3cp%3eBoth%20the%20%3ccode%3ecue%3c/code%3e%20command%20and%20the%20CUE%20Go%20API%20support%0a%3ca%20href=%22https://en.wikipedia.org/wiki/Symbolic_link%22%3esymbolic%20links%3c/a%3e%0a%28&amp;ldquo;symlinks&amp;rdquo;%29%20on%20operating%20systems%20where%20the%20feature%20is%20available.%0aHowever,%20symlinks%20are%20ignored%20when%20they%20are%20part%20of%20a%20CUE%20module%20published%20to%0a%28or%20fetched%20from%29%20a%20module%20registry.%3c/p%3e%0a%3cp%3eThis%20guide%20answers%20some%20questions%20about%20CUE&amp;rsquo;s%20support%20for%20symlinks.%3c/p%3e">
                 
 
 

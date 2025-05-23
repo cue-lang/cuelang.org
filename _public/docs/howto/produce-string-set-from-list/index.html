@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="This Commented CUE demonstrates how to produce a list of unique strings from a list of strings that might include duplicate values.Copied! file.cue Copy code …">
+<meta name="description" content="This Commented CUE demonstrates how to produce a list of unique strings from a list of strings that might include duplicate values.">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,19 +21,17 @@
 <title>Producing a set of strings from a list | CUE</title><meta property="og:url" content="/docs/howto/produce-string-set-from-list/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Producing a set of strings from a list">
-  <meta property="og:description" content="This Commented CUE demonstrates how to produce a list of unique strings from a list of strings that might include duplicate values.
-Copied! file.cue Copy code Copied! package example import &#34;list&#34; stringList: [&#34;d&#34;, &#34;a&#34;, &#34;b&#34;, &#34;a&#34;, &#34;c&#34;, &#34;b&#34;, &#34;b&#34;] stringSet: { let map = {for v in stringList {(v): _}} list.SortStrings([for k, _ in map {k}]) } TERMINAL Copy code Copied! $ cue eval stringList: [&#34;d&#34;, &#34;a&#34;, &#34;b&#34;, &#34;a&#34;, &#34;c&#34;, &#34;b&#34;, &#34;b&#34;] stringSet: [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;] It is not strictly necessary to sort the elements of the set.">
+  <meta property="og:description" content="This Commented CUE demonstrates how to produce a list of unique strings from a list of strings that might include duplicate values.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-14T11:20:40+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Producing a set of strings from a list">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to produce a list of unique strings from a list of strings that might include duplicate values.
-Copied! file.cue Copy code Copied! package example import &#34;list&#34; stringList: [&#34;d&#34;, &#34;a&#34;, &#34;b&#34;, &#34;a&#34;, &#34;c&#34;, &#34;b&#34;, &#34;b&#34;] stringSet: { let map = {for v in stringList {(v): _}} list.SortStrings([for k, _ in map {k}]) } TERMINAL Copy code Copied! $ cue eval stringList: [&#34;d&#34;, &#34;a&#34;, &#34;b&#34;, &#34;a&#34;, &#34;c&#34;, &#34;b&#34;, &#34;b&#34;] stringSet: [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;] It is not strictly necessary to sort the elements of the set.">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to produce a list of unique strings from a list of strings that might include duplicate values.">
 
 
 
@@ -54,11 +52,12 @@ Copied! file.cue Copy code Copied! package example import &#34;list&#34; stringL
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Producing a set of strings from a list">
-<meta itemprop="description" content="This Commented CUE demonstrates how to produce a list of unique strings from a list of strings that might include duplicate values.
-Copied! file.cue Copy code Copied! package example import &#34;list&#34; stringList: [&#34;d&#34;, &#34;a&#34;, &#34;b&#34;, &#34;a&#34;, &#34;c&#34;, &#34;b&#34;, &#34;b&#34;] stringSet: { let map = {for v in stringList {(v): _}} list.SortStrings([for k, _ in map {k}]) } TERMINAL Copy code Copied! $ cue eval stringList: [&#34;d&#34;, &#34;a&#34;, &#34;b&#34;, &#34;a&#34;, &#34;c&#34;, &#34;b&#34;, &#34;b&#34;] stringSet: [&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;d&#34;] It is not strictly necessary to sort the elements of the set.">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to produce a list of unique strings from a list of
+strings that might include duplicate values.">
 
     
-        <meta itemprop="dateModified" content="2024-03-14T11:20:40+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -361,7 +360,6 @@ Related content
 Language Tour: Field Comprehensions
 Language Tour: List Comprehensions
 Language Specification: Embedding
-
 ">
 <meta itemprop="wordCount" content="110">
 
@@ -568,14 +566,13 @@ We do this to ensure a deterministic output.</div>
 <li>Language Tour: <a href="/docs/tour/expressions/listcomp/">List Comprehensions</a></li>
 <li>Language Specification: <a href="/docs/reference/spec/#embedding">Embedding</a></li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/f093edc6d6d54a94416381e09e19d69c0580b51b">
-                Last modified March 14, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -624,7 +621,7 @@ We do this to ensure a deterministic output.</div>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/produce-string-set-from-list/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20produce%20a%20list%20of%20unique%20strings%20from%20a%20list%20of%20strings%20that%20might%20include%20duplicate%20values.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;list&amp;#34;%20stringList:%20[&amp;#34;d&amp;#34;,%20&amp;#34;a&amp;#34;,%20&amp;#34;b&amp;#34;,%20&amp;#34;a&amp;#34;,%20&amp;#34;c&amp;#34;,%20&amp;#34;b&amp;#34;,%20&amp;#34;b&amp;#34;]%20stringSet:%20%7b%20let%20map%20=%20%7bfor%20v%20in%20stringList%20%7b%28v%29:%20_%7d%7d%20list.SortStrings%28[for%20k,%20_%20in%20map%20%7bk%7d]%29%20%7d%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20eval%20stringList:%20[&amp;#34;d&amp;#34;,%20&amp;#34;a&amp;#34;,%20&amp;#34;b&amp;#34;,%20&amp;#34;a&amp;#34;,%20&amp;#34;c&amp;#34;,%20&amp;#34;b&amp;#34;,%20&amp;#34;b&amp;#34;]%20stringSet:%20[&amp;#34;a&amp;#34;,%20&amp;#34;b&amp;#34;,%20&amp;#34;c&amp;#34;,%20&amp;#34;d&amp;#34;]%20It%20is%20not%20strictly%20necessary%20to%20sort%20the%20elements%20of%20the%20set.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/produce-string-set-from-list/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20produce%20a%20list%20of%20unique%20strings%20from%20a%20list%20of%0astrings%20that%20might%20include%20duplicate%20values.%3c/p%3e">
                 
 
 
@@ -640,7 +637,7 @@ We do this to ensure a deterministic output.</div>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/produce-string-set-from-list/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20produce%20a%20list%20of%20unique%20strings%20from%20a%20list%20of%20strings%20that%20might%20include%20duplicate%20values.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;list&amp;#34;%20stringList:%20[&amp;#34;d&amp;#34;,%20&amp;#34;a&amp;#34;,%20&amp;#34;b&amp;#34;,%20&amp;#34;a&amp;#34;,%20&amp;#34;c&amp;#34;,%20&amp;#34;b&amp;#34;,%20&amp;#34;b&amp;#34;]%20stringSet:%20%7b%20let%20map%20=%20%7bfor%20v%20in%20stringList%20%7b%28v%29:%20_%7d%7d%20list.SortStrings%28[for%20k,%20_%20in%20map%20%7bk%7d]%29%20%7d%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20eval%20stringList:%20[&amp;#34;d&amp;#34;,%20&amp;#34;a&amp;#34;,%20&amp;#34;b&amp;#34;,%20&amp;#34;a&amp;#34;,%20&amp;#34;c&amp;#34;,%20&amp;#34;b&amp;#34;,%20&amp;#34;b&amp;#34;]%20stringSet:%20[&amp;#34;a&amp;#34;,%20&amp;#34;b&amp;#34;,%20&amp;#34;c&amp;#34;,%20&amp;#34;d&amp;#34;]%20It%20is%20not%20strictly%20necessary%20to%20sort%20the%20elements%20of%20the%20set.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/produce-string-set-from-list/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20produce%20a%20list%20of%20unique%20strings%20from%20a%20list%20of%0astrings%20that%20might%20include%20duplicate%20values.%3c/p%3e">
                 
 
 

@@ -21,19 +21,17 @@
 <title>Using &#34;net.IPCIDR&#34; to validate IP CIDR ranges | CUE</title><meta property="og:url" content="/docs/howto/use-net-ipcidr-to-validate-ip-cidr-ranges/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Using &#34;net.IPCIDR&#34; to validate IP CIDR ranges">
-  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function net.IPCIDR to check that values represent valid IPv4 or IPv6 addresses or subnets in CIDR notation.
-Copied! file.cue Copy code Copied! package example import &#34;net&#34; // All top-level fields must represent valid CIDR ranges. [_]: net.IPCIDR // Some valid CIDR ranges. v4Block: &#34;198.51.100.0/22&#34; v4Address: &#34;198.51.100.14/24&#34; v6Block: &#34;2001:db8::/48&#34; v6Address: &#34;::1/128&#34; // Some invalid CIDR ranges. v4SubnetMaskTooLarge: &#34;10.0.0.0/50&#34; v6MalformedPrefix: &#34;:::1/128&#34; TERMINAL Copy code Copied!">
+  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function net.IPCIDR to check that values represent valid IPv4 or IPv6 addresses or subnets in CIDR notation.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-04-08T13:31:31+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Using &#34;net.IPCIDR&#34; to validate IP CIDR ranges">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function net.IPCIDR to check that values represent valid IPv4 or IPv6 addresses or subnets in CIDR notation.
-Copied! file.cue Copy code Copied! package example import &#34;net&#34; // All top-level fields must represent valid CIDR ranges. [_]: net.IPCIDR // Some valid CIDR ranges. v4Block: &#34;198.51.100.0/22&#34; v4Address: &#34;198.51.100.14/24&#34; v6Block: &#34;2001:db8::/48&#34; v6Address: &#34;::1/128&#34; // Some invalid CIDR ranges. v4SubnetMaskTooLarge: &#34;10.0.0.0/50&#34; v6MalformedPrefix: &#34;:::1/128&#34; TERMINAL Copy code Copied!">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function net.IPCIDR to check that values represent valid IPv4 or IPv6 addresses or subnets in CIDR notation.">
 
 
 
@@ -54,11 +52,14 @@ Copied! file.cue Copy code Copied! package example import &#34;net&#34; // All t
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Using &#34;net.IPCIDR&#34; to validate IP CIDR ranges">
-<meta itemprop="description" content="This Commented CUE demonstrates how to use the built-in function net.IPCIDR to check that values represent valid IPv4 or IPv6 addresses or subnets in CIDR notation.
-Copied! file.cue Copy code Copied! package example import &#34;net&#34; // All top-level fields must represent valid CIDR ranges. [_]: net.IPCIDR // Some valid CIDR ranges. v4Block: &#34;198.51.100.0/22&#34; v4Address: &#34;198.51.100.14/24&#34; v6Block: &#34;2001:db8::/48&#34; v6Address: &#34;::1/128&#34; // Some invalid CIDR ranges. v4SubnetMaskTooLarge: &#34;10.0.0.0/50&#34; v6MalformedPrefix: &#34;:::1/128&#34; TERMINAL Copy code Copied!">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to use the built-in function
+net.IPCIDR
+to check that values represent valid IPv4 or IPv6 addresses or subnets in
+CIDR notation.">
 
     
-        <meta itemprop="dateModified" content="2025-04-08T13:31:31+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -362,7 +363,6 @@ Related content
 The net built-in package
 How-to Guide: Using &#34;net.IP&#34; to validate IP addresses
 How-to Guide: Using &#34;net.IPv4&#34; to validate IPv4 addresses
-
 ">
 <meta itemprop="wordCount" content="147">
 
@@ -569,14 +569,13 @@ v6MalformedPrefix: invalid value &#34;:::1/128&#34; (does not satisfy net.IPCIDR
 <li>How-to Guide: <a href="/docs/howto/use-net-ip-to-validate-ip-addresses/">Using &#34;net.IP&#34; to validate IP addresses</a></li>
 <li>How-to Guide: <a href="/docs/howto/use-net-ipv4-to-validate-ipv4-addresses/">Using &#34;net.IPv4&#34; to validate IPv4 addresses</a></li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7c104835c2bd9731b5a6b8cd703b905b2a4896aa">
-                Last modified April 8, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -625,7 +624,7 @@ v6MalformedPrefix: invalid value &#34;:::1/128&#34; (does not satisfy net.IPCIDR
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-net-ipcidr-to-validate-ip-cidr-ranges/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20net.IPCIDR%20to%20check%20that%20values%20represent%20valid%20IPv4%20or%20IPv6%20addresses%20or%20subnets%20in%20CIDR%20notation.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;net&amp;#34;%20//%20All%20top-level%20fields%20must%20represent%20valid%20CIDR%20ranges.%20[_]:%20net.IPCIDR%20//%20Some%20valid%20CIDR%20ranges.%20v4Block:%20&amp;#34;198.51.100.0/22&amp;#34;%20v4Address:%20&amp;#34;198.51.100.14/24&amp;#34;%20v6Block:%20&amp;#34;2001:db8::/48&amp;#34;%20v6Address:%20&amp;#34;::1/128&amp;#34;%20//%20Some%20invalid%20CIDR%20ranges.%20v4SubnetMaskTooLarge:%20&amp;#34;10.0.0.0/50&amp;#34;%20v6MalformedPrefix:%20&amp;#34;:::1/128&amp;#34;%20TERMINAL%20Copy%20code%20Copied!">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-net-ipcidr-to-validate-ip-cidr-ranges/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/net#IPCIDR%22%3e%3ccode%3enet.IPCIDR%3c/code%3e%3c/a%3e%0ato%20check%20that%20values%20represent%20valid%20IPv4%20or%20IPv6%20addresses%20or%20subnets%20in%0a%3ca%20href=%22https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation%22%3eCIDR%20notation%3c/a%3e.%3c/p%3e">
                 
 
 
@@ -641,7 +640,7 @@ v6MalformedPrefix: invalid value &#34;:::1/128&#34; (does not satisfy net.IPCIDR
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-net-ipcidr-to-validate-ip-cidr-ranges/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20net.IPCIDR%20to%20check%20that%20values%20represent%20valid%20IPv4%20or%20IPv6%20addresses%20or%20subnets%20in%20CIDR%20notation.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;net&amp;#34;%20//%20All%20top-level%20fields%20must%20represent%20valid%20CIDR%20ranges.%20[_]:%20net.IPCIDR%20//%20Some%20valid%20CIDR%20ranges.%20v4Block:%20&amp;#34;198.51.100.0/22&amp;#34;%20v4Address:%20&amp;#34;198.51.100.14/24&amp;#34;%20v6Block:%20&amp;#34;2001:db8::/48&amp;#34;%20v6Address:%20&amp;#34;::1/128&amp;#34;%20//%20Some%20invalid%20CIDR%20ranges.%20v4SubnetMaskTooLarge:%20&amp;#34;10.0.0.0/50&amp;#34;%20v6MalformedPrefix:%20&amp;#34;:::1/128&amp;#34;%20TERMINAL%20Copy%20code%20Copied!">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-net-ipcidr-to-validate-ip-cidr-ranges/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/net#IPCIDR%22%3e%3ccode%3enet.IPCIDR%3c/code%3e%3c/a%3e%0ato%20check%20that%20values%20represent%20valid%20IPv4%20or%20IPv6%20addresses%20or%20subnets%20in%0a%3ca%20href=%22https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation%22%3eCIDR%20notation%3c/a%3e.%3c/p%3e">
                 
 
 

@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="This Commented CUE demonstrates how to use the built-in function close() to close a struct.Copied! example.cue Copy code Copied! package example // _x is an …">
+<meta name="description" content="This Commented CUE demonstrates how to use the built-in function close() to close a struct.">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,19 +21,17 @@
 <title>Using the built-in function &#34;close&#34; to close a struct | CUE</title><meta property="og:url" content="/docs/howto/use-the-built-in-function-close/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Using the built-in function &#34;close&#34; to close a struct">
-  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function close() to close a struct.
-Copied! example.cue Copy code Copied! package example // _x is an open struct _x: { a?: int b!: bool c?: string } // &#34;ok&#34; is an open struct ok: _x &amp; { a: 42 b: true c: &#34;a string&#34; d: &#34;an additional field&#34; } // &#34;notOk&#34; is the result of unifying a closed // struct with at least one field not mentioned // by the struct (&#34;d&#34;) notOk: close(_x) &amp; { a: 42 b: true c: &#34;a string&#34; d: &#34;an additional field&#34; } TERMINAL Copy code Copied!">
+  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function close() to close a struct.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-14T11:20:40+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Using the built-in function &#34;close&#34; to close a struct">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function close() to close a struct.
-Copied! example.cue Copy code Copied! package example // _x is an open struct _x: { a?: int b!: bool c?: string } // &#34;ok&#34; is an open struct ok: _x &amp; { a: 42 b: true c: &#34;a string&#34; d: &#34;an additional field&#34; } // &#34;notOk&#34; is the result of unifying a closed // struct with at least one field not mentioned // by the struct (&#34;d&#34;) notOk: close(_x) &amp; { a: 42 b: true c: &#34;a string&#34; d: &#34;an additional field&#34; } TERMINAL Copy code Copied!">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function close() to close a struct.">
 
 
 
@@ -54,11 +52,16 @@ Copied! example.cue Copy code Copied! package example // _x is an open struct _x
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Using the built-in function &#34;close&#34; to close a struct">
-<meta itemprop="description" content="This Commented CUE demonstrates how to use the built-in function close() to close a struct.
-Copied! example.cue Copy code Copied! package example // _x is an open struct _x: { a?: int b!: bool c?: string } // &#34;ok&#34; is an open struct ok: _x &amp; { a: 42 b: true c: &#34;a string&#34; d: &#34;an additional field&#34; } // &#34;notOk&#34; is the result of unifying a closed // struct with at least one field not mentioned // by the struct (&#34;d&#34;) notOk: close(_x) &amp; { a: 42 b: true c: &#34;a string&#34; d: &#34;an additional field&#34; } TERMINAL Copy code Copied!">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to use the
+built-in
+function
+close()
+to close a
+struct.">
 
     
-        <meta itemprop="dateModified" content="2024-03-14T11:20:40+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -365,8 +368,6 @@ notOk: {
 
 
 
-
-
 ">
 <meta itemprop="wordCount" content="137">
 
@@ -579,15 +580,13 @@ notOk: {
 </div>
 
 </div></div>
-
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/f093edc6d6d54a94416381e09e19d69c0580b51b">
-                Last modified March 14, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -640,7 +639,7 @@ notOk: {
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-the-built-in-function-close/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20close%28%29%20to%20close%20a%20struct.%0aCopied!%20example.cue%20Copy%20code%20Copied!%20package%20example%20//%20_x%20is%20an%20open%20struct%20_x:%20%7b%20a?:%20int%20b!:%20bool%20c?:%20string%20%7d%20//%20&amp;#34;ok&amp;#34;%20is%20an%20open%20struct%20ok:%20_x%20&amp;amp;%20%7b%20a:%2042%20b:%20true%20c:%20&amp;#34;a%20string&amp;#34;%20d:%20&amp;#34;an%20additional%20field&amp;#34;%20%7d%20//%20&amp;#34;notOk&amp;#34;%20is%20the%20result%20of%20unifying%20a%20closed%20//%20struct%20with%20at%20least%20one%20field%20not%20mentioned%20//%20by%20the%20struct%20%28&amp;#34;d&amp;#34;%29%20notOk:%20close%28_x%29%20&amp;amp;%20%7b%20a:%2042%20b:%20true%20c:%20&amp;#34;a%20string&amp;#34;%20d:%20&amp;#34;an%20additional%20field&amp;#34;%20%7d%20TERMINAL%20Copy%20code%20Copied!">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-the-built-in-function-close/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%0a%3ca%20href=%22/docs/reference/glossary/#built-in-functions%22%3ebuilt-in%3c/a%3e%0afunction%0a%3ca%20href=%22/docs/reference/glossary/#close-built-in-function%22%3e%3ccode%3eclose%28%29%3c/code%3e%3c/a%3e%0ato%20close%20a%0a%3ca%20href=%22/docs/reference/glossary/#struct%22%3estruct%3c/a%3e.%3c/p%3e">
                 
 
 
@@ -656,7 +655,7 @@ notOk: {
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-the-built-in-function-close/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20close%28%29%20to%20close%20a%20struct.%0aCopied!%20example.cue%20Copy%20code%20Copied!%20package%20example%20//%20_x%20is%20an%20open%20struct%20_x:%20%7b%20a?:%20int%20b!:%20bool%20c?:%20string%20%7d%20//%20&amp;#34;ok&amp;#34;%20is%20an%20open%20struct%20ok:%20_x%20&amp;amp;%20%7b%20a:%2042%20b:%20true%20c:%20&amp;#34;a%20string&amp;#34;%20d:%20&amp;#34;an%20additional%20field&amp;#34;%20%7d%20//%20&amp;#34;notOk&amp;#34;%20is%20the%20result%20of%20unifying%20a%20closed%20//%20struct%20with%20at%20least%20one%20field%20not%20mentioned%20//%20by%20the%20struct%20%28&amp;#34;d&amp;#34;%29%20notOk:%20close%28_x%29%20&amp;amp;%20%7b%20a:%2042%20b:%20true%20c:%20&amp;#34;a%20string&amp;#34;%20d:%20&amp;#34;an%20additional%20field&amp;#34;%20%7d%20TERMINAL%20Copy%20code%20Copied!">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-the-built-in-function-close/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%0a%3ca%20href=%22/docs/reference/glossary/#built-in-functions%22%3ebuilt-in%3c/a%3e%0afunction%0a%3ca%20href=%22/docs/reference/glossary/#close-built-in-function%22%3e%3ccode%3eclose%28%29%3c/code%3e%3c/a%3e%0ato%20close%20a%0a%3ca%20href=%22/docs/reference/glossary/#struct%22%3estruct%3c/a%3e.%3c/p%3e">
                 
 
 

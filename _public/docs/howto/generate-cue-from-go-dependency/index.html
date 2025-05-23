@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr" class="no-js">
     <head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="This guide demonstrates how to generate CUE from Go types defined in some dependency of a Go module.Initialize Go and CUE modules 1Create a Go module, or use …">
+<meta name="description" content="This guide demonstrates how to generate CUE from Go types defined in some dependency of a Go module.">
 <meta name="generator" content="Hugo 0.128.2">
 
 <meta name="robots" content="noindex, nofollow">
@@ -21,23 +21,17 @@
 <title>Generating CUE from a Go dependency | CUE</title><meta property="og:url" content="/docs/howto/generate-cue-from-go-dependency/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Generating CUE from a Go dependency">
-  <meta property="og:description" content="This guide demonstrates how to generate CUE from Go types defined in some dependency of a Go module.
-Initialize Go and CUE modules 1Create a Go module, or use an existing one if that’s more suitable for your situation:
-TERMINAL Copy code Copied! $ go mod init go.example ... 2Create a CUE module if you don’t already have one:
-TERMINAL Copy code Copied! $ cue mod init cue.example Declare a Go dependency If your Go doesn’t already depend on the module containing the Go types you’re interested in, add it as a dependency.">
+  <meta property="og:description" content="This guide demonstrates how to generate CUE from Go types defined in some dependency of a Go module.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-10-11T14:12:26+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Generating CUE from a Go dependency">
-  <meta name="twitter:description" content="This guide demonstrates how to generate CUE from Go types defined in some dependency of a Go module.
-Initialize Go and CUE modules 1Create a Go module, or use an existing one if that’s more suitable for your situation:
-TERMINAL Copy code Copied! $ go mod init go.example ... 2Create a CUE module if you don’t already have one:
-TERMINAL Copy code Copied! $ cue mod init cue.example Declare a Go dependency If your Go doesn’t already depend on the module containing the Go types you’re interested in, add it as a dependency.">
+  <meta name="twitter:description" content="This guide demonstrates how to generate CUE from Go types defined in some dependency of a Go module.">
 
 
 
@@ -58,13 +52,11 @@ TERMINAL Copy code Copied! $ cue mod init cue.example Declare a Go dependency If
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Generating CUE from a Go dependency">
-<meta itemprop="description" content="This guide demonstrates how to generate CUE from Go types defined in some dependency of a Go module.
-Initialize Go and CUE modules 1Create a Go module, or use an existing one if that&rsquo;s more suitable for your situation:
-TERMINAL Copy code Copied! $ go mod init go.example ... 2Create a CUE module if you don&rsquo;t already have one:
-TERMINAL Copy code Copied! $ cue mod init cue.example Declare a Go dependency If your Go doesn&rsquo;t already depend on the module containing the Go types you&rsquo;re interested in, add it as a dependency.">
+<meta itemprop="description" content="This guide demonstrates how to generate CUE from Go types defined in some
+dependency of a Go module.">
 
     
-        <meta itemprop="dateModified" content="2024-10-11T14:12:26+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -521,7 +513,6 @@ Issue #2865 tracks the plans for CUE to support
 finding well-known types (such as the Kubernetes example used above) at a
 well-known location, without having to import them manually.
 How-to Guide: Generating CUE from local Go code
-
 ">
 <meta itemprop="wordCount" content="343">
 
@@ -955,14 +946,13 @@ finding well-known types (such as the Kubernetes example used above) at a
 well-known location, without having to import them manually.</li>
 <li>How-to Guide: <a href="/docs/howto/generate-cue-from-local-go/">Generating CUE from local Go code</a></li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/84700c1f272b1250c45e2f6cabd8f9696e60c57f">
-                Last modified October 11, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -1015,7 +1005,7 @@ well-known location, without having to import them manually.</li>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/generate-cue-from-go-dependency/&text=This%20guide%20demonstrates%20how%20to%20generate%20CUE%20from%20Go%20types%20defined%20in%20some%20dependency%20of%20a%20Go%20module.%0aInitialize%20Go%20and%20CUE%20modules%201Create%20a%20Go%20module,%20or%20use%20an%20existing%20one%20if%20that&amp;rsquo;s%20more%20suitable%20for%20your%20situation:%0aTERMINAL%20Copy%20code%20Copied!%20$%20go%20mod%20init%20go.example%20...%202Create%20a%20CUE%20module%20if%20you%20don&amp;rsquo;t%20already%20have%20one:%0aTERMINAL%20Copy%20code%20Copied!%20$%20cue%20mod%20init%20cue.example%20Declare%20a%20Go%20dependency%20If%20your%20Go%20doesn&amp;rsquo;t%20already%20depend%20on%20the%20module%20containing%20the%20Go%20types%20you&amp;rsquo;re%20interested%20in,%20add%20it%20as%20a%20dependency.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/generate-cue-from-go-dependency/&text=%3cp%3eThis%20guide%20demonstrates%20how%20to%20generate%20CUE%20from%20Go%20types%20defined%20in%20some%0adependency%20of%20a%20Go%20module.%3c/p%3e">
                 
 
 
@@ -1031,7 +1021,7 @@ well-known location, without having to import them manually.</li>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/generate-cue-from-go-dependency/&summary=This%20guide%20demonstrates%20how%20to%20generate%20CUE%20from%20Go%20types%20defined%20in%20some%20dependency%20of%20a%20Go%20module.%0aInitialize%20Go%20and%20CUE%20modules%201Create%20a%20Go%20module,%20or%20use%20an%20existing%20one%20if%20that&amp;rsquo;s%20more%20suitable%20for%20your%20situation:%0aTERMINAL%20Copy%20code%20Copied!%20$%20go%20mod%20init%20go.example%20...%202Create%20a%20CUE%20module%20if%20you%20don&amp;rsquo;t%20already%20have%20one:%0aTERMINAL%20Copy%20code%20Copied!%20$%20cue%20mod%20init%20cue.example%20Declare%20a%20Go%20dependency%20If%20your%20Go%20doesn&amp;rsquo;t%20already%20depend%20on%20the%20module%20containing%20the%20Go%20types%20you&amp;rsquo;re%20interested%20in,%20add%20it%20as%20a%20dependency.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/generate-cue-from-go-dependency/&summary=%3cp%3eThis%20guide%20demonstrates%20how%20to%20generate%20CUE%20from%20Go%20types%20defined%20in%20some%0adependency%20of%20a%20Go%20module.%3c/p%3e">
                 
 
 

@@ -22,20 +22,18 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Fetching JSON data over HTTP">
   <meta property="og:description" content="This guide demonstrates how to use a CUE workflow command to fetch some JSON over HTTP.
-It is converted from its JSON representation into data, which is then used by the workflow command.
-Copied! a_tool.cue Copy code Copied! package example import ( &#34;tool/http&#34; &#34;tool/cli&#34; &#34;encoding/json&#34; ) command: info: { fetch: http.Get &amp; { url: &#34;https://proxy.golang.org/cached-only/cuelang.org/go/@v/v0.8.2.info&#34; } display: cli.Print &amp; { _data: #info &amp; json.Unmarshal(fetch.response.body) text: &#34;CUE version \(_data.Version) was released with commit hash \(_data.">
+It is converted from its JSON representation into data, which is then used by the workflow command.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-08-09T17:04:46+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Fetching JSON data over HTTP">
   <meta name="twitter:description" content="This guide demonstrates how to use a CUE workflow command to fetch some JSON over HTTP.
-It is converted from its JSON representation into data, which is then used by the workflow command.
-Copied! a_tool.cue Copy code Copied! package example import ( &#34;tool/http&#34; &#34;tool/cli&#34; &#34;encoding/json&#34; ) command: info: { fetch: http.Get &amp; { url: &#34;https://proxy.golang.org/cached-only/cuelang.org/go/@v/v0.8.2.info&#34; } display: cli.Print &amp; { _data: #info &amp; json.Unmarshal(fetch.response.body) text: &#34;CUE version \(_data.Version) was released with commit hash \(_data.">
+It is converted from its JSON representation into data, which is then used by the workflow command.">
 
 
 
@@ -57,11 +55,11 @@ Copied! a_tool.cue Copy code Copied! package example import ( &#34;tool/http&#34
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Fetching JSON data over HTTP">
 <meta itemprop="description" content="This guide demonstrates how to use a CUE workflow command to fetch some JSON over HTTP.
-It is converted from its JSON representation into data, which is then used by the workflow command.
-Copied! a_tool.cue Copy code Copied! package example import ( &#34;tool/http&#34; &#34;tool/cli&#34; &#34;encoding/json&#34; ) command: info: { fetch: http.Get &amp; { url: &#34;https://proxy.golang.org/cached-only/cuelang.org/go/@v/v0.8.2.info&#34; } display: cli.Print &amp; { _data: #info &amp; json.Unmarshal(fetch.response.body) text: &#34;CUE version \(_data.Version) was released with commit hash \(_data.">
+It is converted from its JSON representation into data,
+which is then used by the workflow command.">
 
     
-        <meta itemprop="dateModified" content="2024-08-09T17:04:46+01:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -366,7 +364,6 @@ convert data to and from its JSON representation
 Go API:
 tool/cli &ndash;
 interact with the user&rsquo;s terminal in workflow commands
-
 ">
 <meta itemprop="wordCount" content="171">
 
@@ -568,14 +565,13 @@ convert data to and from its JSON representation</li>
 <a href="https://pkg.go.dev/cuelang.org/go/pkg/tool/cli#section-documentation"><code>tool/cli</code></a> &ndash;
 interact with the user&rsquo;s terminal in workflow commands</li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/b8027323a96807781daf452e32fd9cf6610de9eb">
-                Last modified August 9, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -624,7 +620,7 @@ interact with the user&rsquo;s terminal in workflow commands</li>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/fetch-json-data-http/&text=This%20guide%20demonstrates%20how%20to%20use%20a%20CUE%20workflow%20command%20to%20fetch%20some%20JSON%20over%20HTTP.%0aIt%20is%20converted%20from%20its%20JSON%20representation%20into%20data,%20which%20is%20then%20used%20by%20the%20workflow%20command.%0aCopied!%20a_tool.cue%20Copy%20code%20Copied!%20package%20example%20import%20%28%20&amp;#34;tool/http&amp;#34;%20&amp;#34;tool/cli&amp;#34;%20&amp;#34;encoding/json&amp;#34;%20%29%20command:%20info:%20%7b%20fetch:%20http.Get%20&amp;amp;%20%7b%20url:%20&amp;#34;https://proxy.golang.org/cached-only/cuelang.org/go/@v/v0.8.2.info&amp;#34;%20%7d%20display:%20cli.Print%20&amp;amp;%20%7b%20_data:%20#info%20&amp;amp;%20json.Unmarshal%28fetch.response.body%29%20text:%20&amp;#34;CUE%20version%20%5c%28_data.Version%29%20was%20released%20with%20commit%20hash%20%5c%28_data.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/fetch-json-data-http/&text=%3cp%3eThis%20guide%20demonstrates%20how%20to%20use%20a%20CUE%20workflow%20command%20to%20fetch%20some%20JSON%20over%20HTTP.%3c/p%3e%0a%3cp%3eIt%20is%20converted%20from%20its%20JSON%20representation%20into%20data,%0awhich%20is%20then%20used%20by%20the%20workflow%20command.%3c/p%3e">
                 
 
 
@@ -640,7 +636,7 @@ interact with the user&rsquo;s terminal in workflow commands</li>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/fetch-json-data-http/&summary=This%20guide%20demonstrates%20how%20to%20use%20a%20CUE%20workflow%20command%20to%20fetch%20some%20JSON%20over%20HTTP.%0aIt%20is%20converted%20from%20its%20JSON%20representation%20into%20data,%20which%20is%20then%20used%20by%20the%20workflow%20command.%0aCopied!%20a_tool.cue%20Copy%20code%20Copied!%20package%20example%20import%20%28%20&amp;#34;tool/http&amp;#34;%20&amp;#34;tool/cli&amp;#34;%20&amp;#34;encoding/json&amp;#34;%20%29%20command:%20info:%20%7b%20fetch:%20http.Get%20&amp;amp;%20%7b%20url:%20&amp;#34;https://proxy.golang.org/cached-only/cuelang.org/go/@v/v0.8.2.info&amp;#34;%20%7d%20display:%20cli.Print%20&amp;amp;%20%7b%20_data:%20#info%20&amp;amp;%20json.Unmarshal%28fetch.response.body%29%20text:%20&amp;#34;CUE%20version%20%5c%28_data.Version%29%20was%20released%20with%20commit%20hash%20%5c%28_data.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/fetch-json-data-http/&summary=%3cp%3eThis%20guide%20demonstrates%20how%20to%20use%20a%20CUE%20workflow%20command%20to%20fetch%20some%20JSON%20over%20HTTP.%3c/p%3e%0a%3cp%3eIt%20is%20converted%20from%20its%20JSON%20representation%20into%20data,%0awhich%20is%20then%20used%20by%20the%20workflow%20command.%3c/p%3e">
                 
 
 

@@ -22,18 +22,18 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Removing list arithmetic operators in CUE 0.11">
   <meta property="og:description" content="This guide answers some questions about a language change that happened in CUE version 0.11 – including how to tell if the change affects your CUE, and how to update any CUE that’s affected.
-What’s changed, and how can I tell if my CUE is affected? From version 0.11 onwards, the list arithmetic operators * and &#43; don’t work in CUE evaluated by the cue command and the Go API. Your CUE is not affected if a 0.">
+What’s changed, and how can I tell if my CUE is affected? From version 0.11 onwards, the list arithmetic operators * and &#43; don’t work in CUE evaluated by the cue command and the Go API. Your CUE is not affected if a 0.11 version of cue vet evaluates it successfully.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2025-04-30T05:36:56+01:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Removing list arithmetic operators in CUE 0.11">
   <meta name="twitter:description" content="This guide answers some questions about a language change that happened in CUE version 0.11 – including how to tell if the change affects your CUE, and how to update any CUE that’s affected.
-What’s changed, and how can I tell if my CUE is affected? From version 0.11 onwards, the list arithmetic operators * and &#43; don’t work in CUE evaluated by the cue command and the Go API. Your CUE is not affected if a 0.">
+What’s changed, and how can I tell if my CUE is affected? From version 0.11 onwards, the list arithmetic operators * and &#43; don’t work in CUE evaluated by the cue command and the Go API. Your CUE is not affected if a 0.11 version of cue vet evaluates it successfully.">
 
 
 
@@ -54,11 +54,24 @@ What’s changed, and how can I tell if my CUE is affected? From version 0.11 on
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Removing list arithmetic operators in CUE 0.11">
-<meta itemprop="description" content="This guide answers some questions about a language change that happened in CUE version 0.11 &ndash; including how to tell if the change affects your CUE, and how to update any CUE that&rsquo;s affected.
-What&rsquo;s changed, and how can I tell if my CUE is affected? From version 0.11 onwards, the list arithmetic operators * and &#43; don&rsquo;t work in CUE evaluated by the cue command and the Go API. Your CUE is not affected if a 0.">
+<meta itemprop="description" content="This guide answers some questions about a language change that happened in CUE
+version 0.11 &ndash; including how to tell if the change affects your CUE, and how
+to update any CUE that&rsquo;s affected.
 
     
-        <meta itemprop="dateModified" content="2025-04-30T05:36:56+01:00" >
+
+
+
+
+    
+
+What&rsquo;s changed, and how can I tell if my CUE is affected?
+From version 0.11 onwards, the list arithmetic operators * and &#43; don&rsquo;t work
+in CUE evaluated by the cue command and the Go API.
+Your CUE is not affected if a 0.11 version of cue vet evaluates it successfully.">
+
+    
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -637,7 +650,6 @@ Reference: cue help fix
 Reference: cue help vet
 Standard library: list.Repeat
 Standard library: list.Concat
-
 ">
 <meta itemprop="wordCount" content="960">
 
@@ -1142,14 +1154,13 @@ or Discord and ask the question there &ndash; we&rsquo;ll be happy to help!</p>
 <li>Standard library: <a href="/go/pkg/list#Repeat"><code>list.Repeat</code></a></li>
 <li>Standard library: <a href="/go/pkg/list#Concat"><code>list.Concat</code></a></li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/bd0960189fdf13181b98881f7878b9016a8d282c">
-                Last modified April 30, 2025</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -1198,7 +1209,7 @@ or Discord and ask the question there &ndash; we&rsquo;ll be happy to help!</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/faq/removing-list-arithmetic-operators-v0.11/&text=This%20guide%20answers%20some%20questions%20about%20a%20language%20change%20that%20happened%20in%20CUE%20version%200.11%20&amp;ndash;%20including%20how%20to%20tell%20if%20the%20change%20affects%20your%20CUE,%20and%20how%20to%20update%20any%20CUE%20that&amp;rsquo;s%20affected.%0aWhat&amp;rsquo;s%20changed,%20and%20how%20can%20I%20tell%20if%20my%20CUE%20is%20affected?%20From%20version%200.11%20onwards,%20the%20list%20arithmetic%20operators%20*%20and%20&#43;%20don&amp;rsquo;t%20work%20in%20CUE%20evaluated%20by%20the%20cue%20command%20and%20the%20Go%20API.%20Your%20CUE%20is%20not%20affected%20if%20a%200.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/concept/faq/removing-list-arithmetic-operators-v0.11/&text=%3cp%3eThis%20guide%20answers%20some%20questions%20about%20a%20language%20change%20that%20happened%20in%20CUE%0aversion%200.11%20&amp;ndash;%20including%20how%20to%20tell%20if%20the%20change%20affects%20your%20CUE,%20and%20how%0ato%20update%20any%20CUE%20that&amp;rsquo;s%20affected.%3c/p%3e%0a%3ch2%20id=%22whats-changed-and-how-can-i-tell-if-my-cue-is-affected%22%3e%0a%20%20%20%20%3ca%20href=%22#whats-changed-and-how-can-i-tell-if-my-cue-is-affected%22%20class=%22anchor%22%20aria-label=%22Anchor%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20anchor__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--link%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3c/a%3eWhat&amp;rsquo;s%20changed,%20and%20how%20can%20I%20tell%20if%20my%20CUE%20is%20affected?%3c/h2%3e%0a%3cp%3eFrom%20version%200.11%20onwards,%20the%20list%20arithmetic%20operators%20%3ccode%3e*%3c/code%3e%20and%20%3ccode%3e&#43;%3c/code%3e%20don&amp;rsquo;t%20work%0ain%20CUE%20evaluated%20by%20the%20%3ccode%3ecue%3c/code%3e%20command%20and%20the%20Go%20API.%0aYour%20CUE%20is%20not%20affected%20if%20a%200.11%20version%20of%20%3ccode%3ecue%20vet%3c/code%3e%20evaluates%20it%20successfully.%3c/p%3e">
                 
 
 
@@ -1214,7 +1225,7 @@ or Discord and ask the question there &ndash; we&rsquo;ll be happy to help!</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/faq/removing-list-arithmetic-operators-v0.11/&summary=This%20guide%20answers%20some%20questions%20about%20a%20language%20change%20that%20happened%20in%20CUE%20version%200.11%20&amp;ndash;%20including%20how%20to%20tell%20if%20the%20change%20affects%20your%20CUE,%20and%20how%20to%20update%20any%20CUE%20that&amp;rsquo;s%20affected.%0aWhat&amp;rsquo;s%20changed,%20and%20how%20can%20I%20tell%20if%20my%20CUE%20is%20affected?%20From%20version%200.11%20onwards,%20the%20list%20arithmetic%20operators%20*%20and%20&#43;%20don&amp;rsquo;t%20work%20in%20CUE%20evaluated%20by%20the%20cue%20command%20and%20the%20Go%20API.%20Your%20CUE%20is%20not%20affected%20if%20a%200.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/concept/faq/removing-list-arithmetic-operators-v0.11/&summary=%3cp%3eThis%20guide%20answers%20some%20questions%20about%20a%20language%20change%20that%20happened%20in%20CUE%0aversion%200.11%20&amp;ndash;%20including%20how%20to%20tell%20if%20the%20change%20affects%20your%20CUE,%20and%20how%0ato%20update%20any%20CUE%20that&amp;rsquo;s%20affected.%3c/p%3e%0a%3ch2%20id=%22whats-changed-and-how-can-i-tell-if-my-cue-is-affected%22%3e%0a%20%20%20%20%3ca%20href=%22#whats-changed-and-how-can-i-tell-if-my-cue-is-affected%22%20class=%22anchor%22%20aria-label=%22Anchor%22%3e%0a%0a%0a%0a%3csvg%20class=%22icon%20anchor__icon%22%20aria-hidden=%22true%22%3e%0a%20%20%20%20%3cuse%20xmlns:xlink=%22http://www.w3.org/1999/xlink%22%0a%20%20%20%20%20%20%20%20%20xlink:href=%22/img/ui.svg#icon--link%22%3e%3c/use%3e%0a%3c/svg%3e%0a%3c/a%3eWhat&amp;rsquo;s%20changed,%20and%20how%20can%20I%20tell%20if%20my%20CUE%20is%20affected?%3c/h2%3e%0a%3cp%3eFrom%20version%200.11%20onwards,%20the%20list%20arithmetic%20operators%20%3ccode%3e*%3c/code%3e%20and%20%3ccode%3e&#43;%3c/code%3e%20don&amp;rsquo;t%20work%0ain%20CUE%20evaluated%20by%20the%20%3ccode%3ecue%3c/code%3e%20command%20and%20the%20Go%20API.%0aYour%20CUE%20is%20not%20affected%20if%20a%200.11%20version%20of%20%3ccode%3ecue%20vet%3c/code%3e%20evaluates%20it%20successfully.%3c/p%3e">
                 
 
 

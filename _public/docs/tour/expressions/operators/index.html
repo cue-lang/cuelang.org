@@ -22,18 +22,18 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Operators">
   <meta property="og:description" content="CUE supports common arithmetic and boolean operators, which apply to its numerical types int, float, and number. Some of these operators also apply to the string and bytes types.
-CUE provides three different division operations. To produce a float, CUE supports the infix / operator with the standard mathematical meaning. Arguments can be float, int, or a mixture of the two. CUE also provides built-in functions that produce an int by calculating integer division and remainder.">
+CUE provides three different division operations. To produce a float, CUE supports the infix / operator with the standard mathematical meaning. Arguments can be float, int, or a mixture of the two. CUE also provides built-in functions that produce an int by calculating integer division and remainder. They support Euclidean division (div / mod) and truncated division (quo / rem).">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-06T17:21:30+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Operators">
   <meta name="twitter:description" content="CUE supports common arithmetic and boolean operators, which apply to its numerical types int, float, and number. Some of these operators also apply to the string and bytes types.
-CUE provides three different division operations. To produce a float, CUE supports the infix / operator with the standard mathematical meaning. Arguments can be float, int, or a mixture of the two. CUE also provides built-in functions that produce an int by calculating integer division and remainder.">
+CUE provides three different division operations. To produce a float, CUE supports the infix / operator with the standard mathematical meaning. Arguments can be float, int, or a mixture of the two. CUE also provides built-in functions that produce an int by calculating integer division and remainder. They support Euclidean division (div / mod) and truncated division (quo / rem).">
 
 
 
@@ -54,11 +54,20 @@ CUE provides three different division operations. To produce a float, CUE suppor
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Operators">
-<meta itemprop="description" content="CUE supports common arithmetic and boolean operators, which apply to its numerical types int, float, and number. Some of these operators also apply to the string and bytes types.
-CUE provides three different division operations. To produce a float, CUE supports the infix / operator with the standard mathematical meaning. Arguments can be float, int, or a mixture of the two. CUE also provides built-in functions that produce an int by calculating integer division and remainder.">
+<meta itemprop="description" content="CUE supports common arithmetic and boolean operators, which apply to its
+numerical types int, float, and number.
+Some of these operators also apply to the string and bytes types.
+CUE provides three different division operations.
+To produce a float, CUE supports the infix / operator with the standard
+mathematical meaning.
+Arguments can be float, int, or a mixture of the two.
+CUE also provides
+built-in functions
+that produce an int by calculating integer division and remainder.
+They support Euclidean division (div / mod) and truncated division (quo / rem).">
 
     
-        <meta itemprop="dateModified" content="2024-03-06T17:21:30+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -367,8 +376,7 @@ l: 1
 
 
 The CUE languge specification
-details the operator precedence levels.
-">
+details the operator precedence levels.">
 <meta itemprop="wordCount" content="224">
 
 
@@ -491,13 +499,12 @@ l: 1</code></pre></div>
 
 <p>The <a href="/docs/reference/spec/#operators">CUE languge specification</a>
 details the operator precedence levels.</p>
-
                         
                     </div><footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/4eb58269bc06a55bc22ff47e121ae4ae6744a14c">
-                Last modified March 6, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -536,7 +543,7 @@ details the operator precedence levels.</p>
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/expressions/operators/&text=CUE%20supports%20common%20arithmetic%20and%20boolean%20operators,%20which%20apply%20to%20its%20numerical%20types%20int,%20float,%20and%20number.%20Some%20of%20these%20operators%20also%20apply%20to%20the%20string%20and%20bytes%20types.%0aCUE%20provides%20three%20different%20division%20operations.%20To%20produce%20a%20float,%20CUE%20supports%20the%20infix%20/%20operator%20with%20the%20standard%20mathematical%20meaning.%20Arguments%20can%20be%20float,%20int,%20or%20a%20mixture%20of%20the%20two.%20CUE%20also%20provides%20built-in%20functions%20that%20produce%20an%20int%20by%20calculating%20integer%20division%20and%20remainder.">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/tour/expressions/operators/&text=%3cp%3eCUE%20supports%20common%20arithmetic%20and%20boolean%20operators,%20which%20apply%20to%20its%0anumerical%20types%20%3ccode%3eint%3c/code%3e,%20%3ccode%3efloat%3c/code%3e,%20and%20%3ccode%3enumber%3c/code%3e.%0aSome%20of%20these%20operators%20also%20apply%20to%20the%20%3ccode%3estring%3c/code%3e%20and%20%3ccode%3ebytes%3c/code%3e%20types.%3c/p%3e%0a%3cp%3eCUE%20provides%20three%20different%20%3cem%3edivision%3c/em%3e%20operations.%0aTo%20produce%20a%20%3ccode%3efloat%3c/code%3e,%20CUE%20supports%20the%20infix%20%3ccode%3e/%3c/code%3e%20operator%20with%20the%20standard%0amathematical%20meaning.%0aArguments%20can%20be%20%3ccode%3efloat%3c/code%3e,%20%3ccode%3eint%3c/code%3e,%20or%20a%20mixture%20of%20the%20two.%0aCUE%20also%20provides%0a%3ca%20href=%22/docs/howto/use-the-built-in-functions-div-mod-quo-rem/%22%3ebuilt-in%20functions%3c/a%3e%0athat%20produce%20an%20%3ccode%3eint%3c/code%3e%20by%20calculating%20%3cem%3einteger%20division%20and%20remainder%3c/em%3e.%0aThey%20support%20Euclidean%20division%20%28%3ccode%3ediv%3c/code%3e%20/%20%3ccode%3emod%3c/code%3e%29%20and%20truncated%20division%20%28%3ccode%3equo%3c/code%3e%20/%20%3ccode%3erem%3c/code%3e%29.%3c/p%3e">
                 
 
 
@@ -552,7 +559,7 @@ details the operator precedence levels.</p>
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/expressions/operators/&summary=CUE%20supports%20common%20arithmetic%20and%20boolean%20operators,%20which%20apply%20to%20its%20numerical%20types%20int,%20float,%20and%20number.%20Some%20of%20these%20operators%20also%20apply%20to%20the%20string%20and%20bytes%20types.%0aCUE%20provides%20three%20different%20division%20operations.%20To%20produce%20a%20float,%20CUE%20supports%20the%20infix%20/%20operator%20with%20the%20standard%20mathematical%20meaning.%20Arguments%20can%20be%20float,%20int,%20or%20a%20mixture%20of%20the%20two.%20CUE%20also%20provides%20built-in%20functions%20that%20produce%20an%20int%20by%20calculating%20integer%20division%20and%20remainder.">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/tour/expressions/operators/&summary=%3cp%3eCUE%20supports%20common%20arithmetic%20and%20boolean%20operators,%20which%20apply%20to%20its%0anumerical%20types%20%3ccode%3eint%3c/code%3e,%20%3ccode%3efloat%3c/code%3e,%20and%20%3ccode%3enumber%3c/code%3e.%0aSome%20of%20these%20operators%20also%20apply%20to%20the%20%3ccode%3estring%3c/code%3e%20and%20%3ccode%3ebytes%3c/code%3e%20types.%3c/p%3e%0a%3cp%3eCUE%20provides%20three%20different%20%3cem%3edivision%3c/em%3e%20operations.%0aTo%20produce%20a%20%3ccode%3efloat%3c/code%3e,%20CUE%20supports%20the%20infix%20%3ccode%3e/%3c/code%3e%20operator%20with%20the%20standard%0amathematical%20meaning.%0aArguments%20can%20be%20%3ccode%3efloat%3c/code%3e,%20%3ccode%3eint%3c/code%3e,%20or%20a%20mixture%20of%20the%20two.%0aCUE%20also%20provides%0a%3ca%20href=%22/docs/howto/use-the-built-in-functions-div-mod-quo-rem/%22%3ebuilt-in%20functions%3c/a%3e%0athat%20produce%20an%20%3ccode%3eint%3c/code%3e%20by%20calculating%20%3cem%3einteger%20division%20and%20remainder%3c/em%3e.%0aThey%20support%20Euclidean%20division%20%28%3ccode%3ediv%3c/code%3e%20/%20%3ccode%3emod%3c/code%3e%29%20and%20truncated%20division%20%28%3ccode%3equo%3c/code%3e%20/%20%3ccode%3erem%3c/code%3e%29.%3c/p%3e">
                 
 
 

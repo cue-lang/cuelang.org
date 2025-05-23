@@ -21,19 +21,17 @@
 <title>Using &#34;encoding/csv.Decode&#34; to access data stored in a CSV file | CUE</title><meta property="og:url" content="/docs/howto/use-encoding-csv-decode-to-access-data-stored-in-a-csv-file/">
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Using &#34;encoding/csv.Decode&#34; to access data stored in a CSV file">
-  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function encoding/csv.Decode to decode a file containing comma-separated values (CSV) into a list of lists.
-Copied! data.csv Copy code Copied! Id,Name,Location,Species 1,Charlie,&#34;Ripon, North Yorkshire&#34;,cat 2,Fred,San Francisco,cat 3,Greyfriars Bobby,Edinburgh,dog 4,Nemo,???,fish Copied! file.cue Copy code Copied! package example import &#34;encoding/csv&#34; input: string output: csv.Decode(input) TERMINAL Copy code Copied! $ cue export file.cue -l input: text: data.csv -e output [ [ &#34;Id&#34;, &#34;Name&#34;, &#34;Location&#34;, &#34;Species&#34; ], [ &#34;1&#34;, &#34;Charlie&#34;, &#34;Ripon, North Yorkshire&#34;, &#34;cat&#34; ], [ &#34;2&#34;, &#34;Fred&#34;, &#34;San Francisco&#34;, &#34;cat&#34; ], [ &#34;3&#34;, &#34;Greyfriars Bobby&#34;, &#34;Edinburgh&#34;, &#34;dog&#34; ], [ &#34;4&#34;, &#34;Nemo&#34;, &#34;?">
+  <meta property="og:description" content="This Commented CUE demonstrates how to use the built-in function encoding/csv.Decode to decode a file containing comma-separated values (CSV) into a list of lists.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-14T11:20:40+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Using &#34;encoding/csv.Decode&#34; to access data stored in a CSV file">
-  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function encoding/csv.Decode to decode a file containing comma-separated values (CSV) into a list of lists.
-Copied! data.csv Copy code Copied! Id,Name,Location,Species 1,Charlie,&#34;Ripon, North Yorkshire&#34;,cat 2,Fred,San Francisco,cat 3,Greyfriars Bobby,Edinburgh,dog 4,Nemo,???,fish Copied! file.cue Copy code Copied! package example import &#34;encoding/csv&#34; input: string output: csv.Decode(input) TERMINAL Copy code Copied! $ cue export file.cue -l input: text: data.csv -e output [ [ &#34;Id&#34;, &#34;Name&#34;, &#34;Location&#34;, &#34;Species&#34; ], [ &#34;1&#34;, &#34;Charlie&#34;, &#34;Ripon, North Yorkshire&#34;, &#34;cat&#34; ], [ &#34;2&#34;, &#34;Fred&#34;, &#34;San Francisco&#34;, &#34;cat&#34; ], [ &#34;3&#34;, &#34;Greyfriars Bobby&#34;, &#34;Edinburgh&#34;, &#34;dog&#34; ], [ &#34;4&#34;, &#34;Nemo&#34;, &#34;?">
+  <meta name="twitter:description" content="This Commented CUE demonstrates how to use the built-in function encoding/csv.Decode to decode a file containing comma-separated values (CSV) into a list of lists.">
 
 
 
@@ -54,11 +52,13 @@ Copied! data.csv Copy code Copied! Id,Name,Location,Species 1,Charlie,&#34;Ripon
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Using &#34;encoding/csv.Decode&#34; to access data stored in a CSV file">
-<meta itemprop="description" content="This Commented CUE demonstrates how to use the built-in function encoding/csv.Decode to decode a file containing comma-separated values (CSV) into a list of lists.
-Copied! data.csv Copy code Copied! Id,Name,Location,Species 1,Charlie,&#34;Ripon, North Yorkshire&#34;,cat 2,Fred,San Francisco,cat 3,Greyfriars Bobby,Edinburgh,dog 4,Nemo,???,fish Copied! file.cue Copy code Copied! package example import &#34;encoding/csv&#34; input: string output: csv.Decode(input) TERMINAL Copy code Copied! $ cue export file.cue -l input: text: data.csv -e output [ [ &#34;Id&#34;, &#34;Name&#34;, &#34;Location&#34;, &#34;Species&#34; ], [ &#34;1&#34;, &#34;Charlie&#34;, &#34;Ripon, North Yorkshire&#34;, &#34;cat&#34; ], [ &#34;2&#34;, &#34;Fred&#34;, &#34;San Francisco&#34;, &#34;cat&#34; ], [ &#34;3&#34;, &#34;Greyfriars Bobby&#34;, &#34;Edinburgh&#34;, &#34;dog&#34; ], [ &#34;4&#34;, &#34;Nemo&#34;, &#34;?">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to use the built-in function
+encoding/csv.Decode
+to decode a file containing comma-separated values (CSV) into a list of lists.">
 
     
-        <meta itemprop="dateModified" content="2024-03-14T11:20:40+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -410,7 +410,6 @@ output: csv.Decode(input)
 Related content
 
 The encoding/csv built-in package
-
 ">
 <meta itemprop="wordCount" content="107">
 
@@ -676,14 +675,13 @@ to decode a file containing comma-separated values (CSV) into a list of lists.</
 <ul>
 <li>The <a href="https://pkg.go.dev/cuelang.org/go/pkg/encoding/csv"><code>encoding/csv</code></a> built-in package</li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/f093edc6d6d54a94416381e09e19d69c0580b51b">
-                Last modified March 14, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -736,7 +734,7 @@ to decode a file containing comma-separated values (CSV) into a list of lists.</
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-encoding-csv-decode-to-access-data-stored-in-a-csv-file/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20encoding/csv.Decode%20to%20decode%20a%20file%20containing%20comma-separated%20values%20%28CSV%29%20into%20a%20list%20of%20lists.%0aCopied!%20data.csv%20Copy%20code%20Copied!%20Id,Name,Location,Species%201,Charlie,&amp;#34;Ripon,%20North%20Yorkshire&amp;#34;,cat%202,Fred,San%20Francisco,cat%203,Greyfriars%20Bobby,Edinburgh,dog%204,Nemo,???,fish%20Copied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;encoding/csv&amp;#34;%20input:%20string%20output:%20csv.Decode%28input%29%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20export%20file.cue%20-l%20input:%20text:%20data.csv%20-e%20output%20[%20[%20&amp;#34;Id&amp;#34;,%20&amp;#34;Name&amp;#34;,%20&amp;#34;Location&amp;#34;,%20&amp;#34;Species&amp;#34;%20],%20[%20&amp;#34;1&amp;#34;,%20&amp;#34;Charlie&amp;#34;,%20&amp;#34;Ripon,%20North%20Yorkshire&amp;#34;,%20&amp;#34;cat&amp;#34;%20],%20[%20&amp;#34;2&amp;#34;,%20&amp;#34;Fred&amp;#34;,%20&amp;#34;San%20Francisco&amp;#34;,%20&amp;#34;cat&amp;#34;%20],%20[%20&amp;#34;3&amp;#34;,%20&amp;#34;Greyfriars%20Bobby&amp;#34;,%20&amp;#34;Edinburgh&amp;#34;,%20&amp;#34;dog&amp;#34;%20],%20[%20&amp;#34;4&amp;#34;,%20&amp;#34;Nemo&amp;#34;,%20&amp;#34;?">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/use-encoding-csv-decode-to-access-data-stored-in-a-csv-file/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/encoding/csv#Decode%22%3e%3ccode%3eencoding/csv.Decode%3c/code%3e%3c/a%3e%0ato%20decode%20a%20file%20containing%20comma-separated%20values%20%28CSV%29%20into%20a%20list%20of%20lists.%3c/p%3e">
                 
 
 
@@ -752,7 +750,7 @@ to decode a file containing comma-separated values (CSV) into a list of lists.</
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-encoding-csv-decode-to-access-data-stored-in-a-csv-file/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20use%20the%20built-in%20function%20encoding/csv.Decode%20to%20decode%20a%20file%20containing%20comma-separated%20values%20%28CSV%29%20into%20a%20list%20of%20lists.%0aCopied!%20data.csv%20Copy%20code%20Copied!%20Id,Name,Location,Species%201,Charlie,&amp;#34;Ripon,%20North%20Yorkshire&amp;#34;,cat%202,Fred,San%20Francisco,cat%203,Greyfriars%20Bobby,Edinburgh,dog%204,Nemo,???,fish%20Copied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20import%20&amp;#34;encoding/csv&amp;#34;%20input:%20string%20output:%20csv.Decode%28input%29%20TERMINAL%20Copy%20code%20Copied!%20$%20cue%20export%20file.cue%20-l%20input:%20text:%20data.csv%20-e%20output%20[%20[%20&amp;#34;Id&amp;#34;,%20&amp;#34;Name&amp;#34;,%20&amp;#34;Location&amp;#34;,%20&amp;#34;Species&amp;#34;%20],%20[%20&amp;#34;1&amp;#34;,%20&amp;#34;Charlie&amp;#34;,%20&amp;#34;Ripon,%20North%20Yorkshire&amp;#34;,%20&amp;#34;cat&amp;#34;%20],%20[%20&amp;#34;2&amp;#34;,%20&amp;#34;Fred&amp;#34;,%20&amp;#34;San%20Francisco&amp;#34;,%20&amp;#34;cat&amp;#34;%20],%20[%20&amp;#34;3&amp;#34;,%20&amp;#34;Greyfriars%20Bobby&amp;#34;,%20&amp;#34;Edinburgh&amp;#34;,%20&amp;#34;dog&amp;#34;%20],%20[%20&amp;#34;4&amp;#34;,%20&amp;#34;Nemo&amp;#34;,%20&amp;#34;?">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/use-encoding-csv-decode-to-access-data-stored-in-a-csv-file/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20use%20the%20built-in%20function%0a%3ca%20href=%22https://pkg.go.dev/cuelang.org/go/pkg/encoding/csv#Decode%22%3e%3ccode%3eencoding/csv.Decode%3c/code%3e%3c/a%3e%0ato%20decode%20a%20file%20containing%20comma-separated%20values%20%28CSV%29%20into%20a%20list%20of%20lists.%3c/p%3e">
                 
 
 

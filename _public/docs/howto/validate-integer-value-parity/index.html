@@ -22,20 +22,18 @@
   <meta property="og:site_name" content="CUE">
   <meta property="og:title" content="Validating an integer value&#39;s parity">
   <meta property="og:description" content="This Commented CUE demonstrates how to validate an integer value’s parity.
-Two schemas #Odd and #Even are presented that validate an integer is either odd or even respectively.
-Copied! file.cue Copy code Copied! package example #Even: num={2 * (div(num, 2))} #Odd: num={1 &#43; 2*(div(num, 2))} valid: { &#34;-27&#34;: -27 &amp; #Odd &#34;-22&#34;: -22 &amp; #Even &#34;42&#34;: 42 &amp; #Even &#34;47&#34;: 47 &amp; #Odd } invalid: { &#34;-37&#34;: -37 &amp; #Even &#34;-32&#34;: -32 &amp; #Odd &#34;52&#34;: 52 &amp; #Odd &#34;57&#34;: 57 &amp; #Even } TERMINAL Copy code Copied!">
+Two schemas #Odd and #Even are presented that validate an integer is either odd or even respectively.">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="docs">
-    <meta property="article:modified_time" content="2024-03-14T11:20:40+00:00">
+    <meta property="article:modified_time" content="2025-05-23T16:51:37+01:00">
     <meta property="og:image" content="/img/social.png">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="/img/social.png">
   <meta name="twitter:title" content="Validating an integer value&#39;s parity">
   <meta name="twitter:description" content="This Commented CUE demonstrates how to validate an integer value’s parity.
-Two schemas #Odd and #Even are presented that validate an integer is either odd or even respectively.
-Copied! file.cue Copy code Copied! package example #Even: num={2 * (div(num, 2))} #Odd: num={1 &#43; 2*(div(num, 2))} valid: { &#34;-27&#34;: -27 &amp; #Odd &#34;-22&#34;: -22 &amp; #Even &#34;42&#34;: 42 &amp; #Even &#34;47&#34;: 47 &amp; #Odd } invalid: { &#34;-37&#34;: -37 &amp; #Even &#34;-32&#34;: -32 &amp; #Odd &#34;52&#34;: 52 &amp; #Odd &#34;57&#34;: 57 &amp; #Even } TERMINAL Copy code Copied!">
+Two schemas #Odd and #Even are presented that validate an integer is either odd or even respectively.">
 
 
 
@@ -56,12 +54,12 @@ Copied! file.cue Copy code Copied! package example #Even: num={2 * (div(num, 2))
 </head>
     <body itemscope itemtype="https://schema.org/WebPage">
         <meta itemprop="name" content="Validating an integer value&#39;s parity">
-<meta itemprop="description" content="This Commented CUE demonstrates how to validate an integer value&rsquo;s parity.
-Two schemas #Odd and #Even are presented that validate an integer is either odd or even respectively.
-Copied! file.cue Copy code Copied! package example #Even: num={2 * (div(num, 2))} #Odd: num={1 &#43; 2*(div(num, 2))} valid: { &#34;-27&#34;: -27 &amp; #Odd &#34;-22&#34;: -22 &amp; #Even &#34;42&#34;: 42 &amp; #Even &#34;47&#34;: 47 &amp; #Odd } invalid: { &#34;-37&#34;: -37 &amp; #Even &#34;-32&#34;: -32 &amp; #Odd &#34;52&#34;: 52 &amp; #Odd &#34;57&#34;: 57 &amp; #Even } TERMINAL Copy code Copied!">
+<meta itemprop="description" content="This Commented CUE
+demonstrates how to validate an integer value&rsquo;s parity.
+Two schemas #Odd and #Even are presented that validate an integer is either odd or even respectively.">
 
     
-        <meta itemprop="dateModified" content="2024-03-14T11:20:40+00:00" >
+        <meta itemprop="dateModified" content="2025-05-23T16:51:37+01:00" >
     
             
         <meta itemprop="image" content="/img/social.png"/>
@@ -369,7 +367,6 @@ invalid: {
 Related content
 
 How-to Guide: Using the built-in functions &#34;div&#34;, &#34;mod&#34;, &#34;quo&#34;, and &#34;rem&#34;
-
 ">
 <meta itemprop="wordCount" content="154">
 
@@ -584,14 +581,13 @@ invalid: {
 <ul>
 <li>How-to Guide: <a href="/docs/howto/use-the-built-in-functions-div-mod-quo-rem/">Using the built-in functions &#34;div&#34;, &#34;mod&#34;, &#34;quo&#34;, and &#34;rem&#34;</a></li>
 </ul>
-
                         
                     </div>
     <footer class="article__footer">
     <div class="article__lastmod">
         <p class="lastmod">
-         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/f093edc6d6d54a94416381e09e19d69c0580b51b">
-                Last modified March 14, 2024</a>
+         <a class="lastmod__link" href="https://github.com/cue-lang/cuelang.org/commit/7fd75eeece114fc4ce418d248412e0c0cba40c90">
+                Last modified May 23, 2025</a>
     </p>
 
     </div>
@@ -644,7 +640,7 @@ invalid: {
         </li>
 
         <li class="share__item">
-            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/validate-integer-value-parity/&text=This%20Commented%20CUE%20demonstrates%20how%20to%20validate%20an%20integer%20value&amp;rsquo;s%20parity.%0aTwo%20schemas%20#Odd%20and%20#Even%20are%20presented%20that%20validate%20an%20integer%20is%20either%20odd%20or%20even%20respectively.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20#Even:%20num=%7b2%20*%20%28div%28num,%202%29%29%7d%20#Odd:%20num=%7b1%20&#43;%202*%28div%28num,%202%29%29%7d%20valid:%20%7b%20&amp;#34;-27&amp;#34;:%20-27%20&amp;amp;%20#Odd%20&amp;#34;-22&amp;#34;:%20-22%20&amp;amp;%20#Even%20&amp;#34;42&amp;#34;:%2042%20&amp;amp;%20#Even%20&amp;#34;47&amp;#34;:%2047%20&amp;amp;%20#Odd%20%7d%20invalid:%20%7b%20&amp;#34;-37&amp;#34;:%20-37%20&amp;amp;%20#Even%20&amp;#34;-32&amp;#34;:%20-32%20&amp;amp;%20#Odd%20&amp;#34;52&amp;#34;:%2052%20&amp;amp;%20#Odd%20&amp;#34;57&amp;#34;:%2057%20&amp;amp;%20#Even%20%7d%20TERMINAL%20Copy%20code%20Copied!">
+            <a class="share__link" target="_blank" href="https://twitter.com/intent/tweet?url=/docs/howto/validate-integer-value-parity/&text=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20validate%20an%20integer%20value&amp;rsquo;s%20parity.%3c/p%3e%0a%3cp%3eTwo%20schemas%20%3ccode%3e#Odd%3c/code%3e%20and%20%3ccode%3e#Even%3c/code%3e%20are%20presented%20that%20validate%20an%20integer%20is%20either%20odd%20or%20even%20respectively.%3c/p%3e">
                 
 
 
@@ -660,7 +656,7 @@ invalid: {
 
         <li class="share__item">
             <a class="share__link" target="_blank"
-            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/validate-integer-value-parity/&summary=This%20Commented%20CUE%20demonstrates%20how%20to%20validate%20an%20integer%20value&amp;rsquo;s%20parity.%0aTwo%20schemas%20#Odd%20and%20#Even%20are%20presented%20that%20validate%20an%20integer%20is%20either%20odd%20or%20even%20respectively.%0aCopied!%20file.cue%20Copy%20code%20Copied!%20package%20example%20#Even:%20num=%7b2%20*%20%28div%28num,%202%29%29%7d%20#Odd:%20num=%7b1%20&#43;%202*%28div%28num,%202%29%29%7d%20valid:%20%7b%20&amp;#34;-27&amp;#34;:%20-27%20&amp;amp;%20#Odd%20&amp;#34;-22&amp;#34;:%20-22%20&amp;amp;%20#Even%20&amp;#34;42&amp;#34;:%2042%20&amp;amp;%20#Even%20&amp;#34;47&amp;#34;:%2047%20&amp;amp;%20#Odd%20%7d%20invalid:%20%7b%20&amp;#34;-37&amp;#34;:%20-37%20&amp;amp;%20#Even%20&amp;#34;-32&amp;#34;:%20-32%20&amp;amp;%20#Odd%20&amp;#34;52&amp;#34;:%2052%20&amp;amp;%20#Odd%20&amp;#34;57&amp;#34;:%2057%20&amp;amp;%20#Even%20%7d%20TERMINAL%20Copy%20code%20Copied!">
+            href="https://www.linkedin.com/shareArticle?mini=true&url=/docs/howto/validate-integer-value-parity/&summary=%3cp%3eThis%20%3ca%20href=%22/docs/howto/about-commented-cue-guides/%22%3eCommented%20CUE%3c/a%3e%0ademonstrates%20how%20to%20validate%20an%20integer%20value&amp;rsquo;s%20parity.%3c/p%3e%0a%3cp%3eTwo%20schemas%20%3ccode%3e#Odd%3c/code%3e%20and%20%3ccode%3e#Even%3c/code%3e%20are%20presented%20that%20validate%20an%20integer%20is%20either%20odd%20or%20even%20respectively.%3c/p%3e">
                 
 
 
