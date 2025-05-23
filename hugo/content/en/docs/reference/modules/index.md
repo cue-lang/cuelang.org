@@ -25,6 +25,8 @@ the import of packages present in the `cue.mod/pkg`, `cue.mod/usr` and
 there is any ambiguity with respect to regular module dependencies an
 "ambiguous import" error will be reported.
 
+<!--more-->
+
 ## Modules, packages, and versions {#modules-overview}
 
 A <dfn>module</dfn> is a collection of packages that are released,

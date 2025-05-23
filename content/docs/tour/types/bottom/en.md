@@ -13,6 +13,8 @@ although CUE may associate them with metadata such as an error message.
 An error is *not* the same as the value `null`.
 `_|_` isn't a valid value for a field, but `null` is.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue eval -i file.cue
 cmp stdout out

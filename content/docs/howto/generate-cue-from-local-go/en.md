@@ -11,6 +11,8 @@ authors:
 This guide demonstrates how to generate CUE from types defined in a local Go
 main package, placing the CUE in the same directory as the Go code.
 
+<!--more-->
+
 {{{with _script_ "en" "set caches to speed up re-running"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild

@@ -17,6 +17,8 @@ toc_hide: true
 This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates constraining the sum of a list of numbers.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="schema.cue" language="cue" area="top-left" >}}
 package example

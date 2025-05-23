@@ -18,6 +18,8 @@ The current implementation of `matchN` is inspired by JSON Schema's
 concepts.
 This guide shows how those concepts can be encoded in CUE.
 
+<!--more-->
+
 ## Basic use
 
 The `matchN` function takes two arguments:

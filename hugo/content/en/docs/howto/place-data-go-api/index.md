@@ -9,6 +9,8 @@ The `cue` command allows non-CUE data to be "placed" at a specific location in
 its evaluation with the `--path`/`-l` flag.
 This guide demonstrates how to achieve the same result using the Go API.
 
+<!--more-->
+
 ## Set up the environment
 
 {{< step stepNumber="1" >}}

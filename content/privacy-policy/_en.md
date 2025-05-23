@@ -12,6 +12,8 @@ Protection Act (FADP; revised as of September 1, 2023) and the associated Data
 Protection Ordinance (FODP). Where applicable, we also comply with the
 requirements of the European General Data Protection Regulation (GDPR).
 
+<!--more-->
+
 ## 1&emsp;Data controller and contact
 
 The data controller responsible for the processing of the personal data

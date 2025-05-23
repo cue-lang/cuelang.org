@@ -13,6 +13,8 @@ preference marker `*`.
 CUE will select and use the default when a value is required but none has been
 explicitly specified.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue
 cmp stdout out

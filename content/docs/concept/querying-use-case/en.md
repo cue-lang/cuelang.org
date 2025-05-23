@@ -12,6 +12,8 @@ Concrete value or constraints on such a "type" are all instances of that type.
 In other words, CUE constraints can be used to find patterns in data.
 `cue vet` is a simple instance of this.
 
+<!--more-->
+
 But more elaborate querying in the form of a `find` or `query` subcommand
 is certainly possible.
 We would love to hear about your envisioned use cases to plan out

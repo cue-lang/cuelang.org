@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 [`encoding/base64.Encode`](https://pkg.go.dev/cuelang.org/go/pkg/encoding/base64#Encode)
 to encode a string as Base64.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location left right
 

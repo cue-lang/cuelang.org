@@ -22,6 +22,8 @@ Along the way, you will:
 - Fix your data file and revalidate it.
 - Validate multiple data files at once.
 
+<!--more-->
+
 ## Prerequisites
 
 - **A tool to edit text files**. Any text editor you have will be fine, for

@@ -20,6 +20,8 @@ This CUE shows string fields being constrained by their lengths as expressed in
 bytes, and also in runes, as introduced by
 [the Go programming language](https://go.dev/blog/strings#code-points-characters-and-runes).
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 ! exec cue vet -c .:example

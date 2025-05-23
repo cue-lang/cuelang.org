@@ -14,6 +14,8 @@ demonstrates how to use the built-in function
 to convert a string representation of an int to the number itself, using base
 10.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 exec cue export
 cmp stdout out

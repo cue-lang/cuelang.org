@@ -20,6 +20,8 @@ We suggest you start by reading the
 [modules concept guide]({{< relref "modules" >}}) to learn more about modules.
 {{</caution>}}
 
+<!--more-->
+
 ## Overview
 
 CUE heavily relies on its order independence for package organization.

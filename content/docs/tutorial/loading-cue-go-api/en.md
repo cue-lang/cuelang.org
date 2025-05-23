@@ -16,6 +16,8 @@ This tutorial demonstrates how to get started with [CUE's Go
 API](https://pkg.go.dev/cuelang.org/go), and write a Go program to load and
 evaluate some CUE.
 
+<!--more-->
+
 ## Prerequisites
 
 - **A tool to edit text files**. Any text editor you have will be fine, for

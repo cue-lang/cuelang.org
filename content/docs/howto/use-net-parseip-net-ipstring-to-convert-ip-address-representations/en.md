@@ -14,6 +14,8 @@ demonstrates how to use the built-in functions
 to convert IPv4 and IPv6 addresses between their canonical string and
 list-of-bytes representations.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 

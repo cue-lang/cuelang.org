@@ -10,6 +10,8 @@ tags:
 This guide demonstrates how to include CUE files in an evaluation
 conditionally, using build attributes.
 
+<!--more-->
+
 Our `example` CUE package is composed of four files:
 
 {{{with upload "en" "examples"}}}

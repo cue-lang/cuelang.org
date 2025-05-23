@@ -13,6 +13,8 @@ demonstrates how to negate a disjunction. This allows a field to be constrained
 such that evaluation is only successful if the field's value would **not** be
 permitted by the disjunction.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="example.cue" language="cue" area="top-left" >}}
 package example

@@ -16,6 +16,8 @@ function
 to close a
 [struct]({{< relref "docs/reference/glossary#struct" >}}).
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 exec cue eval -i
 cmp stdout out

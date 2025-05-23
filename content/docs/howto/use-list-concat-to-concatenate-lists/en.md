@@ -12,6 +12,8 @@ demonstrates how to use the built-in function
 [`list.Concat`](https://pkg.go.dev/cuelang.org/go/pkg/list#Concat)
 to concatenate a list of lists.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 exec cue export -e output
 cmp stdout out

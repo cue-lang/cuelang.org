@@ -11,6 +11,8 @@ contains elements that are *also* present in another list.
 In other words, how to ensure that one list is a "subset" of another list (even
 though a list isn't a set, strictly speaking).
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 ! exec cue vet -c
 cmp stderr out

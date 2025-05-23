@@ -11,6 +11,8 @@ This allows CUE configurations to define any type or value at the top level
 (just like JSON), whilst keeping CUE optimised for the most common use case of
 defining structs.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 "Hello, \(#who)!"

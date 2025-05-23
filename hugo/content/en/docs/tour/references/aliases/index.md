@@ -15,6 +15,8 @@ Aliases are *not* members of a struct,
 do *not* appear in output,
 and can *only* be referenced within the scope in which they are defined.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 // Alias A provides access to a top-level field

@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 to check that values represent valid IPv4 addresses as strings or lists of
 bytes.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top" >}}
 package example

@@ -8,6 +8,8 @@ integers to common values.\
 The `u`-prefixed identifiers provide similar capabilities to unsigned integer
 types in other languages.
 
+<!--more-->
+
 {{{with code "en" "identifiers"}}}
 -- file.cue --
 uint:    >=0

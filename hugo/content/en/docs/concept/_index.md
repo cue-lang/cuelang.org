@@ -17,4 +17,6 @@ list of concept guides.
 You can also use the following index to browse through the full range of concept guides,
 or to search inside them for specific content, titles, and tags:
 
+<!--more-->
+
 {{< search contentType="Concept Guides" showContentTypes=false >}}

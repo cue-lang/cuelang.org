@@ -17,6 +17,8 @@ Not all CUE values can be represented in Java. For instance, the CUE constraint
 under development and its behaviour might change from one release to the next.
 {{</info>}}
 
+<!--more-->
+
 ## Prerequisites
 
 - You need the low-level library

@@ -30,6 +30,8 @@ This guide shows you how to manage the inputs and output of `cue export`,
 and how to vary some aspects of the evaluation that it performs.
 Here's what you'll find:
 
+<!--more-->
+
 {{< cards >}}
 {{< card href="inputs/" title="Inputs" label=" " >}}
   **Start here** and learn how the inputs you provide are interpreted and combined.

@@ -17,6 +17,8 @@ Currently, patterns must either be instances of `string`, or must be `_`.
 Including an alias in the pattern's square brackets makes the label of each
 matched field available inside the template.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue
 cmp stdout out

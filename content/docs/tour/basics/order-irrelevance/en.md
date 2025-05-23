@@ -15,6 +15,8 @@ Because each occurrence of a field is as important as every other,
 Order irrelevance makes it easy for humans _and_ machines to reason about values, and
 makes advanced tooling and automation possible.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue eval file.cue
 cmp stdout out

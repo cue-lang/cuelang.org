@@ -14,6 +14,8 @@ data validation language with its roots in logic programming.
 It combines succinct yet clear syntax with powerful, flexible constraints that
 enable data, schema, and policy constraints to coexist seamlessly:
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="example.cue" language="cue" area="left" >}}
 area:   length * width

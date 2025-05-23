@@ -17,6 +17,8 @@ will fail if any additional fields are specified.
 We say that such a definition defines a  **closed** struct.
 Including a `...` in a struct keeps it **open**.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 ! exec cue export file.cue
 cmp stderr out

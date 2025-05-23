@@ -17,6 +17,8 @@ all values specified for a field must be equal.\
 Within structs, fields are unified recursively.
 Similarly, within lists, elements are unified recursively.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue export file.cue --out yaml
 cmp stdout out

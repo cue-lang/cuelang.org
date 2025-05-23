@@ -16,6 +16,8 @@ as a field validator.
 It asserts that properly-formed JSON, encoded in a string, adheres to specific
 constraints by checking that the data and schema unify successfully.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top" >}}
 package example

@@ -13,6 +13,8 @@ Just like comparison operators (such as `<` and `>=`) can be used to define
 the regular expression operators may also be used to define a set of strings
 through their unary forms.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 fooBar:  "foo bar" =~ "^[a-z ]{1,100}$"

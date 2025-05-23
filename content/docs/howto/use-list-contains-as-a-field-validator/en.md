@@ -13,6 +13,8 @@ demonstrates how to use the built-in function
 as a validator that checks if a simple or composite value is contained in a
 list.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 #location top bottom
 

@@ -14,6 +14,8 @@ CUE also supports multi-line strings, enclosed between a pair of triple quotes (
 The opening quotes of a multi-line string must be immediately followed by a newline,
 and the closing quotes must be on a line by themselves, optionally preceded by whitespace.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 a: "\U0001F60E" // A 21-bit Unicode character.

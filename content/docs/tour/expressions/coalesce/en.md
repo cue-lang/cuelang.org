@@ -17,6 +17,8 @@ design that `_|_ | value` evaluates to `value`.
 This technique can guard against situations such as list indexes being out of
 bounds, and type checks, with a fallback in the case of a type mismatch.
 
+<!--more-->
+
 {{{with code "en" "tour"}}}
 exec cue eval -c file.cue
 cmp stdout out

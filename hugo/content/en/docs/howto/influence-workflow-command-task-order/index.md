@@ -9,6 +9,8 @@ This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
 demonstrates how to use dependencies to influence the order of execution of
 tasks in a workflow command.
 
+<!--more-->
+
 {{< code-tabs >}}
 {{< code-tab name="some_tool.cue" language="cue" area="top" >}}
 package example

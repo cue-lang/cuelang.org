@@ -13,6 +13,8 @@ This specific workflow command allows a `-t` flag to
 [inject]({{< relref "docs/reference/command/cue-help-injection" >}})
 a value into the process so that it can be referred to.
 
+<!--more-->
+
 {{{with code "en" "cc"}}}
 exec cue cmd -t who=Alex hello
 cmp stdout out

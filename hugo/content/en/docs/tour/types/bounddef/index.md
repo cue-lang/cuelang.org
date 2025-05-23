@@ -8,6 +8,8 @@ integers to common values.\
 The `u`-prefixed identifiers provide similar capabilities to unsigned integer
 types in other languages.
 
+<!--more-->
+
 ```cue
 uint:    >=0
 uint8:   >=0 & <=255
