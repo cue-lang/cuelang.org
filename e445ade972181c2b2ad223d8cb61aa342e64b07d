@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf857d75_ffeedfb9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-27T15:31:56Z",
+      "side": 1,
+      "message": "PTAL. It\u0027s long been a bugbear of mine that Hugo\u0027s build command was the /absence/ of a sub-command, so I happily noticed the `build` option in the newer release\u0027s help text.\n\nI don\u0027t *believe* we use the bare `hugo` command anywhere else, and route all calls through the script that this CL updates. I can\u0027t be 100% sure, as the output of `git grep hugo` (or similar) is pretty unhelpful.\n\nI\u0027ll let you make any similar change to the preprocessor as needed/wanted.",
+      "revId": "e445ade972181c2b2ad223d8cb61aa342e64b07d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
