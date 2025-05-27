@@ -178,4 +178,4 @@ bash _scripts/runPreprocessor.bash execute $readonlycache $nocachevolume $skipca
 # Main site
 cd hugo
 $time npm ci
-$time hugo --cleanDestinationDir --environment production $minify "$@"
+$time hugo build --cleanDestinationDir --environment production $minify "$@"
