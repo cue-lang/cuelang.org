@@ -77,6 +77,7 @@ func (rf *rootFile) parse() error {
 	if err != nil {
 		return rf.errorf("%v: failed to parse body: %v", rf, err)
 	}
+	rf.rawBody = body
 	rf.body = parseTrees[rf.filename]
 	rf.bodyParts, err = rf.parse_ListNode(rf.body.Root)
 	if err != nil {

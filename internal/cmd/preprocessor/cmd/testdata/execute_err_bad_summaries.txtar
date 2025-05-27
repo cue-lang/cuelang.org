@@ -1,0 +1,36 @@
+# Ensure that we get a sensible error message when using the
+# --check flag to execute.
+
+unquote content/both/en.md
+unquote content/missing/en.md
+
+# Run the preprocessor
+! exec preprocessor execute
+stderr $WORK${/}'content'${/}'both'${/}'en.md: front matter summary and body summary marker specified; choose one or the other'
+stderr $WORK${/}'content'${/}'missing'${/}'en.md: missing front matter summary or body summary marker'
+
+-- content/both/page.cue --
+package site
+
+content: both: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/both/en.md --
+>---
+>title: JSON Superset
+>summary: something
+>---
+><!--more-->
+-- content/missing/page.cue --
+package site
+
+content: missing: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/missing/en.md --
+>---
+>title: JSON Superset
+>---
+-- hugo/content/.gitkeep --

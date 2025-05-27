@@ -34,6 +34,7 @@ import (
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/format"
+	"cuelang.org/go/encoding/yaml"
 	"github.com/cue-lang/cuelang.org/internal/parse"
 	"golang.org/x/tools/txtar"
 	"mvdan.cc/sh/v3/syntax"
@@ -94,6 +95,8 @@ type rootFile struct {
 
 	// body is the text/template/parse-d result of the body
 	body *parse.Tree
+
+	rawBody []byte
 
 	// bodyParts is a list of the internalised versions of the
 	// text/template/parse-d input. Each node can be written back
@@ -203,10 +206,32 @@ func (rf *rootFile) transform(targetPath string) error {
 	return nil
 }
 
+const manualCommentMarker = `<!--more-->`
+
 // validate ensures that the parsed steps are valid with respect to each other.
 // For example, we ensure that we don't have multiple steps of the same type
 // with the same label.
 func (rf *rootFile) validate() error {
+
+	// Ensure that we don't have a summary in the front matter (header) and the body
+	fmAst, err := yaml.Extract("frontmatter", rf.header)
+	if err != nil {
+		rf.errorf("%v: failed to parse yaml front matter: %v", rf, err)
+		return nil
+	}
+
+	fm := rf.ctx.BuildFile(fmAst)
+	fmSummary := fm.LookupPath(cue.ParsePath("summary")).Exists()
+	bodySummary := bytes.Index(rf.rawBody, []byte(manualCommentMarker)) != -1
+
+	if !fmSummary && !bodySummary {
+		rf.errorf("%v: missing front matter summary or body summary marker", rf)
+	} else if fmSummary && bodySummary {
+		rf.errorf("%v: front matter summary and body summary marker specified; choose one or the other", rf)
+	}
+	if rf.isInError() {
+		return errorIfInError(rf)
+	}
 
 	// Ensure labels across steps (irrespective of type) are unique
 	labels := make(map[string]map[string][]node)
