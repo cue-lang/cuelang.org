@@ -28,12 +28,14 @@ ignored.txt
 other.txt
 -- content/dir/_en.md --
 ---
+summary: something
 ---
 _en.md
 -- content/dir/_en/en.txt --
 en.txt
 -- golden/hugo/content/en/dir/_index.md --
 ---
+summary: something
 ---
 _en.md
 -- golden/hugo/content/en/dir/en.txt --

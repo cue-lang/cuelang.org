@@ -53,6 +53,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >{{{with script "en" "go mod init"}}}
 >go mod init test

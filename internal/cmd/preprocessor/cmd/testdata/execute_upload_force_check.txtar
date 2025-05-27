@@ -32,6 +32,7 @@ content: upload: page: {
 -- content/upload/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >Some text before
@@ -49,6 +50,7 @@ content: upload: page: {
 -- content/upload/en.md.force --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >Some text before
@@ -77,6 +79,7 @@ content: uploaddir: page: {
 -- content/uploaddir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >Some text before
@@ -94,6 +97,7 @@ content: uploaddir: page: {
 -- content/uploaddir/en.md.force --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >Some text before
@@ -113,6 +117,7 @@ else forced
 -- golden/hugo/content/en/upload/index.md --
 ---
 title: JSON Superset
+summary: something
 ---
 
 Some text before
@@ -134,6 +139,7 @@ something forced
 -- golden/hugo/content/en/uploaddir/index.md --
 ---
 title: JSON Superset
+summary: something
 ---
 
 Some text before

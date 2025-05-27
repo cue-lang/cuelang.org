@@ -15,8 +15,10 @@ this is very broken
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
+summary: something
 ---

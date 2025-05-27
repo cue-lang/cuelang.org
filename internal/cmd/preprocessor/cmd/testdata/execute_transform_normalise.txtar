@@ -20,6 +20,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >{{{ with code "en" "json-superset" }}}
@@ -37,6 +38,7 @@ content: dir: page: {
 -- golden/content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >{{{with code "en" "json-superset"}}}

@@ -7,10 +7,10 @@ unquote content/dir2/en.md
 ! exec preprocessor execute
 
 # Assert that we get an error message about in.cue being listed multiple times
-stderr $WORK${/}'content'${/}'dir'${/}'en.md:5:8: file "in.cue" listed multiple times'
+stderr $WORK${/}'content'${/}'dir'${/}'en.md:6:8: file "in.cue" listed multiple times'
 
 # Assert that we get an error message about #assert and #force both being used
-stderr $WORK${/}'content'${/}'dir2'${/}'en.md:5:8: force and assert are mutually exclusive; found both'
+stderr $WORK${/}'content'${/}'dir2'${/}'en.md:6:8: force and assert are mutually exclusive; found both'
 
 -- hugo/.keep --
 -- golden/content/dir/.keep --
@@ -26,6 +26,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >{{{with upload "en" "repeated files"}}}
@@ -42,6 +43,7 @@ content: dir2: page: {
 -- content/dir2/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >{{{with upload "en" "force and assert"}}}

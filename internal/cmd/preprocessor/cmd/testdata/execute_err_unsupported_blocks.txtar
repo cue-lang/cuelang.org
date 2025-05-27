@@ -5,7 +5,7 @@ unquote content/dir/en.md
 
 # Run the preprocessor
 ! exec preprocessor execute --debug=all
-stderr $WORK${/}'content'${/}'dir'${/}'en.md:9:10 with node cannot have else block'
+stderr $WORK${/}'content'${/}'dir'${/}'en.md:10:10 with node cannot have else block'
 
 
 -- content/dir/site.cue --
@@ -18,6 +18,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >Some text before

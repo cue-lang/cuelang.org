@@ -13,6 +13,7 @@ content: dir1: {}
 -- content/dir1/en.md --
 ---
 title: JSON Superset
+summary: something
 ---
 -- content/dir2/page.cue --
 package site
@@ -22,6 +23,7 @@ content: {}
 -- content/dir1/en.md --
 ---
 title: JSON Superset
+summary: something
 ---
 -- content/dir3/page.cue --
 package site
@@ -30,4 +32,5 @@ package site
 -- content/dir3/en.md --
 ---
 title: JSON Superset
+summary: something
 ---

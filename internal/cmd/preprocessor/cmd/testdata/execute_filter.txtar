@@ -13,6 +13,7 @@ cmp stdout stdout.golden
 -- hugo/.keep --
 -- content/dir1/en.md --
 ---
+summary: something
 ---
 dir1_en.md
 -- content/dir1/site.cue --
@@ -24,6 +25,7 @@ content: dir1: page: {
 }
 -- content/dir2/en.md --
 ---
+summary: something
 ---
 dir1_en.md
 -- content/dir2/site.cue --
@@ -35,6 +37,7 @@ content: dir2: page: {
 }
 -- golden/hugo/content/en/dir1/index.md --
 ---
+summary: something
 ---
 dir1_en.md
 -- stdout.golden --

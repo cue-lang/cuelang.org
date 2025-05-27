@@ -2,7 +2,7 @@
 
 unquote content/dir/en.md
 ! exec preprocessor execute --debug=general
-stderr $WORK${/}'content'${/}'dir'${/}'en.md:4:8: script nodes cannot contain any files in the txtar archive'
+stderr $WORK${/}'content'${/}'dir'${/}'en.md:5:8: script nodes cannot contain any files in the txtar archive'
 
 -- content/dir/site.cue --
 package site
@@ -14,6 +14,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >{{{with script "en" "upload-some-cue"}}}
 >-- 1.cue --

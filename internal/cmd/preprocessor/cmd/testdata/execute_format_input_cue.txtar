@@ -27,6 +27,7 @@ content: dir1: page: {
 -- content/dir1/en.md --
 >---
 >title: title
+>summary: something
 >---
 >{{{with code "en" "json-superset"}}}
 >-- in.cue --
@@ -39,6 +40,7 @@ content: dir1: page: {
 -- golden/content/dir1/en.md --
 >---
 >title: title
+>summary: something
 >---
 >{{{with code "en" "json-superset"}}}
 >-- in.cue --
@@ -51,6 +53,7 @@ content: dir1: page: {
 -- golden/hugo/content/en/dir1/index.md --
 ---
 title: title
+summary: something
 ---
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue" area="top-left" >}}

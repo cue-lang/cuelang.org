@@ -37,6 +37,7 @@ content: dir1: page: {
 -- content/dir1/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >Some text before
@@ -81,6 +82,7 @@ content: dir1: page: {
 -- golden/hugo/content/en/dir1/index.md --
 ---
 title: JSON Superset
+summary: something
 ---
 
 Some text before
@@ -134,6 +136,7 @@ content: dir2: page: {
 -- content/dir2/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >Some text before
@@ -178,6 +181,7 @@ content: dir2: page: {
 -- golden/hugo/content/en/dir2/index.md --
 ---
 title: JSON Superset
+summary: something
 ---
 
 Some text before

@@ -34,6 +34,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: Test page
+>summary: something
 >---
 >{{{with script "en" "echo env var"}}}
 >echo $TEST_USER_AUTHN_CUECKOO_USER
@@ -41,6 +42,7 @@ content: dir: page: {
 -- golden/hugo/content/en/dir/index.md.file --
 ---
 title: Test page
+summary: something
 ---
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUg==" }
 $ echo $TEST_USER_AUTHN_CUECKOO_USER
@@ -49,6 +51,7 @@ $ echo $TEST_USER_AUTHN_CUECKOO_USER
 -- golden/hugo/content/en/dir/index.md.env --
 ---
 title: Test page
+summary: something
 ---
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUg==" }
 $ echo $TEST_USER_AUTHN_CUECKOO_USER

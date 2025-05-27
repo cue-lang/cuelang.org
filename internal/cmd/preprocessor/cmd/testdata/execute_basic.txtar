@@ -18,6 +18,7 @@ cmp stdout stdout.golden
 -- content/branch_md/_en.md --
 ---
 title: test
+summary: something
 ---
 branch_md_en
 -- content/branch_md/site.cue --
@@ -30,6 +31,7 @@ content: branch_md: page: {
 -- content/leaf_md/en.md --
 ---
 title: test
+summary: something
 ---
 leaf_md_en
 -- content/leaf_md/site.cue --
@@ -42,6 +44,7 @@ content: leaf_md: page: {
 -- content/branch_html/_en.html --
 ---
 title: test
+summary: something
 ---
 branch_html_en
 -- content/branch_html/site.cue --
@@ -54,6 +57,7 @@ content: branch_html: page: {
 -- content/leaf_html/en.html --
 ---
 title: test
+summary: something
 ---
 leaf_html_en
 -- content/leaf_html/site.cue --
@@ -66,21 +70,25 @@ content: leaf_html: page: {
 -- golden/hugo/content/en/branch_md/_index.md --
 ---
 title: test
+summary: something
 ---
 branch_md_en
 -- golden/hugo/content/en/leaf_md/index.md --
 ---
 title: test
+summary: something
 ---
 leaf_md_en
 -- golden/hugo/content/en/branch_html/_index.html --
 ---
 title: test
+summary: something
 ---
 branch_html_en
 -- golden/hugo/content/en/leaf_html/index.html --
 ---
 title: test
+summary: something
 ---
 leaf_html_en
 -- stdout.golden --

@@ -36,6 +36,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: A page
+>summary: something
 >---
 >{{{with script "en" "run-the-cue"}}}
 >echo hello
@@ -43,6 +44,7 @@ content: dir: page: {
 -- content/dir/en.md.doc_comment --
 >---
 >title: A page
+>summary: something
 >---
 >{{{with script "en" "run-the-cue"}}}
 ># This is a doc comment
@@ -51,6 +53,7 @@ content: dir: page: {
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: A page
+summary: something
 ---
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
 $ echo hello
@@ -59,6 +62,7 @@ hello
 -- golden/hugo/content/en/dir/index_doc_comment.md --
 ---
 title: A page
+summary: something
 ---
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
 # This is a doc comment

@@ -7,6 +7,7 @@ exec preprocessor execute --debug=all
 
 -- empty_target/content/branch_md/_en.md --
 ---
+summary: something
 ---
 branch_md_en
 -- empty_target/content/branch_md/root.cue --

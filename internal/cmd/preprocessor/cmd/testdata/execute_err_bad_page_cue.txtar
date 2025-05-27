@@ -14,6 +14,7 @@ this: 5
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 -- hugo/content/.gitkeep --
 -- stderr.golden --

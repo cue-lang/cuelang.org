@@ -60,6 +60,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >{{{with script "en" "create file.txt"}}}
@@ -85,6 +86,7 @@ content: dir2: page: {
 -- content/dir2/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >{{{with script "en" "create file.txt"}}}
@@ -96,6 +98,7 @@ content: dir2: page: {
 -- golden/content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >{{{with script "en" "create file.txt"}}}
@@ -114,6 +117,7 @@ content: dir2: page: {
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
+summary: something
 ---
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgcGF0aC90bwpjYXQgPDxFT0QgPnBhdGgvdG8vZmlsZS50eHQKaGVsbG8KRU9E" }

@@ -52,6 +52,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >Some text before
@@ -106,6 +107,7 @@ content: docs: draft: cldd: example: page: {
 -- content/docs/draft/cldd/example/en.md --
 >---
 >title: cldd
+>summary: something
 >---
 >
 >{{{with upload "en" "json-superset"}}}
@@ -115,6 +117,7 @@ content: docs: draft: cldd: example: page: {
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
+summary: something
 ---
 
 Some text before
@@ -158,6 +161,7 @@ in.cue stable replacement
 -- golden/hugo/content/en/docs/draft/cldd/example/index.md --
 ---
 title: cldd
+summary: something
 ---
 
 ```cue { title="in.cue" codeToCopy="Ly8gc3RhYmxlIHJlcGxhY2VtZW50Cg==" }

@@ -18,6 +18,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >{{{with code "en" "json-superset"}}}
 >-- in.cue --
@@ -34,9 +35,10 @@ content: dir: page: {
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
+summary: something
 ---
 -- stderr.golden --
 ** $WORK/content/dir/en.md: node type "code" declares label "json-superset" multiple times:
-	$WORK/content/dir/en.md:4:8
-	$WORK/content/dir/en.md:10:8
+	$WORK/content/dir/en.md:5:8
+	$WORK/content/dir/en.md:11:8
 terminating because of errors

@@ -20,6 +20,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >{{{with script "en" "1"}}}
@@ -52,6 +53,7 @@ content: dir: page: {
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
+summary: something
 ---
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydA==" }

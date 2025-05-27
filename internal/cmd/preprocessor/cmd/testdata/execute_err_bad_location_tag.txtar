@@ -21,6 +21,7 @@ content: dir: page: {
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >Some text before
@@ -50,6 +51,6 @@ content: dir: page: {
 >{{{end}}}
 -- hugo/content/.gitkeep --
 -- stderr.golden --
-** $WORK/content/dir/en.md:7:8: saw 2 files but only 1 arguments to #location
-** $WORK/content/dir/en.md:19:8: unknown location "rubbish"
+** $WORK/content/dir/en.md:8:8: saw 2 files but only 1 arguments to #location
+** $WORK/content/dir/en.md:20:8: unknown location "rubbish"
 terminating because of errors

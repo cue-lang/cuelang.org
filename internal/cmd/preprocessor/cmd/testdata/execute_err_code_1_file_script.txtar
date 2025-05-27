@@ -16,6 +16,7 @@ content: noscript: page: {
 -- content/noscript/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >
 >{{{with code "en" "json-superset"}}}
@@ -26,5 +27,5 @@ content: noscript: page: {
 >{{{end}}}
 -- hugo/.gitkeep --
 -- stderr.golden --
-** $WORK/content/noscript/en.md:5:8: cannot have a script with simple code listing
+** $WORK/content/noscript/en.md:6:8: cannot have a script with simple code listing
 terminating because of errors

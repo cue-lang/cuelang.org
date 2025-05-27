@@ -82,6 +82,7 @@ Hello!
 -- content/dir/en.md --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >{{{with step}}}
 >
@@ -147,6 +148,7 @@ Hello!
 -- golden/content/dir/en.md.writeBack --
 >---
 >title: JSON Superset
+>summary: something
 >---
 >{{{with step}}}
 >
@@ -212,6 +214,7 @@ Hello!
 -- golden/hugo/content/en/dir/index.md --
 ---
 title: JSON Superset
+summary: something
 ---
 {{< step stepNumber="1" >}}
 
