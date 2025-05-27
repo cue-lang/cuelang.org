@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e29e13da_4368d707",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-27T13:49:24Z",
+      "side": 1,
+      "message": "PTAL.\n\nThe upgrade from .5 to .6 is reflected in the https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1215755/2..4 delta between PS 2 and 4. I don\u0027t understand that diff\u0027s leading change to `_public/algolia.json`, but the PS 4\u0027s form seems more correct to my eye. Everything else seems like a trivial change.",
+      "revId": "7c78dd0d45b61f88b4e9927d525e04e647697b40",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
