@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff9ec466_0b5bafba",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-28T15:21:53Z",
+      "side": 1,
+      "message": "Tracked in https://review.gerrithub.io/c/cue-lang/cuelang.org/+/1214983/6#message-0ee7aefe959c34a35d2e3f830ddb97a349ae7310.",
+      "parentUuid": "7ebd04b2_2f52967d",
+      "range": {
+        "startLine": 20,
+        "startChar": 50,
+        "endLine": 20,
+        "endChar": 54
+      },
+      "revId": "fd741557efe985d161213d170189efcd11bbeffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "44370548_7c05f3c0",
@@ -37,6 +61,24 @@
       "writtenOn": "2025-05-08T14:02:04Z",
       "side": 1,
       "message": "```\nCloses cue-lang/docs-and-content#209.\n```",
+      "revId": "fd741557efe985d161213d170189efcd11bbeffb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6fc2482b_1694fbdd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-28T15:21:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "44370548_7c05f3c0",
       "revId": "fd741557efe985d161213d170189efcd11bbeffb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
