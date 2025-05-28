@@ -16,6 +16,24 @@
       "message": "Include file embedding content from CL 1214622.",
       "revId": "ef9b4c5f41a30e18b22f9b76dbcb2983b45fd3b9",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "175a3ca0_f813881c",
+        "filename": "content/docs/concept/how-cue-works-with-toml/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-28T15:38:31Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7f0190a_6a21f373",
+      "revId": "ef9b4c5f41a30e18b22f9b76dbcb2983b45fd3b9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
