@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "762b0232_6014ac4c",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-29T16:12:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e12dede4_6cb287f8",
+      "range": {
+        "startLine": 7,
+        "startChar": 45,
+        "endLine": 7,
+        "endChar": 49
+      },
+      "revId": "df9f7a5f53beb6cea45430e279c0b740963fc778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c45b164f_66afdfbd",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-05-29T14:24:12Z",
       "side": 1,
       "message": "I think this can be more simply stated as \"the logical operators do not short circuit, unlike many other languages\".",
+      "range": {
+        "startLine": 119,
+        "startChar": 61,
+        "endLine": 120,
+        "endChar": 51
+      },
+      "revId": "df9f7a5f53beb6cea45430e279c0b740963fc778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8821525_6bd8a806",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-29T16:12:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c45b164f_66afdfbd",
       "range": {
         "startLine": 119,
         "startChar": 61,
@@ -87,6 +135,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0e02fa16_db830b78",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-29T16:12:15Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8ad705d1_40a66648",
+      "range": {
+        "startLine": 120,
+        "startChar": 54,
+        "endLine": 122,
+        "endChar": 7
+      },
+      "revId": "df9f7a5f53beb6cea45430e279c0b740963fc778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "192cd8c7_95c0329b",
@@ -100,6 +172,30 @@
       "writtenOn": "2025-05-29T14:24:12Z",
       "side": 1,
       "message": "It feels like we can simplify this language too. Suggestion:\n\n\u003e As a general rule, if a subsequent condition might result in an evaluation value, use a chained `if`.",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 3
+      },
+      "revId": "df9f7a5f53beb6cea45430e279c0b740963fc778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f7b30aa1_d7232493",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-29T16:12:15Z",
+      "side": 1,
+      "message": "Nice simplification. Done.",
+      "parentUuid": "192cd8c7_95c0329b",
       "range": {
         "startLine": 126,
         "startChar": 0,
