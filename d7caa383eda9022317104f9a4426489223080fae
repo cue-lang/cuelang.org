@@ -16,6 +16,69 @@
       "message": "PTAL. I reckon this is also a good use of the sidenote (at the top of the page).",
       "revId": "d7caa383eda9022317104f9a4426489223080fae",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3cf1b019_bdb2c837",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T14:02:09Z",
+      "side": 1,
+      "message": "It looks a bit odd the way (on my machine) that this renders over the top of the horizontal line, but we can ignore for now.",
+      "revId": "d7caa383eda9022317104f9a4426489223080fae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e5bcf4d8_2b0f7c4d",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T14:02:09Z",
+      "side": 1,
+      "message": "This bit is superfluous; because the embedded files must also be within the module (save for symlinks, but definitely do not go there here!). So we can drop \"by CUE that\u0027s placed\" with no loss of precision.",
+      "range": {
+        "startLine": 65,
+        "startChar": 32,
+        "endLine": 65,
+        "endChar": 52
+      },
+      "revId": "d7caa383eda9022317104f9a4426489223080fae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ddee38c_5ab464d6",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T14:02:09Z",
+      "side": 1,
+      "message": "\"works with\"",
+      "range": {
+        "startLine": 67,
+        "startChar": 7,
+        "endLine": 67,
+        "endChar": 19
+      },
+      "revId": "d7caa383eda9022317104f9a4426489223080fae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
