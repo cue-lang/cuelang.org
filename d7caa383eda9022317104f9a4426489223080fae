@@ -58,6 +58,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e0df317_3eaf3b31",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-29T15:44:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e5bcf4d8_2b0f7c4d",
+      "range": {
+        "startLine": 65,
+        "startChar": 32,
+        "endLine": 65,
+        "endChar": 52
+      },
+      "revId": "d7caa383eda9022317104f9a4426489223080fae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0ddee38c_5ab464d6",
@@ -71,6 +95,30 @@
       "writtenOn": "2025-05-29T14:02:09Z",
       "side": 1,
       "message": "\"works with\"",
+      "range": {
+        "startLine": 67,
+        "startChar": 7,
+        "endLine": 67,
+        "endChar": 19
+      },
+      "revId": "d7caa383eda9022317104f9a4426489223080fae",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2fddbbf5_585a7f07",
+        "filename": "content/docs/howto/validate-data-files-using-file-embedding/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-29T15:44:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ddee38c_5ab464d6",
       "range": {
         "startLine": 67,
         "startChar": 7,
