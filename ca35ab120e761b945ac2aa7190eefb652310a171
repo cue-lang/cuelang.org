@@ -196,6 +196,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b818eed6_50894cc4",
+        "filename": "content/docs/howto/export-top-level-list-element/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T13:24:40Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "a188739f_880b6496",
+      "range": {
+        "startLine": 35,
+        "startChar": 14,
+        "endLine": 35,
+        "endChar": 20
+      },
+      "revId": "ca35ab120e761b945ac2aa7190eefb652310a171",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8fe04696_e93cfd0c",

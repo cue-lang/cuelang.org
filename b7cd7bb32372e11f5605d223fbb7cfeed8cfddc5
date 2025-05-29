@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "333512e1_aaf03ee2",
+        "filename": "content/docs/howto/export-top-level-list-element/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T13:24:40Z",
+      "side": 1,
+      "message": "I think we could use the word \"query\" here which allows us to rewrite the sentence:\n\n\u003e This guide demonstrates how to export an element from such a list using the `cue export` command",
+      "range": {
+        "startLine": 9,
+        "startChar": 31,
+        "endLine": 9,
+        "endChar": 37
+      },
+      "revId": "b7cd7bb32372e11f5605d223fbb7cfeed8cfddc5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7b94c0de_43f13342",
+        "filename": "content/docs/howto/export-top-level-list-element/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T13:24:40Z",
+      "side": 1,
+      "message": "\"identifier, `foo`\"",
+      "range": {
+        "startLine": 27,
+        "startChar": 12,
+        "endLine": 27,
+        "endChar": 22
+      },
+      "revId": "b7cd7bb32372e11f5605d223fbb7cfeed8cfddc5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
