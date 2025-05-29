@@ -16,6 +16,52 @@
       "message": "@paul@myitcv.io I\u0027ve updated several bits of prose after your review, and would appreciate a sense check up and down the page.",
       "revId": "79a39da82221ddcad42f3488f0e790d51727b5dd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1cda9724_7a798868",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T16:18:42Z",
+      "side": 1,
+      "message": "\"CUE provides two main ways to *combine* more than one condition.\"",
+      "range": {
+        "startLine": 46,
+        "startChar": 39,
+        "endLine": 46,
+        "endChar": 48
+      },
+      "revId": "79a39da82221ddcad42f3488f0e790d51727b5dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfea968d_bb612636",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T16:18:42Z",
+      "side": 1,
+      "message": "Noting only in passing that chaining `if` comprehensions is akin to `\u0026\u0026`. Although the reader will likely be clear on that.",
+      "range": {
+        "startLine": 48,
+        "startChar": 38,
+        "endLine": 48,
+        "endChar": 46
+      },
+      "revId": "79a39da82221ddcad42f3488f0e790d51727b5dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
