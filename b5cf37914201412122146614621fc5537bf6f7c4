@@ -95,6 +95,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f8a2c39_ec8a5d47",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T14:24:12Z",
+      "side": 1,
+      "message": "I\u0027ll mark this as resolved for now and add more specific comments in the rewritten version.",
+      "parentUuid": "d647a9a7_8309badb",
+      "range": {
+        "startLine": 8,
+        "startChar": 18,
+        "endLine": 9,
+        "endChar": 37
+      },
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cd7e995b_547efb62",
@@ -132,6 +156,30 @@
       "side": 1,
       "message": "In the current PS, the example that shows off multiple situations now starts with missing and optional fields. The first failing example on the page is still a type check (I feel very slightly that it\u0027s easier to see why that should \"obviously\" fail, rather than a missing field), but I hold that lightly. PTAL.",
       "parentUuid": "cd7e995b_547efb62",
+      "range": {
+        "startLine": 11,
+        "startChar": 12,
+        "endLine": 11,
+        "endChar": 27
+      },
+      "revId": "b5cf37914201412122146614621fc5537bf6f7c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ef1be6c_167a5bce",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T14:24:12Z",
+      "side": 1,
+      "message": "I\u0027ll mark this as resolved for now and add more specific comments in the rewritten version.",
+      "parentUuid": "3dc002e4_4e34c97d",
       "range": {
         "startLine": 11,
         "startChar": 12,

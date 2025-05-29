@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20813840_c60b913f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T14:24:12Z",
+      "side": 1,
+      "message": "Generally LGTM with some suggestions.",
+      "revId": "df9f7a5f53beb6cea45430e279c0b740963fc778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e12dede4_6cb287f8",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T14:24:12Z",
+      "side": 1,
+      "message": "The conditional tests influence the construction of a list or field; they are not limited to including data. Comprehensions are all about constructing fields or lists. I would possibly rephrase along the following lines:\n\n\u003e if guards can be used in field comprehensions and list comprehensions, to conditionally declare fields or include list elements.",
+      "range": {
+        "startLine": 7,
+        "startChar": 45,
+        "endLine": 7,
+        "endChar": 49
+      },
+      "revId": "df9f7a5f53beb6cea45430e279c0b740963fc778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c45b164f_66afdfbd",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T14:24:12Z",
+      "side": 1,
+      "message": "I think this can be more simply stated as \"the logical operators do not short circuit, unlike many other languages\".",
+      "range": {
+        "startLine": 119,
+        "startChar": 61,
+        "endLine": 120,
+        "endChar": 51
+      },
+      "revId": "df9f7a5f53beb6cea45430e279c0b740963fc778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ad705d1_40a66648",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T14:24:12Z",
+      "side": 1,
+      "message": "I think we can simplify this language: \"firmly define\"? Indeed you could drop the second half of this sentence entirely; the next sentence makes explicit that lack of short-circuit for anyone in doubt.",
+      "range": {
+        "startLine": 120,
+        "startChar": 54,
+        "endLine": 122,
+        "endChar": 7
+      },
+      "revId": "df9f7a5f53beb6cea45430e279c0b740963fc778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "192cd8c7_95c0329b",
+        "filename": "content/docs/howto/combine-conditions-using-chained-if/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-29T14:24:12Z",
+      "side": 1,
+      "message": "It feels like we can simplify this language too. Suggestion:\n\n\u003e As a general rule, if a subsequent condition might result in an evaluation value, use a chained `if`.",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 128,
+        "endChar": 3
+      },
+      "revId": "df9f7a5f53beb6cea45430e279c0b740963fc778",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
