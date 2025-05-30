@@ -48,7 +48,7 @@ This tutorial is written using the following version of `cue`:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.13.0
+cue version v0.14.0-0.dev.0.20250530082924-23f252784fe2
 ...
 ```
 
@@ -262,7 +262,7 @@ We can see that the dependencies have now been added to the
 $ cat cue.mod/module.cue
 module: "github.com/cueckoo/frostyapp@v0"
 language: {
-	version: "v0.13.0"
+	version: "v0.14.0"
 }
 source: {
 	kind: "git"

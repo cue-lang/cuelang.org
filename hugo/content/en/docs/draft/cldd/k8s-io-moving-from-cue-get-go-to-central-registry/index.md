@@ -26,7 +26,7 @@ The latest pre-release of the `cue` command is required -- please
 [upgrade to this version](/docs/installing-cue/) if it's not already installed:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.13.0
+cue version v0.14.0-0.dev.0.20250530082924-23f252784fe2
 ...
 ```
 
@@ -142,7 +142,7 @@ and updates the `cue.mod/module.cue` file to track this dependency:
 $ cat cue.mod/module.cue
 module: "kube.example"
 language: {
-	version: "v0.13.0"
+	version: "v0.14.0"
 }
 deps: {
 	"cue.dev/x/k8s.io@v0": {
