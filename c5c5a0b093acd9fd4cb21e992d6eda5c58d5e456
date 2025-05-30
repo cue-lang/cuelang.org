@@ -169,6 +169,30 @@
       },
       "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "789159e1_6c75c21e",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-05-30T13:29:46Z",
+      "side": 1,
+      "message": "Done; I think. PTAL.",
+      "parentUuid": "c1cd9e9b_60c3f3ab",
+      "range": {
+        "startLine": 772,
+        "startChar": 0,
+        "endLine": 773,
+        "endChar": 62
+      },
+      "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
