@@ -193,6 +193,30 @@
       },
       "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "23db9166_ece93354",
+        "filename": "content/docs/concept/using-the-cue-export-command/inputs/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 773,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-05-30T13:47:47Z",
+      "side": 1,
+      "message": "It feels like I\u0027m nit-picking, but I think \"jointly\" isn\u0027t the right word. \"Together\" would be better. But here\u0027s an even more succinct alternative:\n\n\u003e The set of `-l`/`--path` flags, in the order they are specified, defines the path where non-CUE data is placed.\n\nWhether/how we later clarify the point re dynamic/static paths is then up to us.\n\nAlso I think we can avoid \"all such flags\" - that\u0027s needlessly vague to my mind and feels \"filler-esque\". You could simplify that sentence to:\n\n\u003e It doesn\u0027t matter where the flags are placed relative to other flags or arguments.\n\nWe\u0027ve already made the point about order in my revised suggestion, and I don\u0027t think we need to stress specific other flags or arguments.",
+      "parentUuid": "789159e1_6c75c21e",
+      "range": {
+        "startLine": 772,
+        "startChar": 0,
+        "endLine": 773,
+        "endChar": 62
+      },
+      "revId": "c5c5a0b093acd9fd4cb21e992d6eda5c58d5e456",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
