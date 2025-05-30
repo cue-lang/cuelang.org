@@ -38,6 +38,11 @@ var testTable = []struct {
 	{inputCUE, functionExport, outputCUE, "foo: int", "", "foo: incomplete value int"},
 	{inputCUE, functionExport, outputJSON, "foo: int", "", "foo: incomplete value int"},
 
+	// Required fields only fail in export mode.
+	{inputCUE, functionDef, outputCUE, "foo!: int", "foo!: int\n", ""},
+	{inputCUE, functionEval, outputCUE, "foo!: int", "foo!: int\n", ""},
+	{inputCUE, functionExport, outputCUE, "foo!: int", "", "foo: field is required but not present"},
+
 	// Selecting defaults; def does less.
 	{inputCUE, functionDef, outputCUE, "foo: int | *3", "foo: int | *3\n", ""},
 	{inputCUE, functionEval, outputCUE, "foo: int | *3", "foo: 3\n", ""},
