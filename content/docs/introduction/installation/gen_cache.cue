@@ -7,7 +7,7 @@ package site
 					page: {
 						cache: {
 							multi_step: {
-								hash:       "LTKVEQB96F5T3LSU56HJ9O4SSRQQ4ANCSPP61PFO8PKC18LOTMPG===="
+								hash:       "1QB2JLC8N4CHVM599THBO2L57I43I4665P4IQMAV5SPBLDVLVGCG===="
 								scriptHash: "9IOOM07G1PL8JHO9MKVIG3N5MTPFB6S5VMIO3BOSEKG7K9OCC560===="
 								steps: [{
 									doc:      ""
@@ -24,7 +24,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.13.0
+											cue version v0.14.0-0.dev.0.20250530082924-23f252784fe2
 											...
 
 											"""
