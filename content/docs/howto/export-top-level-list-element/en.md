@@ -34,7 +34,7 @@ export one of its elements:
 ## Related content
 
 - {{<linkto/related/concept"using-the-cue-export-command">}} -- including
-  [using the `-l` flag]({{<relref"docs/concept/using-the-cue-export-command/inputs">}}#non-cue-data-location)
+  [using the `-l` flag]({{<relref"docs/concept/using-the-cue-export-command/inputs">}}#non-cue-data-path)
   and
   [using the `-e` flag]({{<relref"docs/concept/using-the-cue-export-command/evaluation">}}#modified-expression)
 - {{<linkto/related/howto"export-fields-whose-names-are-not-valid-identifiers">}}
