@@ -9,7 +9,7 @@ CUE v0.12.0 introduced
 which enables a powerful way for CUE configurations to consume data files.
 
 This guide demonstrates how to use file embedding as a flexible alternative to the
-[`--path`/`-l` flag]({{<relref"docs/concept/using-the-cue-export-command/inputs/#non-cue-data-location">}})
+[`--path`/`-l` flag]({{<relref"docs/concept/using-the-cue-export-command/inputs/#non-cue-data-path">}})
 when handling multiple data files:
 allowing their contents to be placed at arbitrary locations in an evaluation;
 to be validated by different constraints;
