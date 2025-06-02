@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20d1dffb_7be54085",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-02T07:08:33Z",
+      "side": 1,
+      "message": "PTAL. Feel free to submit if you\u0027re happy with this.",
+      "revId": "44e66590e3c51a8702c2edf689cfb7f7ea70c983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
