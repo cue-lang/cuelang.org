@@ -23,3 +23,29 @@ index 698ff3967..0170b67cf 100644
  	}
 
  	// The tag order in this file determines their relative positions at
+diff --git a/internal/cmd/preprocessor/cmd/testdata/execute_code_3_file.txtar b/internal/cmd/preprocessor/cmd/testdata/execute_code_3_file.txtar
+index 2fce054e2..399097ed3 100644
+--- a/internal/cmd/preprocessor/cmd/testdata/execute_code_3_file.txtar
++++ b/internal/cmd/preprocessor/cmd/testdata/execute_code_3_file.txtar
+@@ -73,8 +73,8 @@ content: dir: page: {
+ >foo
+ >-- out.err --
+ >build constraints exclude all CUE files in .:
+->    example1.cue: no package name
+->    example2.cue: no package name
++>    ./example1.cue: no package name
++>    ./example2.cue: no package name
+ >{{{end}}}
+ -- golden/hugo/content/en/dir/index.md --
+ ---
+@@ -109,8 +109,8 @@ foo
+ {{< code-tab name="TERMINAL" language="err" area="right" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGU=" >}}
+ $ cue vet .:example
+ build constraints exclude all CUE files in .:
+-    example1.cue: no package name
+-    example2.cue: no package name
++    ./example1.cue: no package name
++    ./example2.cue: no package name
+ {{< /code-tab >}}
+ {{< /code-tabs >}}
+ -- structure.golden --
