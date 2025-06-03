@@ -10,6 +10,8 @@ could track which data files need to be validated against which schemas,
 and then perform all those checks at once? This guide demonstrates how
 to start offloading that work to CUE.
 
+<!--more-->
+
 The latest pre-release of the `cue` command is required -- please
 [upgrade to this version](/docs/installing-cue/) if it's not already installed:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }

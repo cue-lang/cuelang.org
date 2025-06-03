@@ -12,6 +12,8 @@ Here are some common questions that folks have asked about curated modules.
 Please do join [the CUE community](https://cuelang.org/community/) and ask us anything
 you think we've missed!
 
+<!--more-->
+
 ## What curated modules are available?
 
 The curated modules currently published cover:

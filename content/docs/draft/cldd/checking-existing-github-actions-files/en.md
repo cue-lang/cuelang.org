@@ -25,6 +25,8 @@ workflow file using
 CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
 
+<!--more-->
+
 The latest pre-release of the `cue` command is required -- please
 [upgrade to this version](/docs/installing-cue/) if it's not already installed:
 {{{with script "en" "cue version"}}}
