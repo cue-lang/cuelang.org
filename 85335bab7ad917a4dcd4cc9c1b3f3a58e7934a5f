@@ -16,6 +16,24 @@
       "message": "Waiting on test run of https://github.com/cue-lang/cuelang.org/actions/runs/15414989952/job/43375609151",
       "revId": "85335bab7ad917a4dcd4cc9c1b3f3a58e7934a5f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4257fd8e_8a02863f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-03T10:49:15Z",
+      "side": 1,
+      "message": "It passed.",
+      "parentUuid": "5c56321d_94dea6b2",
+      "revId": "85335bab7ad917a4dcd4cc9c1b3f3a58e7934a5f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
