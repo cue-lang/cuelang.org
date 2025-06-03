@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "caf8bb519352b44238f17e567372a637b5c1f688",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "513ed4a0_2e4d79e7",
+        "filename": "content/docs/concept/understanding-cue-go-module-dependencies/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 215,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-03T13:18:14Z",
+      "side": 1,
+      "message": "Please choose a green that is more in keeping with the original pastel palette. Or better still, ask Rog to fix the upstream generator.",
+      "revId": "caf8bb519352b44238f17e567372a637b5c1f688",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
