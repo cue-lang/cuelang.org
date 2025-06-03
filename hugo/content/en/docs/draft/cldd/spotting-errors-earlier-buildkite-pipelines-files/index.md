@@ -17,6 +17,8 @@ Buildkite pipeline file using a
 CUE [Central Registry](https://registry.cue.works),
 and how it highlights the data we need to fix.
 
+<!--more-->
+
 ## A broken pipeline file
 
 This example comes from the

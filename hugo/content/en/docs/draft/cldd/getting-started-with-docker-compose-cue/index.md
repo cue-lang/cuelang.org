@@ -13,6 +13,8 @@ This guide shows you how to get started defining your compose files in CUE using
 from
 [the schema library](/getting-started/schema-library/).
 
+<!--more-->
+
 The latest pre-release of the `cue` command is required -- please
 [upgrade to this version](/docs/installing-cue/) if it's not already installed:
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
