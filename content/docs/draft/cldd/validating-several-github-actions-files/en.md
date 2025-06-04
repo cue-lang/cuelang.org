@@ -8,9 +8,6 @@ mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 EOD
-
-# TODO(jm): revert to latest when it has evalv3 as default.
-export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 {{{end}}}
 
 We've already seen how CUE makes it trivially easy to get started, in
@@ -22,13 +19,6 @@ and then perform all those checks at once? This guide demonstrates how
 to start offloading that work to CUE.
 
 <!--more-->
-
-The latest pre-release of the `cue` command is required -- please
-[upgrade to this version](/docs/installing-cue/) if it's not already installed:
-{{{with script "en" "cue version"}}}
-#ellipsis 1
-cue version
-{{{end}}}
 
 ## Start with a repository containing several workflow files
 

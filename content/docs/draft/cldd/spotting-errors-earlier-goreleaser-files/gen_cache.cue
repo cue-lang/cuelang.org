@@ -12,8 +12,8 @@ package site
 									fixed:  "3LGno0DDV8TeFZOUpdsEbosjqGdQfxNuNpf0y/WCUs4="
 								}
 								multi_step: {
-									hash:       "L6FK4IERONSC1AGR2QRIQVVD37ODKS9EFVR6JLQK6LCLEF576TO0===="
-									scriptHash: "F3LN2DPJ6PL15E2ED52E32DRABRO2QSCDK6QDVBERPJKMQGCGFSG===="
+									hash:       "APTRB4N9BQQH4OKJSUIBF5P4L5BUDITR2QHJFIR1Q1O0FGC7JOK0===="
+									scriptHash: "Q4IEVKNFID82HN75T2MB6FMP25IGGSEI0AJKTESJNIG8F2A0TE20===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -26,11 +26,6 @@ package site
 												{"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 												EOD
 												"""
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      "# TODO(jm): revert to latest when it has evalv3 as default."
-										cmd:      "export PATH=/cues/v0.13.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {

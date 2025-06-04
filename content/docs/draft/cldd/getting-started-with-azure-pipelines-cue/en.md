@@ -8,9 +8,6 @@ mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 EOD
-
-# TODO(jm): revert to latest when it has evalv3 as default.
-export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 {{{end}}}
 
 The CUE
@@ -24,13 +21,6 @@ from
 [the schema library](/getting-started/schema-library/).
 
 <!--more-->
-
-The latest pre-release of the `cue` command is required -- please
-[upgrade to this version](/docs/installing-cue/) if it's not already installed:
-{{{with script "en" "cue version"}}}
-#ellipsis 1
-cue version
-{{{end}}}
 
 ## Initialise your local CUE module
 

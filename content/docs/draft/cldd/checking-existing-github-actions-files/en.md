@@ -8,9 +8,6 @@ mkdir -p $HOME/.config/cue
 cat <<EOD > $HOME/.config/cue/logins.json
 {"registries":{"registry.cue.works":{"access_token":"${TEST_USER_AUTHN_CUE_USER_NEW}","token_type":"Bearer"}}}
 EOD
-
-# TODO(jm): revert to latest when it has evalv3 as default.
-export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 {{{end}}}
 
 The easiest way to start taking advantage of CUE's powerful validation is to
@@ -26,13 +23,6 @@ CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
 
 <!--more-->
-
-The latest pre-release of the `cue` command is required -- please
-[upgrade to this version](/docs/installing-cue/) if it's not already installed:
-{{{with script "en" "cue version"}}}
-#ellipsis 1
-cue version
-{{{end}}}
 
 ## Choose a GitHub Actions workflow file
 
