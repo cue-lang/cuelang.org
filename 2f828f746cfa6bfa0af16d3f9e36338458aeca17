@@ -16,6 +16,138 @@
       "message": "PTAL",
       "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb1546aa_ab7f5de9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-04T15:04:25Z",
+      "side": 1,
+      "message": "LGTM with some suggestions.",
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0faef56d_398ad2ba",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-04T15:04:25Z",
+      "side": 1,
+      "message": "I\u0027m not sure what the \"such as\" is doing here. Simply \"... check existing Kyverno policy files\"?",
+      "range": {
+        "startLine": 14,
+        "startChar": 16,
+        "endLine": 14,
+        "endChar": 48
+      },
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a6b175f_b172d2e5",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-04T15:04:25Z",
+      "side": 1,
+      "message": "\"... before they can be applied\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 31,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf81c441_7b680463",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-04T15:04:25Z",
+      "side": 1,
+      "message": "I\u0027m not sure validating such a policy can do that. The effect of the policy is not something the schema validation will check/validate. The correctness of the specification of the policy is.",
+      "range": {
+        "startLine": 19,
+        "startChar": 32,
+        "endLine": 19,
+        "endChar": 69
+      },
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2e76810f_bb5e6046",
+        "filename": "content/docs/draft/cldd/getting-started-with-kyverno-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-04T15:04:25Z",
+      "side": 1,
+      "message": "Perhaps \"policies enforced by Kyverno\" (here and throughout)? \n\nKyverno enforces policies; it feels like we\u0027re leaning on the word \"file\" too much and unnecessarily here. We can be more generally, and possibly more correct with simpler language.",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 17,
+        "endChar": 8
+      },
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d8d4d2ad_d3428a57",
+        "filename": "content/docs/draft/cldd/getting-started-with-kyverno-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-04T15:04:25Z",
+      "side": 1,
+      "message": "Just to sense check this: this is the advertised \"best practice\" etc place?",
+      "range": {
+        "startLine": 159,
+        "startChar": 0,
+        "endLine": 159,
+        "endChar": 32
+      },
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
