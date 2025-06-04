@@ -58,6 +58,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf94d500_3bad4730",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-04T16:10:10Z",
+      "side": 1,
+      "message": "Replaced, as discussed.",
+      "parentUuid": "0faef56d_398ad2ba",
+      "range": {
+        "startLine": 14,
+        "startChar": 16,
+        "endLine": 14,
+        "endChar": 48
+      },
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3a6b175f_b172d2e5",
@@ -71,6 +95,30 @@
       "writtenOn": "2025-06-04T15:04:25Z",
       "side": 1,
       "message": "\"... before they can be applied\"",
+      "range": {
+        "startLine": 17,
+        "startChar": 31,
+        "endLine": 17,
+        "endChar": 37
+      },
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "34e5dd97_f479fb46",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-04T16:10:10Z",
+      "side": 1,
+      "message": "Removed, as discussed.",
+      "parentUuid": "3a6b175f_b172d2e5",
       "range": {
         "startLine": 17,
         "startChar": 31,
@@ -104,6 +152,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b5648d7d_e8da3fe8",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-04T16:10:10Z",
+      "side": 1,
+      "message": "Updated, as discussed.",
+      "parentUuid": "bf81c441_7b680463",
+      "range": {
+        "startLine": 19,
+        "startChar": 32,
+        "endLine": 19,
+        "endChar": 69
+      },
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2e76810f_bb5e6046",
@@ -127,6 +199,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1334773_48e499d6",
+        "filename": "content/docs/draft/cldd/getting-started-with-kyverno-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-04T16:10:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e76810f_bb5e6046",
+      "range": {
+        "startLine": 16,
+        "startChar": 1,
+        "endLine": 17,
+        "endChar": 8
+      },
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d8d4d2ad_d3428a57",
@@ -140,6 +236,30 @@
       "writtenOn": "2025-06-04T15:04:25Z",
       "side": 1,
       "message": "Just to sense check this: this is the advertised \"best practice\" etc place?",
+      "range": {
+        "startLine": 159,
+        "startChar": 0,
+        "endLine": 159,
+        "endChar": 32
+      },
+      "revId": "2f828f746cfa6bfa0af16d3f9e36338458aeca17",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "633e8962_af953ec7",
+        "filename": "content/docs/draft/cldd/getting-started-with-kyverno-cue/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 159,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-04T16:10:10Z",
+      "side": 1,
+      "message": "It\u0027s where the intern has repeatedly told me to place them, but I can\u0027t currently find any docs suggesting it -- or any alternative.",
+      "parentUuid": "d8d4d2ad_d3428a57",
       "range": {
         "startLine": 159,
         "startChar": 0,
