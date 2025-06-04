@@ -11,8 +11,8 @@ package site
 									pipeline: "+VWm42jNOtHrBftej6CozfonkB9ennTS0gK0M8sICjM="
 								}
 								multi_step: {
-									hash:       "TQFNUHDQ7T0KI1P85N15ME2BVUG1IKASE9I5BPBT4J5EM90JDGC0===="
-									scriptHash: "68M2B8FJ2ITAC5ELV67T9D1DP3N3D2T2NA301QEOMU1I26HN0N5G===="
+									hash:       "4Q2KP074H854UF9RC5OB2T6Q8O4LDHGPV13KJL7GQPBOQ6DLQ6V0===="
+									scriptHash: "KKBGD11QIHOBVMIH4SQ97A38VOOPOT91UBLAJ8UKC5CL53L5V960===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -27,20 +27,6 @@ package site
 												"""
 										exitCode: 0
 										output:   ""
-									}, {
-										doc:      "# TODO(jm): revert to latest when it has evalv3 as default."
-										cmd:      "export PATH=/cues/v0.13.0:$PATH"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      "#ellipsis 1"
-										cmd:      "cue version"
-										exitCode: 0
-										output: """
-												cue version v0.13.0
-												...
-
-												"""
 									}, {
 										doc:      ""
 										cmd:      "cue vet -c -d '#Pipeline' cue.dev/x/buildkite@latest pipeline.yml"

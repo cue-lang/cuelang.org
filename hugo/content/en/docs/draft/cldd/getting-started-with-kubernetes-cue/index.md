@@ -18,14 +18,6 @@ from
 
 <!--more-->
 
-The latest pre-release of the `cue` command is required -- please
-[upgrade to this version](/docs/installing-cue/) if it's not already installed:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
-$ cue version
-cue version v0.13.0
-...
-```
-
 ## Initialise your local CUE module
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
 $ cue mod init cue.example

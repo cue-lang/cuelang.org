@@ -16,14 +16,6 @@ schemas or policies in CUE.
 
 <!--more-->
 
-The latest pre-release of the `cue` command is required -- please
-[upgrade to this version](/docs/installing-cue/) if it's not already installed:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
-$ cue version
-cue version v0.13.0
-...
-```
-
 ## Choose an Azure pipeline file
 
 This example is adapted from

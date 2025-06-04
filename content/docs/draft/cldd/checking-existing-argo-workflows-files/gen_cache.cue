@@ -11,8 +11,8 @@ package site
 									workflow: "Ic29bBoaz65JiACq9CPKQ7CyDSvNTD63tUO/OBxeJS0="
 								}
 								multi_step: {
-									hash:       "IPQ4R3G3PJKKPJET6QH6MIQGF633F9JNVKR4TFN3O5E8JT1JSC00===="
-									scriptHash: "32QMMB25UECHSS39C1CMVIFFGGHSSHQ3K5G6ENKN7UTUC1LNMTD0===="
+									hash:       "K3MBDD2JR76TR9ANN2D9QV05MO01MU1NS03ENS0PFLS3CNLEGIU0===="
+									scriptHash: "I0KQ2645UH72D10BE35LPC3NV886JCDVKGQ4I3GQC4IMCUSNTOPG===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -27,20 +27,6 @@ package site
 												"""
 										exitCode: 0
 										output:   ""
-									}, {
-										doc:      "# TODO(jm): revert to latest when it has evalv3 as default."
-										cmd:      "export PATH=/cues/v0.13.0:$PATH"
-										exitCode: 0
-										output:   ""
-									}, {
-										doc:      "#ellipsis 1"
-										cmd:      "cue version"
-										exitCode: 0
-										output: """
-												cue version v0.13.0
-												...
-
-												"""
 									}, {
 										doc:      ""
 										cmd:      "cue vet -c -d '#Workflow' cue.dev/x/argocd@latest workflow.yml"
