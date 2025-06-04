@@ -88,17 +88,6 @@ $ cue mod init cue.example
 You can choose any module name you like - it's easy to
 [change it later](https://cuelang.org/docs/reference/command/cue-help-mod-rename/).
 
-## Login to the Central Registry
-
-The
-[Central Registry](https://registry.cue.works)
-requires authentication while it's in beta testing,
-so you need to login before using its modules:
-
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2luICMgb25seSBkdXJpbmcgYmV0YQ==" }
-$ cue login # only during beta
-```
-
 ## Embed the workflow files in some CUE
 
 CUE's [file embedding](https://cuelang.org/docs/howto/embed-files-in-cue-evaluation/)
