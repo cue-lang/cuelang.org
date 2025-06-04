@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed44aa9b_5be38cdf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 10
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-04T16:13:30Z",
+      "side": 1,
+      "message": "PTAL as a final content review before I submit and lock in the guides in the stack under CL 1216407.",
+      "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
