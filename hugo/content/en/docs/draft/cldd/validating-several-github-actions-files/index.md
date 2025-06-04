@@ -88,17 +88,6 @@ $ cue mod init cue.example
 You can choose any module name you like - it's easy to
 [change it later](https://cuelang.org/docs/reference/command/cue-help-mod-rename/).
 
-## Login to the Central Registry
-
-The
-[Central Registry](https://registry.cue.works)
-requires authentication while it's in beta testing,
-so you need to login before using its modules:
-
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2luICMgb25seSBkdXJpbmcgYmV0YQ==" }
-$ cue login # only during beta
-```
-
 ## Embed the workflow files in some CUE
 
 CUE's [file embedding](https://cuelang.org/docs/howto/embed-files-in-cue-evaluation/)
@@ -136,6 +125,12 @@ $ cue mod tidy
 
 Tidying a module is an important part of using curated modules from the
 [Central Registry](https://registry.cue.works).
+
+If you see an error message mentioning "too many requests" while following this
+guide, then
+[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+and re-run the failing command.
+The Central Registry allows more requests from authenticated users.
 
 ## Validate the workflow files
 
