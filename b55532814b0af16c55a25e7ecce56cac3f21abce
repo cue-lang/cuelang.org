@@ -58,6 +58,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8935b8d6_88960fa1",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-05T10:21:18Z",
+      "side": 1,
+      "message": "Done. I had internalised our discussion as resulting in this paragraph reverting to the undifferentiated introductory prose used on all other pages.\n\nAlso tracked in an issue in a private repo.",
+      "parentUuid": "e7b11c8e_f12ee423",
+      "range": {
+        "startLine": 14,
+        "startChar": 16,
+        "endLine": 14,
+        "endChar": 40
+      },
+      "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "061f5983_d301d207",
@@ -71,6 +95,30 @@
       "writtenOn": "2025-06-04T20:47:18Z",
       "side": 1,
       "message": "This seems unecessarily vague here (and on reading other docs it is there too). We can and should be specific: \"before they are applied by Kyverno\" (or similarly appropriate language)",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 37
+      },
+      "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4be7db60_24ff6075",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-05T10:21:18Z",
+      "side": 1,
+      "message": "Done.\n\nAlso tracked in an issue in a private repo.",
+      "parentUuid": "061f5983_d301d207",
       "range": {
         "startLine": 16,
         "startChar": 12,
@@ -116,6 +164,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7fe5640_7641d997",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-05T10:21:18Z",
+      "side": 1,
+      "message": "Discussed offline.",
+      "parentUuid": "09a9aded_73b15347",
+      "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2402ef18_c12a6322",
@@ -129,6 +195,30 @@
       "writtenOn": "2025-06-04T16:29:52Z",
       "side": 1,
       "message": "```suggestion\nThis example is adapted from the\n```",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 38
+      },
+      "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c9a417f_b9606679",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-05T10:21:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2402ef18_c12a6322",
       "range": {
         "startLine": 28,
         "startChar": 0,
@@ -156,6 +246,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5dd552fd_d2dd7cde",
+        "filename": "content/docs/draft/cldd/checking-existing-kyverno-policy-files/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-05T10:21:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2242156d_19664354",
+      "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3e7b85d5_bce0030b",
@@ -169,6 +277,30 @@
       "writtenOn": "2025-06-04T16:29:52Z",
       "side": 1,
       "message": "```suggestion\n## Validate your policy\u0027s structure\n```",
+      "range": {
+        "startLine": 108,
+        "startChar": 0,
+        "endLine": 108,
+        "endChar": 23
+      },
+      "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "55ed595e_b1cc0d72",
+        "filename": "content/docs/draft/cldd/getting-started-with-kyverno-cue/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-05T10:21:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e7b85d5_bce0030b",
       "range": {
         "startLine": 108,
         "startChar": 0,
@@ -202,6 +334,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a5f1bd6_ccb89f1a",
+        "filename": "content/docs/draft/cldd/getting-started-with-kyverno-cue/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-05T10:21:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cfb49355_f7973d1b",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 59
+      },
+      "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e8048d1_e4360418",
@@ -219,6 +375,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3eddcdf_982404ca",
+        "filename": "content/docs/draft/cldd/validating-several-kyverno-policy-files/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-05T10:21:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e8048d1_e4360418",
+      "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "38442097_3145c70f",
@@ -232,6 +406,24 @@
       "writtenOn": "2025-06-04T16:29:52Z",
       "side": 1,
       "message": "```suggestion\nWe know that each of our embedded policies has a valid structure\n```",
+      "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0a3e29ca_6cc0a9a4",
+        "filename": "content/docs/draft/cldd/validating-several-kyverno-policy-files/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 165,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-05T10:21:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38442097_3145c70f",
       "revId": "b55532814b0af16c55a25e7ecce56cac3f21abce",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
