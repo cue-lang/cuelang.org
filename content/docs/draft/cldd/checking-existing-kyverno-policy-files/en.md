@@ -55,7 +55,7 @@ spec:
 ## Validate the policy file
 
 {{{with script "en" "cue vet"}}}
-cue vet -c -d '#Policy' cue.dev/x/kyverno/policy/v1@latest require-labels.yaml
+cue vet -c -d '#ClusterPolicy' cue.dev/x/kyverno/clusterpolicy/v1@latest require-labels.yaml
 {{{end}}}
 
 This command uses the `#Policy` definition from the `kyverno/policy/v1` package
