@@ -11,8 +11,8 @@ package site
 									policy: "faUzqTHSfbnS94u6VQqbSAyTXA14uSdISQIj8lUdcfk="
 								}
 								multi_step: {
-									hash:       "BMR5HN6N0RJGTPP1TN4VQC6RBCKU0GJVS57TKEMUIAAN64R9BO6G===="
-									scriptHash: "M4O9U93KFAPR8JRM3MUM9U59TBGOK669252ID6P4KRND2S4QLHGG===="
+									hash:       "CA7B06BQ6NFBOVBVQJ7R5BHA9D6E1OB3JJ4HQ6KIGA16R0RTOSOG===="
+									scriptHash: "0GNV46KODIFLACS6JPHVOPTUQJ7UJ75NIBR1EIVPASGTVN3E32M0===="
 									steps: [{
 										doc:      "# Registry auth"
 										cmd:      "mkdir -p $HOME/.config/cue"
@@ -29,7 +29,7 @@ package site
 										output:   ""
 									}, {
 										doc:      ""
-										cmd:      "cue vet -c -d '#Policy' cue.dev/x/kyverno/policy/v1@latest require-labels.yaml"
+										cmd:      "cue vet -c -d '#ClusterPolicy' cue.dev/x/kyverno/clusterpolicy/v1@latest require-labels.yaml"
 										exitCode: 0
 										output:   ""
 									}]

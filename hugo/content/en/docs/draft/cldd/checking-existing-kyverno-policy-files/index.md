@@ -47,8 +47,8 @@ spec:
 
 ## Validate the policy file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BvbGljeScgY3VlLmRldi94L2t5dmVybm8vcG9saWN5L3YxQGxhdGVzdCByZXF1aXJlLWxhYmVscy55YW1s" }
-$ cue vet -c -d '#Policy' cue.dev/x/kyverno/policy/v1@latest require-labels.yaml
+```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI0NsdXN0ZXJQb2xpY3knIGN1ZS5kZXYveC9reXZlcm5vL2NsdXN0ZXJwb2xpY3kvdjFAbGF0ZXN0IHJlcXVpcmUtbGFiZWxzLnlhbWw=" }
+$ cue vet -c -d '#ClusterPolicy' cue.dev/x/kyverno/clusterpolicy/v1@latest require-labels.yaml
 ```
 
 This command uses the `#Policy` definition from the `kyverno/policy/v1` package
