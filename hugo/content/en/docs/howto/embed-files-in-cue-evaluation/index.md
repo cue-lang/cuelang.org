@@ -17,7 +17,7 @@ be loaded at evaluation time, and is available by default from version
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.13.0
+cue version v0.14.0-0.dev.0.20250606135340-250524b0d6e0
 ...
 ```
 
