@@ -73,6 +73,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1d34ac11_e023276b",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 196,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-09T13:16:43Z",
+      "side": 1,
+      "message": "I\u0027ve adopted this suggestion for the longest CUE block on this page (the only which took up more than a screen\u0027s worth of space, at my end). Let me know what you think, and if you\u0027d like this change made on any shorter CUE files that have comments on this page, but which already fit on a single screen (i.e. for consistency).",
+      "parentUuid": "2941e612_c1cd1ff7",
+      "revId": "49c28b0b1062958f930262d262d69971975a5001",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "87ee52e0_04df10df",
         "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
         "patchSetId": 11
