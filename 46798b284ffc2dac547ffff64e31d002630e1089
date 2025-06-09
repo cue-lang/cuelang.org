@@ -1043,6 +1043,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "73c6ab2d_c1af6e9a",
+        "filename": "content/docs/concept/using-the-cue-vet-command/validate-data/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-09T14:22:10Z",
+      "side": 1,
+      "message": "Done. Removed in an earlier PS.",
+      "parentUuid": "0f8ba5a6_722f821c",
+      "range": {
+        "startLine": 102,
+        "startChar": 29,
+        "endLine": 102,
+        "endChar": 33
+      },
+      "revId": "46798b284ffc2dac547ffff64e31d002630e1089",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "857e1b69_831f78ee",
