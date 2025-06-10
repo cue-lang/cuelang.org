@@ -246,51 +246,10 @@ a: incomplete value "A" | int | _
 {{< /code-tabs >}}
 
 However, even if multiple defaults are provided and they unify successfully,
-doing so is *usually* not a useful technique.
-
-This is because in the case where CUE needs to use the unified default (because
-no concrete, regular value was discovered through unification) the result of
-unifying all the defaults must be concrete. Such concreteness *can* be derived
-from the unification of multiple *non-concrete* defaults - but as the following
-example demonstrates, this has a higher change of leading to unclear CUE that
-could confuse the reader:
-
-{{< code-tabs >}}
-{{< code-tab name="policy-upper-bound.cue" language="cue" area="top-left" >}}
-package example
-
-port_x: *<=8080 | string
-port_y: *<=8080 | string
-{{< /code-tab >}}
-{{< code-tab name="policy-lower-bound.cue" language="cue" area="top-left" >}}
-package example
-
-port_x: *>=8080 | string
-port_y: *>=8080 | string
-{{< /code-tab >}}
-{{< code-tab name="data.cue" language="cue" area="top-right" >}}
-package example
-
-port_x: "a string, for some reason"
-{{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAuOmV4YW1wbGU=" >}}
-$ cue export .:example
-{
-    "port_x": "a string, for some reason",
-    "port_y": 8080
-}
-{{< /code-tab >}}
-{{< /code-tabs >}}
-
-The preceding example is *not* an example of clear and straightforward CUE, and
-the reader would be better served by having an explicit and concrete default
-specified (e.g. `port_x: *8080 | string`). Having specified such a concrete
-default, there is usually little point in *also* specifying non-concrete
-defaults in parallel.
-
-There are specific, nuanced, situations where this advice might not hold true.
-However, in general, using multiple defaults is unnecessary and risks confusing
-the reader.
+doing so is *usually* not a useful technique as it often leads to unclear CUE.
+There are specific, nuanced, situations where this advice might not hold true
+but, in general, using multiple compatible defaults is unnecessary, and risks
+confusing the reader.
 
 ## Defaults provide only a single preference layer
 
