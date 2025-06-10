@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "b2264965_59d6a9c8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-10T16:50:52Z",
+      "side": 1,
+      "message": "Per my response in the issue, I don\u0027t think we can close this because there are other parts to the proposal. \n\nIt would also be good to be clear on how \"adopted\" this proposal is.",
+      "revId": "2436f285b55df35581cd3fa74dd495871ccab8f1",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "ff23c65a_5f77c3f0",
