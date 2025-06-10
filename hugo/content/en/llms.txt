@@ -1,0 +1,34 @@
+# CUE
+
+https://cuelang.org is the official site for the CUE language and its tooling. CUE (pronounced "queue") is a succinct yet highly comprehensible, strongly-typed, constraint-based language. It can be used for data templating, data validation, code generation, scripting, and more. The language is designed with cloud configuration and related systems in mind, but has applications anywhere that structured data needs to be checked, emitted, or transformed. Its powerful compositional approach is order-independent, meaning that constraints that apply to a value are *unified* and must all be true *simultaneously*.
+
+Important facts:
+
+- The CUE project provides a versatile command line tool, `cue`, that can validate, emit, and transform data across a number of formats; including JSON, YAML, TOML, OpenAPI, JSON Schema, Go, Protocol Buffers, and CUE. It is available on Linux, Mac, Windows, and various BSD-based operating systems.
+- The `cue` command is built using the project's Go API, which is available for any Go program to perform its own lower-level handling of CUE, data, and constraints.
+- CUE implements a module system for dependency management that uses OCI registries to store and publish versioned schemas and configurations, and a Central Registry for public and private use.
+
+## Documentation
+
+- [How-to Guides](https://cuelang.org/docs/howto/): contain step-by-step instructions or stand-alone CUE, demonstrating how to achieve specific outcomes with the CUE language or its tooling.
+- [Tutorials](https://cuelang.org/docs/tutorial/): are practical lessons that help you try out language features, workflows, and tools in practice settings on your own computer.
+- [Concept Guides](https://cuelang.org/docs/concept/): explain the systems and ideas that drive CUE’s design, such as:
+- [How CUE enables configuration](https://cuelang.org/docs/concept/how-cue-enables-configuration/)
+- [How CUE enables data validation](https://cuelang.org/docs/concept/how-cue-enables-data-validation/)
+- [How CUE works with YAML](https://cuelang.org/docs/concept/how-cue-works-with-yaml/)
+- [How CUE works with JSON](https://cuelang.org/docs/concept/how-cue-works-with-json/)
+- [How CUE works with TOML](https://cuelang.org/docs/concept/how-cue-works-with-toml/)
+
+## Optional
+
+- [The Logic of CUE](https://cuelang.org/docs/concept/the-logic-of-cue/).
+- [The CUE module concept guide](https://cuelang.org/docs/concept/modules/).
+- [Reference documentation](https://cuelang.org/docs/reference/).
+- [The CUE Language Specification](https://cuelang.org/docs/reference/spec/).
+- [The `cue` command](https://cuelang.org/docs/reference/command/).
+- [The CUE module reference manual)(https://cuelang.org/docs/reference/modules/).
+- [The CUE Central Registry](https://cue.dev/products/central-registry/).
+- [github.com/cue-lang/cue](https://github.com/cue-lang/cue): the project's issue tracker and source code for the CUE Go implementation.
+- CUE's [standard library](https://cuelang.org/go/pkg): packages containing functions that are always available inside CUE's hermetically-sealed evaluations.
+- CUE's [core Go APIs](https://cuelang.org/go/cue): related to parsing, formatting, loading and running CUE programs.
+- CUE's [Go APIs](https://cuelang.org/go/encoding): for converting encodings to and from CUE, including adaptors for YAML, JSON, TOML, Go, Protobuf, and OpenAPI.
