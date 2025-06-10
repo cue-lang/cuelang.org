@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								json: "JI0TYfB81ZWeDqBfx5XgJPzlfqFvCQOjsfUHGZtKms4="
-								yaml: "ZpW0YQQinRKxU3YOCo2ed632xfVyAWjzevI+JwtAikk="
+								json: "IxfPSIct8R4wAZ1AJ98ABbBcXKSJYoWS8IBQFvz8BnM="
+								yaml: "tMEDt4116h/AJzanzD8ELQsqjEW7wjTPmSGBsfUSyJs="
 							}
 							multi_step: {
-								hash:       "VJDSD6UIS7241GLEP8HMBHSRAT63D5O3P49A8ILSO02EDOOK3UQG===="
+								hash:       "1AEVRSBJSRO6C4LODQ9DU9LS8K4802LDI9NTA2JSVL9IJ8FTVE4G===="
 								scriptHash: "NBDCPULNRD3R08PD54O4HRS8CFC39I0KHVEB4PRGRRQAUR3M26JG===="
 								steps: [{
 									doc:      ""
