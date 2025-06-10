@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0ef31d8_9c1cd407",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-10T16:05:24Z",
+      "side": 1,
+      "message": "PTAL. I assume the TOML encoding API is as suitable (\u003d\u003dnon-experimental) to be mentioned in this context as the YAML/JSON APIs?",
+      "revId": "a378dc7afdda23f7a36730ddb5011eab32cf43c3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
