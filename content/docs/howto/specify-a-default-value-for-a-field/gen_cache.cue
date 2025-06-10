@@ -16,7 +16,6 @@ package site
 								complex:            "067v4qvyNVKGeDrYHvlayO2BbxEIExsjSSxZW2PPNQI="
 								"multiple-success": "wb8R24UNnw+YAXhV32EkeZocigWtBHvEmpkVbuG/eTo="
 								"multiple-failure": "6wXzbx76XK4Mzws8PteUEhVF4JIjkkNu9MV8xdZCdOc="
-								"large example":    "3PKSD9rPPlTJ/v/gAan2n/jrDGrFAlUICiPga6cy9r0="
 							}
 						}
 					}
