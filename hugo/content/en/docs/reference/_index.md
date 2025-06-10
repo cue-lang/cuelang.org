@@ -49,7 +49,7 @@ Used by all other packages, including the `cue` command
 
 {{< card title="API: go/encoding" label="pkg.go.dev" href="https://pkg.go.dev/cuelang.org/go/encoding" >}}
 Go APIs for converting to and from CUE.
-Includes adaptors for YAML, JSON, Go, Protobuf, and OpenAPI
+Includes adaptors for YAML, JSON, TOML, Go, Protobuf, and OpenAPI
 {{< /card >}}
 
 {{< card title="cue-lang/cue" label="github.com" href="https://github.com/cue-lang/cue" >}}
