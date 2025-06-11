@@ -22,6 +22,30 @@
       },
       "revId": "387ac5a020998daec1d193ba128067c86d40eeea",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47ac9cc7_c67a5eca",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 492,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-11T13:22:34Z",
+      "side": 0,
+      "message": "Great point. I have restored the comment.",
+      "parentUuid": "3df320d0_bd478edb",
+      "range": {
+        "startLine": 492,
+        "startChar": 44,
+        "endLine": 492,
+        "endChar": 54
+      },
+      "revId": "387ac5a020998daec1d193ba128067c86d40eeea",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
