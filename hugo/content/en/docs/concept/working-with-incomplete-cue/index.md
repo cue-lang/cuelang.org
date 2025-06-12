@@ -157,8 +157,8 @@ func main() {
 
 We fetch the latest version of CUE, and tidy our Go module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjEzLjEKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.13.1
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjAtMC5kZXYuMC4yMDI1MDYxMjE3MzU0Mi1jOTI1OTAyNzJiYzIKZ28gbW9kIHRpZHk=" }
+$ go get cuelang.org/go@v0.14.0-0.dev.0.20250612173542-c92590272bc2
 ...
 $ go mod tidy
 ...
