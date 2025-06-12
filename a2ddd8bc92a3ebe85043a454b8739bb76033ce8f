@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "af9562bb_01dac577",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 23
+      },
+      "lineNbr": 228,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-12T12:25:26Z",
+      "side": 1,
+      "message": "Let\u0027s remove this, per the thoughts below.",
+      "revId": "a2ddd8bc92a3ebe85043a454b8739bb76033ce8f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2431f2cc_61880cda",
+        "filename": "content/docs/draft/cldd/drying-up-github-actions-workflows/en.md",
+        "patchSetId": 23
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-06-12T12:25:26Z",
+      "side": 1,
+      "message": "Please make these \"doc comments\" for the line. i.e.\n\n```\n// Explanation #1\n#defaultBranch: \"main\"                                             \n\n// Explanation #2\nworkflows: [_]: githubactions.#Workflow \u0026 {                        \n        // Explanation #3\n\tjobs: [_]: \"runs-on\": *\"ubuntu-latest\" | _                     \n\n        // Explanation #4\n\tpermissions: contents: *\"read\" | \"write\" | \"none\"              \n}\n\n// Explanation #5\n_checkoutCode: githubactions.#Step \u0026 {uses: \"actions/checkout@v4\"} \n_setupGo: githubactions.#Step \u0026 {                                  \n\tuses: \"actions/setup-go@v5\"\n\twith: \"go-version\": \"1.24\"\n}\n\n// Explanation #6\n_goTest: githubactions.#Step \u0026 {                                   \n\tname:   *\"Test\" | _\n\t#flags: *\"\" | string\n\t#packages: *[\"./...\"] | [...string]\n\tlet packages \u003d strings.Join(#packages, \" \")\n\trun: \"go test -v \\(#flags) \\(packages)\"\n}\n```\n\nYes this takes up vertical space, but I think we prefer that mild inconvenience vs clear formatting, where on narrow screens, like mobile, you won\u0027t see the comment without scrolling.",
+      "revId": "a2ddd8bc92a3ebe85043a454b8739bb76033ce8f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
