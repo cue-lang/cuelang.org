@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "GJTOQNHINFJPSAVI8805JAGLVN18MTHL14LA304USIN4HNMGCA7G===="
-									scriptHash: "1DNA2K9GNVSDE0BNU0B43PK6BBUFCQGT6SHOPI9SGDTRSFHFUOFG===="
+									hash:       "LO3KUAIN4GDKNO5HFJK1DD0OI1KL6OKM8923HMI1SKJ98MO6Q9SG===="
+									scriptHash: "UADU4F5347H18D3AQAO7OU9VBGGKI7VDRPUP2QIFUTET632QATT0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.1:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0-0.dev.0.20250612173542-c92590272bc2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -35,7 +35,7 @@ package site
 
 												For information on commands that interact with modules:
 
-												    cue help mod
+												\tcue help mod
 
 												For tutorials on how to use the Central Registry, see:
 
