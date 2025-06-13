@@ -51,6 +51,24 @@
       "parentUuid": "5dc283c7_ad681e5d",
       "revId": "e6a0b27171ae105cf990da27730b7014e251c682",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e9ab4b71_097948ad",
+        "filename": "content/docs/howto/limit-combinations-of-several-fields/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-06-13T14:09:25Z",
+      "side": 1,
+      "message": "The example\u0027s been stripped back to a pair of passing and failing fields, with the other use case examples moving to a trailing list, in prose.",
+      "parentUuid": "7dad7125_be3b2b79",
+      "revId": "e6a0b27171ae105cf990da27730b7014e251c682",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
