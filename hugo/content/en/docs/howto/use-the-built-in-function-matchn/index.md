@@ -329,8 +329,6 @@ E.0: invalid value 11 (out of bound >100):
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-The sub-optimal error reporting for field `E` is tracked in {{<issue 3389/>}}.
-
 ## Future enhancements
 
 The current release of `matchN` does not consider hidden fields or definitions
