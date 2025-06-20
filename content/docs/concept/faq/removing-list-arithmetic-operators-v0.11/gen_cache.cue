@@ -8,14 +8,14 @@ package site
 						page: {
 							cache: {
 								upload: {
-									removed:                 "JCkzRemXXPoKDIKHq15HWa2r7M/8L1R5O8HWErgpl0Q="
-									changes:                 "/zeXCPSoHzNsYaW0yzrsCNQgVEXxDldnAzRC6S0bmfs="
-									"changes: updated file": "sC2w4DeJ3woqBcS87BuiHtVDM44b4MuN/eidMdF4aVg="
-									"references: broken":    "8l3espYDcNi212iWGQUY9nZtV6jw7LMk01Hvw74VheI="
-									"references: fixed":     "A67uTu+n1Z7W2MjWdElmaJWWslrkV2dKna1+q8bZ9e0="
+									removed:                 "yvolJQwKk3Unu5KRZXzOXflhOdGWXveaagwGhad5z1I="
+									changes:                 "Uh5Q5fub8dWqkUu2qclRhmJUqSI0mqabw/vCLS81dKw="
+									"changes: updated file": "xnFZulElsjBJjqXCfm41x3MqSP4QuXak8gx630xxVko="
+									"references: broken":    "jNhuL9xF36r0cSBfRuO5hyAIpsUbpeNiesMABmSsi6M="
+									"references: fixed":     "I30sbDulJR6+p9NBnlw/ukLLfYNHIxIMAf40OqjS4uk="
 								}
 								multi_step: {
-									hash:       "5O5E6QTTHT7RQLLR3UPI5E7GTPJ8Q8VSD7VQFBEQ7U9NT103E22G===="
+									hash:       "4H2R2KBFRIFVDR7LVCM204H13V4D2660C9FDR5GTSSFS1VMHKPL0===="
 									scriptHash: "CQLN0JB91J0J500G73ET7JLAEUQ73QC37IB3PEFB4O462O83DV2G===="
 									steps: [{
 										doc:      ""
