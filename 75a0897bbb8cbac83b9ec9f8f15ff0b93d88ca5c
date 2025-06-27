@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62e7cff7_243e4a9b",
+        "filename": "playground/impl.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-06-27T10:25:45Z",
+      "side": 1,
+      "message": "or %q.",
+      "revId": "75a0897bbb8cbac83b9ec9f8f15ff0b93d88ca5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
