@@ -73,8 +73,8 @@ content: dir: page: {
 >foo
 >-- out.err --
 >build constraints exclude all CUE files in .:
->    example1.cue: no package name
->    example2.cue: no package name
+>    ./example1.cue: no package name
+>    ./example2.cue: no package name
 >{{{end}}}
 -- golden/hugo/content/en/dir/index.md --
 ---
@@ -109,8 +109,8 @@ foo
 {{< code-tab name="TERMINAL" language="err" area="right" type="terminal" codetocopy="Y3VlIHZldCAuOmV4YW1wbGU=" >}}
 $ cue vet .:example
 build constraints exclude all CUE files in .:
-    example1.cue: no package name
-    example2.cue: no package name
+    ./example1.cue: no package name
+    ./example2.cue: no package name
 {{< /code-tab >}}
 {{< /code-tabs >}}
 -- structure.golden --
