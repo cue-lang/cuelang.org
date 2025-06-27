@@ -8,18 +8,18 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"test.cue pre":         "0JQ/zJ1fU0OuJ89kprHhJEZAbHSslQak0AC3nsOlNJg="
-									"release.cue pre":      "wLVRotn6k/Ko/G/vN9WKehNSmyqXITUNoU/m041EcKc="
-									"test.yml pre":         "UAkm/8+dMeAjGTeopXrTBk52/lwAgYDH+g0n3u8eijI="
-									"release.yml pre":      "xgTvcpkjUB2pKpnD+yNxWgnlU+yisdZkyRrt8HGOeFw="
-									"test.cue post":        "3rnkjD9f9iZewUslVN33Sbc2tyFfaS/95lFGqZol7QE="
-									"release.cue post":     "ar4ykQ/nTKrMrwzeam+ZjX4wxSfCOiogDVK9LIvO1pQ="
-									"workflows.cue":        "z9Cv/9YVIg6+hndTBsoMJBEq2rLhAL4KsepaPh99Phw="
-									"test.cue comments":    "VAQwdN8tNPlN19Y7n/NBwyE8GiWdAkSIGJQNri6leM4="
-									"release.cue comments": "WcRZX9rJsnYbOGLKAvFioqUY9NOi0+fU+P3yaUGKGH4="
+									"test.cue pre":         "fYb++8w7hoD6Qt4nzICEwltcESAoc0L+E/VRqHawdfM="
+									"release.cue pre":      "37gLCKNVnc3LFdocgJiHLrLe3unT85GfKgrR16bg05w="
+									"test.yml pre":         "DaKHXdOemmr7cv3mUKUiNR5GqnARK201L0lVnErUxRQ="
+									"release.yml pre":      "T0+ZAYm/dSbhg2dA/XlhJ+CTXABoRUvzYOoYs9TaJPc="
+									"test.cue post":        "FsmZxPvN45v6uUPGSVyHTcaeeGs3eGACKcKZrSZx4RE="
+									"release.cue post":     "lKYQPAlnC3DfnssBiu5x8Gx1VS9NSWXDWoykYTxi0cQ="
+									"workflows.cue":        "cvHEou1/Ofk5yv/Ia9xiAuT3rfkwePI0Gedr0KAqvYQ="
+									"test.cue comments":    "/Fo0OedkcMkk3xVy541P6tDTnK9SKKOqEnlQYIZ3/IY="
+									"release.cue comments": "eyNbhyYrc3GUOcUMUS9zoyAWJqNUKpc1seUNhAHvXeY="
 								}
 								multi_step: {
-									hash:       "9LH8MJRCPCT2JS93QSM5ML2JSDT35PUH3G184T3C0TUR7NIC5UMG===="
+									hash:       "BEQELFUH06427OU690RHBFACC1U014CKOMP03A6236FLO7GJGFR0===="
 									scriptHash: "431471NG5NSOQ12FCB1B3FGDD039B2613RUH6N9MJOQHLJHPP43G===="
 									steps: [{
 										doc:      "# Registry auth"

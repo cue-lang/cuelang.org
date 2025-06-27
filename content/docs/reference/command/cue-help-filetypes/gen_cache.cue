@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "B0AEIFGUGHI2IBBRA87J7QA0NMJ35L7NGQBUFJPFAFH7RPU0F6V0===="
-									scriptHash: "U151RFETTCA6DDO2KIACQGNQFDNCTPMBI63DBNT9O7R2QU7BCJRG===="
+									hash:       "TMP7N7QHAREL62T6HTDIGTH8HCCC5I14AB4467PHN6RMVI800I2G===="
+									scriptHash: "RB2SL58TIC78QKU70L442PNLM1UTR0R94D2TQU004M3P0K1EINB0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.2:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0-alpha.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -48,7 +48,7 @@ package site
 												default. The user may override this behavior by using qualifiers.
 												A qualifier takes the form
 
-												    <tag>{'+'<tag>}':'
+												\t<tag>{'+'<tag>}':'
 
 												For instance,
 
@@ -58,7 +58,7 @@ package site
 												formats that do not have a default extension may be represented
 												in any data format using the same notation:
 
-												   cue def jsonschema: bar.cue foo.yaml openapi+yaml: baz.def
+												\tcue def jsonschema: bar.cue foo.yaml openapi+yaml: baz.def
 
 												interprets the files bar.cue and foo.yaml as data in the
 												respective formats encoding an JSON Schema, while 'baz.def' is

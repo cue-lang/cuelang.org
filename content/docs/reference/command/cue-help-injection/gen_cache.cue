@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "QSS41BAHP5R1VA4N3A3TTKB8F4IUF9H2713JATU680CNJDVCGEM0===="
-									scriptHash: "VCAKC957LUSQ4VT3FVT71TUE51CV134J5D0RRHN52D4SELNCVAF0===="
+									hash:       "56TMO5KCFICQ4CRJ6C0R99VF8USP1M8E3QSHEQKIV73L6RHRNRSG===="
+									scriptHash: "2P8C48BEF97OM2DGF07G4N47QPEHSBG1V71I4ULUQS3A4DD5OP0G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.2:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0-alpha.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -39,10 +39,10 @@ package site
 												For example, the following file will only be included in a build
 												if the user includes the flag "-t prod" on the command line.
 
-												   // File prod.cue
-												   @if(prod)
+												\t// File prod.cue
+												\t@if(prod)
 
-												   package foo
+												\tpackage foo
 
 												Ignoring files
 
@@ -52,11 +52,11 @@ package site
 
 												For example:
 
-												    @ignore()
+												\t@ignore()
 
-												    // This file will be excluded for all purposes.
+												\t// This file will be excluded for all purposes.
 
-												    package foo
+												\tpackage foo
 
 												Injecting values
 
@@ -65,21 +65,21 @@ package site
 												optional field and that are marked with a "tag" attribute. For any
 												field of the form
 
-												   field: x @tag(key)
+												\tfield: x @tag(key)
 
 												an "--inject key=value" flag will modify the field to
 
-												   field: x & "value"
+												\tfield: x & "value"
 
 												By default, the injected value is treated as a string.
 												Alternatively, the "type" option allows a value to be interpreted
 												as an int, number, or bool. For instance, for a field
 
-												   field: x @tag(key,type=int)
+												\tfield: x @tag(key,type=int)
 
 												the flag "-t key=2" modifies the field to
 
-												   field: x & 2
+												\tfield: x & 2
 
 												Valid values for type are "int", "number", "bool", and "string".
 
@@ -87,7 +87,7 @@ package site
 												injected into the fields without having to specify the key. For
 												instance, for
 
-												   environment: string @tag(env,short=prod|staging)
+												\tenvironment: string @tag(env,short=prod|staging)
 
 												"-t prod" sets the environment field to the value "prod". It is
 												still possible to specify "-t env=prod" in this case.
@@ -95,7 +95,7 @@ package site
 												Use the usual CUE constraints to limit the possible values of a
 												field. For instance
 
-												   environment: "prod" | "staging" @tag(env,short=prod|staging)
+												\tenvironment: "prod" | "staging" @tag(env,short=prod|staging)
 
 												ensures the user may only specify "prod" or "staging".
 
@@ -106,7 +106,7 @@ package site
 												when variable injection is enabled by passing the --inject-vars/-T flag,
 												tags of the form
 
-												    @tag(dir,var=cwd)
+												\t@tag(dir,var=cwd)
 
 												will inject the named variable (here cwd) into the tag. An explicitly
 												set value for a tag using --inject/-t takes precedence over an
