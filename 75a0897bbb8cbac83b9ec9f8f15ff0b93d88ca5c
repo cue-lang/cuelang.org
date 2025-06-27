@@ -16,6 +16,24 @@
       "message": "or %q.",
       "revId": "75a0897bbb8cbac83b9ec9f8f15ff0b93d88ca5c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b3015c90_5f3e898c",
+        "filename": "playground/impl.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-06-27T10:26:46Z",
+      "side": 1,
+      "message": "dangit! I will blame the AI tab auto-complete for this! fixed.",
+      "parentUuid": "62e7cff7_243e4a9b",
+      "revId": "75a0897bbb8cbac83b9ec9f8f15ff0b93d88ca5c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
