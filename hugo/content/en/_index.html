@@ -15,7 +15,15 @@ disableNotification: true
                 </div>
                 <figure class="banner__image">
                     <!-- When the image is more than illustrative, it is advised to add an alt text -->
-                    <img src="/img/homepage-visual-words.png" alt="">
+                    <img
+                        srcset="/img/homepage-visual-words_300w.webp 300w, 
+                                /img/homepage-visual-words_400w.webp 400w, 
+                                /img/homepage-visual-words_550w.webp 550w"
+                        sizes="(min-width: 550px) 550px, (min-width: 400px) 400px, 300px"
+                        src="/img/homepage-visual-words_550w.webp"
+                        alt=""
+                        width="550px" 
+                        height="650px">
                 </figure>
             </div>
         </div>
