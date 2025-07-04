@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "794NI1GL861SC7RP4QQA1VNE78OS85ED3390RDKA8KANMFTS4ROG===="
-									scriptHash: "I206V07CKQTK9DOKIQTHUEUVLMSVTOF7HFRNG98THUFKL6S6FD1G===="
+									hash:       "R63CMFF60AH9JI89P9I4QPEC02I3VKFSUJI30EKQ6THE174JBDV0===="
+									scriptHash: "1JGCKR6M0PGRDGF17O9E2JVN9EBRJ88NUPD58BJEO5A5T7JEQVUG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.2:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0-alpha.1.0.20250704171720-206e82485fae:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -38,6 +38,7 @@ package site
 												  cue get [command]
 
 												Available Commands:
+												  crd         convert Kubernetes CRDs to packages in the current module
 												  go          add Go dependencies to the current module
 
 												Global Flags:

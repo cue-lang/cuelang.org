@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "PE65NNEC1OR8T5BHUDN7BC5CGON2VCB0BNDT8QE4FR24PHESV310===="
-									scriptHash: "JM5P0I1IDI53U15IIHH0VHEH5UV0MPML9VI97LM9BT42JR5EO5U0===="
+									hash:       "8M2LL545V47LDNQUR7RKA8T34BFAGUPJBUN2LQ8MR3L0ASC9MDBG===="
+									scriptHash: "B74AK8R9MQUF51M8K9L3B0T3BS8JFHUTQ5BDPSSG7TADAM44LQ4G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.2:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0-alpha.1.0.20250704171720-206e82485fae:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -54,14 +54,11 @@ package site
 												\t\tevalv3 (default true)
 												\t\t\tEnable the new CUE evaluator, addressing performance issues
 												\t\t\tand bringing a better disjunction algorithm.
-												\t\tembed (default true)
-												\t\t\tEnable support for embedded data files as described in
-												\t\t\thttps://cuelang.org/discussion/3264.
-												\t\ttoposort (default true)
-												\t\t\tEnable topological sorting of struct fields.
-												\t\t\tProvide feedback via https://cuelang.org/issue/3558
-												\t\tcmdreferencepkg
-												\t\t    Require referencing imported tool packages to declare "cue cmd" tasks.
+												\t\tcmdreferencepkg (default true)
+												\t\t\tRequire referencing imported tool packages to declare "cue cmd" tasks.
+												\t\tkeepvalidators (default true)
+												\t\t\tPrevent validators from simplifying into concrete values.
+												\t\t\tSee: https://cuelang.org/discussion/3775
 
 												\tCUE_DEBUG
 												\t\tComma-separated list of debug flags to enable or disable, such as:
