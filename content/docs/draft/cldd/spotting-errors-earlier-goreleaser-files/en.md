@@ -11,7 +11,7 @@ EOD
 {{{end}}}
 
 An easy first step with CUE is shown in
-[Checking existing GoReleaser files using CUE]({{<relref"checking-existing-goreleaser-files">}}).
+[Checking existing GoReleaser files using CUE](../checking-existing-goreleaser-files/index.md).
 There, we see the happy path of using `cue vet` to confirm that one of our
 existing GoReleaser configuration files is valid.
 But what does it look like when one of our manually maintained configuration files
@@ -69,7 +69,7 @@ The `cue vet` command shows us the error (`docker: field not allowed`)
 
 If you see an error message mentioning "too many requests" while following this
 guide, then
-[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+[login to the Central Registry](../login-central-registry.md)
 and re-run the failing command.
 The Central Registry allows more requests from authenticated users.
 
@@ -123,5 +123,5 @@ Validating your existing configuration files with CUE can help make development
 and deployments safer, but *defining* those same files in CUE lets you build on
 its first-class templating, referencing, and policy features. Take the first
 step with
-[Getting started with GoReleaser + CUE]({{<relref"getting-started-with-goreleaser-cue">}})
+[Getting started with GoReleaser + CUE](../getting-started-with-goreleaser-cue/index.md)
 ...

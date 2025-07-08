@@ -65,7 +65,7 @@ check the `goreleaser.yml` file. Because `cue vet` doesn't display any errors,
 you know that the curated module has validated your configuration file.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+[login to the Central Registry](../login-central-registry.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 
@@ -75,5 +75,5 @@ Validating your existing configuration files with CUE can help make development
 and deployments safer, but *defining* those same files in CUE lets you build on
 its first-class templating, referencing, and policy features. Take the first
 step with
-[Getting started with GoReleaser + CUE]({{<relref"getting-started-with-goreleaser-cue">}})
+[Getting started with GoReleaser + CUE](../getting-started-with-goreleaser-cue/index.md)
 ...

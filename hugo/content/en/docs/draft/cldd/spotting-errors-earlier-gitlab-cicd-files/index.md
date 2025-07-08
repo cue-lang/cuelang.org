@@ -3,7 +3,7 @@ title: Spotting errors earlier in GitLab CI/CD files
 ---
 
 An easy first step with CUE is shown in
-[Checking existing GitLab CI/CD files using CUE]({{<relref"checking-existing-gitlab-cicd-files">}}).
+[Checking existing GitLab CI/CD files using CUE](../checking-existing-gitlab-cicd-files/index.md).
 There, we see the happy path of using `cue vet` to confirm that one of our
 existing GitLab CI/CD pipeline files is valid.
 But what does it look like when one of our manually maintained pipeline files
@@ -60,7 +60,7 @@ allowed:`), and tells us the location of the problem (line 7 of our data file).
 
 If you see an error message mentioning "too many requests" while following this
 guide, then
-[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+[login to the Central Registry](../login-central-registry.md)
 and re-run the failing command.
 The Central Registry allows more requests from authenticated users.
 
@@ -107,5 +107,5 @@ Validating your existing configuration files with CUE can help make development
 and deployments safer, but *defining* those same files in CUE lets you build on
 its first-class templating, referencing, and policy features. Take the first
 step with
-[Getting started with GitLab CI/CD + CUE]({{<relref"getting-started-with-gitlab-cicd-cue">}})
+[Getting started with GitLab CI/CD + CUE](../getting-started-with-gitlab-cicd-cue/index.md)
 ...

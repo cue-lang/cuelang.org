@@ -80,7 +80,7 @@ Always use
 when you use a curated module for the first time.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+[login to the Central Registry](../login-central-registry.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 
@@ -137,4 +137,4 @@ CUE's powerful and unique language features are often used to reduce
 boilerplate -- making sure that important differences stand out when you're
 defining multiple configuration files.
 Discover how CUE makes configurations clearer, more succinct, and easier to understand in
-[DRYing up GitHub Actions workflows]({{<relref"drying-up-github-actions-workflows">}}).
+[DRYing up GitHub Actions workflows](../drying-up-github-actions-workflows/index.md).

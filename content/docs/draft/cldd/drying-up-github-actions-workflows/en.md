@@ -16,7 +16,7 @@ cue mod init cue.example
 {{{end}}}
 
 If you've already started
-[using CUE to define GitHub Actions workflows]({{<relref"getting-started-with-github-actions-cue">}})
+[using CUE to define GitHub Actions workflows](../getting-started-with-github-actions-cue/index.md)
 then you might have several workflows that share common characteristics.
 Some of CUE's most powerful features are designed to reduce repetition and
 allow easy <dfn title="&quot;Don't Repeat Yourself&quot;">DRYing</dfn> up
