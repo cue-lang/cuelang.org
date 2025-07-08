@@ -3,7 +3,7 @@ title: Spotting errors earlier in Docker Compose files
 ---
 
 An easy first step with CUE is shown in
-[Checking existing Docker Compose files using CUE]({{<relref"checking-existing-docker-compose-files">}}).
+[Checking existing Docker Compose files using CUE](../checking-existing-docker-compose-files/index.md).
 There, we see the happy path of using `cue vet` to confirm that one of our
 existing compose files is valid.
 But what does it look like when one of our manually maintained compose files
@@ -68,7 +68,7 @@ us the locations of each problem (lines 18 and 9 of our data file).
 
 If you see an error message mentioning "too many requests" while following this
 guide, then
-[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+[login to the Central Registry](../login-central-registry.md)
 and re-run the failing command.
 The Central Registry allows more requests from authenticated users.
 
@@ -122,5 +122,5 @@ Validating your existing configuration files with CUE can help make development
 and deployments safer, but *defining* those same files in CUE lets you build on
 its first-class templating, referencing, and policy features. Take the first
 step with
-[Getting started with Docker Compose + CUE]({{<relref"getting-started-with-docker-compose-cue">}})
+[Getting started with Docker Compose + CUE](../getting-started-with-docker-compose-cue/index.md)
 ...

@@ -56,7 +56,7 @@ to check the `workflow.yml` file. Because `cue vet` doesn't display any errors,
 you know that the curated module has validated your configuration file.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+[login to the Central Registry](../login-central-registry.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 
@@ -75,7 +75,7 @@ $ cue vet -c -d '#Workflow' cue.dev/x/githubactions@latest .github/workflows/rel
 However, an easy alternative is to set up a simple CUE file that *embeds* your
 workflow files and validates them all with a single command.
 Read more about this option in
-[Validating multiple GitHub Actions workflow files]({{<relref"validating-several-github-actions-files">}}) ...
+[Validating multiple GitHub Actions workflow files](../validating-several-github-actions-files/index.md) ...
 
 ## Next steps
 
@@ -83,5 +83,5 @@ Validating your existing configuration files with CUE can help make development
 and deployments safer, but *defining* those same files in CUE lets you build on
 its first-class templating, referencing, and policy features. Take the first
 step with
-[Getting started with GitHub Actions + CUE]({{<relref"getting-started-with-github-actions-cue">}})
+[Getting started with GitHub Actions + CUE](../getting-started-with-github-actions-cue/index.md)
 ...

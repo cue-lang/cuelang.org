@@ -56,7 +56,7 @@ to check the policy file. Because `cue vet` doesn't display any errors,
 you know that the curated module has validated the file's structure.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+[login to the Central Registry](../login-central-registry.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 
@@ -74,7 +74,7 @@ $ cue vet -c -d '#Policy' cue.dev/x/kyverno/policy/v1@latest disable-http.yaml l
 However, an easy alternative is to set up a simple CUE file that *embeds* your
 policy files and validates them all with a single command.
 Read more about this option in
-[Validating several Kyverno policy files]({{<relref"validating-several-kyverno-policy-files">}}) ...
+[Validating several Kyverno policy files](../validating-several-kyverno-policy-files/index.md) ...
 
 ## Next steps
 
@@ -82,5 +82,5 @@ Validating your existing configuration files with CUE can help make development
 and deployments safer, but *defining* those same files in CUE lets you build on
 its first-class templating, referencing, and policy features. Take the first
 step with
-[Getting started with Kyverno + CUE]({{<relref"getting-started-with-kyverno-cue">}})
+[Getting started with Kyverno + CUE](../getting-started-with-kyverno-cue/index.md)
 ...

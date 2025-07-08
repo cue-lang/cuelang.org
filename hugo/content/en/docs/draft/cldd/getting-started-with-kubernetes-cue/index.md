@@ -82,7 +82,7 @@ Always use
 when you use a curated module for the first time.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](https://cue.dev/docs/login-central-registry/)
+[login to the Central Registry](../login-central-registry.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 
