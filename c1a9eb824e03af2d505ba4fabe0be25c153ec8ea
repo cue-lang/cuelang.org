@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c643f0e0_006e5d53",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-07-08T17:17:23Z",
+      "side": 1,
+      "message": "PTAL. These source changes in `hugo/` have been tested in their target publishing environment.",
+      "revId": "c1a9eb824e03af2d505ba4fabe0be25c153ec8ea",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
