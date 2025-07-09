@@ -160,8 +160,6 @@ in.cue stable replacement
 title: cldd
 ---
 
-```cue { title="in.cue" codeToCopy="Ly8gc3RhYmxlIHJlcGxhY2VtZW50Cg==" }
-// filepath: in.cue
-
+``` { .cue title="in.cue" }
 // stable replacement
 ```

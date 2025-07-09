@@ -19,7 +19,7 @@ from
 CUE that uses schemas and modules from the
 [Central Registry](https://registry.cue.works)
 needs to exist within its own CUE module.
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+``` { .text title="TERMINAL" data-copy="cue mod init cue.example" }
 $ cue mod init cue.example
 ```
 You can choose any module name you like - it's easy to
@@ -32,9 +32,7 @@ that's hosted on GitLab, but the commands in this guide will work in any setup.
 Declare a GitLab pipeline in CUE. This one is based on an example from
 [GitLab's documentation](https://docs.gitlab.com/user/project/pages/getting_started/pages_from_scratch/#specify-a-stage-to-deploy):
 
-```cue { title="pipeline.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgImN1ZS5kZXYveC9naXRsYWIvZ2l0bGFiY2kiCgpwaXBlbGluZXM6IGV4YW1wbGU6IGdpdGxhYmNpLiNQaXBlbGluZSAmIHsKCWRlZmF1bHQ6IGltYWdlOiAicnVieTozLjIiCgl3b3JrZmxvdzogcnVsZXM6IFt7aWY6ICIkQ0lfQ09NTUlUX0JSQU5DSCJ9XQoJImRlcGxveS1wYWdlcyI6IHsKCQlzdGFnZTogImRlcGxveSIKCQlzY3JpcHQ6IFsKCQkJImdlbSBpbnN0YWxsIGJ1bmRsZXIiLAoJCQkiYnVuZGxlIGluc3RhbGwiLAoJCQkiYnVuZGxlIGV4ZWMgamVreWxsIGJ1aWxkIC1kIHB1YmxpYyIsCgkJXQoJCXBhZ2VzOiB0cnVlCgkJcnVsZXM6IFt7aWY6ICIkQ0lfQ09NTUlUX0JSQU5DSCA9PSBcIm1haW5cIiJ9XQoJCWVudmlyb25tZW50OiAicHJvZHVjdGlvbiIKCX0KCXRlc3Q6IHsKCQlzdGFnZTogInRlc3QiCgkJc2NyaXB0OiBbCgkJCSJnZW0gaW5zdGFsbCBidW5kbGVyIiwKCQkJImJ1bmRsZSBpbnN0YWxsIiwKCQkJImJ1bmRsZSBleGVjIGpla3lsbCBidWlsZCAtZCB0ZXN0IiwKCQldCgkJYXJ0aWZhY3RzOiBwYXRoczogWyJ0ZXN0Il0KCQlydWxlczogW3tpZjogIiRDSV9DT01NSVRfQlJBTkNIICE9IFwibWFpblwiIn1dCgl9Cn0K" }
-// filepath: pipeline.cue
-
+``` { .cue title="pipeline.cue" }
 package cicd
 
 import "cue.dev/x/gitlab/gitlabci"
@@ -81,7 +79,7 @@ command to update your CUE easily, so it reflects the new location.
 
 ## Tidy your local CUE module
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+``` { .text title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 Tidying a module is an important part of using curated modules from the
@@ -97,23 +95,21 @@ The Central Registry allows more requests from authenticated users.
 
 ## Validate your pipeline
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+``` { .text title="TERMINAL" data-copy="cue vet -c" }
 $ cue vet -c
 ```
 Because `cue vet` doesn't display any errors, you know that the curated schema has validated your pipeline.
 
 ## Export your pipeline as YAML
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgLmdpdGxhYi1jaS55bWwgLWUgcGlwZWxpbmVzLmV4YW1wbGU=" }
+``` { .text title="TERMINAL" data-copy="cue export --outfile .gitlab-ci.yml -e pipelines.example" }
 $ cue export --outfile .gitlab-ci.yml -e pipelines.example
 ```
 
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
 
-```yaml { title=".gitlab-ci.yml" codeToCopy="ZGVmYXVsdDoKICBpbWFnZTogcnVieTozLjIKd29ya2Zsb3c6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSApkZXBsb3ktcGFnZXM6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSCA9PSAibWFpbiIKICBzY3JpcHQ6CiAgICAtIGdlbSBpbnN0YWxsIGJ1bmRsZXIKICAgIC0gYnVuZGxlIGluc3RhbGwKICAgIC0gYnVuZGxlIGV4ZWMgamVreWxsIGJ1aWxkIC1kIHB1YmxpYwogIHN0YWdlOiBkZXBsb3kKICBlbnZpcm9ubWVudDogcHJvZHVjdGlvbgogIHBhZ2VzOiB0cnVlCnRlc3Q6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSCAhPSAibWFpbiIKICBzY3JpcHQ6CiAgICAtIGdlbSBpbnN0YWxsIGJ1bmRsZXIKICAgIC0gYnVuZGxlIGluc3RhbGwKICAgIC0gYnVuZGxlIGV4ZWMgamVreWxsIGJ1aWxkIC1kIHRlc3QKICBzdGFnZTogdGVzdAogIGFydGlmYWN0czoKICAgIHBhdGhzOgogICAgICAtIHRlc3QK" }
-# filepath: .gitlab-ci.yml
-
+``` { .yaml title=".gitlab-ci.yml" }
 default:
   image: ruby:3.2
 workflow:
