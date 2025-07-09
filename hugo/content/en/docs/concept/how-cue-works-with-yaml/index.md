@@ -23,7 +23,7 @@ demonstrated here by
 <!--more-->
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="left" >}}
+{{< code-tab name="data.yml" language="yaml" area="left" >}}
 a: 1
 b: "2"
 c: "three"
@@ -176,10 +176,10 @@ info: {
 version: 1.42.0
 source: "bar"
 {{< /code-tab >}}
-{{< code-tab name="env/foo.yml" language="yml" area="top-right" >}}
+{{< code-tab name="env/foo.yml" language="yaml" area="top-right" >}}
 text: "Some foo"
 {{< /code-tab >}}
-{{< code-tab name="env/bar.yml" language="yml" area="top-right" >}}
+{{< code-tab name="env/bar.yml" language="yaml" area="top-right" >}}
 text: "A bar"
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" >}}

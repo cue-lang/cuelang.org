@@ -290,7 +290,7 @@ data: {
 	[_]: !~"v"
 }
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="top-right" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-right" >}}
 data:
   a: Superlative
   b: supersede
@@ -345,7 +345,7 @@ package validation
 	address?: string
 }
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="top-right" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-right" >}}
 - name: Alex Atkinson
 - name: Bryn Brown
   address: 123 Main Street, Springfield
@@ -439,7 +439,7 @@ We'll carefully construct some data such that it violates constraints from each
 of these schema and policy files:
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 aString: "Doesn't start with 'Multiplication', and doesn't contain the square of anInt"
 anInt: 5
 aFloat: 99.0
@@ -475,7 +475,7 @@ silent - indicating that the data validated succesfully against the unified set
 of constraints:
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 aString: Multiplication - 5 x 5 == 25
 anInt: 5
 aFloat: 4.0

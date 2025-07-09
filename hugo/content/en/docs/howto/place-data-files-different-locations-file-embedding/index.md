@@ -37,7 +37,7 @@ jamie: {
 	birthday: _dates.jamie
 }
 {{< /code-tab >}}
-{{< code-tab name="addresses.yml" language="yml" area="top-right" >}}
+{{< code-tab name="addresses.yml" language="yaml" area="top-right" >}}
 jamie:
   - 1 Main Street
   - Townsville

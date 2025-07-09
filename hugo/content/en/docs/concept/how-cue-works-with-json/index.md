@@ -34,7 +34,7 @@ demonstrated here by
     "d": 4.4
 }
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="left" >}}
+{{< code-tab name="data.yml" language="yaml" area="left" >}}
 e: 5
 f: "6"
 {{< /code-tab >}}

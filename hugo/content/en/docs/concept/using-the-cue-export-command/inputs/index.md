@@ -228,7 +228,7 @@ package B
 y: 2
 {{< /code-tab >}}{{< code-tab name="data.cue" language="cue" area="top-left" >}}
 x: "foo"
-{{< /code-tab >}}{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< /code-tab >}}{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 y: 2
 {{< /code-tab >}}{{< code-tab name="schema.json" language="json" area="top-left" >}}
 { "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
@@ -328,7 +328,7 @@ package two
 x: 2
 {{< /code-tab >}}{{< code-tab name="data.cue" language="cue" area="top-left" >}}
 y: "a string"
-{{< /code-tab >}}{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< /code-tab >}}{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 y: "a string"
 {{< /code-tab >}}{{< code-tab name="schema.json" language="json" area="top-left" >}}
 { "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
@@ -399,7 +399,7 @@ x: >10
 {{< code-tab name="max.cue" language="cue" area="left" >}}
 x: <=99
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="left" >}}
+{{< code-tab name="data.yml" language="yaml" area="left" >}}
 x: 50
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAuOm9uZSBtaW4uY3VlIGRhdGEueW1sIG1heC5jdWU=" >}}
@@ -426,7 +426,7 @@ package B
 y: 2
 {{< /code-tab >}}{{< code-tab name="data.cue" language="cue" area="top-left" >}}
 x: "foo"
-{{< /code-tab >}}{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< /code-tab >}}{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 y: 2
 {{< /code-tab >}}{{< code-tab name="schema.json" language="json" area="top-left" >}}
 { "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
@@ -504,7 +504,7 @@ package one
 A:  1    // A is the concrete value 1.
 B?: >100 // B must be greater than 100.
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="left" >}}
+{{< code-tab name="data.yml" language="yaml" area="left" >}}
 A: "some string"
 B: 99
 {{< /code-tab >}}
@@ -551,7 +551,7 @@ x: <=99
 {{< code-tab name="calc.cue" language="cue" area="left" >}}
 z: x * 2
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="left" >}}
+{{< code-tab name="data.yml" language="yaml" area="left" >}}
 x: 50
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAuOm9uZSBtaW4uY3VlIG1heC5jdWUgZGF0YS55bWwgY2FsYy5jdWU=" >}}
@@ -610,7 +610,7 @@ arbitrary depth:
     ]
 }
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="left" >}}
+{{< code-tab name="data.yml" language="yaml" area="left" >}}
 A: 1
 B:
   D: 3
@@ -642,7 +642,7 @@ $ cue export data.yml data.json
 If any values don't unify successfully, at any depth, an error message is printed:
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="left" >}}
+{{< code-tab name="data.yml" language="yaml" area="left" >}}
 A:
   - 1
   - B: 2
@@ -696,7 +696,7 @@ A <u style='text-decoration-style: dotted;'>constraint file</u> input can be use
     }
 }
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="left" >}}
+{{< code-tab name="data.yml" language="yaml" area="left" >}}
 A: 50
 B: 1000
 {{< /code-tab >}}
@@ -770,7 +770,7 @@ encoding, use
 [a qualifier]({{< relref "#input-file-encodings" >}}):
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 A:
   - b
   - c
@@ -802,7 +802,7 @@ To specify a static path for the <u style='text-decoration-style: dotted;'>data 
 provide the `--path` (`-l`) flag with a CUE expression that ends with a colon (`:`):
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 data: true
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBkYXRhLnltbCAtLXBhdGggZm9vOg==" >}}
@@ -819,7 +819,7 @@ Increase the depth and nesting of the path by adding more components to the
 expression:
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 data: true
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBkYXRhLnltbCAtbCBmb286YmFyOmJhejo=" >}}
@@ -855,7 +855,7 @@ conflicts:
     "data": false
 }
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="top-right" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-right" >}}
 data: true
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtbCBmb286IGRhdGEueW1sIC1sIGJhcjogZGF0YS5qc29uIC1sIGJhejo=" >}}
@@ -879,7 +879,7 @@ If the colon is omitted, then the value is resolved dynamically - in the
 context of the data that's present:
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 foo: "a"
 data: true
 {{< /code-tab >}}
@@ -900,7 +900,7 @@ be included in the specification of a dynamic expression, without their
 containing packages being imported:
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 foo: "a"
 data: true
 {{< /code-tab >}}
@@ -927,7 +927,7 @@ expression is evaluated, allowing it to refer to information about a
     "value": false
 }
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="top-right" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-right" >}}
 value: true
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBkYXRhLnltbCBkYXRhLmpzb24gLWwgJ3BhdGguQmFzZShmaWxlbmFtZSknIC0td2l0aC1jb250ZXh0IC0tb3V0IHlhbWw=" >}}
@@ -954,7 +954,7 @@ unification. Because they are merged, their contents must be values that unify
 successfully.
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 ---
 A: 1
 ---
@@ -981,7 +981,7 @@ when using the `--merge` flag. This can be useful when each document needs to
 be processed separately, or when documents contain values which cannot unify:
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 ---
 A: 1
 ---

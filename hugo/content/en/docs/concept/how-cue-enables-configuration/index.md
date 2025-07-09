@@ -57,7 +57,7 @@ Workflow: {
 	}
 }
 {{< /code-tab >}}
-{{< code-tab name=".github/workflows/deploy-to-ecs.yml" language="yml" area="top" >}}
+{{< code-tab name=".github/workflows/deploy-to-ecs.yml" language="yaml" area="top" >}}
 # Adapted from https://github.com/actions/starter-workflows/blob/main/deployments/aws.yml
 name: Deploy to Amazon ECS
 
@@ -289,7 +289,7 @@ output: Config & {
 		[appName, clusterName, region], "."))
 }
 {{< /code-tab >}}
-{{< code-tab name="values.yml" language="yml" area="left" >}}
+{{< code-tab name="values.yml" language="yaml" area="left" >}}
 app:
   name: frontend-ng
   memory: 3072
@@ -315,7 +315,7 @@ An early `cue vet` on the developer's laptop helps prevent a deployment failure
 by shortening their feedback cycle:
 
 {{< code-tabs >}}
-{{< code-tab name="values.yml" language="yml" area="bottom" >}}
+{{< code-tab name="values.yml" language="yaml" area="bottom" >}}
 app:
   name: frontend-ng
   memory: 3072
