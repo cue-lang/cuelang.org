@@ -79,7 +79,7 @@ We fix our pipeline file by updating the highlighted line that `cue vet`
 mentioned, so that the file becomes:
 
 {{{with upload "en" "fixed"}}}
-#codetab(pipeline.yml) hl_lines=9
+#codetab(pipeline.yml) hl_lines="7"
 #force
 -- pipeline.yml --
 default:
