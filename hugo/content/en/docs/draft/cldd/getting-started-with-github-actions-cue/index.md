@@ -19,7 +19,7 @@ from
 CUE that uses schemas and modules from the
 [Central Registry](https://registry.cue.works)
 needs to exist within its own CUE module.
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+``` { .shell-session title="TERMINAL" data-copy="cue mod init cue.example" }
 $ cue mod init cue.example
 ```
 You can choose any module name you like - it's easy to
@@ -32,9 +32,7 @@ that's hosted on GitHub, but the commands in this guide will work in any setup.
 Declare a GitHub Actions workflow in CUE. This one is based on an example from
 [GitHub's documentation](https://docs.github.com/en/actions/use-cases-and-examples/creating-an-example-workflow#creating-an-example-workflow):
 
-```cue { title="workflow.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgImN1ZS5kZXYveC9naXRodWJhY3Rpb25zIgoKd29ya2Zsb3dzOiBleGFtcGxlOiBnaXRodWJhY3Rpb25zLiNXb3JrZmxvdyAmIHsKCW5hbWU6ICAgICAgICJsZWFybi1naXRodWItYWN0aW9ucyIKCSJydW4tbmFtZSI6ICIke3sgZ2l0aHViLmFjdG9yIH19IGlzIGxlYXJuaW5nIEdpdEh1YiBBY3Rpb25zIgoJb246IFsicHVzaCJdCglqb2JzOiAiY2hlY2stYmF0cy12ZXJzaW9uIjogewoJCSJydW5zLW9uIjogInVidW50dS1sYXRlc3QiCgkJc3RlcHM6IFsKCQkJe3VzZXM6ICJhY3Rpb25zL2NoZWNrb3V0QHY0In0sCgkJCXt1c2VzOiAiYWN0aW9ucy9zZXR1cC1ub2RlQHY0Iiwgd2l0aDogIm5vZGUtdmVyc2lvbiI6ICIyMCJ9LAoJCQl7cnVuOiAibnBtIGluc3RhbGwgLWcgYmF0cyJ9LAoJCQl7cnVuOiAiYmF0cyAtdiJ9LAoJCV0KCX0KfQo=" }
-// filepath: workflow.cue
-
+``` { .cue title="workflow.cue" }
 package cicd
 
 import "cue.dev/x/githubactions"
@@ -70,7 +68,7 @@ command to update your CUE easily, so it reflects the new location.
 
 ## Tidy your local CUE module
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+``` { .shell-session title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 Tidying a module is an important part of using curated modules from the
@@ -86,7 +84,7 @@ The Central Registry allows more requests from authenticated users.
 
 ## Validate your workflow
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c" }
 $ cue vet -c
 ```
 Because `cue vet` doesn't display any errors, you know that the curated schema has validated your workflow.
@@ -94,7 +92,7 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 ## Export your workflow as YAML
 
 Before exporting your workflow you'll need to create a directory to hold it, as expected by GitHub Actions:
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgLmdpdGh1Yi93b3JrZmxvd3MvCmN1ZSBleHBvcnQgLS1vdXRmaWxlIC5naXRodWIvd29ya2Zsb3dzL3dvcmtmbG93LnltbCAtZSB3b3JrZmxvd3MuZXhhbXBsZQ==" }
+``` { .shell-session title="TERMINAL" data-copy="mkdir -p .github/workflows/&#10;cue export --outfile .github/workflows/workflow.yml -e workflows.example" }
 $ mkdir -p .github/workflows/
 $ cue export --outfile .github/workflows/workflow.yml -e workflows.example
 ```
@@ -102,9 +100,7 @@ $ cue export --outfile .github/workflows/workflow.yml -e workflows.example
 If you chose to export the `workflows.example` shown above,
 your validated YAML workflow will look like this:
 
-```yml { title=".github/workflows/workflow.yml" codeToCopy="bmFtZTogbGVhcm4tZ2l0aHViLWFjdGlvbnMKam9iczoKICBjaGVjay1iYXRzLXZlcnNpb246CiAgICBydW5zLW9uOiB1YnVudHUtbGF0ZXN0CiAgICBzdGVwczoKICAgICAgLSB1c2VzOiBhY3Rpb25zL2NoZWNrb3V0QHY0CiAgICAgIC0gdXNlczogYWN0aW9ucy9zZXR1cC1ub2RlQHY0CiAgICAgICAgd2l0aDoKICAgICAgICAgIG5vZGUtdmVyc2lvbjogIjIwIgogICAgICAtIHJ1bjogbnBtIGluc3RhbGwgLWcgYmF0cwogICAgICAtIHJ1bjogYmF0cyAtdgoib24iOgogIC0gcHVzaApydW4tbmFtZTogJHt7IGdpdGh1Yi5hY3RvciB9fSBpcyBsZWFybmluZyBHaXRIdWIgQWN0aW9ucwo=" }
-# filepath: .github/workflows/workflow.yml
-
+``` { .yml title=".github/workflows/workflow.yml" }
 name: learn-github-actions
 jobs:
   check-bats-version:

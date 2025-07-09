@@ -22,9 +22,7 @@ This example is adapted from the
 repository, but you should use any Kyverno policy file that's relevant
 to your situation:
 
-```yaml { title="require-labels.yaml" codeToCopy="YXBpVmVyc2lvbjoga3l2ZXJuby5pby92MQpraW5kOiBDbHVzdGVyUG9saWN5Cm1ldGFkYXRhOgogIG5hbWU6IHJlcXVpcmUtbGFiZWxzCiAgYW5ub3RhdGlvbnM6CiAgICBwb2xpY2llcy5reXZlcm5vLmlvL3RpdGxlOiBSZXF1aXJlIExhYmVscwogICAgcG9saWNpZXMua3l2ZXJuby5pby9jYXRlZ29yeTogQmVzdCBQcmFjdGljZXMKICAgIHBvbGljaWVzLmt5dmVybm8uaW8vZGVzY3JpcHRpb246ID4tCiAgICAgIERlZmluZSBhbmQgdXNlIGxhYmVscyB0aGF0IGlkZW50aWZ5IHNlbWFudGljIGF0dHJpYnV0ZXMgb2YgeW91ciBhcHBsaWNhdGlvbiBvciBEZXBsb3ltZW50LgpzcGVjOgogIHZhbGlkYXRpb25GYWlsdXJlQWN0aW9uOiBBdWRpdAogIGJhY2tncm91bmQ6IHRydWUKICBydWxlczoKICAtIG5hbWU6IGNoZWNrLWZvci1sYWJlbHMKICAgIG1hdGNoOiB7YW55OiBbe3Jlc291cmNlczoge2tpbmRzOiBbUG9kXX19XX0KICAgIHZhbGlkYXRlOgogICAgICBtZXNzYWdlOiAiVGhlIGxhYmVsIGBhcHAua3ViZXJuZXRlcy5pby9uYW1lYCBpcyByZXF1aXJlZC4iCiAgICAgIHBhdHRlcm46IHttZXRhZGF0YToge2xhYmVsczoge2FwcC5rdWJlcm5ldGVzLmlvL25hbWU6ICI/KiJ9fX0K" }
-# filepath: require-labels.yaml
-
+``` { .yaml title="require-labels.yaml" }
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -47,7 +45,7 @@ spec:
 
 ## Validate the policy file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI0NsdXN0ZXJQb2xpY3knIGN1ZS5kZXYveC9reXZlcm5vL2NsdXN0ZXJwb2xpY3kvdjFAbGF0ZXN0IHJlcXVpcmUtbGFiZWxzLnlhbWw=" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#ClusterPolicy&#39; cue.dev/x/kyverno/clusterpolicy/v1@latest require-labels.yaml" }
 $ cue vet -c -d '#ClusterPolicy' cue.dev/x/kyverno/clusterpolicy/v1@latest require-labels.yaml
 ```
 
@@ -66,7 +64,7 @@ Kyverno provides a large set of example policies that you can adapt, so you
 might well end up with multiple, separate policy files. To check each one
 you could repeat the `cue vet` command, or use it with several files at once:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BvbGljeScgY3VlLmRldi94L2t5dmVybm8vcG9saWN5L3YxQGxhdGVzdCByZXF1aXJlLWxhYmVscy55YW1sCmN1ZSB2ZXQgLWMgLWQgJyNQb2xpY3knIGN1ZS5kZXYveC9reXZlcm5vL3BvbGljeS92MUBsYXRlc3QgZGlzYWJsZS1odHRwLnlhbWwgbGltaXQtY3B1LnlhbWw=" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#Policy&#39; cue.dev/x/kyverno/policy/v1@latest require-labels.yaml&#10;cue vet -c -d &#39;#Policy&#39; cue.dev/x/kyverno/policy/v1@latest disable-http.yaml limit-cpu.yaml" }
 $ cue vet -c -d '#Policy' cue.dev/x/kyverno/policy/v1@latest require-labels.yaml
 $ cue vet -c -d '#Policy' cue.dev/x/kyverno/policy/v1@latest disable-http.yaml limit-cpu.yaml
 ```

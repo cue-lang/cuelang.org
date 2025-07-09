@@ -18,9 +18,7 @@ Our example setup begins with a `kyverno-policies` directory that contains two
 unrelated Kyverno policy files:
 
 {{<columns>}}
-```yaml { title="kyverno-policies/require-labels.yaml" codeToCopy="YXBpVmVyc2lvbjoga3l2ZXJuby5pby92MQpraW5kOiBDbHVzdGVyUG9saWN5Cm1ldGFkYXRhOgogIG5hbWU6IHJlcXVpcmUtbGFiZWxzCiAgYW5ub3RhdGlvbnM6CiAgICBwb2xpY2llcy5reXZlcm5vLmlvL3RpdGxlOiBSZXF1aXJlIExhYmVscwogICAgcG9saWNpZXMua3l2ZXJuby5pby9jYXRlZ29yeTogQmVzdCBQcmFjdGljZXMKICAgIHBvbGljaWVzLmt5dmVybm8uaW8vZGVzY3JpcHRpb246ID4tCiAgICAgIERlZmluZSBhbmQgdXNlIGxhYmVscyB0aGF0IGlkZW50aWZ5IHNlbWFudGljIGF0dHJpYnV0ZXMgb2YgeW91ciBhcHBsaWNhdGlvbiBvciBEZXBsb3ltZW50LgpzcGVjOgogIHZhbGlkYXRpb25GYWlsdXJlQWN0aW9uOiBBdWRpdAogIGJhY2tncm91bmQ6IHRydWUKICBydWxlczoKICAtIG5hbWU6IGNoZWNrLWZvci1sYWJlbHMKICAgIG1hdGNoOgogICAgICBhbnk6CiAgICAgIC0gcmVzb3VyY2VzOgogICAgICAgICAga2luZHM6CiAgICAgICAgICAtIFBvZAogICAgdmFsaWRhdGU6CiAgICAgIG1lc3NhZ2U6ICJUaGUgbGFiZWwgYGFwcC5rdWJlcm5ldGVzLmlvL25hbWVgIGlzIHJlcXVpcmVkLiIKICAgICAgcGF0dGVybjoge21ldGFkYXRhOiB7bGFiZWxzOiB7YXBwLmt1YmVybmV0ZXMuaW8vbmFtZTogIj8qIn19fQo=" }
-# filepath: kyverno-policies/require-labels.yaml
-
+``` { .yaml title="kyverno-policies/require-labels.yaml" }
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -45,9 +43,7 @@ spec:
       pattern: {metadata: {labels: {app.kubernetes.io/name: "?*"}}}
 ```
 {{<columns-separator>}}
-```yaml { title="kyverno-policies/require-pod-requests-limits.yaml" codeToCopy="YXBpVmVyc2lvbjoga3l2ZXJuby5pby92MQpraW5kOiBDbHVzdGVyUG9saWN5Cm1ldGFkYXRhOgogIG5hbWU6IHJlcXVpcmUtcmVxdWVzdHMtbGltaXRzCiAgYW5ub3RhdGlvbnM6CiAgICBwb2xpY2llcy5reXZlcm5vLmlvL3RpdGxlOiBSZXF1aXJlIExpbWl0cyBhbmQgUmVxdWVzdHMKICAgIHBvbGljaWVzLmt5dmVybm8uaW8vY2F0ZWdvcnk6IEJlc3QgUHJhY3RpY2VzLCBFS1MgQmVzdCBQcmFjdGljZXMKICAgIHBvbGljaWVzLmt5dmVybm8uaW8vZGVzY3JpcHRpb246ID4tCiAgICAgIFRoaXMgcG9saWN5IHZhbGlkYXRlcyB0aGF0IGFsbCBjb250YWluZXJzIGhhdmUgc29tZXRoaW5nIHNwZWNpZmllZCBmb3IgbWVtb3J5IGFuZCBDUFUKICAgICAgcmVxdWVzdHMgYW5kIG1lbW9yeSBsaW1pdHMuCnNwZWM6CiAgdmFsaWRhdGlvbkZhaWx1cmVBY3Rpb246IEF1ZGl0CiAgYmFja2dyb3VuZDogdHJ1ZQogIHJ1bGVzOgogIC0gbmFtZTogdmFsaWRhdGUtcmVzb3VyY2VzCiAgICBtYXRjaDoge2FueTogW3tyZXNvdXJjZXM6IHtraW5kczogW1BvZF19fV19CiAgICB2YWxpZGF0ZToKICAgICAgbWVzc2FnZTogIkNQVSBhbmQgbWVtb3J5IHJlc291cmNlIHJlcXVlc3RzIGFuZCBtZW1vcnkgbGltaXRzIGFyZSByZXF1aXJlZCBmb3IgY29udGFpbmVycy4iCiAgICAgIHBhdHRlcm46CiAgICAgICAgc3BlYzoKICAgICAgICAgIGNvbnRhaW5lcnM6CiAgICAgICAgICAtIHJlc291cmNlczoKICAgICAgICAgICAgICByZXF1ZXN0czoKICAgICAgICAgICAgICAgIG1lbW9yeTogIj8qIgogICAgICAgICAgICAgICAgY3B1OiAiPyoiCiAgICAgICAgICAgICAgbGltaXRzOgogICAgICAgICAgICAgICAgbWVtb3J5OiAiPyoiCiAgICAgICAgICA9KGluaXRDb250YWluZXJzKToKICAgICAgICAgIC0gcmVzb3VyY2VzOgogICAgICAgICAgICAgIHJlcXVlc3RzOgogICAgICAgICAgICAgICAgbWVtb3J5OiAiPyoiCiAgICAgICAgICAgICAgICBjcHU6ICI/KiIKICAgICAgICAgICAgICBsaW1pdHM6CiAgICAgICAgICAgICAgICBtZW1vcnk6ICI/KiIKICAgICAgICAgID0oZXBoZW1lcmFsQ29udGFpbmVycyk6CiAgICAgICAgICAtIHJlc291cmNlczoKICAgICAgICAgICAgICByZXF1ZXN0czoKICAgICAgICAgICAgICAgIG1lbW9yeTogIj8qIgogICAgICAgICAgICAgICAgY3B1OiAiPyoiCiAgICAgICAgICAgICAgbGltaXRzOgogICAgICAgICAgICAgICAgbWVtb3J5OiAiPyoiCg==" }
-# filepath: kyverno-policies/require-pod-requests-limits.yaml
-
+``` { .yaml title="kyverno-policies/require-pod-requests-limits.yaml" }
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -103,7 +99,7 @@ CUE that uses modules from the
 [Central Registry](https://registry.cue.works), as shown below, needs to exist
 within its own CUE module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+``` { .shell-session title="TERMINAL" data-copy="cue mod init cue.example" }
 $ cue mod init cue.example
 ```
 
@@ -117,9 +113,7 @@ allows the `cue` command to read data files without being told about them throug
 individual arguments. The following CUE enables this feature, and then *embeds*
 the Kyverno policy files shown above:
 
-```cue { title="kyverno.cue" codeToCopy="QGV4dGVybihlbWJlZCkgLy8gRmlsZSBlbWJlZGRpbmcgbXVzdCBiZSBleHBsaWNpdGx5IGVuYWJsZWQuCnBhY2thZ2UgY29uZmlnCgppbXBvcnQgImN1ZS5kZXYveC9reXZlcm5vL2NsdXN0ZXJwb2xpY3kvdjEiCgpreXZlcm5vOiB7CgkvLyBFbWJlZCB0aGUgY29udGVudHMgb2YgYWxsIFlBTUwgcG9saWN5IGZpbGVzLgoJY2x1c3RlclBvbGljaWVzOiBfIEBlbWJlZChnbG9iPWt5dmVybm8tcG9saWNpZXMvKi55YW1sKQoKCS8vIFZhbGlkYXRlIHRoZSBjb250ZW50cyBvZiBlYWNoIGVtYmVkZGVkIGZpbGUgYWdhaW5zdCB0aGUgcmVsZXZhbnQgc2NoZW1hLgoJY2x1c3RlclBvbGljaWVzOiBbX106IHYxLiNDbHVzdGVyUG9saWN5Cn0K" }
-// filepath: kyverno.cue
-
+``` { .cue title="kyverno.cue" }
 @extern(embed) // File embedding must be explicitly enabled.
 package config
 
@@ -141,7 +135,7 @@ Always use
 [`cue mod tidy`](https://cuelang.org/docs/reference/command/cue-help-mod-tidy/)
 when you use a CUE module for the first time:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+``` { .shell-session title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 
@@ -156,7 +150,7 @@ The Central Registry allows more requests from authenticated users.
 
 ## Validate the policy files
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c" }
 $ cue vet -c
 ```
 

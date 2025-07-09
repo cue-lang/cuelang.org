@@ -26,9 +26,7 @@ This example is based on one from the
 repository, -- but the deliberate errors introduced here aren't part of the
 original file, of course!
 
-```yml { title="compose.yml" codeToCopy="c2VydmljZXM6CiAgcG9zdGdyZXM6CiAgICBjb250YWluZXJfbmFtZTogcG9zdGdyZXMKICAgIGVudmlyb25tZW50OgogICAgICAtIFBPU1RHUkVTX1VTRVI9JHtQT1NUR1JFU19VU0VSfQogICAgICAtIFBPU1RHUkVTX1BBU1NXT1JEPSR7UE9TVEdSRVNfUFd9CiAgICAgIC0gUE9TVEdSRVNfREI9JHtQT1NUR1JFU19EQn0KICAgIGltYWdlOiBwb3N0Z3JlczpsYXRlc3QKICAgIHBvcnQ6CiAgICAgIC0gIjU0MzI6NTQzMiIKICAgIHJlc3RhcnQ6IGFsd2F5cwogIHBnYWRtaW46CiAgICBjb250YWluZXJfbmFtZTogcGdhZG1pbgogICAgZW52aXJvbm1lbnQ6CiAgICAgIC0gUEdBRE1JTl9ERUZBVUxUX0VNQUlMPSR7UEdBRE1JTl9NQUlMfQogICAgICAtIFBHQURNSU5fREVGQVVMVF9QQVNTV09SRD0ke1BHQURNSU5fUFd9CiAgICBpbWFnZTogZHBhZ2UvcGdhZG1pbjQ6bGF0ZXN0CiAgICBwb3J0OgogICAgICAtICI1MDUwOjgwIgogICAgcmVzdGFydDogYWx3YXlzCg==" }
-# filepath: compose.yml
-
+``` { .yml title="compose.yml" }
 services:
   postgres:
     container_name: postgres
@@ -55,7 +53,7 @@ services:
 
 We use `cue vet` to validate `compose.yml` against the `dockercompose` package's `#Schema` definition:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1NjaGVtYScgY3VlLmRldi94L2RvY2tlcmNvbXBvc2VAbGF0ZXN0IGNvbXBvc2UueW1s" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#Schema&#39; cue.dev/x/dockercompose@latest compose.yml" }
 $ cue vet -c -d '#Schema' cue.dev/x/dockercompose@latest compose.yml
 services.pgadmin.port: field not allowed:
     ./compose.yml:18:5
@@ -82,9 +80,7 @@ that the field should actually be named `ports`.
 We fix our compose file by updating the highlighted line that `cue vet`
 mentioned, so that the file becomes:
 
-```yml { title="compose.yml" codeToCopy="c2VydmljZXM6CiAgcG9zdGdyZXM6CiAgICBjb250YWluZXJfbmFtZTogcG9zdGdyZXMKICAgIGVudmlyb25tZW50OgogICAgICAtIFBPU1RHUkVTX1VTRVI9JHtQT1NUR1JFU19VU0VSfQogICAgICAtIFBPU1RHUkVTX1BBU1NXT1JEPSR7UE9TVEdSRVNfUFd9CiAgICAgIC0gUE9TVEdSRVNfREI9JHtQT1NUR1JFU19EQn0KICAgIGltYWdlOiBwb3N0Z3JlczpsYXRlc3QKICAgIHBvcnRzOgogICAgICAtICI1NDMyOjU0MzIiCiAgICByZXN0YXJ0OiBhbHdheXMKICBwZ2FkbWluOgogICAgY29udGFpbmVyX25hbWU6IHBnYWRtaW4KICAgIGVudmlyb25tZW50OgogICAgICAtIFBHQURNSU5fREVGQVVMVF9FTUFJTD0ke1BHQURNSU5fTUFJTH0KICAgICAgLSBQR0FETUlOX0RFRkFVTFRfUEFTU1dPUkQ9JHtQR0FETUlOX1BXfQogICAgaW1hZ2U6IGRwYWdlL3BnYWRtaW40OmxhdGVzdAogICAgcG9ydHM6CiAgICAgIC0gIjUwNTA6ODAiCiAgICByZXN0YXJ0OiBhbHdheXMK" hl_lines=[11,20] }
-# filepath: compose.yml
-
+``` { .yml title="compose.yml" hl_lines=[11,20] }
 services:
   postgres:
     container_name: postgres
@@ -109,7 +105,7 @@ services:
 
 ## Re-validate the compose file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1NjaGVtYScgY3VlLmRldi94L2RvY2tlcmNvbXBvc2VAbGF0ZXN0IGNvbXBvc2UueW1s" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#Schema&#39; cue.dev/x/dockercompose@latest compose.yml" }
 $ cue vet -c -d '#Schema' cue.dev/x/dockercompose@latest compose.yml
 ```
 

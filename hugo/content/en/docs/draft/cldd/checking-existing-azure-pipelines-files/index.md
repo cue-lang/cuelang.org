@@ -22,9 +22,7 @@ This example is adapted from
 [the Azure Pipelines documentation](https://learn.microsoft.com/azure/devops/pipelines/process/run-stages),
 but you should use any pipeline file that's relevant to your situation.
 
-```yml { title="pipeline.yml" codeToCopy="dHJpZ2dlcjoKICAtIG1haW4KcG9vbDoKICB2bUltYWdlOiB1YnVudHUtbGF0ZXN0CnN0YWdlczoKICAtIHN0YWdlOiBCdWlsZAogICAgZGlzcGxheU5hbWU6IEJ1aWxkIFN0YWdlCiAgICBqb2JzOgogICAgICAtIGpvYjogQnVpbGRKb2IKICAgICAgICBkaXNwbGF5TmFtZTogQnVpbGQgSm9iCiAgICAgICAgc3RlcHM6CiAgICAgICAgICAtIHNjcmlwdDogZWNobyAiUmVzdG9yaW5nIHByb2plY3QgZGVwZW5kZW5jaWVzLi4uIgogICAgICAgICAgICBkaXNwbGF5TmFtZTogUmVzdG9yZSBkZXBlbmRlbmNpZXMKICAgICAgICAgIC0gc2NyaXB0OiBlY2hvICJSdW5uaW5nIHVuaXQgdGVzdHMuLi4iCiAgICAgICAgICAgIGRpc3BsYXlOYW1lOiBSdW4gdW5pdCB0ZXN0cwo=" }
-# filepath: pipeline.yml
-
+``` { .yml title="pipeline.yml" }
 trigger:
   - main
 pool:
@@ -44,7 +42,7 @@ stages:
 
 ## Validate the pipeline file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBjdWUuZGV2L3gvYXp1cmVwaXBlbGluZXNAbGF0ZXN0IHBpcGVsaW5lLnltbA==" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#Pipeline&#39; cue.dev/x/azurepipelines@latest pipeline.yml" }
 $ cue vet -c -d '#Pipeline' cue.dev/x/azurepipelines@latest pipeline.yml
 ```
 

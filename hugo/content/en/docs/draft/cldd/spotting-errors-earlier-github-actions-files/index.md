@@ -26,9 +26,7 @@ This example is adapted from GitHub's
 repository -- but the deliberate errors introduced here aren't part
 of the original file, of course!
 
-```yml { title="workflow.yml" codeToCopy="bmFtZTogR28Kb246CiAgcHVsbF9yZXF1ZXN0OgogICAgYnJhbmNoZXM6IFsgbWFpbiBdCmpvYjoKICBidWlsZDoKICAgIHJ1bnMtb246IHVidW50dS1sYXRlc3QKICAgIHN0ZXBzOgogICAgLSB1c2VzOiBhY3Rpb25zL2NoZWNrb3V0QHY0CiAgICAtIG5hbWU6IFNldCB1cCBHbwogICAgICB1c2VzOiBhY3Rpb25zL3NldHVwLWdvQHY0CiAgICAgIHdpdGg6CiAgICAgICAgZ28tdmVyc2lvbjogJzEuMjAnCiAgICAtIG5hbWU6IEJ1aWxkCiAgICAgIHJ1bjogZ28gYnVpbGQgLXYgLi8uLi4KICAgIC0gbmFtZTogVGVzdAogICAgICBydW46IGdvIHRlc3QgLXYgLi8uLi4K" }
-# filepath: workflow.yml
-
+``` { .yml title="workflow.yml" }
 name: Go
 on:
   pull_request:
@@ -52,7 +50,7 @@ job:
 
 We use `cue vet` to validate `workflow.yml` against the `githubactions` package's `#Workflow` definition:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyBjdWUuZGV2L3gvZ2l0aHViYWN0aW9uc0BsYXRlc3Qgd29ya2Zsb3cueW1s" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#Workflow&#39; cue.dev/x/githubactions@latest workflow.yml" }
 $ cue vet -c -d '#Workflow' cue.dev/x/githubactions@latest workflow.yml
 job: field not allowed:
     ./workflow.yml:5:1
@@ -77,9 +75,7 @@ that the field should actually be named `jobs`.
 We fix our workflow file by updating the highlighted line that `cue vet`
 mentioned, so that the file becomes:
 
-```yml { title="workflow.yml" codeToCopy="bmFtZTogR28Kb246CiAgcHVsbF9yZXF1ZXN0OgogICAgYnJhbmNoZXM6IFsgbWFpbiBdCmpvYnM6CiAgYnVpbGQ6CiAgICBydW5zLW9uOiB1YnVudHUtbGF0ZXN0CiAgICBzdGVwczoKICAgIC0gdXNlczogYWN0aW9ucy9jaGVja291dEB2NAogICAgLSBuYW1lOiBTZXQgdXAgR28KICAgICAgdXNlczogYWN0aW9ucy9zZXR1cC1nb0B2NAogICAgICB3aXRoOgogICAgICAgIGdvLXZlcnNpb246ICcxLjIwJwogICAgLSBuYW1lOiBCdWlsZAogICAgICBydW46IGdvIGJ1aWxkIC12IC4vLi4uCiAgICAtIG5hbWU6IFRlc3QKICAgICAgcnVuOiBnbyB0ZXN0IC12IC4vLi4uCg==" hl_lines=7 }
-# filepath: workflow.yml
-
+``` { .yml title="workflow.yml" hl_lines=7 }
 name: Go
 on:
   pull_request:
@@ -101,7 +97,7 @@ jobs:
 
 ## Re-validate the workflow file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyBjdWUuZGV2L3gvZ2l0aHViYWN0aW9uc0BsYXRlc3Qgd29ya2Zsb3cueW1s" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#Workflow&#39; cue.dev/x/githubactions@latest workflow.yml" }
 $ cue vet -c -d '#Workflow' cue.dev/x/githubactions@latest workflow.yml
 ```
 

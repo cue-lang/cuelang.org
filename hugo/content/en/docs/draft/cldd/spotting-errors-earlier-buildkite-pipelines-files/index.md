@@ -26,9 +26,7 @@ This example comes from the
 repository -- but the deliberate errors introduced here aren't part of the
 original file, of course!
 
-```yml { title="pipeline.yml" codeToCopy="c3RlcDoKICAtIG5hbWU6ICI6Z29sYW5nOiB0ZXN0IgogICAgY29tbWFuZDogImdvIHRlc3QgLXYgLi8uLi4iCiAgLSBuYW1lOiAiOmdvbGFuZzogdmV0IgogICAgY29tbWFuZDogImdvIHZldCAuLy4uLiIK" }
-# filepath: pipeline.yml
-
+``` { .yml title="pipeline.yml" }
 step:
   - name: ":golang: test"
     command: "go test -v ./..."
@@ -40,7 +38,7 @@ step:
 
 We use `cue vet` to validate `pipeline.yml` against the `buildkite` package's `#Pipeline` definition:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBjdWUuZGV2L3gvYnVpbGRraXRlQGxhdGVzdCBwaXBlbGluZS55bWw=" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#Pipeline&#39; cue.dev/x/buildkite@latest pipeline.yml" }
 $ cue vet -c -d '#Pipeline' cue.dev/x/buildkite@latest pipeline.yml
 steps: field is required but not present:
     .cache/cue/mod/extract/cue.dev/x/buildkite@v0.1.0/schema.cue:16:2
@@ -65,9 +63,7 @@ that our `step` field should actually be named `steps`.
 We fix our pipeline file by updating the highlighted line, so that the file
 becomes:
 
-```yml { title="pipeline.yml" codeToCopy="c3RlcHM6CiAgLSBuYW1lOiAiOmdvbGFuZzogdGVzdCIKICAgIGNvbW1hbmQ6ICJnbyB0ZXN0IC12IC4vLi4uIgogIC0gbmFtZTogIjpnb2xhbmc6IHZldCIKICAgIGNvbW1hbmQ6ICJnbyB2ZXQgLi8uLi4iCg==" hl_lines=3 }
-# filepath: pipeline.yml
-
+``` { .yml title="pipeline.yml" hl_lines=3 }
 steps:
   - name: ":golang: test"
     command: "go test -v ./..."
@@ -77,7 +73,7 @@ steps:
 
 ## Re-validate the pipeline file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBjdWUuZGV2L3gvYnVpbGRraXRlQGxhdGVzdCBwaXBlbGluZS55bWw=" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#Pipeline&#39; cue.dev/x/buildkite@latest pipeline.yml" }
 $ cue vet -c -d '#Pipeline' cue.dev/x/buildkite@latest pipeline.yml
 ```
 

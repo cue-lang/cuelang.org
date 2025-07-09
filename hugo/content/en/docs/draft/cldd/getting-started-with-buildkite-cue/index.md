@@ -19,7 +19,7 @@ from
 CUE that uses schemas and modules from the
 [Central Registry](https://registry.cue.works)
 needs to exist within its own CUE module.
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+``` { .shell-session title="TERMINAL" data-copy="cue mod init cue.example" }
 $ cue mod init cue.example
 ```
 You can choose any module name you like - it's easy to
@@ -33,9 +33,7 @@ but the commands in this guide will work in any setup.
 Declare a Buildkite pipeline in CUE. This one is based on
 [a Buildkite example](https://github.com/buildkite/bash-example):
 
-```cue { title="pipeline.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgImdpdGh1Yi5jb20vY3VlLXRtcC9qc29uc2NoZW1hLXB1Yi9leHAxL2J1aWxka2l0ZSIKCnBpcGVsaW5lczogZXhhbXBsZTogYnVpbGRraXRlLiNQaXBlbGluZSAmIHsKCXN0ZXBzOiBbewoJCWxhYmVsOiAiOmhhbW1lcjogRXhhbXBsZSBTY3JpcHQiCgkJY29tbWFuZDogIiIiCgkJCWVjaG8gIi0tLSA6cGFja2FnZTogQnVpbGQgam9iIGNoZWNrb3V0IGRpcmVjdG9yeSIKCQkJcHdkCgkJCWxzIC1sYQoJCQllY2hvICItLS0gOmV2ZXJncmVlbl90cmVlOiBCdWlsZCBqb2IgZW52aXJvbm1lbnQiCgkJCWVudgoJCQllY2hvICIrKysgOmhhbW1lcjogRXhhbXBsZSB0ZXN0cyIKCQkJZWNobyAiQ29uZ3JhdHVsYXRpb25zISBZb3UndmUgc3VjY2Vzc2Z1bGx5IHJ1biB5b3VyIGZpcnN0IGJ1aWxkIG9uIEJ1aWxka2l0ZSEg8J+RjSIKCQkJIiIiCgl9XQp9Cg==" }
-// filepath: pipeline.cue
-
+``` { .cue title="pipeline.cue" }
 package cicd
 
 import "github.com/cue-tmp/jsonschema-pub/exp1/buildkite"
@@ -71,7 +69,7 @@ command to update your CUE easily, so it reflects the new location.
 
 ## Tidy your local CUE module
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+``` { .shell-session title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 Tidying a module is an important part of using curated modules from the
@@ -87,7 +85,7 @@ The Central Registry allows more requests from authenticated users.
 
 ## Validate your pipeline
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c" }
 $ cue vet -c
 ```
 Because `cue vet` doesn't display any errors, you know that the curated schema has validated your pipeline.
@@ -95,7 +93,7 @@ Because `cue vet` doesn't display any errors, you know that the curated schema h
 ## Export your pipeline as YAML
 
 Before exporting your pipeline you'll need to create a directory to hold it, as expected by Buildkite:
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLmJ1aWxka2l0ZQpjdWUgZXhwb3J0IC0tb3V0ZmlsZSAuYnVpbGRraXRlL3BpcGVsaW5lLnltbCAtZSBwaXBlbGluZXMuZXhhbXBsZQ==" }
+``` { .shell-session title="TERMINAL" data-copy="mkdir .buildkite&#10;cue export --outfile .buildkite/pipeline.yml -e pipelines.example" }
 $ mkdir .buildkite
 $ cue export --outfile .buildkite/pipeline.yml -e pipelines.example
 ```
@@ -103,9 +101,7 @@ $ cue export --outfile .buildkite/pipeline.yml -e pipelines.example
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
 
-```yml { title=".buildkite/pipeline.yml" codeToCopy="c3RlcHM6CiAgLSBsYWJlbDogJzpoYW1tZXI6IEV4YW1wbGUgU2NyaXB0JwogICAgY29tbWFuZDogImVjaG8gXCItLS0gOnBhY2thZ2U6IEJ1aWxkIGpvYiBjaGVja291dCBkaXJlY3RvcnlcIlxucHdkXG5scyAtbGFcbmVjaG8gXCItLS0gOmV2ZXJncmVlbl90cmVlOiBCdWlsZCBqb2IgZW52aXJvbm1lbnRcIlxuZW52XG5lY2hvIFwiKysrIDpoYW1tZXI6IEV4YW1wbGUgdGVzdHNcIlxuZWNobyBcIkNvbmdyYXR1bGF0aW9ucyEgWW91J3ZlIHN1Y2Nlc3NmdWxseSBydW4geW91ciBmaXJzdCBidWlsZCBvbiBCdWlsZGtpdGUhIFxVMDAwMUY0NERcIiIK" }
-# filepath: .buildkite/pipeline.yml
-
+``` { .yml title=".buildkite/pipeline.yml" }
 steps:
   - label: ':hammer: Example Script'
     command: "echo \"--- :package: Build job checkout directory\"\npwd\nls -la\necho \"--- :evergreen_tree: Build job environment\"\nenv\necho \"+++ :hammer: Example tests\"\necho \"Congratulations! You've successfully run your first build on Buildkite! \U0001F44D\""

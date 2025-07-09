@@ -23,9 +23,7 @@ This example is adapted from GitHub's
 repository, but you should use any GitHub Actions workflow file that's relevant
 to your situation.
 
-```yml { title="workflow.yml" codeToCopy="bmFtZTogR28Kb246CiAgcHVsbF9yZXF1ZXN0OgogICAgYnJhbmNoZXM6IFsgbWFpbiBdCmpvYnM6CiAgYnVpbGQ6CiAgICBydW5zLW9uOiB1YnVudHUtbGF0ZXN0CiAgICBzdGVwczoKICAgIC0gdXNlczogYWN0aW9ucy9jaGVja291dEB2NAogICAgLSBuYW1lOiBTZXQgdXAgR28KICAgICAgdXNlczogYWN0aW9ucy9zZXR1cC1nb0B2NAogICAgICB3aXRoOgogICAgICAgIGdvLXZlcnNpb246ICcxLjIwJwogICAgLSBuYW1lOiBCdWlsZAogICAgICBydW46IGdvIGJ1aWxkIC12IC4vLi4uCiAgICAtIG5hbWU6IFRlc3QKICAgICAgcnVuOiBnbyB0ZXN0IC12IC4vLi4uCg==" }
-# filepath: workflow.yml
-
+``` { .yml title="workflow.yml" }
 name: Go
 on:
   pull_request:
@@ -47,7 +45,7 @@ jobs:
 
 ## Validate the workflow file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyBjdWUuZGV2L3gvZ2l0aHViYWN0aW9uc0BsYXRlc3Qgd29ya2Zsb3cueW1s" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#Workflow&#39; cue.dev/x/githubactions@latest workflow.yml" }
 $ cue vet -c -d '#Workflow' cue.dev/x/githubactions@latest workflow.yml
 ```
 
@@ -67,7 +65,7 @@ triggered by different events or perform different tasks. To check each
 workflow you could repeat the `cue vet` command for one or more files, like
 this:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyBjdWUuZGV2L3gvZ2l0aHViYWN0aW9uc0BsYXRlc3QgLmdpdGh1Yi93b3JrZmxvd3MvdGVzdC55bWwKY3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyBjdWUuZGV2L3gvZ2l0aHViYWN0aW9uc0BsYXRlc3QgLmdpdGh1Yi93b3JrZmxvd3MvcmVsZWFzZS55bWw=" }
+``` { .shell-session title="TERMINAL" data-copy="cue vet -c -d &#39;#Workflow&#39; cue.dev/x/githubactions@latest .github/workflows/test.yml&#10;cue vet -c -d &#39;#Workflow&#39; cue.dev/x/githubactions@latest .github/workflows/release.yml" }
 $ cue vet -c -d '#Workflow' cue.dev/x/githubactions@latest .github/workflows/test.yml
 $ cue vet -c -d '#Workflow' cue.dev/x/githubactions@latest .github/workflows/release.yml
 ```
