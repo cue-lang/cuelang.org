@@ -18,9 +18,7 @@ GitHub Actions workflow files live in the `.github/workflows/` directory, so
 that's the setup shown here:
 
 {{<columns>}}
-```yaml { title=".github/workflows/test.yml" codeToCopy="bmFtZTogVGVzdCBQUnMKb246CiAgcHVsbF9yZXF1ZXN0OgogICAgYnJhbmNoZXM6CiAgICAgIC0gbWFpbgpwZXJtaXNzaW9uczoKICBjb250ZW50czogcmVhZAogIHB1bGwtcmVxdWVzdHM6IHJlYWQKam9iczoKICB0ZXN0OgogICAgcnVucy1vbjogdWJ1bnR1LWxhdGVzdAogICAgc3RlcHM6CiAgICAgIC0gdXNlczogYWN0aW9ucy9jaGVja291dEB2NAogICAgICAtIG5hbWU6IFNldCB1cCBHbwogICAgICAgIHVzZXM6IGFjdGlvbnMvc2V0dXAtZ29AdjUKICAgICAgICB3aXRoOgogICAgICAgICAgZ28tdmVyc2lvbjogIjEuMjQiCiAgICAgIC0gbmFtZTogSW5zdGFsbCBkZXBlbmRlbmNpZXMKICAgICAgICBydW46IGdvIG1vZCB0aWR5CiAgICAgIC0gbmFtZTogVGVzdAogICAgICAgIHJ1bjogZ28gdGVzdCAtdiAgLi8uLi4K" }
-# filepath: .github/workflows/test.yml
-
+``` { .yaml title=".github/workflows/test.yml" }
 name: Test PRs
 on:
   pull_request:
@@ -44,9 +42,7 @@ jobs:
         run: go test -v  ./...
 ```
 {{<columns-separator>}}
-```yaml { title=".github/workflows/release.yml" codeToCopy="bmFtZTogUmVsZWFzZQoib24iOgogIHB1c2g6CiAgICB0YWdzOgogICAgICAtIHYqCnBlcm1pc3Npb25zOgogIGNvbnRlbnRzOiByZWFkCmpvYnM6CiAgcmVsZWFzZToKICAgIHJ1bnMtb246IHVidW50dS1sYXRlc3QKICAgIHN0ZXBzOgogICAgICAtIHVzZXM6IGFjdGlvbnMvY2hlY2tvdXRAdjQKICAgICAgLSBuYW1lOiBTZXQgdXAgR28KICAgICAgICB1c2VzOiBhY3Rpb25zL3NldHVwLWdvQHY1CiAgICAgICAgd2l0aDoKICAgICAgICAgIGdvLXZlcnNpb246ICIxLjI0IgogICAgICAtIG5hbWU6IEluc3RhbGwgZGVwZW5kZW5jaWVzCiAgICAgICAgcnVuOiBnbyBtb2QgdGlkeQogICAgICAtIG5hbWU6IFRlc3QKICAgICAgICBydW46IGdvIHRlc3QgLXYgLXJhY2UgLi8uLi4KICAgICAgLSBuYW1lOiBSZWxlYXNlCiAgICAgICAgcnVuOiBlY2hvIFJlbGVhc2UgcHJvY2VzcyBoZXJlLgo=" }
-# filepath: .github/workflows/release.yml
-
+``` { .yaml title=".github/workflows/release.yml" }
 name: Release
 "on":
   push:
@@ -81,7 +77,7 @@ CUE that uses modules from the
 [Central Registry](https://registry.cue.works), as shown below, needs to exist
 within its own CUE module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+``` { .text title="TERMINAL" data-copy="cue mod init cue.example" }
 $ cue mod init cue.example
 ```
 
@@ -95,9 +91,7 @@ allows the `cue` command to read data files without being told about them throug
 individual arguments. The following CUE enables this feature, and then *embeds*
 the GitHub Actions workflow files shown above:
 
-```cue { title="github.cue" codeToCopy="QGV4dGVybihlbWJlZCkgLy8gRmlsZSBlbWJlZGRpbmcgbXVzdCBiZSBleHBsaWNpdGx5IGVuYWJsZWQuCnBhY2thZ2UgY29uZmlnCgppbXBvcnQgImN1ZS5kZXYveC9naXRodWJhY3Rpb25zIgoKZ2l0aHViOiB7CgkvLyBFbWJlZCB0aGUgY29udGVudHMgb2YgYWxsIFlBTUwgd29ya2Zsb3cgZmlsZXMuCgl3b3JrZmxvd3M6IF8gQGVtYmVkKGdsb2I9LmdpdGh1Yi93b3JrZmxvd3MvKi55bWwpCgoJLy8gVmFsaWRhdGUgdGhlIGNvbnRlbnRzIG9mIGVhY2ggZW1iZWRkZWQgZmlsZSBhZ2FpbnN0IHRoZSByZWxldmFudCBzY2hlbWEuCgl3b3JrZmxvd3M6IFtfXTogZ2l0aHViYWN0aW9ucy4jV29ya2Zsb3cKfQo=" }
-// filepath: github.cue
-
+``` { .cue title="github.cue" }
 @extern(embed) // File embedding must be explicitly enabled.
 package config
 
@@ -119,7 +113,7 @@ Always use
 [`cue mod tidy`](https://cuelang.org/docs/reference/command/cue-help-mod-tidy/)
 when you use a CUE module for the first time:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+``` { .text title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 
@@ -134,7 +128,7 @@ The Central Registry allows more requests from authenticated users.
 
 ## Validate the workflow files
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+``` { .text title="TERMINAL" data-copy="cue vet -c" }
 $ cue vet -c
 ```
 

@@ -19,7 +19,7 @@ from
 CUE that uses schemas and modules from the
 [Central Registry](https://registry.cue.works)
 needs to exist within its own CUE module.
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+``` { .text title="TERMINAL" data-copy="cue mod init cue.example" }
 $ cue mod init cue.example
 ```
 
@@ -33,9 +33,7 @@ Declare a Kyverno policy in CUE. This one is based on an example from Kyverno's
 repository, but you should use policies that are more relevant to your
 situation.
 
-```cue { title="kyverno-policies/create-authorizationpolicy.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgImN1ZS5kZXYveC9reXZlcm5vL2NsdXN0ZXJwb2xpY3kvdjEiCgpjbHVzdGVyUG9saWNpZXM6IGNyZWF0ZUF1dGhvcml6YXRpb25Qb2xpY3k6IHYxLiNDbHVzdGVyUG9saWN5ICYgewoJYXBpVmVyc2lvbjogImt5dmVybm8uaW8vdjEiCglraW5kOiAgICAgICAiQ2x1c3RlclBvbGljeSIKCW1ldGFkYXRhOiB7CgkJbmFtZTogImNyZWF0ZS1hdXRob3JpemF0aW9ucG9saWN5IgoJCWFubm90YXRpb25zOiB7CgkJCSJwb2xpY2llcy5reXZlcm5vLmlvL3RpdGxlIjogICAgICAgIkNyZWF0ZSBJc3RpbyBEZW55IEF1dGhvcml6YXRpb25Qb2xpY3kiCgkJCSJwb2xpY2llcy5reXZlcm5vLmlvL2NhdGVnb3J5IjogICAgIklzdGlvIgoJCQkicG9saWNpZXMua3l2ZXJuby5pby9zdWJqZWN0IjogICAgICJBdXRob3JpemF0aW9uUG9saWN5IgoJCQkicG9saWNpZXMua3l2ZXJuby5pby9kZXNjcmlwdGlvbiI6ICJUaGlzIHBvbGljeSBjcmVhdGVzIGEgZGVmYXVsdCBkZW55IEF1dGhvcml6YXRpb25Qb2xpY3kgZm9yIGFsbCBuZXcgTmFtZXNwYWNlcywgYW5kIHNob3VsZCBiZSBzdXBwbGVtZW50ZWQgd2l0aCBhZGRpdGlvbmFsIEF1dGhvcml6YXRpb25Qb2xpY2llcyB0byBhbGxvdyB0cmFmZmljIGFzIHJlcXVpcmVkIgoJCX0KCX0KCXNwZWM6IHJ1bGVzOiBbewoJCW5hbWU6ICJnZW5lcmF0ZS1kZW55LWF1dGhvcml6YXRpb25wb2xpY3kiCgkJbWF0Y2g6IGFueTogW3sKCQkJcmVzb3VyY2VzOiBraW5kczogWyJOYW1lc3BhY2UiXQoJCX1dCgkJZ2VuZXJhdGU6IHsKCQkJYXBpVmVyc2lvbjogICJzZWN1cml0eS5pc3Rpby5pby92MWJldGExIgoJCQlraW5kOiAgICAgICAgIkF1dGhvcml6YXRpb25Qb2xpY3kiCgkJCW5hbWU6ICAgICAgICAiZGVmYXVsdC1kZW55IgoJCQluYW1lc3BhY2U6ICAgInt7cmVxdWVzdC5vYmplY3QubWV0YWRhdGEubmFtZX19IgoJCQlzeW5jaHJvbml6ZTogdHJ1ZQoJCQlkYXRhOiBzcGVjOiB7fQoJCX0KCX1dCn0K" }
-// filepath: kyverno-policies/create-authorizationpolicy.cue
-
+``` { .cue title="kyverno-policies/create-authorizationpolicy.cue" }
 package cicd
 
 import "cue.dev/x/kyverno/clusterpolicy/v1"
@@ -84,7 +82,7 @@ command to update your CUE easily, so it reflects the new location.
 
 ## Tidy your local CUE module
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+``` { .text title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 Tidying a module is an important part of using curated modules from the
@@ -100,7 +98,7 @@ The Central Registry allows more requests from authenticated users.
 
 ## Validate your policy's structure
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuL2t5dmVybm8tcG9saWNpZXM=" }
+``` { .text title="TERMINAL" data-copy="cue vet -c ./kyverno-policies" }
 $ cue vet -c ./kyverno-policies
 ```
 
@@ -109,7 +107,7 @@ you know that the curated schema has validated your policy's structure.
 
 ## Export your policy as YAML
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2Qga3l2ZXJuby1wb2xpY2llcwpjdWUgZXhwb3J0IC0tb3V0ZmlsZSBjcmVhdGUtYXV0aG9yaXphdGlvbnBvbGljeS55bWwgLWUgY2x1c3RlclBvbGljaWVzLmNyZWF0ZUF1dGhvcml6YXRpb25Qb2xpY3k=" }
+``` { .text title="TERMINAL" data-copy="cd kyverno-policies&#10;cue export --outfile create-authorizationpolicy.yml -e clusterPolicies.createAuthorizationPolicy" }
 $ cd kyverno-policies
 $ cue export --outfile create-authorizationpolicy.yml -e clusterPolicies.createAuthorizationPolicy
 ```
@@ -117,9 +115,7 @@ $ cue export --outfile create-authorizationpolicy.yml -e clusterPolicies.createA
 If you chose to export the example policy shown above,
 your validated YAML policy will look like this:
 
-```yaml { title="kyverno-policies/create-authorizationpolicy.yml" codeToCopy="YXBpVmVyc2lvbjoga3l2ZXJuby5pby92MQpraW5kOiBDbHVzdGVyUG9saWN5Cm1ldGFkYXRhOgogIG5hbWU6IGNyZWF0ZS1hdXRob3JpemF0aW9ucG9saWN5CiAgYW5ub3RhdGlvbnM6CiAgICBwb2xpY2llcy5reXZlcm5vLmlvL3RpdGxlOiBDcmVhdGUgSXN0aW8gRGVueSBBdXRob3JpemF0aW9uUG9saWN5CiAgICBwb2xpY2llcy5reXZlcm5vLmlvL2NhdGVnb3J5OiBJc3RpbwogICAgcG9saWNpZXMua3l2ZXJuby5pby9zdWJqZWN0OiBBdXRob3JpemF0aW9uUG9saWN5CiAgICBwb2xpY2llcy5reXZlcm5vLmlvL2Rlc2NyaXB0aW9uOiBUaGlzIHBvbGljeSBjcmVhdGVzIGEgZGVmYXVsdCBkZW55IEF1dGhvcml6YXRpb25Qb2xpY3kgZm9yIGFsbCBuZXcgTmFtZXNwYWNlcywgYW5kIHNob3VsZCBiZSBzdXBwbGVtZW50ZWQgd2l0aCBhZGRpdGlvbmFsIEF1dGhvcml6YXRpb25Qb2xpY2llcyB0byBhbGxvdyB0cmFmZmljIGFzIHJlcXVpcmVkCnNwZWM6CiAgcnVsZXM6CiAgICAtIGdlbmVyYXRlOgogICAgICAgIGFwaVZlcnNpb246IHNlY3VyaXR5LmlzdGlvLmlvL3YxYmV0YTEKICAgICAgICBkYXRhOgogICAgICAgICAgc3BlYzoge30KICAgICAgICBraW5kOiBBdXRob3JpemF0aW9uUG9saWN5CiAgICAgICAgbmFtZTogZGVmYXVsdC1kZW55CiAgICAgICAgbmFtZXNwYWNlOiAne3tyZXF1ZXN0Lm9iamVjdC5tZXRhZGF0YS5uYW1lfX0nCiAgICAgICAgc3luY2hyb25pemU6IHRydWUKICAgICAgbWF0Y2g6CiAgICAgICAgYW55OgogICAgICAgICAgLSByZXNvdXJjZXM6CiAgICAgICAgICAgICAga2luZHM6CiAgICAgICAgICAgICAgICAtIE5hbWVzcGFjZQogICAgICBuYW1lOiBnZW5lcmF0ZS1kZW55LWF1dGhvcml6YXRpb25wb2xpY3kK" }
-# filepath: kyverno-policies/create-authorizationpolicy.yml
-
+``` { .yaml title="kyverno-policies/create-authorizationpolicy.yml" }
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:

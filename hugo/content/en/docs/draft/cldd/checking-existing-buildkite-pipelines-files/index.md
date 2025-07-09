@@ -23,9 +23,7 @@ This example comes from the
 repository, but you should use any pipeline file that's relevant to your
 situation.
 
-```yaml { title="pipeline.yml" codeToCopy="c3RlcHM6CiAgLSBuYW1lOiAiOmdvbGFuZzogdGVzdCIKICAgIGNvbW1hbmQ6ICJnbyB0ZXN0IC12IC4vLi4uIgogIC0gbmFtZTogIjpnb2xhbmc6IHZldCIKICAgIGNvbW1hbmQ6ICJnbyB2ZXQgLi8uLi4iCg==" }
-# filepath: pipeline.yml
-
+``` { .yaml title="pipeline.yml" }
 steps:
   - name: ":golang: test"
     command: "go test -v ./..."
@@ -35,7 +33,7 @@ steps:
 
 ## Validate the pipeline file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBjdWUuZGV2L3gvYnVpbGRraXRlQGxhdGVzdCBwaXBlbGluZS55bWw=" }
+``` { .text title="TERMINAL" data-copy="cue vet -c -d &#39;#Pipeline&#39; cue.dev/x/buildkite@latest pipeline.yml" }
 $ cue vet -c -d '#Pipeline' cue.dev/x/buildkite@latest pipeline.yml
 ```
 
