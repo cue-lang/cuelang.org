@@ -21,9 +21,7 @@ In this example we start with a pair of GitHub Actions workflows that test and
 release a Go module:
 
 {{<columns>}}
-```cue { title="ci/github/test.cue" codeToCopy="cGFja2FnZSBnaXRodWIKCmltcG9ydCAiY3VlLmRldi94L2dpdGh1YmFjdGlvbnMiCgp3b3JrZmxvd3M6IHRlc3Q6IGdpdGh1YmFjdGlvbnMuI1dvcmtmbG93ICYgewoJbmFtZTogIlRlc3QgUFJzIgoJb246IHB1bGxfcmVxdWVzdDogYnJhbmNoZXM6IFsibWFpbiJdCglwZXJtaXNzaW9uczogewoJCWNvbnRlbnRzOiAgICAgICAgInJlYWQiCgkJInB1bGwtcmVxdWVzdHMiOiAicmVhZCIKCX0KCWpvYnM6IHRlc3Q6IHsKCQkicnVucy1vbiI6ICJ1YnVudHUtbGF0ZXN0IgoJCXN0ZXBzOiBbewoJCQl1c2VzOiAiYWN0aW9ucy9jaGVja291dEB2NCIKCQl9LCB7CgkJCXVzZXM6ICJhY3Rpb25zL3NldHVwLWdvQHY1IgoJCQl3aXRoOiAiZ28tdmVyc2lvbiI6ICIxLjI0IgoJCX0sIHsKCQkJbmFtZTogIlRlc3QiCgkJCXJ1bjogICJnbyB0ZXN0IC12ICAuLy4uLiIKCQl9XQoJfQp9Cg==" }
-// filepath: ci/github/test.cue
-
+``` { .cue title="ci/github/test.cue" }
 package github
 
 import "cue.dev/x/githubactions"
@@ -50,9 +48,7 @@ workflows: test: githubactions.#Workflow & {
 }
 ```
 {{<columns-separator>}}
-```cue { title="ci/github/release.cue" codeToCopy="cGFja2FnZSBnaXRodWIKCmltcG9ydCAiY3VlLmRldi94L2dpdGh1YmFjdGlvbnMiCgp3b3JrZmxvd3M6IHJlbGVhc2U6IGdpdGh1YmFjdGlvbnMuI1dvcmtmbG93ICYgewoJbmFtZTogIlJlbGVhc2UiCglvbjogcHVzaDogdGFnczogWyJ2KiJdCglwZXJtaXNzaW9uczogY29udGVudHM6ICJyZWFkIgoJam9iczogcmVsZWFzZTogewoJCSJydW5zLW9uIjogInVidW50dS1sYXRlc3QiCgkJc3RlcHM6IFt7CgkJCXVzZXM6ICJhY3Rpb25zL2NoZWNrb3V0QHY0IgoJCX0sIHsKCQkJdXNlczogImFjdGlvbnMvc2V0dXAtZ29AdjUiCgkJCXdpdGg6ICJnby12ZXJzaW9uIjogIjEuMjQiCgkJfSwgewoJCQluYW1lOiAiVGVzdCIKCQkJcnVuOiAgImdvIHRlc3QgLXYgLXJhY2UgLi8uLi4iCgkJfSwgewoJCQluYW1lOiAiUmVsZWFzZSIKCQkJcnVuOiAgImVjaG8gUmVsZWFzZSBwcm9jZXNzIGhlcmUuIgoJCX1dCgl9Cn0K" }
-// filepath: ci/github/release.cue
-
+``` { .cue title="ci/github/release.cue" }
 package github
 
 import "cue.dev/x/githubactions"
@@ -86,7 +82,7 @@ Running
 [`cue mod tidy`](https://cuelang.org/docs/reference/command/cue-help-mod-tidy/)
 ensures that all module dependencies are satisfied:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+``` { .shell-session title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 
@@ -100,7 +96,7 @@ we expect.
 We use a pair of `cue export` commands that each target a named workflow to
 create the specific YAML files that GitHub requires:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuL2NpL2dpdGh1YiAtZiAtZSB3b3JrZmxvd3MudGVzdCAtbyAuZ2l0aHViL3dvcmtmbG93cy90ZXN0LnltbApjdWUgZXhwb3J0IC4vY2kvZ2l0aHViIC1mIC1lIHdvcmtmbG93cy5yZWxlYXNlIC1vIC5naXRodWIvd29ya2Zsb3dzL3JlbGVhc2UueW1s" }
+``` { .shell-session title="TERMINAL" data-copy="cue export ./ci/github -f -e workflows.test -o .github/workflows/test.yml&#10;cue export ./ci/github -f -e workflows.release -o .github/workflows/release.yml" }
 $ cue export ./ci/github -f -e workflows.test -o .github/workflows/test.yml
 $ cue export ./ci/github -f -e workflows.release -o .github/workflows/release.yml
 ```
@@ -108,9 +104,7 @@ $ cue export ./ci/github -f -e workflows.release -o .github/workflows/release.ym
 We check that our exported YAML files look as expected:
 
 {{<columns>}}
-```yaml { title=".github/workflows/test.yml" codeToCopy="bmFtZTogVGVzdCBQUnMKIm9uIjoKICBwdWxsX3JlcXVlc3Q6CiAgICBicmFuY2hlczoKICAgICAgLSBtYWluCmpvYnM6CiAgdGVzdDoKICAgIHJ1bnMtb246IHVidW50dS1sYXRlc3QKICAgIHN0ZXBzOgogICAgICAtIHVzZXM6IGFjdGlvbnMvY2hlY2tvdXRAdjQKICAgICAgLSB1c2VzOiBhY3Rpb25zL3NldHVwLWdvQHY1CiAgICAgICAgd2l0aDoKICAgICAgICAgIGdvLXZlcnNpb246ICIxLjI0IgogICAgICAtIG5hbWU6IFRlc3QKICAgICAgICBydW46IGdvIHRlc3QgLXYgIC4vLi4uCnBlcm1pc3Npb25zOgogIGNvbnRlbnRzOiByZWFkCiAgcHVsbC1yZXF1ZXN0czogcmVhZAo=" }
-# filepath: .github/workflows/test.yml
-
+``` { .yaml title=".github/workflows/test.yml" }
 name: Test PRs
 "on":
   pull_request:
@@ -131,9 +125,7 @@ permissions:
   pull-requests: read
 ```
 {{<columns-separator>}}
-```yaml { title=".github/workflows/release.yml" codeToCopy="bmFtZTogUmVsZWFzZQoib24iOgogIHB1c2g6CiAgICB0YWdzOgogICAgICAtIHYqCnBlcm1pc3Npb25zOgogIGNvbnRlbnRzOiByZWFkCmpvYnM6CiAgcmVsZWFzZToKICAgIHJ1bnMtb246IHVidW50dS1sYXRlc3QKICAgIHN0ZXBzOgogICAgICAtIHVzZXM6IGFjdGlvbnMvY2hlY2tvdXRAdjQKICAgICAgLSB1c2VzOiBhY3Rpb25zL3NldHVwLWdvQHY1CiAgICAgICAgd2l0aDoKICAgICAgICAgIGdvLXZlcnNpb246ICIxLjI0IgogICAgICAtIG5hbWU6IFRlc3QKICAgICAgICBydW46IGdvIHRlc3QgLXYgLXJhY2UgLi8uLi4KICAgICAgLSBuYW1lOiBSZWxlYXNlCiAgICAgICAgcnVuOiBlY2hvIFJlbGVhc2UgcHJvY2VzcyBoZXJlLgo=" }
-# filepath: .github/workflows/release.yml
-
+``` { .yaml title=".github/workflows/release.yml" }
 name: Release
 "on":
   push:
@@ -163,9 +155,7 @@ Don't worry if any parts don't make sense immediately - we'll explain what's
 going on later!
 
 {{<columns>}}
-```cue { title="ci/github/test.cue" codeToCopy="cGFja2FnZSBnaXRodWIKCndvcmtmbG93czogdGVzdDogewoJbmFtZTogIlRlc3QgUFJzIgoJb246IHB1bGxfcmVxdWVzdDogYnJhbmNoZXM6IFsjZGVmYXVsdEJyYW5jaF0KCXBlcm1pc3Npb25zOiAicHVsbC1yZXF1ZXN0cyI6ICJyZWFkIgoJam9iczogdGVzdDogc3RlcHM6IFsKCQlfY2hlY2tvdXRDb2RlLAoJCV9zZXR1cEdvLAoJCV9nb1Rlc3QsCgldCn0K" }
-// filepath: ci/github/test.cue
-
+``` { .cue title="ci/github/test.cue" }
 package github
 
 workflows: test: {
@@ -180,9 +170,7 @@ workflows: test: {
 }
 ```
 {{<columns-separator>}}
-```cue { title="ci/github/release.cue" codeToCopy="cGFja2FnZSBnaXRodWIKCndvcmtmbG93czogcmVsZWFzZTogewoJbmFtZTogIlJlbGVhc2UiCglvbjogcHVzaDogdGFnczogWyJ2KiJdCglqb2JzOiByZWxlYXNlOiBzdGVwczogWwoJCV9jaGVja291dENvZGUsCgkJX3NldHVwR28sCgkJX2dvVGVzdCAmIHsKCQkJI2ZsYWdzOiAiLXJhY2UiCgkJfSwgewoJCQluYW1lOiAiUmVsZWFzZSIKCQkJcnVuOiAgImVjaG8gUmVsZWFzZSBwcm9jZXNzIGhlcmUuIgoJCX0sCgldCn0K" }
-// filepath: ci/github/release.cue
-
+``` { .cue title="ci/github/release.cue" }
 package github
 
 workflows: release: {
@@ -213,9 +201,7 @@ third CUE file, along with numbered comments pointing to explanations
 (presented after the CUE) of how each element helps to reduces our individual
 workflows' boilerplate:
 
-```cue { title="ci/github/workflows.cue" codeToCopy="cGFja2FnZSBnaXRodWIKCmltcG9ydCAoCgkic3RyaW5ncyIKCSJjdWUuZGV2L3gvZ2l0aHViYWN0aW9ucyIKKQoKLy8gRXhwbGFuYXRpb24gIzEKI2RlZmF1bHRCcmFuY2g6ICJtYWluIgoKLy8gRXhwbGFuYXRpb24gIzIKd29ya2Zsb3dzOiBbX106IGdpdGh1YmFjdGlvbnMuI1dvcmtmbG93ICYgewoJLy8gRXhwbGFuYXRpb24gIzMKCWpvYnM6IFtfXTogInJ1bnMtb24iOiAqInVidW50dS1sYXRlc3QiIHwgXwoKCS8vIEV4cGxhbmF0aW9uICM0CglwZXJtaXNzaW9uczogY29udGVudHM6ICoicmVhZCIgfCAid3JpdGUiIHwgIm5vbmUiCn0KCi8vIEV4cGxhbmF0aW9uICM1Cl9jaGVja291dENvZGU6IGdpdGh1YmFjdGlvbnMuI1N0ZXAgJiB7dXNlczogImFjdGlvbnMvY2hlY2tvdXRAdjQifQpfc2V0dXBHbzogZ2l0aHViYWN0aW9ucy4jU3RlcCAmIHsKCXVzZXM6ICJhY3Rpb25zL3NldHVwLWdvQHY1IgoJd2l0aDogImdvLXZlcnNpb24iOiAiMS4yNCIKfQoKLy8gRXhwbGFuYXRpb24gIzYKX2dvVGVzdDogZ2l0aHViYWN0aW9ucy4jU3RlcCAmIHsKCW5hbWU6ICAgKiJUZXN0IiB8IF8KCSNmbGFnczogKiIiIHwgc3RyaW5nCgkjcGFja2FnZXM6ICpbIi4vLi4uIl0gfCBbLi4uc3RyaW5nXQoJbGV0IHBhY2thZ2VzID0gc3RyaW5ncy5Kb2luKCNwYWNrYWdlcywgIiAiKQoJcnVuOiAiZ28gdGVzdCAtdiBcKCNmbGFncykgXChwYWNrYWdlcykiCn0K" }
-// filepath: ci/github/workflows.cue
-
+``` { .cue title="ci/github/workflows.cue" }
 package github
 
 import (
@@ -277,9 +263,7 @@ let's check back in and review the workflows that use these elements.
 Here's the succinct, DRYed up `test` workflow, with a few comments added to
 explain the CUE:
 
-```cue { title="ci/github/test.cue" codeToCopy="cGFja2FnZSBnaXRodWIKCi8vIFRoZSB0ZXN0IHdvcmtmbG93IHVzZXMgYWxsIHRoZSBkZWZhdWx0cyBzcGVjaWZpZWQgaW4gd29ya2Zsb3dzLmN1ZS4Kd29ya2Zsb3dzOiB0ZXN0OiB7CgluYW1lOiAiVGVzdCBQUnMiCgoJLy8gVGhlcmUncyBubyBkZWZhdWx0IGZvciB0aGUgd29ya2Zsb3cgdHJpZ2dlciBzbyB3ZSBuZWVkIHRvIGRlZmluZSBpdCBoZXJlLgoJb246IHB1bGxfcmVxdWVzdDogYnJhbmNoZXM6IFsjZGVmYXVsdEJyYW5jaF0KCgkvLyBUaGlzIGFkZHMgdG8gdGhlIGRlZmF1bHQgcmVhZCBwZXJtaXNzaW9uIGZvciB0aGUgcmVwbydzIGNvbnRlbnRzLgoJcGVybWlzc2lvbnM6ICJwdWxsLXJlcXVlc3RzIjogInJlYWQiCglqb2JzOiB0ZXN0OiBzdGVwczogWwoJCS8vIFRoZXNlIHN0ZXBzIHRlbXBsYXRlIHRoZSBzaGFyZWQgc3RlcHMgYnkgcmVmZXJlbmNpbmcgdGhlbS4KCQlfY2hlY2tvdXRDb2RlLAoJCV9zZXR1cEdvLAoJCV9nb1Rlc3QsCgldCn0K" }
-// filepath: ci/github/test.cue
-
+``` { .cue title="ci/github/test.cue" }
 package github
 
 // The test workflow uses all the defaults specified in workflows.cue.
@@ -303,9 +287,7 @@ workflows: test: {
 The CUE defining the `release` workflow does a little more work customising
 a shared element:
 
-```cue { title="ci/github/release.cue" codeToCopy="cGFja2FnZSBnaXRodWIKCndvcmtmbG93czogcmVsZWFzZTogewoJbmFtZTogIlJlbGVhc2UiCgoJLy8gVGhlcmUncyBubyBkZWZhdWx0IGZvciB0aGUgd29ya2Zsb3cgdHJpZ2dlciBzbyB3ZSBuZWVkIHRvIGRlZmluZSBpdCBoZXJlLgoJb246IHB1c2g6IHRhZ3M6IFsidioiXQoJam9iczogcmVsZWFzZTogc3RlcHM6IFsKCgkJLy8gVGhlc2Ugc3RlcHMgdGVtcGxhdGUgdGhlIHNoYXJlZCBzdGVwcyBieSByZWZlcmVuY2luZyB0aGVtLgoJCV9jaGVja291dENvZGUsCgkJX3NldHVwR28sCgoJCS8vIFRoZSByZWxlYXNlIHdvcmtmbG93IG5lZWRzIHRvIHNwZWNpZnkgdGhlICJnbyB0ZXN0IiAiLXJhY2UiIGZsYWcsCgkJLy8gc28gaXQgdXNlcyB0aGUgdGVtcGxhdGUncyBwYXJhbWV0ZXIgdG8gb3ZlcnJpZGUgdGhlIGRlZmF1bHQuCgkJX2dvVGVzdCAmIHsKCQkJI2ZsYWdzOiAiLXJhY2UiCgkJfSwKCQl7CgkJCS8vIFRoZSByZWxlYXNlIHByb2Nlc3MgaXMgdW5pcXVlIHRvIHRoaXMgd29ya2Zsb3csIHNvIHdlIGxlYXZlCgkJCS8vIGl0IGRlZmluZWQgaW5saW5lIGluIG9yZGVyIHRvIGxldCBpdCBzdGFuZCBvdXQgY2xlYXJseS4KCQkJbmFtZTogIlJlbGVhc2UiCgkJCXJ1bjogICJlY2hvIFJlbGVhc2UgcHJvY2VzcyBoZXJlLiIKCQl9LAoJXQp9Cg==" }
-// filepath: ci/github/release.cue
-
+``` { .cue title="ci/github/release.cue" }
 package github
 
 workflows: release: {
@@ -338,7 +320,7 @@ workflows: release: {
 
 After DRYing up our CUE, we need to re-export the static YAML workflow files
 that GitHub Actions expects:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuL2NpL2dpdGh1YiAtZiAtZSB3b3JrZmxvd3MudGVzdCAtbyAuZ2l0aHViL3dvcmtmbG93cy90ZXN0LnltbApjdWUgZXhwb3J0IC4vY2kvZ2l0aHViIC1mIC1lIHdvcmtmbG93cy5yZWxlYXNlIC1vIC5naXRodWIvd29ya2Zsb3dzL3JlbGVhc2UueW1s" }
+``` { .shell-session title="TERMINAL" data-copy="cue export ./ci/github -f -e workflows.test -o .github/workflows/test.yml&#10;cue export ./ci/github -f -e workflows.release -o .github/workflows/release.yml" }
 $ cue export ./ci/github -f -e workflows.test -o .github/workflows/test.yml
 $ cue export ./ci/github -f -e workflows.release -o .github/workflows/release.yml
 ```
@@ -350,7 +332,7 @@ schema used in `workflows.cue` validated the workflows.
 Lastly, we make sure that our DRYing up hasn't changed the exported YAML files'
 contents:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGRpZmYgLmdpdGh1Yi93b3JrZmxvd3M=" }
+``` { .shell-session title="TERMINAL" data-copy="git diff .github/workflows" }
 $ git diff .github/workflows
 ```
 
