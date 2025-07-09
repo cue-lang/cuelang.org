@@ -26,9 +26,7 @@ This example is adapted from
 -- but the deliberate errors introduced here aren't part of the original file,
 of course!
 
-```yaml { title="pipeline.yml" codeToCopy="ZGVmYXVsdDoKICBpbWFnZTogcnVieTozLjIKd29ya2Zsb3c6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSApjcmVhdGUtcGFnZXM6CiAgc2NyaXB0czoKICAgIC0gZ2VtIGluc3RhbGwgYnVuZGxlcgogICAgLSBidW5kbGUgaW5zdGFsbAogICAgLSBidW5kbGUgZXhlYyBqZWt5bGwgYnVpbGQgLWQgcHVibGljCiAgcGFnZXM6IHRydWUKICBydWxlczoKICAgIC0gaWY6ICRDSV9DT01NSVRfQlJBTkNIID09ICJtYWluIgo=" }
-# filepath: pipeline.yml
-
+``` { .yaml title="pipeline.yml" }
 default:
   image: ruby:3.2
 workflow:
@@ -48,7 +46,7 @@ create-pages:
 
 We use `cue vet` to validate `pipeline.yml` against the `gitlabci` package's `#Pipeline` definition:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBjdWUuZGV2L3gvZ2l0bGFiL2dpdGxhYmNpQGxhdGVzdCBwaXBlbGluZS55bWw=" }
+``` { .text title="TERMINAL" data-copy="cue vet -c -d &#39;#Pipeline&#39; cue.dev/x/gitlab/gitlabci@latest pipeline.yml" }
 $ cue vet -c -d '#Pipeline' cue.dev/x/gitlab/gitlabci@latest pipeline.yml
 "create-pages".scripts: field not allowed:
     .cache/cue/mod/extract/cue.dev/x/gitlab@v0.1.0/gitlabci/schema.cue:293:17
@@ -74,9 +72,7 @@ that the field should actually be named `script`.
 We fix our pipeline file by updating the highlighted line that `cue vet`
 mentioned, so that the file becomes:
 
-```yaml { title="pipeline.yml" codeToCopy="ZGVmYXVsdDoKICBpbWFnZTogcnVieTozLjIKd29ya2Zsb3c6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSApjcmVhdGUtcGFnZXM6CiAgc2NyaXB0OgogICAgLSBnZW0gaW5zdGFsbCBidW5kbGVyCiAgICAtIGJ1bmRsZSBpbnN0YWxsCiAgICAtIGJ1bmRsZSBleGVjIGpla3lsbCBidWlsZCAtZCBwdWJsaWMKICBwYWdlczogdHJ1ZQogIHJ1bGVzOgogICAgLSBpZjogJENJX0NPTU1JVF9CUkFOQ0ggPT0gIm1haW4iCg==" hl_lines=9 }
-# filepath: pipeline.yml
-
+``` { .yaml title="pipeline.yml" hl_lines=9 }
 default:
   image: ruby:3.2
 workflow:
@@ -94,7 +90,7 @@ create-pages:
 
 ## Re-validate the pipeline file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BpcGVsaW5lJyBjdWUuZGV2L3gvZ2l0bGFiL2dpdGxhYmNpQGxhdGVzdCBwaXBlbGluZS55bWw=" }
+``` { .text title="TERMINAL" data-copy="cue vet -c -d &#39;#Pipeline&#39; cue.dev/x/gitlab/gitlabci@latest pipeline.yml" }
 $ cue vet -c -d '#Pipeline' cue.dev/x/gitlab/gitlabci@latest pipeline.yml
 ```
 

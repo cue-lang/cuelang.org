@@ -18,6 +18,7 @@ import (
 	"bytes"
 	"encoding/base64"
 	"fmt"
+	"html"
 	"regexp"
 	"strconv"
 	"strings"
@@ -213,19 +214,39 @@ func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
 	// With a script there are no files... just script
 
-	// Build up a base64 encoded script that will be copied. This is necessary
-	// because the rendered window will include the output... which won't work
-	// if copy-pasted.
-	var copyCmdStr strings.Builder
-	enc := base64.NewEncoder(base64.StdEncoding, &copyCmdStr)
-	var start string
-	for _, stmt := range s.stmts {
-		fmt.Fprintf(enc, "%s%s", start, stmt.Cmd)
-		start = "\n"
-	}
-	enc.Close()
+	isCldd := s.rf.page.isClddContent()
 
-	p("```text { title=%q type=%q codeToCopy=%q", "TERMINAL", "terminal", copyCmdStr.String())
+	if !isCldd {
+		p("```text { title=%q", "TERMINAL")
+		// Build up a base64 encoded script that will be copied. This is necessary
+		// because the rendered window will include the output... which won't work
+		// if copy-pasted.
+		var copyCmdStr strings.Builder
+		enc := base64.NewEncoder(base64.StdEncoding, &copyCmdStr)
+		var start string
+		for _, stmt := range s.stmts {
+			fmt.Fprintf(enc, "%s%s", start, stmt.Cmd)
+			start = "\n"
+		}
+		enc.Close()
+		p(" type=%q codeToCopy=%q", "terminal", copyCmdStr.String())
+	} else {
+		p("``` { .text title=%q", "TERMINAL")
+		// Build up an HTML entity-escaped string, with the addition of encoding
+		// `\n` as `&newline;`
+		var copyCmdStr strings.Builder
+		var start string
+		for _, stmt := range s.stmts {
+			fmt.Fprintf(&copyCmdStr, "%s%s", start, stmt.Cmd)
+			start = "\n"
+		}
+		copyCmd := copyCmdStr.String()
+		copyCmd = html.EscapeString(copyCmd)
+		// We must do this replace after the html.EscapeString
+		copyCmd = strings.ReplaceAll(copyCmd, "\n", "&#10;")
+		p(" data-copy=%q", copyCmd)
+	}
+
 	p(" }\n")
 	var lastOutput string
 	for i, stmt := range s.stmts {

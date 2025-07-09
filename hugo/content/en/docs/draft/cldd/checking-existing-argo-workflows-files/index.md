@@ -22,9 +22,7 @@ This example comes from
 [the Argo Workflows project](https://github.com/argoproj/argo-workflows/blob/main/examples/arguments-parameters.yaml),
 but you should use any Argo workflow file that's relevant to your situation.
 
-```yaml { title="workflow.yml" codeToCopy="YXBpVmVyc2lvbjogYXJnb3Byb2ouaW8vdjFhbHBoYTEKa2luZDogV29ya2Zsb3cKbWV0YWRhdGE6CiAgZ2VuZXJhdGVOYW1lOiBhcmd1bWVudHMtcGFyYW1ldGVycy0Kc3BlYzoKICBlbnRyeXBvaW50OiBwcmludC1tZXNzYWdlCiAgYXJndW1lbnRzOgogICAgcGFyYW1ldGVyczoKICAgIC0gbmFtZTogbWVzc2FnZQogICAgICB2YWx1ZTogaGVsbG8gd29ybGQKICB0ZW1wbGF0ZXM6CiAgLSBuYW1lOiBwcmludC1tZXNzYWdlCiAgICBpbnB1dHM6CiAgICAgIHBhcmFtZXRlcnM6CiAgICAgIC0gbmFtZTogbWVzc2FnZQogICAgY29udGFpbmVyOgogICAgICBpbWFnZTogYnVzeWJveAogICAgICBjb21tYW5kOiBbZWNob10KICAgICAgYXJnczogWyJ7e2lucHV0cy5wYXJhbWV0ZXJzLm1lc3NhZ2V9fSJdCg==" }
-# filepath: workflow.yml
-
+``` { .yaml title="workflow.yml" }
 apiVersion: argoproj.io/v1alpha1
 kind: Workflow
 metadata:
@@ -48,7 +46,7 @@ spec:
 
 ## Validate the workflow file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1dvcmtmbG93JyBjdWUuZGV2L3gvYXJnb2NkQGxhdGVzdCB3b3JrZmxvdy55bWw=" }
+``` { .text title="TERMINAL" data-copy="cue vet -c -d &#39;#Workflow&#39; cue.dev/x/argocd@latest workflow.yml" }
 $ cue vet -c -d '#Workflow' cue.dev/x/argocd@latest workflow.yml
 ```
 

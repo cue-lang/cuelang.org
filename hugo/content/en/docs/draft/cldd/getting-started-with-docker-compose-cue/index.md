@@ -20,7 +20,7 @@ from
 CUE that uses schemas and modules from the
 [Central Registry](https://registry.cue.works)
 needs to exist within its own CUE module.
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+``` { .text title="TERMINAL" data-copy="cue mod init cue.example" }
 $ cue mod init cue.example
 ```
 You can choose any module name you like - it's easy to
@@ -33,9 +33,7 @@ repository, but the commands in this guide will work in any setup.
 Declare a compose file in CUE. This one is based on a PostgreSQL example from
 [`docker/awesome-compose`](https://github.com/docker/awesome-compose/tree/18f59bdb09ecf520dd5758fbf90dec314baec545/postgresql-pgadmin):
 
-```cue { title="compose.cue" codeToCopy="cGFja2FnZSBkZXYKCmltcG9ydCAiY3VlLmRldi94L2RvY2tlcmNvbXBvc2UiCgpmaWxlczogZXhhbXBsZTogZG9ja2VyY29tcG9zZS4jU2NoZW1hICYgewoJc2VydmljZXM6IHsKCQlwb3N0Z3JlczogewoJCQljb250YWluZXJfbmFtZTogInBvc3RncmVzIgoJCQlpbWFnZTogICAgICAgICAgInBvc3RncmVzOmxhdGVzdCIKCQkJZW52aXJvbm1lbnQ6IFsKCQkJCSJQT1NUR1JFU19VU0VSPSR7UE9TVEdSRVNfVVNFUn0iLAoJCQkJIlBPU1RHUkVTX1BBU1NXT1JEPSR7UE9TVEdSRVNfUFd9IiwKCQkJCSJQT1NUR1JFU19EQj0ke1BPU1RHUkVTX0RCfSIsCgkJCV0KCQkJcG9ydHM6IFsiNTQzMjo1NDMyIl0KCQkJcmVzdGFydDogImFsd2F5cyIKCQl9CgkJcGdhZG1pbjogewoJCQljb250YWluZXJfbmFtZTogInBnYWRtaW4iCgkJCWltYWdlOiAgICAgICAgICAiZHBhZ2UvcGdhZG1pbjQ6bGF0ZXN0IgoJCQllbnZpcm9ubWVudDogWwoJCQkJIlBHQURNSU5fREVGQVVMVF9FTUFJTD0ke1BHQURNSU5fTUFJTH0iLAoJCQkJIlBHQURNSU5fREVGQVVMVF9QQVNTV09SRD0ke1BHQURNSU5fUFd9IiwKCQkJXQoJCQlwb3J0czogWyI1MDUwOjgwIl0KCQkJcmVzdGFydDogImFsd2F5cyIKCQl9Cgl9Cn0K" }
-// filepath: compose.cue
-
+``` { .cue title="compose.cue" }
 package dev
 
 import "cue.dev/x/dockercompose"
@@ -82,7 +80,7 @@ command to update your CUE easily, so it reflects the new location.
 
 ## Tidy your local CUE module
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+``` { .text title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 Tidying a module is an important part of using curated modules from the
@@ -98,23 +96,21 @@ The Central Registry allows more requests from authenticated users.
 
 ## Validate your compose file
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+``` { .text title="TERMINAL" data-copy="cue vet -c" }
 $ cue vet -c
 ```
 Because `cue vet` doesn't display any errors, you know that the curated schema has validated your compose file.
 
 ## Export your compose file as YAML
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgY29tcG9zZS55YW1sIC1lIGZpbGVzLmV4YW1wbGU=" }
+``` { .text title="TERMINAL" data-copy="cue export --outfile compose.yaml -e files.example" }
 $ cue export --outfile compose.yaml -e files.example
 ```
 
 If you chose to export the `files.example` shown above,
 your validated YAML file will look like this:
 
-```yaml { title="compose.yaml" codeToCopy="c2VydmljZXM6CiAgcG9zdGdyZXM6CiAgICBjb250YWluZXJfbmFtZTogcG9zdGdyZXMKICAgIGVudmlyb25tZW50OgogICAgICAtIFBPU1RHUkVTX1VTRVI9JHtQT1NUR1JFU19VU0VSfQogICAgICAtIFBPU1RHUkVTX1BBU1NXT1JEPSR7UE9TVEdSRVNfUFd9CiAgICAgIC0gUE9TVEdSRVNfREI9JHtQT1NUR1JFU19EQn0KICAgIGltYWdlOiBwb3N0Z3JlczpsYXRlc3QKICAgIHBvcnRzOgogICAgICAtICI1NDMyOjU0MzIiCiAgICByZXN0YXJ0OiBhbHdheXMKICBwZ2FkbWluOgogICAgY29udGFpbmVyX25hbWU6IHBnYWRtaW4KICAgIGVudmlyb25tZW50OgogICAgICAtIFBHQURNSU5fREVGQVVMVF9FTUFJTD0ke1BHQURNSU5fTUFJTH0KICAgICAgLSBQR0FETUlOX0RFRkFVTFRfUEFTU1dPUkQ9JHtQR0FETUlOX1BXfQogICAgaW1hZ2U6IGRwYWdlL3BnYWRtaW40OmxhdGVzdAogICAgcG9ydHM6CiAgICAgIC0gIjUwNTA6ODAiCiAgICByZXN0YXJ0OiBhbHdheXMK" }
-# filepath: compose.yaml
-
+``` { .yaml title="compose.yaml" }
 services:
   postgres:
     container_name: postgres

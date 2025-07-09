@@ -19,7 +19,7 @@ from
 CUE that uses schemas and modules from the
 [Central Registry](https://registry.cue.works)
 needs to exist within its own CUE module.
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+``` { .text title="TERMINAL" data-copy="cue mod init cue.example" }
 $ cue mod init cue.example
 ```
 You can choose any module name you like - it's easy to
@@ -33,9 +33,7 @@ but the commands in this guide will work in any setup.
 Declare a Azure pipeline in CUE. This one is based on an example from
 [the Azure Pipelines documentation](https://learn.microsoft.com/azure/devops/pipelines/process/run-stages):
 
-```cue { title="pipeline.cue" codeToCopy="cGFja2FnZSBjaWNkCgppbXBvcnQgImN1ZS5kZXYveC9henVyZXBpcGVsaW5lcyIKCnBpcGVsaW5lczogZXhhbXBsZTogYXp1cmVwaXBlbGluZXMuI1BpcGVsaW5lICYgewoJdHJpZ2dlcjogWyJtYWluIl0KCXBvb2w6IHZtSW1hZ2U6ICJ1YnVudHUtbGF0ZXN0IgoJc3RhZ2VzOiBbewoJCXN0YWdlOiAgICAgICAiQnVpbGQiCgkJZGlzcGxheU5hbWU6ICJCdWlsZCBTdGFnZSIKCQlqb2JzOiBbewoJCQlqb2I6ICAgICAgICAgIkJ1aWxkSm9iIgoJCQlkaXNwbGF5TmFtZTogIkJ1aWxkIEpvYiIKCQkJc3RlcHM6IFt7CgkJCQlzY3JpcHQ6ICIiIgoJCQkJCWVjaG8gIlJlc3RvcmluZyBwcm9qZWN0IGRlcGVuZGVuY2llcy4uLiIKCQkJCQkiIiIKCQkJCWRpc3BsYXlOYW1lOiAiUmVzdG9yZSBkZXBlbmRlbmNpZXMiCgkJCX0sIHsKCQkJCXNjcmlwdDogIiIiCgkJCQkJZWNobyAiUnVubmluZyB1bml0IHRlc3RzLi4uIgoJCQkJCSIiIgoJCQkJZGlzcGxheU5hbWU6ICJSdW4gdW5pdCB0ZXN0cyIKCQkJfV0KCQl9XQoJfV0KfQo=" }
-// filepath: pipeline.cue
-
+``` { .cue title="pipeline.cue" }
 package cicd
 
 import "cue.dev/x/azurepipelines"
@@ -80,7 +78,7 @@ command to update your CUE easily, so it reflects the new location.
 
 ## Tidy your local CUE module
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+``` { .text title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 Tidying a module is an important part of using curated modules from the
@@ -96,23 +94,21 @@ The Central Registry allows more requests from authenticated users.
 
 ## Validate your pipeline
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+``` { .text title="TERMINAL" data-copy="cue vet -c" }
 $ cue vet -c
 ```
 Because `cue vet` doesn't display any errors, you know that the curated schema has validated your pipeline.
 
 ## Export your pipeline as YAML
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgcGlwZWxpbmUueW1sIC1lIHBpcGVsaW5lcy5leGFtcGxl" }
+``` { .text title="TERMINAL" data-copy="cue export --outfile pipeline.yml -e pipelines.example" }
 $ cue export --outfile pipeline.yml -e pipelines.example
 ```
 
 If you chose to export the `pipelines.example` shown above,
 your validated YAML pipeline will look like this:
 
-```yaml { title="pipeline.yml" codeToCopy="dHJpZ2dlcjoKICAtIG1haW4KcG9vbDoKICB2bUltYWdlOiB1YnVudHUtbGF0ZXN0CnN0YWdlczoKICAtIHN0YWdlOiBCdWlsZAogICAgZGlzcGxheU5hbWU6IEJ1aWxkIFN0YWdlCiAgICBqb2JzOgogICAgICAtIGpvYjogQnVpbGRKb2IKICAgICAgICBkaXNwbGF5TmFtZTogQnVpbGQgSm9iCiAgICAgICAgc3RlcHM6CiAgICAgICAgICAtIHNjcmlwdDogZWNobyAiUmVzdG9yaW5nIHByb2plY3QgZGVwZW5kZW5jaWVzLi4uIgogICAgICAgICAgICBkaXNwbGF5TmFtZTogUmVzdG9yZSBkZXBlbmRlbmNpZXMKICAgICAgICAgIC0gc2NyaXB0OiBlY2hvICJSdW5uaW5nIHVuaXQgdGVzdHMuLi4iCiAgICAgICAgICAgIGRpc3BsYXlOYW1lOiBSdW4gdW5pdCB0ZXN0cwo=" }
-# filepath: pipeline.yml
-
+``` { .yaml title="pipeline.yml" }
 trigger:
   - main
 pool:

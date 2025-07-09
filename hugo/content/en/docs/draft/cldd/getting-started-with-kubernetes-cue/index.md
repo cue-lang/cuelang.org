@@ -19,7 +19,7 @@ from
 <!--more-->
 
 ## Initialise your local CUE module
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+``` { .text title="TERMINAL" data-copy="cue mod init cue.example" }
 $ cue mod init cue.example
 ```
 CUE that uses schemas and modules from the
@@ -32,9 +32,7 @@ within its own CUE module. You can choose any module name you like - it's easy t
 
 If you don't have an example you want to
 use, create the `manifest.cue` file with this contents:
-```cue { title="manifest.cue" codeToCopy="cGFja2FnZSBrdWJlCgppbXBvcnQgYXBwcyAiY3VlLmRldi94L2s4cy5pby9hcGkvYXBwcy92MSIKCmFwcHMuI0RlcGxveW1lbnQgJiB7CglhcGlWZXJzaW9uOiAiYXBwcy92MSIKCWtpbmQ6ICAgICAgICJEZXBsb3ltZW50IgoJbWV0YWRhdGE6IHsKCQlsYWJlbHM6IGFwcDogImV4YW1wbGUxIgoJCW5hbWU6ICJleGFtcGxlMSIKCX0KCXNwZWM6IHsKCQlyZXBsaWNhczogMQoJCXNlbGVjdG9yOiBtYXRjaExhYmVsczogYXBwOiAiZXhhbXBsZTEiCgkJdGVtcGxhdGU6IHsKCQkJbWV0YWRhdGE6IGxhYmVsczogYXBwOiAiZXhhbXBsZTEiCgkJCXNwZWM6IGNvbnRhaW5lcnM6IFt7CgkJCQlpbWFnZTogIm5naW54OmxhdGVzdCIKCQkJCW5hbWU6ICAibmdpbngiCgkJCX1dCgkJfQoJfQp9Cg==" }
-// filepath: manifest.cue
-
+``` { .cue title="manifest.cue" }
 package kube
 
 import apps "cue.dev/x/k8s.io/api/apps/v1"
@@ -72,7 +70,7 @@ under the new path, you can use the
 command to update your CUE easily, so it reflects the new location.
 
 ## Tidy your CUE module
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+``` { .text title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 Tidying a module is an important part of using curated modules from the
@@ -87,21 +85,19 @@ and re-run this command.
 The Central Registry allows more requests from authenticated users.
 
 ## Validate your manifest
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+``` { .text title="TERMINAL" data-copy="cue vet -c" }
 $ cue vet -c
 ```
 Because `cue vet` doesn't display any errors, you know that the curated schema has validated your manifest.
 
 ## Export your manifest as YAML
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgbWFuaWZlc3QueW1s" }
+``` { .text title="TERMINAL" data-copy="cue export --outfile manifest.yml" }
 $ cue export --outfile manifest.yml
 ```
 
 If you used the example manifest from above, your validated YAML manifest will look like this:
 
-```yaml { title="manifest.yml" codeToCopy="YXBpVmVyc2lvbjogYXBwcy92MQpraW5kOiBEZXBsb3ltZW50Cm1ldGFkYXRhOgogIGxhYmVsczoKICAgIGFwcDogZXhhbXBsZTEKICBuYW1lOiBleGFtcGxlMQpzcGVjOgogIHJlcGxpY2FzOiAxCiAgc2VsZWN0b3I6CiAgICBtYXRjaExhYmVsczoKICAgICAgYXBwOiBleGFtcGxlMQogIHRlbXBsYXRlOgogICAgbWV0YWRhdGE6CiAgICAgIGxhYmVsczoKICAgICAgICBhcHA6IGV4YW1wbGUxCiAgICBzcGVjOgogICAgICBjb250YWluZXJzOgogICAgICAgIC0gaW1hZ2U6IG5naW54OmxhdGVzdAogICAgICAgICAgbmFtZTogbmdpbngK" }
-# filepath: manifest.yml
-
+``` { .yaml title="manifest.yml" }
 apiVersion: apps/v1
 kind: Deployment
 metadata:
