@@ -71,7 +71,7 @@ We fix our pipeline file by updating the highlighted line, so that the file
 becomes:
 
 {{{with upload "en" "fixed"}}}
-#codetab(pipeline.yml) hl_lines=3
+#codetab(pipeline.yml) hl_lines="1"
 #force
 -- pipeline.yml --
 steps:

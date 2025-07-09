@@ -80,7 +80,7 @@ that the field should actually be named `ports`.
 We fix our compose file by updating the highlighted line that `cue vet`
 mentioned, so that the file becomes:
 
-``` { .yaml title="compose.yml" hl_lines=[11,20] }
+``` { .yaml title="compose.yml" hl_lines="9 18" }
 services:
   postgres:
     container_name: postgres

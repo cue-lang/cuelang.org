@@ -75,7 +75,7 @@ that the field should actually be named `jobs`.
 We fix our workflow file by updating the highlighted line that `cue vet`
 mentioned, so that the file becomes:
 
-``` { .yaml title="workflow.yml" hl_lines=7 }
+``` { .yaml title="workflow.yml" hl_lines="5" }
 name: Go
 on:
   pull_request:
