@@ -84,7 +84,7 @@ We fix our configuration file by updating the highlighted line, so that the
 file becomes:
 
 {{{with upload "en" "fixed"}}}
-#codetab(.goreleaser.yml) hl_lines=9
+#codetab(.goreleaser.yml) hl_lines="7"
 #force
 -- .goreleaser.yml --
 project_name: example

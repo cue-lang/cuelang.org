@@ -83,7 +83,7 @@ We fix our workflow file by updating the highlighted line that `cue vet`
 mentioned, so that the file becomes:
 
 {{{with upload "en" "fixed"}}}
-#codetab(workflow.yml) hl_lines=7
+#codetab(workflow.yml) hl_lines="5"
 #force
 -- workflow.yml --
 name: Go

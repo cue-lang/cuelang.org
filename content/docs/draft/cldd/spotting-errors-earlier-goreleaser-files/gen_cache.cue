@@ -9,7 +9,7 @@ package site
 							cache: {
 								upload: {
 									broken: "hIoyja0apQRcm7aO5x/PeGkHit8S66YFW12b0b5qLyk="
-									fixed:  "56tFyxKgR1od3h4zXVmfmDzqKwA2OVQnnOCalgGD43k="
+									fixed:  "PdeRzisfgzRimtwFTUGBRnMXap5t3n8xluiAhRjfDDU="
 								}
 								multi_step: {
 									hash:       "EJ0CH82VGSH1G3UEVC37AKEVPFMTJQKUOO6IPCEKL4S3CV7U3TDG===="

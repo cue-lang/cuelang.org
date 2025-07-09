@@ -76,7 +76,7 @@ that the field should actually be named `dockers`.
 We fix our configuration file by updating the highlighted line, so that the
 file becomes:
 
-``` { .yaml title=".goreleaser.yml" hl_lines=9 }
+``` { .yaml title=".goreleaser.yml" hl_lines="7" }
 project_name: example
 builds:
   - goos: [ linux, windows, darwin ]

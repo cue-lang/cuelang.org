@@ -72,7 +72,7 @@ that the field should actually be named `script`.
 We fix our pipeline file by updating the highlighted line that `cue vet`
 mentioned, so that the file becomes:
 
-``` { .yaml title="pipeline.yml" hl_lines=9 }
+``` { .yaml title="pipeline.yml" hl_lines="7" }
 default:
   image: ruby:3.2
 workflow:
