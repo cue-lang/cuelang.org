@@ -47,7 +47,7 @@ a: 1
 b: 2
 c: 3
 {{< /code-tab >}}
-{{< code-tab name="b.yml" language="yml" area="top-left" >}}
+{{< code-tab name="b.yml" language="yaml" area="top-left" >}}
 a: a string
 b: true
 c: 42

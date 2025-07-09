@@ -20,7 +20,7 @@ a: 1
 b: "two"
 c: 33.3
 {{< /code-tab >}}
-{{< code-tab name="b.yml" language="yml" area="top-left" >}}
+{{< code-tab name="b.yml" language="yaml" area="top-left" >}}
 a: 22
 b: "some string"
 {{< /code-tab >}}

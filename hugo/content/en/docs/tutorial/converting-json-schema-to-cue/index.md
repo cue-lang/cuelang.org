@@ -150,7 +150,7 @@ considerably more concise and readable.
 Create some data files that contain restaurant details:
 
 {{< code-tabs >}}
-{{< code-tab name="split_pea.yml" language="yml" area="top-left" >}}
+{{< code-tab name="split_pea.yml" language="yaml" area="top-left" >}}
 name: The Split Pea
 cuisine: Contemporary
 tables:
@@ -160,7 +160,7 @@ tables:
 {{< /code-tab >}}{{< /code-tabs >}}
 
 {{< code-tabs >}}
-{{< code-tab name="pomodoro.yml" language="yml" area="top-left" >}}
+{{< code-tab name="pomodoro.yml" language="yaml" area="top-left" >}}
 name: Il Pomodoro Marcio
 cuisine: Italian
 tables:
@@ -193,7 +193,7 @@ are some validation errors.
 Fix the data validation error by updating your `pomodoro.yml` file:
 
 {{< code-tabs >}}
-{{< code-tab name="pomodoro.yml" language="yml" area="top-left" >}}
+{{< code-tab name="pomodoro.yml" language="yaml" area="top-left" >}}
 name: Il Pomodoro Marcio
 cuisine: Italian
 tables:

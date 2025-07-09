@@ -16,7 +16,7 @@ demonstrates how to export these fields using `cue export -e`.
 <!--more-->
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top" >}}
+{{< code-tab name="data.yml" language="yaml" area="top" >}}
 # data.yml contains a field we want to export with
 # the "cue export" command's "-e" parameter
 

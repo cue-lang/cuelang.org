@@ -26,7 +26,7 @@ This example is adapted from
 -- but the deliberate errors introduced here aren't part of the original file,
 of course!
 
-```yml { title="pipeline.yml" codeToCopy="ZGVmYXVsdDoKICBpbWFnZTogcnVieTozLjIKd29ya2Zsb3c6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSApjcmVhdGUtcGFnZXM6CiAgc2NyaXB0czoKICAgIC0gZ2VtIGluc3RhbGwgYnVuZGxlcgogICAgLSBidW5kbGUgaW5zdGFsbAogICAgLSBidW5kbGUgZXhlYyBqZWt5bGwgYnVpbGQgLWQgcHVibGljCiAgcGFnZXM6IHRydWUKICBydWxlczoKICAgIC0gaWY6ICRDSV9DT01NSVRfQlJBTkNIID09ICJtYWluIgo=" }
+```yaml { title="pipeline.yml" codeToCopy="ZGVmYXVsdDoKICBpbWFnZTogcnVieTozLjIKd29ya2Zsb3c6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSApjcmVhdGUtcGFnZXM6CiAgc2NyaXB0czoKICAgIC0gZ2VtIGluc3RhbGwgYnVuZGxlcgogICAgLSBidW5kbGUgaW5zdGFsbAogICAgLSBidW5kbGUgZXhlYyBqZWt5bGwgYnVpbGQgLWQgcHVibGljCiAgcGFnZXM6IHRydWUKICBydWxlczoKICAgIC0gaWY6ICRDSV9DT01NSVRfQlJBTkNIID09ICJtYWluIgo=" }
 # filepath: pipeline.yml
 
 default:
@@ -74,7 +74,7 @@ that the field should actually be named `script`.
 We fix our pipeline file by updating the highlighted line that `cue vet`
 mentioned, so that the file becomes:
 
-```yml { title="pipeline.yml" codeToCopy="ZGVmYXVsdDoKICBpbWFnZTogcnVieTozLjIKd29ya2Zsb3c6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSApjcmVhdGUtcGFnZXM6CiAgc2NyaXB0OgogICAgLSBnZW0gaW5zdGFsbCBidW5kbGVyCiAgICAtIGJ1bmRsZSBpbnN0YWxsCiAgICAtIGJ1bmRsZSBleGVjIGpla3lsbCBidWlsZCAtZCBwdWJsaWMKICBwYWdlczogdHJ1ZQogIHJ1bGVzOgogICAgLSBpZjogJENJX0NPTU1JVF9CUkFOQ0ggPT0gIm1haW4iCg==" hl_lines=9 }
+```yaml { title="pipeline.yml" codeToCopy="ZGVmYXVsdDoKICBpbWFnZTogcnVieTozLjIKd29ya2Zsb3c6CiAgcnVsZXM6CiAgICAtIGlmOiAkQ0lfQ09NTUlUX0JSQU5DSApjcmVhdGUtcGFnZXM6CiAgc2NyaXB0OgogICAgLSBnZW0gaW5zdGFsbCBidW5kbGVyCiAgICAtIGJ1bmRsZSBpbnN0YWxsCiAgICAtIGJ1bmRsZSBleGVjIGpla3lsbCBidWlsZCAtZCBwdWJsaWMKICBwYWdlczogdHJ1ZQogIHJ1bGVzOgogICAgLSBpZjogJENJX0NPTU1JVF9CUkFOQ0ggPT0gIm1haW4iCg==" hl_lines=9 }
 # filepath: pipeline.yml
 
 default:

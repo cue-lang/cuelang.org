@@ -68,7 +68,7 @@ Place this information in it, including the deliberate mistake in the `species`
 field:
 
 {{< code-tabs >}}
-{{< code-tab name="validating-yaml-with-cue/charlie.yml" language="yml" area="top-left" >}}
+{{< code-tab name="validating-yaml-with-cue/charlie.yml" language="yaml" area="top-left" >}}
 name:
   first: Charlie
   last:  Cartwright
@@ -163,7 +163,7 @@ Update `charlie.yml` to:
 Your corrected data file should read as follows:
 
 {{< code-tabs >}}
-{{< code-tab name="validating-yaml-with-cue/charlie.yml" language="yml" area="top-left" >}}
+{{< code-tab name="validating-yaml-with-cue/charlie.yml" language="yaml" area="top-left" >}}
 name:
   first: Charlie
   last:  Cartwright
@@ -201,7 +201,7 @@ Add a second data file containing the details of another pet.
 Create a data file named `toby.yml` to hold Toby the dog's details:
 
 {{< code-tabs >}}
-{{< code-tab name="validating-yaml-with-cue/toby.yml" language="yml" area="top-left" >}}
+{{< code-tab name="validating-yaml-with-cue/toby.yml" language="yaml" area="top-left" >}}
 name:
   first: Toby
   last: Dog

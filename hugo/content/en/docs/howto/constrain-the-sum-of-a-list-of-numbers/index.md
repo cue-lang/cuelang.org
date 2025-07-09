@@ -36,7 +36,7 @@ bad_list: [...number]
 _good_sum: <=100 & list.Sum(good_list)
 _bad_sum:  <=99.5 & list.Sum(bad_list)
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="top-right" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-right" >}}
 good_list: [ 1,2,3,4 ]
 bad_list:  [ 1,2,3,100.5 ]
 {{< /code-tab >}}

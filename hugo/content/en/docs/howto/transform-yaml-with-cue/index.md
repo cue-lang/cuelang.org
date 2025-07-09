@@ -58,7 +58,7 @@ output: petsBySpecies: {
 	]}
 }
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="top-right" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-right" >}}
 owner:
   name: Dorothy Cartwright
   address: Ripon, North Yorkshire, England

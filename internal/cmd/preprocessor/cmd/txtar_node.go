@@ -256,6 +256,12 @@ func analyseFilename(p string) (res filenameAnalysis) {
 		res.Ext = b[i+1:]
 
 		res.Language = res.Ext
+
+		// TODO: does this belong elsewhere?
+		switch res.Ext {
+		case "yml", "yaml":
+			res.Language = "yaml"
+		}
 	}
 	switch res.Basename {
 	case "out", "stdout":
