@@ -86,7 +86,7 @@ We fix our compose file by updating the highlighted line that `cue vet`
 mentioned, so that the file becomes:
 
 {{{with upload "en" "fixed"}}}
-#codetab(compose.yml) hl_lines=[11,20]
+#codetab(compose.yml) hl_lines="9 18"
 #force
 -- compose.yml --
 services:

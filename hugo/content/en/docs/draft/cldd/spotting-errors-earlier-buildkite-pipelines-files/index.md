@@ -63,7 +63,7 @@ that our `step` field should actually be named `steps`.
 We fix our pipeline file by updating the highlighted line, so that the file
 becomes:
 
-``` { .yaml title="pipeline.yml" hl_lines=3 }
+``` { .yaml title="pipeline.yml" hl_lines="1" }
 steps:
   - name: ":golang: test"
     command: "go test -v ./..."
