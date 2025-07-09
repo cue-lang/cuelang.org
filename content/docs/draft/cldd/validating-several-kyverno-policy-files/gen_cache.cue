@@ -8,12 +8,12 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"file 1": "B2s4yQgP7kP583uO8QoepHZ/waJmxfRCtHytVNJ+kKo="
-									"file 2": "hpQ6oGmxp9Rv4EBIQl886KXUyTeSg8zASifT/tDEp9k="
-									cue:      "v9x8MdCNtc/jMXmeiMopWdAxm88m+Iaf3pO652olmiY="
+									"file 1": "X6kGoVCSgaXstHKa/P3U1PxBcR+mDpv2NnDxemLfXlI="
+									"file 2": "C7P89LQfOq9yGr0EkmA8eNJ/kbNXruigexVtgT8Z0gE="
+									cue:      "VfRrKHXPicDCf24mOfQXdagccf4GGEKz6xhpfsHy60c="
 								}
 								multi_step: {
-									hash:       "MLCA5VNBIGULQIS175N0J6KSHBL3FP6RA7OL446Q4M38O800T3E0===="
+									hash:       "MPPQRQD643TBD654HL8CQ7L5RT5OSGL7Q8AH8KCAEPVS22BBB6DG===="
 									scriptHash: "4S0LU7LRFGIUFFOPOD5HJECSE4I7IOBD97678TG6J4T7RHABI1O0===="
 									steps: [{
 										doc:      "# Registry auth"
