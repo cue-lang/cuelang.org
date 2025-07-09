@@ -16,9 +16,7 @@ package cmd
 
 import (
 	"bytes"
-	"encoding/base64"
 	"fmt"
-	"path/filepath"
 	"strings"
 )
 
@@ -158,15 +156,7 @@ func (u *uploadNode) clddWriteTransformTo(b *bytes.Buffer) error {
 	f := u.archive.Files[0]
 	a := u.analysis.fileNames[0]
 
-	// Because we output the target filename as a comment (for now)
-	// we need to emit a codeToCopy property that does not include
-	// that comment. And because we are effectively rendering something
-	// that the user will see at this point, we also need to perform
-	// the random replace here.
-	userFile := u.rf.page.config.randomReplace(string(f.Data))
-	codeToCopy := base64.StdEncoding.EncodeToString([]byte(userFile))
-
-	p("```%s { title=%q codeToCopy=%q", a.Language, f.Name, codeToCopy)
+	p("``` { .%s title=%q", a.Language, f.Name)
 
 	// Work out if there are any code-tab options specified via the codetab tag.
 	// If there are, add them.
@@ -179,19 +169,6 @@ func (u *uploadNode) clddWriteTransformTo(b *bytes.Buffer) error {
 	}
 
 	p(" }\n")
-
-	// As a temporary measure, render the target filename as a comment
-	var commentPrefix string
-	switch ext := filepath.Ext(f.Name); ext {
-	case ".go", ".cue", ".json":
-		commentPrefix = "//"
-	case ".yml", ".yaml":
-		commentPrefix = "#"
-	default:
-		return u.errorf("failed to determine line comment prefix for %q file", ext)
-	}
-	p("%s filepath: %s\n", commentPrefix, f.Name)
-	p("\n")
 
 	p("%s", f.Data)
 	p("```")

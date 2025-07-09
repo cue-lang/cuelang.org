@@ -3,6 +3,7 @@
 # skipping formatting a file in another upload node.
 
 unquote content/dir/en.md golden/content/dir/en.md.writeBack
+unquote content/docs/draft/cldd/example/en.md
 
 # Run the preprocessor
 exec preprocessor execute --debug=all
@@ -18,6 +19,7 @@ cmp content/dir/en.md.writeBack golden/content/dir/en.md.writeBack
 
 # Verify that the target files match the source contents
 cmp hugo/content/en/dir/index.md golden/hugo/content/en/dir/index.md
+cmp hugo/content/en/docs/draft/cldd/example/index.md golden/hugo/content/en/docs/draft/cldd/example/index.md
 
 # Re-run the preprocessor and ensure we have a cache hit
 exec preprocessor execute --debug=all
@@ -143,6 +145,31 @@ Hello!
 >
 >{{{with script "en" "subst env var"}}}
 >echo $CUELANG_CUE_DEFAULT
+>{{{end}}}
+-- content/docs/draft/cldd/example/page.cue --
+package site
+
+content: docs: draft: cldd: example: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/docs/draft/cldd/example/en.md --
+>---
+>title: cldd
+>---
+>
+>{{{with upload "en" "json-superset"}}}
+>-- in.cue --
+>// A doc comment
+>map: {
+>	member1: 3 // a line comment
+>	member2: 4
+>}
+>{{{end}}}
+>
+>{{{with script "en" "two commands"}}}
+>echo "Hello world"
+>true
 >{{{end}}}
 -- golden/content/dir/en.md.writeBack --
 >---
@@ -274,6 +301,24 @@ $ nonexistent command
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyB2MC45LjAtYWxwaGEuMw==" }
 $ echo v0.9.0-alpha.3
 v0.9.0-alpha.3
+```
+-- golden/hugo/content/en/docs/draft/cldd/example/index.md --
+---
+title: cldd
+---
+
+``` { .cue title="in.cue" }
+// A doc comment
+map: {
+	member1: 3 // a line comment
+	member2: 4
+}
+```
+
+``` { .shell-session title="TERMINAL" data-copy="echo &#34;Hello world&#34;&#10;true" }
+$ echo "Hello world"
+Hello world
+$ true
 ```
 -- golden/content/dir/gen_cache.cue --
 package site
