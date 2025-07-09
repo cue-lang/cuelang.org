@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1": "dFRc3jXHZCjepRqvUORxQs9dBtsUx6nsUhdCdIC64Xo="
-								"config.cue":    "KdtcNlGeYDBjHj2V1v5lXzwDnFD+idC8oyf8mR1FLzg="
+								"schema-v0.0.1": "p6Kf107TEqDUgENYEEkyNxT594gvfWNzSgtjmQj9aog="
+								"config.cue":    "GewpUSC35lEv41F3gtlSqsHCQA/R+b3OoQL4Ia6X3Qg="
 							}
 							multi_step: {
-								hash:       "KBNU44RHKL2LEC9J663T28L5A8NKSK6RQMQ6QLGS90F8O25HVRQG===="
+								hash:       "M9DRU8DIRBJ4T9Q2K4M7M87QP955PVV7DUJ052A3934OOEVJSQG0===="
 								scriptHash: "JHP3LU89JJU18OTK4RDNQ1EAJVDUO2E7GM3JNCB653S5V0GOT6NG===="
 								steps: [{
 									doc:      "# Git config."
