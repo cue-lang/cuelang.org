@@ -26,7 +26,7 @@ This example comes from the
 repository -- but the deliberate errors introduced here aren't part of the
 original file, of course!
 
-```yml { title="pipeline.yml" codeToCopy="c3RlcDoKICAtIG5hbWU6ICI6Z29sYW5nOiB0ZXN0IgogICAgY29tbWFuZDogImdvIHRlc3QgLXYgLi8uLi4iCiAgLSBuYW1lOiAiOmdvbGFuZzogdmV0IgogICAgY29tbWFuZDogImdvIHZldCAuLy4uLiIK" }
+```yaml { title="pipeline.yml" codeToCopy="c3RlcDoKICAtIG5hbWU6ICI6Z29sYW5nOiB0ZXN0IgogICAgY29tbWFuZDogImdvIHRlc3QgLXYgLi8uLi4iCiAgLSBuYW1lOiAiOmdvbGFuZzogdmV0IgogICAgY29tbWFuZDogImdvIHZldCAuLy4uLiIK" }
 # filepath: pipeline.yml
 
 step:
@@ -65,7 +65,7 @@ that our `step` field should actually be named `steps`.
 We fix our pipeline file by updating the highlighted line, so that the file
 becomes:
 
-```yml { title="pipeline.yml" codeToCopy="c3RlcHM6CiAgLSBuYW1lOiAiOmdvbGFuZzogdGVzdCIKICAgIGNvbW1hbmQ6ICJnbyB0ZXN0IC12IC4vLi4uIgogIC0gbmFtZTogIjpnb2xhbmc6IHZldCIKICAgIGNvbW1hbmQ6ICJnbyB2ZXQgLi8uLi4iCg==" hl_lines=3 }
+```yaml { title="pipeline.yml" codeToCopy="c3RlcHM6CiAgLSBuYW1lOiAiOmdvbGFuZzogdGVzdCIKICAgIGNvbW1hbmQ6ICJnbyB0ZXN0IC12IC4vLi4uIgogIC0gbmFtZTogIjpnb2xhbmc6IHZldCIKICAgIGNvbW1hbmQ6ICJnbyB2ZXQgLi8uLi4iCg==" hl_lines=3 }
 # filepath: pipeline.yml
 
 steps:

@@ -31,7 +31,7 @@ f1: string
 // integer over 10
 f2!: int & >10
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="top-right" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-right" >}}
 # f1 is actually an integer
 f1: 123
 

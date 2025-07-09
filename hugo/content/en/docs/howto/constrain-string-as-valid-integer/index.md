@@ -33,7 +33,7 @@ import "strconv"
 s1?: "\(strconv.Atoi(s1))"
 s2?: "\(strconv.Atoi(s2))"
 {{< /code-tab >}}
-{{< code-tab name="data.yml" language="yml" area="top-right" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-right" >}}
 # s1 is a valid integer
 s1: "137"
 

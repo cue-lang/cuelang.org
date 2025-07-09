@@ -230,7 +230,7 @@ func main() {
 Here's the data we'll check against `#Schema`:
 
 {{< code-tabs >}}
-{{< code-tab name="data.yml" language="yml" area="top-left" >}}
+{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
 name: Charlie Cartwright
 age: 99
 {{< /code-tab >}}{{< /code-tabs >}}

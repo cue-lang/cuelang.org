@@ -255,7 +255,14 @@ func analyseFilename(p string) (res filenameAnalysis) {
 		res.Basename = b[:i]
 		res.Ext = b[i+1:]
 
-		res.Language = res.Ext
+		// Here we special case the translation between extension and language as required. ".yml"
+		// is commonly used, but the language is "yaml"
+		switch res.Ext {
+		case "yml":
+			res.Language = "yaml"
+		default:
+			res.Language = res.Ext
+		}
 	}
 	switch res.Basename {
 	case "out", "stdout":

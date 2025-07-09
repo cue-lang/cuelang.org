@@ -167,7 +167,7 @@ Let's check the details of a well-known animal,
 [Jonathan the tortoise](https://en.wikipedia.org/wiki/Jonathan_(tortoise)):
 
 {{< code-tabs >}}
-{{< code-tab name="jonathan.yml" language="yml" area="top-left" >}}
+{{< code-tab name="jonathan.yml" language="yaml" area="top-left" >}}
 name: Jonathan
 kind: tortoise
 website: https://en.wikipedia.org/wiki/Jonathan_(tortoise)
