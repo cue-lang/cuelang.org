@@ -45,7 +45,7 @@ This tutorial is written using the following version of `cue`:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.13.2
+cue version v0.14.0-alpha.2.0.20250711132054-9ca9609cf83c
 ...
 ```
 

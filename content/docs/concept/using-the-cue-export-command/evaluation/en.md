@@ -25,7 +25,7 @@ package one
 data: true
 -- out --
 build constraints exclude all CUE files in .:
-    1.cue: package is one, want two
+    ./1.cue: package is one, want two
 {{{end}}}
 
 ## Default expression
