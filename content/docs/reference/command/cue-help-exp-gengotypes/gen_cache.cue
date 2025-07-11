@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "0K1QKLV995TAFAP3NJ05PR2SA9A8OT6IPDUP0RGV5M1HFRB3II90===="
-									scriptHash: "MM2E6UR5E0775JOB4GJDK4QBPN6GDGUEBJ5S4AILV6NSMRV6TVC0===="
+									hash:       "63QN5DGAHBR76IM4DT10NKFVJ0QS5VRQJS8PI8OHK4HNET68DJL0===="
+									scriptHash: "KEVQV9E3M2P3LGCG6S9OT28JRR1C50QTKBTMAV3J1KNRRCQ4220G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.2:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0-alpha.2.0.20250711132054-9ca9609cf83c:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -30,7 +30,8 @@ package site
 
 												To ensure that the resulting Go code works, any imported CUE packages or
 												referenced CUE definitions are transitively generated as well.
-												Generated code is placed in cue_types*_gen.go files in each CUE package directory.
+												Code is generated in each CUE package directory at cue_types_${pkgname}_gen.go,
+												where the package name is omitted from the filename if it is implied by the import path.
 
 												Generated Go type and field names may differ from the original CUE names by default.
 												For instance, an exported definition "#foo" becomes "Foo",

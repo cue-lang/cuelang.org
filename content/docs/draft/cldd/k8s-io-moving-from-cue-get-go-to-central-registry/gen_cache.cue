@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"manifest pre":  "KscvM8yZ5S5rJvd4hr/Gkmm3gJW3Wl7OnhVvbAiLimQ="
-									"manifest post": "lcFPgkNorofIrDR5OE+mxfbZwimZYBAYmTFzybn2kBI="
+									"manifest pre":  "m1c0eLnZSUklgxtha1Vj7zYHco38nrU5w8U+T0RsPS4="
+									"manifest post": "mepF3WtRMw8X2CC13vrgzqC3uDqVI8Zj9J4fJZUpUC0="
 								}
 								multi_step: {
-									hash:       "KJ05U12MGRNCAM45087I697R0BPVBHISB02RHPTNH6687H4KPF2G===="
+									hash:       "KRIQPLK8SQ34JEU6LNSUO5HERD3IUFMK2AVEHM0SHHO03TQLJCF0===="
 									scriptHash: "K90I6LJNC9VSN0KM27SFUQD961EJ6QQ6HHKQR4VJ7C1D1NJBO7C0===="
 									steps: [{
 										doc:      "# Caches."
@@ -99,7 +99,7 @@ package site
 										output: """
 												module: "kube.example"
 												language: {
-												\tversion: "v0.13.2"
+												\tversion: "v0.14.0"
 												}
 												deps: {
 												\t"cue.dev/x/k8s.io@v0": {
