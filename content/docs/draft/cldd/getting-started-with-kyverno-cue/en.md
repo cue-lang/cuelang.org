@@ -16,7 +16,7 @@ provides a well-known location for well-known schemas, including those for the
 [different policy types](https://kyverno.io/policies) enforced by
 [Kyverno](https://kyverno.io/).
 This guide shows you how to get started defining your Kyverno policies in CUE using
-[a curated module](/getting-started/kyverno/)
+[a curated module](../curated-module-kyverno.md)
 from
 [the schema library](/getting-started/schema-library/).
 

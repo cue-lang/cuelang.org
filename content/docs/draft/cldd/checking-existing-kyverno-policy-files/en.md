@@ -17,7 +17,7 @@ before they are applied by Kyverno.
 
 This guide shows you how to use the `cue` command to validate the structure of
 a Kyverno policy file using
-[a curated module](/getting-started/kyverno/) from the
+[a curated module](../curated-module-kyverno.md) from the
 CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
 

@@ -19,7 +19,7 @@ their Go source code. By using the curated schemas published on the
 now you can get started creating validated Kubernetes manifests in minutes!
 
 This guide shows you how to get started defining your Kubernetes configurations using
-[a curated module](/getting-started/kubernetes/)
+[a curated module](../curated-module-kubernetes.md)
 from
 [the schema library](/getting-started/schema-library/).
 

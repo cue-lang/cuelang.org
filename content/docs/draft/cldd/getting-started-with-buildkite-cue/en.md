@@ -16,7 +16,7 @@ provides a well-known location for well-known schemas, including those for
 [YAML pipeline files](https://buildkite.com/docs/pipelines/configure/step-types)
 used by [Buildkite pipelines](https://buildkite.com/docs/pipelines).
 This guide shows you how to get started defining your Buildkite pipelines in CUE using
-[a curated module](/getting-started/buildkite-pipelines/)
+[a curated module](../curated-module-buildkite-pipelines.md)
 from
 [the schema library](/getting-started/schema-library/).
 

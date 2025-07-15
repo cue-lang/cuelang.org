@@ -8,7 +8,7 @@ provides a well-known location for well-known schemas, including those for
 [YAML pipeline files](https://docs.gitlab.com/ci/yaml/)
 used by [GitLab CI/CD](https://about.gitlab.com/solutions/continuous-integration/).
 This guide shows you how to get started defining your GitLab CI/CD pipelines in CUE using
-[a curated module](/getting-started/gitlab-ci-cd-pipelines/)
+[a curated module](../curated-module-gitlab-cicd.md)
 from
 [the schema library](/getting-started/schema-library/).
 

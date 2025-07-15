@@ -8,7 +8,7 @@ provides a well-known location for well-known schemas, including those for
 [the YAML configuration files](https://goreleaser.com/customization/)
 used by [GoReleaser](https://goreleaser.com/).
 This guide shows you how to get started defining your GoReleaser configurations using
-[a curated module](/getting-started/goreleaser/)
+[a curated module](../curated-module-goreleaser.md)
 from
 [the schema library](/getting-started/schema-library/).
 

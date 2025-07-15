@@ -8,7 +8,7 @@ provides a well-known location for well-known schemas, including those for
 [YAML pipeline files](https://learn.microsoft.com/azure/devops/pipelines/yaml-schema)
 used by [Azure pipelines](https://learn.microsoft.com/azure/devops/pipelines).
 This guide shows you how to get started defining your Azure pipelines in CUE using
-[a curated module](/getting-started/azure-pipelines/)
+[a curated module](../curated-module-azure-pipelines.md)
 from
 [the schema library](/getting-started/schema-library/).
 
