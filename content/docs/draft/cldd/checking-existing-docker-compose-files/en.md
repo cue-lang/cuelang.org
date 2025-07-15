@@ -18,7 +18,7 @@ systems.
 
 This guide shows you how to use the `cue` command to validate a compose file
 using
-[a curated module](/getting-started/docker-compose/) from the
+[a curated module](../curated-module-docker-compose.md) from the
 CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
 

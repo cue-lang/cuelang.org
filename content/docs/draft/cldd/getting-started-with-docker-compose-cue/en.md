@@ -17,7 +17,7 @@ provides a well-known location for well-known schemas, including those for
 used by [Docker Compose](https://docs.docker.com/compose/) and
 [podman-compose](https://github.com/containers/podman-compose).
 This guide shows you how to get started defining your compose files in CUE using
-[a curated module](/getting-started/docker-compose/)
+[a curated module](../curated-module-docker-compose.md)
 from
 [the schema library](/getting-started/schema-library/).
 

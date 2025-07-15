@@ -13,7 +13,7 @@ further downstream and waste time, resources, and focus?
 
 This guide shows what happens when the `cue vet` command finds a problem with a
 Buildkite pipeline file using a
-[curated module](/getting-started/buildkite-pipelines/) from the
+[curated module](../curated-module-buildkite-pipelines.md) from the
 CUE [Central Registry](https://registry.cue.works),
 and how it highlights the data we need to fix.
 

@@ -18,7 +18,7 @@ systems.
 
 This guide shows you how to use the `cue` command to validate an Azure pipeline
 file using
-[a curated module](/getting-started/azure-pipelines/) from the
+[a curated module](../curated-module-azure-pipelines.md) from the
 CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
 

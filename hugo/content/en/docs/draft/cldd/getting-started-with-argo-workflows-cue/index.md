@@ -8,7 +8,7 @@ provides a well-known location for well-known schemas, including those for the
 [YAML workflow files](https://argo-workflows.readthedocs.io/en/latest/fields/)
 used by [Argo Workflows](https://argo-workflows.readthedocs.io/en/latest/).
 This guide shows you how to get started defining your Argo workflows in CUE using
-[a curated module](/getting-started/argo-workflows/)
+[a curated module](../curated-module-argo-workflows.md)
 from
 [the schema library](/getting-started/schema-library/).
 

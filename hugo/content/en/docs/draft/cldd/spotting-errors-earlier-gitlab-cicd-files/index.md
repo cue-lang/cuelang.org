@@ -13,7 +13,7 @@ further downstream and waste time, resources, and focus?
 
 This guide shows what happens when the `cue vet` command finds a problem with a
 GitLab CI/CD pipeline file using a
-[curated module](/getting-started/gitlab-ci-cd-pipelines/) from the
+[curated module](../curated-module-gitlab-cicd.md) from the
 CUE [Central Registry](https://registry.cue.works),
 and how it highlights the data we need to fix.
 

@@ -13,7 +13,7 @@ further downstream and waste time, resources, and focus?
 
 This guide shows what happens when the `cue vet` command finds a problem with a
 GitHub Actions workflow file using a
-[curated module](/getting-started/github-actions-workflows/) from the
+[curated module](../curated-module-github-actions.md) from the
 CUE [Central Registry](https://registry.cue.works),
 and how it highlights the data we need to fix.
 

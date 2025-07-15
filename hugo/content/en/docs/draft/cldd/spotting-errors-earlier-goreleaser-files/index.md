@@ -13,7 +13,7 @@ further downstream and waste time, resources, and focus?
 
 This guide shows what happens when the `cue vet` command finds a problem with a
 GoReleaser configuration file using a
-[curated module](/getting-started/goreleaser/) from the
+[curated module](../curated-module-goreleaser.md) from the
 CUE [Central Registry](https://registry.cue.works),
 and how it highlights the data we need to fix.
 

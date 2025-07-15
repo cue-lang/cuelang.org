@@ -18,7 +18,7 @@ systems.
 
 This guide shows you how to use the `cue` command to validate a Buildkite
 pipeline file using
-[a curated module](/getting-started/buildkite-pipelines/) from the
+[a curated module](../curated-module-buildkite-pipelines.md) from the
 CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
 

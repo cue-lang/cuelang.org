@@ -16,7 +16,7 @@ provides a well-known location for well-known schemas, including those for
 [YAML workflow files](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 used by [GitHub Actions](https://github.com/features/actions).
 This guide shows you how to get started defining your GitHub Actions workflows in CUE using
-[a curated module](/getting-started/github-actions-workflows/)
+[a curated module](../curated-module-github-actions.md)
 from
 [the schema library](/getting-started/schema-library/).
 
