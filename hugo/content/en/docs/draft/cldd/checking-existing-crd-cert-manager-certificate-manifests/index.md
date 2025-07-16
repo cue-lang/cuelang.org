@@ -1,0 +1,69 @@
+---
+title: Checking Certificate CRD manifests using CUE
+---
+
+The easiest way to start taking advantage of CUE’s powerful validation is to
+use it to check Kubernetes CRD manifests before deploying them. By adding this
+check to your development or deployment process you can catch and fix
+structural errors before they cause operational problems.
+
+This guide shows you how to validate a Certificate manifest using the
+[`crd/cert-manager.io`](../curated-module-crd-cert-manager.md)
+curated module from the CUE [Central Registry](/products/central-registry) --
+all without writing any schemas or policies in CUE.
+
+## Choose a manifest
+
+This small example issues a certificate for a test service,
+but you should use a Certificate manifest that's relevant to your situation:
+
+``` { .yaml title="manifest.yaml" }
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: test-certificate
+  namespace: default
+spec:
+  secretName: test-certificate-tls
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  subject:
+    organizations:
+    - example-org
+  commonName: test.example.com
+  dnsNames:
+  - test.example.com
+  issuerRef:
+    name: test-issuer
+    kind: ClusterIssuer
+```
+
+## Validate the manifest
+
+``` { .text title="TERMINAL" data-copy="cue vet -c -d &#39;#Certificate&#39; cue.dev/x/crd/cert-manager.io/v1@latest manifest.yaml" }
+$ cue vet -c -d '#Certificate' cue.dev/x/crd/cert-manager.io/v1@latest manifest.yaml
+```
+
+This command uses the `#Certificate` definition from the
+`v1` package to check the manifest.
+Because `cue vet` doesn't display any errors
+you know that the curated module has validated the file's structure.
+
+If you see an error message mentioning "too many requests" then
+[login to the Central Registry](../login-central-registry.md)
+and re-run this command.
+The Central Registry allows more requests from authenticated users.
+
+## Validate more manifests
+
+You can tell the `cue vet` command to check several manifests at once:
+
+``` { .text title="TERMINAL" data-copy="cue vet -c -d &#39;#Certificate&#39; cue.dev/x/crd/cert-manager.io/v1@latest a.yml b.yaml c.yml" }
+$ cue vet -c -d '#Certificate' cue.dev/x/crd/cert-manager.io/v1@latest a.yml b.yaml c.yml
+```
+
+## Next steps
+
+Validating your YAML CRD manifests with CUE can help make development and
+deployments safer, but *defining* those same files in CUE lets you build on its
+first-class templating, referencing, and policy features.
