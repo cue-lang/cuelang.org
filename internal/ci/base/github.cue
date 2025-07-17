@@ -7,6 +7,7 @@ import (
 	"list"
 	"strings"
 	"strconv"
+
 	"cue.dev/x/githubactions"
 )
 
@@ -23,7 +24,7 @@ installGo: {
 		name: "Install Go"
 		uses: "actions/setup-go@v5"
 		with: {
-			// We do our own caching in setupGoActionsCaches.
+			// We do our own caching in setupCaches.
 			cache:        false
 			"go-version": string
 		}
@@ -51,24 +52,27 @@ installGo: {
 	[
 		#setupGo,
 
-		{
-			githubactions.#Step & {
-				name: "Set common go env vars"
-				run: """
-					go env -w GOTOOLCHAIN=local
+		githubactions.#Step & {
+			name: "Set common go env vars"
+			run: """
+				go env -w GOTOOLCHAIN=local
 
-					# Dump env for good measure
-					go env
-					"""
-			}
+				case $(go env GOARCH) in
+				amd64) go env -w GOAMD64=v3 ;;   # 2013 and later; makes `go test -race` 15% faster
+				arm64) go env -w GOARM64=v8.6 ;; # Apple M2 and later
+				esac
+
+				# Dump env for good measure
+				go env
+				"""
 		},
 	]
 }
 
-checkoutCode: {
-	#actionsCheckout: githubactions.#Step & {
+checkoutCode: [...githubactions.#Step] & [
+	{
 		name: "Checkout code"
-		uses: "actions/checkout@v4"
+		uses: "actions/checkout@v4" // TODO(mvdan): switch to namespacelabs/nscloud-checkout-action@v1 once Windows supports caching
 
 		// "pull_request_target" builds will by default use a merge commit,
 		// testing the PR's HEAD merged on top of the master branch.
@@ -79,68 +83,62 @@ checkoutCode: {
 			ref:           "${{ github.event.pull_request.head.sha }}"
 			"fetch-depth": 0 // see the docs below
 		}
-	}
+	},
 
-	[
-		#actionsCheckout,
+	// Restore modified times to work around https://go.dev/issues/58571,
+	// as otherwise we would get lots of unnecessary Go test cache misses.
+	// Note that this action requires actions/checkout to use a fetch-depth of 0.
+	// Since this is a third-party action which runs arbitrary code,
+	// we pin a commit hash for v2 to be in control of code updates.
+	// Also note that git-restore-mtime does not update all directories,
+	// per the bug report at https://github.com/MestreLion/git-tools/issues/47,
+	// so we first reset all directory timestamps to a static time as a fallback.
+	// TODO(mvdan): May be unnecessary once the Go bug above is fixed.
+	{
+		name: "Reset git directory modification times"
+		run:  "touch -t 202211302355 $(find * -type d)"
+	},
+	{
+		name: "Restore git file modification times"
+		uses: "chetan/git-restore-mtime-action@075f9bc9d159805603419d50f794bd9f33252ebe"
+	},
 
-		// Restore modified times to work around https://go.dev/issues/58571,
-		// as otherwise we would get lots of unnecessary Go test cache misses.
-		// Note that this action requires actions/checkout to use a fetch-depth of 0.
-		// Since this is a third-party action which runs arbitrary code,
-		// we pin a commit hash for v2 to be in control of code updates.
-		// Also note that git-restore-mtime does not update all directories,
-		// per the bug report at https://github.com/MestreLion/git-tools/issues/47,
-		// so we first reset all directory timestamps to a static time as a fallback.
-		// TODO(mvdan): May be unnecessary once the Go bug above is fixed.
-		githubactions.#Step & {
-			name: "Reset git directory modification times"
-			run:  "touch -t 202211302355 $(find * -type d)"
-		},
-		githubactions.#Step & {
-			name: "Restore git file modification times"
-			uses: "chetan/git-restore-mtime-action@075f9bc9d159805603419d50f794bd9f33252ebe"
-		},
+	{
+		name: "Try to extract \(dispatchTrailer)"
+		id:   dispatchTrailerStepID
+		run:  """
+			x="$(git log -1 --pretty='%(trailers:key=\(dispatchTrailer),valueonly)')"
+			if [[ "$x" == "" ]]
+			then
+			   # Some steps rely on the presence or otherwise of the Dispatch-Trailer.
+			   # We know that we don't have a Dispatch-Trailer in this situation,
+			   # hence we use the JSON value null in order to represent that state.
+			   # This means that GitHub expressions can determine whether a Dispatch-Trailer
+			   # is present or not by checking whether the fromJSON() result of the
+			   # output from this step is the JSON value null or not.
+			   x=null
+			fi
+			echo "\(_dispatchTrailerDecodeStepOutputVar)<<EOD" >> $GITHUB_OUTPUT
+			echo "$x" >> $GITHUB_OUTPUT
+			echo "EOD" >> $GITHUB_OUTPUT
+			"""
+	},
 
-		{
-			githubactions.#Step & {
-				name: "Try to extract \(dispatchTrailer)"
-				id:   dispatchTrailerStepID
-				run:  """
-					x="$(git log -1 --pretty='%(trailers:key=\(dispatchTrailer),valueonly)')"
-					if [[ "$x" == "" ]]
-					then
-					   # Some steps rely on the presence or otherwise of the Dispatch-Trailer.
-					   # We know that we don't have a Dispatch-Trailer in this situation,
-					   # hence we use the JSON value null in order to represent that state.
-					   # This means that GitHub expressions can determine whether a Dispatch-Trailer
-					   # is present or not by checking whether the fromJSON() result of the
-					   # output from this step is the JSON value null or not.
-					   x=null
-					fi
-					echo "\(_dispatchTrailerDecodeStepOutputVar)<<EOD" >> $GITHUB_OUTPUT
-					echo "$x" >> $GITHUB_OUTPUT
-					echo "EOD" >> $GITHUB_OUTPUT
-					"""
-			}
-		},
-
-		// Safety nets to flag if we ever have a Dispatch-Trailer slip through the
-		// net and make it to master
-		githubactions.#Step & {
-			name: "Check we don't have \(dispatchTrailer) on a protected branch"
-			if:   "\(isProtectedBranch) && \(containsDispatchTrailer)"
-			run:  """
-				echo "\(_dispatchTrailerVariable) contains \(dispatchTrailer) but we are on a protected branch"
-				false
-				"""
-		},
-	]
-}
+	// Safety nets to flag if we ever have a Dispatch-Trailer slip through the
+	// net and make it to master
+	{
+		name: "Check we don't have \(dispatchTrailer) on a protected branch"
+		if:   "\(isProtectedBranch) && \(containsDispatchTrailer)"
+		run:  """
+			echo "\(_dispatchTrailerVariable) contains \(dispatchTrailer) but we are on a protected branch"
+			false
+			"""
+	},
+]
 
 earlyChecks: githubactions.#Step & {
 	name: "Early git and code sanity checks"
-	run:  *"go run cuelang.org/go/internal/ci/checks@v0.11.0-0.dev.0.20240903133435-46fb300df650" | string
+	run:  *"go run cuelang.org/go/internal/ci/checks@v0.13.2" | string
 }
 
 curlGitHubAPI: {
@@ -151,102 +149,48 @@ curlGitHubAPI: {
 	"""#
 }
 
-setupGoActionsCaches: {
-	// #readonly determines whether we ever want to write the cache back. The
-	// writing of a cache back (for any given cache key) should only happen on a
-	// protected branch. But running a workflow on a protected branch often
-	// implies that we want to skip the cache to ensure we catch flakes early.
-	// Hence the concept of clearing the testcache to ensure we catch flakes
-	// early can be defaulted based on #readonly. In the general case the two
-	// concepts are orthogonal, hence they are kept as two parameters, even
-	// though in our case we could get away with a single parameter that
-	// encapsulates our needs.
-	#readonly:       *false | bool
-	#cleanTestCache: *!#readonly | bool
-	#goVersion:      string
-	#additionalCacheDirs: [...string]
-	#os: string
+// setupCaches sets up a cache volume for the rest of the job.
+// Our runner profiles on Namespace are already configured to only update
+// the cache when they run from one of the protected branches.
+//
+// We cache for Go (GOCACHE and GOMODCACHE) and for staticcheck by default,
+// as the majority of our repos use Go with staticcheck,
+// noting that staticcheck-action puts STATICCHECK_CACHE under runner.temp.
+// These default caches are harmless for repos not using Go or staticcheck.
+// TODO(mvdan): move away from staticcheck-action once we require Go 1.24 or later.
+setupCaches: {
+	#additionalCaches: [...string] // with.cache
 
-	let goModCacheDirID = "go-mod-cache-dir"
-	let goCacheDirID = "go-cache-dir"
+	#additionalCachePaths: [...string] // with.path
 
-	// cacheDirs is a convenience variable that includes
-	// GitHub expressions that represent the directories
-	// that participate in Go caching.
-	let cacheDirs = list.Concat([[
-		"${{ steps.\(goModCacheDirID).outputs.dir }}/cache/download",
-		"${{ steps.\(goCacheDirID).outputs.dir }}",
-	], #additionalCacheDirs])
-
-	let cacheRestoreKeys = "\(#os)-\(#goVersion)"
-
-	let cacheStep = githubactions.#Step & {
-		with: {
-			path: strings.Join(cacheDirs, "\n")
-
-			// GitHub actions caches are immutable. Therefore, use a key which is
-			// unique, but allow the restore to fallback to the most recent cache.
-			// The result is then saved under the new key which will benefit the
-			// next build. Restore keys are only set if the step is restore.
-			key:            "\(cacheRestoreKeys)-${{ github.run_id }}"
-			"restore-keys": cacheRestoreKeys
-		}
-	}
-
-	let readWriteCacheExpr = "(\(isProtectedBranch) || \(isTestDefaultBranch))"
-
-	// pre is the list of steps required to establish and initialise the correct
-	// caches for Go-based workflows.
 	[
-		// TODO: once https://github.com/actions/setup-go/issues/54 is fixed,
-		// we could use `go env` outputs from the setup-go step.
 		githubactions.#Step & {
-			name: "Get go mod cache directory"
-			id:   goModCacheDirID
-			run:  #"echo "dir=$(go env GOMODCACHE)" >> ${GITHUB_OUTPUT}"#
+			// We skip the cache entirely on the nightly runs, to catch flakes.
+			// Note that this conditional is just a no-op for jobs without a nightly schedule.
+			// TODO(mvdan): remove the windowsMachine condition once Windows supports caching on Namespace.
+			if:   "github.event_name != 'schedule' && matrix.runner != '\(windowsMachine)'"
+			uses: "namespacelabs/nscloud-cache-action@v1"
+			with: {
+				cache: "go"
+				for name in #additionalCaches {
+					cache: name
+				}
+
+				let cachePaths = list.Concat([[
+					"${{ runner.temp }}/staticcheck",
+				], #additionalCachePaths])
+				path: strings.Join(cachePaths, "\n")
+			}
 		},
+
+		// All tests on protected branches should skip the test cache,
+		// which helps spot test flakes and bugs hidden by the caching.
+		//
+		// Critically, we don't skip the test cache on the trybot repo,
+		// so that the testing of CLs can rely on an up to date test cache.
 		githubactions.#Step & {
-			name: "Get go build/test cache directory"
-			id:   goCacheDirID
-			run:  #"echo "dir=$(go env GOCACHE)" >> ${GITHUB_OUTPUT}"#
-		},
-
-		// Only if we are not running in readonly mode do we want a step that
-		// uses actions/cache (read and write). Even then, the use of the write
-		// step should be predicated on us running on a protected branch. Because
-		// it's impossible for anything else to write such a cache.
-		if !#readonly {
-			cacheStep & {
-				if:   readWriteCacheExpr
-				uses: "actions/cache@v4"
-			}
-		},
-
-		cacheStep & {
-			// If we are readonly, there is no condition on when we run this step.
-			// It should always be run, becase there is no alternative. But if we
-			// are not readonly, then we need to predicate this step on us not
-			// being on a protected branch.
-			if !#readonly {
-				if: "! \(readWriteCacheExpr)"
-			}
-
-			uses: "actions/cache/restore@v4"
-		},
-
-		if #cleanTestCache {
-			// All tests on protected branches should skip the test cache.  The
-			// canonical way to do this is with -count=1. However, we want the
-			// resulting test cache to be valid and current so that subsequent CLs
-			// in the trybot repo can leverage the updated cache. Therefore, we
-			// instead perform a clean of the testcache.
-			//
-			// Critically we only want to do this in the main repo, not the trybot
-			// repo.
-			githubactions.#Step & {
-				if:  "github.repository == '\(githubRepositoryPath)' && (\(isProtectedBranch) || github.ref == 'refs/heads/\(testDefaultBranch)')"
-				run: "go clean -testcache"
-			}
+			if:  "github.repository == '\(githubRepositoryPath)' && (\(isProtectedBranch) || \(isTestDefaultBranch))"
+			run: "go env -w GOFLAGS=-count=1"
 		},
 	]
 }

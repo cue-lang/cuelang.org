@@ -7,7 +7,7 @@ jobs:
     defaults:
       run:
         shell: bash --noprofile --norc -euo pipefail {0}
-    runs-on: ubuntu-22.04
+    runs-on: ns-linux-amd64
     if: ${{github.repository == 'cue-lang/cuelang.org'}}
     steps:
       - name: Write netrc file for cueckoo Gerrithub
