@@ -16,6 +16,24 @@
       "message": "Just checking my understanding: this remains as a dependency listed here, because we use it directly in code in this module, as opposed to it being a transitive dependency of the new internal module below?",
       "revId": "07933f4619951d133b7ee2f067dbc5613ff71016",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27efdc1b_ff295bcd",
+        "filename": "cue.mod/module.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-07-17T13:05:20Z",
+      "side": 1,
+      "message": "correct; it\u0027s used by the other internal/ci packages.",
+      "parentUuid": "fbf566d4_a6c208db",
+      "revId": "07933f4619951d133b7ee2f067dbc5613ff71016",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
