@@ -18,7 +18,7 @@ import (
 	"encoding/json"
 	"strings"
 
-	"github.com/cue-lang/cuelang.org/internal/ci/base"
+	"github.com/cue-lang/tmp/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 	"github.com/cue-lang/cuelang.org/internal/ci/github"
 	_netlify "github.com/cue-lang/cuelang.org/internal/ci/netlify"
