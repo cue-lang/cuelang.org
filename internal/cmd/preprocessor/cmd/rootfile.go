@@ -753,8 +753,11 @@ func (m *multiStepScript) run() {
 		// otherwise stderr is not line buffered
 		"-t",
 
-		// mount the bash script
-		"--mount", fmt.Sprintf("type=bind,source=%s,target=/scripts,readonly", scriptsDir),
+		// bind-mount the bash script
+		// Note that "z" is needed for Linux hosts using SELinux, like Fedora,
+		// as otherwise sharing these files or directories with the host is disallowed.
+		// https://docs.docker.com/engine/storage/bind-mounts/#configure-the-selinux-label
+		"--volume", fmt.Sprintf("%s:/scripts:ro,z", scriptsDir),
 
 		// whether we are updating golden files or not
 		"-e", fmt.Sprintf("%s=%v", updateGoldenFilesVar, m.updateGoldenFiles),

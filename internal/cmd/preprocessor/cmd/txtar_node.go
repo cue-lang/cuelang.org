@@ -358,7 +358,7 @@ func (t *txtarRunContext) dockerCmd(cmdArgs ...string) *exec.Cmd {
 	// TODO: support per-guide docker images
 	container, err := t.rf.page.ctx.container(dockerImageTag)
 	if err != nil {
-		t.fatalf("%v: failed to get container for %s: %v", dockerImageTag, err)
+		t.fatalf("failed to get container for %s: %v", dockerImageTag, err)
 	}
 
 	args := []string{
