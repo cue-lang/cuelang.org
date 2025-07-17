@@ -16,6 +16,24 @@
       "message": "Ah good spot. But the fix is actually the other way around:\n\n```\nt.fatalf(\"%v: failed to get container for %s: %v\", t, dockerImageTag, err)\n```",
       "revId": "a34ace2857f9bfb4198b85c87ee22dc44ff1fafa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "16ad25a6_6113b08d",
+        "filename": "internal/cmd/preprocessor/cmd/txtar_node.go",
+        "patchSetId": 1
+      },
+      "lineNbr": 361,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-07-17T12:13:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e559383_9839b8d7",
+      "revId": "a34ace2857f9bfb4198b85c87ee22dc44ff1fafa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
