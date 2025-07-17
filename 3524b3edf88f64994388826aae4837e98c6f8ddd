@@ -16,6 +16,24 @@
       "message": "I\u0027ve run this locally, using Podman, and a complete rebuild of the site works fine. \n\nI tested by bumping the container image\u0027s base image to a later version of Go and running:\n- `_scripts/regenPostInfraChange.bash`\n- `_scripts/serve.bash`\n- `_scripts/runPreprocessor.bash execute`\n- `_scripts/runPreprocessor.bash execute --update`\n\nI\u0027ll let @paul@myitcv.io choose to test it locally with Docker and +2 either way.",
       "revId": "3524b3edf88f64994388826aae4837e98c6f8ddd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a7954492_26950076",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-07-17T12:49:06Z",
+      "side": 1,
+      "message": "I will rely on the trybots passing, which is generally speaking what we should do (maybe even for podman, on a periodic check)",
+      "parentUuid": "0f0e926b_55c22cdc",
+      "revId": "3524b3edf88f64994388826aae4837e98c6f8ddd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
