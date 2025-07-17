@@ -17,9 +17,6 @@ protectedBranchPatterns: [defaultBranch]
 botGitHubUser:      "cueckoo"
 botGitHubUserEmail: "cueckoo@gmail.com"
 
-linuxMachine: "ubuntu-22.04"
-macosMachine: "macos-13"
-
 // Use a specific latest version for release builds.
 // Note that we don't want ".x" for the sake of reproducibility,
 // so we instead pin a specific Go release.
