@@ -6,7 +6,7 @@ import (
 	"encoding/yaml"
 
 	"github.com/cue-lang/cuelang.org/internal/ci"
-	"github.com/cue-lang/cuelang.org/internal/ci/base"
+	"github.com/cue-lang/tmp/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/content/docs/reference/command"
 )
 
