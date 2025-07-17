@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"HIDDEN: configure Maven download cache": "/D+IBYbBzdYg4dHul+0OlXml42ZXw0KrfVAGxbvWV+k="
-								"test load":                              "aB6MAUBToJ1OLaYgNHGB1aMUDxP5mbtYTA9JWWUQRZ0="
+								"HIDDEN: configure Maven download cache": "NbPoY9m4zeyGb85w/AU+uk0seer0cjtdIKlemrv/Lcg="
+								"test load":                              "GHT6FPeYykPMaLVswlcVFmmkHb6zSZo3XdQx2AizVKE="
 							}
 							multi_step: {
-								hash:       "PU6TBQENHPV9DG25RRO59R9CFTNMT3TSKK797J6E9A627910FSH0===="
+								hash:       "PPJREPVQ3TCPFMVSJN2G894CBM20IFK077OQP7D0O1S5IAU2FMTG===="
 								scriptHash: "D3P3UH58SHI11V1TRCCG8IUA6R9GR7J8MAFOVUOVTVDEO8T6MKEG===="
 								steps: [{
 									doc:      ""
