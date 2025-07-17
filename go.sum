@@ -1,7 +1,7 @@
 cuelabs.dev/go/oci/ociregistry v0.0.0-20250304105642-27e071d2c9b1 h1:Dmbd5Q+ENb2C6carvwrMsrOUwJ9X9qfL5JdW32gYAHo=
 cuelabs.dev/go/oci/ociregistry v0.0.0-20250304105642-27e071d2c9b1/go.mod h1:dqrnoZx62xbOZr11giMPrWbhlaV8euHwciXZEy3baT8=
-cuelang.org/go v0.13.0-alpha.3.0.20250423152100-572a6cc1b109 h1:F2Jye+gP/N8LGw5BklHspuk0M6QavDUW+b1LpF7pwic=
-cuelang.org/go v0.13.0-alpha.3.0.20250423152100-572a6cc1b109/go.mod h1:kA/8D9/d32IBp2lISWo90BEJhLyS9tqBcvqw2QAEhEg=
+cuelang.org/go v0.13.2 h1:SagzeEASX4E2FQnRbItsqa33sSelrJjQByLqH9uZCE8=
+cuelang.org/go v0.13.2/go.mod h1:8MoQXu+RcXsa2s9mebJN1HJ1orVDc9aI9/yKi6Dzsi4=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/apex/gateway v1.1.2 h1:OWyLov8eaau8YhkYKkRuOAYqiUhpBJalBR1o+3FzX+8=
 github.com/apex/gateway v1.1.2/go.mod h1:AMTkVbz5u5Hvd6QOGhhg0JUrNgCcLVu3XNJOGntdoB4=
