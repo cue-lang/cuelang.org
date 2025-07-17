@@ -402,7 +402,14 @@ func dockerCacheVolumeCheck(volumeName string) error {
 	cmd := exec.Command("docker", "volume", "create", volumeName)
 	out, err := cmd.CombinedOutput()
 	if err != nil {
-		err = fmt.Errorf("command [%v] failed: %v\n%s", cmd, err, out)
+		// Docker is happy to succeed if the volume already exists, but Podman fails.
+		// It can only succeed with the `--ignore` flag, which Docker does not support.
+		// See: https://github.com/containers/podman/issues/26657
+		if bytes.Contains(out, []byte("volume already exists")) {
+			err = nil
+		} else {
+			err = fmt.Errorf("command [%v] failed: %v\n%s", cmd, err, out)
+		}
 	}
 	return err
 }

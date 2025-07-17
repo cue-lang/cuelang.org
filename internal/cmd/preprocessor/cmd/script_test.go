@@ -38,12 +38,14 @@ func TestMain(m *testing.M) {
 func TestScripts(t *testing.T) {
 	testscript.Run(t, testscript.Params{
 		Setup: func(env *testscript.Env) error {
+			home := os.Getenv("HOME")
+			env.Setenv("HOME", home)
+
 			// On macOS, we need to set DOCKER_HOST in order for the use of docker
 			// desktop to work.
 			if runtime.GOOS == "darwin" {
 				dockerHost := os.Getenv("DOCKER_HOST")
 				if dockerHost == "" {
-					home := os.Getenv("HOME")
 					dockerHost = "unix://" + filepath.Join(home, ".docker", "run", "docker.sock")
 				}
 				env.Setenv("DOCKER_HOST", dockerHost)
