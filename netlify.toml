@@ -7,9 +7,9 @@ ignore = 'bash _scripts/netlify.bash _scripts/ignoreBuild.bash'
 publish = '_public'
 
 [build.environment]
-GO_VERSION = '1.24.0'
-HUGO_VERSION = '0.147.6'
-NODE_VERSION = '22.14.0'
+GO_VERSION = '1.24.5'
+HUGO_VERSION = '0.147.9'
+NODE_VERSION = '22.17.1'
 
 [context]
 [context.deploy-preview]
