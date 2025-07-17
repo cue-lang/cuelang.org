@@ -103,21 +103,11 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			_setNoWriteCache,
 
-			// cachePre must come after installing Node and Go, because the cache locations
-			// are established by running each tool.
-			for v in _setupGoActionsCaches {v},
-
-			// TODO: remove this debugging step when we work out what is going on
-			// in the next step, why it is taking quite so long.
-			{
-				run: "go env"
-			},
+			for v in _setupCaches {v},
 
 			// Run these early checks after we have restored the Go caches,
 			// as the checks are Go programs themselves.
-			_repo.earlyChecks & {
-				run: "go run -x cuelang.org/go/internal/ci/checks@v0.11.0-0.dev.0.20240903133435-46fb300df650"
-			},
+			_repo.earlyChecks,
 
 			_contentLint,
 
@@ -425,15 +415,9 @@ _netlifyDeploy: githubactions.#Step & {
 	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite)}}"
 }
 
-// _setupGoActionsCaches is shared between trybot and update_tip.
-_setupGoActionsCaches: _repo.setupGoActionsCaches & {
-	#goVersion: _installGo.#setupGo.with."go-version"
-
-	// Unfortunate that we need to hardcode here. Ideally we would be able to derive
-	// the OS from the runner. i.e. from _linuxWorkflow somehow.
-	#os: "${{ runner.os }}"
-
-	#additionalCacheDirs: [
+// _setupCaches is shared between trybot and update_tip.
+_setupCaches: _repo.setupCaches & {
+	#additionalCachePaths: [
 		"~/.cache/dockercache",
 		"~/.cache/node-gyp",
 		"~/.npm",
