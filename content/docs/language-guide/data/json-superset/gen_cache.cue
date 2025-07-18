@@ -8,8 +8,8 @@ package site
 						page: {
 							cache: {
 								code: {
-									"json-superset": "8F2lx83x3bVQYGZGS1wdfpc48n06O24AmJxQ+Klz9hU="
-									"json-comments": "0+h5qrC6CCvhFinivDWTeGp9EfbYCDo3l9g4L6L0ftk="
+									"json-superset": "c+iOgu3z1QEn1zlo+qn2TlO12MvWlLqo/2A9AcbaJYE="
+									"json-comments": "fJl1VWcUSKhZacGnfuLoq5/98zgaorFjnPUyrJXMko0="
 								}
 							}
 						}

@@ -35,7 +35,7 @@ echo "tip: Will use cuelang.org/go@$version"
 # This might change if any entries are added to the version matrix that
 # deliberately make a previous version of CUE available but, for now, we don't
 # need that - and could easily make it configurable later.
-go run cuelang.org/go/cmd/cue def \
+go tool cue def \
     -t version="$version" \
     -p site \
     --out cue \

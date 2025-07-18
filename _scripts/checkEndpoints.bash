@@ -10,4 +10,4 @@ site=$1; shift
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
-go run cuelang.org/go/cmd/cue cmd checkEndpoints ./internal/monitoring -t schemeHost=$site
+go tool cue cmd checkEndpoints ./internal/monitoring -t schemeHost=$site

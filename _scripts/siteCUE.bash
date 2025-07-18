@@ -24,7 +24,7 @@ rm -f defresult.cue
 
 if [[ "$1" == "cmd" ]]; then
 	trap "rm -f defresult.cue" EXIT
-	go run cuelang.org/go/cmd/cue def $files > defresult.cue
+	go tool cue def $files > defresult.cue
 fi
 
-go run cuelang.org/go/cmd/cue "$@" $files
+go tool cue "$@" $files
