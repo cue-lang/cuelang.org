@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7dfcd2ba_8fd38d95",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-07-18T10:06:40Z",
+      "side": 1,
+      "message": "Nit: we could have split this change in two, with the cache files in a follow up. But it\u0027s straightforward and obvious given the other changes so I\u0027m happy.",
+      "revId": "2f802afd5d64a690362282b5cf521878ac7b0642",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
