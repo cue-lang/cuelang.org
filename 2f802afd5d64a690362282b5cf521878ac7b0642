@@ -16,6 +16,24 @@
       "message": "Nit: we could have split this change in two, with the cache files in a follow up. But it\u0027s straightforward and obvious given the other changes so I\u0027m happy.",
       "revId": "2f802afd5d64a690362282b5cf521878ac7b0642",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72c1de05_3e3d72ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-07-18T10:08:07Z",
+      "side": 1,
+      "message": "yeah in this case I thought it was OK. I\u0027d be more fine with splitting in two if we had a script to automatically do it for me :)",
+      "parentUuid": "7dfcd2ba_8fd38d95",
+      "revId": "2f802afd5d64a690362282b5cf521878ac7b0642",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
