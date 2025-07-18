@@ -34,6 +34,24 @@
       "parentUuid": "7dfcd2ba_8fd38d95",
       "revId": "2f802afd5d64a690362282b5cf521878ac7b0642",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f201fa4_f23bd064",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-07-18T10:09:48Z",
+      "side": 1,
+      "message": "Ha! I actually do things the other way around. Knowing that I will break the cache, I create an empty commit with the correct trailer first, then make changes, amend that comment (via rebase or just a straight amend if it\u0027s the tip of the branch), then create an empty commit on top of that _without_ the trailer, then regenerate and amend changes into that second commit. Hence I don\u0027t do any splitting out, I create the relevant commits first.",
+      "parentUuid": "72c1de05_3e3d72ef",
+      "revId": "2f802afd5d64a690362282b5cf521878ac7b0642",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ],
   "submitRequirementResults": [
