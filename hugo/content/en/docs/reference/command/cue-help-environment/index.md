@@ -41,14 +41,11 @@ If an environment variable is unset or empty, sensible default setting is used.
 		evalv3 (default true)
 			Enable the new CUE evaluator, addressing performance issues
 			and bringing a better disjunction algorithm.
-		embed (default true)
-			Enable support for embedded data files as described in
-			https://cuelang.org/discussion/3264.
-		toposort (default true)
-			Enable topological sorting of struct fields.
-			Provide feedback via https://cuelang.org/issue/3558
-		cmdreferencepkg
-		    Require referencing imported tool packages to declare "cue cmd" tasks.
+		cmdreferencepkg (default true)
+			Require referencing imported tool packages to declare "cue cmd" tasks.
+		keepvalidators (default true)
+			Prevent validators from simplifying into concrete values.
+			See: https://cuelang.org/discussion/3775
 
 	CUE_DEBUG
 		Comma-separated list of debug flags to enable or disable, such as:

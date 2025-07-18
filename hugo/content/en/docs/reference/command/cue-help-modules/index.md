@@ -23,7 +23,7 @@ For a detailed reference on modules:
 
 For information on commands that interact with modules:
 
-    cue help mod
+	cue help mod
 
 For tutorials on how to use the Central Registry, see:
 

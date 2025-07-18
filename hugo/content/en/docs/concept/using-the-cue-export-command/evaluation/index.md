@@ -25,7 +25,7 @@ data: true
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAuOnR3bw==" >}}
 $ cue export .:two
 build constraints exclude all CUE files in .:
-    1.cue: package is one, want two
+    ./1.cue: package is one, want two
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

@@ -68,7 +68,7 @@ we encourage you to upgrade to the latest CUE version to use it:
 
 ```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.13.2
+cue version v0.14.0-alpha.2.0.20250718122344-9afca7305a43
 ...
 ```
 

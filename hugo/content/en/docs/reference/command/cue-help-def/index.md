@@ -24,7 +24,7 @@ Flags:
       --inline-imports           expand references to non-core imports
       --list                     concatenate multiple objects into a list
       --merge                    merge non-CUE files (default true)
-  -n, --name string              glob filter for non-CUE file names in directories
+  -n, --name string              regexp filter for non-CUE file names in directories
       --out string               output format (run 'cue help filetypes' for more info)
   -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
   -p, --package string           package name for non-CUE files
