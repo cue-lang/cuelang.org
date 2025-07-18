@@ -4,7 +4,7 @@ package site
 		docs: {
 			draft: {
 				cldd: {
-					"checking-existing-kubernetes-storage-snapshop-crd-manifests": {
+					"checking-existing-kubernetes-storage-snapshot-crd-manifests": {
 						page: {
 							cache: {
 								upload: {
