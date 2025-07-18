@@ -193,7 +193,7 @@ jobs:
       - name: Check Playground module is tidy
         run: go mod tidy
         working-directory: playground
-      - run: go run cuelang.org/go/cmd/cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
+      - run: go tool cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))

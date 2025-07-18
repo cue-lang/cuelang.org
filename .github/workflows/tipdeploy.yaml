@@ -141,7 +141,7 @@ jobs:
         env:
           CUE_TOKEN: ${{ secrets.NOTCUECKOO_CUE_TOKEN }}
         run: _scripts/cacheWarm.bash
-      - run: go run cuelang.org/go/cmd/cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
+      - run: go tool cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
       - name: 'tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue'
         run: _scripts/tipPatchApply.bash
       - name: npm install in hugo

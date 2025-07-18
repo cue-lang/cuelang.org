@@ -9,5 +9,5 @@ function cleanup() { rm -rfv "${CUE_CONFIG_DIR}"; }
 
 export CUE_CONFIG_DIR="$(mktemp -d)"
 trap cleanup EXIT
-go run cuelang.org/go/cmd/cue login --token $CUE_TOKEN
-go run cuelang.org/go/cmd/cue mod tidy --check
+go tool cue login --token $CUE_TOKEN
+go tool cue mod tidy --check
