@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "RC54MOBLS9DDGO7URM1EOUJAF766K34JUGO0M6I94SMJ92BMRMQ0===="
-									scriptHash: "5RMNF9LNJE9U24EC6ID41I1SN9FROOEG4B59G1DQQ3KB94AC5TQG===="
+									hash:       "42TPDJATQ9BEB5OB58GGKEOUGJ63HG4CHRUF8DD57RVFMS3AG0D0===="
+									scriptHash: "7IOL01VG3H6P8EBFB8DORNNTSB1O0ANA3H1MA0574CLQ22FJG9C0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.2:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0-alpha.2.0.20250718122344-9afca7305a43:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -51,9 +51,6 @@ package site
 												can be embedded. Embedding is forbidden when outside a module.
 
 												Note that embedding CUE files is not supported at this time.
-
-												For the time being, embedding support can still be disabled via
-												CUE_EXPERIMENT=embed=0.
 
 												For more details and discussion, see the proposal linked from
 												https://cuelang.org/discussion/3264.
