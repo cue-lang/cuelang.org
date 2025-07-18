@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9a86151b_65a84a1b",
+        "filename": "content/docs/draft/cldd/checking-existing-crd-bitnami-sealedsecret-manifests/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-07-18T15:14:36Z",
+      "side": 1,
+      "message": "Including the `cue.dev/x` prefix worked poorly on the page. I\u0027ve reworded all 4 guides so that partial module identifiers aren\u0027t used anywhere.",
+      "parentUuid": "fb8231ca_bf4b86ff",
+      "revId": "5effbbfb4c6315c91b0f282dfab32cd384a1637a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "75360857_4771ec1e",
@@ -65,6 +83,24 @@
       "writtenOn": "2025-07-18T14:31:03Z",
       "side": 1,
       "message": "Same question here and anywhere else we are doing it. We should not start referring to modules with assumed prefixes; either the full module path, or the \"human name\" for what it represents please.",
+      "revId": "5effbbfb4c6315c91b0f282dfab32cd384a1637a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "908df912_e26c9c56",
+        "filename": "content/docs/draft/cldd/checking-existing-crd-cert-manager-certificate-manifests/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-07-18T15:14:36Z",
+      "side": 1,
+      "message": "Done, as above.",
+      "parentUuid": "75360857_4771ec1e",
       "revId": "5effbbfb4c6315c91b0f282dfab32cd384a1637a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
