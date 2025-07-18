@@ -16,6 +16,57 @@
       "message": "PTAL",
       "revId": "5effbbfb4c6315c91b0f282dfab32cd384a1637a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad306498_6ac574c9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-07-18T14:31:03Z",
+      "side": 1,
+      "message": "With one fix throughout please.",
+      "revId": "5effbbfb4c6315c91b0f282dfab32cd384a1637a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fb8231ca_bf4b86ff",
+        "filename": "content/docs/draft/cldd/checking-existing-crd-bitnami-sealedsecret-manifests/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-07-18T14:31:03Z",
+      "side": 1,
+      "message": "Where are we getting `crd/bitnami.com/sealed-secrets` as a short-hand means of referring to curated modules from?",
+      "revId": "5effbbfb4c6315c91b0f282dfab32cd384a1637a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "75360857_4771ec1e",
+        "filename": "content/docs/draft/cldd/checking-existing-crd-cert-manager-certificate-manifests/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-07-18T14:31:03Z",
+      "side": 1,
+      "message": "Same question here and anywhere else we are doing it. We should not start referring to modules with assumed prefixes; either the full module path, or the \"human name\" for what it represents please.",
+      "revId": "5effbbfb4c6315c91b0f282dfab32cd384a1637a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
