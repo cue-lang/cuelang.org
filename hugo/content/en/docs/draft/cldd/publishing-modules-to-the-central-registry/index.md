@@ -58,15 +58,15 @@ You will define the configuration in CUE and use a CUE schema to validate it.
 We would like to be able to share the schema between several consumers,
 so we will publish it to the Central Registry.
 
-{{< step stepNumber="1" >}}
-
-Create a directory to hold the schema code:
+[**:material-chevron-right-circle-outline: Step 1**](#step-1){id="step-1"}: Create a directory to hold the schema code:
 ``` { .text title="TERMINAL" data-copy="mkdir frostyconfig&#10;cd frostyconfig" }
 $ mkdir frostyconfig
 $ cd frostyconfig
 ```
 
-{{< /step >}}
+
+---
+
 
 {{< caution >}}
 **You need to adapt the command shown in the next step.**
@@ -84,8 +84,7 @@ then you would replace `cueckoo` with `_tomhanks`.
 the username `cueckoo` in this tutorial.**
 {{< /caution >}}
 
-{{< step stepNumber="2" >}}
-Initialize the directory as a git repository and a CUE module:
+[**:material-chevron-right-circle-outline: Step 2**](#step-2){id="step-2"}: Initialize the directory as a git repository and a CUE module:
 
 ``` { .text title="TERMINAL" data-copy="git init -q&#10;cue mod init --source=git github.com/cueckoo/frostyconfig@v0" }
 $ git init -q
@@ -101,11 +100,11 @@ The GitHub user `cueckoo` controls all the repositories under
 `github.com/cueckoo/`, so they can publish modules to the Central
 Registry inside that namespace.  The same is true for your GitHub username.
 
-{{< /step >}}
 
-{{< step stepNumber="3" >}}
+---
 
-Create the configuration schema:
+
+[**:material-chevron-right-circle-outline: Step 3**](#step-3){id="step-3"}: Create the configuration schema:
 ``` { .cue title="frostyconfig/config.cue" }
 package frostyconfig
 
@@ -127,11 +126,11 @@ package frostyconfig
 }
 ```
 
-{{< /step >}}
 
-{{< step stepNumber="4" >}}
+---
 
-As a one-off, login to the Central Registry:
+
+[**:material-chevron-right-circle-outline: Step 4**](#step-4){id="step-4"}: As a one-off, login to the Central Registry:
 
 ``` { .text title="TERMINAL" data-copy="cue login" }
 $ cue login
@@ -141,28 +140,29 @@ The Central Registry is in beta testing -
 please give us your feedback about the service in the
 `#modules` channel [on Slack](/s/slack) or [on Discord](/s/discord)!
 
-{{< /step >}}
 
-{{< step stepNumber="5" >}}
+---
 
-Ensure the `module.cue` file is tidy:
+
+[**:material-chevron-right-circle-outline: Step 5**](#step-5){id="step-5"}: Ensure the `module.cue` file is tidy:
 ``` { .text title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
 
-{{< /step >}}
 
-{{< step stepNumber="6" >}}
+---
 
-If you haven't already done so,
+
+[**:material-chevron-right-circle-outline: Step 6**](#step-6){id="step-6"}: If you haven't already done so,
 [create a repository](https://github.com/new?org=)
 called `frostyconfig` under your personal username at GitHub.
 It doesn't matter if the repository is public or private.
 
-{{< /step >}}
 
-{{< step stepNumber="7" >}}
-Create a git commit:
+---
+
+
+[**:material-chevron-right-circle-outline: Step 7**](#step-7){id="step-7"}: Create a git commit:
 
 ``` { .text title="TERMINAL" data-copy="git add -A&#10;git commit -q -m &#39;Initial commit&#39;" }
 $ git add -A
@@ -175,17 +175,19 @@ commit you just created leaves the directory in a "clean" state, which is
 necessary for `cue` to know exactly which files to include in the published
 module.
 
-{{< /step >}}
 
-{{< step stepNumber="8" >}}
+---
 
-Publish the first version of this module:
+
+[**:material-chevron-right-circle-outline: Step 8**](#step-8){id="step-8"}: Publish the first version of this module:
 ``` { .text title="TERMINAL" data-copy="cue mod publish v0.0.1" }
 $ cue mod publish v0.0.1
 ...
 ```
 
-{{< /step >}}
+
+---
+
 
 {{< warning >}}
 This command should mention **your** GitHub username,
@@ -209,9 +211,7 @@ and restart the tutorial from step 1.
 Define the `FrostyApp` configuration, constrained by the schema you just
 published.
 
-{{< step stepNumber="9" >}}
-
-Create a directory for the new module and initalize it,
+[**:material-chevron-right-circle-outline: Step 9**](#step-9){id="step-9"}: Create a directory for the new module and initalize it,
 changing `cueckoo` to *your* GitHub username, lower-cased:
 <!-- Not strictly neccessary, but it might confuse if we don't point it out -->
 
@@ -221,11 +221,11 @@ $ cd ../frostyapp
 $ git init -q
 $ cue mod init --source=git github.com/cueckoo/frostyapp@v0
 ```
-{{< /step >}}
 
-{{< step stepNumber="10" >}}
+---
 
-Create the code for the new module:
+
+[**:material-chevron-right-circle-outline: Step 10**](#step-10){id="step-10"}: Create the code for the new module:
 
 ``` { .cue title="frostyapp/config.cue" linenos="table" }
 package frostyapp
@@ -242,11 +242,11 @@ config: frostyconfig.#Config & {
 
 **Remember to change `cueckoo` to *your* GitHub username, lower-cased, on line 4.**
 
-{{< /step >}}
 
-{{< step stepNumber="11" >}}
+---
 
-Ensure the module is tidy, adding missing dependencies:
+
+[**:material-chevron-right-circle-outline: Step 11**](#step-11){id="step-11"}: Ensure the module is tidy, adding missing dependencies:
 ``` { .text title="TERMINAL" data-copy="cue mod tidy" }
 $ cue mod tidy
 ```
@@ -270,13 +270,13 @@ deps: {
 }
 ```
 
-{{< /step >}}
+
+---
+
 
 ## Evaluate the configuration
 
-{{< step stepNumber="12" >}}
-
-Export the configuration as YAML:
+[**:material-chevron-right-circle-outline: Step 12**](#step-12){id="step-12"}: Export the configuration as YAML:
 ``` { .text title="TERMINAL" data-copy="cue export --out yaml" }
 $ cue export --out yaml
 config:
@@ -288,7 +288,9 @@ config:
 
 We can use this new module code just like any other CUE code.
 
-{{< /step >}}
+
+---
+
 
 <!-- TODO: prompt the reader to delete the authz-related repo from GitHub? -->
 
