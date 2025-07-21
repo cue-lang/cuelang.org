@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7291555b_a3000c5f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-07-21T13:54:42Z",
+      "side": 1,
+      "message": "PTAL. The CL preview is relatively useless, given the markup changes target a different publishing environment.",
+      "revId": "1d1a53d0000225fe3fd3ba1921822e7c2d3f6ddc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
