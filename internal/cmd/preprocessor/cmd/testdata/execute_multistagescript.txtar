@@ -176,6 +176,33 @@ content: docs: draft: cldd: example: page: {
 >echo "Hello world"
 >true
 >{{{end}}}
+>
+>{{{with step}}} Same line
+>
+>{{{with script "en" "step 1 command"}}}
+>echo "Hello world"
+>{{{end}}}
+>
+>{{{end}}}
+>
+>{{{with step}}}
+>Next line
+>
+>{{{with script "en" "step 2 command"}}}
+>echo "Hello world"
+>{{{end}}}
+>
+>{{{end}}}
+>
+>{{{with step}}}
+>
+>Blank line
+>
+>{{{with script "en" "step 3 command"}}}
+>echo "Hello world"
+>{{{end}}}
+>
+>{{{end}}}
 -- golden/content/dir/en.md.writeBack --
 >---
 >title: JSON Superset
@@ -329,6 +356,33 @@ $ echo "Hello world"
 Hello world
 $ true
 ```
+
+[**:material-chevron-right-circle-outline: Step 1**](#step-1){id="step-1"}: Same line
+
+``` { .text title="TERMINAL" data-copy="echo &#34;Hello world&#34;" }
+$ echo "Hello world"
+Hello world
+```
+
+
+
+[**:material-chevron-right-circle-outline: Step 2**](#step-2){id="step-2"}: Next line
+
+``` { .text title="TERMINAL" data-copy="echo &#34;Hello world&#34;" }
+$ echo "Hello world"
+Hello world
+```
+
+
+
+[**:material-chevron-right-circle-outline: Step 3**](#step-3){id="step-3"}: Blank line
+
+``` { .text title="TERMINAL" data-copy="echo &#34;Hello world&#34;" }
+$ echo "Hello world"
+Hello world
+```
+
+
 -- golden/content/dir/gen_cache.cue --
 package site
 {
