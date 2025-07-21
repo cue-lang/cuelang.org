@@ -16,6 +16,7 @@ package cmd
 
 import (
 	"bytes"
+	"unicode"
 )
 
 const (
@@ -47,6 +48,24 @@ func (s *stepNode) writeSourceTo(b *bytes.Buffer) {
 
 func (s *stepNode) writeTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
+
+	if s.rf.page.isClddContent() {
+		p("[**:material-chevron-right-circle-outline: Step %[1]d**](#step-%[1]d){id=\"step-%[1]d\"}:", s.number)
+
+		// Create a new bytes.Buffer because we want to gobble leading space
+		var contents bytes.Buffer
+		if err := transformNodes(&contents, s.children); err != nil {
+			return err
+		}
+		noLeadingSpace := bytes.TrimLeftFunc(contents.Bytes(), unicode.IsSpace)
+
+		// Note the leading space re-introduces a single space
+		p(" %s", noLeadingSpace)
+
+		// There is no closing tag
+		return nil
+	}
+
 	p("{{< step stepNumber=\"%d\" >}}", s.number)
 	if err := transformNodes(b, s.children); err != nil {
 		return err
