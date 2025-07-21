@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9382df8_db0cb6e7",
+        "filename": "content/docs/draft/cldd/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-07-21T19:04:00Z",
+      "side": 1,
+      "message": "In my local testing, this did not render properly.",
+      "revId": "ffd84d3cc83fbca9d8dd652f9fd14377a4cb1f2c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
