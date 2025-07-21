@@ -9,7 +9,7 @@ package site
 							cache: {
 								upload: {
 									"schema-v0.0.1": "cAhJBZfjNDTO+NJyejwpTTDpcxe/E5cwSlUPFJpRIYc="
-									"config.cue":    "81ImziFipAAF86rww8GOSNWHAEqIH7p91lkt5nEZh/Y="
+									"config.cue":    "sGNSvu+4OdnM/BKgl9wvb8q9RutYSjmVyxBzvdsCl6k="
 								}
 								multi_step: {
 									hash:       "SSRAOTAK5884Q1PIBJS00PC4F5856HO8PU19D78SBCHH2BAHH950===="
