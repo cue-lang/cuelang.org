@@ -1,13 +1,8 @@
 ---
-title: Publishing modules to the Central Registry
-authors:
-- myitcv
-tags:
-- modules
-- tooling
-- cue command
-toc_hide: true
+note: This YAML header is only here to satisfy both Hugo and MkDocs.
 ---
+
+# Publishing modules to the Central Registry
 
 {{{with _script_ "en" "HIDDEN: setup"}}}
 # Git config.
@@ -26,8 +21,6 @@ EOD
 In this tutorial you will publish a module to the Central Registry and then
 create a second module that depends on the first.
 
-<!--more-->
-
 ## Prerequisites
 
 - **A [GitHub](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github#signing-up-for-a-new-personal-account) account** --
@@ -37,7 +30,7 @@ create a second module that depends on the first.
   create it under your personal GitHub account (it doesn't matter if it is public or private)
 - **A [Central Registry](https://registry.cue.works/) account**
 - **The `cue` binary** --
-  follow the [installation instructions]({{< relref "/docs/introduction/installation" >}})
+  follow the [installation instructions](../installing-cue.md)
   if you don't already use `cue`
 - **A tool to edit text files** --
   any text editor you have will be fine, such as
@@ -49,10 +42,6 @@ create a second module that depends on the first.
   or a Windows terminal such as PowerShell, cmd, or
   [WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
   to run commands.
-- **Some awareness of CUE schemata** --
-  the language tour's pages on
-  [Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
-  [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) are a good refresher
 
 This tutorial is written using the following version of `cue`:
 
@@ -69,34 +58,30 @@ You will define the configuration in CUE and use a CUE schema to validate it.
 We would like to be able to share the schema between several consumers,
 so we will publish it to the Central Registry.
 
-{{{with step}}}
+[**:material-chevron-right-circle-outline: Step 1**](#step-1){id="step-1"}:
+Create a directory to hold the schema code
 
-Create a directory to hold the schema code:
 {{{with script "en" "create-module-1"}}}
 mkdir {{{.module1Repo}}}
 cd {{{.module1Repo}}}
 {{{end}}}
 
-{{{end}}}
+[**:material-chevron-right-circle-outline: Step 2**](#step-2){id="step-2"}:
+Initialize the directory as a git repository and a CUE module
 
-{{< caution >}}
-**You need to adapt the command shown in the next step.**
+!!! warning "You *must* adapt the command shown in this step!"
 
-Don't simply paste the command into your terminal and run it.
+    Don't simply paste the command into your terminal and run it.
 
-Before running the command, replace the example username,
-`{{{.githubUser}}}`,
-with **the lower-cased form of YOUR GitHub username.**
-For example:
-if your GitHub username is `_TomHanks`
-then you would replace `{{{.githubUser}}}` with `_tomhanks`.
+    Before running the command, replace the example username,
+    `{{{.githubUser}}}`,
+    with **the lower-cased form of YOUR GitHub username.**
+    For example:
+    if your GitHub username is `_TomHanks`
+    then you would replace `{{{.githubUser}}}` with `_tomhanks`.
 
-**You need to make this replacement *everywhere* you see
-the username `{{{.githubUser}}}` in this tutorial.**
-{{< /caution >}}
-
-{{{with step}}}
-Initialize the directory as a git repository and a CUE module:
+    **You need to make this replacement *everywhere* you see
+    the username `{{{.githubUser}}}` in this tutorial.**
 
 {{{with script "en" "initialize-module-1"}}}
 git init -q
@@ -112,11 +97,9 @@ The GitHub user `{{{.githubUser}}}` controls all the repositories under
 `github.com/{{{.githubUser}}}/`, so they can publish modules to the Central
 Registry inside that namespace.  The same is true for your GitHub username.
 
-{{{end}}}
+[**:material-chevron-right-circle-outline: Step 3**](#step-3){id="step-3"}:
+Create the configuration schema
 
-{{{with step}}}
-
-Create the configuration schema:
 {{{with upload "en" "schema-v0.0.1"}}}
 -- {{{.module1Repo}}}/config.cue --
 package {{{.module1Repo}}}
@@ -139,43 +122,37 @@ package {{{.module1Repo}}}
 }
 {{{end}}}
 
-{{{end}}}
-
-{{{with step}}}
-
-As a one-off, login to the Central Registry:
+[**:material-chevron-right-circle-outline: Step 4**](#step-4){id="step-4"}:
+Login to the Central Registry
 
 {{{with script "en" "#norun cue login"}}}
 #norun
 cue login
 {{{end}}}
 
-The Central Registry is in beta testing -
-please give us your feedback about the service in the
-`#modules` channel [on Slack](/s/slack) or [on Discord](/s/discord)!
+This is only required once for each computer that accesses the Central Registry.
 
-{{{end}}}
+!!! info "The Central Registry is in beta testing"
+    Please give us your feedback about the service in the `#modules` channels on
+    [Slack](/s/slack) and [Discord](/s/discord).
 
-{{{with step}}}
+[**:material-chevron-right-circle-outline: Step 5**](#step-5){id="step-5"}:
+Ensure the module is tidy
 
-Ensure the `module.cue` file is tidy:
 {{{with script "en" "module-1-v0.0.1-tidy"}}}
 cue mod tidy
 {{{end}}}
 
-{{{end}}}
-
-{{{with step}}}
+[**:material-chevron-right-circle-outline: Step 6**](#step-6){id="step-6"}:
+Create a GitHub repository
 
 If you haven't already done so,
 [create a repository](https://github.com/new?org=)
 called `{{{.module1Repo}}}` under your personal username at GitHub.
 It doesn't matter if the repository is public or private.
 
-{{{end}}}
-
-{{{with step}}}
-Create a git commit:
+[**:material-chevron-right-circle-outline: Step 7**](#step-7){id="step-7"}:
+Create a git commit
 
 {{{with script "en" "git commit"}}}
 git add -A
@@ -188,41 +165,37 @@ commit you just created leaves the directory in a "clean" state, which is
 necessary for `cue` to know exactly which files to include in the published
 module.
 
-{{{end}}}
+[**:material-chevron-right-circle-outline: Step 8**](#step-8){id="step-8"}:
+Publish the first version of this module
 
-{{{with step}}}
-
-Publish the first version of this module:
 {{{with script "en" "module-1-v0.0.1-publish"}}}
 #ellipsis 0
 cue mod publish v0.0.1
 {{{end}}}
 
-{{{end}}}
+!!! success
 
-{{< warning >}}
-This command should mention **your** GitHub username,
-and should publish the module successfully.
+    The output from this command should mention **your** GitHub username,
+    and should publish the module successfully.
 
-If the command fails with an error message that mentions *your* GitHub username
-then you probably haven't created the `{{{.module1Repo}}}` repository under your GitHub username.
-Create it, and try the step again.
+    If the command fails with an error message that mentions *your* GitHub username
+    then you probably haven't created the `{{{.module1Repo}}}` repository under your GitHub username.
+    Create it, and try the step again.
 
-If the command fails with an error message that mentions `{{{.githubUser}}}/{{{.module1Repo}}}`
-then you probably forgot to adapt the command in step 3, above.
-Don't worry - this **isn't** a serious problem!
+    If the command fails with an error message that mentions `{{{.githubUser}}}/{{{.module1Repo}}}`
+    then you probably forgot to adapt the command in step 3, above.
+    Don't worry - this **isn't** a serious problem!
 
-The easiest way to fix this is to delete your `{{{.module1Repo}}}` directory
-and restart the tutorial from step 1.
-<!-- TODO: link to step 1 when https://cuelang.org/issue/2971 is resolved -->
-{{< /warning >}}
+    The easiest way to fix this is to delete your `{{{.module1Repo}}}` directory
+    and restart the tutorial from step 1.
 
 ## Create a new `frostyapp` module that depends on the first module
 
 Define the `FrostyApp` configuration, constrained by the schema you just
 published.
 
-{{{with step}}}
+[**:material-chevron-right-circle-outline: Step 9**](#step-9){id="step-9"}:
+Create a directory for the `frostyapp` module
 
 Create a directory for the new module and initalize it,
 changing `{{{.githubUser}}}` to *your* GitHub username, lower-cased:
@@ -234,14 +207,14 @@ cd    ../frostyapp
 git init -q
 cue mod init --source=git {{{.MODULE2}}}@v0
 {{{end}}}
-{{{end}}}
 
-{{{with step}}}
+[**:material-chevron-right-circle-outline: Step 10**](#step-10){id="step-10"}:
+Create the code for the new module
 
-Create the code for the new module:
+!!! info "Make sure to change `{{{.githubUser}}}` to *your* GitHub username, lower-cased, on the highlighted line."
 
 {{{with upload "en" "config.cue"}}}
-#codetab(frostyapp/config.cue) linenos="table"
+#codetab(frostyapp/config.cue) hl_lines="4"
 -- frostyapp/config.cue --
 package frostyapp
 
@@ -255,13 +228,11 @@ config: {{{.module1Repo}}}.#Config & {
 }
 {{{end}}}
 
-**Remember to change `{{{.githubUser}}}` to *your* GitHub username, lower-cased, on line 4.**
+[**:material-chevron-right-circle-outline: Step 11**](#step-11){id="step-11"}:
+Ensure the module is tidy
 
-{{{end}}}
+Tidy the module and add any missing dependencies:
 
-{{{with step}}}
-
-Ensure the module is tidy, adding missing dependencies:
 {{{with script "en" "frostyapp-tidy-1"}}}
 cue mod tidy
 {{{end}}}
@@ -273,31 +244,20 @@ We can see that the dependencies have now been added to the
 cat cue.mod/module.cue
 {{{end}}}
 
-{{{end}}}
-
 ## Evaluate the configuration
 
-{{{with step}}}
+[**:material-chevron-right-circle-outline: Step 12**](#step-12){id="step-12"}:
+Export the configuration as YAML
 
-Export the configuration as YAML:
 {{{with script "en" "frostyapp-export-1"}}}
 cue export --out yaml
 {{{end}}}
 
 We can use this new module code just like any other CUE code.
 
-{{{end}}}
+## Module published successfully!
 
-<!-- TODO: prompt the reader to delete the authz-related repo from GitHub? -->
-
-## Congratulations!
-
-That's it! You have just created a module and published it to the Central
+Well done - you've finished!
+You have just created a module and published it to the Central
 Registry, and then used the newly published module to check a concrete
 configuration held in a different module.
-
-## Related content
-
-- {{< linkto/related/tutorial "working-with-the-central-registry" >}}
-- {{< linkto/related/tutorial "working-with-a-custom-module-registry" >}}
-- {{< linkto/related/reference "modules" >}}
