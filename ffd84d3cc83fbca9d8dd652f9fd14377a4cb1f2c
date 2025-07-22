@@ -16,6 +16,24 @@
       "message": "In my local testing, this did not render properly.",
       "revId": "ffd84d3cc83fbca9d8dd652f9fd14377a4cb1f2c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fac98aed_5072406b",
+        "filename": "content/docs/draft/cldd/publishing-modules-to-the-central-registry/en.md",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-07-22T06:28:57Z",
+      "side": 1,
+      "message": "The downstream env doesn\u0027t have admonitions enabled yet (https://squidfunk.github.io/mkdocs-material/reference/admonitions/#configuration).",
+      "parentUuid": "c9382df8_db0cb6e7",
+      "revId": "ffd84d3cc83fbca9d8dd652f9fd14377a4cb1f2c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
