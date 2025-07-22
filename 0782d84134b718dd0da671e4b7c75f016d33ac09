@@ -22,6 +22,30 @@
       },
       "revId": "0782d84134b718dd0da671e4b7c75f016d33ac09",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "101838e1_fc806d26",
+        "filename": "internal/cmd/preprocessor/cmd/step_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-07-22T06:37:15Z",
+      "side": 1,
+      "message": "Consistency of output. We define that leading space is gobbled. So we should just do that.",
+      "parentUuid": "6e384f06_1239cc39",
+      "range": {
+        "startLine": 55,
+        "startChar": 39,
+        "endLine": 55,
+        "endChar": 70
+      },
+      "revId": "0782d84134b718dd0da671e4b7c75f016d33ac09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
