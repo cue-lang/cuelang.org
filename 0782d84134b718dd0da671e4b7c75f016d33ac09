@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6e384f06_1239cc39",
+        "filename": "internal/cmd/preprocessor/cmd/step_node.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-07-22T06:32:55Z",
+      "side": 1,
+      "message": "Just out of interest, what affected this decision relative to our discussion?",
+      "range": {
+        "startLine": 55,
+        "startChar": 39,
+        "endLine": 55,
+        "endChar": 70
+      },
+      "revId": "0782d84134b718dd0da671e4b7c75f016d33ac09",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
