@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "EGRNDGQBP0IMNFG70M6OL2TJUG77OLHUMB3DI9NJK00THP13797G===="
-									scriptHash: "DD6VFNJGKOHSKEFU9CAIPS1PAUT6DT9T2Q9056NO565JLI6EU8AG===="
+									hash:       "UR1E90F882POM31BRIHT176AI1FP1PMOBQE3CUPBTB6HCHNKN46G===="
+									scriptHash: "LDTC9N78CH44NF881M6MR2DQ9F1NV6SEV9FF3C18LA44C8QJ2L6G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.2:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0-rc.1.0.20250724155554-6d101321cb41:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -101,7 +101,7 @@ package site
 												  -T, --inject-vars              inject system variables in tags
 												      --list                     concatenate multiple objects into a list
 												      --merge                    merge non-CUE files (default true)
-												  -n, --name string              glob filter for non-CUE file names in directories
+												  -n, --name string              regexp filter for non-CUE file names in directories
 												      --out string               output format (run 'cue help filetypes' for more info)
 												  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
 												  -p, --package string           package name for non-CUE files
