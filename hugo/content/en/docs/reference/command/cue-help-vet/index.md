@@ -67,7 +67,7 @@ Flags:
   -T, --inject-vars              inject system variables in tags
       --list                     concatenate multiple objects into a list
       --merge                    merge non-CUE files (default true)
-  -n, --name string              glob filter for non-CUE file names in directories
+  -n, --name string              regexp filter for non-CUE file names in directories
   -p, --package string           package name for non-CUE files
   -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
       --proto_enum string        mode for rendering enums (int|json) (default "int")
