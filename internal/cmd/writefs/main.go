@@ -91,7 +91,9 @@ func main() {
 			if err := os.Symlink(target, fp); err != nil {
 				log.Fatalf("failed to symlink %s -> %s: %v", fp, target, err)
 			}
-		case "file":
+
+		// Allow "" to be a synonym for "file" here is like a default.
+		case "file", "":
 			var toWrite bytes.Buffer
 
 			// TODO: more principled checking of whether this filetype is known to
