@@ -190,24 +190,58 @@ func (p *page) Format(state fmt.State, verb rune) {
 }
 
 func (p *page) isClddContent() bool {
+	// If CDD mode is enabled, all content is treated as cldd content
+	if p.ctx.cddMode {
+		return true
+	}
+	// Otherwise, use the original location-based logic
 	return strings.HasPrefix(p.contentRelPath, "docs/draft/cldd/")
 }
 
+// getTargetRoot returns the target root directory based on whether CDD mode is enabled
+func (p *page) getTargetRoot() string {
+	if p.ctx.cddMode {
+		return p.ctx.cddOutputDir
+	}
+	return filepath.Join(p.ctx.executor.root, "hugo", "content")
+}
+
 func (ec *executeContext) newPage(dir, rel string) (*page, error) {
-	contentDir := filepath.Join(ec.executor.root, "content")
-	contentRelPath, err := filepath.Rel(contentDir, dir)
-	if err != nil {
-		return nil, ec.errorf("%v: failed to determine %s relative to %s: %v", ec, dir, contentDir, err)
+	var contentRelPath string
+	var err error
+	
+	if ec.cddMode {
+		// In CDD mode, use the relative path from the working directory
+		contentRelPath = rel
+	} else {
+		// In regular mode, use the relative path from the content directory
+		contentDir := filepath.Join(ec.executor.root, "content")
+		contentRelPath, err = filepath.Rel(contentDir, dir)
+		if err != nil {
+			return nil, ec.errorf("%v: failed to determine %s relative to %s: %v", ec, dir, contentDir, err)
+		}
 	}
 
-	// Every bit of content is rooted at "content"
-	pageSelectors := []cue.Selector{cue.Str("content")}
+	var pageSelectors []cue.Selector
+	
+	if ec.cddMode {
+		// In CDD mode, we don't use a "content" root
+		if rel != "." {
+			pathParts := strings.Split(rel, string(os.PathSeparator))
+			for _, p := range pathParts {
+				pageSelectors = append(pageSelectors, cue.Str(p))
+			}
+		}
+	} else {
+		// Every bit of content is rooted at "content"
+		pageSelectors = []cue.Selector{cue.Str("content")}
 
-	// Only if we are not in the content directory is dereferencing required.
-	if rel != "." {
-		pathParts := strings.Split(rel, string(os.PathSeparator))
-		for _, p := range pathParts {
-			pageSelectors = append(pageSelectors, cue.Str(p))
+		// Only if we are not in the content directory is dereferencing required.
+		if rel != "." {
+			pathParts := strings.Split(rel, string(os.PathSeparator))
+			for _, p := range pathParts {
+				pageSelectors = append(pageSelectors, cue.Str(p))
+			}
 		}
 	}
 
@@ -440,7 +474,7 @@ func (p *page) process() error {
 		sourcePath := filepath.Join(p.dir, n)
 		var targets []string
 		for _, lang := range langs {
-			targetPath := filepath.Join(p.ctx.executor.root, "hugo", "content", string(lang), p.relPath)
+			targetPath := filepath.Join(p.getTargetRoot(), string(lang), p.relPath)
 			if !de.IsDir() {
 				targetPath = filepath.Join(targetPath, n)
 			}
@@ -455,7 +489,7 @@ func (p *page) process() error {
 	// Recursively copy any _$LANG directory content to $TARGET_DIR.
 	for _, ld := range langsWithLangDirs {
 		sourceLangDir := filepath.Join(p.dir, "_"+ld)
-		targetLangDir := filepath.Join(p.ctx.executor.root, "hugo", "content", ld, p.relPath)
+		targetLangDir := filepath.Join(p.getTargetRoot(), ld, p.relPath)
 		if err := copyDirContents(sourceLangDir, targetLangDir); err != nil {
 			return err
 		}
@@ -466,7 +500,7 @@ func (p *page) process() error {
 		rootFiles := p.langTargets[lang]
 		for _, rootFile := range rootFiles {
 			prefix, ext := rootFile.prefix, rootFile.ext
-			targetDir := filepath.Join(p.ctx.executor.root, "hugo", "content", string(lang), p.contentRelPath)
+			targetDir := filepath.Join(p.getTargetRoot(), string(lang), p.contentRelPath)
 			targetPath := filepath.Join(targetDir, prefix+"index."+ext)
 
 			if err := rootFile.transform(targetPath); err != nil {
