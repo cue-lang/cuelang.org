@@ -214,9 +214,9 @@ func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
 	// With a script there are no files... just script
 
-	isCldd := s.rf.page.isClddContent()
+	isMkdocs := s.rf.page.isMkdocsMode()
 
-	if !isCldd {
+	if !isMkdocs {
 		p("```text { title=%q", "TERMINAL")
 		// Build up a base64 encoded script that will be copied. This is necessary
 		// because the rendered window will include the output... which won't work
