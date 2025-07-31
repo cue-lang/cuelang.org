@@ -1,0 +1,20 @@
+# Test that --cddoutputdir cannot be used without --cdd mode
+
+! exec preprocessor execute --cddoutputdir=output
+stderr '--cddoutputdir can only be used with --cdd mode'
+
+-- content/example/en.md --
+---
+title: test
+---
+test content
+
+-- content/example/site.cue --
+package site
+
+content: example: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+
+-- hugo/.keep --
