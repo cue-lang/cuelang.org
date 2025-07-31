@@ -82,9 +82,13 @@ func findCmd() {
 	}
 
 	// We only care about the layout of the directories "under the control"
-	// of the preprocessor. That means just content and hugo.
-	dirsToWalk := []string{"content", "hugo"}
+	// of the preprocessor. That means just content and hugo, but also output
+	// directories for CDD mode.
+	dirsToWalk := []string{"content", "hugo", "output"}
 	for _, d := range dirsToWalk {
+		if _, err := os.Stat(d); os.IsNotExist(err) {
+			continue
+		}
 		filepath.WalkDir(d, findImpl)
 	}
 }

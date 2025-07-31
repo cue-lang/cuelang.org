@@ -56,6 +56,8 @@ const (
 	flagNoCacheVolume     flagName = "nocachevolume"
 	flagTestUserAuthn     flagName = "testuserauthn"
 	flagConcurrencyFactor flagName = "concurrencyfactor"
+	flagCddMode           flagName = "cdd"
+	flagCddOutputDir      flagName = "cddoutputdir"
 
 	envTestUserAuthn = "PREPROCESSOR_TEST_USER_AUTHN"
 )
@@ -201,6 +203,13 @@ type executionContext struct {
 	// procSemaphore is a buffered channel designed to act as a semaphore to
 	// control the number of processes concurrently spawned by the preprocessor.
 	procSemaphore chan struct{}
+
+	// cddMode indicates whether CDD mode is enabled, which applies cldd processing
+	// logic regardless of page location
+	cddMode bool
+
+	// cddOutputDir is the output directory to use when cddMode is enabled
+	cddOutputDir string
 }
 
 func (e *executionContext) doWithSemaphore(f func()) {
@@ -250,9 +259,37 @@ func executeDef(c *Command, args []string) error {
 	// Get our working directory. Default to current working directory
 	wd := flagDir.String(c)
 
-	wd, projectRoot, err := deriveProjectRoot(wd)
-	if err != nil {
-		return err
+	// Check CDD mode configuration
+	cddMode := flagCddMode.Bool(c)
+	cddOutputDir := flagCddOutputDir.String(c)
+
+	if cddMode && cddOutputDir == "" {
+		return fmt.Errorf("--cddoutputdir is required when --cdd mode is enabled")
+	}
+
+	if !cddMode && cddOutputDir != "" {
+		return fmt.Errorf("--cddoutputdir can only be used with --cdd mode")
+	}
+
+	var projectRoot string
+	var err error
+
+	if cddMode {
+		// In CDD mode, we don't require a hugo root. Use the working directory as-is.
+		if wd == "" {
+			wd = "."
+		}
+		wd, err = filepath.Abs(wd)
+		if err != nil {
+			return fmt.Errorf("failed to make working directory %s absolute: %w", wd, err)
+		}
+		// Use the working directory as the project root for CDD mode
+		projectRoot = wd
+	} else {
+		wd, projectRoot, err = deriveProjectRoot(wd)
+		if err != nil {
+			return err
+		}
 	}
 
 	// Ensure os.Getwd() is contained by projectRoot, so that loading of
@@ -296,6 +333,8 @@ func executeDef(c *Command, args []string) error {
 		cacheVolumeName:   flagCacheVolumeName.String(c),
 		noCacheVolume:     flagNoCacheVolume.Bool(c),
 		procSemaphore:     make(chan struct{}, maxConcurrent),
+		cddMode:           cddMode,
+		cddOutputDir:      cddOutputDir,
 	}
 
 	if authFlag := flagTestUserAuthn.String(c); authFlag != "" {
