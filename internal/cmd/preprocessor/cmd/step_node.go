@@ -49,7 +49,7 @@ func (s *stepNode) writeSourceTo(b *bytes.Buffer) {
 func (s *stepNode) writeTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
 
-	if s.rf.page.isClddContent() {
+	if s.rf.page.isMkdocsMode() {
 		p("[**:material-chevron-right-circle-outline: Step %[1]d**](#step-%[1]d){id=\"step-%[1]d\"}:", s.number)
 
 		// Create a new bytes.Buffer because we want to gobble leading space
