@@ -56,6 +56,7 @@ const (
 	flagNoCacheVolume     flagName = "nocachevolume"
 	flagTestUserAuthn     flagName = "testuserauthn"
 	flagConcurrencyFactor flagName = "concurrencyfactor"
+	flagMkdocsOutput      flagName = "mkdocs-output"
 
 	envTestUserAuthn = "PREPROCESSOR_TEST_USER_AUTHN"
 )
@@ -201,6 +202,10 @@ type executionContext struct {
 	// procSemaphore is a buffered channel designed to act as a semaphore to
 	// control the number of processes concurrently spawned by the preprocessor.
 	procSemaphore chan struct{}
+
+	// mkdocsOutput is the output directory for mkdocs mode. When non-empty,
+	// applies mkdocs processing logic regardless of page location
+	mkdocsOutput string
 }
 
 func (e *executionContext) doWithSemaphore(f func()) {
@@ -250,9 +255,36 @@ func executeDef(c *Command, args []string) error {
 	// Get our working directory. Default to current working directory
 	wd := flagDir.String(c)
 
-	wd, projectRoot, err := deriveProjectRoot(wd)
-	if err != nil {
-		return err
+	// Check mkdocs output configuration
+	mkdocsOutput := flagMkdocsOutput.String(c)
+
+	if mkdocsOutput != "" {
+		// Validate that the output directory path is non-empty
+		mkdocsOutput = strings.TrimSpace(mkdocsOutput)
+		if mkdocsOutput == "" {
+			return fmt.Errorf("--mkdocs-output must be non-empty when specified")
+		}
+	}
+
+	var projectRoot string
+	var err error
+
+	if mkdocsOutput != "" {
+		// In mkdocs mode, we don't require a hugo root. Use the working directory as-is.
+		if wd == "" {
+			wd = "."
+		}
+		wd, err = filepath.Abs(wd)
+		if err != nil {
+			return fmt.Errorf("failed to make working directory %s absolute: %w", wd, err)
+		}
+		// Use the working directory as the project root for mkdocs mode
+		projectRoot = wd
+	} else {
+		wd, projectRoot, err = deriveProjectRoot(wd)
+		if err != nil {
+			return err
+		}
 	}
 
 	// Ensure os.Getwd() is contained by projectRoot, so that loading of
@@ -296,6 +328,7 @@ func executeDef(c *Command, args []string) error {
 		cacheVolumeName:   flagCacheVolumeName.String(c),
 		noCacheVolume:     flagNoCacheVolume.Bool(c),
 		procSemaphore:     make(chan struct{}, maxConcurrent),
+		mkdocsOutput:      mkdocsOutput,
 	}
 
 	if authFlag := flagTestUserAuthn.String(c); authFlag != "" {
