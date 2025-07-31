@@ -1,0 +1,42 @@
+# Test that mkdocs mode enables cldd processing logic for all content
+# This demonstrates that step blocks work in mkdocs mode (which requires cldd processing)
+
+mkdir output
+
+# Run the preprocessor in mkdocs mode
+exec preprocessor execute --mkdocs-output=output
+
+# Verify the step was processed and output file was created
+cmp output/step_test/index.md golden/output/step_test/index.md
+
+-- content/step_test/en.md --
+---
+title: Step test in mkdocs mode
+---
+
+This tests step functionality in mkdocs mode.
+
+{{{with step "en" "demo step"}}}
+echo "Hello from mkdocs mode"
+{{{end}}}
+
+-- content/step_test/site.cue --
+package site
+
+content: step_test: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+
+-- golden/output/step_test/index.md --
+---
+title: Step test in mkdocs mode
+---
+
+This tests step functionality in mkdocs mode.
+
+[**:material-chevron-right-circle-outline: Step 1**](#step-1){id="step-1"}: echo "Hello from mkdocs mode"
+
+---
+
+

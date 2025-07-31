@@ -1,0 +1,54 @@
+# Test mkdocs mode functionality
+# Ensure that --mkdocs-output mode processes content without requiring hugo directory structure
+# and uses the specified output directory
+
+# Create output directory
+mkdir output
+
+# Run the preprocessor in mkdocs mode
+exec preprocessor execute --mkdocs-output=output
+
+# Verify that output files were created in the specified directory
+cmp output/example/index.md golden/output/example/index.md
+
+# Verify filesystem contents
+exec cmd-find
+cmp stdout stdout.golden
+
+-- content/example/en.md --
+---
+title: mkdocs test example
+---
+
+This is a test file for mkdocs mode.
+
+{{{with script "en" "test"}}}
+#location top
+echo "test script output"
+{{{end}}}
+
+-- content/example/site.cue --
+package site
+
+content: example: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+
+-- golden/output/example/index.md --
+---
+title: mkdocs test example
+---
+
+This is a test file for mkdocs mode.
+
+``` { .text title="TERMINAL" data-copy="echo &#34;test script output&#34;" }
+$ echo "test script output"
+test script output
+```
+
+-- stdout.golden --
+content/example/en.md
+content/example/gen_cache.cue
+content/example/site.cue
+output/example/index.md

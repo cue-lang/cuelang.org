@@ -124,9 +124,14 @@ func (ec *executeContext) execute() error {
 	// serve mode and delete hugo/content as a temporary(ish) measure to ensure
 	// that we don't leave any stale files around.
 	if !flagServe.Bool(ec.executor.cmd) {
-		hugoContent := filepath.Join(ec.executor.root, "hugo", "content")
-		if err := os.RemoveAll(hugoContent); err != nil {
-			return ec.errorf("%v: failed to remove %s: %v", ec, hugoContent, err)
+		var targetDir string
+		if ec.mkdocsOutput != "" {
+			targetDir = ec.mkdocsOutput
+		} else {
+			targetDir = filepath.Join(ec.executor.root, "hugo", "content")
+		}
+		if err := os.RemoveAll(targetDir); err != nil {
+			return ec.errorf("%v: failed to remove %s: %v", ec, targetDir, err)
 		}
 	}
 
