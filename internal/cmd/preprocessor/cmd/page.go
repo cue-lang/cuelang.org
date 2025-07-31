@@ -189,25 +189,50 @@ func (p *page) Format(state fmt.State, verb rune) {
 	fmt.Fprintf(state, "%s", p.dir)
 }
 
-func (p *page) isClddContent() bool {
-	return strings.HasPrefix(p.contentRelPath, "docs/draft/cldd/")
+func (p *page) isMkdocsMode() bool {
+	// Return true if mkdocs output mode is enabled
+	return p.ctx.mkdocsOutput != ""
+}
+
+// getTargetRoot returns the target root directory based on whether mkdocs mode is enabled
+func (p *page) getTargetRoot() string {
+	if p.ctx.mkdocsOutput != "" {
+		return p.ctx.mkdocsOutput
+	}
+	return filepath.Join(p.ctx.executor.root, "hugo", "content")
 }
 
 func (ec *executeContext) newPage(dir, rel string) (*page, error) {
+	var contentRelPath string
+	var err error
+
+	// In regular mode, use the relative path from the content directory
 	contentDir := filepath.Join(ec.executor.root, "content")
-	contentRelPath, err := filepath.Rel(contentDir, dir)
+	contentRelPath, err = filepath.Rel(contentDir, dir)
 	if err != nil {
 		return nil, ec.errorf("%v: failed to determine %s relative to %s: %v", ec, dir, contentDir, err)
 	}
 
-	// Every bit of content is rooted at "content"
-	pageSelectors := []cue.Selector{cue.Str("content")}
+	var pageSelectors []cue.Selector
 
-	// Only if we are not in the content directory is dereferencing required.
-	if rel != "." {
-		pathParts := strings.Split(rel, string(os.PathSeparator))
-		for _, p := range pathParts {
-			pageSelectors = append(pageSelectors, cue.Str(p))
+	if ec.mkdocsOutput != "" {
+		// In mkdocs mode, we don't use a "content" root
+		if rel != "." {
+			pathParts := strings.Split(rel, string(os.PathSeparator))
+			for _, p := range pathParts {
+				pageSelectors = append(pageSelectors, cue.Str(p))
+			}
+		}
+	} else {
+		// Every bit of content is rooted at "content"
+		pageSelectors = []cue.Selector{cue.Str("content")}
+
+		// Only if we are not in the content directory is dereferencing required.
+		if rel != "." {
+			pathParts := strings.Split(rel, string(os.PathSeparator))
+			for _, p := range pathParts {
+				pageSelectors = append(pageSelectors, cue.Str(p))
+			}
 		}
 	}
 
@@ -444,7 +469,12 @@ func (p *page) process() {
 		sourcePath := filepath.Join(p.dir, n)
 		var targets []string
 		for _, lang := range langs {
-			targetPath := filepath.Join(p.ctx.executor.root, "hugo", "content", string(lang), p.relPath)
+			var targetPath string
+			if p.isMkdocsMode() {
+				targetPath = filepath.Join(p.getTargetRoot(), p.relPath)
+			} else {
+				targetPath = filepath.Join(p.getTargetRoot(), string(lang), p.relPath)
+			}
 			if !de.IsDir() {
 				targetPath = filepath.Join(targetPath, n)
 			}
@@ -458,9 +488,11 @@ func (p *page) process() {
 	}
 
 	// Recursively copy any _$LANG directory content to $TARGET_DIR.
+	//
+	// TODO: in mkdocs mode we probably don't want/need any of this
 	for _, ld := range langsWithLangDirs {
 		sourceLangDir := filepath.Join(p.dir, "_"+ld)
-		targetLangDir := filepath.Join(p.ctx.executor.root, "hugo", "content", ld, p.relPath)
+		targetLangDir := filepath.Join(p.getTargetRoot(), ld, p.relPath)
 		if err := copyDirContents(sourceLangDir, targetLangDir); err != nil {
 			p.errorf("%v: %v", p, err)
 			return
@@ -472,7 +504,12 @@ func (p *page) process() {
 		rootFiles := p.langTargets[lang]
 		for _, rootFile := range rootFiles {
 			prefix, ext := rootFile.prefix, rootFile.ext
-			targetDir := filepath.Join(p.ctx.executor.root, "hugo", "content", string(lang), p.contentRelPath)
+			var targetDir string
+			if p.isMkdocsMode() {
+				targetDir = filepath.Join(p.getTargetRoot(), p.contentRelPath)
+			} else {
+				targetDir = filepath.Join(p.getTargetRoot(), string(lang), p.contentRelPath)
+			}
 			targetPath := filepath.Join(targetDir, prefix+"index."+ext)
 
 			if err := rootFile.transform(targetPath); err != nil {

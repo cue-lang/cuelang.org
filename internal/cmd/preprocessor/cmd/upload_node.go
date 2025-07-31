@@ -74,8 +74,8 @@ func (u *uploadNode) validate() {
 		u.errorf("%v: upload nodes must contain at least one file", u)
 	}
 
-	if !u.hidden && u.rf.page.isClddContent() && len(u.analysis.fileNames) != 1 {
-		u.errorf("%v: cldd upload nodes must contain exactly one file", u)
+	if !u.hidden && u.rf.page.isMkdocsMode() && len(u.analysis.fileNames) != 1 {
+		u.errorf("%v: mkdocs upload nodes must contain exactly one file", u)
 	}
 
 	var err error
@@ -102,8 +102,8 @@ func (u *uploadNode) validate() {
 func (u *uploadNode) writeTransformTo(res *bytes.Buffer) error {
 	b := new(bytes.Buffer)
 	var err error
-	if u.rf.page.isClddContent() {
-		err = u.clddWriteTransformTo(b)
+	if u.rf.page.isMkdocsMode() {
+		err = u.mkdocsWriteTransformTo(b)
 	} else {
 		err = u.regularWriteTransformTo(b)
 	}
@@ -150,7 +150,7 @@ func (u *uploadNode) regularWriteTransformTo(b *bytes.Buffer) error {
 	return nil
 }
 
-func (u *uploadNode) clddWriteTransformTo(b *bytes.Buffer) error {
+func (u *uploadNode) mkdocsWriteTransformTo(b *bytes.Buffer) error {
 	p := bufPrintf(b)
 	// For now there will be a single file, ensured by validate()
 	f := u.archive.Files[0]
