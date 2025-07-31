@@ -162,6 +162,8 @@ func newExecuteCmd(c *Command) *cobra.Command {
 	cmd.Flags().Bool(string(flagNoCacheVolume), false, "do not use a shared docker volume cache for mult-step scripts")
 	cmd.Flags().String(string(flagTestUserAuthn), os.Getenv(envTestUserAuthn), "a JSON map of test user credentials for the Central Registry. Can also be set with non-empty "+envTestUserAuthn)
 	cmd.Flags().String(string(flagConcurrencyFactor), envOrDefault("PREPROCESSOR_CONCURRENCY_FACTOR", "2.0"), "a float factor applied to runtime.NumCPU() to determine the max number of concurrent processes spawned")
+	cmd.Flags().Bool(string(flagCddMode), false, "enable CDD mode that applies cldd processing logic regardless of page location")
+	cmd.Flags().String(string(flagCddOutputDir), "", "output directory for CDD mode (required when --cdd is enabled)")
 	return cmd
 }
 

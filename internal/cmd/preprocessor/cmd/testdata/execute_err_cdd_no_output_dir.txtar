@@ -1,0 +1,10 @@
+# Test that --cdd flag requires --cddoutputdir to be specified
+
+! exec preprocessor execute --cdd
+stderr '--cddoutputdir is required when --cdd mode is enabled'
+
+-- example/en.md --
+---
+title: test
+---
+test content
