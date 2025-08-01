@@ -7,17 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								files: "X9KFl3W/7/07CHtJLZCplDhBdNzhuDNyqSONMw+UghU="
+								files: "jDMIGZYxw+z63fzsSmEFx2Cc4vrawwqur2ZiHG8ozag="
 							}
 							multi_step: {
-								hash:       "U0PLBSHBAKL6ROHGEVS71UIMUJ9INDF9LIUS2HUVITPR1RGA4SPG===="
+								hash:       "COR5QC6PCEJSA7FIV4BGBLM1L90TAAB9GKBSUH2F0GU4PG0E64EG===="
 								scriptHash: "6CVB0H73A96VKBHC2QKK1U9V1JH3C87HJA96GOMVDOJ279QGJRJ0===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.13.2
+											cue version v0.14.0
 											...
 
 											"""

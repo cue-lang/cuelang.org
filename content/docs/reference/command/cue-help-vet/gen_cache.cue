@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "KTNIQU44PKLLLNMRKHMTJAUARF8FG32V08H0AANQ3SGDNOQS4R4G===="
-									scriptHash: "6L7C0L3BPD9F9881TG0UV4GRUM71789ELQ9NJLKLNGLMR92NOA10===="
+									hash:       "Q9H7RQVNBVDFMHM5L09IAE5ICVR7SD5A3QDMJ4ALOPHNNH6OUF80===="
+									scriptHash: "S6Q464HL3KEL0LCLUNNJ8G43D5RNG7MLVEQ8PS9HJQNQKDR88FH0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.2:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -80,7 +80,7 @@ package site
 												  -T, --inject-vars              inject system variables in tags
 												      --list                     concatenate multiple objects into a list
 												      --merge                    merge non-CUE files (default true)
-												  -n, --name string              glob filter for non-CUE file names in directories
+												  -n, --name string              regexp filter for non-CUE file names in directories
 												  -p, --package string           package name for non-CUE files
 												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
