@@ -126,7 +126,7 @@ This is only required once for each computer that accesses the Central Registry.
 
 !!! info "The Central Registry is in beta testing"
     Please give us your feedback about the service in the `#modules` channels on
-    [Slack](/s/slack) and [Discord](/s/discord).
+    [Slack](https://cuelang.org/s/slack) and [Discord](https://cuelang.org/s/discord).
 
 
 ---
