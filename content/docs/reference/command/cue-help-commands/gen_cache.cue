@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "VS4P34V6O8DVBKO623B35TF42BFQBHELRQS7045HTH720028QLN0===="
-									scriptHash: "2V3TA5O57SB6TCRB70U5RVV0NRPM9G63TVONQAMLD9M4STDJ18PG===="
+									hash:       "5A07OLBLTBD73AVLTFCPCF8RLE9UM8FAK5OP7MNQ02FCDDHHPA10===="
+									scriptHash: "KGCE3EH68RGQSGE17FHC48V9RJ2IF957P3DISRGNJBK7HFCGG7G0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.2:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {

@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "HC3E4SSF0FC4R20VBCIK7I36JNNMIIOACEK0U27B27P26AP3T8R0===="
-									scriptHash: "300IMIH975SM7DELASCTDLGO0QBHBP58OEILQOMI1J631OUORNOG===="
+									hash:       "5SK97S3LTGE8J03L83EQSQL77SVH71KT30DD5AGGAVC30R5QMFBG===="
+									scriptHash: "10PNN2A9M5L5GF781G2T8F79BKHO90COMTUKE6QLV74V20U8DLT0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.13.2:$PATH"
+										cmd:      "export PATH=/cues/v0.14.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -44,7 +44,7 @@ package site
 
 												Flags:
 												      --drop-require string       remove a requirement
-												      --drop-source               remove the source field (default )
+												      --drop-source               remove the source field
 												      --language-version string   set language.version ('current' means current language version)
 												      --module string             set the module path
 												      --require string            add a required module@version
