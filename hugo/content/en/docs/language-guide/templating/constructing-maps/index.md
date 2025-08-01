@@ -80,7 +80,7 @@ b: and([2])
 c: and([])
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-a: 10
+a: >=10 & <=10
 b: 2
 c: _
 {{< /code-tab >}}

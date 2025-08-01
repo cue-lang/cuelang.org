@@ -25,6 +25,7 @@ Usage:
   cue get [command]
 
 Available Commands:
+  crd         convert Kubernetes CRDs to packages in the current module
   go          add Go dependencies to the current module
 
 Global Flags:

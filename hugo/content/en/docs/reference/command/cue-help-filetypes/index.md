@@ -35,7 +35,7 @@ The cue tool will infer a file's type from its extension by
 default. The user may override this behavior by using qualifiers.
 A qualifier takes the form
 
-    <tag>{'+'<tag>}':'
+	<tag>{'+'<tag>}':'
 
 For instance,
 
@@ -45,7 +45,7 @@ specifies that 'foo.data' should be read as a JSON file. File
 formats that do not have a default extension may be represented
 in any data format using the same notation:
 
-   cue def jsonschema: bar.cue foo.yaml openapi+yaml: baz.def
+	cue def jsonschema: bar.cue foo.yaml openapi+yaml: baz.def
 
 interprets the files bar.cue and foo.yaml as data in the
 respective formats encoding an JSON Schema, while 'baz.def' is

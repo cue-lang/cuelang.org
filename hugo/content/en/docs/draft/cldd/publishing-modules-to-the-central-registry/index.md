@@ -35,7 +35,7 @@ This tutorial is written using the following version of `cue`:
 
 ``` { .text title="TERMINAL" data-copy="cue version" }
 $ cue version
-cue version v0.13.2
+cue version v0.14.0
 ...
 ```
 
@@ -250,7 +250,7 @@ We can see that the dependencies have now been added to the
 $ cat cue.mod/module.cue
 module: "github.com/cueckoo/frostyapp@v0"
 language: {
-	version: "v0.13.2"
+	version: "v0.14.0"
 }
 source: {
 	kind: "git"
