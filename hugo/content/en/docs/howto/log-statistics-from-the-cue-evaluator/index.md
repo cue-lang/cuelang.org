@@ -27,20 +27,28 @@ $ export CUE_STATS_FILE=stats.cue
 $ cue vet -c someFile.cue
 $ cat stats.cue
 CUE: {
-	EvalVersion:  3
-	Unifications: 4
-	Disjuncts:    0
-	Conjuncts:    4
-	CloseIDElems: 0
-	NumCloseIDs:  0
-	Freed:        0
-	Reused:       0
-	Allocs:       4
-	Retained:     0
+	EvalVersion:          3
+	Unifications:         4
+	Disjuncts:            0
+	Notifications:        0
+	Conjuncts:            4
+	NumCloseIDs:          0
+	ConjunctInfos:        4
+	MaxConjunctInfos:     1
+	MaxReqSets:           0
+	MaxRedirect:          0
+	GenerationMismatch:   0
+	MisalignedConjunct:   0
+	MisalignedConstraint: 0
+	SkippedNotification:  0
+	Freed:                4
+	Reused:               0
+	Allocs:               4
+	Retained:             0
 }
 Go: {
-	AllocBytes:   1697648
-	AllocObjects: 12722
+	AllocBytes:   1413392
+	AllocObjects: 7522
 }
 ```
 

@@ -32,7 +32,7 @@ Usage:
 
 Flags:
       --drop-require string       remove a requirement
-      --drop-source               remove the source field (default )
+      --drop-source               remove the source field
       --language-version string   set language.version ('current' means current language version)
       --module string             set the module path
       --require string            add a required module@version

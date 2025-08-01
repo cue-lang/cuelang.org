@@ -20,7 +20,8 @@ type "any" because the Go type system is not able to express disjunctions.
 
 To ensure that the resulting Go code works, any imported CUE packages or
 referenced CUE definitions are transitively generated as well.
-Generated code is placed in cue_types*_gen.go files in each CUE package directory.
+Code is generated in each CUE package directory at cue_types_${pkgname}_gen.go,
+where the package name is omitted from the filename if it is implied by the import path.
 
 Generated Go type and field names may differ from the original CUE names by default.
 For instance, an exported definition "#foo" becomes "Foo",

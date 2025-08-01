@@ -74,7 +74,7 @@ We can see that the dependencies have now been added to the `cue.mod/module.cue`
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
-	version: "v0.13.2"
+	version: "v0.14.0"
 }
 deps: {
 	"github.com/cue-labs/examples/frostyconfig@v0": {
