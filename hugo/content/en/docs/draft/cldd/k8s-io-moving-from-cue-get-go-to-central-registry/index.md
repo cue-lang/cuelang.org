@@ -130,7 +130,7 @@ and updates the `cue.mod/module.cue` file to track this dependency:
 $ cat cue.mod/module.cue
 module: "kube.example"
 language: {
-	version: "v0.13.2"
+	version: "v0.14.0"
 }
 deps: {
 	"cue.dev/x/k8s.io@v0": {

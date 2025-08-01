@@ -44,7 +44,7 @@ s: "Cat"
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 a: 11
-b: 10
+b: >=10 & <=10
 s: "Cat"
 {{< /code-tab >}}
 {{< /code-tabs >}}
