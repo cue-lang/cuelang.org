@@ -16,6 +16,24 @@
       "message": "Don\u0027t add.",
       "revId": "19b25bd2f980c5609d35a3daec825b47077c2ed4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae262145_8e13cccd",
+        "filename": "hugo/content/en/docs/_index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-04T16:06:03Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8e89cb12_8668f63b",
+      "revId": "19b25bd2f980c5609d35a3daec825b47077c2ed4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
