@@ -390,7 +390,9 @@ func (p *page) parseComparator(m json.RawMessage) (comparatorMatcher, error) {
 // process processes a page root. It copies all relevant non-root file content
 // to target /hugo/content directories (including _$LANG directories), and then
 // processes the set of root files that form the basis of a page root.
-func (p *page) process() error {
+//
+// Errors get reported via the page's errorContext.
+func (p *page) process() {
 	// langs are the languages "supported" by this page
 	langs := slices.Sorted(maps.Keys(p.langTargets))
 
@@ -405,8 +407,10 @@ func (p *page) process() error {
 	// copied.
 	dirEntries, err := os.ReadDir(p.dir)
 	if err != nil {
-		return p.errorf("%v: failed to read %s: %v", p, p.dir, err)
+		p.errorf("%v: failed to read %s: %v", p, p.dir, err)
+		return
 	}
+
 	for _, de := range dirEntries {
 		n := de.Name()
 		if de.IsDir() {
@@ -448,7 +452,8 @@ func (p *page) process() error {
 		}
 
 		if err := copyFile(sourcePath, targets...); err != nil {
-			return err
+			p.errorf("%v: %v", p, err)
+			return
 		}
 	}
 
@@ -457,7 +462,8 @@ func (p *page) process() error {
 		sourceLangDir := filepath.Join(p.dir, "_"+ld)
 		targetLangDir := filepath.Join(p.ctx.executor.root, "hugo", "content", ld, p.relPath)
 		if err := copyDirContents(sourceLangDir, targetLangDir); err != nil {
-			return err
+			p.errorf("%v: %v", p, err)
+			return
 		}
 	}
 
@@ -470,10 +476,8 @@ func (p *page) process() error {
 			targetPath := filepath.Join(targetDir, prefix+"index."+ext)
 
 			if err := rootFile.transform(targetPath); err != nil {
-				return err
+				return
 			}
 		}
 	}
-
-	return nil
 }
