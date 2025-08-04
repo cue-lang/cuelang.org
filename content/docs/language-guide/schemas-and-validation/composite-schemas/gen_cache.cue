@@ -8,9 +8,9 @@ package site
 						page: {
 							cache: {
 								code: {
-									"core-builtin-close":   "Um1OgPBfoY94W+Q2ByPjEtVK58xMaWq05F0OuiYFzVI="
-									"composition-operator": "E0ip9Ax0Q9GnayrGWpwIPQXmhh10cDQytx4vsGGqKNc="
-									embedding:              "lNNAwE4Sg8CPfIP1ID91BLOMemorn9oyDVRWy8tihuU="
+									"core-builtin-close":   "ocijWp1x78eZ9NkNxhpEr4x8qoRhtqYf7Od8As74zPI="
+									"composition-operator": "pkd9VIdgx7bAVWVhydL92r1U7AEjzEGstQS7KnyRL5U="
+									embedding:              "0e6Crkc0E7aCuvjLKxB8cXdtZF6ETK0khwuZnGFdBXs="
 								}
 							}
 						}
