@@ -16,7 +16,7 @@ provides a well-known location for well-known schemas, including those for the
 [YAML workflow files](https://argo-workflows.readthedocs.io/en/latest/fields/)
 used by [Argo Workflows](https://argo-workflows.readthedocs.io/en/latest/).
 This guide shows you how to get started defining your Argo workflows in CUE using
-[a curated module](../curated-module-argo-workflows.md)
+[a curated module](../curated-module-argo-workflows/index.md)
 from
 [the schema library](/getting-started/schema-library/).
 
@@ -107,7 +107,7 @@ Always use
 when you use a curated module for the first time.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](../login-central-registry.md)
+[login to the Central Registry](../login-central-registry/index.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 

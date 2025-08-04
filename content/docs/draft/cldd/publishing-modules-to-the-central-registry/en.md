@@ -30,7 +30,7 @@ create a second module that depends on the first.
   create it under your personal GitHub account (it doesn't matter if it is public or private)
 - **A [Central Registry](https://registry.cue.works/) account**
 - **The `cue` binary** --
-  follow the [installation instructions](../installing-cue.md)
+  follow the [installation instructions](../installing-cue/index.md)
   if you don't already use `cue`
 - **A tool to edit text files** --
   any text editor you have will be fine, such as

@@ -8,7 +8,7 @@ provides a well-known location for well-known schemas, including those for
 [the YAML configuration files](https://goreleaser.com/customization/)
 used by [GoReleaser](https://goreleaser.com/).
 This guide shows you how to get started defining your GoReleaser configurations using
-[a curated module](../curated-module-goreleaser.md)
+[a curated module](../curated-module-goreleaser/index.md)
 from
 [the schema library](/getting-started/schema-library/).
 
@@ -93,7 +93,7 @@ Always use
 when you use a curated module for the first time.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](../login-central-registry.md)
+[login to the Central Registry](../login-central-registry/index.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 

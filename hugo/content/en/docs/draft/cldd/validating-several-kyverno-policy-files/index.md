@@ -144,7 +144,7 @@ Tidying a module is an important part of using curated modules from the
 
 If you see an error message mentioning "too many requests" while following this
 guide, then
-[login to the Central Registry](../login-central-registry.md)
+[login to the Central Registry](../login-central-registry/index.md)
 and re-run the failing command.
 The Central Registry allows more requests from authenticated users.
 
