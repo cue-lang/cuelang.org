@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4a290167_71050163",
+        "filename": "hugo/content/en/docs/_index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-04T16:01:25Z",
+      "side": 0,
+      "message": "Don\u0027t delete this!",
+      "revId": "24e3c2c04e4f2300bec4aded8312f49789404714",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
