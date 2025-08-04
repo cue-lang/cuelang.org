@@ -141,6 +141,11 @@ func (p *page) newRootFile(fn string, lang lang, prefix, ext string) *rootFile {
 	}
 }
 
+// transform the root file.
+//
+// Errors are reported via the rootFile's error context. The returned error is
+// simply used to signal success vs failure of the transform (to alter control
+// flow).
 func (rf *rootFile) transform(targetPath string) error {
 	rf.debugf(rf.debugGeneral, "%v: transform root file", rf)
 	// For now, we only support en as a main language. For other languages

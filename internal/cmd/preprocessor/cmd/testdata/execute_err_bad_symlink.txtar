@@ -1,0 +1,27 @@
+# Ensure that we get a sensible error message when using the
+# --check flag to execute.
+
+unquote content/dir/en.md
+
+# Symlink a file that does not exist
+exec ln -s does/not/exist content/dir/link.txt
+
+# Run the preprocessor
+! exec preprocessor execute
+cmpenv stderr stderr.golden
+
+-- content/dir/page.cue --
+package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+-- content/dir/en.md --
+>---
+>title: JSON Superset
+>---
+-- hugo/content/.gitkeep --
+-- stderr.golden --
+** $WORK/content/dir: failed to read $WORK/content/dir/link.txt: open $WORK/content/dir/link.txt: no such file or directory
+terminating because of errors
