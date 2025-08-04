@@ -13,7 +13,7 @@ further downstream and waste time, resources, and focus?
 
 This guide shows what happens when the `cue vet` command finds a problem with a
 GitLab CI/CD pipeline file using a
-[curated module](../curated-module-gitlab-cicd.md) from the
+[curated module](../curated-module-gitlab-cicd/index.md) from the
 CUE [Central Registry](https://registry.cue.works),
 and how it highlights the data we need to fix.
 
@@ -58,7 +58,7 @@ allowed:`), and tells us the location of the problem (line 7 of our data file).
 
 If you see an error message mentioning "too many requests" while following this
 guide, then
-[login to the Central Registry](../login-central-registry.md)
+[login to the Central Registry](../login-central-registry/index.md)
 and re-run the failing command.
 The Central Registry allows more requests from authenticated users.
 

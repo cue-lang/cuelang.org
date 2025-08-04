@@ -8,7 +8,7 @@ provides a well-known location for well-known schemas, including those for the
 [different policy types](https://kyverno.io/policies) enforced by
 [Kyverno](https://kyverno.io/).
 This guide shows you how to get started defining your Kyverno policies in CUE using
-[a curated module](../curated-module-kyverno.md)
+[a curated module](../curated-module-kyverno/index.md)
 from
 [the schema library](/getting-started/schema-library/).
 
@@ -92,7 +92,7 @@ Always use
 when you use a curated module for the first time.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](../login-central-registry.md)
+[login to the Central Registry](../login-central-registry/index.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 

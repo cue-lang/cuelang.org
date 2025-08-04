@@ -16,7 +16,7 @@ provides a well-known location for well-known schemas, including those for
 [YAML workflow files](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions)
 used by [GitHub Actions](https://github.com/features/actions).
 This guide shows you how to get started defining your GitHub Actions workflows in CUE using
-[a curated module](../curated-module-github-actions.md)
+[a curated module](../curated-module-github-actions/index.md)
 from
 [the schema library](/getting-started/schema-library/).
 
@@ -87,7 +87,7 @@ Always use
 when you use a curated module for the first time.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](../login-central-registry.md)
+[login to the Central Registry](../login-central-registry/index.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 

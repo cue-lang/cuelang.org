@@ -19,7 +19,7 @@ their Go source code. By using the curated schemas published on the
 now you can get started creating validated Kubernetes manifests in minutes!
 
 This guide shows you how to get started defining your Kubernetes configurations using
-[a curated module](../curated-module-kubernetes.md)
+[a curated module](../curated-module-kubernetes/index.md)
 from
 [the schema library](/getting-started/schema-library/).
 
@@ -89,7 +89,7 @@ Always use
 when you use a curated module for the first time.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](../login-central-registry.md)
+[login to the Central Registry](../login-central-registry/index.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 

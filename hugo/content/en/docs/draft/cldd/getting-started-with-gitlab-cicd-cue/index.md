@@ -8,7 +8,7 @@ provides a well-known location for well-known schemas, including those for
 [YAML pipeline files](https://docs.gitlab.com/ci/yaml/)
 used by [GitLab CI/CD](https://about.gitlab.com/solutions/continuous-integration/).
 This guide shows you how to get started defining your GitLab CI/CD pipelines in CUE using
-[a curated module](../curated-module-gitlab-cicd.md)
+[a curated module](../curated-module-gitlab-cicd/index.md)
 from
 [the schema library](/getting-started/schema-library/).
 
@@ -89,7 +89,7 @@ Always use
 when you use a curated module for the first time.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](../login-central-registry.md)
+[login to the Central Registry](../login-central-registry/index.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 

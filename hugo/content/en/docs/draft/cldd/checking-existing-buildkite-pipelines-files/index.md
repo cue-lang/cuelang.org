@@ -10,7 +10,7 @@ systems.
 
 This guide shows you how to use the `cue` command to validate a Buildkite
 pipeline file using
-[a curated module](../curated-module-buildkite-pipelines.md) from the
+[a curated module](../curated-module-buildkite-pipelines/index.md) from the
 CUE [Central Registry](https://registry.cue.works) -- all without writing any
 schemas or policies in CUE.
 
@@ -42,7 +42,7 @@ check the `pipeline.yml` file. Because `cue vet` doesn't display any errors,
 you know that the curated module has validated your configuration file.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](../login-central-registry.md)
+[login to the Central Registry](../login-central-registry/index.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 

@@ -8,7 +8,7 @@ check to your development or deployment process you can catch and fix
 structural errors before they cause operational problems.
 
 This guide shows you how to validate a `cert-manager.io` CRD manifest using the appropriate
-[curated module](../curated-module-crd-cert-manager.md)
+[curated module](../curated-module-crd-cert-manager/index.md)
 from the CUE [Central Registry](/products/central-registry) --
 all without writing any schemas or policies in CUE.
 
@@ -50,7 +50,7 @@ Because `cue vet` doesn't display any errors
 you know that the curated module has validated the file's structure.
 
 If you see an error message mentioning "too many requests" then
-[login to the Central Registry](../login-central-registry.md)
+[login to the Central Registry](../login-central-registry/index.md)
 and re-run this command.
 The Central Registry allows more requests from authenticated users.
 
