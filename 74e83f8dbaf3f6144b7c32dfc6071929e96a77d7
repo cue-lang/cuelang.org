@@ -16,6 +16,24 @@
       "message": "```\nFixes cue-lang/cue#4016\n```",
       "revId": "74e83f8dbaf3f6144b7c32dfc6071929e96a77d7",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "45ad7ad0_1336c2e2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-04T16:04:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2e45dd3c_ce77c972",
+      "revId": "74e83f8dbaf3f6144b7c32dfc6071929e96a77d7",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
