@@ -69,6 +69,8 @@ jobs:
         run: |
           echo 'Setting CI_NO_SKIP_CACHE=true'
           echo "CI_NO_SKIP_CACHE=true" >> $GITHUB_ENV
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+        run: echo "CI_PUSH_CONTAINER_IMAGE=true" >> $GITHUB_ENV
       - if: runner.os == 'macOS'
         name: Set TMPDIR environment variable (${{runner.os}})
         run: |-
