@@ -46,6 +46,16 @@ workflows: trybot: _repo.bashWorkflow & {
 		}
 	}
 
+	// GitHub's server-side default of permissions:contents:"read" is removed if
+	// a workflow specifies the permissions struct.
+	permissions: {
+		// Server-side default.
+		contents: "read"
+		// Required to push the preprocessor's container image to the GitHub
+		// container registry.
+		packages: "write"
+	}
+
 	jobs: test: {
 		"runs-on": _repo.linuxMachine
 
@@ -130,6 +140,17 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			// Early check on clean repo
 			_repo.checkGitClean,
+
+			// Login to GitHub's container registry
+			{
+				// In the main repo and on the default branch or its test counterpart.
+				if:   mainRepoDefaultBranchExpr
+				name: "Login to GitHub container registry"
+				run: #"""
+					echo "$GITHUB_TOKEN" \
+					| docker login ghcr.io -u ${{ github.actor }} --password-stdin
+					"""#
+			},
 
 			// Rebuild docker image
 			{
