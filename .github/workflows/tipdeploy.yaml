@@ -122,7 +122,6 @@ jobs:
         with:
           cache: go
           path: |-
-            ~/.cache/dockercache
             ~/.cache/node-gyp
             ~/.npm
             ${{ github.workspace }}/playground/.webpack_cache
