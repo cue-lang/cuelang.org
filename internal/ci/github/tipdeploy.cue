@@ -61,7 +61,6 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 
 			for v in _installDockerMacOS {v},
 			_installMacOSUtils,
-			_setupBuildx,
 			_installNode,
 			for v in _installGo {v},
 			_installHugoLinux,
