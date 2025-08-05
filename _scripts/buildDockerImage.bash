@@ -27,19 +27,29 @@ package cmd
 const dockerImageTag = "$tag"
 EOD
 
-# Only build the docker image if it doesn't exist
+# Only build the docker image if it doesn't exist in the local machine's registry.
 if docker inspect $tag > /dev/null 2>&1; then
 	echo "docker image $tag already exists; skipping build"
 	exit 0
 fi
 
-commonBuildArgs="-t $tag --build-arg GOPRIVATE=\"$(go env GOPRIVATE)\" -f ./_docker/Dockerfile ./_docker"
+# We always require the non-registry-prefixed tag to be added, separately from
+# the in-CI tag, so that the image can be found by the preprocessor in the local
+# machine's registry.
+localTagFlag="-t $tag"
+ciTagFlag=""
+if [[ "${CI:-}" == "true" ]]
+then
+    ciTagFlag="-t $(nsc workspace describe -o json -k registry_url)/$tag"
+fi
+
+buildArgs="$localTagFlag $ciTagFlag --build-arg GOPRIVATE=\"$(go env GOPRIVATE)\" -f ./_docker/Dockerfile ./_docker"
 
 # TODO: pass in host UID and GID and Go cache paths to avoid using a buildkit
 # caching layer.  This is particularly important in CI.
 if docker help | grep -q podman
 then
-    docker build $commonBuildArgs
+    docker build $buildArgs
 else
-    docker buildx build --load $commonBuildArgs
+    docker buildx build --load $buildArgs
 fi

@@ -137,6 +137,11 @@ workflows: trybot: _repo.bashWorkflow & {
 			{
 				run: "./_scripts/buildDockerImage.bash"
 			},
+			// Push container image
+			{
+				_ifMainRepoDefaultBranch
+				run: "./_scripts/pushDockerImage.bash"
+			},
 
 			for v in _npmInstall {v},
 
