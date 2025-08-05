@@ -181,15 +181,22 @@ jobs:
       - name: Test Playground
         run: go test ./...
         working-directory: playground
-      - name: staticcheck
-        run: ./_scripts/staticcheck.bash
+      - env:
+          STATICCHECK_CACHE: /cache/staticcheck
+        run: go tool staticcheck ./...
+      - env:
+          STATICCHECK_CACHE: /cache/staticcheck
+        run: go tool -modfile=../go.mod staticcheck ./...
+        working-directory: playground
       - name: staticcheck Playground
         run: ../_scripts/staticcheck.bash
         working-directory: playground
-      - name: Check module is tidy
-        run: go mod tidy
-      - name: Check Playground module is tidy
-        run: go mod tidy
+      - run: |-
+          go mod tidy -diff
+          go vet ./...
+      - run: |-
+          go mod tidy -diff
+          go vet ./...
         working-directory: playground
       - run: go tool cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
       - if: |-
