@@ -23,7 +23,7 @@ jobs:
     defaults:
       run:
         shell: bash --noprofile --norc -euo pipefail {0}
-    runs-on: ns-linux-amd64-small
+    runs-on: namespace-profile-linux-amd64
     steps:
       - if: runner.os == 'macOS'
         name: Update Homebrew (macOS)
