@@ -166,6 +166,8 @@ jobs:
         name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
       - run: ./_scripts/buildDockerImage.bash
+      - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+        run: ./_scripts/pushDockerImage.bash
       - name: npm install to check package-lock.json clean
         run: npm install --package-lock-only --ignore-scripts
         working-directory: hugo
