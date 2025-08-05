@@ -149,10 +149,11 @@ workflows: trybot: _repo.bashWorkflow & {
 				"working-directory": "playground"
 			},
 
-			// Run staticcheck
-			{
-				name: "staticcheck"
-				run:  "./_scripts/staticcheck.bash"
+			_repo.staticcheck,
+			_repo.staticcheck & {
+				// We only want to track tool dependencies once.
+				#in: modfile: "../go.mod"
+				"working-directory": "playground"
 			},
 
 			// Run staticcheck in playground
@@ -162,14 +163,8 @@ workflows: trybot: _repo.bashWorkflow & {
 				"working-directory": "playground"
 			},
 
-			// go mod tidy
-			_modTidy & {
-				name: "Check module is tidy"
-			},
-
-			// go mod tidy playground
-			_modTidy & {
-				name:                "Check Playground module is tidy"
+			_repo.goChecks,
+			_repo.goChecks & {
 				"working-directory": "playground"
 			},
 
