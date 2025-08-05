@@ -239,7 +239,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			// that started this workflow the strongest chance of having
 			// completed by the time execution reaches this point.
 			_monitoringStep & {
-				_ifMainRepoDefaultBranch
+				if:    mainRepoDefaultBranchExpr
 				#site: "https://cuelang.org"
 			},
 
@@ -250,7 +250,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			// This monitoring check occurs after the tip patch was applied just
 			// in case the monitoring workflow command was patched.
 			_monitoringStep & {
-				_ifMainRepoDefaultBranch
+				if:    mainRepoDefaultBranchExpr
 				#site: "https://tip.cuelang.org"
 			},
 		]
@@ -274,9 +274,9 @@ workflows: trybot: _repo.bashWorkflow & {
 	}
 }
 
-_ifMainRepoDefaultBranch: githubactions.#Step & {
-	if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
-}
+let mainRepoDefaultBranchExpr = """
+	( github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch)) )
+	"""
 
 _installNode: githubactions.#Step & {
 	name: "Install Node"
