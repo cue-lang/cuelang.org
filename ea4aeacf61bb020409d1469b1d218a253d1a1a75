@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9b968ba_5c94d24e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-05T13:08:32Z",
+      "side": 1,
+      "message": "PTAL.\n\n`ci/test` run: https://github.com/cue-lang/cuelang.org/actions/runs/16750900886/job/47420587499",
+      "revId": "ea4aeacf61bb020409d1469b1d218a253d1a1a75",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
