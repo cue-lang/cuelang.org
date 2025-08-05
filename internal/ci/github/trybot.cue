@@ -46,6 +46,11 @@ workflows: trybot: _repo.bashWorkflow & {
 		}
 	}
 
+	permissions: {
+		contents: "read"  // Required.
+		packages: "write" // Required by docker-push.
+	}
+
 	jobs: test: {
 		"runs-on": _repo.linuxMachine
 
@@ -130,6 +135,16 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			// Early check on clean repo
 			_repo.checkGitClean,
+
+			// Login to GitHub's container registry if we are running in the
+			// main repo on the default branch (or its test counterpart).
+			{
+				if: mainRepoDefaultBranchExpr
+				run: #"""
+					echo "${{ secrets.GITHUB_TOKEN }}" \
+					| docker login ghcr.io -u ${{ github.actor }} --password-stdin
+					"""#
+			},
 
 			// Rebuild docker image
 			{
