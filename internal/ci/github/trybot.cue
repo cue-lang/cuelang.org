@@ -90,6 +90,13 @@ workflows: trybot: _repo.bashWorkflow & {
 					"""
 			},
 
+			// Set CI_PUSH_CONTAINER_IMAGE if we are running in the main repo on
+			// the default branch (or its test counterpart).
+			{
+				_ifMainRepoDefaultBranch
+				run: #"echo "CI_PUSH_CONTAINER_IMAGE=true" >> $GITHUB_ENV"#
+			},
+
 			for v in _installDockerMacOS {v},
 
 			_installMacOSUtils,
