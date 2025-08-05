@@ -415,7 +415,6 @@ _netlifyDeploy: githubactions.#Step & {
 // _setupCaches is shared between trybot and update_tip.
 _setupCaches: _repo.setupCaches & {
 	#in: additionalCachePaths: [
-		"~/.cache/dockercache",
 		"~/.cache/node-gyp",
 		"~/.npm",
 		"${{ github.workspace }}/playground/.webpack_cache",
