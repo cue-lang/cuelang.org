@@ -27,7 +27,7 @@ package cmd
 const dockerImageTag = "$tag"
 EOD
 
-# Only build the docker image if it doesn't exist
+# Only build the docker image if it doesn't exist in the local machine's image store.
 if docker inspect $tag > /dev/null 2>&1; then
 	echo "docker image $tag already exists; skipping build"
 	exit 0
@@ -42,4 +42,10 @@ then
     docker build $commonBuildArgs
 else
     docker buildx build --load $commonBuildArgs
+fi
+
+if [[ "${CI_PUSH_CONTAINER_IMAGE:-}" == "true" ]]; then
+    # NSC_CONTAINER_REGISTRY is set automatically inside Namespace CI.
+    docker tag $tag "$NSC_CONTAINER_REGISTRY/$tag"
+    docker push "$NSC_CONTAINER_REGISTRY/$tag"
 fi
