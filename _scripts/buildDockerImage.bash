@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+set -x
 
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
@@ -30,7 +31,8 @@ EOD
 # Only build the docker image if it doesn't exist
 if docker inspect $tag > /dev/null 2>&1; then
 	echo "docker image $tag already exists; skipping build"
-	exit 0
+	echo NOT REALLY
+	#exit 0
 fi
 
 caching=""
@@ -40,6 +42,8 @@ then
 fi
 
 commonBuildArgs="-t $tag --build-arg GOPRIVATE=\"$(go env GOPRIVATE)\" -f ./_docker/Dockerfile ./_docker"
+
+nsc build --name preprocessor-test --push $commonBuildArgs
 
 # TODO: pass in host UID and GID and Go cache paths to avoid using a buildkit
 # caching layer.  This is particularly important in CI.
