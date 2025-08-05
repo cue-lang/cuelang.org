@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfc45df1_35015cc1",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 277,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-05T14:30:14Z",
+      "side": 1,
+      "message": "We have used `Expr` as a suffix elsewhere. Please stick to that convention. We can refactor in a later CL if justified.",
+      "revId": "51d547d7b69103c09f79395a8c94247b6c0fe230",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
