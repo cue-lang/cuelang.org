@@ -95,7 +95,6 @@ workflows: trybot: _repo.bashWorkflow & {
 			for v in _installDockerMacOS {v},
 
 			_installMacOSUtils,
-			_setupBuildx,
 			_installNode,
 			for v in _installGo {v},
 			_installHugoLinux,
@@ -425,11 +424,6 @@ _setupCaches: _repo.setupCaches & {
 	]
 
 	_
-}
-
-_setupBuildx: githubactions.#Step & {
-	name: "Set up Docker Buildx"
-	uses: "docker/setup-buildx-action@v3"
 }
 
 // _setNoWriteCache ensures that if the commit under test contains the trailer
