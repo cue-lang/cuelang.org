@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a39d501_6b8e0185",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-08-05T09:05:11Z",
+      "side": 1,
+      "message": "\"CDD\" is clever but a bit obscure. How about adding the flags `--dev` and `--dev-output` instead? they seem pretty self-explanatory to me already. \"cue documentation\" seems redundant given that the preprocessor is almost exclusively used for writing CUE doc pages.\n\nEven better - given that using `--cdd` without `--cddoutputdir` is disallowed, I\u0027d merge the two flags too. That is, add just `--dev-output` or `--dev-dir`, and have it enable the mode and set the output directory path.",
+      "revId": "6b1da6f7e91c250faede9c180bf800ffe9877405",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "e4c9a2e3_d860cb07",
@@ -20,6 +37,46 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "afdab26b_3c7dbe43",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-08-05T09:05:11Z",
+      "side": 1,
+      "message": "I see you\u0027re following the existing naming scheme for flags, but FWIW I would have named this `--cdd-output-dir` for the sake of readability.",
+      "revId": "6b1da6f7e91c250faede9c180bf800ffe9877405",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74871927_2225cd4b",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-08-05T09:05:11Z",
+      "side": 1,
+      "message": "these edge cases disappear if you merge the flags as I mention above",
+      "range": {
+        "startLine": 266,
+        "startChar": 1,
+        "endLine": 272,
+        "endChar": 2
+      },
+      "revId": "6b1da6f7e91c250faede9c180bf800ffe9877405",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aafc009a_81a4dc2b",
         "filename": "internal/cmd/preprocessor/cmd/page.go",
         "patchSetId": 6
@@ -31,6 +88,23 @@
       "writtenOn": "2025-08-05T08:17:35Z",
       "side": 1,
       "message": "Do we need to persist this, given that prior CLs removed all the CLDD content? It feels like `isClddContent()` could safely return `p.ctx.cddMode` without examining the content path.",
+      "revId": "6b1da6f7e91c250faede9c180bf800ffe9877405",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16c5f41d_55e23683",
+        "filename": "internal/cmd/preprocessor/cmd/page.go",
+        "patchSetId": 6
+      },
+      "lineNbr": 211,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-08-05T09:05:11Z",
+      "side": 1,
+      "message": "not sure why these `var` lines are here; you should be able to keep the original `:\u003d` a few lines below. was this an AI edit?",
       "revId": "6b1da6f7e91c250faede9c180bf800ffe9877405",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
