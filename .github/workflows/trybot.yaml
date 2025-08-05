@@ -163,6 +163,13 @@ jobs:
       - if: always()
         name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
+      - if: ( github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test')) )
+        name: Login to GitHub container registry
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |-
+          echo "$TOKEN" \
+          | docker login ghcr.io -u ${{ github.actor }} --password-stdin
       - env:
           CI_PUSH_CONTAINER_IMAGE: ${{ ( github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test')) ) && 'true' || 'false' }}
         run: ./_scripts/buildDockerImage.bash
@@ -237,3 +244,6 @@ jobs:
       - if: ( github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test')) )
         name: Perform monitoring checks on https://tip.cuelang.org
         run: _scripts/checkEndpoints.bash https://tip.cuelang.org
+permissions:
+  contents: read
+  packages: write

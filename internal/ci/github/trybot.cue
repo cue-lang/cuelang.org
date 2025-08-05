@@ -46,6 +46,11 @@ workflows: trybot: _repo.bashWorkflow & {
 		}
 	}
 
+	permissions: {
+		contents: "read"  // Required.
+		packages: "write" // Required by docker-push.
+	}
+
 	jobs: test: {
 		"runs-on": _repo.linuxMachine
 
@@ -130,6 +135,21 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			// Early check on clean repo
 			_repo.checkGitClean,
+
+			// Login to GitHub's container registry
+			{
+				// In the main repo, on the default branch or its test pair.
+				if:   mainRepoDefaultBranchExpr
+				name: "Login to GitHub container registry"
+				// Placing this secret in an envvar doesn't improve security,
+				// but is suggested by GitHub's docs as being slightly cleaner
+				// than directly referencing the secret in an inline script.
+				env: TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+				run: #"""
+					echo "$TOKEN" \
+					| docker login ghcr.io -u ${{ github.actor }} --password-stdin
+					"""#
+			},
 
 			// Rebuild docker image
 			{
