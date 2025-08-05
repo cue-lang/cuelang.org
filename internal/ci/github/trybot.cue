@@ -133,6 +133,11 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			// Rebuild docker image
 			{
+				// Set CI_PUSH_CONTAINER_IMAGE=true if we are running in the
+				// main repo on the default branch (or its test counterpart).
+				env: CI_PUSH_CONTAINER_IMAGE: """
+					${{ \(mainRepoDefaultBranchExpr) && 'true' || 'false' }}
+					"""
 				run: "./_scripts/buildDockerImage.bash"
 			},
 
