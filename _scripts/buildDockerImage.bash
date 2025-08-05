@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+set -x
 
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
@@ -30,16 +31,29 @@ EOD
 # Only build the docker image if it doesn't exist
 if docker inspect $tag > /dev/null 2>&1; then
 	echo "docker image $tag already exists; skipping build"
-	exit 0
+	echo NOT REALLY # FIXME remove this before submission
+	#exit 0
 fi
 
-commonBuildArgs="-t $tag --build-arg GOPRIVATE=\"$(go env GOPRIVATE)\" -f ./_docker/Dockerfile ./_docker"
+# Blank defaults.
+registryPrefix=""
+push=""
+
+if [[ "${CI:-}" == "true" ]]
+then
+    # NB trailing slash is required.
+    registryPrefix="$(nsc workspace describe -o json -k registry_url)"/
+    # FIXME: make the push conditional
+    push="--push"
+fi
+
+buildArgs="$push -t ${registryPrefix}${tag} --build-arg GOPRIVATE=\"$(go env GOPRIVATE)\" -f ./_docker/Dockerfile ./_docker"
 
 # TODO: pass in host UID and GID and Go cache paths to avoid using a buildkit
 # caching layer.  This is particularly important in CI.
 if docker help | grep -q podman
 then
-    docker build $commonBuildArgs
+    docker build $buildArgs
 else
-    docker buildx build --load $commonBuildArgs
+    docker buildx build --load $buildArgs
 fi
