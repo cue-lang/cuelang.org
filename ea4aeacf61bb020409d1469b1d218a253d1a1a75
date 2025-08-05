@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd6cc91f_5044b031",
+        "filename": "_scripts/buildDockerImage.bash",
+        "patchSetId": 11
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-05T15:00:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc1f7475_9b3614d2",
+      "range": {
+        "startLine": 30,
+        "startChar": 73,
+        "endLine": 30,
+        "endChar": 81
+      },
+      "revId": "ea4aeacf61bb020409d1469b1d218a253d1a1a75",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c96f0ba1_ee97a049",
@@ -54,6 +78,24 @@
       "writtenOn": "2025-08-05T13:14:19Z",
       "side": 1,
       "message": "This could surely be condensed to a single flag arg?",
+      "revId": "ea4aeacf61bb020409d1469b1d218a253d1a1a75",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a3966bc_6ef4e1b4",
+        "filename": "_scripts/buildDockerImage.bash",
+        "patchSetId": 11
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-05T15:00:45Z",
+      "side": 1,
+      "message": "This line has been removed in a later PS.",
+      "parentUuid": "c96f0ba1_ee97a049",
       "revId": "ea4aeacf61bb020409d1469b1d218a253d1a1a75",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -75,6 +117,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "651ab91d_6a153451",
+        "filename": "_scripts/buildDockerImage.bash",
+        "patchSetId": 11
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-05T15:00:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f64fea87_6d26e434",
+      "revId": "ea4aeacf61bb020409d1469b1d218a253d1a1a75",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "83903363_e2ef891b",
@@ -88,6 +148,24 @@
       "writtenOn": "2025-08-05T13:14:19Z",
       "side": 1,
       "message": "We repeat a significant amount of code here for the benefit of not setting a single environment variable for the build step. I\u0027m not clear that\u0027s a good trade off as I said earlier. But I will leave you to decide.",
+      "revId": "ea4aeacf61bb020409d1469b1d218a253d1a1a75",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "44ecc76c_69a73068",
+        "filename": "_scripts/pushDockerImage.bash",
+        "patchSetId": 11
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-05T15:00:45Z",
+      "side": 1,
+      "message": "Done. Consolidated into the build script",
+      "parentUuid": "83903363_e2ef891b",
       "revId": "ea4aeacf61bb020409d1469b1d218a253d1a1a75",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
