@@ -33,12 +33,6 @@ if docker inspect $tag > /dev/null 2>&1; then
 	exit 0
 fi
 
-caching=""
-if [[ "${CI:-}" == "true" ]]
-then
-	caching="--cache-from=type=local,src=$HOME/.cache/dockercache --cache-to=type=local,dest=$HOME/.cache/dockercache"
-fi
-
 commonBuildArgs="-t $tag --build-arg GOPRIVATE=\"$(go env GOPRIVATE)\" -f ./_docker/Dockerfile ./_docker"
 
 # TODO: pass in host UID and GID and Go cache paths to avoid using a buildkit
@@ -47,5 +41,5 @@ if docker help | grep -q podman
 then
     docker build $commonBuildArgs
 else
-    docker buildx build $caching --load $commonBuildArgs
+    docker buildx build --load $commonBuildArgs
 fi
