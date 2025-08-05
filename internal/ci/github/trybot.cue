@@ -24,8 +24,6 @@ import (
 )
 
 workflows: trybot: _repo.bashWorkflow & {
-	name: _repo.trybot.name
-
 	on: {
 		push: {
 			branches: list.Concat([[_repo.testDefaultBranch], _repo.protectedBranchPatterns]) // do not run PR branches
@@ -416,7 +414,7 @@ _netlifyDeploy: githubactions.#Step & {
 
 // _setupCaches is shared between trybot and update_tip.
 _setupCaches: _repo.setupCaches & {
-	#additionalCachePaths: [
+	#in: additionalCachePaths: [
 		"~/.cache/dockercache",
 		"~/.cache/node-gyp",
 		"~/.npm",

@@ -23,7 +23,7 @@ jobs:
     defaults:
       run:
         shell: bash --noprofile --norc -euo pipefail {0}
-    runs-on: ns-linux-amd64
+    runs-on: ns-linux-amd64-small
     steps:
       - if: runner.os == 'macOS'
         name: Update Homebrew (macOS)
@@ -138,7 +138,6 @@ jobs:
         with:
           cache: go
           path: |-
-            ${{ runner.temp }}/staticcheck
             ~/.cache/dockercache
             ~/.cache/node-gyp
             ~/.npm

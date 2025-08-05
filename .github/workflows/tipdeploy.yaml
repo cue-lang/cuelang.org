@@ -16,7 +16,7 @@ jobs:
     defaults:
       run:
         shell: bash --noprofile --norc -euo pipefail {0}
-    runs-on: ns-linux-amd64
+    runs-on: ns-linux-amd64-small;overrides.cache-tag=cue-dispatch-workflow
     if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
     steps:
       - name: Checkout code
@@ -122,7 +122,6 @@ jobs:
         with:
           cache: go
           path: |-
-            ${{ runner.temp }}/staticcheck
             ~/.cache/dockercache
             ~/.cache/node-gyp
             ~/.npm

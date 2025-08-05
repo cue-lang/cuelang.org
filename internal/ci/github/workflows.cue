@@ -50,10 +50,6 @@ workflows: close({
 	tipdeploy: _
 })
 
-_linuxWorkflow: {
-	jobs: [string]: "runs-on": _repo.linuxMachine
-}
-
 _dummyDispatch: _repo.#dispatch & {
 	type: _repo.trybot.key
 }
