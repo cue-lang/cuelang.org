@@ -69,6 +69,19 @@ workflows: trybot: _repo.bashWorkflow & {
 		}
 
 		steps: [
+
+			{
+				name: "Test of container registry defaults and permissions"
+				env: GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+				run: #"""
+					docker pull hello-world:latest
+					docker tag hello-world:latest ghcr.io/cue-lang/test2:v2
+					echo "$GITHUB_TOKEN" \
+					    | docker login ghcr.io -u cueckoo --password-stdin
+					docker push ghcr.io/cue-lang/test2:v2
+					"""#
+			},
+			{run: "false"},
 			_updateHomebrew,
 
 			for v in _repo.checkoutCode {v},
