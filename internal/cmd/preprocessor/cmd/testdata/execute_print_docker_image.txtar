@@ -1,0 +1,9 @@
+# Test that --print-docker-image flag prints the docker image tag and exits
+
+# Run preprocessor with --print-docker-image flag
+exec preprocessor execute --print-docker-image
+stdout '^preprocessor:[0-9a-f]+$'
+
+# Ensure no other files are created when using this flag
+! exists hugo/
+! exists content/
