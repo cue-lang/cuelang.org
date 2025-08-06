@@ -69,6 +69,24 @@
       "parentUuid": "7dad7125_be3b2b79",
       "revId": "e6a0b27171ae105cf990da27730b7014e251c682",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0de5cd08_54390f3d",
+        "filename": "content/docs/howto/limit-combinations-of-several-fields/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-06T12:48:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e9ab4b71_097948ad",
+      "revId": "e6a0b27171ae105cf990da27730b7014e251c682",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
