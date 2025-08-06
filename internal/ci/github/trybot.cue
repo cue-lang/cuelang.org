@@ -69,6 +69,16 @@ workflows: trybot: _repo.bashWorkflow & {
 		}
 
 		steps: [
+
+			{
+				name: "Test of container registry defaults and permissions"
+				run: """
+					docker pull hello-world:latest
+					docker tag hello-world:latest ghcr.io/cue-lang/test1:v1
+					docker push ghcr.io/cue-lang/test1:v1
+					"""
+			},
+			{run: "false"},
 			_updateHomebrew,
 
 			for v in _repo.checkoutCode {v},
