@@ -27,6 +27,7 @@ import (
 	"cuelang.org/go/cue/load"
 	"cuelang.org/go/cue/token"
 	cueyaml "cuelang.org/go/encoding/yaml"
+	"cuelang.org/go/mod/modfile"
 )
 
 type function string
@@ -90,19 +91,26 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		return formatInput(in, inputVal), nil
 	}
 
+	// CUE input in the playground is loaded as an example module using the current CUE language version.
+	// This allows using the latest language features, just like when one uses `cue mod init` to create a new module.
+	// This language version, coming from the Go API, is effectively tracked by the cuelang.org/go Go module dependency.
+	modFile := &modfile.File{
+		Module: "example.test",
+		Language: &modfile.Language{
+			Version: cue.LanguageVersion(),
+		},
+	}
+	modFileBytes, err := modfile.Format(modFile)
+	if err != nil {
+		return "", fmt.Errorf("failed to format module file: %w", err)
+	}
+
 	loadCfg := &load.Config{
 		Stdin:      strings.NewReader(inputVal),
 		Dir:        "/",
 		ModuleRoot: "/",
 		Overlay: map[string]load.Source{
-			// CUE input in the playground is loaded as an example module using the current CUE language version.
-			// This allows using the latest language features, just like when one uses `cue mod init` to create a new module.
-			// This language version, coming from the Go API, is effectively tracked by the cuelang.org/go Go module dependency.
-			// TODO(mvdan): switch to modfile.File and modfile.Format once we use CUE v0.14.0 or later.
-			"/cue.mod/module.cue": load.FromString(fmt.Sprintf(`
-				module: "example.test"
-				language: version: %q
-			`, cue.LanguageVersion())),
+			"/cue.mod/module.cue": load.FromBytes(modFileBytes),
 		},
 	}
 	builds := load.Instances([]string{string(in) + ":", "-"}, loadCfg)
@@ -153,7 +161,6 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 	// For now, we emulate the essence of what cmd/cue does via internal/encoding
 	// to encode a CUE value as CUE, JSON, and YAML.
 	var dst []byte
-	var err error
 	switch out {
 	case outputCUE:
 		node := v.Syntax(syntaxOpts...)
