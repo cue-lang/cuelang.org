@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							code: {
-								basic:                   "den7npALnieJfzBurdE2BNIl8HAPOFpUsglsEmNAh3Q="
-								"one of":                "Q9oTIbv7jvb+8YcjKw6MgS6lhrUFx6+bV4cbzquPZGc="
-								"any of":                "oC6e3HBFdd+wLpWARqdWtdulc3GF2j7o5bAQVlJOraw="
-								"all of":                "lFdRXp0h6cln7yiaGjMQq5jxlY6OY0fmZOizi3YKSfY="
-								not:                     "79vAz5EbklVwW982jkPigW3ok2NqDfmeUTYTdXK7lAQ="
-								"all but one":           "O4MoYJ0WhgKt8n/c+oavz7asVE42rwcx3xtS+kcPJ7Q="
-								composite:               "eZgPdnyTJ16SaTNz3pp491xuMW6pXi5ZChKQeMWXLI8="
-								"future: helper fields": "L9TvucoWWKEf/wo04XHEFoZpVBg7XB7ddqFRzJe0iR4="
+								basic:                   "cDR1aUKwksLCtLb6ywz4d1KzMDAdoHWmR+vI/12BwpQ="
+								"one of":                "lAC1bquY/nv+eb+80jskJD5gMx+bt3erYhq8JSAljJk="
+								"any of":                "yTJ2xRJ+Bj7bysowuREmiY36n1+1yJq4gbzHJrmtpmw="
+								"all of":                "t3a3zn9nbZJAKIpa3E6jzRWvlA4QuEHLc+SO7KQa9DM="
+								not:                     "kerk5/dkRUCTHyvpoWdlMpvEmoy5iZvBy0cbFKblUTc="
+								"all but one":           "VPYoiFShlw+WdZrcHWb7L3gsK5r+gadTkVSX3+joxaA="
+								composite:               "99HQwa5XfM5CFd94++9MtesfFleiE3+Z6+VIQvkeroM="
+								"future: helper fields": "sTgTaHSYM+VDQ1vY1JkNscXSRIRG6k5SzT9fMMO+Pho="
 							}
 						}
 					}

@@ -8,10 +8,10 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"module.cue example": "64X7gyn0RARc3wELSoXy+j6nrXWQ0UUhYYRvW7UgBBM="
+									"module.cue example": "y224AhJTDRzFTv3ch+1rckqXJzOObYCoevy/RCzikiI="
 								}
 								multi_step: {
-									hash:       "9AN8A2VNSGQD1JK9MU2MTDVJ0CSKK3N0EOR4UC379B583FL2GEHG===="
+									hash:       "U1FBCH02J2I0UGNVRS517NV43UJNI7FL6KF6ULG4P8VHR674OQ60===="
 									scriptHash: "2Q0BEPQQI0IQ2R27G3FIQBF4LR0VVDRIN184O07266B10HKNBHV0===="
 									steps: []
 								}
