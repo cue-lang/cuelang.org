@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7631bcb7_a81764ec",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-06T15:35:47Z",
+      "side": 1,
+      "message": "```suggestion\nAs a quick and easy measure of surfacing the docker image baked in to the\n```",
+      "range": {
+        "startLine": 9,
+        "startChar": 11,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "086711323530224b7567831196723c8349e55cd3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11a5d48e_da4607ca",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-06T15:35:47Z",
+      "side": 1,
+      "message": "nit: `--docker-image` *feels* like a setter (that we might use later), not a getter. How about `--print-docker-image`?",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 48
+      },
+      "revId": "086711323530224b7567831196723c8349e55cd3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
