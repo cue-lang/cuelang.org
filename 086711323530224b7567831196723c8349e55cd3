@@ -24,6 +24,47 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ad6bbf1d_c53569ea",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-06T16:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7631bcb7_a81764ec",
+      "range": {
+        "startLine": 9,
+        "startChar": 11,
+        "endLine": 9,
+        "endChar": 13
+      },
+      "revId": "086711323530224b7567831196723c8349e55cd3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9ce65292_1314757a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-06T16:52:33Z",
+      "side": 1,
+      "message": "I\u0027ve added a test as well",
+      "revId": "086711323530224b7567831196723c8349e55cd3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "11a5d48e_da4607ca",
@@ -47,6 +88,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d85384b_e7099afe",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-06T16:52:33Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11a5d48e_da4607ca",
+      "range": {
+        "startLine": 60,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 48
+      },
+      "revId": "086711323530224b7567831196723c8349e55cd3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "de8b70e8_37281b86",
@@ -60,6 +125,24 @@
       "writtenOn": "2025-08-06T15:37:29Z",
       "side": 1,
       "message": "nit:\n\n```suggestion\n\t// If flag is set, print the docker image tag and exit\n```",
+      "revId": "086711323530224b7567831196723c8349e55cd3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d61ab87_47ba993b",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-06T16:52:33Z",
+      "side": 1,
+      "message": "Not sure this change makes sense; it\u0027s slightly verbose docs, but not incorrect (modulo the flag change)",
+      "parentUuid": "de8b70e8_37281b86",
       "revId": "086711323530224b7567831196723c8349e55cd3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
