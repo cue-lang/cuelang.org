@@ -45,6 +45,23 @@
       },
       "revId": "086711323530224b7567831196723c8349e55cd3",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de8b70e8_37281b86",
+        "filename": "internal/cmd/preprocessor/cmd/execute.go",
+        "patchSetId": 2
+      },
+      "lineNbr": 256,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-06T15:37:29Z",
+      "side": 1,
+      "message": "nit:\n\n```suggestion\n\t// If flag is set, print the docker image tag and exit\n```",
+      "revId": "086711323530224b7567831196723c8349e55cd3",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
