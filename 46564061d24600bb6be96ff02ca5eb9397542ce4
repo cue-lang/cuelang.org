@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cc80bb3_3bdf2140",
+        "filename": "_scripts/buildDockerImage.bash",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-06T11:28:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f2fe8dea_341fc5f5",
+      "revId": "46564061d24600bb6be96ff02ca5eb9397542ce4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "406d8e9e_cf24a5be",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-08-06T10:04:33Z",
       "side": 1,
       "message": "Already an env var?",
+      "revId": "46564061d24600bb6be96ff02ca5eb9397542ce4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef3b6bd8_291efbf6",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 147,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-06T11:28:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "406d8e9e_cf24a5be",
       "revId": "46564061d24600bb6be96ff02ca5eb9397542ce4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

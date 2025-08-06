@@ -35,6 +35,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4cc78194_d21daef9",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-06T11:28:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a26c8f0_d7d4bbd8",
+      "revId": "c25df12c798b78a8f1b059c992c3b258b3521f20",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2a31f468_0efe2807",
@@ -48,6 +66,24 @@
       "writtenOn": "2025-08-06T10:04:33Z",
       "side": 1,
       "message": "Please be more explicit what this allows, when. And when we need it.",
+      "revId": "c25df12c798b78a8f1b059c992c3b258b3521f20",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08b36b63_70a30fc1",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-06T11:28:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2a31f468_0efe2807",
       "revId": "c25df12c798b78a8f1b059c992c3b258b3521f20",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
