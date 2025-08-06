@@ -163,6 +163,7 @@ func newExecuteCmd(c *Command) *cobra.Command {
 	cmd.Flags().String(string(flagTestUserAuthn), os.Getenv(envTestUserAuthn), "a JSON map of test user credentials for the Central Registry. Can also be set with non-empty "+envTestUserAuthn)
 	cmd.Flags().String(string(flagConcurrencyFactor), envOrDefault("PREPROCESSOR_CONCURRENCY_FACTOR", "2.0"), "a float factor applied to runtime.NumCPU() to determine the max number of concurrent processes spawned")
 	cmd.Flags().String(string(flagMkdocsOutput), "", "output directory for mkdocs mode (when non-empty, applies mkdocs processing logic regardless of page location)")
+	cmd.Flags().Bool(string(flagDockerImage), false, "print the docker image tag and exit")
 	return cmd
 }
 

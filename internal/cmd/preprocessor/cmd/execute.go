@@ -57,6 +57,7 @@ const (
 	flagTestUserAuthn     flagName = "testuserauthn"
 	flagConcurrencyFactor flagName = "concurrencyfactor"
 	flagMkdocsOutput      flagName = "mkdocs-output"
+	flagDockerImage       flagName = "docker-image"
 
 	envTestUserAuthn = "PREPROCESSOR_TEST_USER_AUTHN"
 )
@@ -252,6 +253,12 @@ func (e executionContext) createHash() (hash.Hash, *bytes.Buffer) {
 // only pages found in those directories will be considered. Otherwise,
 // all directories below the working directory are considered.
 func executeDef(c *Command, args []string) error {
+	// If --docker-image flag is set, print the docker image tag and exit
+	if flagDockerImage.Bool(c) {
+		fmt.Println(dockerImageTag)
+		return nil
+	}
+
 	// Get our working directory. Default to current working directory
 	wd := flagDir.String(c)
 
