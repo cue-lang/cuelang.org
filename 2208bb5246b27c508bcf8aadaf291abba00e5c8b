@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bfdd43ff_01d8bce5",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-06T12:39:11Z",
+      "side": 1,
+      "message": "Right now I can\u0027t think why your change requires this... but I\u0027m not going to lose too much sleep over it 😉",
+      "revId": "2208bb5246b27c508bcf8aadaf291abba00e5c8b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
