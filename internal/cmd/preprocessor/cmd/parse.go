@@ -213,6 +213,10 @@ func (rf *rootFile) parse_WithNode(n *parse.WithNode) (node, error) {
 		if err != nil {
 			return nil, err
 		}
+		// Check if we're in mkdocs mode, which doesn't support code nodes
+		if t.mkdocsOutput != "" {
+			return nil, rf.bodyError(n, "'with code' blocks are not supported in --mkdocs-output mode")
+		}
 		return &codeNode{
 			txtarNode:       t,
 			effectiveScript: t.archive.Comment,
