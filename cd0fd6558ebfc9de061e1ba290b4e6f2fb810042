@@ -3,6 +3,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9b5c9d31_bf9995b1",
+        "filename": "claude.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-08-07T13:09:06Z",
+      "side": 1,
+      "message": "Marcel named this CLAUDE.md in the cue repo. which one works, or which one is preferred/recommended? I\u0027d suggest we stick to either consistently",
+      "revId": "cd0fd6558ebfc9de061e1ba290b4e6f2fb810042",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "bf14af76_e747b2c3",
         "filename": "claude.md",
         "patchSetId": 3
