@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bf14af76_e747b2c3",
+        "filename": "claude.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-08-07T13:08:30Z",
+      "side": 1,
+      "message": "the fact that only some of these use a package argument may be confusing to the reader/AI",
+      "revId": "cd0fd6558ebfc9de061e1ba290b4e6f2fb810042",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a1b4194_7a9f96b0",
+        "filename": "claude.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-08-07T13:08:30Z",
+      "side": 1,
+      "message": "aim to keep a reasonable line length, like 80-100?",
+      "revId": "cd0fd6558ebfc9de061e1ba290b4e6f2fb810042",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4d43bc5e_12c69eb0",
+        "filename": "claude.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-08-07T13:08:30Z",
+      "side": 1,
+      "message": "I wonder if claude is able to do the rebasing on its own, without us having to tell it explicitly how to do edits in a rebase.",
+      "revId": "cd0fd6558ebfc9de061e1ba290b4e6f2fb810042",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
