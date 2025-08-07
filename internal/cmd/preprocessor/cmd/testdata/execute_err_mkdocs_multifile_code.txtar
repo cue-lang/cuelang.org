@@ -1,0 +1,30 @@
+# Test that mkdocs mode errors with code blocks. Ensure that we get a sensible
+# error from the preprocessor when we use 'with code' blocks in mkdocs-output
+# mode.
+
+unquote content/example/en.md
+
+# Create output directory
+mkdir output
+
+# Run the preprocessor in mkdocs mode - this should error
+! exec preprocessor execute --mkdocs-output=output
+stderr 'with code.*blocks are not supported in --mkdocs-output mode'
+
+-- content/example/site.cue --
+package site
+
+content: example: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+}
+
+-- content/example/en.md --
+>---
+>title: Multi-file code block test
+>---
+>
+>This should fail in mkdocs mode because code blocks are not supported.
+>
+>{{{with code "en" "multi-file"}}}
+>{{{end}}}
