@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fadc365c_1548d0f0",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_err_mkdocs_multifile_code.txtar",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-08-07T13:09:46Z",
+      "side": 1,
+      "message": "nit: use periods? otherwise my first read of the first sentence was a bit confusing.",
+      "revId": "a3be61a85eb8cb0f40998cf164f06b6e2ea9b506",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
