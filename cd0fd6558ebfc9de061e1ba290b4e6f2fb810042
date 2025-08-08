@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b429d320_49875096",
+        "filename": "claude.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-08T05:28:26Z",
+      "side": 1,
+      "message": "Followed his lead.",
+      "parentUuid": "9b5c9d31_bf9995b1",
+      "revId": "cd0fd6558ebfc9de061e1ba290b4e6f2fb810042",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bf14af76_e747b2c3",
@@ -31,6 +49,24 @@
       "writtenOn": "2025-08-07T13:08:30Z",
       "side": 1,
       "message": "the fact that only some of these use a package argument may be confusing to the reader/AI",
+      "revId": "cd0fd6558ebfc9de061e1ba290b4e6f2fb810042",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8ce9c23_821804a2",
+        "filename": "claude.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-08T05:28:26Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf14af76_e747b2c3",
       "revId": "cd0fd6558ebfc9de061e1ba290b4e6f2fb810042",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f0f12e89_46de20fe",
+        "filename": "claude.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-08T05:28:26Z",
+      "side": 1,
+      "message": "Done. And again, this is a good example of where we need/want consistent shared guidelines to avoid repeating this stuff everywhere. We should write it once, and then be done. We want consistency across the project.",
+      "parentUuid": "7a1b4194_7a9f96b0",
+      "revId": "cd0fd6558ebfc9de061e1ba290b4e6f2fb810042",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "4d43bc5e_12c69eb0",
@@ -65,6 +119,24 @@
       "writtenOn": "2025-08-07T13:08:30Z",
       "side": 1,
       "message": "I wonder if claude is able to do the rebasing on its own, without us having to tell it explicitly how to do edits in a rebase.",
+      "revId": "cd0fd6558ebfc9de061e1ba290b4e6f2fb810042",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5da6b98c_2a46dedc",
+        "filename": "claude.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-08T05:28:26Z",
+      "side": 1,
+      "message": "Per my offline comments, in my experience it gets this horribly wrong without this direction. Because it drops the user into an actual interactive rebase. Which is totally unnecessary, because (in the cases I\u0027ve been working with) my instruction on which commit to edit has been unambiguous. Again, this kind of thing though falls into the bucket of things we should maintain as a project centrally.",
+      "parentUuid": "4d43bc5e_12c69eb0",
       "revId": "cd0fd6558ebfc9de061e1ba290b4e6f2fb810042",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
