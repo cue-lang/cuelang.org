@@ -16,6 +16,24 @@
       "message": "nit: use periods? otherwise my first read of the first sentence was a bit confusing.",
       "revId": "a3be61a85eb8cb0f40998cf164f06b6e2ea9b506",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62585c67_eb626e08",
+        "filename": "internal/cmd/preprocessor/cmd/testdata/execute_err_mkdocs_multifile_code.txtar",
+        "patchSetId": 3
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-08T05:28:26Z",
+      "side": 1,
+      "message": "I\u0027ve no idea why the AI didn\u0027t do that. Thanks",
+      "parentUuid": "fadc365c_1548d0f0",
+      "revId": "a3be61a85eb8cb0f40998cf164f06b6e2ea9b506",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
