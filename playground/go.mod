@@ -2,7 +2,7 @@ module github.com/cue-lang/cuelang.org/playground
 
 go 1.24
 
-require cuelang.org/go v0.14.0
+require cuelang.org/go v0.14.1
 
 require (
 	cuelabs.dev/go/oci/ociregistry v0.0.0-20250715075730-49cab49c8e9d // indirect

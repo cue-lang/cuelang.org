@@ -172,7 +172,7 @@ After `cue mod tidy` completes, check out the contents of `cue.mod/module.cue`:
 $ cat cue.mod/module.cue
 module: "cue.example"
 language: {
-	version: "v0.14.0"
+	version: "v0.14.1"
 }
 deps: {
 	"github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
