@@ -166,7 +166,7 @@ Learn more about transforming data with CUE in these How-to guides:
 - {{< linkto/inline "howto/combine-multiple-json-files-by-using-file-metadata" >}}
 
 ## Embedding JSON file data inside CUE
-{{< sidenote text="Available from CUE v0.12.0" >}}
+{{< sidenote text="Requires CUE v0.12.0 or later" >}}
 
 The [file embedding]({{<relref"docs/howto/embed-files-in-cue-evaluation">}})
 feature allows data files (including JSON) to be read when some CUE is evaluated.

@@ -157,7 +157,7 @@ demonstrate apply equally to TOML because CUE treats all data encodings as
 equivalent.
 
 ## Embedding TOML file data inside CUE
-{{< sidenote text="Available from CUE v0.12.0" >}}
+{{< sidenote text="Requires CUE v0.12.0 or later" >}}
 
 The [file embedding]({{<relref"docs/howto/embed-files-in-cue-evaluation">}})
 feature allows data files (including TOML) to be read when some CUE is evaluated.
