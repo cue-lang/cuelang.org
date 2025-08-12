@@ -3,6 +3,7 @@ title: Embedding files in a CUE evaluation
 authors: [jpluscplusm]
 toc_hide: true
 ---
+{{<sidenote text="Requires CUE v0.12.0 or later">}}
 
 Users frequently need to load JSON, YAML, or other types of files into their CUE code.
 Because CUE's `import` declarations only allow references to CUE packages,
@@ -12,14 +13,8 @@ to load non-CUE files. This can complicate the process if the tooling layer's
 advanced features aren't otherwise needed.
 
 The `@embed()` attribute is designed to simplify workflows that require data to
-be loaded at evaluation time, and is available by default from version
-`v0.12.0` of CUE onwards. This guide demonstrates the following version:
-
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
-$ cue version
-cue version v0.14.1
-...
-```
+be loaded at evaluation time, and is available in CUE version `v0.12.0` or
+later.
 
 <!--more-->
 
