@@ -149,7 +149,7 @@ Learn more about transforming data with CUE in these How-to guides:
 - {{< linkto/inline "howto/combine-multiple-yaml-files-by-using-file-metadata" >}}
 
 ## Embedding YAML file data inside CUE
-{{< sidenote text="Available from CUE v0.12.0" >}}
+{{< sidenote text="Requires CUE v0.12.0 or later" >}}
 
 The [file embedding]({{<relref"docs/howto/embed-files-in-cue-evaluation">}})
 feature allows data files (including YAML) to be read when some CUE is evaluated.
