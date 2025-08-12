@@ -45,7 +45,7 @@ echo 'Checking that internal links to other pages on the site are not direct (i.
 if git grep \
     --untracked \
     --perl-regexp \
-    '\]\(/(?!s/slack\)|s/discord\)|releases/|go/|search/)' \
+    '\]\(/(?!s/slack\)|s/discord\)|releases/|go/|search/|community/|discussions/)' \
     ':^content/docs/draft/' \
     'content/**/*.md'; then
     exit 1
