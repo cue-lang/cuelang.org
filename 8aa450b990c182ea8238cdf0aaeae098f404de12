@@ -16,6 +16,24 @@
       "message": "WIP while we choose between [these 2 forms](https://cuelang.org/play/?id\u003d#w\u003dfunction\u0026i\u003dcue\u0026f\u003dexport\u0026o\u003dcue) to fix the example, and update the on-page example so that this error isn\u0027t masked by the exceptional use of `cue eval -ic`.",
       "revId": "8aa450b990c182ea8238cdf0aaeae098f404de12",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a1285107_fbc66d32",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-18T17:00:59Z",
+      "side": 1,
+      "message": "\"this error\"\u003d\u003d the problem observed by Matthew testing this in a `cue export`, which exposes this underlying problem that I /think/ has always been present on the page: https://cuelang.org/play/?id\u003dzRUlKVpP9y3#w\u003dfunction\u0026i\u003dcue\u0026f\u003dexport\u0026o\u003dcue \n\nThe `div()` call fails unless the evaluator is given the hint about the embedded scalar. More to follow tomorrow.",
+      "parentUuid": "f6bec1d2_c2f44715",
+      "revId": "8aa450b990c182ea8238cdf0aaeae098f404de12",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
