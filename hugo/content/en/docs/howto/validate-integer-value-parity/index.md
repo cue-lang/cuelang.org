@@ -1,58 +1,87 @@
 ---
-title: Validating an integer value's parity
+title: Validating the parity of an integer value
 tags:
 - commented cue
 - validation
-authors:
-- noamtd
+authors: [noamtd, jpluscplusm]
 toc_hide: true
 ---
 
 This [Commented CUE]({{< relref "docs/howto/about-commented-cue-guides" >}})
-demonstrates how to validate an integer value's parity.
-
-Two schemas `#Odd` and `#Even` are presented that validate an integer is either odd or even respectively.
+demonstrates how to validate the parity of an integer value using two
+equivalent definitions for `#Odd` and `#Even`.
+Both pairs of definitions display custom error messages using
+[the built-in function `error`]({{<relref"docs/howto/use-the-built-in-function-error">}}),
+which requires CUE v0.14.0 or later. Using `error` is optional, and can be
+omitted without weakening the parity validation.
 
 <!--more-->
+
+## Using `div`
 
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
-#Even: num=(2 * div(num, 2))
-#Odd:  num=(1 + 2*div(num, 2))
+#Even: X=(2 * div(X, 2)) | error("\(X) is not even")
+#Odd:  X=(1 + 2*div(X, 2)) | error("\(X) is not odd")
 
-valid: {
-	"-27": -27 & #Odd
-	"-22": -22 & #Even
-	"42":  42 & #Even
-	"47":  47 & #Odd
-}
+even: [...#Even]
+even: [42, 13, 0]
 
-invalid: {
-	"-37": -37 & #Even
-	"-32": -32 & #Odd
-	"52":  52 & #Odd
-	"57":  57 & #Even
-}
+odd: [...#Odd]
+odd: [42, 13, 0]
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldA==" >}}
 $ cue vet
-invalid."-32": conflicting values -31 and -32:
-    ./file.cue:4:13
-    ./file.cue:15:9
-invalid."-37": conflicting values -38 and -37:
-    ./file.cue:3:13
-    ./file.cue:14:9
-invalid."52": conflicting values 53 and 52:
-    ./file.cue:4:13
-    ./file.cue:16:9
-invalid."57": conflicting values 56 and 57:
-    ./file.cue:3:13
-    ./file.cue:17:9
+even.1: 13 is not even:
+    ./file.cue:3:28
+odd.0: 42 is not odd:
+    ./file.cue:4:30
+odd.2: 0 is not odd:
+    ./file.cue:4:30
 {{< /code-tab >}}
 {{< /code-tabs >}}
+
+## Using `math.MultipleOf`
+
+{{<sidenote text="Requires CUE v0.11.0 or later">}}
+{{< code-tabs >}}
+{{< code-tab name="file.cue" language="cue" area="top-left" >}}
+package example
+
+import "math"
+
+#Even: X=math.MultipleOf(2) | error("\(X) is not even")
+#Odd: matchN(0, [math.MultipleOf(2)])
+
+// #Odd can also be defined in terms of #Even:
+#Odd: X=matchN(0, [#Even]) | error("\(X) is not odd")
+
+even: [...#Even]
+even: [42, 13, 0]
+
+odd: [...#Odd]
+odd: [42, 13, 0]
+{{< /code-tab >}}
+{{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldA==" >}}
+$ cue vet
+even.1: 13 is not even:
+    ./file.cue:5:31
+odd.0: 42 is not odd:
+    ./file.cue:9:30
+odd.2: 0 is not odd:
+    ./file.cue:9:30
+{{< /code-tab >}}
+{{< /code-tabs >}}
+
+The built-in function `matchN` requires CUE v0.11.0 or later.
+{{<issue 943>}}Issue #943{{</issue>}} tracks the proposed built-in function
+`not`, which would permit `#Odd` to be defined directly in terms of
+`math.MultipleOf` and without the use of `matchN`.
 
 ## Related content
 
 - {{< linkto/related/howto "use-the-built-in-functions-div-mod-quo-rem" >}}
+- {{< linkto/related/howto "use-the-built-in-function-matchn" >}}
+- {{< linkto/related/howto "use-the-built-in-function-error">}}
