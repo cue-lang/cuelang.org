@@ -8,6 +8,7 @@ toc_hide: true
 {{{with _script_ "en" "set caches to speed up re-running"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
+export STATICCHECK_CACHE=/caches/staticcheck
 {{{end}}}
 
 The `cue` command allows non-CUE data to be "placed" at a specific location in
@@ -141,7 +142,7 @@ go run .
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 ## Related content

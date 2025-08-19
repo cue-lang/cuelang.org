@@ -17,6 +17,7 @@ using an embeded CUE schema.
 {{{with _script_ "en" "set caches to speed up re-running"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
+export STATICCHECK_CACHE=/caches/staticcheck
 {{{end}}}
 
 ## Set up some schema and data files
@@ -166,7 +167,7 @@ go run . good.json
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 ## Related content

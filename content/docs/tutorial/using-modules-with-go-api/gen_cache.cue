@@ -11,8 +11,8 @@ package site
 								"initial go code":  "hBYDop+x9d5BwZ4ys6Q0wvk21Veqv0rwddF161hPais="
 							}
 							multi_step: {
-								hash:       "P65LJCQB4IAS4JRB48KQKGSA1RUD3PN54H18JNCJDRI38L5RNC80===="
-								scriptHash: "JT8JN3I2MBB3NIPELKT04N9T5TARLEBRT5QJ41DK3SQT05IO7QD0===="
+								hash:       "UA5DNILOO0H7JC4KL6KP9QL83R021TO0PCIJFRGB66P0MVQMT33G===="
+								scriptHash: "GO5ITKTLA1NSVMOE1BME6HTFUEGEV27C8LF2NET1ACM08VSK46RG===="
 								steps: [{
 									doc:      "# Set up caches to speed up page rebuilds."
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -21,6 +21,11 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "export GOCACHE=/caches/gobuild"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "export STATICCHECK_CACHE=/caches/staticcheck"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -117,7 +122,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./..."
+									cmd:      "staticcheck ./..."
 									exitCode: 0
 									output: """
 											...

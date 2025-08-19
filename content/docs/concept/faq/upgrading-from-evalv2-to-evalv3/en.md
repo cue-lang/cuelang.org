@@ -7,6 +7,7 @@ authors: [mvdan, jpluscplusm]
 {{{with _script_ "en" "HIDDEN_ set up caches"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
+export STATICCHECK_CACHE=/caches/staticcheck
 {{{end}}}
 
 {{< warning >}}
@@ -118,5 +119,5 @@ with details.
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}

@@ -13,6 +13,7 @@ toc_hide: true
 export LC_ALL=C
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
+export STATICCHECK_CACHE=/caches/staticcheck
 {{{end}}}
 
 CUE is designed to complement and work with the Go programming language.
@@ -178,7 +179,7 @@ CUE values have a default formatter that renders them sensibly.
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 ### Loading non-CUE data
@@ -257,7 +258,7 @@ go run .
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #2"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 ### Checking Go data with CUE schema
@@ -343,7 +344,7 @@ go mod tidy
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #3"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 <!-- TODO

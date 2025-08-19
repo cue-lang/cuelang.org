@@ -8,6 +8,7 @@ tags: [go api]
 {{{with _script_ "en" "set caches to speed up re-running"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
+export STATICCHECK_CACHE=/caches/staticcheck
 {{{end}}}
 
 In general, CUE can handle references to fields that don't yet exist, or where
@@ -156,7 +157,7 @@ go run .
 {{{with _script_ "en" "https://github.com/cue-lang/cue/issues/3496"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 ## Related content

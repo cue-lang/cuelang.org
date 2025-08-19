@@ -10,6 +10,7 @@ authors:
 {{{with _script_ "en" "set caches to speed up re-running"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
+export STATICCHECK_CACHE=/caches/staticcheck
 {{{end}}}
 
 This guide demonstrates how to walk a CUE schema using the Go API,
@@ -187,7 +188,7 @@ generator that takes each CUE definition and produces a matching Go struct type.
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 ## Related content

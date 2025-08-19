@@ -12,6 +12,7 @@ toc_hide: true
 {{{with _script_ "en" "HIDDEN: set up caches"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
+export STATICCHECK_CACHE=/caches/staticcheck
 {{{end}}}
 
 CUE has first class support for OpenAPI data schemas: the `cue` command
@@ -265,7 +266,7 @@ and later.
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 ## Future plans

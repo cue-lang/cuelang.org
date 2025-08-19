@@ -112,6 +112,7 @@ func main() {
 {{{with _script_ "en" "HIDDEN_ setup"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
+export STATICCHECK_CACHE=/caches/staticcheck
 rm basic.cue
 go mod init cue.example
 #ellipsis 0
@@ -132,7 +133,7 @@ import`.
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 ## Extracting CUE from several Protobuf files

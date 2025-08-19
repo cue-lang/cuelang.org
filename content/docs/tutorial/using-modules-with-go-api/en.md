@@ -9,6 +9,7 @@ toc_hide: true
 # Set up caches to speed up page rebuilds.
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
+export STATICCHECK_CACHE=/caches/staticcheck
 
 # Central Registry auth.
 mkdir -p $HOME/.config/cue
@@ -207,7 +208,7 @@ go run .
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 ## Summary
