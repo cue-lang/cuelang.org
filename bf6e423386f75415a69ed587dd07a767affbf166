@@ -52,6 +52,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "68c3c751_93ae7947",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-19T08:42:32Z",
+      "side": 1,
+      "message": "I was thinking \"s for schema\", given that we /definitely/ no longer receive b-for-bytes as the return :-) Changed to `f`.",
+      "parentUuid": "33f60334_3143bcbf",
+      "revId": "bf6e423386f75415a69ed587dd07a767affbf166",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f92c443b_70656dd5",
@@ -69,6 +87,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97a10ad2_c909076d",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-19T08:42:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f92c443b_70656dd5",
+      "revId": "bf6e423386f75415a69ed587dd07a767affbf166",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "95043bfa_6b437ae9",
@@ -82,6 +118,24 @@
       "writtenOn": "2025-08-19T08:23:56Z",
       "side": 1,
       "message": "Arguably better not to convert to string:\n\n```suggestion\n\tb \u003d append(b, \u0027\\n\u0027)\n\tos.Stdout.Write(b)\n```",
+      "revId": "bf6e423386f75415a69ed587dd07a767affbf166",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e613123_ffd051f6",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-19T08:42:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95043bfa_6b437ae9",
       "revId": "bf6e423386f75415a69ed587dd07a767affbf166",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
