@@ -16,6 +16,74 @@
       "message": "PTAL",
       "revId": "bf6e423386f75415a69ed587dd07a767affbf166",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d488f2b3_e6efd637",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-08-19T08:23:56Z",
+      "side": 1,
+      "message": "LGTM modulo a few minor suggestions, thanks!",
+      "revId": "bf6e423386f75415a69ed587dd07a767affbf166",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "33f60334_3143bcbf",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 225,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-08-19T08:23:56Z",
+      "side": 1,
+      "message": "`s` seems like an odd identifier to choose for an `*ast.File`.\n\n```suggestion\n\tf, err :\u003d openapi.Generate(v, nil)\n```",
+      "revId": "bf6e423386f75415a69ed587dd07a767affbf166",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f92c443b_70656dd5",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 229,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-08-19T08:23:56Z",
+      "side": 1,
+      "message": "We\u0027ve already got the context: no need to extract it from the value.\n\n```suggestion\n\ttopValue :\u003d ctx.BuildFile(f)\n```",
+      "revId": "bf6e423386f75415a69ed587dd07a767affbf166",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95043bfa_6b437ae9",
+        "filename": "content/docs/concept/how-cue-works-with-openapi/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-08-19T08:23:56Z",
+      "side": 1,
+      "message": "Arguably better not to convert to string:\n\n```suggestion\n\tb \u003d append(b, \u0027\\n\u0027)\n\tos.Stdout.Write(b)\n```",
+      "revId": "bf6e423386f75415a69ed587dd07a767affbf166",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
