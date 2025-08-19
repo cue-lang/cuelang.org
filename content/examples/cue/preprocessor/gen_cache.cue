@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"upload initial files":   "SjEATg4IThen2QfpXKg887boIb8Mc4hwdZ86slqQGdg="
-								"upload additional file": "ICjKL9bNzotQbRrVCt+fLs1KvM8Cm0uMQlGhAvK5R4g="
-								"a hidden file":          "7Rg2cfS1sI6tQ1IqZxKUsghvUDABv2RoU35sEGYDYPo="
+								"upload initial files":   "2FQ4p3FrHo+OEemGX1e/VlOLdNB8c58oKOYpo9oDjsw="
+								"upload additional file": "GU1ZlUilhHfKvVMFq3zN9INfdScB6IrKgxYzySGh4z4="
+								"a hidden file":          "fggc4JUyoCZnwe+JetvhIWI5LixfH3fNRXBBbar13Xk="
 							}
 							code: {
-								"a code example": "zbha0FcJFhvu88CeJXmqpO0RzwhjKcM0lGgYRvN0hWE="
+								"a code example": "gtgwI9FpANM6CZ1rG1DH1rOGQQFMsiR+Zr5GPJL24lA="
 							}
 							multi_step: {
-								hash:       "P2RH0A8MS78P9LKOTBD4TIERNQBRALD52AN73VHVH5M3S0G89UL0===="
+								hash:       "Q1RU5P3F88F97F48GFTK3N050B7R7JV8NGTKI3B45UC9GCVV78BG===="
 								scriptHash: "1K5IR4L5KQL27R6E7ANJ8AGBNEVTHEJKDL4DS7JRTOBCVG32LFNG===="
 								steps: [{
 									doc:      ""
