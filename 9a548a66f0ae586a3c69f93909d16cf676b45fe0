@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "66775189_d8d3851c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-19T10:47:10Z",
+      "side": 1,
+      "message": "Why is this less idiomatic?",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "b19cf544_cf454b13",
@@ -14,6 +31,91 @@
       "writtenOn": "2025-08-18T16:26:32Z",
       "side": 1,
       "message": "PTAL",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1759a3a8_dbe76f85",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-19T10:47:10Z",
+      "side": 1,
+      "message": "As far as I\u0027m aware, this wording it not correct. The `error()` case is chosen precisely because all the other elements are _in error_. \n\nWe\u0027re very heavy on wording in the comments in this page. I\u0027d suggest putting some of this explanation below the line, and keeping things light in the code.",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ecfb964_8dac0aea",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-19T10:47:10Z",
+      "side": 1,
+      "message": "This feels like a corner case we don\u0027t need to show. Not least because it\u0027s not something people will likely want to do, and therefore not worth showing.",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "183b623d_522e2b14",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-19T10:47:10Z",
+      "side": 1,
+      "message": "I\u0027d suggest making this the primary example; you can then trivially cover two bases with one example.",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5f2d0ea_b024ff1c",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-19T10:47:10Z",
+      "side": 1,
+      "message": "You can include this as an example, but I\u0027d suggest it\u0027s a bit more of an edge case. Don\u0027t feel strongly about it. Instead I would focus on getting the below the line wording of how the `error()` case is \"chosen\" to a better state.",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "433f0829_76d1b919",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-19T10:47:10Z",
+      "side": 1,
+      "message": "This is a very complicated sentence. Can we simplify it into plainer language? It also seems to repeat a large part of what the comment says above.",
       "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
