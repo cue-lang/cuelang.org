@@ -256,11 +256,11 @@ $ export MYVAR=value
 $ cue version
 cue version v0.14.1
 
-go version go1.24.0
+go version go1.25.0
       -buildmode exe
        -compiler gc
        -trimpath true
-  DefaultGODEBUG gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,x509rsacrt=0,x509usepolicies=0
+  DefaultGODEBUG containermaxprocs=0,decoratemappings=0,gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,tlssha1=1,updatemaxprocs=0,x509rsacrt=0,x509sha256skid=0,x509usepolicies=0
      CGO_ENABLED 0
           GOARCH amd64
             GOOS linux
@@ -283,12 +283,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "At0WxvR++OgKHW38SDeYXi1p6TsrR56O5DLMiTHaGZs="
-						"upload-some-cue": "Sscd3roNfFdyTNH+N3SSnTS+I3VCVuECNWa2OSQLN+Q="
-						"in-subdir":       "gJlcaDIYjRyD+sB2Mm/Yf/ltb22wkL2kXePyz7oaVaw="
+						"hidden file":     "v6ptzeidcME/CPn2KoHzvUKy86vlP4SHljbm373rpAM="
+						"upload-some-cue": "aFcJRe3skRDwmnQiZwhot6H6/52Gx1bdv7yjL4T/M1Y="
+						"in-subdir":       "dLXmiCatIX0M04jOZMx0qQ2OsHZvscBQ+C4yvsBDXek="
 					}
 					multi_step: {
-						hash:       "9EB8EIUG49S79KUSMGEAOTA7D20FGR87A9KP6N12UD0FTA8H9PL0===="
+						hash:       "G6QMVLDBJV89SLVVPUDTE6KOILI623SLIJD158HGVTT65N29VBV0===="
 						scriptHash: "4R7CKCD6U3F6M7HMDOORM6L5LARG5T2HN3S7TGFFUFAJ61CAS8LG===="
 						steps: [{
 							doc:      ""
@@ -352,11 +352,11 @@ package site
 							output: """
 									cue version v0.14.1
 
-									go version go1.24.0
+									go version go1.25.0
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true
-									  DefaultGODEBUG gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,x509rsacrt=0,x509usepolicies=0
+									  DefaultGODEBUG containermaxprocs=0,decoratemappings=0,gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,tlssha1=1,updatemaxprocs=0,x509rsacrt=0,x509sha256skid=0,x509usepolicies=0
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux
