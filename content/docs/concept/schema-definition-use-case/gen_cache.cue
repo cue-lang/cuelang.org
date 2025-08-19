@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"api-cue": "h5ip/fESb7l9YGnQdBw1tlpJQf49HvdVE0R6MhCtSjY="
-								"api-go":  "PquPlkjAddbLfczovL30YFp9ckryaKe84II/zj6OIMk="
+								"api-cue": "g1ODHSiPTN4vX2PXuKhlfsm1TDmfh4T77c4mBMdPFik="
+								"api-go":  "eJU8mHBHKChksa6VTwFcen/1Q48uJQ5PwXFlAuz8tk4="
 							}
 							code: {
-								"openapi-comparison": "TE1zs6FX3v6jt0AW7dnXRQ2T1/Ddz7JDYfG83t3KFfg="
+								"openapi-comparison": "UuLFij7U8L/guxQxcY3FQJZqmKnhggiHotup9dGhgtw="
 							}
 							multi_step: {
-								hash:       "CARB1KAVQNAONT3QAJ1TLBS587058AO5D2B740MF6JNJ6R300U0G===="
+								hash:       "15SCRB7748TP9F0OCLCTG0O1U7Q1E516KS36KAB2E3722FEE0GPG===="
 								scriptHash: "RALGIU94MV4TIGBV0DQ692BVAMO6555L5JHSV766DBJRH3SNHG40===="
 								steps: [{
 									doc:      ""

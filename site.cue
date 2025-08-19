@@ -148,6 +148,16 @@ template: ci.#writefs & {
 		"\(configDefault)/*.toml",
 		"\(configDefault)/menus/*.toml",
 	]
+	#RunGoCommand: {
+		#cmd: string
+		#"""
+			RUN \
+			  --mount=type=cache,target=/cache/gocache \
+			  --mount=type=cache,target=/cache/gomodcache \
+			  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
+			  \#(#cmd)
+			"""#
+	}
 	Create: {
 		"internal/cmd/preprocessor/cmd/_docker/Dockerfile": Contents: #"""
 			# syntax=docker/dockerfile:1
@@ -165,37 +175,19 @@ template: ci.#writefs & {
 			# switched to a user with the same UID and GID as the caller.
 
 			# Dump our environment for logging purposes
-			RUN \
-			  --mount=type=cache,target=/cache/gocache \
-			  --mount=type=cache,target=/cache/gomodcache \
-			  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-			  go env
+			\#(#RunGoCommand & {_, #cmd: "go env"})
 
-			RUN \
-			  --mount=type=cache,target=/cache/gocache \
-			  --mount=type=cache,target=/cache/gomodcache \
-			  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-			  go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@\#(versions.testscript)
+			\#(#RunGoCommand & {_, #cmd: "go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@\(versions.testscript)"})
 
 			RUN mkdir /cues
 
 			\#(strings.Join([for _, version in versions._cueVersionList {
-			#"""
-					RUN \
-					  --mount=type=cache,target=/cache/gocache \
-					  --mount=type=cache,target=/cache/gomodcache \
-					  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-					  GOBIN=/cues/\#(version) go install -trimpath cuelang.org/go/cmd/cue@\#(version)
-					"""#
+			#RunGoCommand & {_, #cmd: "GOBIN=/cues/\(version) go install -trimpath cuelang.org/go/cmd/cue@\(version)"}
 		}], "\n\n"))
 
 			RUN git clone https://github.com/cue-lang/libcue.git /libcue
 			RUN git -C /libcue reset --hard \#(versions.libcue)
-			RUN \
-				--mount=type=cache,target=/cache/gocache \
-				--mount=type=cache,target=/cache/gomodcache \
-				export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache CGO_ENABLED=1 && \
-				go build -C /libcue -o libcue.so -buildmode=c-shared
+			\#(#RunGoCommand & {_, #cmd: "CGO_ENABLED=1 go build -C /libcue -o libcue.so -buildmode=c-shared"})
 
 			FROM golang:\#(versions.bareGoVersion)
 
