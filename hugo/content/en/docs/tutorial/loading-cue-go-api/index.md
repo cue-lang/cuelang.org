@@ -35,7 +35,7 @@ $ cue version
 cue version v0.14.1
 ...
 $ go version
-go version go1.24.0 linux/amd64
+go version go1.25.0 linux/amd64
 ```
 
 ## Create a CUE module
