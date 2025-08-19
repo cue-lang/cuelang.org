@@ -19,11 +19,17 @@ RUN \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
   go env
 
+# Build preprocessor and page dependencies
 RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
   go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@v1.13.1
+RUN \
+  --mount=type=cache,target=/cache/gocache \
+  --mount=type=cache,target=/cache/gomodcache \
+  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
+  go install -trimpath honnef.co/go/tools/cmd/staticcheck@v0.6.0
 
 RUN mkdir /cues
 
@@ -71,6 +77,7 @@ RUN chmod 755 /usr/bin/entrypoint.sh
 RUN chown root:root /usr/bin/entrypoint.sh
 
 COPY --from=build /go/bin/testscript /go/bin
+COPY --from=build /go/bin/staticcheck /go/bin
 COPY --from=build /cues/v0.14.1/cue /cues/v0.14.1/cue
 
 COPY --from=build /libcue/libcue.so /usr/local/lib/
