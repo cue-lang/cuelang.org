@@ -19,11 +19,17 @@ RUN \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
   go env
 
+# Install preprocessor and page dependencies
 RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
   go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@v1.13.1
+RUN \
+  --mount=type=cache,target=/cache/gocache \
+  --mount=type=cache,target=/cache/gomodcache \
+  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
+  go install -trimpath honnef.co/go/tools/cmd/staticcheck@v0.6.0
 
 RUN mkdir /cues
 
