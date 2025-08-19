@@ -257,6 +257,18 @@ package provides options to make a definition self-contained, to filter
 constraints, and so on. The *expanding references* option enables the
 "Structural OpenAPI" form required by CRDs targeting Kubernetes version 1.15
 and later.
+
+```text { title="TERMINAL" type="terminal" codeToCopy="Z28gdmV0IC4vLi4uCmZpbmQgL2dvL2JpbiAtbHMKbWQ1c3VtIC9nby9iaW4vdGVzdHNjcmlwdA==" }
+$ go vet ./...
+
+# ellipsis 0
+$ find /go/bin -ls
+ 10359316      4 drwxrwxrwt   1 root     root         4096 Aug 11 15:50 /go/bin
+ 10359317   9388 -rwxr-xr-x   1 root     root      9609389 Aug 11 15:49 /go/bin/testscript
+$ md5sum /go/bin/testscript
+f75dff66dd6b3c376cbf5b4fb6b40a4d  /go/bin/testscript
+```
+
 ## Future plans
 
 One of CUE's goals is to act as an *interlingua*: a bidirectional bridge

@@ -262,10 +262,11 @@ constraints, and so on. The *expanding references* option enables the
 "Structural OpenAPI" form required by CRDs targeting Kubernetes version 1.15
 and later.
 
-{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+{{{with script "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
 go vet ./...
-#ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+# ellipsis 0
+find /go/bin -ls
+md5sum /go/bin/testscript
 {{{end}}}
 
 ## Future plans

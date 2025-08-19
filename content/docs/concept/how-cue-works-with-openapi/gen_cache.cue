@@ -14,8 +14,8 @@ package site
 								"go emit openapi main": "Fq+2WPlUXzvySpyXik80Up8MMp1W47JxCYWopH95GwM="
 							}
 							multi_step: {
-								hash:       "7B5NIDAPDJ0NSREKIHDKJG2K572G3T1QH4V9AFQBKTEE0T87SUB0===="
-								scriptHash: "O8VANGDJAVO5C1QCJ5EPRMK4LGG3QNLG9N525R7GL7MLHB760SG0===="
+								hash:       "7NP7KR9308IIG5GO4J2OQDMVIKSAV5J859LJUL4PHF8860287DL0===="
+								scriptHash: "MOVMNE70U8GJVSMDND0JHCTGL2E5F4PN2L81POP8U0VSP7VDHFI0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -97,11 +97,20 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      "#ellipsis 0"
-									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./..."
+									doc:      "# ellipsis 0"
+									cmd:      "find /go/bin -ls"
 									exitCode: 0
 									output: """
-											...
+											 10359316      4 drwxrwxrwt   1 root     root         4096 Aug 11 15:50 /go/bin
+											 10359317   9388 -rwxr-xr-x   1 root     root      9609389 Aug 11 15:49 /go/bin/testscript
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "md5sum /go/bin/testscript"
+									exitCode: 0
+									output: """
+											f75dff66dd6b3c376cbf5b4fb6b40a4d  /go/bin/testscript
 
 											"""
 								}]
