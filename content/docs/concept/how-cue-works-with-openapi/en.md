@@ -207,10 +207,9 @@ go mod init mod.example
 package main
 
 import (
-	"bytes"
 	"encoding/json"
-	"fmt"
 	"log"
+	"os"
 
 	"cuelang.org/go/cue/cuecontext"
 	"cuelang.org/go/cue/load"
@@ -223,17 +222,22 @@ func main() {
 	v := ctx.BuildInstance(insts[0])
 
 	// Generate the OpenAPI schema from the value loaded from schema.cue
-	b, err := openapi.Gen(v, nil)
+	f, err := openapi.Generate(v, nil)
 	if err != nil {
+		log.Fatal(err)
+	}
+	topValue := ctx.BuildFile(f)
+	if err := topValue.Err(); err != nil {
 		log.Fatal(err)
 	}
 
 	// Render as indented JSON
-	var out bytes.Buffer
-	if err := json.Indent(&out, b, "", "  "); err != nil {
+	b, err := json.MarshalIndent(topValue, "", "  ")
+	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%s\n", out.Bytes())
+	b = append(b, '\n')
+	os.Stdout.Write(b)
 }
 {{{end}}}
 
