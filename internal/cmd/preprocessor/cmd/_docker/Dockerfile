@@ -36,10 +36,10 @@ RUN \
 RUN git clone https://github.com/cue-lang/libcue.git /libcue
 RUN git -C /libcue reset --hard 1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf
 RUN \
-	--mount=type=cache,target=/cache/gocache \
-	--mount=type=cache,target=/cache/gomodcache \
-	export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache CGO_ENABLED=1 && \
-	go build -C /libcue -o libcue.so -buildmode=c-shared
+  --mount=type=cache,target=/cache/gocache \
+  --mount=type=cache,target=/cache/gomodcache \
+  export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
+  CGO_ENABLED=1 go build -C /libcue -o libcue.so -buildmode=c-shared
 
 FROM golang:1.24.0
 
