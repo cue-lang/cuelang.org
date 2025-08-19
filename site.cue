@@ -28,9 +28,10 @@ versions: {
 	_cueVersionList: list.SortStrings([
 		for k, _ in versionSet {k},
 	])
-	testscript: "v1.13.1"
-	libcue:     "1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf" // https://github.com/cue-lang/libcue
-	cueApiJava: "3c12bb9e9ea203d4de8308b4145e876e4b60207e" // https://github.com/cue-lang/cue-api-java
+	testscript:  "v1.13.1"
+	libcue:      "1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf" // https://github.com/cue-lang/libcue
+	cueApiJava:  "3c12bb9e9ea203d4de8308b4145e876e4b60207e" // https://github.com/cue-lang/cue-api-java
+	staticcheck: "v0.6.0"
 
 	// Container image pinning: specify a tag with a ":" prefix, or pin to a
 	// specific digest by using a "@" prefix.
@@ -177,7 +178,9 @@ template: ci.#writefs & {
 			# Dump our environment for logging purposes
 			\#(#RunGoCommand & {_, #cmd: "go env"})
 
+			# Build preprocessor and page dependencies
 			\#(#RunGoCommand & {_, #cmd: "go install -trimpath github.com/rogpeppe/go-internal/cmd/testscript@\(versions.testscript)"})
+			\#(#RunGoCommand & {_, #cmd: "go install -trimpath honnef.co/go/tools/cmd/staticcheck@\(versions.staticcheck)"})
 
 			RUN mkdir /cues
 
@@ -221,6 +224,7 @@ template: ci.#writefs & {
 			RUN chown root:root /usr/bin/entrypoint.sh
 
 			COPY --from=build /go/bin/testscript /go/bin
+			COPY --from=build /go/bin/staticcheck /go/bin
 			\#(
 			strings.Join([for _, version in versions._cueVersionList {
 				"""
