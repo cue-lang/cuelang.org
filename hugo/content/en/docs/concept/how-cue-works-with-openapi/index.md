@@ -201,7 +201,6 @@ Generating an OpenAPI definition can be as simple as this:
 package main
 
 import (
-	"bytes"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -217,17 +216,21 @@ func main() {
 	v := ctx.BuildInstance(insts[0])
 
 	// Generate the OpenAPI schema from the value loaded from schema.cue
-	b, err := openapi.Gen(v, nil)
+	s, err := openapi.Generate(v, nil)
 	if err != nil {
+		log.Fatal(err)
+	}
+	topValue := v.Value().Context().BuildFile(s)
+	if err := topValue.Err(); err != nil {
 		log.Fatal(err)
 	}
 
 	// Render as indented JSON
-	var out bytes.Buffer
-	if err := json.Indent(&out, b, "", "  "); err != nil {
+	b, err := json.MarshalIndent(topValue, "", "  ")
+	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%s\n", out.Bytes())
+	fmt.Println(string(b))
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 Running this code successfully expresses the constraints in our original

@@ -11,11 +11,11 @@ package site
 								"api.pet.yaml":         "AjFxskiIVjzpH/fUGkyHNYCiJcxxUXhLL/3YZS5AYok="
 								"api.pet.cue":          "llm/Ee3MuOyet2XdgI/eM9wYWN/ASgU4qCpyr8/JxO0="
 								"jonathan.yml":         "Yf16mvIj+SLWjWmRInmUBUIULxxE6tqNfjR1V8n4RTc="
-								"go emit openapi main": "EBvPWUg4XPeh/ALgsEL2KhHsYOYZ6X3EmRg0kLV1uPM="
+								"go emit openapi main": "r0mDj3rrJNqpQ386wDY7KHcpim/LRJRJf7K1YoVZ3bM="
 							}
 							multi_step: {
-								hash:       "R6GMLQDA7LOORPNEGV1BPU7VP969B336SH065E55SLLUJGVO9Q3G===="
-								scriptHash: "4ONTCK8DQJ0NGJRG9AK9JNDIUPMVDVTKHPOFOVIN32VQ88U5G640===="
+								hash:       "T6PL3NDQ0B4CI9QDUGU2UEOPLDL071KUVGPQJIS3N0AKED85G87G===="
+								scriptHash: "HFU2J0FSVU5KRK6ETVPNB1RPOGRKGV0HNA7KR1Q12L9UD6H0JSPG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
