@@ -16,6 +16,7 @@ main package, placing the CUE in the same directory as the Go code.
 {{{with _script_ "en" "set caches to speed up re-running"}}}
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
+export STATICCHECK_CACHE=/caches/staticcheck
 {{{end}}}
 
 ## Initialize Go and CUE modules
@@ -172,7 +173,7 @@ Your Go code will probably have known-good and known-bad data for testing your g
 {{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
 go vet ./...
 #ellipsis 0
-go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./...
+staticcheck ./...
 {{{end}}}
 
 ## Related content

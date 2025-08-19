@@ -14,8 +14,8 @@ package site
 								"openapi-comparison": "oLk2smyIxYECV76PI8Zt5KnO+IRhqin8btglacGhK8I="
 							}
 							multi_step: {
-								hash:       "9HE9O9MAG9U41P254T94MSTUC4141JC878PF8I7SPULNUQVNN4M0===="
-								scriptHash: "RALGIU94MV4TIGBV0DQ692BVAMO6555L5JHSV766DBJRH3SNHG40===="
+								hash:       "51P0UG1NQTPSH1C0P8OJE5AU9JPPFOT7PUPEQKFSFBHOOUNNOPSG===="
+								scriptHash: "KNQT16701L6LQC6KS63DUCB961OPSSLA7UBTHVT1RNME58C1C1FG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -24,6 +24,11 @@ package site
 								}, {
 									doc:      ""
 									cmd:      "export GOCACHE=/caches/gobuild"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "export STATICCHECK_CACHE=/caches/staticcheck"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -68,7 +73,7 @@ package site
 									output:   ""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go run honnef.co/go/tools/cmd/staticcheck@v0.6.0 ./..."
+									cmd:      "staticcheck ./..."
 									exitCode: 0
 									output: """
 											...
