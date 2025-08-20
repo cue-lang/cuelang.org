@@ -16,6 +16,149 @@
       "message": "PTAL",
       "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "adf11f09_dd19e259",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-20T17:16:38Z",
+      "side": 1,
+      "message": "This is too vague to my mind. \"... when a field is in error\" is more precise, but also more intuitive to the user.",
+      "range": {
+        "startLine": 10,
+        "startChar": 31,
+        "endLine": 10,
+        "endChar": 55
+      },
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "154a4512_e209feb7",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-20T17:16:38Z",
+      "side": 1,
+      "message": "This is below the line detail to my mind. I would keep this intro simple:\n\n\"Custom errors can be included in disjunctions:\"\n\nThen below the line expand on how it works.",
+      "range": {
+        "startLine": 11,
+        "startChar": 1,
+        "endLine": 13,
+        "endChar": 32
+      },
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d972a1fb_1a9f5510",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-20T17:16:38Z",
+      "side": 1,
+      "message": "Below the line detail here. I\u0027d simply suggest copying what\u0027s in the spec. We seem to be trying to come up with different language for no clear reason:\n\n\"If at least one disjunct is valid, any custom errors are ignored. However, if all disjuncts fail, all custom error messages are reported together.\"\n\nI notice that we are using \"custom errors\" on this page whilst the spec is talking about \"user errors\". I\u0027m not sure I like the spec\u0027s wording here. I will propose a change there.",
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dc3b1906_55670d52",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-20T17:16:38Z",
+      "side": 1,
+      "message": "Let\u0027s use simpler plainer language please.\n\n\"..., best practices around its usage are still evolving.\"",
+      "range": {
+        "startLine": 46,
+        "startChar": 63,
+        "endLine": 48,
+        "endChar": 8
+      },
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6f7a69d_92405495",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-20T17:16:38Z",
+      "side": 1,
+      "message": "I\u0027d suggest we need a heading here, and we can then drop the warning box - it\u0027s dominating the page, drawing attention to something we don\u0027t want to draw attention to.",
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2cd3ce2f_f4774274",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-20T17:16:38Z",
+      "side": 1,
+      "message": "Again I\u0027d encourage plainer language here. \n\n\"Here’s an example of a custom error used as an assertion:\n\n...\n\nWhile this is perfectly valid CUE, we’re not yet sure if it should be considered idiomatic. At present, it’s neither recommended nor discouraged.\"",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 43
+      },
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15e14838_040f883f",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-20T17:16:38Z",
+      "side": 1,
+      "message": "I\u0027d suggest this instead: https://tip.cuelang.org/play/?id\u003dB-d4crPasHL#w\u003dfunction\u0026i\u003dcue\u0026f\u003deval\u0026o\u003dcue",
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
