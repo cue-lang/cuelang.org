@@ -20,6 +20,24 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "5986a71f_1e3a7f80",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-20T16:14:12Z",
+      "side": 1,
+      "message": "Updated, as discussed offline.",
+      "parentUuid": "66775189_d8d3851c",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "b19cf544_cf454b13",
         "filename": "/PATCHSET_LEVEL",
         "patchSetId": 2
@@ -54,6 +72,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2ad900a6_9c755bbe",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-20T16:14:12Z",
+      "side": 1,
+      "message": "I\u0027ve changed this page substantially, following our discussion, but I still needed to use a phrase very similar to the above (hence not resolving this thread and asking you to re-review from scratch).\n\nWhen I wrote\n\n\u003e When all non-error() elements of a disjunction have been eliminated, evaluation\n\u003e of the disjunction\u0027s field fails\n\n... I felt that \"elimination\" *implied* \"because the other values aren\u0027t available to be selected, as they\u0027re in error\". However, we don\u0027t use the phrase \"in error\" either in the spec or on cuelang.org. Please take a look at the wording of the new PS\u0027 preamble, and let me know if I\u0027m misunderstanding something about this comment.",
+      "parentUuid": "1759a3a8_dbe76f85",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7ecfb964_8dac0aea",
         "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
         "patchSetId": 2
@@ -65,6 +101,24 @@
       "writtenOn": "2025-08-19T10:47:10Z",
       "side": 1,
       "message": "This feels like a corner case we don\u0027t need to show. Not least because it\u0027s not something people will likely want to do, and therefore not worth showing.",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77fe3ca7_2fb919ab",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-20T16:14:12Z",
+      "side": 1,
+      "message": "Removed, as discussed.",
+      "parentUuid": "7ecfb964_8dac0aea",
       "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -88,6 +142,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bf3d8854_97ee1d5e",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-20T16:14:12Z",
+      "side": 1,
+      "message": "I\u0027ve updated the example to compare and contrast the \"with error()\" and \"without error()\" error messages displayed - PTAL.",
+      "parentUuid": "183b623d_522e2b14",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "b5f2d0ea_b024ff1c",
         "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
         "patchSetId": 2
@@ -99,6 +171,24 @@
       "writtenOn": "2025-08-19T10:47:10Z",
       "side": 1,
       "message": "You can include this as an example, but I\u0027d suggest it\u0027s a bit more of an edge case. Don\u0027t feel strongly about it. Instead I would focus on getting the below the line wording of how the `error()` case is \"chosen\" to a better state.",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c615298d_8f5bab78",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-20T16:14:12Z",
+      "side": 1,
+      "message": "Removed, as discussed.",
+      "parentUuid": "b5f2d0ea_b024ff1c",
       "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -116,6 +206,24 @@
       "writtenOn": "2025-08-19T10:47:10Z",
       "side": 1,
       "message": "This is a very complicated sentence. Can we simplify it into plainer language? It also seems to repeat a large part of what the comment says above.",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1c93cdf_9249075c",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-20T16:14:12Z",
+      "side": 1,
+      "message": "Removed, along with explicit mentions of interpolations, as discussed.",
+      "parentUuid": "433f0829_76d1b919",
       "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
