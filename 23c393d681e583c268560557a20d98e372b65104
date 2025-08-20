@@ -33,6 +33,24 @@
       "message": "Erm, I can\u0027t make this work. If I change it to `N\u003d(...)` then it\u0027s fine. But having it as an embedded scalar doesn\u0027t work for me. Weird.",
       "revId": "23c393d681e583c268560557a20d98e372b65104",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d00a5f68_2fceb909",
+        "filename": "content/docs/howto/validate-integer-value-parity/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-20T08:53:42Z",
+      "side": 1,
+      "message": "Thanks for catching this! As we discussed offline, you\u0027re taking this forward as a potential embedded-scalar bug, and I\u0027ve fixed \u0026 revised the guide to use a non-failing form under `cue vet`.\n\nI\u0027ve also added the `math.MultipleOf` implementation we discussed as a parallel example, as there\u0027s a decent way to implement `#Odd` as well as the trivial `#Even`, using `matchN`.",
+      "parentUuid": "a93a4491_ee658548",
+      "revId": "23c393d681e583c268560557a20d98e372b65104",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
