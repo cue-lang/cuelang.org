@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial x.yaml": "nrKPNdjhqqwoMGlb0iKA04MXEly/OY5z1nReD6jkvys="
-								"initial x.cue":  "WUI3AXQdpvJZTJ0gM6fkIb/d49BdWpozedNmgBGauA0="
-								"another person": "Y+lT7K+PBksGoWVp4BhO9+iUtrvaoqxK8ihaKejk1/0="
-								"fixed yaml":     "xN1jPy2D68pEZ6dO5y7bSUK66NZyrabgPIXqdyF6gyE="
+								"initial x.yaml": "E9PkkKj/F6tIZTiKzVbQ72E4KOehyQFqD4EW/s34vaU="
+								"initial x.cue":  "Pdoq2TJiD2Et3+HGMyVopOltp6bVSWui1F79KF+y/a4="
+								"another person": "SM2793svYUslS4dfVzmdqGqeS5SklsE8nwhrM9dzwuY="
+								"fixed yaml":     "x4+F2Nay45++SXwN/QxXHNLKQM5D/ES+PiyDSk13Uvo="
 							}
 							multi_step: {
-								hash:       "5BEHS0PCFCE3KE9NIDM62HAIMD6B6QG11O306LMVVU0GPH0AB0SG===="
+								hash:       "TUD94HN39VQKT8IK40DFTASUT9QOVS887MTIN25HGG8JQ866DOU0===="
 								scriptHash: "C4EFM89Q7KNVBA7IOJ3DV94IERP38E0P6JP82M64M56U8OD3P5B0===="
 								steps: [{
 									doc:      ""
@@ -27,6 +27,7 @@ package site
 									output: """
 											people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
 											    ./x.cue:3:11
+											    ./x.cue:7:21
 											    ./x.yaml:12:10
 
 											"""
