@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b9b820f3_e8a5851b",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-26T08:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "adf11f09_dd19e259",
+      "range": {
+        "startLine": 10,
+        "startChar": 31,
+        "endLine": 10,
+        "endChar": 55
+      },
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "154a4512_e209feb7",
@@ -54,6 +78,30 @@
       "writtenOn": "2025-08-20T17:16:38Z",
       "side": 1,
       "message": "This is below the line detail to my mind. I would keep this intro simple:\n\n\"Custom errors can be included in disjunctions:\"\n\nThen below the line expand on how it works.",
+      "range": {
+        "startLine": 11,
+        "startChar": 1,
+        "endLine": 13,
+        "endChar": 32
+      },
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2c901a8b_ad769966",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-26T08:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "154a4512_e209feb7",
       "range": {
         "startLine": 11,
         "startChar": 1,
@@ -81,6 +129,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf40d28e_1d6317e6",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-26T08:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d972a1fb_1a9f5510",
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "dc3b1906_55670d52",
@@ -94,6 +160,30 @@
       "writtenOn": "2025-08-20T17:16:38Z",
       "side": 1,
       "message": "Let\u0027s use simpler plainer language please.\n\n\"..., best practices around its usage are still evolving.\"",
+      "range": {
+        "startLine": 46,
+        "startChar": 63,
+        "endLine": 48,
+        "endChar": 8
+      },
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0dbe3d1_5461c32c",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-26T08:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dc3b1906_55670d52",
       "range": {
         "startLine": 46,
         "startChar": 63,
@@ -121,6 +211,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c614dc8f_75e4ac4a",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-26T08:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c6f7a69d_92405495",
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2cd3ce2f_f4774274",
@@ -144,6 +252,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d7d2014_8a469666",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-26T08:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2cd3ce2f_f4774274",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 55,
+        "endChar": 43
+      },
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "15e14838_040f883f",
@@ -157,6 +289,24 @@
       "writtenOn": "2025-08-20T17:16:38Z",
       "side": 1,
       "message": "I\u0027d suggest this instead: https://tip.cuelang.org/play/?id\u003dB-d4crPasHL#w\u003dfunction\u0026i\u003dcue\u0026f\u003deval\u0026o\u003dcue",
+      "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e7302a21_f0ce621f",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-26T08:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "15e14838_040f883f",
       "revId": "195fceafa75cf11422bfdb1b64ba20ee4d382ea4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }

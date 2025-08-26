@@ -88,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a90310b5_f7f36474",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-26T08:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2ad900a6_9c755bbe",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ecfb964_8dac0aea",
@@ -154,6 +172,24 @@
       "side": 1,
       "message": "I\u0027ve updated the example to compare and contrast the \"with error()\" and \"without error()\" error messages displayed - PTAL.",
       "parentUuid": "183b623d_522e2b14",
+      "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1eddb4a3_1d0ac1f5",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-08-26T08:16:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf3d8854_97ee1d5e",
       "revId": "9a548a66f0ae586a3c69f93909d16cf676b45fe0",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
