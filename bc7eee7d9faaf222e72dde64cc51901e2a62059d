@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5c1c2743_4d5686df",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-27T09:46:50Z",
+      "side": 1,
+      "message": "This looks janky because it cuts the line - which I don\u0027t think is intended?",
+      "revId": "bc7eee7d9faaf222e72dde64cc51901e2a62059d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2eabfb8d_13b8ab0f",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-27T09:46:50Z",
+      "side": 1,
+      "message": "This is the first time you use this term. Do we need to use it? What\u0027s wrong with the term \"Otherwise\" by itself? If we feel we need to spell it out what \"otherwise\" means, let\u0027s not use another term. But I tend towards not.",
+      "range": {
+        "startLine": 44,
+        "startChar": 16,
+        "endLine": 44,
+        "endChar": 25
+      },
+      "revId": "bc7eee7d9faaf222e72dde64cc51901e2a62059d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08df0998_45595ccc",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-08-27T09:46:50Z",
+      "side": 1,
+      "message": "I think this is superfluous - if you think we need to emphasise this (which I don\u0027t) then it should follow after what we\u0027re saying it is.",
+      "range": {
+        "startLine": 48,
+        "startChar": 29,
+        "endLine": 48,
+        "endChar": 60
+      },
+      "revId": "bc7eee7d9faaf222e72dde64cc51901e2a62059d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
