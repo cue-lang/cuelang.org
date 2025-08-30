@@ -238,7 +238,11 @@ redirects: [
 		status: 301
 	}, {
 		from: "/s/slack"
-		to:   "https://join.slack.com/t/cuelang/shared_invite/enQtNzQwODc3NzYzNTA0LTAxNWQwZGU2YWFiOWFiOWQ4MjVjNGQ2ZTNlMmIxODc4MDVjMDg5YmIyOTMyMjQ2MTkzMTU5ZjA1OGE0OGE1NmE"
+		// This invite link was created via "Invite people to CUE" on the Slack app,
+		// ensuring that the link never expires and that users joining does not notify the owner.
+		// TODO(2030): Slack's "never expiring" invite links seem to still expire after five years.
+		// Given that this link was created on 2025-08-30 by mvdan, it will expire on 2030-08-29.
+		to: "https://join.slack.com/t/cuelang/shared_invite/zt-3cekii492-cAi2si8Q~yqlctMJtGtYxw"
 		robotsTxt: disallow: true
 	}, {
 		from: "/s/discord"
