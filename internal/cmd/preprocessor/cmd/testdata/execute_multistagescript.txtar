@@ -254,17 +254,17 @@ hello
 ```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9u" }
 $ export MYVAR=value
 $ cue version
-cue version v0.14.1
+cue version v0.15.0-0.dev.0.20250829194412-e2b9c0d6d714
 
 go version go1.25.0
       -buildmode exe
        -compiler gc
        -trimpath true
-  DefaultGODEBUG containermaxprocs=0,decoratemappings=0,gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,tlssha1=1,updatemaxprocs=0,x509rsacrt=0,x509sha256skid=0,x509usepolicies=0
+  DefaultGODEBUG containermaxprocs=0,decoratemappings=0,tlssha1=1,updatemaxprocs=0,x509sha256skid=0
      CGO_ENABLED 0
           GOARCH amd64
             GOOS linux
-cue.lang.version v0.14.1
+cue.lang.version v0.15.0
 ```
 ```text { title="TERMINAL" type="terminal" codeToCopy="bm9uZXhpc3RlbnQgY29tbWFuZA==" }
 $ nonexistent command
@@ -283,12 +283,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "v6ptzeidcME/CPn2KoHzvUKy86vlP4SHljbm373rpAM="
-						"upload-some-cue": "aFcJRe3skRDwmnQiZwhot6H6/52Gx1bdv7yjL4T/M1Y="
-						"in-subdir":       "dLXmiCatIX0M04jOZMx0qQ2OsHZvscBQ+C4yvsBDXek="
+						"hidden file":     "oADbEHl++KARH4vIYngZZS6BjgYlwRBghp83TDiFIyE="
+						"upload-some-cue": "SH+6Lq/uvB9KmV6k8qorcp1zw9xUMoQKpaJmrLSgUf4="
+						"in-subdir":       "FbRWuywfq9HcvpxRbOsHBGvRUt4Digq1reF077ArAiM="
 					}
 					multi_step: {
-						hash:       "G6QMVLDBJV89SLVVPUDTE6KOILI623SLIJD158HGVTT65N29VBV0===="
+						hash:       "ADRE16DM3IIUJB7BRL55LFGMDNR89TB2GBQ7T2T0HRSORKHLSV60===="
 						scriptHash: "4R7CKCD6U3F6M7HMDOORM6L5LARG5T2HN3S7TGFFUFAJ61CAS8LG===="
 						steps: [{
 							doc:      ""
@@ -350,17 +350,17 @@ package site
 							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version v0.14.1
+									cue version v0.15.0-0.dev.0.20250829194412-e2b9c0d6d714
 
 									go version go1.25.0
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true
-									  DefaultGODEBUG containermaxprocs=0,decoratemappings=0,gotestjsonbuildtext=1,multipathtcp=0,randseednop=0,rsa1024min=0,tlsmlkem=0,tlssha1=1,updatemaxprocs=0,x509rsacrt=0,x509sha256skid=0,x509usepolicies=0
+									  DefaultGODEBUG containermaxprocs=0,decoratemappings=0,tlssha1=1,updatemaxprocs=0,x509sha256skid=0
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux
-									cue.lang.version v0.14.1
+									cue.lang.version v0.15.0
 
 									"""
 						}, {
