@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4359ef3_9285c0fd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 9
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-09-01T12:44:18Z",
+      "side": 1,
+      "message": "PTAL",
+      "revId": "bc7eee7d9faaf222e72dde64cc51901e2a62059d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5c1c2743_4d5686df",
@@ -14,6 +31,24 @@
       "writtenOn": "2025-08-27T09:46:50Z",
       "side": 1,
       "message": "This looks janky because it cuts the line - which I don\u0027t think is intended?",
+      "revId": "bc7eee7d9faaf222e72dde64cc51901e2a62059d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab5e98a9_12838b97",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-09-01T12:44:18Z",
+      "side": 1,
+      "message": "The placement and effect is intentional, and matches how we\u0027ve placed it on some other pages (e.g. [1](https://cuelang.org/docs/howto/embed-files-in-cue-evaluation/) [2](https://cuelang.org/docs/howto/limit-combinations-of-several-fields/) [3](https://cuelang.org/docs/howto/mirror-modules-between-registries/) [4](https://cuelang.org/docs/howto/validate-data-files-using-file-embedding/)).\n\nThe intent of the line-cutting is to hint to the reader that the version constraint applies to the entire guide, and not just to the section in which the lozenge is located. To my eye, the line-cutting attaches the constraint to the guide\u0027s heading and title, rather than just the paragraph that happens to follow, giving the reader this slightly more guide-global information.\n\nAs it\u0027s clearly subjective, do let me know you\u0027d like this form removed and updated across the site.",
+      "parentUuid": "5c1c2743_4d5686df",
       "revId": "bc7eee7d9faaf222e72dde64cc51901e2a62059d",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -41,6 +76,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e2090eb_0817c4e0",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-09-01T12:44:18Z",
+      "side": 1,
+      "message": "It\u0027s not just the first time this page uses the term, it\u0027s the first time the site uses it outside the spec. I used it here based on [the earlier comment here](https://cue.gerrithub.io/c/cue-lang/cuelang.org/+/1220330/comment/d972a1fb_1a9f5510/), but I quite agree that we should avoid the term unless and until we choose to define it more visibly.\n\nI\u0027ve updated to \"Otherwise ...\".",
+      "parentUuid": "2eabfb8d_13b8ab0f",
+      "range": {
+        "startLine": 44,
+        "startChar": 16,
+        "endLine": 44,
+        "endChar": 25
+      },
+      "revId": "bc7eee7d9faaf222e72dde64cc51901e2a62059d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "08df0998_45595ccc",
@@ -54,6 +113,30 @@
       "writtenOn": "2025-08-27T09:46:50Z",
       "side": 1,
       "message": "I think this is superfluous - if you think we need to emphasise this (which I don\u0027t) then it should follow after what we\u0027re saying it is.",
+      "range": {
+        "startLine": 48,
+        "startChar": 29,
+        "endLine": 48,
+        "endChar": 60
+      },
+      "revId": "bc7eee7d9faaf222e72dde64cc51901e2a62059d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d98db650_8258a8af",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-09-01T12:44:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "08df0998_45595ccc",
       "range": {
         "startLine": 48,
         "startChar": 29,
