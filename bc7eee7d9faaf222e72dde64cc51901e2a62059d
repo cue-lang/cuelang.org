@@ -53,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c89fba90_7ace9b65",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 9
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-09-02T09:34:32Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "ab5e98a9_12838b97",
+      "revId": "bc7eee7d9faaf222e72dde64cc51901e2a62059d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "2eabfb8d_13b8ab0f",

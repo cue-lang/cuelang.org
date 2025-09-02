@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50ab0f91_40bc675a",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-09-02T09:34:32Z",
+      "side": 1,
+      "message": "I think we need something here now to pick up the point that `error()` is used via a disjunction, per the spec. Needn\u0027t be long, could link to the tour; otherwise the first use of disjunction here is a bit strange.",
+      "revId": "1b0ca46af63ed0891ec78dc19240c9fe057d9041",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
