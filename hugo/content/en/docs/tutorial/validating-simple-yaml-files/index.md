@@ -53,12 +53,12 @@ Open a command prompt and create a new directory to hold this tutorial's files.
 
 For example:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="cHdkICMgd2Ugc3RhcnQgaW4gb3VyIGhvbWUgZGlyZWN0b3J5LCBidXQgeW91IGRvIG5vdCBuZWVkIHRvCm1rZGlyIHZhbGlkYXRpbmcteWFtbC13aXRoLWN1ZQpjZCB2YWxpZGF0aW5nLXlhbWwtd2l0aC1jdWU=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="cHdkICMgd2Ugc3RhcnQgaW4gb3VyIGhvbWUgZGlyZWN0b3J5LCBidXQgeW91IGRvIG5vdCBuZWVkIHRvCm1rZGlyIHZhbGlkYXRpbmcteWFtbC13aXRoLWN1ZQpjZCB2YWxpZGF0aW5nLXlhbWwtd2l0aC1jdWU=" }
 $ pwd # we start in our home directory, but you do not need to
 /home/runner
 $ mkdir validating-yaml-with-cue
 $ cd validating-yaml-with-cue
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="3" >}}
@@ -113,7 +113,7 @@ constrain a field's value.
 Check that the `charlie.yml` data file satisfies the schema you defined in
 `pets.cue`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwZXRzLmN1ZSBjaGFybGllLnltbA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwZXRzLmN1ZSBjaGFybGllLnltbA==" }
 $ cue vet -c pets.cue charlie.yml
 age: conflicting values "15" and number (mismatched types string and number):
     ./charlie.yml:5:6
@@ -125,7 +125,7 @@ species: conflicting values "cat" and "goldfish":
 species: conflicting values "dog" and "goldfish":
     ./charlie.yml:4:10
     ./pets.cue:1:19
-```
+````
 
 `cue vet` is telling you that there are problems with 2 fields in your data
 file.
@@ -175,9 +175,9 @@ age: 15
 {{< step stepNumber="7" >}}
 Re-check the data file against the CUE schema:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwZXRzLmN1ZSBjaGFybGllLnltbA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwZXRzLmN1ZSBjaGFybGllLnltbA==" }
 $ cue vet -c pets.cue charlie.yml
-```
+````
 
 Notice how the command returns instantly, with no output.
 
@@ -213,9 +213,9 @@ age: 12.5
 {{< step stepNumber="9" >}}
 Ask `cue` to check that both data files satisfy your schema in `pets.cue`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwZXRzLmN1ZSBjaGFybGllLnltbCB0b2J5LnltbA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwZXRzLmN1ZSBjaGFybGllLnltbCB0b2J5LnltbA==" }
 $ cue vet -c pets.cue charlie.yml toby.yml
-```
+````
 
 The command's success (and lack of any error message) confirms that both data
 files are valid, because both their contents are permitted by the constraints

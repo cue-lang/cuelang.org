@@ -6,7 +6,7 @@ tags:
 - cue command
 - modules
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGdldA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGdldA==" }
 $ cue help mod get
 Get updates module dependencies, fetching new dependencies if
 needed and changing versions to specified versions. It can downgrade
@@ -41,7 +41,7 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````
 
 ## Related content
 

@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgcmVmYWN0b3I=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgcmVmYWN0b3I=" }
 $ cue help refactor
 This command groups together commands relating
 to altering code within the current CUE module.
@@ -19,4 +19,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

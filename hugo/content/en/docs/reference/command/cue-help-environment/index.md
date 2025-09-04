@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZW52aXJvbm1lbnQ=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZW52aXJvbm1lbnQ=" }
 $ cue help environment
 The cue command consults environment variables for configuration.
 If an environment variable is unset or empty, sensible default setting is used.
@@ -65,4 +65,4 @@ where the value is a boolean "true" or "1" if omitted. For example:
 
 	CUE_EXPERIMENT=toenable,todisable=0
 
-```
+````

@@ -76,11 +76,11 @@ package splotpolicy
 
 Validate your data file:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
 $ cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 services: field is required but not present:
     ./schema.cue:4:2
-```
+````
 
 Oh dear! We've definitely found at least one problem in our
 `docker-compose.yaml` file: the top-level `services` field is missing. Correct
@@ -116,9 +116,9 @@ There might be some minor differences, such as the specific version of Postgres 
 
 Check that it satisfies the schema with a final `cue vet`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
 $ cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
-```
+````
 
 This is great - we can now assert some useful properties of the docker compose
 files that the company's developers are handing to us. But we're not doing as
@@ -154,21 +154,21 @@ You'll notice that the import path looks a bit temporary - as indeed it is. But 
 
 As a one-off, login to the Central Registry:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
 $ cue login
-```
+````
 
 This is required only because we'll be publishing a module.
 The Central Registry allows unauthenticated access when fetching public modules.
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxlCmN1ZSBtb2QgdGlkeQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxlCmN1ZSBtb2QgdGlkeQ==" }
 $ cue mod init cue.example
 $ cue mod tidy
-```
+````
 
 After `cue mod tidy` completes, check out the contents of `cue.mod/module.cue`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/module.cue
 module: "cue.example"
 language: {
@@ -180,7 +180,7 @@ deps: {
 		default: true
 	}
 }
-```
+````
 
 Notice that `cue mod tidy` has found and added the latest version
 of the `dockerconfig` module. The version declared in the `module.cue`
@@ -189,11 +189,11 @@ file acts as a kind of lock file.
 Now let's re-run our `cue vet` command, taking advantage of the
 more complete schema checking:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
 $ cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 services.web.volume: field not allowed:
     ./docker-compose.yaml:6:5
-```
+````
 
 Whoops - it's spotted an error in our original YAML file: the `web` service's
 `volume` key isn't allowed! Let's correct it to `volumes` so we end up with
@@ -215,14 +215,14 @@ services:
 
 A quick `cue vet` shows us that we're -- at last! -- in possession of some properly formed data:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
 $ cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
-```
+````
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCByZWdpc3RyeSAxMjcuMC4wLjE6NTU0NDMgJg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCByZWdpc3RyeSAxMjcuMC4wLjE6NTU0NDMgJg==" }
 $ cue mod registry 127.0.0.1:55443 &
-```
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBlZGl0IC0tc291cmNlIHNlbGYKY3VlIG1vZCByZW5hbWUgZ2l0aHViLmNvbS9jdWUtZXhhbXBsZXMvc3Bsb3Rwb2xpY3kKZXhwb3J0IENVRV9SRUdJU1RSWT1naXRodWIuY29tL2N1ZS1leGFtcGxlcz0xMjcuMC4wLjE6NTU0NDMKY3VlIG1vZCBwdWJsaXNoIHYwLjAuMQpjdWUgaW1wb3J0IC1wIHNwbG90c2VydmljZTEgLWwgJ2NvbnRlbnQ6JyBkb2NrZXItY29tcG9zZS55YW1sCmNhdCBkb2NrZXItY29tcG9zZS5jdWU=" }
+````
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBlZGl0IC0tc291cmNlIHNlbGYKY3VlIG1vZCByZW5hbWUgZ2l0aHViLmNvbS9jdWUtZXhhbXBsZXMvc3Bsb3Rwb2xpY3kKZXhwb3J0IENVRV9SRUdJU1RSWT1naXRodWIuY29tL2N1ZS1leGFtcGxlcz0xMjcuMC4wLjE6NTU0NDMKY3VlIG1vZCBwdWJsaXNoIHYwLjAuMQpjdWUgaW1wb3J0IC1wIHNwbG90c2VydmljZTEgLWwgJ2NvbnRlbnQ6JyBkb2NrZXItY29tcG9zZS55YW1sCmNhdCBkb2NrZXItY29tcG9zZS5jdWU=" }
 $ cue mod edit --source self
 $ cue mod rename github.com/cue-examples/splotpolicy
 $ export CUE_REGISTRY=github.com/cue-examples=127.0.0.1:55443
@@ -243,7 +243,7 @@ content: services: {
 	}
 	db: image: "docker.io/library/postgres:16.4"
 }
-```
+````
 
 {{< code-tabs >}}
 {{< code-tab name="service1.cue" language="cue" area="top-left" >}}
@@ -254,7 +254,7 @@ import "github.com/cue-examples/splotpolicy"
 content: splotpolicy.#WebService
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90c2VydmljZTEKc2VkIC1pICdzL3Bvc3RncmVzOjE2LjQvcG9zdGdyZXM6MTcvJyBkb2NrZXItY29tcG9zZS5jdWUKY3VlIHZldCAtYyAuOnNwbG90c2VydmljZTEKc2VkIC1pICdzL3Bvc3RncmVzOjE3L3Bvc3RncmVzOjE2LjQvJyBkb2NrZXItY29tcG9zZS5jdWUKY3VlIHZldCAtYyAuOnNwbG90c2VydmljZTE=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90c2VydmljZTEKc2VkIC1pICdzL3Bvc3RncmVzOjE2LjQvcG9zdGdyZXM6MTcvJyBkb2NrZXItY29tcG9zZS5jdWUKY3VlIHZldCAtYyAuOnNwbG90c2VydmljZTEKc2VkIC1pICdzL3Bvc3RncmVzOjE3L3Bvc3RncmVzOjE2LjQvJyBkb2NrZXItY29tcG9zZS5jdWUKY3VlIHZldCAtYyAuOnNwbG90c2VydmljZTE=" }
 $ cue vet -c .:splotservice1
 $ sed -i 's/postgres:16.4/postgres:17/' docker-compose.cue
 $ cue vet -c .:splotservice1
@@ -270,7 +270,7 @@ content.services.db.image: conflicting values "docker.io/library/postgres:16.6" 
     ./schema.cue:12:5
 $ sed -i 's/postgres:17/postgres:16.4/' docker-compose.cue
 $ cue vet -c .:splotservice1
-```
+````
 
 This is basically as far as we managed to get during the CfgMgmtCamp 2025 demo
 \- but there's so much more to CUE + Central Registry! Come and talk to Marcel

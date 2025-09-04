@@ -77,11 +77,11 @@ y: 2
 {{< /code-tab >}}{{< /code-tabs >}}
 
 Here is the package being evaluated:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWw=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWw=" }
 $ cue eval
 x: 1
 y: 2
-```
+````
 
 Here we add to the package:
 {{< code-tabs >}}
@@ -92,13 +92,13 @@ z: 3
 {{< /code-tab >}}{{< /code-tabs >}}
 
 Here is the package being evaluated again:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgPnJlc3VsdC50eHQKY2F0ICoudHh0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgPnJlc3VsdC50eHQKY2F0ICoudHh0" }
 $ cue eval >result.txt
 $ cat *.txt
 x: 1
 y: 2
 z: 3
-```
+````
 
 ## Hidden scripts and uploads
 

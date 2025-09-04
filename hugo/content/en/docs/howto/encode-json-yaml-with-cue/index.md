@@ -51,13 +51,13 @@ outerString: "outside"
 
 Use `cue export` to evaluate and encode the entire value:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQtanNvbi5jdWU=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQtanNvbi5jdWU=" }
 $ cue export nested-json.cue
 {
     "nestedJSON": "{\"innerString\":\"inside\"}",
     "outerString": "outside"
 }
-```
+````
 
 ## Encoding YAML to JSON
 
@@ -76,35 +76,35 @@ nestedYAML:  yaml.Marshal(_innerData)
 outerString: "outside"
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQteWFtbC5jdWU=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQteWFtbC5jdWU=" }
 $ cue export nested-yaml.cue
 {
     "nestedYAML": "innerString: inside\n",
     "outerString": "outside"
 }
-```
+````
 
 ## Choosing different encodings with `cue export --out`
 
 Use a different encoding for the entire value via the `--out` flag, such as
 `yaml`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQtanNvbi5jdWUgLS1vdXQgeWFtbA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQtanNvbi5jdWUgLS1vdXQgeWFtbA==" }
 $ cue export nested-json.cue --out yaml
 nestedJSON: '{"innerString":"inside"}'
 outerString: outside
-```
+````
 
 ... or `cue`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQteWFtbC5jdWUgLS1vdXQgY3Vl" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBuZXN0ZWQteWFtbC5jdWUgLS1vdXQgY3Vl" }
 $ cue export nested-yaml.cue --out cue
 nestedYAML: """
 	innerString: inside
 
 	"""
 outerString: "outside"
-```
+````
 
 For all encodings see the
 [`encoding`](https://pkg.go.dev/cuelang.org/go/pkg/encoding/) package listing.

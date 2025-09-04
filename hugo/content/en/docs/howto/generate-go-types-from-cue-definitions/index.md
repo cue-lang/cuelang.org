@@ -55,9 +55,9 @@ petTypes: ["dog", "cat", "goldfish"]
 Run the `cue exp gengotypes` command targetting the single CUE package in the
 current directory:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cCBnZW5nb3R5cGVzIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cCBnZW5nb3R5cGVzIC4=" }
 $ cue exp gengotypes .
-```
+````
 The command is silent when it succeeds.
 {{< /step >}}
 
@@ -127,9 +127,9 @@ package pet
 {{< step stepNumber="5" >}}
 Run the `cue exp gengotypes` command again:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cCBnZW5nb3R5cGVzIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cCBnZW5nb3R5cGVzIC4=" }
 $ cue exp gengotypes .
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="6" >}}

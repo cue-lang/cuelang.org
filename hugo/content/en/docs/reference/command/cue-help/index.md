@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHA=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHA=" }
 $ cue help
 CUE makes it easy to validate data, write schemas,
 and ensure configurations align with policies.
@@ -43,4 +43,4 @@ Additional help topics:
   cue help inputs         package list, patterns, and files
   cue help modules        module support
   cue help registryconfig module registry configuration
-```
+````

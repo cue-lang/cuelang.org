@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZW1iZWQ=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZW1iZWQ=" }
 $ cue help embed
 The @embed attribute can be used to load files as part of CUE evaluation.
 Embedding must be enabled by a file-level @extern(embed) attribute.
@@ -42,4 +42,4 @@ Note that embedding CUE files is not supported at this time.
 For more details and discussion, see the proposal linked from
 https://cuelang.org/discussion/3264.
 
-```
+````

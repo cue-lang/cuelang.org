@@ -6,7 +6,7 @@ tags:
 - cue command
 - modules
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHRpZHk=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHRpZHk=" }
 $ cue help mod tidy
 Tidy resolves all module dependencies in the current module and updates
 the cue.mod/module.cue file to reflect them.
@@ -34,7 +34,7 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````
 
 ## Related content
 

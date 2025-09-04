@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgdmVyc2lvbg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgdmVyc2lvbg==" }
 $ cue help version
 print CUE version
 
@@ -18,4 +18,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

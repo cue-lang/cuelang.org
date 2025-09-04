@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZmxhZ3M=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZmxhZ3M=" }
 $ cue help flags
 Non-CUE files are merged at their roots by default.
 The can be combined differently or treated as different files
@@ -76,4 +76,4 @@ $ cue eval -l myschema: schema: foo.json
 # Base the path values on its kind and file name.
 $ cue eval --with-context -l 'path.Base(filename)' -l data.kind foo.yaml
 
-```
+````

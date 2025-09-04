@@ -48,12 +48,12 @@ Actions workflow files, and ensure you start this process with a clean git
 state, with no modified files. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgZ2l0aHViLWFjdGlvbnMtZXhhbXBsZSAjIG91ciBleGFtcGxlIHJlcG9zaXRvcnkKZ2l0IHN0YXR1cyAjIHNob3VsZCByZXBvcnQgIndvcmtpbmcgdHJlZSBjbGVhbiI=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2QgZ2l0aHViLWFjdGlvbnMtZXhhbXBsZSAjIG91ciBleGFtcGxlIHJlcG9zaXRvcnkKZ2l0IHN0YXR1cyAjIHNob3VsZCByZXBvcnQgIndvcmtpbmcgdHJlZSBjbGVhbiI=" }
 $ cd github-actions-example # our example repository
 $ git status # should report "working tree clean"
 On branch master
 nothing to commit, working tree clean
-```
+````
 
 #### :arrow_right: Initialise a CUE module
 
@@ -61,28 +61,28 @@ Initialise a CUE module named after the organisation and repository you're
 working with. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGh1Yi5jb20vY3VlLWV4YW1wbGVzL2dpdGh1Yi1hY3Rpb25zLWV4YW1wbGU=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGh1Yi5jb20vY3VlLWV4YW1wbGVzL2dpdGh1Yi1hY3Rpb25zLWV4YW1wbGU=" }
 $ cue mod init github.com/cue-examples/github-actions-example
-```
+````
 
 #### :arrow_right: Import YAML workflows
 
 Use `cue` to import your YAML workflow files:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAuLy5naXRodWIvd29ya2Zsb3dzLyAtLXdpdGgtY29udGV4dCAtcCBnaXRodWIgLWYgLWwgd29ya2Zsb3dzOiAtbCAnc3RyaW5ncy5UcmltU3VmZml4KHBhdGguQmFzZShmaWxlbmFtZSkscGF0aC5FeHQoZmlsZW5hbWUpKSc=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAuLy5naXRodWIvd29ya2Zsb3dzLyAtLXdpdGgtY29udGV4dCAtcCBnaXRodWIgLWYgLWwgd29ya2Zsb3dzOiAtbCAnc3RyaW5ncy5UcmltU3VmZml4KHBhdGguQmFzZShmaWxlbmFtZSkscGF0aC5FeHQoZmlsZW5hbWUpKSc=" }
 $ cue import ./.github/workflows/ --with-context -p github -f -l workflows: -l 'strings.TrimSuffix(path.Base(filename),path.Ext(filename))'
-```
+````
 
 Check that a CUE file has been created for each YAML workflow in the
 `.github/workflows` directory. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="bHMgLmdpdGh1Yi93b3JrZmxvd3MvID4uLi80LmFjdHVhbC50eHQ=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bHMgLmdpdGh1Yi93b3JrZmxvd3MvID4uLi80LmFjdHVhbC50eHQ=" }
 # Actual command in CUE-By-Example guide:
 # ls .github/workflows/
 $ ls .github/workflows/ >../4.actual.txt
-```
+````
 
 Your output should look similar to this, with matching pairs of YAML and CUE
 files:
@@ -98,11 +98,11 @@ Observe that each workflow has been imported into the `workflows` struct, at a
 location derived from its original file name:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="aGVhZCAtNSAuZ2l0aHViL3dvcmtmbG93cy8qLmN1ZSA+Li4vNS5hY3R1YWwudHh0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="aGVhZCAtNSAuZ2l0aHViL3dvcmtmbG93cy8qLmN1ZSA+Li4vNS5hY3R1YWwudHh0" }
 # Actual command in CUE-By-Example guide:
 # head -5 .github/workflows/*.cue
 $ head -5 .github/workflows/*.cue >../5.actual.txt
-```
+````
 
 The output should reflect your workflows. In our example:
 
@@ -128,9 +128,9 @@ Create a directory called `github` to hold your CUE-based GitHub Actions
 workflow files. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgaW50ZXJuYWwvY2kvZ2l0aHVi" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgaW50ZXJuYWwvY2kvZ2l0aHVi" }
 $ mkdir -p internal/ci/github
-```
+````
 
 You may change the hierarchy and naming of `github`'s **parent** directories to
 suit your repository layout. If you do so, you will need to adapt some commands
@@ -139,9 +139,9 @@ and CUE code as you follow this guide.
 Move the newly-created CUE files into their dedicated directory. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="bXYgLi8uZ2l0aHViL3dvcmtmbG93cy8qLmN1ZSBpbnRlcm5hbC9jaS9naXRodWI=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bXYgLi8uZ2l0aHViL3dvcmtmbG93cy8qLmN1ZSBpbnRlcm5hbC9jaS9naXRodWI=" }
 $ mv ./.github/workflows/*.cue internal/ci/github
-```
+````
 
 ### Validate workflows
 
@@ -150,18 +150,18 @@ $ mv ./.github/workflows/*.cue internal/ci/github
 Run this command, and follow the instructions it displays:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
 $ cue login
-```
+````
 
 This will allow you to fetch modules from the Central Registry.
 
 #### :arrow_right: Add a dependency on a GitHub Actions module
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBnZXQgZ2l0aHViLmNvbS9jdWUtdG1wL2pzb25zY2hlbWEtcHViL2V4cDEvZ2l0aHViYWN0aW9uc0B2MC4zLjA=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBnZXQgZ2l0aHViLmNvbS9jdWUtdG1wL2pzb25zY2hlbWEtcHViL2V4cDEvZ2l0aHViYWN0aW9uc0B2MC4zLjA=" }
 $ cue mod get github.com/cue-tmp/jsonschema-pub/exp1/githubactions@v0.3.0
-```
+````
 
 This command specifies a precise version of the GitHub Actions module in order
 to make sure that this process is reproducible.
@@ -199,9 +199,9 @@ workflows: [_]: githubactions.#Workflow
 #### :arrow_right: Validate your workflows
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuL2ludGVybmFsL2NpL2dpdGh1Yg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuL2ludGVybmFsL2NpL2dpdGh1Yg==" }
 $ cue vet -c ./internal/ci/github
-```
+````
 
 If this command fails and produces any output, then CUE believes that at least
 one of your workflows isn't valid. It's very likely that CUE is correct (and
@@ -277,13 +277,13 @@ workflow command is available **from a shell sitting at the root of the
 repository**. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgJChnaXQgcmV2LXBhcnNlIC0tc2hvdy10b3BsZXZlbCkgIyBtYWtlIHN1cmUgd2UncmUgc2l0dGluZyBhdCB0aGUgcmVwb3NpdG9yeSByb290CmN1ZSBoZWxwIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0aHViIHwgaGVhZCAtNCA+Li4vMTIuYWN0dWFsLnR4dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2QgJChnaXQgcmV2LXBhcnNlIC0tc2hvdy10b3BsZXZlbCkgIyBtYWtlIHN1cmUgd2UncmUgc2l0dGluZyBhdCB0aGUgcmVwb3NpdG9yeSByb290CmN1ZSBoZWxwIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0aHViIHwgaGVhZCAtNCA+Li4vMTIuYWN0dWFsLnR4dA==" }
 $ cd $(git rev-parse --show-toplevel) # make sure we're sitting at the repository root
 
 # Actual command in CUE-By-Example guide:
 # cue help cmd regenerate ./internal/ci/github   # the "./" prefix is required
 $ cue help cmd regenerate ./internal/ci/github | head -4 >../12.actual.txt
-```
+````
 
 Your output **must** begin with the following:
 
@@ -304,20 +304,20 @@ Run the `regenerate` workflow command to produce YAML workflow files from CUE. F
 example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0aHViICMgdGhlICIuLyIgcHJlZml4IGlzIHJlcXVpcmVk" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0aHViICMgdGhlICIuLyIgcHJlZml4IGlzIHJlcXVpcmVk" }
 $ cue cmd regenerate ./internal/ci/github # the "./" prefix is required
-```
+````
 
 #### :arrow_right: Audit changes to the YAML workflow files
 
 Check that each YAML workflow file has a single change from the original:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGRpZmYgLmdpdGh1Yi93b3JrZmxvd3MvIHwgZ3JlcCAtdiAnXmluZGV4IFswLTlhLWZdezd9XC5cLlswLTlhLWZdezd9JyA+Li4vMTQuYWN0dWFsLnR4dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGRpZmYgLmdpdGh1Yi93b3JrZmxvd3MvIHwgZ3JlcCAtdiAnXmluZGV4IFswLTlhLWZdezd9XC5cLlswLTlhLWZdezd9JyA+Li4vMTQuYWN0dWFsLnR4dA==" }
 # Actual command in CUE-By-Example guide:
 # git diff .github/workflows/
 $ git diff .github/workflows/ | grep -v '^index [0-9a-f]{7}\.\.[0-9a-f]{7}' >../14.actual.txt
-```
+````
 
 Your output should look similar to the following example:
 
@@ -351,9 +351,9 @@ reader not to edit the file directly.
 Add your files to git. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGFkZCAuZ2l0aHViL3dvcmtmbG93cy8gaW50ZXJuYWwvY2kvZ2l0aHViLyBjdWUubW9kL21vZHVsZS5jdWU=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGFkZCAuZ2l0aHViL3dvcmtmbG93cy8gaW50ZXJuYWwvY2kvZ2l0aHViLyBjdWUubW9kL21vZHVsZS5jdWU=" }
 $ git add .github/workflows/ internal/ci/github/ cue.mod/module.cue
-```
+````
 
 Make sure to include your slightly modified YAML workflow files in
 `.github/workflows/` along with all the new files in `internal/ci/github/` and
@@ -362,11 +362,11 @@ your `cue.mod/module.cue` file.
 Commit your files to git, with an appropriate commit message:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNvbW1pdCAtLXF1aWV0IC1tICJjaTogY3JlYXRlIENVRSBzb3VyY2VzIGZvciBHSEEgd29ya2Zsb3dzIg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNvbW1pdCAtLXF1aWV0IC1tICJjaTogY3JlYXRlIENVRSBzb3VyY2VzIGZvciBHSEEgd29ya2Zsb3dzIg==" }
 # Actual command in CUE-By-Example guide:
 # git commit -m "ci: create CUE sources for GHA workflows"
 $ git commit --quiet -m "ci: create CUE sources for GHA workflows"
-```
+````
 
 ## Conclusion
 
@@ -382,8 +382,8 @@ regenerate the YAML files required by GitHub Actions, and commit your changes
 to all the CUE and YAML files. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0aHViLyAjIHRoZSAiLi8iIHByZWZpeCBpcyByZXF1aXJlZApnaXQgYWRkIC5naXRodWIvd29ya2Zsb3dzLyBpbnRlcm5hbC9jaS9naXRodWIvCmdpdCBjb21taXQgLW0gImNpOiBhZGRlZCBuZXcgcmVsZWFzZSB3b3JrZmxvdyIgIyBleGFtcGxlIG1lc3NhZ2U=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0aHViLyAjIHRoZSAiLi8iIHByZWZpeCBpcyByZXF1aXJlZApnaXQgYWRkIC5naXRodWIvd29ya2Zsb3dzLyBpbnRlcm5hbC9jaS9naXRodWIvCmdpdCBjb21taXQgLW0gImNpOiBhZGRlZCBuZXcgcmVsZWFzZSB3b3JrZmxvdyIgIyBleGFtcGxlIG1lc3NhZ2U=" }
 $ cue cmd regenerate ./internal/ci/github/ # the "./" prefix is required
 $ git add .github/workflows/ internal/ci/github/
 $ git commit -m "ci: added new release workflow" # example message
-```
+````
