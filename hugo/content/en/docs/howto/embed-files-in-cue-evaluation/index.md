@@ -24,9 +24,9 @@ later.
 Initialize a CUE module, or use an existing module if that's appropriate in
 your situation:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0" }
 $ cue mod init
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="2" >}}
@@ -81,7 +81,7 @@ an unknown filename extension can be loaded by adding the
 {{< step stepNumber="3" >}}
 Export the resulting configuration:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
 $ cue export --out yaml
 oneFile: |
   # How to use this project
@@ -103,7 +103,7 @@ manyFiles:
       foo: a
       bar: b
       baz: c
-```
+````
 {{< /step >}}
 
 ## Related content

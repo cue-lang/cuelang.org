@@ -20,18 +20,18 @@ It could be adapted to other schema-walking tasks - not just code generation.
 {{< step stepNumber="1" >}}
 Create a Go module, or use an existing one if that's more suitable for your situation:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
 $ go mod init go.example
 ...
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="2" >}}
 Create a CUE module if you don't already have one:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
 $ cue mod init cue.example
-```
+````
 
 The identifiers for the CUE and Go modules don't need to match, but it doesn't
 matter if they're the same.
@@ -85,9 +85,9 @@ order to demonstrate that they are *not* processed by the code presented below.
 {{< step stepNumber="4" >}}
 Ensure there are no errors in our CUE:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYw==" }
 $ cue vet -c
-```
+````
 
 {{< /step >}}
 
@@ -157,12 +157,12 @@ func structToType(name cue.Selector, val cue.Value) {
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
 $ go get cuelang.org/go@v0.14.1
 ...
 $ go mod tidy
 ...
-```
+````
 
 You can use `@latest` in place of a specific version.
 
@@ -171,7 +171,7 @@ You can use `@latest` in place of a specific version.
 {{< step stepNumber="7" >}}
 Run the Go program:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 package p
 
@@ -185,7 +185,7 @@ type Address struct {
 	line3 string
 	country string
 }
-```
+````
 
 As you can see from its output, this Go program is a very limited form of code
 generator that takes each CUE definition and produces a matching Go struct type.

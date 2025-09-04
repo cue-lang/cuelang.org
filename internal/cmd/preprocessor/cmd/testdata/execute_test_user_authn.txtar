@@ -42,15 +42,15 @@ content: dir: page: {
 ---
 title: Test page
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUg==" }
 $ echo $TEST_USER_AUTHN_CUECKOO_USER
 ******
-```
+````
 -- golden/hugo/content/en/dir/index.md.env --
 ---
 title: Test page
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAkVEVTVF9VU0VSX0FVVEhOX0NVRUNLT09fVVNFUg==" }
 $ echo $TEST_USER_AUTHN_CUECKOO_USER
 ******
-```
+````

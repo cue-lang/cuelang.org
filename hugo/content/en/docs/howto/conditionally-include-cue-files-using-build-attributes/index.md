@@ -51,7 +51,7 @@ the presence or absence of tags:
 The following `cue export` invocations all specify different tags to change the
 evaluation as described above:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydApjdWUgZXhwb3J0IC10IGZvbwpjdWUgZXhwb3J0IC10IGJhcgpjdWUgZXhwb3J0IC10IGZvbyAtdCBiYXI=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydApjdWUgZXhwb3J0IC10IGZvbwpjdWUgZXhwb3J0IC10IGJhcgpjdWUgZXhwb3J0IC10IGZvbyAtdCBiYXI=" }
 $ cue export
 {
     "data from bar.cue": true,
@@ -74,7 +74,7 @@ $ cue export -t foo -t bar
     "data from baz.cue": true,
     "data from foo.cue": true
 }
-```
+````
 
 {{< info >}}
 The `foo` and `bar` tags are only aligned with their respective filenames to

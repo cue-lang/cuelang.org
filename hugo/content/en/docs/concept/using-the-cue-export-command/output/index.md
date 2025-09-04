@@ -55,7 +55,7 @@ data: {
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgZGF0YS55bWwKY2F0IGRhdGEueW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgZGF0YS55bWwKY2F0IGRhdGEueW1s" }
 $ cue export --outfile data.yml
 $ cat data.yml
 data:
@@ -63,7 +63,7 @@ data:
   list:
     - 1
     - 2
-```
+````
 {{</columns>}}
 By default, the data emitted into the named file is encoded in the format
 inferred from its filename suffix. For example
@@ -84,11 +84,11 @@ data: {
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgZGF0YS50eHQgLWUgZGF0YS52YWx1ZQpjYXQgZGF0YS50eHQ=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgZGF0YS50eHQgLWUgZGF0YS52YWx1ZQpjYXQgZGF0YS50eHQ=" }
 $ cue export --outfile data.txt -e data.value
 $ cat data.txt
 A string
-```
+````
 {{</columns>}}
 Binary data can also be emitted, but because there isn't a standardised
 filename suffix for this format it must be explicitly requested using the
@@ -152,7 +152,7 @@ data: {
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgZGF0YWZpbGUgLS1vdXQganNvbgpjYXQgZGF0YWZpbGU=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUgZGF0YWZpbGUgLS1vdXQganNvbgpjYXQgZGF0YWZpbGU=" }
 $ cue export --outfile datafile --out json
 $ cat datafile
 {
@@ -164,7 +164,7 @@ $ cat datafile
         ]
     }
 }
-```
+````
 {{</columns>}}
 ## Output location *and* encoding: `--outfile`
 
@@ -186,7 +186,7 @@ data: {
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUganNvbjpkYXRhZmlsZQpjYXQgZGF0YWZpbGU=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dGZpbGUganNvbjpkYXRhZmlsZQpjYXQgZGF0YWZpbGU=" }
 $ cue export --outfile json:datafile
 $ cat datafile
 {
@@ -198,7 +198,7 @@ $ cat datafile
         ]
     }
 }
-```
+````
 {{</columns>}}
 As mentioned above, the pseudo-filename of "`-`" can be used to refer to the
 command's standard output stream. Because this filename doesn't have a suffix

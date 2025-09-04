@@ -47,12 +47,12 @@ Buildkite pipeline files, and ensure you start this process with a clean git
 state, with no modified files. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgZGVwZW5kZW50LXBpcGVsaW5lLWV4YW1wbGUgIyBvdXIgZXhhbXBsZSByZXBvc2l0b3J5CmdpdCBzdGF0dXMgIyBzaG91bGQgcmVwb3J0ICJ3b3JraW5nIHRyZWUgY2xlYW4i" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2QgZGVwZW5kZW50LXBpcGVsaW5lLWV4YW1wbGUgIyBvdXIgZXhhbXBsZSByZXBvc2l0b3J5CmdpdCBzdGF0dXMgIyBzaG91bGQgcmVwb3J0ICJ3b3JraW5nIHRyZWUgY2xlYW4i" }
 $ cd dependent-pipeline-example # our example repository
 $ git status # should report "working tree clean"
 On branch master
 nothing to commit, working tree clean
-```
+````
 
 #### :arrow_right: Initialise a CUE module
 
@@ -60,28 +60,28 @@ Initialise a CUE module named after the organisation and repository you're
 working with. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGh1Yi5jb20vYnVpbGRraXRlL2RlcGVuZGVudC1waXBlbGluZS1leGFtcGxl" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGh1Yi5jb20vYnVpbGRraXRlL2RlcGVuZGVudC1waXBlbGluZS1leGFtcGxl" }
 $ cue mod init github.com/buildkite/dependent-pipeline-example
-```
+````
 
 #### :arrow_right: Import YAML pipelines
 
 Use `cue` to import your YAML pipeline files:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAuLy5idWlsZGtpdGUvKi55bWwgLS13aXRoLWNvbnRleHQgLXAgYnVpbGRraXRlIC1mIC1sIHBpcGVsaW5lczogLWwgJ3N0cmluZ3MuVHJpbVN1ZmZpeChwYXRoLkJhc2UoZmlsZW5hbWUpLHBhdGguRXh0KGZpbGVuYW1lKSkn" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAuLy5idWlsZGtpdGUvKi55bWwgLS13aXRoLWNvbnRleHQgLXAgYnVpbGRraXRlIC1mIC1sIHBpcGVsaW5lczogLWwgJ3N0cmluZ3MuVHJpbVN1ZmZpeChwYXRoLkJhc2UoZmlsZW5hbWUpLHBhdGguRXh0KGZpbGVuYW1lKSkn" }
 $ cue import ./.buildkite/*.yml --with-context -p buildkite -f -l pipelines: -l 'strings.TrimSuffix(path.Base(filename),path.Ext(filename))'
-```
+````
 
 Check that a CUE file has been created for each YAML pipeline in the
 `.buildkite` directory. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="bHMgLmJ1aWxka2l0ZS8gPi4uLzQuYWN0dWFsLnR4dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bHMgLmJ1aWxka2l0ZS8gPi4uLzQuYWN0dWFsLnR4dA==" }
 # Actual command in CUE-By-Example guide:
 # ls .buildkite/
 $ ls .buildkite/ >../4.actual.txt
-```
+````
 
 Your output should look similar to this, with matching pairs of pre-existing
 YAML and new CUE files:
@@ -97,11 +97,11 @@ Observe that each pipeline has been imported into the `pipelines` struct, at a
 location derived from its original pipeline's file name:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="aGVhZCAuYnVpbGRraXRlLyouY3VlID4uLi81LmFjdHVhbC50eHQ=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="aGVhZCAuYnVpbGRraXRlLyouY3VlID4uLi81LmFjdHVhbC50eHQ=" }
 # Actual command in CUE-By-Example guide:
 # head .buildkite/*.cue
 $ head .buildkite/*.cue >../5.actual.txt
-```
+````
 
 The output should reflect your pipelines. In our example:
 
@@ -136,9 +136,9 @@ Create a directory called `buildkite` to hold your CUE-based Buildkite pipeline
 files. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgaW50ZXJuYWwvY2kvYnVpbGRraXRl" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgaW50ZXJuYWwvY2kvYnVpbGRraXRl" }
 $ mkdir -p internal/ci/buildkite
-```
+````
 
 You may change the hierarchy and naming of `buildkite`'s **parent** directories
 to suit your repository layout. If you do so, you will need to adapt some
@@ -147,9 +147,9 @@ commands and CUE code as you follow this guide.
 Move the newly-created CUE files into their dedicated directory. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="bXYgLi8uYnVpbGRraXRlLyouY3VlIGludGVybmFsL2NpL2J1aWxka2l0ZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bXYgLi8uYnVpbGRraXRlLyouY3VlIGludGVybmFsL2NpL2J1aWxka2l0ZQ==" }
 $ mv ./.buildkite/*.cue internal/ci/buildkite
-```
+````
 
 ### Validate workflows
 
@@ -297,13 +297,13 @@ With the modified `ci_tool.cue` file in place, check that the `regenerate`
 workflow command is available **from a shell sitting at the repo root**. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgJChnaXQgcmV2LXBhcnNlIC0tc2hvdy10b3BsZXZlbCkgIyBtYWtlIHN1cmUgd2UncmUgc2l0dGluZyBhdCB0aGUgcmVwb3NpdG9yeSByb290CmN1ZSBoZWxwIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvYnVpbGRraXRlIHwgaGVhZCAtNCA+Li4vMTEuYWN0dWFsLnR4dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2QgJChnaXQgcmV2LXBhcnNlIC0tc2hvdy10b3BsZXZlbCkgIyBtYWtlIHN1cmUgd2UncmUgc2l0dGluZyBhdCB0aGUgcmVwb3NpdG9yeSByb290CmN1ZSBoZWxwIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvYnVpbGRraXRlIHwgaGVhZCAtNCA+Li4vMTEuYWN0dWFsLnR4dA==" }
 $ cd $(git rev-parse --show-toplevel) # make sure we're sitting at the repository root
 
 # Actual command in CUE-By-Example guide:
 # cue help cmd regenerate ./internal/ci/buildkite   # the "./" prefix is required
 $ cue help cmd regenerate ./internal/ci/buildkite | head -4 >../11.actual.txt
-```
+````
 
 Your output **must** begin with the following:
 
@@ -324,9 +324,9 @@ Run the `regenerate` workflow command to produce YAML pipeline files from CUE. F
 example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvYnVpbGRraXRlICMgdGhlICIuLyIgcHJlZml4IGlzIHJlcXVpcmVk" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvYnVpbGRraXRlICMgdGhlICIuLyIgcHJlZml4IGlzIHJlcXVpcmVk" }
 $ cue cmd regenerate ./internal/ci/buildkite # the "./" prefix is required
-```
+````
 
 #### :arrow_right: Audit changes to the YAML pipeline files
 
@@ -335,11 +335,11 @@ original:
 
 :computer: `terminal`
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGRpZmYgLS0gLmJ1aWxka2l0ZS8gfCBncmVwIC12RSAnXmluZGV4IFswLTlhLWZdezd9XC5cLlswLTlhLWZdezd9JyB8IGhlYWQgLTggPi4uLzEzLmFjdHVhbC50eHQ=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGRpZmYgLS0gLmJ1aWxka2l0ZS8gfCBncmVwIC12RSAnXmluZGV4IFswLTlhLWZdezd9XC5cLlswLTlhLWZdezd9JyB8IGhlYWQgLTggPi4uLzEzLmFjdHVhbC50eHQ=" }
 # Actual command in CUE-By-Example guide:
 # git diff .buildkite/
 $ git diff -- .buildkite/ | grep -vE '^index [0-9a-f]{7}\.\.[0-9a-f]{7}' | head -8 >../13.actual.txt
-```
+````
 
 Your output should look similar to the following example:
 
@@ -355,9 +355,9 @@ diff --git a/.buildkite/pipeline.deploy.yml b/.buildkite/pipeline.deploy.yml
    - command: echo 'Deploy'
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZGlmZiAuLi8xMy5leHBlY3RlZC50eHQgLi4vMTMuYWN0dWFsLnR4dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZGlmZiAuLi8xMy5leHBlY3RlZC50eHQgLi4vMTMuYWN0dWFsLnR4dA==" }
 $ diff ../13.expected.txt ../13.actual.txt
-```
+````
 
 The only *material* change in each YAML file is the addition of a header that
 warns the reader not to edit the file directly.
@@ -367,9 +367,9 @@ warns the reader not to edit the file directly.
 Add your files to git. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGFkZCAuYnVpbGRraXRlLyBpbnRlcm5hbC9jaS9idWlsZGtpdGUvIGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGFkZCAuYnVpbGRraXRlLyBpbnRlcm5hbC9jaS9idWlsZGtpdGUvIGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ git add .buildkite/ internal/ci/buildkite/ cue.mod/module.cue
-```
+````
 
 Make sure to include your slightly modified YAML pipeline files in
 `.buildkite/` along with all the new files in `internal/ci/buildkite/` and
@@ -378,11 +378,11 @@ your `cue.mod/module.cue` file.
 Commit your files to git, with an appropriate commit message:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNvbW1pdCAtLXF1aWV0IC1tICJjaTogY3JlYXRlIENVRSBzb3VyY2VzIGZvciBCdWlsZGtpdGUgcGlwZWxpbmVzIg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNvbW1pdCAtLXF1aWV0IC1tICJjaTogY3JlYXRlIENVRSBzb3VyY2VzIGZvciBCdWlsZGtpdGUgcGlwZWxpbmVzIg==" }
 # Actual command in CUE-By-Example guide:
 # git commit -m "ci: create CUE sources for Buildkite pipelines"
 $ git commit --quiet -m "ci: create CUE sources for Buildkite pipelines"
-```
+````
 
 ## Conclusion
 
@@ -399,8 +399,8 @@ regenerate the YAML files required by Buildkite, and commit your changes
 to all the CUE and YAML files. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvYnVpbGRraXRlLyAjIHRoZSAiLi8iIHByZWZpeCBpcyByZXF1aXJlZApnaXQgYWRkIC5idWlsZGtpdGUvIGludGVybmFsL2NpL2J1aWxka2l0ZS8KZ2l0IGNvbW1pdCAtbSAiY2k6IGFkZGVkIG5ldyByZWxlYXNlIHBpcGVsaW5lIiAjIGV4YW1wbGUgbWVzc2FnZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvYnVpbGRraXRlLyAjIHRoZSAiLi8iIHByZWZpeCBpcyByZXF1aXJlZApnaXQgYWRkIC5idWlsZGtpdGUvIGludGVybmFsL2NpL2J1aWxka2l0ZS8KZ2l0IGNvbW1pdCAtbSAiY2k6IGFkZGVkIG5ldyByZWxlYXNlIHBpcGVsaW5lIiAjIGV4YW1wbGUgbWVzc2FnZQ==" }
 $ cue cmd regenerate ./internal/ci/buildkite/ # the "./" prefix is required
 $ git add .buildkite/ internal/ci/buildkite/
 $ git commit -m "ci: added new release pipeline" # example message
-```
+````

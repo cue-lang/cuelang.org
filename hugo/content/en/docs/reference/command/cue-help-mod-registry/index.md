@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHJlZ2lzdHJ5" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHJlZ2lzdHJ5" }
 $ cue help mod registry
 This command starts an OCI-compliant server that stores all its
 contents in memory. It can serve as a scratch CUE modules registry
@@ -30,4 +30,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

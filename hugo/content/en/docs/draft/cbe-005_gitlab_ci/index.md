@@ -50,12 +50,12 @@ pipeline file, and ensure you start this process with a clean git state, with
 no modified files. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgZ2l0bGFiICMgb3VyIGV4YW1wbGUgcmVwb3NpdG9yeQpnaXQgc3RhdHVzICMgc2hvdWxkIHJlcG9ydCAid29ya2luZyB0cmVlIGNsZWFuIg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2QgZ2l0bGFiICMgb3VyIGV4YW1wbGUgcmVwb3NpdG9yeQpnaXQgc3RhdHVzICMgc2hvdWxkIHJlcG9ydCAid29ya2luZyB0cmVlIGNsZWFuIg==" }
 $ cd gitlab # our example repository
 $ git status # should report "working tree clean"
 On branch master
 nothing to commit, working tree clean
-```
+````
 
 #### :arrow_right: Initialise a CUE module
 
@@ -63,18 +63,18 @@ Initialise a CUE module named after the organisation and repository you're
 working with, but containing only lowercase letters and numbers. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGxhYi5jb20vZ2l0bGFiLW9yZy9naXRsYWI=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGdpdGxhYi5jb20vZ2l0bGFiLW9yZy9naXRsYWI=" }
 $ cue mod init gitlab.com/gitlab-org/gitlab
-```
+````
 
 #### :arrow_right: Import YAML pipeline
 
 Use `cue` to import your YAML pipeline file:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAuZ2l0bGFiLWNpLnltbCAtLXdpdGgtY29udGV4dCAtcCBnaXRsYWIgLWYgLWwgcGlwZWxpbmVzOiAtbCAnc3RyaW5ncy5UcmltU3VmZml4KHBhdGguQmFzZShmaWxlbmFtZSkscGF0aC5FeHQoZmlsZW5hbWUpKScgLW8gZ2l0bGFiLWNpLmN1ZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAuZ2l0bGFiLWNpLnltbCAtLXdpdGgtY29udGV4dCAtcCBnaXRsYWIgLWYgLWwgcGlwZWxpbmVzOiAtbCAnc3RyaW5ncy5UcmltU3VmZml4KHBhdGguQmFzZShmaWxlbmFtZSkscGF0aC5FeHQoZmlsZW5hbWUpKScgLW8gZ2l0bGFiLWNpLmN1ZQ==" }
 $ cue import .gitlab-ci.yml --with-context -p gitlab -f -l pipelines: -l 'strings.TrimSuffix(path.Base(filename),path.Ext(filename))' -o gitlab-ci.cue
-```
+````
 
 If your project uses a different name for your pipeline file then use that name
 in the above command, and throughout this guide.
@@ -82,11 +82,11 @@ in the above command, and throughout this guide.
 Check that a CUE file has been created from your pipeline file. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="bHMgeywufSpnaXRsYWItY2kqID4uLi80LmV4cGVjdGVkLnR4dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bHMgeywufSpnaXRsYWItY2kqID4uLi80LmV4cGVjdGVkLnR4dA==" }
 # Actual command in CUE-By-Example guide:
 # ls {,.}*gitlab-ci*
 $ ls {,.}*gitlab-ci* >../4.expected.txt
-```
+````
 
 Your output should look similar to this, with a matching YAML and CUE file:
 
@@ -99,11 +99,11 @@ Observe that your file has been imported into the `pipelines` struct at a
 location derived from its original file name, by running:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="aGVhZCAtOSBnaXRsYWItY2kuY3VlID4uLi81LmFjdHVhbC50eHQ=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="aGVhZCAtOSBnaXRsYWItY2kuY3VlID4uLi81LmFjdHVhbC50eHQ=" }
 # Actual command in CUE-By-Example guide:
 # head -9 gitlab-ci.cue
 $ head -9 gitlab-ci.cue >../5.actual.txt
-```
+````
 
 The output should reflect your pipeline. In our example:
 
@@ -125,9 +125,9 @@ Create a directory called `gitlab` to hold your CUE-based GitLab pipeline
 files. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgaW50ZXJuYWwvY2kvZ2l0bGFi" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgaW50ZXJuYWwvY2kvZ2l0bGFi" }
 $ mkdir -p internal/ci/gitlab
-```
+````
 
 You may change the hierarchy and naming of `gitlab`'s **parent** directories to
 suit your repository layout. If you do so, you will need to adapt some commands
@@ -136,9 +136,9 @@ and CUE code as you follow this guide.
 Move the newly-created CUE pipeline file into its dedicated directory. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="bXYgZ2l0bGFiLWNpLmN1ZSBpbnRlcm5hbC9jaS9naXRsYWI=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bXYgZ2l0bGFiLWNpLmN1ZSBpbnRlcm5hbC9jaS9naXRsYWI=" }
 $ mv gitlab-ci.cue internal/ci/gitlab
-```
+````
 
 ### Validate pipeline
 
@@ -148,9 +148,9 @@ Fetch a schema for GitLab pipelines, as defined by the GitLab project, and
 place it in the `internal/ci/gitlab` directory:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VybCAtc1NvIGludGVybmFsL2NpL2dpdGxhYi9naXRsYWIuY2ljZC5waXBlbGluZS5zY2hlbWEuanNvbiBodHRwczovL2dpdGxhYi5jb20vZ2l0bGFiLW9yZy9naXRsYWIvLS9yYXcvMjc3YzlmNmI2NDNjOTJkMDAxMDFhY2EwZjJiNGI4NzRhMTQ0ZjdjNS9hcHAvYXNzZXRzL2phdmFzY3JpcHRzL2VkaXRvci9zY2hlbWEvY2kuanNvbg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VybCAtc1NvIGludGVybmFsL2NpL2dpdGxhYi9naXRsYWIuY2ljZC5waXBlbGluZS5zY2hlbWEuanNvbiBodHRwczovL2dpdGxhYi5jb20vZ2l0bGFiLW9yZy9naXRsYWIvLS9yYXcvMjc3YzlmNmI2NDNjOTJkMDAxMDFhY2EwZjJiNGI4NzRhMTQ0ZjdjNS9hcHAvYXNzZXRzL2phdmFzY3JpcHRzL2VkaXRvci9zY2hlbWEvY2kuanNvbg==" }
 $ curl -sSo internal/ci/gitlab/gitlab.cicd.pipeline.schema.json https://gitlab.com/gitlab-org/gitlab/-/raw/277c9f6b643c92d00101aca0f2b4b874a144f7c5/app/assets/javascripts/editor/schema/ci.json
-```
+````
 
 We use a specific commit from the upstream repository to make sure that this
 process is reproducible.
@@ -158,9 +158,9 @@ process is reproducible.
 Convert the GitLab schema from JSON Schema to CUE:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtcCBnaXRsYWIgLWwgJyNQaXBlbGluZTonIGludGVybmFsL2NpL2dpdGxhYi9naXRsYWIuY2ljZC5waXBlbGluZS5zY2hlbWEuanNvbg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtcCBnaXRsYWIgLWwgJyNQaXBlbGluZTonIGludGVybmFsL2NpL2dpdGxhYi9naXRsYWIuY2ljZC5waXBlbGluZS5zY2hlbWEuanNvbg==" }
 $ cue import -p gitlab -l '#Pipeline:' internal/ci/gitlab/gitlab.cicd.pipeline.schema.json
-```
+````
 
 This command will create the file `internal/ci/gitlab/gitlab.cicd.pipeline.schema.cue`
 in the `gitlab` package, with the contents of the upstream schema placed in the
@@ -190,9 +190,9 @@ pipelines: [_]: #Pipeline
 #### :arrow_right: Validate your pipelines
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuL2ludGVybmFsL2NpL2dpdGxhYg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuL2ludGVybmFsL2NpL2dpdGxhYg==" }
 $ cue vet -c ./internal/ci/gitlab
-```
+````
 
 If this command fails and produces any output, then CUE believes that at least
 one of your pipelines isn't valid. You'll need to resolve this before
@@ -259,13 +259,13 @@ workflow command is available **from a shell sitting at the repository root**. F
 example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgJChnaXQgcmV2LXBhcnNlIC0tc2hvdy10b3BsZXZlbCkgIyBtYWtlIHN1cmUgd2UncmUgc2l0dGluZyBhdCB0aGUgcmVwb3NpdG9yeSByb290CmN1ZSBoZWxwIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0bGFiIHwgaGVhZCAtNCA+Li4vMTIuYWN0dWFsLnR4dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2QgJChnaXQgcmV2LXBhcnNlIC0tc2hvdy10b3BsZXZlbCkgIyBtYWtlIHN1cmUgd2UncmUgc2l0dGluZyBhdCB0aGUgcmVwb3NpdG9yeSByb290CmN1ZSBoZWxwIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0bGFiIHwgaGVhZCAtNCA+Li4vMTIuYWN0dWFsLnR4dA==" }
 $ cd $(git rev-parse --show-toplevel) # make sure we're sitting at the repository root
 
 # Actual command in CUE-By-Example guide:
 # cue help cmd regenerate ./internal/ci/gitlab   # the "./" prefix is required
 $ cue help cmd regenerate ./internal/ci/gitlab | head -4 >../12.actual.txt
-```
+````
 
 The output of the `cue help` command **must** begin with the following:
 
@@ -286,9 +286,9 @@ Run the `regenerate` workflow command to produce a YAML pipeline file from CUE. 
 example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0bGFiICMgdGhlICIuLyIgcHJlZml4IGlzIHJlcXVpcmVk" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0bGFiICMgdGhlICIuLyIgcHJlZml4IGlzIHJlcXVpcmVk" }
 $ cue cmd regenerate ./internal/ci/gitlab # the "./" prefix is required
-```
+````
 
 #### :arrow_right: Audit changes to the YAML pipeline file
 
@@ -296,7 +296,7 @@ Check that your YAML pipeline file has a single *material* change from the
 original:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="c2xlZXAgMQpzeW5jCmdpdCBkaWZmIC0tIC5naXRsYWItY2kueW1sIHwgZ3JlcCAtdkUgJ15pbmRleCBbMC05YS1mXXs3fVwuXC5bMC05YS1mXXs3fScgfCBoZWFkIC05ID4uLi8xNC5hY3R1YWwudHh0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="c2xlZXAgMQpzeW5jCmdpdCBkaWZmIC0tIC5naXRsYWItY2kueW1sIHwgZ3JlcCAtdkUgJ15pbmRleCBbMC05YS1mXXs3fVwuXC5bMC05YS1mXXs3fScgfCBoZWFkIC05ID4uLi8xNC5hY3R1YWwudHh0" }
 # 2 commands not present in CUE-By-Example guide, added as an attempt to work
 # around cue-lang/cue#3492. DELETE THESE COMMANDS!
 $ sleep 1
@@ -308,7 +308,7 @@ $ sync
 # the diff command is given a '--' separator. I'm utterly stumped, but let's
 # just give it what it wants!
 $ git diff -- .gitlab-ci.yml | grep -vE '^index [0-9a-f]{7}\.\.[0-9a-f]{7}' | head -9 >../14.actual.txt
-```
+````
 
 Your output should look similar to the following example:
 
@@ -340,9 +340,9 @@ be manually changing, from now on.
 Add your files to git. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGFkZCAuZ2l0bGFiLWNpLnltbCBpbnRlcm5hbC9jaS9naXRsYWIvIGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGFkZCAuZ2l0bGFiLWNpLnltbCBpbnRlcm5hbC9jaS9naXRsYWIvIGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ git add .gitlab-ci.yml internal/ci/gitlab/ cue.mod/module.cue
-```
+````
 
 Make sure to include your slightly modified YAML pipeline file, wherever you
 store it, along with all the new files in `internal/ci/gitlab/` and your
@@ -351,11 +351,11 @@ store it, along with all the new files in `internal/ci/gitlab/` and your
 Commit your files to git, with an appropriate commit message:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNvbW1pdCAtLXF1aWV0IC1tICJjaTogY3JlYXRlIENVRSBzb3VyY2VzIGZvciBHaXRMYWIgQ0kvQ0QgcGlwZWxpbmVzIg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNvbW1pdCAtLXF1aWV0IC1tICJjaTogY3JlYXRlIENVRSBzb3VyY2VzIGZvciBHaXRMYWIgQ0kvQ0QgcGlwZWxpbmVzIg==" }
 # Actual command in CUE-By-Example guide:
 # git commit -m "ci: create CUE sources for GitLab CI/CD pipelines"
 $ git commit --quiet -m "ci: create CUE sources for GitLab CI/CD pipelines"
-```
+````
 
 ## Conclusion
 
@@ -371,8 +371,8 @@ regenerate the YAML files required by GitLab CI/CD, and commit your changes to
 all the CUE and YAML files. For example:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0bGFiLyAjIHRoZSAiLi8iIHByZWZpeCBpcyByZXF1aXJlZApnaXQgYWRkIC5naXRsYWItY2kueW1sIGludGVybmFsL2NpL2dpdGxhYi8KZ2l0IGNvbW1pdCAtbSAiY2k6IGFkZGVkIG5ldyByZWxlYXNlIHBpcGVsaW5lIiAjIGV4YW1wbGUgbWVzc2FnZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCByZWdlbmVyYXRlIC4vaW50ZXJuYWwvY2kvZ2l0bGFiLyAjIHRoZSAiLi8iIHByZWZpeCBpcyByZXF1aXJlZApnaXQgYWRkIC5naXRsYWItY2kueW1sIGludGVybmFsL2NpL2dpdGxhYi8KZ2l0IGNvbW1pdCAtbSAiY2k6IGFkZGVkIG5ldyByZWxlYXNlIHBpcGVsaW5lIiAjIGV4YW1wbGUgbWVzc2FnZQ==" }
 $ cue cmd regenerate ./internal/ci/gitlab/ # the "./" prefix is required
 $ git add .gitlab-ci.yml internal/ci/gitlab/
 $ git commit -m "ci: added new release pipeline" # example message
-```
+````

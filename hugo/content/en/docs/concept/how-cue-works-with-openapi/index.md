@@ -78,9 +78,9 @@ format specified by the `--out` parameter.
 Be aware of just how *long* an equivalent OpenAPI definition can become - not
 all formats possess CUE's succinctness and economy of expression!
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiBzY2hlbWEuY3VlIC1vIGFwaS5wZXQueWFtbCAtLW91dCBvcGVuYXBpK3lhbWw=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiBzY2hlbWEuY3VlIC1vIGFwaS5wZXQueWFtbCAtLW91dCBvcGVuYXBpK3lhbWw=" }
 $ cue def schema.cue -o api.pet.yaml --out openapi+yaml
-```
+````
 
 The `cue def` command creates the `api.pet.yaml` OpenAPI document:
 
@@ -129,9 +129,9 @@ The [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}}) comm
 can take constraints found in OpenAPI data schemas and express them as CUE.
 Here we take the definition produced by `cue def`, above, and convert it back to CUE:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtcCBhcGkgYXBpLnBldC55YW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtcCBhcGkgYXBpLnBldC55YW1s" }
 $ cue import -p api api.pet.yaml
-```
+````
 
 This produces the following CUE, which is as close to the original `schema.cue`
 as OpenAPI currently permits:
@@ -177,7 +177,7 @@ Let's validate Jonathan against the contents of our OpenAPI document, `api.pet.y
 CUE automatically recognises the constraints in the `components.schemas` namespace,
 making them available as the `#Pet` schema:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBhcGkucGV0LnlhbWwgam9uYXRoYW4ueW1sIC1kICcjUGV0Jw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBhcGkucGV0LnlhbWwgam9uYXRoYW4ueW1sIC1kICcjUGV0Jw==" }
 $ cue vet -c api.pet.yaml jonathan.yml -d '#Pet'
 kind: 2 errors in empty disjunction:
 kind: conflicting values "cat" and "tortoise":
@@ -185,7 +185,7 @@ kind: conflicting values "cat" and "tortoise":
     ./jonathan.yml:2:7
 kind: conflicting values "dog" and "tortoise":
     ./jonathan.yml:2:7
-```
+````
 
 Perhaps our `#Pet` schema should be updated to handle more animal types!
 
@@ -237,7 +237,7 @@ func main() {
 Running this code successfully expresses the constraints in our original
 `schema.cue` file as an OpenAPI document:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 {
   "openapi": "3.0.0",
@@ -250,7 +250,7 @@ $ go run .
     "schemas": {
       "Kind": {
 ...
-```
+````
 
 The [`encoding/openapi`](https://pkg.go.dev/cuelang.org/go/encoding/openapi)
 package provides options to make a definition self-contained, to filter

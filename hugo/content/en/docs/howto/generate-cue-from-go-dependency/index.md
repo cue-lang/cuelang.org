@@ -19,18 +19,18 @@ dependency of a Go module.
 {{< step stepNumber="1" >}}
 Create a Go module, or use an existing one if that's more suitable for your situation:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
 $ go mod init go.example
 ...
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="2" >}}
 Create a CUE module if you don't already have one:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxl" }
 $ cue mod init cue.example
-```
+````
 {{< /step >}}
 
 ## Declare a Go dependency
@@ -54,12 +54,12 @@ import _ "k8s.io/api/apps/v1"
 Add a dependency on a specific version of the target Go package,
 and tidy the main module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGs4cy5pby9hcGkvYXBwcy92MUB2MC4yMy40ICMgIkBsYXRlc3QiIHdvdWxkIGFsc28gd29yay4KZ28gbW9kIHRpZHk=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGs4cy5pby9hcGkvYXBwcy92MUB2MC4yMy40ICMgIkBsYXRlc3QiIHdvdWxkIGFsc28gd29yay4KZ28gbW9kIHRpZHk=" }
 $ go get k8s.io/api/apps/v1@v0.23.4 # "@latest" would also work.
 ...
 $ go mod tidy
 ...
-```
+````
 {{< /step >}}
 
 ## Generate CUE from Go
@@ -67,15 +67,15 @@ $ go mod tidy
 {{< step stepNumber="5" >}}
 Use the `cue` command to generate CUE from the target Go package:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGdldCBnbyBrOHMuaW8vYXBpL2FwcHMvdjE=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGdldCBnbyBrOHMuaW8vYXBpL2FwcHMvdjE=" }
 $ cue get go k8s.io/api/apps/v1
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="6" >}}
 Inspect the CUE packages generated in `cue.mod/gen`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="dHJlZSAtZCBjdWUubW9kL2dlbg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="dHJlZSAtZCBjdWUubW9kL2dlbg==" }
 $ tree -d cue.mod/gen
 cue.mod/gen
 └── k8s.io
@@ -88,7 +88,7 @@ cue.mod/gen
         └── pkg
             ├── api
 ...
-```
+````
 
 More CUE packages are generated than just the target.
 These are *dependencies* of the target package.
@@ -118,13 +118,13 @@ statefulSet: [string]: apps.#StatefulSet
 {{< step stepNumber="8" >}}
 Export an empty configuration to confirm that everything works:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
 $ cue export --out yaml
 service: {}
 deployment: {}
 daemonSet: {}
 statefulSet: {}
-```
+````
 {{< /step >}}
 ## Related content
 

@@ -6,7 +6,7 @@ tags:
 - cue command
 - modules
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbG9naW4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbG9naW4=" }
 $ cue help login
 Log into a CUE registry via the OAuth 2.0 Device Authorization Grant.
 Without an argument, CUE_REGISTRY is used if it points to a single registry.
@@ -29,4 +29,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

@@ -44,11 +44,11 @@ create a second module that depends on the first.
 
 This tutorial is written using the following version of `cue`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
 cue version v0.14.1
 ...
-```
+````
 
 ## Create the module for the schema code
 
@@ -61,10 +61,10 @@ so we will publish it to the Central Registry.
 {{< step stepNumber="1" >}}
 
 Create a directory to hold the schema code:
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgZnJvc3R5Y29uZmlnCmNkIGZyb3N0eWNvbmZpZw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgZnJvc3R5Y29uZmlnCmNkIGZyb3N0eWNvbmZpZw==" }
 $ mkdir frostyconfig
 $ cd frostyconfig
-```
+````
 
 {{< /step >}}
 
@@ -87,12 +87,12 @@ the username `cueckoo` in this tutorial.**
 {{< step stepNumber="2" >}}
 Initialize the directory as a git repository and a CUE module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnaXRodWIuY29tL2N1ZWNrb28vZnJvc3R5Y29uZmlnQHYw" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnaXRodWIuY29tL2N1ZWNrb28vZnJvc3R5Y29uZmlnQHYw" }
 $ git init -q
 
 # Replace "cueckoo" with *your* GitHub username, lower-cased.
 $ cue mod init --source=git github.com/cueckoo/frostyconfig@v0
-```
+````
 
 The `--source=git` flag tells `cue` to use the same file-inclusion rules as
 `git`, when publishing this module.
@@ -134,9 +134,9 @@ package frostyconfig
 
 As a one-off, login to the Central Registry:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGxvZ2lu" }
 $ cue login
-```
+````
 
 The Central Registry is in beta testing -
 please give us your feedback about the service in the
@@ -147,9 +147,9 @@ please give us your feedback about the service in the
 {{< step stepNumber="5" >}}
 
 Ensure the `module.cue` file is tidy:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
-```
+````
 
 {{< /step >}}
 
@@ -165,10 +165,10 @@ It doesn't matter if the repository is public or private.
 {{< step stepNumber="7" >}}
 Create a git commit:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGFkZCAtQQpnaXQgY29tbWl0IC1xIC1tICdJbml0aWFsIGNvbW1pdCc=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGFkZCAtQQpnaXQgY29tbWl0IC1xIC1tICdJbml0aWFsIGNvbW1pdCc=" }
 $ git add -A
 $ git commit -q -m 'Initial commit'
-```
+````
 
 Earlier, you initialized this module with `--source=git`, which told the `cue`
 command that it should publish only those files that `git` knows about. The git
@@ -181,10 +181,10 @@ module.
 {{< step stepNumber="8" >}}
 
 Publish the first version of this module:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
 ...
-```
+````
 
 {{< /step >}}
 
@@ -216,12 +216,12 @@ Create a directory for the new module and initalize it,
 changing `cueckoo` to *your* GitHub username, lower-cased:
 <!-- Not strictly neccessary, but it might confuse if we don't point it out -->
 
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApnaXQgaW5pdCAtcQpjdWUgbW9kIGluaXQgLS1zb3VyY2U9Z2l0IGdpdGh1Yi5jb20vY3VlY2tvby9mcm9zdHlhcHBAdjA=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApnaXQgaW5pdCAtcQpjdWUgbW9kIGluaXQgLS1zb3VyY2U9Z2l0IGdpdGh1Yi5jb20vY3VlY2tvby9mcm9zdHlhcHBAdjA=" }
 $ mkdir ../frostyapp
 $ cd ../frostyapp
 $ git init -q
 $ cue mod init --source=git github.com/cueckoo/frostyapp@v0
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="10" >}}
@@ -249,14 +249,14 @@ config: frostyconfig.#Config & {
 {{< step stepNumber="11" >}}
 
 Ensure the module is tidy, adding missing dependencies:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
-```
+````
 
 We can see that the dependencies have now been added to the
 `cue.mod/module.cue` file:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/module.cue
 module: "github.com/cueckoo/frostyapp@v0"
 language: {
@@ -270,7 +270,7 @@ deps: {
 		v: "v0.0.1"
 	}
 }
-```
+````
 
 {{< /step >}}
 
@@ -279,14 +279,14 @@ deps: {
 {{< step stepNumber="12" >}}
 
 Export the configuration as YAML:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
 $ cue export --out yaml
 config:
   appName: alpha
   port: 80
   features:
     logging: true
-```
+````
 
 We can use this new module code just like any other CUE code.
 

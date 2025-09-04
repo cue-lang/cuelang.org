@@ -89,16 +89,16 @@ are considered to be part of this module.
 A module can be created by running the following command
 within the module root:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0" }
 $ cue mod init
-```
+````
 A module path may be specified, but if it is omitted then a default value is
 used (currently `cue.example`). The module path is specified as an argument to
 the command:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IHNvbWUubW9kdWxlLnByZWZpeC93aXRoL29wdGlvbmFsL3BhdGgvY29tcG9uZW50c0B2MA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IHNvbWUubW9kdWxlLnByZWZpeC93aXRoL29wdGlvbmFsL3BhdGgvY29tcG9uZW50c0B2MA==" }
 $ cue mod init some.module.prefix/with/optional/path/components@v0
-```
+````
 
 The module path must be used in CUE code if a package within the module needs
 to import another package defined within the module.

@@ -23,11 +23,11 @@ that's appropriate for your operating system -- it contains the most recent
 features and bug fixes.
 The latest version of the `cue` command is:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
 cue version v0.14.1
 ...
-```
+````
 
 <!--more-->
 
@@ -47,9 +47,9 @@ have a specific reason to select a pre-release.
 On macOS and Linux, `cue` can be installed using Homebrew
 ([brew.sh](https://brew.sh)):
 
-```text { title="TERMINAL" type="terminal" codeToCopy="YnJldyBpbnN0YWxsIGN1ZS1sYW5nL3RhcC9jdWU=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="YnJldyBpbnN0YWxsIGN1ZS1sYW5nL3RhcC9jdWU=" }
 $ brew install cue-lang/tap/cue
-```
+````
 
 #### Install from Docker Hub
 
@@ -62,9 +62,9 @@ Various tags are available that let you select container images for different
 machine architectures and CUE versions. To use the latest version that's
 appropriate for your machine, use the `latest` tag:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZG9ja2VyIHB1bGwgY3VlbGFuZy9jdWU6bGF0ZXN0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZG9ja2VyIHB1bGwgY3VlbGFuZy9jdWU6bGF0ZXN0" }
 $ docker pull cuelang/cue:latest
-```
+````
 
 #### Install from source
 
@@ -78,10 +78,10 @@ installed and available.
 
 For example, to fetch the `latest` version:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gaW5zdGFsbCBjdWVsYW5nLm9yZy9nby9jbWQvY3VlQGxhdGVzdA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gaW5zdGFsbCBjdWVsYW5nLm9yZy9nby9jbWQvY3VlQGxhdGVzdA==" }
 $ go install cuelang.org/go/cmd/cue@latest
 ...
-```
+````
 
 [This page](https://pkg.go.dev/cuelang.org/go?tab=versions)
 lists the installable releases and pre-releases that you can specify instead of
@@ -91,10 +91,10 @@ lists the installable releases and pre-releases that you can specify instead of
 
 You can install the development version of `cue` from source by specifying `master`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gaW5zdGFsbCBjdWVsYW5nLm9yZy9nby9jbWQvY3VlQG1hc3Rlcg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gaW5zdGFsbCBjdWVsYW5nLm9yZy9nby9jbWQvY3VlQG1hc3Rlcg==" }
 $ go install cuelang.org/go/cmd/cue@master
 ...
-```
+````
 
 The capabilities of the development version change frequently because it contains the
 most recent, unreleased code.
@@ -105,9 +105,9 @@ On Arch Linux
 ([archlinux.org](https://archlinux.org)),
 `cue` can be installed from a package in the official Arch `extra` repository:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="cGFjbWFuIC1TIGV4dHJhL2N1ZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="cGFjbWFuIC1TIGV4dHJhL2N1ZQ==" }
 $ pacman -S extra/cue
-```
+````
 
 This package is not published by the CUE project.
 
@@ -121,10 +121,10 @@ workflows. All available versions are listed at
 [pkg.go.dev/cuelang.org/go](https://pkg.go.dev/cuelang.org/go?tab=versions).
 
 For example, to add a dependency on the latest version:
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQGxhdGVzdA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQGxhdGVzdA==" }
 $ go get cuelang.org/go@latest
 ...
-```
+````
 
 ## Related content
 
