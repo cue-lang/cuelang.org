@@ -227,17 +227,17 @@ map: {
 "x": 5
 }
 {{< /code-tab >}}{{< /code-tabs >}}
-```text { title="TERMINAL" type="terminal" codeToCopy="d2MgLWwgaW4uanNvbg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="d2MgLWwgaW4uanNvbg==" }
 $ wc -l in.json
 3 in.json
-```
+````
 {{< code-tabs >}}
 {{< code-tab name="in/sub/dir/in.json" language="json" area="top-left" >}}
 {
     "x": 5
 }
 {{< /code-tab >}}{{< /code-tabs >}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAplY2hvIGhlbGxv" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgaW4uY3VlICMgdGVzdAplY2hvIGhlbGxv" }
 # script doc comment
 # script doc comment part 2
 $ cue eval in.cue # test
@@ -250,8 +250,8 @@ map: {
 # which is across two lines
 $ echo hello
 hello
-```
-```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9u" }
+````
+````text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9u" }
 $ export MYVAR=value
 $ cue version
 cue version v0.14.1
@@ -265,16 +265,16 @@ go version go1.25.0
           GOARCH amd64
             GOOS linux
 cue.lang.version v0.14.1
-```
-```text { title="TERMINAL" type="terminal" codeToCopy="bm9uZXhpc3RlbnQgY29tbWFuZA==" }
+````
+````text { title="TERMINAL" type="terminal" codeToCopy="bm9uZXhpc3RlbnQgY29tbWFuZA==" }
 $ nonexistent command
-```
+````
 {{< /step >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyB2MC45LjAtYWxwaGEuMw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyB2MC45LjAtYWxwaGEuMw==" }
 $ echo v0.9.0-alpha.3
 v0.9.0-alpha.3
-```
+````
 -- golden/content/dir/gen_cache.cue --
 package site
 {

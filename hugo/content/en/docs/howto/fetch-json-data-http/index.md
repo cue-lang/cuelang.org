@@ -48,10 +48,10 @@ command: info: {
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCBpbmZv" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCBpbmZv" }
 $ cue cmd info
 CUE version v0.8.2 was released with commit hash 596c99191ad1eb7c39d547e59bc7085751d7952b
-```
+````
 
 ## Related content
 

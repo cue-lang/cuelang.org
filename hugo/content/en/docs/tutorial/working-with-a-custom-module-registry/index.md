@@ -41,11 +41,11 @@ Along the way you will:
 
 This tutorial is written using the following version of `cmd/cue`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
 cue version v0.14.1
 ...
-```
+````
 
 ## Create the module for the schema code
 
@@ -57,10 +57,10 @@ We would like to be able to share the schema between several consumers.
 {{< step stepNumber="1" >}}
 
 Create a directory to hold the schema code:
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgZnJvc3R5Y29uZmlnCmNkIGZyb3N0eWNvbmZpZw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgZnJvc3R5Y29uZmlnCmNkIGZyb3N0eWNvbmZpZw==" }
 $ mkdir frostyconfig
 $ cd frostyconfig
-```
+````
 
 Each module described in this tutorial will live in a separate directory, which
 you will create as they are needed.
@@ -69,10 +69,10 @@ you will create as they are needed.
 {{< step stepNumber="2" >}}
 
 Initialize the directory as a git repository and a CUE  module:
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHljb25maWdAdjA=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHljb25maWdAdjA=" }
 $ git init -q
 $ cue mod init --source=git glacial-tech.example/frostyconfig@v0
-```
+````
 
 In order to publish the module to a registry, the code must hold a
 `cue.mod/module.cue` file declaring its module path. This is the path prefix to
@@ -148,9 +148,9 @@ it represents the schema of the configuration data expected by `FrostyApp`.
 
 If you do not have access to an OCI registry, start one locally:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCByZWdpc3RyeSBsb2NhbGhvc3Q6NTAwMQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCByZWdpc3RyeSBsb2NhbGhvc3Q6NTAwMQ==" }
 $ cue mod registry localhost:5001
-```
+````
 
 `cue mod registry` is a very simple in-memory OCI server.
 If this command fails with a message mentioning "address already in use",
@@ -163,13 +163,13 @@ the [Google Artifact Registry](https://cloud.google.com/artifact-registry),
 as CUE uses the standard OCI protocols spoken by such registries. For example,
 here are some alternatives:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZG9ja2VyIHJ1biAtcCA1MDAxOjUwMDAgcmVnaXN0cnkKcG9kbWFuIHJ1biAtcCA1MDAxOjUwMDAgcmVnaXN0cnk=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZG9ja2VyIHJ1biAtcCA1MDAxOjUwMDAgcmVnaXN0cnkKcG9kbWFuIHJ1biAtcCA1MDAxOjUwMDAgcmVnaXN0cnk=" }
 # running a local registry via docker
 $ docker run -p 5001:5000 registry
 
 # running a local registry via podman
 $ podman run -p 5001:5000 registry
-```
+````
 
 In our example we will run a local instance of the in-memory registry on port 5001.
 If you need to run one locally, invoke the above `docker` command in a separate
@@ -182,9 +182,9 @@ tutorial.
 {{< step stepNumber="5" >}}
 
 Set up a required environment variable:
-```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENVRV9SRUdJU1RSWT1sb2NhbGhvc3Q6NTAwMS9jdWVtb2R1bGVz" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENVRV9SRUdJU1RSWT1sb2NhbGhvc3Q6NTAwMS9jdWVtb2R1bGVz" }
 $ export CUE_REGISTRY=localhost:5001/cuemodules
-```
+````
 
 The `CUE_REGISTRY` variable tells the `cue` command which
 registry to use when fetching and pushing modules.
@@ -197,9 +197,9 @@ to holding CUE modules.
 {{< step stepNumber="6" >}}
 
 Ensure the `module.cue` file is tidy:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
-```
+````
 This command checks that modules for all imported packages
 are present in the `cue.mod/module.cue` file and that their versions
 are correct. It is good practice to run this before publishing
@@ -210,10 +210,10 @@ have any dependencies, we will run `cue mod tidy` anyway.
 {{< step stepNumber="7" >}}
 Create a git commit:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGFkZCAtQQpnaXQgY29tbWl0IC1xIC1tICdJbml0aWFsIGNvbW1pdCc=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGFkZCAtQQpnaXQgY29tbWl0IC1xIC1tICdJbml0aWFsIGNvbW1pdCc=" }
 $ git add -A
 $ git commit -q -m 'Initial commit'
-```
+````
 
 Earlier, you initialized this module with `--source=git`, which told the `cue`
 command that it should publish only those files that `git` knows about. The git
@@ -226,10 +226,10 @@ module.
 {{< step stepNumber="8" >}}
 
 Publish the first version of this module:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
 ...
-```
+````
 
 This command uploads the module to the registry and publishes it
 under version `v0.0.1`. It will be published to the module
@@ -258,12 +258,12 @@ published.
 
 Create a directory and initalize a git repository and a new CUE
 module within it:
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApnaXQgaW5pdCAtcQpjdWUgbW9kIGluaXQgLS1zb3VyY2U9Z2l0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWFwcEB2MA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLi4vZnJvc3R5YXBwCmNkIC4uL2Zyb3N0eWFwcApnaXQgaW5pdCAtcQpjdWUgbW9kIGluaXQgLS1zb3VyY2U9Z2l0IGdsYWNpYWwtdGVjaC5leGFtcGxlL2Zyb3N0eWFwcEB2MA==" }
 $ mkdir ../frostyapp
 $ cd ../frostyapp
 $ git init -q
 $ cue mod init --source=git glacial-tech.example/frostyapp@v0
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="10" >}}
@@ -291,14 +291,14 @@ constrained by the `frostyconfig.#Config` schema.
 {{< step stepNumber="11" >}}
 
 Ensure the module is tidy, pulling all dependencies:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
-```
+````
 
 We can see that the dependencies have now been added to the
 `cue.mod/module.cue` file:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
@@ -312,7 +312,7 @@ deps: {
 		v: "v0.0.1"
 	}
 }
-```
+````
 
 Our dependencies currently look like this:
 {{< mermaid caption="Current dependencies" >}}
@@ -326,14 +326,14 @@ flowchart TD
 {{< step stepNumber="12" >}}
 
 Export the configuration as YAML:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
 $ cue export --out yaml
 config:
   appName: alpha
   port: 80
   features:
     logging: true
-```
+````
 
 We can use this new module code just like any other CUE code.
 
@@ -352,12 +352,12 @@ other source of truth.
 
 Create a directory and initalize a git repository and a new CUE
 module within it:
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLi4vZnJvc3R5dGVtcGxhdGUKY2QgLi4vZnJvc3R5dGVtcGxhdGUKZ2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHl0ZW1wbGF0ZUB2MA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLi4vZnJvc3R5dGVtcGxhdGUKY2QgLi4vZnJvc3R5dGVtcGxhdGUKZ2l0IGluaXQgLXEKY3VlIG1vZCBpbml0IC0tc291cmNlPWdpdCBnbGFjaWFsLXRlY2guZXhhbXBsZS9mcm9zdHl0ZW1wbGF0ZUB2MA==" }
 $ mkdir ../frostytemplate
 $ cd ../frostytemplate
 $ git init -q
 $ cue mod init --source=git glacial-tech.example/frostytemplate@v0
-```
+````
 
 This defines another module. We have named it `frostytemplate`
 because CUE uses the term "template" to mean code that
@@ -392,21 +392,21 @@ We import the schema to constrain the default values, just as we did with the
 {{< step stepNumber="15" >}}
 Tidy the module and create a git commit:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5CmdpdCBhZGQgLUEKZ2l0IGNvbW1pdCAtcSAtbSAnSW5pdGlhbCBjb21taXQn" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5CmdpdCBhZGQgLUEKZ2l0IGNvbW1pdCAtcSAtbSAnSW5pdGlhbCBjb21taXQn" }
 $ cue mod tidy
 $ git add -A
 $ git commit -q -m 'Initial commit'
-```
+````
 
 {{< /step >}}
 
 {{< step stepNumber="16" >}}
 
 Publish the `frostytemplate` module:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjAuMQ==" }
 $ cue mod publish v0.0.1
 ...
-```
+````
 {{< /step >}}
 
 ## Update the `frostyapp` module
@@ -416,9 +416,9 @@ $ cue mod publish v0.0.1
 Update the `frostyapp` module to make use of this new template
 module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgLi4vZnJvc3R5YXBw" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2QgLi4vZnJvc3R5YXBw" }
 $ cd ../frostyapp
-```
+````
 
 {{< code-tabs >}}
 {{< code-tab name="frostyapp/config.cue" language="cue" area="top-left" >}}
@@ -439,16 +439,16 @@ requirements of the configuration.
 {{< step stepNumber="18" >}}
 
 Resolve dependencies in `frostyapp`:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
-```
+````
 
 Re-running `cue mod tidy` updates the dependencies in `frostyapp` to
 use `frostytemplate` as well as `frostyconfig`.
 
 Here is what the `cue.mod/module.cue` file now looks like:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
@@ -465,7 +465,7 @@ deps: {
 		v: "v0.0.1"
 	}
 }
-```
+````
 
 {{< mermaid caption="Current dependencies" >}}
 flowchart TD
@@ -477,7 +477,7 @@ flowchart TD
 {{< step stepNumber="19" >}}
 
 Re-render the configuration as YAML:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" }
 $ cue export --out yaml
 config:
   appName: alpha
@@ -486,7 +486,7 @@ config:
   features:
     logging: true
     analytics: true
-```
+````
 
 We can see that the values in the configuration reflect the new default values.
 
@@ -501,9 +501,9 @@ We will add that field to the schema and update the app to use it.
 {{< step stepNumber="20" >}}
 
 Update the schema to add a new `maxConcurrency` field:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgLi4vZnJvc3R5Y29uZmln" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2QgLi4vZnJvc3R5Y29uZmln" }
 $ cd ../frostyconfig
-```
+````
 
 {{< code-tabs >}}
 {{< code-tab name="frostyconfig/config.cue" language="cue" area="top-left" >}}
@@ -536,21 +536,21 @@ The schema is unchanged except for the new `maxConcurrency` field.
 {{< step stepNumber="21" >}}
 Tidy the module and create a git commit:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5CmdpdCBhZGQgLUEKZ2l0IGNvbW1pdCAtcSAtbSAnU2Vjb25kIGNvbW1pdCc=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5CmdpdCBhZGQgLUEKZ2l0IGNvbW1pdCAtcSAtbSAnU2Vjb25kIGNvbW1pdCc=" }
 $ cue mod tidy
 $ git add -A
 $ git commit -q -m 'Second commit'
-```
+````
 
 {{< /step >}}
 
 {{< step stepNumber="22" >}}
 
 Upload a new version of the `frostyconfig` schema:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjEuMA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBwdWJsaXNoIHYwLjEuMA==" }
 $ cue mod publish v0.1.0
 ...
-```
+````
 
 We incremented the minor version to signify that a backwardly
 compatible feature has been added.
@@ -562,13 +562,13 @@ compatible feature has been added.
 
 Use the new version of `glacial-tech.example/frostyconfig@v0`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2QgLi4vZnJvc3R5YXBw" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2QgLi4vZnJvc3R5YXBw" }
 $ cd ../frostyapp
-```
+````
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBnZXQgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5Y29uZmlnQHYwLjEuMA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBnZXQgZ2xhY2lhbC10ZWNoLmV4YW1wbGUvZnJvc3R5Y29uZmlnQHYwLjEuMA==" }
 $ cue mod get glacial-tech.example/frostyconfig@v0.1.0
-```
+````
 
 CUE modules "lock in" the versions of any dependencies, storing
 their versions in `cue.mod/module.cue` file. This gives predictability
@@ -591,7 +591,7 @@ future the `cue` command will be able to perform this kind of update.
 {{< step stepNumber="24" >}}
 
 Check that everything still works and that your configuration is still valid:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBleHBvcnQgLS1vdXQgeWFtbA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5CmN1ZSBleHBvcnQgLS1vdXQgeWFtbA==" }
 $ cue mod tidy
 $ cue export --out yaml
 config:
@@ -601,7 +601,7 @@ config:
   features:
     logging: true
     analytics: true
-```
+````
 
 So exactly what happened above?
 

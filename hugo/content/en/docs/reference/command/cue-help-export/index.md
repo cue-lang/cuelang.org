@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZXhwb3J0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZXhwb3J0" }
 $ cue help export
 export evaluates the configuration found in the current
 directory and prints the emit value to stdout.
@@ -104,4 +104,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

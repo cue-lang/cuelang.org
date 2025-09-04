@@ -66,11 +66,11 @@ func main() {
 Given that this new evaluator version is being actively developed,
 we encourage you to upgrade to the latest CUE version to use it:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
 cue version v0.14.1
 ...
-```
+````
 
 If you encounter any unexpected issues, we would also encourage you to try `evalv3` on
 [the development version]({{<relref"docs/introduction/installation#development-version">}})

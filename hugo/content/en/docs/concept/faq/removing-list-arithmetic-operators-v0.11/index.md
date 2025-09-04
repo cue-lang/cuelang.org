@@ -34,13 +34,13 @@ their left or right side.
 CUE versions 0.11 and later report the following errors when evaluating CUE
 that contains list arithmetic operators:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBsaXN0LWFyaXRobWV0aWMuY3Vl" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBsaXN0LWFyaXRobWV0aWMuY3Vl" }
 $ cue vet -c list-arithmetic.cue
 A: Multiplication of lists is superseded by list.Repeat; see https://cuelang.org/e/v0.11-list-arithmetic:
     ./list-arithmetic.cue:1:4
 B: Addition of lists is superseded by list.Concat; see https://cuelang.org/e/v0.11-list-arithmetic:
     ./list-arithmetic.cue:2:4
-```
+````
 
 ## What changes are needed in my CUE?
 
@@ -77,9 +77,9 @@ E: 2*'X.' + 3*'O.'
 Use `cue fix` to update files, packages, or entire modules.
 The command is silent unless it fails to process its inputs:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGZpeCBjaGFuZ2VzLXJlcXVpcmVkLmN1ZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGZpeCBjaGFuZ2VzLXJlcXVpcmVkLmN1ZQ==" }
 $ cue fix changes-required.cue
-```
+````
 
 `cue fix` updates its inputs in place, rewriting files on disk:
 

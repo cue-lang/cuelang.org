@@ -80,9 +80,9 @@ Let's start with this JSON Schema:
 
 We use `cue import` to convert the JSON Schema to CUE:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtbCAnI1BlcnNvbjonIHNjaGVtYS5qc29u" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtbCAnI1BlcnNvbjonIHNjaGVtYS5qc29u" }
 $ cue import -l '#Person:' schema.json
-```
+````
 
 `cue import` recognises JSON Schema from its signature fields, and uses the
 schema's constraints to create a shorter, more readable CUE representation.
@@ -141,35 +141,35 @@ The
 [`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}})
 command validates our data against the `#Person` constraint:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BlcnNvbicgc2NoZW1hLmN1ZSBnb29kLmpzb24gYmFkLmpzb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI1BlcnNvbicgc2NoZW1hLmN1ZSBnb29kLmpzb24gYmFkLmpzb24=" }
 $ cue vet -c -d '#Person' schema.cue good.json bad.json
 name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
     ./bad.json:2:13
     ./schema.cue:11:9
-```
+````
 
 The `cue vet` command can also validate the data using the JSON Schema directly:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBzY2hlbWEuanNvbiBnb29kLmpzb24gYmFkLmpzb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBzY2hlbWEuanNvbiBnb29kLmpzb24gYmFkLmpzb24=" }
 $ cue vet -c schema.json good.json bad.json
 name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
     ./bad.json:2:13
     ./schema.json:13:13
-```
+````
 
 The `cue` command normally recognises JSON Schema's signature fields and treats
 the contents of JSON Schema as data constraints - not just additional data.
 A qualifier can be used to change this behaviour, as outlined in
 [`cue help filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}):
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiBqc29uOiBzY2hlbWEuanNvbg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiBqc29uOiBzY2hlbWEuanNvbg==" }
 $ cue def json: schema.json
 $schema:     "https://json-schema.org/draft/2020-12/schema"
 type:        "object"
 title:       "Main Person schema."
 description: "This schema defines a person."
 ...
-```
+````
 
 ## Using JSON Schema with the Go API
 The
@@ -265,7 +265,7 @@ JSON schema in the first argument - printing the data if it's valid and
 displaying a validation error otherwise. Here we use it to validate the same
 `good.json` and `bad.json` files from above:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4gc2NoZW1hLmpzb24gZ29vZC5qc29uCmdvIHJ1biAuIHNjaGVtYS5qc29uIGJhZC5qc29u" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4gc2NoZW1hLmpzb24gZ29vZC5qc29uCmdvIHJ1biAuIHNjaGVtYS5qc29uIGJhZC5qc29u" }
 $ go run . schema.json good.json
 {
 	name:    "Dorothy Cartwright"
@@ -276,7 +276,7 @@ name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (misma
     bad.json:2:13
     schema.json:13:13
 exit status 1
-```
+````
 ## Future plans
 
 One of CUE's goals is to act as an *interlingua*: a bidirectional bridge

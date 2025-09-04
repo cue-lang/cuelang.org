@@ -6,7 +6,7 @@ tags:
 - cue command
 - modules
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kdWxlcw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kdWxlcw==" }
 $ cue help modules
 Modules are how CUE publishes packages and manages dependencies.
 
@@ -38,7 +38,7 @@ For information on how to specify the CUE registry:
 
 	cue help registryconfig
 
-```
+````
 
 ## Related content
 

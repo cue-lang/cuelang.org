@@ -217,7 +217,7 @@ func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 	isMkdocs := s.rf.page.isMkdocsMode()
 
 	if !isMkdocs {
-		p("```text { title=%q", "TERMINAL")
+		p("````text { title=%q", "TERMINAL")
 		// Build up a base64 encoded script that will be copied. This is necessary
 		// because the rendered window will include the output... which won't work
 		// if copy-pasted.
@@ -231,7 +231,7 @@ func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 		enc.Close()
 		p(" type=%q codeToCopy=%q", "terminal", copyCmdStr.String())
 	} else {
-		p("``` { .text title=%q", "TERMINAL")
+		p("```` { .text title=%q", "TERMINAL")
 		// Build up an HTML entity-escaped string, with the addition of encoding
 		// `\n` as `&newline;`
 		var copyCmdStr strings.Builder
@@ -270,6 +270,6 @@ func (s *scriptNode) writeTransformTo(b *bytes.Buffer) error {
 		p("%s", stmt.Output)
 		lastOutput = stmt.Output
 	}
-	p("```")
+	p("````")
 	return nil
 }

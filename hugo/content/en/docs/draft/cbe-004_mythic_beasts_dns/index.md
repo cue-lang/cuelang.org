@@ -429,11 +429,11 @@ current zone contents carefully!**\
 :rotating_light::rotating_light::rotating_light:
 
 :computer: `terminal`
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCBkdW1wIHwgaGVhZCAtMjAgPjYuYWN0dWFsLnR4dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGNtZCBkdW1wIHwgaGVhZCAtMjAgPjYuYWN0dWFsLnR4dA==" }
 # Actual command in CUE-By-Example guide:
 # cue cmd dump
 $ cue cmd dump | head -20 >6.actual.txt
-```
+````
 
 Output like this (truncated) example will be displayed:
 

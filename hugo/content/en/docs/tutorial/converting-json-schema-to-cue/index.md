@@ -43,11 +43,11 @@ and then use the result to validate some data.
 
 This tutorial is written using the following version of `cue`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
 cue version v0.14.1
 ...
-```
+````
 
 ## Steps
 
@@ -111,9 +111,9 @@ This schema validates data that defines a restaurant.
 {{< step stepNumber="2" >}}
 Convert the JSON Schema to a CUE definition called `#restaurant`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtbCAnI3Jlc3RhdXJhbnQ6JyAtcCBjdWlzaW5lIHNjaGVtYS5qc29u" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGltcG9ydCAtbCAnI3Jlc3RhdXJhbnQ6JyAtcCBjdWlzaW5lIHNjaGVtYS5qc29u" }
 $ cue import -l '#restaurant:' -p cuisine schema.json
-```
+````
 
 It's good practise to tell `cue` to place imported CUE inside a package.
 Here, we choose the `cuisine` package.
@@ -178,12 +178,12 @@ shortly.  If you spotted the problem while entering the data, make sure you
 {{< step stepNumber="4" >}}
 Validate the data using the schema and constraints:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
 $ cue vet -c -d '#restaurant' schema.cue *.yml
 tables.0.seats: invalid value 100 (out of bound <=10):
     ./schema.cue:13:17
     ./pomodoro.yml:4:12
-```
+````
 
 `cue vet` outputs nothing when validation succeeds. But as you can see, there
 are some validation errors.
@@ -207,9 +207,9 @@ tables:
 {{< step stepNumber="6" >}}
 Re-validate the data using the schema and constraints:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAtZCAnI3Jlc3RhdXJhbnQnIHNjaGVtYS5jdWUgKi55bWw=" }
 $ cue vet -c -d '#restaurant' schema.cue *.yml
-```
+````
 
 The "silent" lack of output from `cue vet` confirms that the fixed data
 validates successfully.

@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZm10" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZm10" }
 $ cue help fmt
 Fmt formats the given files or the files for the given packages in place
 
@@ -28,4 +28,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

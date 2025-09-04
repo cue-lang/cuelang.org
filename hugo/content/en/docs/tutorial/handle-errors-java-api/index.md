@@ -45,9 +45,9 @@ under development and its behaviour might change from one release to the next.
 Tell the operating system (and Java) where to find the library `libcue` on your
 computer:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IExEX0xJQlJBUllfUEFUSD0vdXNyL2xvY2FsL2xpYi8=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IExEX0xJQlJBUllfUEFUSD0vdXNyL2xvY2FsL2xpYi8=" }
 $ export LD_LIBRARY_PATH=/usr/local/lib/
-```
+````
 
 If you have installed `libcue` into a different directory than `/usr/local/lib/`
 then adapt the command to refer to that directory instead.
@@ -56,9 +56,9 @@ then adapt the command to refer to that directory instead.
 {{< step stepNumber="2" >}}
 Tell Java where to find the library `cue-api-java` on your computer:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENMQVNTUEFUSD0nL3Vzci9sb2NhbC9zaGFyZS9qYXZhLyon" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENMQVNTUEFUSD0nL3Vzci9sb2NhbC9zaGFyZS9qYXZhLyon" }
 $ export CLASSPATH='/usr/local/share/java/*'
-```
+````
 
 If you have installed `cue-api-java` into a different directory than
 `/usr/local/share/java/` then adapt the command to refer to that directory
@@ -68,10 +68,10 @@ instead.
 {{< step stepNumber="3" >}}
 Cross-check the value of this important variable:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAiJENMQVNTUEFUSCI=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyAiJENMQVNTUEFUSCI=" }
 $ echo "$CLASSPATH"
 /usr/local/share/java/*
-```
+````
 
 Java's requirements mean that we need the value of the `CLASSPATH` variable to
 end with an asterisk: **make sure you see the trailing `*`**.
@@ -85,14 +85,14 @@ variable with quotes (`'`) when you `export` it.
 {{< step stepNumber="4" >}}
 Check that this tutorial's prerequisites are present:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="amF2YWMgLS12ZXJzaW9uCmxzICRMRF9MSUJSQVJZX1BBVEggfCBncmVwIGxpYmN1ZS5zbyB8fCBlY2hvICdmYWlsIScKbHMgJENMQVNTUEFUSCB8IGdyZXAgL0NVRS4qamFyJCB8fCBlY2hvICdmYWlsISc=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="amF2YWMgLS12ZXJzaW9uCmxzICRMRF9MSUJSQVJZX1BBVEggfCBncmVwIGxpYmN1ZS5zbyB8fCBlY2hvICdmYWlsIScKbHMgJENMQVNTUEFUSCB8IGdyZXAgL0NVRS4qamFyJCB8fCBlY2hvICdmYWlsISc=" }
 $ javac --version
 javac 22.0.2
 $ ls $LD_LIBRARY_PATH | grep libcue.so || echo 'fail!'
 libcue.so
 $ ls $CLASSPATH | grep /CUE.*jar$ || echo 'fail!'
 /usr/local/share/java/CUE.jar
-```
+````
 
 If any of these commands fail then your computer doesn't have the related
 prerequisite installed as expected and **this is a problem that you need to fix
@@ -102,10 +102,10 @@ before continuing with this tutorial.**
 {{< step stepNumber="5" >}}
 Create a directory to hold some files, and change into it:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgY3VlLWphdmEtYXBpLXR1dG9yaWFscwpjZCBjdWUtamF2YS1hcGktdHV0b3JpYWxz" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgY3VlLWphdmEtYXBpLXR1dG9yaWFscwpjZCBjdWUtamF2YS1hcGktdHV0b3JpYWxz" }
 $ mkdir -p cue-java-api-tutorials
 $ cd cue-java-api-tutorials
-```
+````
 {{< /step >}}
 
 ## Create a Java program
@@ -191,9 +191,9 @@ public class HandleErrors {
 {{< step stepNumber="7" >}}
 Compile the Java program:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="amF2YWMgSGFuZGxlRXJyb3JzLmphdmE=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="amF2YWMgSGFuZGxlRXJyb3JzLmphdmE=" }
 $ javac HandleErrors.java
-```
+````
 
 The Java compiler automatically uses the value of the `CLASSPATH` environment
 variable to locate the JAR file containing `cue-api-java`.
@@ -204,7 +204,7 @@ variable to locate the JAR file containing `cue-api-java`.
 {{< step stepNumber="8" >}}
 Run the Java program:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="amF2YSAtLWVuYWJsZS1uYXRpdmUtYWNjZXNzPUFMTC1VTk5BTUVEIC1jcCAuOiRDTEFTU1BBVEggSGFuZGxlRXJyb3Jz" }
+````text { title="TERMINAL" type="terminal" codeToCopy="amF2YSAtLWVuYWJsZS1uYXRpdmUtYWNjZXNzPUFMTC1VTk5BTUVEIC1jcCAuOiRDTEFTU1BBVEggSGFuZGxlRXJyb3Jz" }
 $ java --enable-native-access=ALL-UNNAMED -cp .:$CLASSPATH HandleErrors
 ## Catch block #1
 expected '}', found 'EOF'
@@ -226,7 +226,7 @@ ok
 ## Unification #2
 printError() reports: 
 B: conflicting values 2 and 1
-```
+````
 
 The Java runtime must be told about a slightly different classpath from the
 compiler, through the `-cp` flag, because it needs to locate both the
