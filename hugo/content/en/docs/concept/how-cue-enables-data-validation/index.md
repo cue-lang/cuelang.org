@@ -85,12 +85,12 @@ height?: int    // Optional, as we haven't managed to measure *every* animal jus
 The `cue vet` command validates our three data files against this schema.
 Each file is validated independently:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
 $ cue vet -c . alex.json bryn.json charlie.yaml
 height: conflicting values "2" and int (mismatched types string and int):
     ./bryn.json:4:15
     ./schema.cue:5:10
-```
+````
 
 `cue vet` caught a common JSON error in our data: a number incorrectly encoded as a string.
 The error message tells us that the problem is on line 4 of the `bryn.json` file,
@@ -109,9 +109,9 @@ Let's correct that data:
 
 We can then repeat the `cue vet` command:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
 $ cue vet -c . alex.json bryn.json charlie.yaml
-```
+````
 
 The command is silent, which tells us that our data validated successfully ...
 but did you notice that the `diet` fields don't get flagged up, despite being
@@ -197,7 +197,7 @@ The `policy.cue` file contains additional constraints for some data fields,
 which CUE combines with the type constraints in `schema.cue` through a process
 called **unification**. Let's see it in action:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
 $ cue vet -c . alex.json bryn.json charlie.yaml
 type: 2 errors in empty disjunction:
 type: conflicting values "cat" and "goldfish":
@@ -209,7 +209,7 @@ type: conflicting values "dog" and "goldfish":
 height: invalid value 2 (out of bound >10):
     ./policy.cue:4:10
     ./bryn.json:4:15
-```
+````
 
 It turns out that our new policy constraints are too restrictive, as they don't
 permit goldfish, or short animals. Let's correct this by loosening our policies:
@@ -224,9 +224,9 @@ height?: >=1
 
 We can then run `cue vet` again:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuIGFsZXguanNvbiBicnluLmpzb24gY2hhcmxpZS55YW1s" }
 $ cue vet -c . alex.json bryn.json charlie.yaml
-```
+````
 
 CUE unifies all the constraints that apply to a field, and checks that they're
 all satisfied simultaneously.
@@ -449,7 +449,7 @@ aBool: "this is not a boolean value"
 The `cue vet` command unifies all the constraints, showing us the full extent
 of our data validation problem:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
 $ cue vet -c policy.cue schema.proto schema.json data.yml -d '#ExampleType'
 aBool: conflicting values "this is not a boolean value" and bool (mismatched types string and bool):
     ./data.yml:4:8
@@ -468,7 +468,7 @@ aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain
 anInt: incompatible integer bounds >99.0 and <100:
     ./schema.json:14:21
     ./policy.cue:9:10
-```
+````
 
 However, if we update and fix the data, then the same `cue vet` command is
 silent - indicating that the data validated succesfully against the unified set
@@ -482,9 +482,9 @@ aFloat: 4.0
 aBool: false
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyBwb2xpY3kuY3VlIHNjaGVtYS5wcm90byBzY2hlbWEuanNvbiBkYXRhLnltbCAtZCAnI0V4YW1wbGVUeXBlJw==" }
 $ cue vet -c policy.cue schema.proto schema.json data.yml -d '#ExampleType'
-```
+````
 
 The range of formats and encodings that CUE supports is outlined in <!-- TODO: link to a less CLI-y doc -->
 [`cue help filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}).

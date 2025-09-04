@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZGVm" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZGVm" }
 $ cue help def
 def prints consolidated configuration as a single file.
 
@@ -41,4 +41,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

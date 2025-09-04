@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZXZhbA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZXZhbA==" }
 $ cue help eval
 eval evaluates, validates, and prints a configuration.
 
@@ -55,4 +55,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

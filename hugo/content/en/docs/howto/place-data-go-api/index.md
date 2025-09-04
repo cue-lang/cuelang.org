@@ -16,11 +16,11 @@ This guide demonstrates how to achieve the same result using the Go API.
 {{< step stepNumber="1" >}}
 If you don't already have CUE or Go modules, initialize them:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxlCmdvIG1vZCBpbml0IGdvLmV4YW1wbGU=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGN1ZS5leGFtcGxlCmdvIG1vZCBpbml0IGdvLmV4YW1wbGU=" }
 $ cue mod init cue.example
 $ go mod init go.example
 ...
-```
+````
 {{< /step >}}
 
 ## Create some data files
@@ -53,11 +53,11 @@ output: """
 {{< step stepNumber="3" >}}
 Check that the data file can be combined successfully with the CUE:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuIGlucHV0Lmpzb24gLS1wYXRoIGlucHV0OiAtZSBvdXRwdXQgLS1vdXQgdGV4dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuIGlucHV0Lmpzb24gLS1wYXRoIGlucHV0OiAtZSBvdXRwdXQgLS1vdXQgdGV4dA==" }
 $ cue export . input.json --path input: -e output --out text
 Hello, Charlie!
 How's the weather in your part of the world?
-```
+````
 {{< /step >}}
 
 ## Write some Go
@@ -116,23 +116,23 @@ func main() {
 {{< step stepNumber="5" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
 $ go get cuelang.org/go@v0.14.1
 ...
 $ go mod tidy
 ...
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="6" >}}
 Run the program,
 printing the same multi-line string value that `cue` produced earlier:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 Hello, Charlie!
 How's the weather in your part of the world?
-```
+````
 {{< /step >}}
 ## Related content
 

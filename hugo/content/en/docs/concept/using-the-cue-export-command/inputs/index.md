@@ -234,7 +234,7 @@ y: 2
 { "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
   "properties": { "x": { "type": "string", "minLength": 1 } } }
 {{< /code-tab >}}{{< /code-tabs >}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOkEgLjpCCmN1ZSBleHBvcnQgLjpBIGRhdGEuY3VlCmN1ZSBleHBvcnQgLjpBIHBhY2thZ2VCLmN1ZQpjdWUgZXhwb3J0IC46QSBkYXRhLnltbApjdWUgZXhwb3J0IC46QSBzY2hlbWEuanNvbgpjdWUgZXhwb3J0IC46QSAuOkIgZGF0YS5jdWUKY3VlIGV4cG9ydCAuOkEgLjpCIHBhY2thZ2VCLmN1ZQpjdWUgZXhwb3J0IC46QSAuOkIgZGF0YS55bWwKY3VlIGV4cG9ydCAuOkEgLjpCIHNjaGVtYS5qc29uCnJtIC1mICouY3VlIGRhdGEueW1sIHNjaGVtYS5qc29uICoub3V0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOkEgLjpCCmN1ZSBleHBvcnQgLjpBIGRhdGEuY3VlCmN1ZSBleHBvcnQgLjpBIHBhY2thZ2VCLmN1ZQpjdWUgZXhwb3J0IC46QSBkYXRhLnltbApjdWUgZXhwb3J0IC46QSBzY2hlbWEuanNvbgpjdWUgZXhwb3J0IC46QSAuOkIgZGF0YS5jdWUKY3VlIGV4cG9ydCAuOkEgLjpCIHBhY2thZ2VCLmN1ZQpjdWUgZXhwb3J0IC46QSAuOkIgZGF0YS55bWwKY3VlIGV4cG9ydCAuOkEgLjpCIHNjaGVtYS5qc29uCnJtIC1mICouY3VlIGRhdGEueW1sIHNjaGVtYS5qc29uICoub3V0" }
 # "A <u style='text-decoration-style: dotted;'>CUE package</u> input can either be combined with other <u style='text-decoration-style: dotted;'>CUE package</u> inputs,"
 $ cue export .:A .:B
 {
@@ -277,7 +277,7 @@ too many packages defined (2) in combination with files
 
 # Tidy up.
 $ rm -f *.cue data.yml schema.json *.out
-```
+````
 -->
 
 #### Combining multiple CUE package inputs
@@ -334,7 +334,7 @@ y: "a string"
 { "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
   "properties": { "x": { "type": "integer" } } }
 {{< /code-tab >}}{{< /code-tabs >}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOm9uZSAuOnR3byA+Mi1wYWNrYWdlcy5vdXQKY2F0IDItcGFja2FnZXMub3V0IHwgZ3JlcCAtYyAnXnskJyB8IGdyZXAgLXggMgpjYXQgMi1wYWNrYWdlcy5vdXQgfCBncmVwIC1jICdefSQnIHwgZ3JlcCAteCAyCmNhdCAyLXBhY2thZ2VzLm91dCB8IGdyZXAgLWMgJyJ4IjonIHwgZ3JlcCAteCAyCmN1ZSBleHBvcnQgLjpvbmUgLjp0d28gZGF0YS5jdWUKY3VlIGV4cG9ydCAuOm9uZSAuOnR3byBkYXRhLnltbApjdWUgZXhwb3J0IC46b25lIC46dHdvIHNjaGVtYS5qc29uCnJtIC1mICouY3VlIGRhdGEueW1sIHNjaGVtYS5qc29uICoub3V0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOm9uZSAuOnR3byA+Mi1wYWNrYWdlcy5vdXQKY2F0IDItcGFja2FnZXMub3V0IHwgZ3JlcCAtYyAnXnskJyB8IGdyZXAgLXggMgpjYXQgMi1wYWNrYWdlcy5vdXQgfCBncmVwIC1jICdefSQnIHwgZ3JlcCAteCAyCmNhdCAyLXBhY2thZ2VzLm91dCB8IGdyZXAgLWMgJyJ4IjonIHwgZ3JlcCAteCAyCmN1ZSBleHBvcnQgLjpvbmUgLjp0d28gZGF0YS5jdWUKY3VlIGV4cG9ydCAuOm9uZSAuOnR3byBkYXRhLnltbApjdWUgZXhwb3J0IC46b25lIC46dHdvIHNjaGVtYS5qc29uCnJtIC1mICouY3VlIGRhdGEueW1sIHNjaGVtYS5qc29uICoub3V0" }
 # "When multiple <u style='text-decoration-style: dotted;'>CUE package</u> inputs are specified then the resulting CUE
 # evaluation is executed once for each package."
 $ cue export .:one .:two >2-packages.out
@@ -356,7 +356,7 @@ too many packages defined (2) in combination with files
 
 # Tidy up.
 $ rm -f *.cue data.yml schema.json *.out
-```
+````
 -->
 
 #### Combining one CUE package input with other input types
@@ -432,7 +432,7 @@ y: 2
 { "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
   "properties": { "x": { "type": "string", "minLength": 1 } } }
 {{< /code-tab >}}{{< /code-tabs >}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOkEgc2NoZW1hLmpzb24gZGF0YS55bWwgPjMzNDEub3V0IDI+JjEKZ3JlcCAiY2Fubm90IGNvbWJpbmUgcGFja2FnZXMgd2l0aCBpbmRpdmlkdWFsIHNjaGVtYSBmaWxlcyIgMzM0MS5vdXQKY3VlIGV4cG9ydCAuOkEgZGF0YS5jdWUKY3VlIGV4cG9ydCBkYXRhLmN1ZSAuOkEKY3VlIGV4cG9ydCAuOkEgZGF0YS55bWwKY3VlIGV4cG9ydCBkYXRhLnltbCAuOkEKY3VlIGV4cG9ydCAuOkEgcGFja2FnZUIuY3VlCmN1ZSBleHBvcnQgcGFja2FnZUIuY3VlIC46QQpjdWUgZXhwb3J0IHBhY2thZ2VBLmN1ZSBwYWNrYWdlQS5jdWUKY3VlIGV4cG9ydCBwYWNrYWdlQS5jdWUgcGFja2FnZUIuY3VlCmN1ZSBleHBvcnQgLjpBIHBhY2thZ2VCLmN1ZQpybSAtZiAqLmN1ZSBkYXRhLnltbCBzY2hlbWEuanNvbiAqLm91dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOkEgc2NoZW1hLmpzb24gZGF0YS55bWwgPjMzNDEub3V0IDI+JjEKZ3JlcCAiY2Fubm90IGNvbWJpbmUgcGFja2FnZXMgd2l0aCBpbmRpdmlkdWFsIHNjaGVtYSBmaWxlcyIgMzM0MS5vdXQKY3VlIGV4cG9ydCAuOkEgZGF0YS5jdWUKY3VlIGV4cG9ydCBkYXRhLmN1ZSAuOkEKY3VlIGV4cG9ydCAuOkEgZGF0YS55bWwKY3VlIGV4cG9ydCBkYXRhLnltbCAuOkEKY3VlIGV4cG9ydCAuOkEgcGFja2FnZUIuY3VlCmN1ZSBleHBvcnQgcGFja2FnZUIuY3VlIC46QQpjdWUgZXhwb3J0IHBhY2thZ2VBLmN1ZSBwYWNrYWdlQS5jdWUKY3VlIGV4cG9ydCBwYWNrYWdlQS5jdWUgcGFja2FnZUIuY3VlCmN1ZSBleHBvcnQgLjpBIHBhY2thZ2VCLmN1ZQpybSAtZiAqLmN1ZSBkYXRhLnltbCBzY2hlbWEuanNvbiAqLm91dA==" }
 # "Issue #3341 tracks a problem when combining a *CUE
 # package* input with a <u style='text-decoration-style: dotted;'>constraint file</u> and some other input types)."
 $ cue export .:A schema.json data.yml >3341.out 2>&1
@@ -481,7 +481,7 @@ $ cue export .:A packageB.cue
 
 # Tidy up.
 $ rm -f *.cue data.yml schema.json *.out
-```
+````
 -->
 
 ### CUE package file inputs
@@ -775,7 +775,7 @@ A:
   - b
   - c
 {{< /code-tab >}}{{< /code-tabs >}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGRhdGEueW1sIHwgY3VlIGV4cG9ydCB5YW1sOiAt" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGRhdGEueW1sIHwgY3VlIGV4cG9ydCB5YW1sOiAt" }
 $ cat data.yml | cue export yaml: -
 {
     "A": [
@@ -783,7 +783,7 @@ $ cat data.yml | cue export yaml: -
         "c"
     ]
 }
-```
+````
 
 ## Non-CUE data path
 

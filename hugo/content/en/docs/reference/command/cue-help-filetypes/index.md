@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZmlsZXR5cGVz" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZmlsZXR5cGVz" }
 $ cue help filetypes
 The cue tool supports the following file types:
 
@@ -102,4 +102,4 @@ $ cue export -e name -o=foo.txt
 # Write the string value of the "name" field to a file foo.
 $ cue export -e name -o=text:foo
 
-```
+````

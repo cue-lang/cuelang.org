@@ -6,7 +6,7 @@ tags:
 - cue command
 - modules
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGVkaXQ=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGVkaXQ=" }
 $ cue help mod edit
 Edit provides a command-line interface for editing cue.mod/module.cue.
 It reads only that file; it does not look up information about the modules
@@ -44,4 +44,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

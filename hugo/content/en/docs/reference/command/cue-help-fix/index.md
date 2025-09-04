@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZml4" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZml4" }
 $ cue help fix
 Fix finds CUE programs that use old syntax and old APIs and rewrites them to use newer ones.
 After you update to a new CUE release, fix helps make the necessary changes
@@ -25,4 +25,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

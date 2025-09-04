@@ -33,20 +33,20 @@ Along the way you will:
 
 This tutorial uses the following version of CUE:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
 cue version v0.14.1
 ...
-```
+````
 
 ## Create a CUE module
 
 {{< step stepNumber="1" >}}
 Initialize a new main CUE module in an empty directory:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGFuLmV4YW1wbGUvY29uZmlnQHYw" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBpbml0IGFuLmV4YW1wbGUvY29uZmlnQHYw" }
 $ cue mod init an.example/config@v0
-```
+````
 
 You won't publish this module, so the name you give it is unimportant.
 {{< /step >}}
@@ -80,9 +80,9 @@ You don't need to follow that tutorial right now - it's only mentioned for conte
 {{< step stepNumber="3" >}}
 Ensure the CUE module is tidy:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCB0aWR5" }
 $ cue mod tidy
-```
+````
 
 This fetches the `frostyconfig` module (and any dependencies it might have)
 from the Central Registry.
@@ -98,7 +98,7 @@ The Central Registry allows more requests from authenticated users.
 {{< step stepNumber="4" >}}
 Export the configuration from your CUE module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydA==" }
 $ cue export
 {
     "config": {
@@ -109,7 +109,7 @@ $ cue export
         }
     }
 }
-```
+````
 
 This export shows that your CUE is valid and you can successfully use a
 dependency from the Central Registry.
@@ -120,10 +120,10 @@ dependency from the Central Registry.
 {{< step stepNumber="5" >}}
 Initialize a Go module for your program:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgYW4uZXhhbXBsZS9jb25maWc=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgYW4uZXhhbXBsZS9jb25maWc=" }
 $ go mod init an.example/config
 ...
-```
+````
 
 You won't publish this module, so the name you give it is unimportant.
 {{< /step >}}
@@ -182,12 +182,12 @@ and then prints a message based on the `config` field.
 {{< step stepNumber="7" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
 $ go get cuelang.org/go@v0.14.1
 ...
 $ go mod tidy
 ...
-```
+````
 
 You can use `@latest` in place of the specific version mentioned here.
 {{< /step >}}
@@ -197,7 +197,7 @@ You can use `@latest` in place of the specific version mentioned here.
 {{< step stepNumber="8" >}}
 Run the Go program:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 {
 	appName: "alpha"
@@ -206,7 +206,7 @@ $ go run .
 		logging: true
 	}
 }
-```
+````
 {{< /step >}}
 ## Summary
 

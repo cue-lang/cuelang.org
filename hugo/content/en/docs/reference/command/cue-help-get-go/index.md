@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZ2V0IGdv" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZ2V0IGdv" }
 $ cue help get go
 go converts Go types into CUE definitions
 
@@ -166,4 +166,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

@@ -54,9 +54,9 @@ content: dir: page: {
 title: JSON Superset
 ---
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydA==" }
 $ find $HOME -type f | sort
-```
+````
 
 {{< code-tabs >}}
 {{< code-tab name="one.txt" language="txt" area="top-left" >}}
@@ -65,12 +65,12 @@ $ find $HOME -type f | sort
 {{< code-tab name="another/two.txt" language="txt" area="top-left" >}}
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydApjZCBhbm90aGVy" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydApjZCBhbm90aGVy" }
 $ find $HOME -type f | sort
 /home/runner/another/two.txt
 /home/runner/one.txt
 $ cd another
-```
+````
 
 {{< code-tabs >}}
 {{< code-tab name="three.txt" language="txt" area="top-left" >}}
@@ -79,11 +79,11 @@ $ cd another
 {{< code-tab name="another/four.txt" language="txt" area="top-left" >}}
 {{< /code-tab >}}{{< /code-tabs >}}
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAkSE9NRSAtdHlwZSBmIHwgc29ydA==" }
 $ find $HOME -type f | sort
 /home/runner/another/four.txt
 /home/runner/another/two.txt
 /home/runner/one.txt
 /home/runner/three.txt
-```
+````
 

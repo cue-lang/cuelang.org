@@ -6,27 +6,27 @@ title: "Issue 3796: code-tabs inside info blocks have unwanted extra vertical sp
 
 Here's a terminal. Note the vertical spacing around the command and its output - this is the expected rendering:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
 $ echo hello
 hello
-```
+````
 
 {{< step stepNumber="1" >}}
 Here's the same terminal inside a `step`. It renders as expected:
-```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
 $ echo hello
 hello
-```
+````
 {{< /step >}}
 
 {{<info>}}
 Here's the same terminal inside an `info` block.
 
 It has two extra lines of vertical space versus the expected rendering:
-```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
 $ echo hello
 hello
-```
+````
 {{</info>}}
 
 {{< step stepNumber="2" >}}
@@ -34,10 +34,10 @@ hello
 Here's the same terminal inside an `info` block inside a `step`.
 
 It also has two extra lines of vertical space versus the expected rendering:
-```text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZWNobyBoZWxsbw==" }
 $ echo hello
 hello
-```
+````
 {{</info>}}
 {{< /step >}}
 

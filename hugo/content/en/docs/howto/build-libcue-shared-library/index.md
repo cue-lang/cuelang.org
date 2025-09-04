@@ -28,51 +28,51 @@ The library is under development and is subject to change.
 {{< step stepNumber="1" >}}
 Enable [`cgo`](https://pkg.go.dev/cmd/cgo):
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENHT19FTkFCTEVEPTE=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IENHT19FTkFCTEVEPTE=" }
 $ export CGO_ENABLED=1
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="2" >}}
 Check that the Go prerequisites are met:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gdmVyc2lvbgpnbyBlbnYgQ0dPX0VOQUJMRUQ=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gdmVyc2lvbgpnbyBlbnYgQ0dPX0VOQUJMRUQ=" }
 $ go version
 go version go1.25.0 linux/amd64
 $ go env CGO_ENABLED
 1
-```
+````
 
 Check that other prerequisites are met:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y2MgLS12ZXJzaW9uCmdpdCAtLXZlcnNpb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y2MgLS12ZXJzaW9uCmdpdCAtLXZlcnNpb24=" }
 $ cc --version
 cc (Debian 14.2.0-19) 14.2.0
 ...
 $ git --version
 git version 2.47.2
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="3" >}}
 Clone the `libcue` repository and change into its directory:
 
 <!-- TODO(jcm): is the canonical upstream github or gerrithub? -->
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNsb25lIGh0dHBzOi8vZ2l0aHViLmNvbS9jdWUtbGFuZy9saWJjdWUgbGliY3VlLXNvdXJjZQpjZCBsaWJjdWUtc291cmNl" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNsb25lIGh0dHBzOi8vZ2l0aHViLmNvbS9jdWUtbGFuZy9saWJjdWUgbGliY3VlLXNvdXJjZQpjZCBsaWJjdWUtc291cmNl" }
 $ git clone https://github.com/cue-lang/libcue libcue-source
 ...
 $ cd libcue-source
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="4" >}}
 Select a specific commit to build:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNoZWNrb3V0IDFjODYxY2M5Y2RjNTU4NGY1ZDI2YjBhNzExMmFhMmFmZWU3NGQ0Y2Y=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNoZWNrb3V0IDFjODYxY2M5Y2RjNTU4NGY1ZDI2YjBhNzExMmFhMmFmZWU3NGQ0Y2Y=" }
 $ git checkout 1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf
 Note: switching to '1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf'.
 ...
-```
+````
 <!-- TODO(jcm): derive this commit id from the id stored in site.cue -->
 
 `libcue` is not currently versioned, so this step uses a specific commit reference.
@@ -83,10 +83,10 @@ Note: switching to '1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf'.
 {{< step stepNumber="5" >}}
 Build `libcue` as a shared library:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gYnVpbGQgLWJ1aWxkbW9kZT1jLXNoYXJlZCAtbyBsaWJjdWUuc28=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gYnVpbGQgLWJ1aWxkbW9kZT1jLXNoYXJlZCAtbyBsaWJjdWUuc28=" }
 $ go build -buildmode=c-shared -o libcue.so
 ...
-```
+````
 
 The value passed to the `-o` flag is the filename that will contain the compiled output.
 This value will vary, depending on your operating system.
@@ -126,9 +126,9 @@ guide. Documentation for Windows
 Here is an example of how to make `libcue` available to compilers and runtimes,
 system-wide, under Linux:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3AgbGliY3VlLnNvIC91c3IvbG9jYWwvbGliLw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3AgbGliY3VlLnNvIC91c3IvbG9jYWwvbGliLw==" }
 $ cp libcue.so /usr/local/lib/
-```
+````
 
 On a Linux system your user probably won't have write access to the
 `/usr/local/lib` directory. If so, you will need to run the `cp` command as a
