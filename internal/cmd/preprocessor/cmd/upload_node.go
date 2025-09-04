@@ -156,7 +156,7 @@ func (u *uploadNode) mkdocsWriteTransformTo(b *bytes.Buffer) error {
 	f := u.archive.Files[0]
 	a := u.analysis.fileNames[0]
 
-	p("``` { .%s title=%q", a.Language, f.Name)
+	p("```` { .%s title=%q", a.Language, f.Name)
 
 	// Work out if there are any code-tab options specified via the codetab tag.
 	// If there are, add them.
@@ -171,7 +171,7 @@ func (u *uploadNode) mkdocsWriteTransformTo(b *bytes.Buffer) error {
 	p(" }\n")
 
 	p("%s", f.Data)
-	p("```")
+	p("````")
 	return nil
 }
 

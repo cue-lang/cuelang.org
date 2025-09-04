@@ -33,20 +33,20 @@ gets produced.
 
 Let's start by downloading a specific version of the `k8s.io/api` module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGs4cy5pby9hcGkvYXBwcy92MUB2MC4yOS4z" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGs4cy5pby9hcGkvYXBwcy92MUB2MC4yOS4z" }
 $ go get k8s.io/api/apps/v1@v0.29.3
 ...
-```
+````
 
 We use `cue get go` to generate CUE definitions from the Go types in the `k8s.io/api/apps/v1` package:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGdldCBnbyBrOHMuaW8vYXBpL2FwcHMvdjE=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGdldCBnbyBrOHMuaW8vYXBpL2FwcHMvdjE=" }
 $ cue get go k8s.io/api/apps/v1
-```
+````
 
 This generates some CUE packages, placing them alongside our main CUE module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="dHJlZSAtZCBjdWUubW9kL2dlbi9rOHMuaW8=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="dHJlZSAtZCBjdWUubW9kL2dlbi9rOHMuaW8=" }
 $ tree -d cue.mod/gen/k8s.io
 cue.mod/gen/k8s.io
 |-- api
@@ -62,7 +62,7 @@ cue.mod/gen/k8s.io
         |   `-- meta
         |       `-- v1
 ...
-```
+````
 
 [`cue get go`]({{< relref "docs/reference/command/cue-help-get-go" >}})
 also has a `--local` option that generates CUE alongside Go in a main module.
@@ -88,13 +88,13 @@ Our configuration is currently empty - but any
 services, deployments, daemonSets, or statefulSets
 that we add will be checked against the schema of the associated Kubernetes type:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWw=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWw=" }
 $ cue eval
 service: {}
 deployment: {}
 daemonSet: {}
 statefulSet: {}
-```
+````
 
 A more in-depth example demonstrating how to drive Kubernetes configuration
 using CUE can be found in *CUE By Example*, in
@@ -158,16 +158,16 @@ func main() {
 
 Before running, we add a dependency on the `cuelang.org/go` module and tidy:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
 $ go get cuelang.org/go@v0.14.1
 ...
 $ go mod tidy
 ...
-```
+````
 
 Finally, running the Go program displays the CUE data:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 {
 	l: [1, 2, 3]
@@ -176,7 +176,7 @@ $ go run .
 		hello: "world!"
 	}
 }
-```
+````
 
 CUE values have a default formatter that renders them sensibly.
 ### Loading non-CUE data
@@ -238,14 +238,14 @@ age: 99
 We finish by adding a dependency on the `cuelang.org/go` module, tidying,
 and running the program:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
 $ go get cuelang.org/go@v0.14.1
 ...
 $ go mod tidy
 ...
 $ go run .
 ✅ YAML: ok
-```
+````
 ### Checking Go data with CUE schema
 CUE can also validate data that's only available inside Go.
 Perhaps it's only fetched at runtime, from some file;
@@ -312,7 +312,7 @@ func main() {
 
 This time we see that CUE correctly caught a problem in our data:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
 $ go get cuelang.org/go@v0.14.1
 ...
 $ go mod tidy
@@ -321,7 +321,7 @@ $ go run .
 ❌ Person: NOT ok
 #Person.age: invalid value 999 (out of bound <=150)
 exit status 1
-```
+````
 <!-- TODO
   - Checking Go data with CUE schema
     - "CUE that validates that a struct have only keys beginning with "a" and values that are either `5 | string`"

@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgdHJpbQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgdHJpbQ==" }
 $ cue help trim
 trim removes fields from structs that can be inferred from constraints
 
@@ -68,4 +68,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

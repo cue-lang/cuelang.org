@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY29tcGxldGlvbg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY29tcGxldGlvbg==" }
 $ cue help completion
 Generate completion script
 
@@ -45,4 +45,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

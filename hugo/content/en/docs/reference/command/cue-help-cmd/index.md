@@ -6,7 +6,7 @@ tags:
 - cue command
 - workflow command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY21k" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY21k" }
 $ cue help cmd
 cmd executes the named command for each of the named instances.
 
@@ -127,7 +127,7 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````
 
 ## Related content
 

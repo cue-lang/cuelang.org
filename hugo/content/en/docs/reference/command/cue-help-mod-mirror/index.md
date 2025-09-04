@@ -8,7 +8,7 @@ tags:
 {{<info>}}
 This command is still in an experimental stage -- it may be changed or removed at any time.
 {{</info>}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIG1pcnJvcg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIG1pcnJvcg==" }
 $ cue help mod mirror
 WARNING: THIS COMMAND IS EXPERIMENTAL.
 
@@ -60,4 +60,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

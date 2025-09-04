@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZ2V0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZ2V0" }
 $ cue help get
 Get downloads packages or modules for non-CUE languages
 to include them in the module's pkg directory.
@@ -36,4 +36,4 @@ Global Flags:
   -v, --verbose      print information about progress
 
 Use "cue get [command] --help" for more information about a command.
-```
+````

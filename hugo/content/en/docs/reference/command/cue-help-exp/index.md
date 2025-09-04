@@ -5,7 +5,7 @@ weight: 1000
 tags:
 - cue command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZXhw" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZXhw" }
 $ cue help exp
 exp groups commands which are still in an experimental stage.
 
@@ -27,4 +27,4 @@ Global Flags:
   -v, --verbose      print information about progress
 
 Use "cue exp [command] --help" for more information about a command.
-```
+````

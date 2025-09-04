@@ -76,9 +76,9 @@ people: [X=string]: #Person & {
 {{< step stepNumber="3" >}}
 Run the following `cue` command in your terminal:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4Lmpzb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4Lmpzb24=" }
 $ cue vet -c x.cue x.json
-```
+````
 
 _NOTE: `cue vet` is silent when run successfully. Output will only show on error._
 {{< /step >}}
@@ -115,12 +115,12 @@ following:
 {{< step stepNumber="5" >}}
 Validate again with `cue vet`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4Lmpzb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4Lmpzb24=" }
 $ cue vet -c x.cue x.json
 people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
     ./x.cue:3:11
     ./x.json:15:20
-```
+````
 
 The command output shows validation errors where the JSON violates
 the (type) constraints that you have declared.
@@ -158,9 +158,9 @@ Fix up the JSON:
 {{< step stepNumber="7" >}}
 Validate with `cue vet` again
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4Lmpzb24=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyB4LmN1ZSB4Lmpzb24=" }
 $ cue vet -c x.cue x.json
-```
+````
 
 The `cue vet` command will show no output on success.
 

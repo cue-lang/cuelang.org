@@ -6,7 +6,7 @@ tags:
 - cue command
 - modules
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGZpeA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIGZpeA==" }
 $ cue help mod fix
 Fix provides a way to migrate from a legacy module.cue file
 to the new standard syntax. It
@@ -31,4 +31,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````

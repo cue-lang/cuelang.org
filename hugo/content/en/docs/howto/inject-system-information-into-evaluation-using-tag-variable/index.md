@@ -41,7 +41,7 @@ currentTimeB:    string @tag(i,var=now)
 Make system information available to an evaluation by including the `-T` flag
 when invoking a supported `cue` command:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtVCAtLW91dCBjdWUgfCBzb3J0" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtVCAtLW91dCBjdWUgfCBzb3J0" }
 $ cue export -T --out cue | sort
 cpuArchitecture: "arm64"
 currentHostname: "7c8be7f9b8ee"
@@ -52,7 +52,7 @@ directory:       "/home/runner"
 operatingSystem: "linux"
 randomnessA:     48143939811130088532707076255718137665
 randomnessB:     48143939811130088532707076255718137665
-```
+````
 
 In the CUE source, notice that the `rand` and `now` tag variables were
 repeated, and contributed to the values of more than one field. Any tag
@@ -63,13 +63,13 @@ Some variables, such as `username` and `hostname`, can be expected to remain
 stable across CUE evaluations by the same user on the same host. In contrast,
 the `now` and `rand` variables are completely unstable, as demonstrated here by
 their values being different to the values shown above:
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLVQgfCBncmVwIC1lIF5jdXJyZW50VGltZSAtZSBecmFuZG9t" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLVQgfCBncmVwIC1lIF5jdXJyZW50VGltZSAtZSBecmFuZG9t" }
 $ cue eval -T | grep -e ^currentTime -e ^random
 randomnessA:     256474124597080097645628343043781257633
 randomnessB:     256474124597080097645628343043781257633
 currentTimeA:    "2024-11-21T12:24:03.630382379Z"
 currentTimeB:    "2024-11-21T12:24:03.630382379Z"
-```
+````
 
 ## Overridding system information
 
@@ -77,20 +77,20 @@ Tag variables are specified in combination with a tag key. For example, as
 shown above, the `randomnessA` field is declared to have a relationship
 with both the `rand` tag variable and the `f` tag key:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z3JlcCBecmFuZG9tIHRhZy12YXJpYWJsZXMuY3Vl" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z3JlcCBecmFuZG9tIHRhZy12YXJpYWJsZXMuY3Vl" }
 $ grep ^random tag-variables.cue
 randomnessA:     int    @tag(f,var=rand,type=int)
 randomnessB:     int    @tag(g,var=rand,type=int)
-```
+````
 
 If a tag key is specified for a `cue` command then it overrides the system
 information for fields associated with the tag:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLVR0IGY9MTIzMTIzMTIzMDAwIHwgZ3JlcCBecmFuZG9t" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLVR0IGY9MTIzMTIzMTIzMDAwIHwgZ3JlcCBecmFuZG9t" }
 $ cue eval -Tt f=123123123000 | grep ^random
 randomnessA:     123123123000
 randomnessB:     154463835233876152095912350456117094604
-```
+````
 
 ## Related content
 

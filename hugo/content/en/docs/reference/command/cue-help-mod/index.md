@@ -6,7 +6,7 @@ tags:
 - cue command
 - modules
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9k" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9k" }
 $ cue help mod
 Mod groups commands which operate on CUE modules.
 
@@ -39,7 +39,7 @@ Global Flags:
   -v, --verbose      print information about progress
 
 Use "cue mod [command] --help" for more information about a command.
-```
+````
 
 ## Related content
 
