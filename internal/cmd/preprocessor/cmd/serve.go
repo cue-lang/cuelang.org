@@ -81,22 +81,28 @@ func (e *executor) serve() error {
 
 	sc := e.newServeContext(errs)
 
-	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
-	defer stop()
-
 	// Initial execute
 	if err := sc.e.execute(nil); err != nil {
 		sc.e.debugf(sc.e.debugGeneral, "failed to execute: %v", err)
 	}
 
-	// Start Hugo after initial execute to avoid racing on Hugo's input files
-	// (still a possibility of racing, but this minimises things).
-	if err := sc.startHugo(ctx); err != nil {
-		return e.errorf("%v: failed to start hugo: %v", e, err)
-	}
+	// Only run hugo when not asked for mkdocs output
+	//
+	// TODO: refactor this to actually start mkdocs when in that mode, rather than relying on the
+	// user to run mkdocs manually in another terminal.
+	if e.mkdocsOutput == "" {
+		ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
+		defer stop()
 
-	go sc.waitOnHugo()
-	go sc.relayHugoOutput()
+		// Start Hugo after initial execute to avoid racing on Hugo's input files
+		// (still a possibility of racing, but this minimises things).
+		if err := sc.startHugo(ctx); err != nil {
+			return e.errorf("%v: failed to start hugo: %v", e, err)
+		}
+
+		go sc.waitOnHugo()
+		go sc.relayHugoOutput()
+	}
 
 	sc.findGitTopLevel()
 
