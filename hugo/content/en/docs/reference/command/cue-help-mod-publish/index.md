@@ -6,7 +6,7 @@ tags:
 - cue command
 - modules
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHB1Ymxpc2g=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIHB1Ymxpc2g=" }
 $ cue help mod publish
 Publish the current module to an OCI registry. It consults
 $CUE_REGISTRY to determine where the module should be published (see
@@ -38,7 +38,7 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````
 
 ## Related content
 

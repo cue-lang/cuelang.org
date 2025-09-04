@@ -6,7 +6,7 @@ tags:
 - cue command
 - workflow command
 ---
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY29tbWFuZHM=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgY29tbWFuZHM=" }
 $ cue help commands
 Workflow commands define actions on instances. For example, they
 may specify how to upload a configuration to Kubernetes. Workflow
@@ -166,7 +166,7 @@ cuelang.org/go/pkg/tool/tool.cue.
 		$after?: Task | [...Task]
 	}
 
-```
+````
 
 ## Related content
 

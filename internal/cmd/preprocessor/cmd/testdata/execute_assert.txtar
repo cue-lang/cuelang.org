@@ -116,12 +116,12 @@ content: dir2: page: {
 title: JSON Superset
 ---
 
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgcGF0aC90bwpjYXQgPDxFT0QgPnBhdGgvdG8vZmlsZS50eHQKaGVsbG8KRU9E" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgcGF0aC90bwpjYXQgPDxFT0QgPnBhdGgvdG8vZmlsZS50eHQKaGVsbG8KRU9E" }
 $ mkdir -p path/to
 $ cat <<EOD >path/to/file.txt
 hello
 EOD
-```
+````
 
 {{< code-tabs >}}
 {{< code-tab name="path/to/file.txt" language="txt" area="top-left" >}}

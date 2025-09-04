@@ -20,10 +20,10 @@ API to validate Go values against CUE constraints expressed in
 {{< step stepNumber="1" >}}
 Initialize a Go module, or use an existing one if that's more suitable for your situation:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
 $ go mod init go.example
 ...
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="2" >}}
@@ -86,19 +86,19 @@ and prints the validation result for each instance.
 {{< step stepNumber="3" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
 $ go get cuelang.org/go@v0.14.1
 ...
 $ go mod tidy
 ...
-```
+````
 {{< /step >}}
 
 
 {{< step stepNumber="4" >}}
 Run the program:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 good: ✅ ok
 bad: Action: 2 errors in empty disjunction:
@@ -109,7 +109,7 @@ Action: conflicting values "Deny" and "Bypass":
 Level: invalid value 5 (out of bound >10):
     <field:>:1:1
 
-```
+````
 {{< /step >}}
 ## Related content
 

@@ -43,7 +43,7 @@ Note that because incomplete CUE is valid CUE it *can* be evaluated ...
 
 <!-- TODO(jcm): replace eval with vet (x1? x2?) if the resolution of
 https://cuelang.org/issue/2120 permits. -->
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgZGF0YWJhc2UuY3Vl" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgZGF0YWJhc2UuY3Vl" }
 $ cue eval database.cue
 connectionString: "\(system)://\(user):\(password)@\(host):\(port)/\(database)"
 system:           "postgres"
@@ -52,18 +52,18 @@ user:             "alex"
 port:             "5432"
 database:         "transactions"
 password:         string
-```
+````
 
 ... but it *can't* be exported:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBkYXRhYmFzZS5jdWU=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBkYXRhYmFzZS5jdWU=" }
 $ cue export database.cue
 password: incomplete value string:
     ./database.cue:10:11
 connectionString: invalid interpolation: non-concrete value string (type string):
     ./database.cue:3:19
     ./database.cue:10:11
-```
+````
 
 A configuration that results in incomplete values can be made *complete* by
 unifying it with the right information. This means that every field that
@@ -81,7 +81,7 @@ password: "Ch^ngeMeBef0r3GoL!ve"
 Unifying our incomplete CUE with this data makes the configuration complete,
 and allows us to export the result:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBkYXRhYmFzZS5jdWUgc2VjcmV0cy55YW1sCmN1ZSBleHBvcnQgZGF0YWJhc2UuY3VlIHNlY3JldHMueWFtbCAtZSBjb25uZWN0aW9uU3RyaW5n" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCBkYXRhYmFzZS5jdWUgc2VjcmV0cy55YW1sCmN1ZSBleHBvcnQgZGF0YWJhc2UuY3VlIHNlY3JldHMueWFtbCAtZSBjb25uZWN0aW9uU3RyaW5n" }
 $ cue export database.cue secrets.yaml
 {
     "connectionString": "postgres://alex:Ch^ngeMeBef0r3GoL!ve@prod.db.example.com:5432/transactions",
@@ -96,7 +96,7 @@ $ cue export database.cue secrets.yaml
 # Export just the data source name as a text value.
 $ cue export database.cue secrets.yaml -e connectionString
 "postgres://alex:Ch^ngeMeBef0r3GoL!ve@prod.db.example.com:5432/transactions"
-```
+````
 
 ### Using the Go API
 
@@ -104,10 +104,10 @@ The Go API is also able to handle incomplete CUE.
 
 To demonstrate the Go API in action we start by initializing a Go module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gbW9kIGluaXQgZ28uZXhhbXBsZQ==" }
 $ go mod init go.example
 ...
-```
+````
 
 We place this example Go code in `main.go`.
 Comments explain what is being done at each step.
@@ -157,17 +157,17 @@ func main() {
 
 We fetch the latest version of CUE, and tidy our Go module:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
 $ go get cuelang.org/go@v0.14.1
 ...
 $ go mod tidy
 ...
-```
+````
 
 When we run our Go code, it behaves the same as the `cue export` command above
 \- except that it *also* displays the interim `step1` and `step2` values:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4=" }
 $ go run .
 step1: {
 	connectionString: "\(system)://\(user):\(password)@\(host):\(port)/\(database)"
@@ -190,7 +190,7 @@ result: {
 	database:         "transactions"
 	password:         "Ch^ngeMeBef0r3GoL!ve"
 }
-```
+````
 ## Related content
 
 - Tag: {{<tag "go api">}} -- Guides exploring CUE's Go API

@@ -37,14 +37,14 @@ which is under development and is subject to change.
 {{< step stepNumber="1" >}}
 Check that the executable prerequisites are met:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="amF2YWMgLS12ZXJzaW9uCm12biAtLXZlcnNpb24KZ2l0IC0tdmVyc2lvbg==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="amF2YWMgLS12ZXJzaW9uCm12biAtLXZlcnNpb24KZ2l0IC0tdmVyc2lvbg==" }
 $ javac --version
 javac 22.0.2
 $ mvn --version
 ...
 $ git --version
 git version 2.47.2
-```
+````
 
 {{<warning>}}
 Many package managers choose to install a "Long Term Support" Java version,
@@ -62,9 +62,9 @@ You must be using
 {{< step stepNumber="2" >}}
 Teach Java and the operating system how to locate your `libcue` installation:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IExEX0xJQlJBUllfUEFUSD0vdXNyL2xvY2FsL2xpYjokTERfTElCUkFSWV9QQVRI" }
+````text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IExEX0xJQlJBUllfUEFUSD0vdXNyL2xvY2FsL2xpYjokTERfTElCUkFSWV9QQVRI" }
 $ export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
-```
+````
 
 This guide builds on the process documented in
 {{< linkto/inline "howto/build-libcue-shared-library" >}}.
@@ -85,22 +85,22 @@ directory then be sure to teach the loader about the appropriate directory for
 Clone the `cue-api-java` repository and change into its directory:
 
 <!-- TODO(jcm): is the canonical upstream github or gerrithub? -->
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNsb25lIGh0dHBzOi8vZ2l0aHViLmNvbS9jdWUtbGFuZy9jdWUtYXBpLWphdmEgY3VlLWFwaS1qYXZhLXNvdXJjZQpjZCBjdWUtYXBpLWphdmEtc291cmNl" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNsb25lIGh0dHBzOi8vZ2l0aHViLmNvbS9jdWUtbGFuZy9jdWUtYXBpLWphdmEgY3VlLWFwaS1qYXZhLXNvdXJjZQpjZCBjdWUtYXBpLWphdmEtc291cmNl" }
 $ git clone https://github.com/cue-lang/cue-api-java cue-api-java-source
 ...
 $ cd cue-api-java-source
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="4" >}}
 Select a specific commit to build:
 
 <!-- TODO(jcm): derive this commit id from the id stored in site.cue -->
-```text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNoZWNrb3V0IDNjMTJiYjllOWVhMjAzZDRkZTgzMDhiNDE0NWU4NzZlNGI2MDIwN2U=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Z2l0IGNoZWNrb3V0IDNjMTJiYjllOWVhMjAzZDRkZTgzMDhiNDE0NWU4NzZlNGI2MDIwN2U=" }
 $ git checkout 3c12bb9e9ea203d4de8308b4145e876e4b60207e
 Note: switching to '3c12bb9e9ea203d4de8308b4145e876e4b60207e'.
 ...
-```
+````
 
 `cue-api-java` is not currently versioned, so this step uses a specific commit reference.
 {{< /step >}}
@@ -110,10 +110,10 @@ Note: switching to '3c12bb9e9ea203d4de8308b4145e876e4b60207e'.
 {{< step stepNumber="5" >}}
 Use Maven to build `cue-api-java`:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="bXZuIHBhY2thZ2U=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bXZuIHBhY2thZ2U=" }
 $ mvn package
 ...
-```
+````
 
 The build log output from Maven will include the library's dependencies being
 downloaded, its tests being run, a summary of the test results, and the final
@@ -145,19 +145,19 @@ public class TestLoad {
 Compile the test program,
 after making sure the CUE JAR can be found under a predictable filename:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="bXYgdGFyZ2V0L0NVRSouamFyIENVRS5qYXIKamF2YWMgLWNwIENVRS5qYXIgVGVzdExvYWQuamF2YQ==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bXYgdGFyZ2V0L0NVRSouamFyIENVRS5qYXIKamF2YWMgLWNwIENVRS5qYXIgVGVzdExvYWQuamF2YQ==" }
 $ mv target/CUE*.jar CUE.jar
 $ javac -cp CUE.jar TestLoad.java
-```
+````
 {{< /step >}}
 
 {{< step stepNumber="8" >}}
 Execute the test program:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="amF2YSAtLWVuYWJsZS1uYXRpdmUtYWNjZXNzPUFMTC1VTk5BTUVEIC1jcCBDVUUuamFyOi4gVGVzdExvYWQ=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="amF2YSAtLWVuYWJsZS1uYXRpdmUtYWNjZXNzPUFMTC1VTk5BTUVEIC1jcCBDVUUuamFyOi4gVGVzdExvYWQ=" }
 $ java --enable-native-access=ALL-UNNAMED -cp CUE.jar:. TestLoad
 CUE loaded successfully!
-```
+````
 
 The `--enable-native-access` flag avoids a runtime warning from Java that the
 [Foreign Function & Memory API](https://openjdk.org/jeps/454) is used by
@@ -186,10 +186,10 @@ that it supports.
 Java guides on cuelang.org assume that the JAR is available in the directory
 `/usr/local/share/java/`, which you can set up as follows:
 
-```text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgL3Vzci9sb2NhbC9zaGFyZS9qYXZhLwpjcCBDVUUuamFyIC91c3IvbG9jYWwvc2hhcmUvamF2YS8=" }
+````text { title="TERMINAL" type="terminal" codeToCopy="bWtkaXIgLXAgL3Vzci9sb2NhbC9zaGFyZS9qYXZhLwpjcCBDVUUuamFyIC91c3IvbG9jYWwvc2hhcmUvamF2YS8=" }
 $ mkdir -p /usr/local/share/java/
 $ cp CUE.jar /usr/local/share/java/
-```
+````
 
 On a Linux system your user probably won't have write access to the
 `/usr/local/share/java/` directory. If so, you will need to run these commands

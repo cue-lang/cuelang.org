@@ -8,7 +8,7 @@ tags:
 {{<info>}}
 This command is still in an experimental stage -- it may be changed or removed at any time.
 {{</info>}}
-```text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgcmVmYWN0b3IgaW1wb3J0cw==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgcmVmYWN0b3IgaW1wb3J0cw==" }
 $ cue help refactor imports
 WARNING: THIS COMMAND IS EXPERIMENTAL.
 
@@ -89,4 +89,4 @@ Global Flags:
   -s, --simplify     simplify output
       --trace        trace computation
   -v, --verbose      print information about progress
-```
+````
