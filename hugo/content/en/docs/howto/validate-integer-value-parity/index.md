@@ -41,15 +41,19 @@ $ cue vet
 invalid."-32": conflicting values -31 and -32:
     ./file.cue:4:13
     ./file.cue:15:9
+    ./file.cue:15:15
 invalid."-37": conflicting values -38 and -37:
     ./file.cue:3:13
     ./file.cue:14:9
+    ./file.cue:14:15
 invalid."52": conflicting values 53 and 52:
     ./file.cue:4:13
     ./file.cue:16:9
+    ./file.cue:16:14
 invalid."57": conflicting values 56 and 57:
     ./file.cue:3:13
     ./file.cue:17:9
+    ./file.cue:17:14
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
