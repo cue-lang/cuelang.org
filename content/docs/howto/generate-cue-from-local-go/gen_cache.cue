@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"main.go":       "mQ7Iw5sLCsdg9LKSoB4jotaxODMYlzYjC45pWQFH9vA="
-								"config.json":   "pWwwYhX0MlupA5eUoBX7/Q7dLfUPVMK6EqGJ8+sSK/k="
-								"generated cue": "bJ775pbUyXF+BO54ORTevZiKu4Xd5Ss3/L82IahF9iY="
+								"main.go":       "PAmybi909ixHwKvNXtjMQE7CxbFP5fUtJT4XQsS95tQ="
+								"config.json":   "mRntOLTB/yG0rDwlc+WbIlorHFi7VAPd4RV7iHDWa0U="
+								"generated cue": "CP/S+Q8JsqgvGglzSJDyR3hHqz9DPo+Q2ikR61us0s4="
 							}
 							multi_step: {
-								hash:       "EH858USSKBU188EG22PU3C37TTAHPD2DA1BEOJRKIKB461VEL66G===="
+								hash:       "IKP95MAV7RBFA4MPM28U78SFJJ44BGN5A5NMPK4KQMI1FNL5RHI0===="
 								scriptHash: "0RQ8RVSNQUNNNMA2NE0MC219CD0QGKAAQ601JTFASE94NQCDRNJG===="
 								steps: [{
 									doc:      ""
@@ -56,7 +56,10 @@ package site
 									doc:      ""
 									cmd:      "cue get go --local ."
 									exitCode: 0
-									output:   ""
+									output: """
+											[]
+
+											"""
 								}, {
 									doc:      ""
 									cmd:      "cue vet -c -d '#Config' . config.json"

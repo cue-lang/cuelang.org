@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "H1GRB1LGKVBJ94PFML4Q480H5PO8TE322QJUN2OQDAMNIP05HP9G===="
-									scriptHash: "SHBUNTGLRHA8Q7DN9OS0QNHBD2AIG5RIQRJ2R40CUC27P30EKD00===="
+									hash:       "GNL23VBMTLQPGPGKQ54KSNHQKA68FHTROVDK3QF9GSHTRKE925IG===="
+									scriptHash: "4AH5VP3IAJH80EAMQ36VB01M3RN2MBB1DG23HP3HAAD2O6ASSEF0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.1:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0-0.dev.0.20250905161001-20531e1837bf:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -26,11 +26,34 @@ package site
 
 												Without any packages, fix applies to all files within a module.
 
+
+												Experiments
+
+												CUE experiments are features that are not yet part of the stable language but
+												are being tested for future inclusion. Some of these may introduce backwards
+												incompatible changes for which there is a cue fix. The --exp flag is used to
+												change a file or package to use the new, experimental semantics. Experiments
+												are enabled on a per-file basis.
+
+												For example, to enable the "explicitopen" experiment for all files in a package,
+												you would run:
+
+												\tcue fix . --exp=explicitopen
+
+												For this to succeed, your current language version must support the experiment.
+												If an experiment has not yet been accepted for the current version, an
+												@experiment attribute is added in each affected file to mark the transition as
+												complete.
+
+												The special value --exp=all enables all experimental features that apply to the
+												current version.
+
 												Usage:
 												  cue fix [packages] [flags]
 
 												Flags:
-												  -f, --force   rewrite even when there are errors
+												      --exp strings   list of experiments to port
+												  -f, --force         rewrite even when there are errors
 
 												Global Flags:
 												  -E, --all-errors   print all available errors

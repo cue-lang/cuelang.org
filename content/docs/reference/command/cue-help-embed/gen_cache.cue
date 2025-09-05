@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "P3MB8RKBS6VC35JE9Q7VK1E8RKA5TCCBEMHA93CHLJLA4IB996R0===="
-									scriptHash: "HKRBCIENI1OFA0JV8H645IORAQM57CF80NUBJJTPBO0R2T84I3D0===="
+									hash:       "Q4N089C8M2EOH1CC8HEHC73FFLADPR8SOA5OL4P3VVF82B0MMFRG===="
+									scriptHash: "3V5C3RB4OVRJV6KFEUBGM2M5UP9F424QSGQLVA1MCJLVDNADUNTG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.1:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0-0.dev.0.20250905161001-20531e1837bf:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -38,6 +38,12 @@ package site
 												\tb: [string]: bytes
 
 												Note that "**" glob patterns are not supported at this time.
+
+												By default, a glob pattern that matches no files results in an error.
+												To allow empty results, use the "allowEmptyGlob" option:
+
+												\tc: _ @embed(glob=optional/*.json, allowEmptyGlob)
+												\tc: [string]: {...}
 
 												If the file extension in "file" or "glob" does not imply a file type,
 												it must be specified with the "type" encoding as shown above.

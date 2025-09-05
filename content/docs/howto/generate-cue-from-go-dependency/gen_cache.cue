@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"deps.go":     "MuRH4IvC0H9t4RZ1LOcTRIJBJaSMrXtM9l76L3i3jGI="
-								"example.cue": "jU4YjHf7Qzh25Qo2Id6a3E1C91aQk7FaO+nhs+zxQOY="
+								"deps.go":     "d7kBQx/OQed/ghgIFoAW3e33OVgDZnfZF7p9pfh7iok="
+								"example.cue": "qRolS7hiEr1Q6nWnSiGdrGPHx45/B+7NPRZPFwQXCbM="
 							}
 							multi_step: {
-								hash:       "PGJ8LJ28F9R4ATQVB1H33SUSJAKMU592RRSSOV24FFCF8LNASVCG===="
+								hash:       "ML25S51OPCSEDT087NE4IDHGIFHE6VI990SLFKH2VB3IGRA5HCAG===="
 								scriptHash: "PF5DBCV9CI4E6HNDIBT29BMQD0R0SV7HNUUMU6JE3O5GC6KAUL20===="
 								steps: [{
 									doc:      ""
@@ -61,7 +61,10 @@ package site
 									doc:      ""
 									cmd:      "cue get go k8s.io/api/apps/v1"
 									exitCode: 0
-									output:   ""
+									output: """
+											[]
+
+											"""
 								}, {
 									doc:      "#ellipsis 10"
 									cmd:      "tree -d cue.mod/gen"
