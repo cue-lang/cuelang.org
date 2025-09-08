@@ -22,6 +22,30 @@
       },
       "revId": "9f79a9393c43cca6e75446fe9dfa95cdf9f75a76",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "93733585_12d5b454",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-09-08T13:23:17Z",
+      "side": 1,
+      "message": "The grammar is not quite correct and I will fix that. What I was trying to say is that Hugo generally uses triple-backtick for code blocks (and indeed we rely on this in the output of the preprocessor in some places) but that it, like mkdocs, also understand quad-backtick. So the change is safe from the perspective of Hugo, just as it is for mkdocs.\n\nFixed.",
+      "parentUuid": "df441361_463dbe15",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 56
+      },
+      "revId": "9f79a9393c43cca6e75446fe9dfa95cdf9f75a76",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
