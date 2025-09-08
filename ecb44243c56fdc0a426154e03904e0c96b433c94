@@ -22,6 +22,30 @@
       },
       "revId": "ecb44243c56fdc0a426154e03904e0c96b433c94",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65776495_ff16bfa7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-09-08T13:23:11Z",
+      "side": 1,
+      "message": "Understood, we can fix that later.",
+      "parentUuid": "f2337ef9_a7e11b70",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 70
+      },
+      "revId": "ecb44243c56fdc0a426154e03904e0c96b433c94",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
