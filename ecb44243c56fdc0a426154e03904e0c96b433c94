@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2337ef9_a7e11b70",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-09-08T12:32:34Z",
+      "side": 1,
+      "message": "nit: this change (\u0026 stack) doesn\u0027t progress the DevX to this description because of cue-lang/cue#4044.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 70
+      },
+      "revId": "ecb44243c56fdc0a426154e03904e0c96b433c94",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
