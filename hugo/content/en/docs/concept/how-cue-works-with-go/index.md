@@ -42,6 +42,7 @@ We use `cue get go` to generate CUE definitions from the Go types in the `k8s.io
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGdldCBnbyBrOHMuaW8vYXBpL2FwcHMvdjE=" }
 $ cue get go k8s.io/api/apps/v1
+[]
 ````
 
 This generates some CUE packages, placing them alongside our main CUE module:
@@ -158,8 +159,8 @@ func main() {
 
 Before running, we add a dependency on the `cuelang.org/go` module and tidy:
 
-````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.14.1
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE1LjAtYWxwaGEuMS4wLjIwMjUwOTEzMTkwMDUwLTg1NzIxOThlMTc5MgpnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.15.0-alpha.1.0.20250913190050-8572198e1792
 ...
 $ go mod tidy
 ...
@@ -238,8 +239,8 @@ age: 99
 We finish by adding a dependency on the `cuelang.org/go` module, tidying,
 and running the program:
 
-````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
-$ go get cuelang.org/go@v0.14.1
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE1LjAtYWxwaGEuMS4wLjIwMjUwOTEzMTkwMDUwLTg1NzIxOThlMTc5MgpnbyBtb2QgdGlkeQpnbyBydW4gLg==" }
+$ go get cuelang.org/go@v0.15.0-alpha.1.0.20250913190050-8572198e1792
 ...
 $ go mod tidy
 ...
@@ -312,8 +313,8 @@ func main() {
 
 This time we see that CUE correctly caught a problem in our data:
 
-````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjEKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
-$ go get cuelang.org/go@v0.14.1
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE1LjAtYWxwaGEuMS4wLjIwMjUwOTEzMTkwMDUwLTg1NzIxOThlMTc5MgpnbyBtb2QgdGlkeQpnbyBydW4gLg==" }
+$ go get cuelang.org/go@v0.15.0-alpha.1.0.20250913190050-8572198e1792
 ...
 $ go mod tidy
 ...

@@ -311,9 +311,11 @@ E: [11, 12, 13] & matchN(1, [#F1, #F2, #F3])
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmNvbXBvc2l0ZQ==" >}}
 $ cue vet -c .:composite
 B.x: conflicting values 4.2 and int (mismatched types float and int):
+    ./composite.cue:9:16
     ./composite.cue:10:5
     ./composite.cue:14:11
 B.y: conflicting values 4.2 and string (mismatched types float and string):
+    ./composite.cue:9:21
     ./composite.cue:11:5
     ./composite.cue:16:6
 B: invalid value {x:4.2,y:4.2,z:4.2} (does not satisfy matchN): 0 matched, expected >0:

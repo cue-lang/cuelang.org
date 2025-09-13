@@ -69,6 +69,7 @@ Use the `cue` command to generate CUE from the target Go package:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGdldCBnbyBrOHMuaW8vYXBpL2FwcHMvdjE=" }
 $ cue get go k8s.io/api/apps/v1
+[]
 ````
 {{< /step >}}
 

@@ -120,6 +120,7 @@ Use the `cue` command to generate CUE from the Go types in the `main` package:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGdldCBnbyAtLWxvY2FsIC4=" }
 $ cue get go --local .
+[]
 ````
 
 The `main` package is inferred from the Go files present in our
