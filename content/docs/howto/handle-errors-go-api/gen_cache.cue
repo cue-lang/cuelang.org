@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "mG0tFlws8LeCKPNrSlUKWUVsYof8BkgRJjCJXJnEqTY="
-								"initial go code":  "SxIMe/0L4VX1VchyzdOZGYTYZaGj3it+bXiK2cOLN9c="
+								"initial cue code": "WNIsNkhwvumm+bF1rkEY5wmtTs65ikC10l1n0BaD+zs="
+								"initial go code":  "XQQzwp7IKOasx4X4Bn5tOiK61nPx6P7i2ekD6ZGmkO0="
 							}
 							multi_step: {
-								hash:       "EKIFM2CBU90F5GN20794LL03BHDGDTBR97UJ560F0K7LT3AU5U00===="
-								scriptHash: "899MG9EF33OAQR7ST0EEGP8PEL6HENLUGMF05PREPCD3AI46DIPG===="
+								hash:       "SIG4I3N3SQKKG7K9QMPUGELC189US9BO8SVS8NVCF635D1DU2KDG===="
+								scriptHash: "NK54PCAU5N6H6JH1SG6OGBJ6O1GBDPD14QVAT8UF49JA31S66K1G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -40,9 +40,11 @@ package site
 									output: """
 											val.i: conflicting values "hello" and int (mismatched types string and int):
 											    ./bad.cue:4:5
+											    ./bad.cue:8:6
 											    ./bad.cue:9:5
 											val.s: conflicting values 42 and string (mismatched types int and string):
 											    ./bad.cue:5:5
+											    ./bad.cue:8:6
 											    ./bad.cue:10:5
 
 											"""
@@ -56,7 +58,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.14.1"
+									cmd:      "go get cuelang.org/go@v0.15.0-alpha.1.0.20250913190050-8572198e1792"
 									exitCode: 0
 									output: """
 											...
@@ -81,9 +83,11 @@ package site
 											# Error details [errors.Details(err)]:
 											val.i: conflicting values "hello" and int (mismatched types string and int):
 											    /home/runner/bad.cue:4:5
+											    /home/runner/bad.cue:8:6
 											    /home/runner/bad.cue:9:5
 											val.s: conflicting values 42 and string (mismatched types int and string):
 											    /home/runner/bad.cue:5:5
+											    /home/runner/bad.cue:8:6
 											    /home/runner/bad.cue:10:5
 
 											# Error count [len(errs)]:

@@ -7,17 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"cue get go - main cue":      "+Os4lbRhC9YGqQaQdMOqbgb43aNj218IOCU4QIqs4B8="
-								"load cue - cue data":        "G44+vbrw8X81YcnADuk82TgWufVQ8bMC0yt12CvRt6w="
-								"load cue - main.go":         "S8SegmmQdXu3DzJR2j1Swpr8ltF7fBiXm7B71nU+cqg="
-								"load non-cue - main.go":     "6k1Fb4Pi5ZB0rBFJ5+MW4wlotLCsTFxL/sbo0SP1OyE="
-								"load non-cue - yaml file":   "LKf8gf4pLS+lJ8kkS25HyBtyJo8tsPrhZrGOFaJLylQ="
-								"check go data - cue schema": "wLpZ+tMOkXfUo/3Uwz8JoqgvkJDrUGz1W3NJKTAB3/M="
-								"check go data - main.go":    "zZqnwNMbEzezFg0Pbq5AVfa3Vc04A9NdJVKq/cNhRrA="
+								"cue get go - main cue":      "iNqSKvp8LjTrtoD9YlIGWeRDZF+0+C4/9yg7O7Z2s3Q="
+								"load cue - cue data":        "ySFaMWZTehXGflppBlEhZms4Nx9anl37VScspyRD0ww="
+								"load cue - main.go":         "DW3IaU0bzTJRbNn0zH93cit+HcGQRbfarCjbqUS8sWI="
+								"load non-cue - main.go":     "CBVEkZMQHsnYDwOoE8ZVAQcVrDW9RHPdvyvHx7rG6+Q="
+								"load non-cue - yaml file":   "ptjsbTR6wwh04v4eGh/sbrYSfyfLvlHytMAG9Jy19ac="
+								"check go data - cue schema": "ULF00S7ccif1JgBB+mro8l/FIKVOyezamBn9BJ5Tkrc="
+								"check go data - main.go":    "xvKiVU+hw3o70yYcrF3HwvEB+HaOYn9D8ojXq/6u1h8="
 							}
 							multi_step: {
-								hash:       "GFVOFJ38BCMHCROJMM60I3OMD7MKOQ91SMJQ17379ED34DDJ2LF0===="
-								scriptHash: "DEKG55G81T63EVPLA26PQMTHEHLRT99J4922CT8UI1J7DLFOCIU0===="
+								hash:       "845HHV9JS7OOI0PEMLNUIFUBRPVHT04AS0BG2J4ADM8OR8KRQ8A0===="
+								scriptHash: "PCCL8JTRCO0ORFMS95MK8VH2QKI8Q4HNFCJRGFSL621N7SQ63JQ0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export LC_ALL=C"
@@ -70,7 +70,10 @@ package site
 									doc:      ""
 									cmd:      "cue get go k8s.io/api/apps/v1"
 									exitCode: 0
-									output:   ""
+									output: """
+											[]
+
+											"""
 								}, {
 									doc:      "#ellipsis 13"
 									cmd:      "tree -d cue.mod/gen/k8s.io"
@@ -118,7 +121,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.14.1"
+									cmd:      "go get cuelang.org/go@v0.15.0-alpha.1.0.20250913190050-8572198e1792"
 									exitCode: 0
 									output: """
 											...
@@ -174,7 +177,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.14.1"
+									cmd:      "go get cuelang.org/go@v0.15.0-alpha.1.0.20250913190050-8572198e1792"
 									exitCode: 0
 									output: """
 											...
@@ -224,7 +227,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.14.1"
+									cmd:      "go get cuelang.org/go@v0.15.0-alpha.1.0.20250913190050-8572198e1792"
 									exitCode: 0
 									output: """
 											...
