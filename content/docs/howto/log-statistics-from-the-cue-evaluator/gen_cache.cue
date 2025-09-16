@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							upload: {
-								file: "ztZ6nLC3/lw7uneRfOaTt+ecmoFmNcxp1cGrgXZ5Eoc="
+								file: "EY1ytSG0ArOhUTSMk7UTqKzY9zKSHd50PO/oAsBsejU="
 							}
 							multi_step: {
-								hash:       "R216MBDNVVNAHGKC5S7C6TARL3HUDB39VD0BO4H49J810T824160===="
+								hash:       "1KEPFKHERN3CJBVE57S47FAIOARU49SQV2POJGHIBGKD8TGBNL2G===="
 								scriptHash: "H32HT1IOKP19JHS8HDBLNV00ED6AAUJQ170GRGOP7JT6QKSTSIO0===="
 								steps: [{
 									doc:      ""
@@ -48,8 +48,8 @@ package site
 											\tRetained:             0
 											}
 											Go: {
-											\tAllocBytes:   1419584
-											\tAllocObjects: 7533
+											\tAllocBytes:   1359304
+											\tAllocObjects: 7358
 											}
 
 											"""
