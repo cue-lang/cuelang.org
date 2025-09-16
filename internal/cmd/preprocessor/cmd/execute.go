@@ -304,7 +304,7 @@ func executeDef(c *Command, args []string) error {
 	if err != nil {
 		return fmt.Errorf("failed to determine %s relative to %s", cwd, projectRoot)
 	}
-	if !filepath.IsLocal(rel) {
+	if !filepath.IsLocal(rel) && mkdocsOutput == "" {
 		return fmt.Errorf("current working directory must be within %s", projectRoot)
 	}
 
