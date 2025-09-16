@@ -175,6 +175,10 @@ fi
 # Run the preprocessor
 bash _scripts/runPreprocessor.bash execute $readonlycache $nocachevolume $skipcache
 
+# Build the temporary /mkdocs/ hierarchy.
+# FIXME: change output to /docs/.
+_scripts/buildMkDocs.bash
+
 # Main site
 cd hugo
 $time npm ci
