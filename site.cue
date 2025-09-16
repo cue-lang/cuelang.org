@@ -6,6 +6,7 @@ import (
 	"encoding/yaml"
 
 	"github.com/cue-lang/cuelang.org/internal/ci"
+	"github.com/cue-lang/cuelang.org/internal/ci/repo"
 	"github.com/cue-lang/tmp/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/content/docs/reference/command"
 )
@@ -327,6 +328,16 @@ template: ci.#writefs & {
 			] {e},
 			], "\n"))
 					"""#
+
+			"requirements.txt": Contents: """
+                # \(donotedit)
+
+                mkdocs-material==\(repo.mkdocsMaterialVersion)
+
+                # Fork of Pygments that includes CUE syntax highlighting.
+                # TODO: remove when CUE support is available upstream.
+                git+https://github.com/myitcvforks/pygments.git@c4091b79f2d95c4e35fd2a890375e22105cd31cd#egg=pygments
+                """
 		}
 	}
 }

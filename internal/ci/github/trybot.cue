@@ -105,6 +105,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			_installMacOSUtils,
 			_installNode,
 			for v in _installGo {v},
+			_installPython,
 			_installHugoLinux,
 			_installHugoMacOS,
 
@@ -165,6 +166,7 @@ workflows: trybot: _repo.bashWorkflow & {
 			},
 
 			for v in _npmInstall {v},
+			_pipInstall,
 
 			// Go test steps
 			_goTest & {
@@ -303,6 +305,12 @@ _installNode: githubactions.#Step & {
 _installGo: _repo.installGo & {
 	#setupGo: with: "go-version": _repo.goVersion
 	_
+}
+
+_installPython: githubactions.#Step & {
+	name: "Install Python"
+	uses: "actions/setup-python@v5"
+	with: "python-version": _repo.pythonVersion
 }
 
 _installHugoLinux: _linuxStep & {
@@ -504,6 +512,11 @@ _npmInstall: [...githubactions.#Step & {
 		run:  "npm ci"
 	},
 ]
+
+_pipInstall: githubactions.#Step & {
+	name: "pip install"
+	run:  "pip install -r requirements.txt"
+}
 
 _applyTipPatches: githubactions.#Step & {
 	name: "tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue"
