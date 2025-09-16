@@ -1,0 +1,7 @@
+# Code generated site_tool.cue; DO NOT EDIT.
+
+mkdocs-material==9.6.20
+
+# Fork of Pygments that includes CUE syntax highlighting.
+# TODO: remove when CUE support is available upstream.
+git+https://github.com/myitcvforks/pygments.git@c4091b79f2d95c4e35fd2a890375e22105cd31cd#egg=pygments
