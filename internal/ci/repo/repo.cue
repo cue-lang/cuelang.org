@@ -26,8 +26,16 @@ goVersion: "1.24.5"
 // is consistent between netlify and GitHub Actions usage.
 nodeVersion: "22.17.1"
 
+// Float anywhere inside a minor version of Python because the specific
+// version of the Python packages (that actually build the /docs/ site)
+// are constrained more tightly via requirements.txt.
+pythonVersion: "3.13"
+
 // hugoVersion is the version of hugo used in generating our static site
 hugoVersion: "0.147.9"
+
+// mkdocs-material builds the /docs/ hierarchy.
+mkdocsMaterialVersion: "9.6.20"
 
 // netlifyCLIVersion is the version of the Netlify CLI used to deploy tip and
 // deploy previews of CLs
