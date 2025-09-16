@@ -117,6 +117,10 @@ jobs:
 
           # Dump env for good measure
           go env
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
       - if: runner.os == 'Linux'
         name: Install Hugo (${{ runner.os }})
         uses: peaceiris/actions-hugo@v3
@@ -183,6 +187,8 @@ jobs:
       - name: npm ci
         run: npm ci
         working-directory: hugo
+      - name: pip install
+        run: pip install -r requirements.txt
       - name: Test
         run: go test ./...
       - name: Test Playground
