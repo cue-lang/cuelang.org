@@ -18,6 +18,7 @@ node_modules
 /hugo/resources/
 /hugo/.hugo_build.lock
 /hugo/static/playground/
+/hugo/static/mkdocs/
 /hugo/.env
 /hugo/data/Repository.json
 
