@@ -1,0 +1,82 @@
+site_name: "Documentation"
+site_url: "https://cuelang.org/mkdocs/docs/"
+strict: false # FIXME: enable strict mode
+
+# docs_dir, site_dir, and watch are relative to this config file.
+docs_dir: "source/"
+site_dir: "../hugo/static/mkdocs/"
+#watch:
+#  - "overrides/"
+
+use_directory_urls: true
+
+#extra_css:
+#  - assets/stylesheets/docs.css
+
+theme:
+  name: material
+  # custom_dir: overrides/
+  # logo: assets/images/logo.svg
+  # favicon: assets/images/favicon.svg
+  # features:
+  #   - content.code.copy # copy buttons on code blocks
+  #   - navigation.tabs # horizontal nav bar in page header
+  #   - navigation.tabs.sticky # horizontal nav bar is always visible
+  #   - navigation.sections
+  #   - announce.dismiss # notification bar can be dismissed
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/cue-lang/cue
+      name: GitHub
+    - icon: fontawesome/brands/x-twitter
+      link: https://twitter.com/cue_lang
+      name: Twitter
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/cuelang.org
+      name: Bluesky
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/@cuelang/videos
+      name: YouTube
+    - icon: fontawesome/brands/slack
+      link: https://cuelang.org/s/slack
+      name: Slack
+    - icon: fontawesome/brands/discord
+      link: https://cuelang.org/s/discord
+      name: Discord
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      # Required by MkDocs Material
+      alternate_style: true
+      # Better URL fragment links for content tabs
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
+  - toc:
+      permalink: "#"
+
+validation:
+  nav:
+    absolute_links: ignore
+    not_found: warn
+    omitted_files: info
+  links:
+    absolute_links: ignore
+    anchors: warn
+    not_found: warn
+    unrecognized_links: warn
