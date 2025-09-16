@@ -1,0 +1,290 @@
+stages:
+  - sync
+  - preflight
+  - prepare
+  - build-images
+  - fixtures
+  - lint
+  - test-frontend
+  - test
+  - post-test
+  - review
+  - qa
+  - post-qa
+  - pre-merge
+  - pages
+  - notify
+  - release-environments
+  - benchmark
+
+# always use `gitlab-org` runners, however
+# in cases where jobs require Docker-in-Docker, the job
+# definition must be extended with `.use-docker-in-docker`
+default:
+  image: $DEFAULT_CI_IMAGE
+  tags:
+    - $DEFAULT_JOB_TAG
+  # All jobs are interruptible by default
+  interruptible: true
+  # Default job timeout doesn't work: https://gitlab.com/gitlab-org/gitlab/-/issues/387528
+  timeout: 90m
+
+.default-ruby-variables: &default-ruby-variables
+  RUBY_VERSION: "${RUBY_VERSION_DEFAULT}"
+  OMNIBUS_GITLAB_CACHE_EDITION: "GITLAB_RUBY3_1"
+
+.next-ruby-variables: &next-ruby-variables
+  RUBY_VERSION: "${RUBY_VERSION_NEXT}"
+  OMNIBUS_GITLAB_CACHE_EDITION: "GITLAB_RUBY3_2"
+
+.default-branch-pipeline-failure-variables: &default-branch-pipeline-failure-variables
+  CREATE_RAILS_FLAKY_TEST_ISSUES: "true"
+  CREATE_RAILS_SLOW_TEST_ISSUES: "true"
+  CREATE_RAILS_TEST_FAILURE_ISSUES: "true"
+
+.default-merge-request-variables: &default-merge-request-variables
+  NO_SOURCEMAPS: "true"
+  ADD_SLOW_TEST_NOTE_TO_MERGE_REQUEST: "true"
+  FF_NETWORK_PER_BUILD: "true"
+  FF_TIMESTAMPS: "true"
+
+.if-merge-request-security-canonical-sync: &if-merge-request-security-canonical-sync
+  if: '$CI_MERGE_REQUEST_SOURCE_PROJECT_PATH == "gitlab-org/security/gitlab" && $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME == $CI_DEFAULT_BRANCH && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == $CI_DEFAULT_BRANCH'
+
+.if-not-security-canonical-sync: &if-not-security-canonical-sync
+  if: '$CI_MERGE_REQUEST_SOURCE_PROJECT_PATH != "gitlab-org/security/gitlab" || $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME != $CI_DEFAULT_BRANCH'
+
+.if-merge-request-labels-run-with-rails-next: &if-merge-request-labels-run-with-rails-next
+  if: '($CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_EVENT_TYPE != "merge_train") && $CI_MERGE_REQUEST_LABELS =~ /pipeline:run-with-rails-next/'
+
+workflow:
+  name: '$PIPELINE_NAME'
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "pipeline" && $GITALY_TEST'
+      variables:
+        <<: *default-ruby-variables
+        PIPELINE_NAME: 'Gitaly Rails Test Pipeline'
+    # If `$FORCE_GITLAB_CI` is set, create a pipeline.
+    - if: '$FORCE_GITLAB_CI'
+      variables:
+        <<: *default-ruby-variables
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION forced'
+    - if: '$START_AS_IF_FOSS'
+      variables:
+        <<: *default-ruby-variables
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION as-if-foss'
+    # As part of the process of creating RCs automatically, we update stable
+    # branches with the changes of the most recent production deployment. The
+    # merge requests used for this merge a branch release-tools/X into a stable
+    # branch. For these merge requests we don't want to run any pipelines, as
+    # they serve no purpose and will run anyway when the changes are merged.
+    - if: '$CI_MERGE_REQUEST_SOURCE_BRANCH_NAME =~ /^release-tools\/\d+\.\d+\.\d+-rc\d+$/ && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^[\d-]+-stable(-ee)?$/ && $CI_PROJECT_PATH == "gitlab-org/gitlab"'
+      when: never
+    - if: '$CI_MERGE_REQUEST_LABELS =~ /pipeline:run-in-ruby3_1/ || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^[\d-]+-stable(-ee)?$/'
+      variables:
+        <<: [*default-ruby-variables, *default-merge-request-variables]
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION MR'
+    - if: '$CI_MERGE_REQUEST_LABELS =~ /Community contribution/'
+      variables:
+        <<: [*next-ruby-variables, *default-merge-request-variables]
+        GITLAB_DEPENDENCY_PROXY_ADDRESS: ""
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION MR (community contribution)'
+    # This work around https://gitlab.com/gitlab-org/gitlab/-/issues/332411 which prevents usage of dependency proxy
+    # when pipeline is triggered by a project access token.
+    # Example of project bot usernames (the format changed over time):
+    # - project_278964_bot2
+    # - project_278964_bot_7fb4d1cca8242cb399a0b8f483783120
+    - if: '$CI_MERGE_REQUEST_IID && $GITLAB_USER_LOGIN =~ /project_\d+_bot/'
+      variables:
+        <<: [*next-ruby-variables, *default-merge-request-variables]
+        GITLAB_DEPENDENCY_PROXY_ADDRESS: ""
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION MR (triggered by a project token)'
+    - <<: *if-merge-request-security-canonical-sync
+      variables:
+        <<: [*next-ruby-variables, *default-merge-request-variables]
+        PIPELINE_NAME: '$CI_DEFAULT_BRANCH security->canonical sync'
+        SKIP_MESSAGE: 'MR only contains changes from the security mirror, which have already been reviewed, tested and deployed.'
+    - <<: *if-merge-request-labels-run-with-rails-next
+      variables:
+        <<: [*next-ruby-variables, *default-merge-request-variables]
+        BUNDLE_GEMFILE: Gemfile.next
+    # For (detached) merge request pipelines.
+    - if: '$CI_MERGE_REQUEST_IID'
+      variables:
+        <<: [*next-ruby-variables, *default-merge-request-variables]
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION MR'
+    # For the scheduled pipelines, we set specific variables.
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "schedule" && $BUILD_WITH_NEXT_RUBY_VERSION == "true"'
+      variables:
+        <<: *next-ruby-variables
+        PIPELINE_NAME: 'Scheduled Ruby $RUBY_VERSION $CI_COMMIT_BRANCH branch'
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "schedule"'
+      variables:
+        <<: [*default-ruby-variables, *default-branch-pipeline-failure-variables]
+        CRYSTALBALL: "true"
+        PIPELINE_NAME: 'Scheduled Ruby $RUBY_VERSION $CI_COMMIT_BRANCH branch'
+    - if: '$CI_COMMIT_BRANCH == "ruby3_2" && $CI_PIPELINE_SOURCE == "schedule"'
+      variables:
+        <<: *next-ruby-variables
+        PIPELINE_NAME: 'Scheduled Ruby $RUBY_VERSION $CI_COMMIT_BRANCH branch'
+    # This work around https://gitlab.com/gitlab-org/gitlab/-/issues/332411 which prevents usage of dependency proxy
+    # when pipeline is triggered by a project access token.
+    # Example of project bot usernames (the format changed over time):
+    # - project_278964_bot2
+    # - project_278964_bot_7fb4d1cca8242cb399a0b8f483783120
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $GITLAB_USER_LOGIN =~ /project_\d+_bot/'
+      variables:
+        <<: [*default-ruby-variables, *default-branch-pipeline-failure-variables]
+        GITLAB_DEPENDENCY_PROXY_ADDRESS: ""
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION $CI_COMMIT_BRANCH branch (triggered by a project token)'
+    # For `$CI_DEFAULT_BRANCH` from wider community contributors, we don't want to run any pipelines on pushes,
+    # because normally we want to run merge request pipelines and scheduled pipelines, not for repository synchronization.
+    # This can avoid accidentally using up pipeline minutes quota while synchronizing the repository for wider community contributors.
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PIPELINE_SOURCE == "push" && $CI_PROJECT_NAMESPACE !~ /^gitlab(-org|-cn)?($|\/)/'
+      when: never
+    # For `$CI_DEFAULT_BRANCH` branch, create a pipeline (this includes on schedules, pushes, merges, etc.).
+    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
+      variables:
+        <<: [*default-ruby-variables, *default-branch-pipeline-failure-variables]
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION $CI_COMMIT_BRANCH branch'
+    # For tags, create a pipeline.
+    - if: '$CI_COMMIT_TAG'
+      variables:
+        <<: *default-ruby-variables
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION $CI_COMMIT_TAG tag'
+    # If `$GITLAB_INTERNAL` isn't set, don't create a pipeline.
+    - if: '$GITLAB_INTERNAL == null'
+      when: never
+    # For stable, auto-deploy, and security branches, create a pipeline.
+    - if: '$CI_COMMIT_BRANCH =~ /^[\d-]+-stable(-ee)?$/'
+      variables:
+        <<: *default-ruby-variables
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION $CI_COMMIT_BRANCH branch'
+    - if: '$CI_COMMIT_BRANCH =~ /^\d+-\d+-auto-deploy-\d+$/'
+      variables:
+        <<: *default-ruby-variables
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION $CI_COMMIT_BRANCH branch'
+    - if: '$CI_COMMIT_BRANCH =~ /^security\//'
+      variables:
+        <<: *default-ruby-variables
+        PIPELINE_NAME: 'Ruby $RUBY_VERSION $CI_COMMIT_BRANCH branch'
+
+variables:
+  PG_VERSION: "14"
+  DEFAULT_CI_IMAGE: "${REGISTRY_HOST}/${REGISTRY_GROUP}/gitlab-build-images/${BUILD_OS}-${OS_VERSION}-ruby-${RUBY_VERSION}-golang-${GO_VERSION}-rust-${RUST_VERSION}-node-${NODE_VERSION}-postgresql-${PG_VERSION}:rubygems-${RUBYGEMS_VERSION}-git-${GIT_VERSION}-lfs-${LFS_VERSION}-chrome-${CHROME_VERSION}-yarn-${YARN_VERSION}-graphicsmagick-${GRAPHICSMAGICK_VERSION}"
+  DEFAULT_JOB_TAG: "gitlab-org"
+  GITLAB_LARGE_RUNNER_OPTIONAL: "gitlab-org" # overridden just in gitlab-org/gitlab
+  DEFAULT_RSPEC_PREDICTIVE_JOB_TAGS: "${DEFAULT_JOB_TAG}" # Separated by commas, overridden in JiHu
+  # We set $GITLAB_DEPENDENCY_PROXY to another variable (since it's set at the group level and has higher precedence than .gitlab-ci.yml)
+  # so that we can override $GITLAB_DEPENDENCY_PROXY_ADDRESS in workflow rules.
+  GITLAB_DEPENDENCY_PROXY_ADDRESS: "${GITLAB_DEPENDENCY_PROXY}"
+  RAILS_ENV: "test"
+  NODE_ENV: "test"
+  BUNDLE_WITHOUT: "production:development"
+  BUNDLE_INSTALL_FLAGS: "--jobs=$(nproc) --retry=3"
+  BUNDLE_FROZEN: "true"
+  BUNDLE_GEMFILE: Gemfile
+  # we override the max_old_space_size to prevent OOM errors
+  NODE_OPTIONS: --max-old-space-size=10240
+  GIT_DEPTH: "20"
+  # 'GIT_STRATEGY: clone' optimizes the pack-objects cache hit ratio
+  GIT_STRATEGY: "clone"
+  GIT_SUBMODULE_STRATEGY: "none"
+  GET_SOURCES_ATTEMPTS: "3"
+  # CI_FETCH_REPO_GIT_STRATEGY: "none" is from artifacts. "clone" is from cloning
+  CI_FETCH_REPO_GIT_STRATEGY: "none"
+  FORCE_COLOR: 1
+  CLICOLOR_FORCE: 1
+
+  FLAKY_RSPEC_SUITE_REPORT_PATH: rspec/flaky/report-suite.json
+  FRONTEND_FIXTURES_MAPPING_PATH: crystalball/frontend_fixtures_mapping.json
+  GITLAB_WORKHORSE_FOLDER: "gitlab-workhorse"
+  JOB_METRICS_FILE_PATH: "${CI_PROJECT_DIR}/tmp/job-metrics.json"
+  KNAPSACK_RSPEC_SUITE_REPORT_PATH: knapsack/report-master.json
+  RSPEC_CHANGED_FILES_PATH: rspec/changed_files.txt
+  RSPEC_FAIL_FAST_THRESHOLD: 20
+  RSPEC_FAST_QUARANTINE_PATH: rspec/fast_quarantine-gitlab.txt
+  RSPEC_LAST_RUN_RESULTS_FILE: rspec/rspec_last_run_results.txt
+  RSPEC_MATCHING_JS_FILES_PATH: rspec/js_matching_files.txt
+  RSPEC_MATCHING_TESTS_EE_PATH: rspec/matching_tests-ee.txt
+  RSPEC_MATCHING_TESTS_FOSS_PATH: rspec/matching_tests-foss.txt
+  RSPEC_MATCHING_TESTS_PATH: rspec/matching_tests.txt
+  RSPEC_PACKED_TESTS_MAPPING_PATH: crystalball/packed-mapping.json
+  RSPEC_PACKED_TESTS_MAPPING_ALT_PATH: crystalball/packed-mapping-alt.json
+  RSPEC_PREDICTIVE_PIPELINE_TEMPLATE_YML: .gitlab/ci/rails/rspec-predictive.gitlab-ci.yml.erb
+  RSPEC_PROFILING_FOLDER_PATH: rspec/profiling
+  RSPEC_TESTS_MAPPING_PATH: crystalball/mapping.json
+  RSPEC_TESTS_MAPPING_ALT_PATH: crystalball/mapping-alt.json
+  RSPEC_VIEWS_INCLUDING_PARTIALS_PATH: rspec/views_including_partials.txt
+  RSPEC_AUTO_EXPLAIN_LOG_PATH: auto_explain/auto_explain.ndjson.gz
+  TMP_TEST_FOLDER: "${CI_PROJECT_DIR}/tmp/tests"
+  TMP_TEST_GITLAB_WORKHORSE_PATH: "${TMP_TEST_FOLDER}/${GITLAB_WORKHORSE_FOLDER}"
+
+  ES_JAVA_OPTS: "-Xms256m -Xmx256m"
+  ELASTIC_URL: "http://elastic:changeme@elasticsearch:9200"
+  BUNDLER_CHECKSUM_VERIFICATION_OPT_IN: "1"
+  CACHE_CLASSES: "true"
+  CHECK_PRECOMPILED_ASSETS: "true"
+  RETRY_FAILED_TESTS_IN_NEW_PROCESS: "true"
+  # Run with decomposed databases by default
+  DECOMPOSED_DB: "true"
+  SEC_DECOMPOSED_DB: "false"
+
+  DOCS_REVIEW_APPS_DOMAIN: "docs.gitlab-review.app"
+  DOCS_GITLAB_REPO_SUFFIX: "ee"
+
+  REVIEW_APPS_IMAGE: "${REGISTRY_HOST}/${REGISTRY_GROUP}/gitlab-build-images/${BUILD_OS}-${OS_VERSION}-ruby-${RUBY_VERSION}:gcloud-${GCLOUD_VERSION}-kubectl-1.30-helm-${HELM_VERSION}"
+  REVIEW_APPS_DOMAIN: "gitlab-review.app"
+  REVIEW_APPS_GCP_PROJECT: "gitlab-review-apps"
+  REVIEW_APPS_GCP_REGION: "us-central1"
+
+  REGISTRY_HOST: "registry.gitlab.com"
+  REGISTRY_GROUP: "gitlab-org"
+
+  # Disable useless network connections when installing some NPM packages.
+  # See https://gitlab.com/gitlab-com/gl-security/engineering-and-research/inventory/-/issues/827#note_1203181407
+  DISABLE_OPENCOLLECTIVE: "true"
+
+  # This is set at the gitlab-org level, but we set it here for forks
+  DANGER_DO_NOT_POST_INVALID_DANGERFILE_ERROR: "1"
+
+  # Workaround for https://gitlab.com/gitlab-org/gitlab/-/issues/390313. This can be dropped whenever
+  # https://github.com/ruby/ruby/pull/7663 lands in the Ruby interpreter.
+  NOKOGIRI_LIBXML_MEMORY_MANAGEMENT: default
+
+  # CI jobs behavior can be changed by changing the value of these variables in the project's CI/CD variables
+  AVERAGE_KNAPSACK_REPORT: "true"
+  ENABLE_DEPSCORE: "true"
+  CACHE_ASSETS_AS_PACKAGE: "true"
+  REUSE_FRONTEND_FIXTURES_ENABLED: "true"
+  BUILD_ASSETS_IMAGE: "true"  # Set it to "false" to disable assets image building, used in `build-assets-image`
+  SIMPLECOV: "true"
+
+include:
+  - local: .gitlab/ci/_skip.yml
+    rules:
+      - <<: *if-merge-request-security-canonical-sync
+  - local: .gitlab/ci/version.yml
+  - local: .gitlab/ci/*.gitlab-ci.yml
+    rules:
+      - <<: *if-not-security-canonical-sync
+  - remote: 'https://gitlab.com/gitlab-org/frontend/untamper-my-lockfile/-/raw/main/templates/merge_request_pipelines.yml'
+    rules:
+      - <<: *if-not-security-canonical-sync
+  - local: .gitlab/ci/includes/gitlab-com/*.gitlab-ci.yml
+    rules:
+      - if: '$CI_SERVER_HOST == "gitlab.com"'
+      - if: '$CI_SERVER_HOST == "jihulab.com"'
+  - local: .gitlab/ci/includes/as-if-jh.gitlab-ci.yml
+    rules:
+      # Only run as-if-jh triggerred pipelines for gitlab.com/gitlab-org/gitlab MRs that don't target stable branches
+      # and that don't have the quarantine or pipeline::expedited labels.
+      - if: '$CI_PROJECT_URL != "https://gitlab.com/gitlab-org/gitlab"'
+        when: never
+      - if: '$CI_MERGE_REQUEST_ID == null'
+        when: never
+      - if: '$CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^[\d-]+-stable(-ee|-jh)?$/'
+        when: never
+      - if: '$CI_MERGE_REQUEST_LABELS =~ /quarantine/ || $CI_MERGE_REQUEST_LABELS =~ /pipeline::expedited/ || $CI_MERGE_REQUEST_LABELS =~ /pipeline:expedite/'
+        when: never
+      - when: always
