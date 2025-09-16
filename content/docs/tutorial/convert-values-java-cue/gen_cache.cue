@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							upload: {
-								code: "0ZJY9eA4yJK/NlL9Qd2hORxpdwtMeKCiOHgZhz2PbuM="
+								code: "zWkfkhB69UjxRV8FFlavSj/bog8YL2nDceGaXXQ6aD4="
 							}
 							multi_step: {
-								hash:       "IU9RS2RE0EDGLSDPRMDUH77G2NTU6U3DEBEFUP99CEI8SDPDM5S0===="
+								hash:       "7EN6CM5L7PV4NBA0U3A48Q4NB5DLT8UKOILG77HC1UK6S6VQTA3G===="
 								scriptHash: "KP3LQMAO38O118K9QAE4UMMU79DG0VS53LQGRV2ASR4O56DF102G===="
 								steps: [{
 									doc:      ""
