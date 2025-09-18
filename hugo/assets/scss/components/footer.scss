@@ -27,7 +27,7 @@
             gap: 0;
             max-width: $w-content;
 
-            > * {
+            >* {
                 flex: 0 0 100%;
                 margin: 0 0 3rem;
             }
@@ -37,6 +37,29 @@
     &__legal {
         background-color: var(--footer-sitemap-legal, $c-white);
         padding: 2rem 0 3rem;
+
+        // Social media icons styling
+        .nav__icon {
+            height: 20px;
+            width: 20px;
+        }
+
+        .nav__item {
+            align-items: center;
+            display: inline-flex;
+
+            .nav__link {
+                align-items: center;
+                display: flex;
+                gap: 0.5rem;
+                padding: 0.25rem;
+
+                // For icon-only links, hide text and center icon
+                &[title] .nav__text {
+                    @include sr-only;
+                }
+            }
+        }
     }
 
     &__branding {
@@ -73,7 +96,7 @@
             padding: 2rem 0;
 
             #{ $self }__container {
-                > * {
+                >* {
                     flex: 0 0 50%;
                     margin: 3rem 0;
                 }
@@ -103,7 +126,7 @@
                 align-items: flex-start;
                 justify-content: space-between;
 
-                > * {
+                >* {
                     flex: 0 0 auto;
                     margin: 0;
                     max-width: 25%;

@@ -10,12 +10,14 @@ export class Header extends BaseWidget {
     private scrollingDown = true;
     private scrollY = 0;
     private scrollYOld = 0;
+    private isDocsPage: boolean;
 
     constructor(element: HTMLElement) {
         super(element);
 
         this.screenWidth = window.innerWidth;
         this.headerHeight = this.element.clientHeight;
+        this.isDocsPage = document.body.dataset.pageType === 'docs';
     }
 
     public static registerWidget(): void {
@@ -68,6 +70,10 @@ export class Header extends BaseWidget {
     public setSticky(): void {
         if (this.scrollY > this.headerHeight + this.scrollOffset) {
             this.element.classList.add('is-sticky');
+            // On docs pages, immediately add is-shown to prevent any movement
+            if (this.isDocsPage) {
+                this.element.classList.add('is-shown');
+            }
         }
         else {
             this.element.classList.remove('is-sticky', 'is-shown');
@@ -76,7 +82,11 @@ export class Header extends BaseWidget {
 
     public setVisibility(): void {
         if (this.scrollY > this.headerHeight + this.scrollOffset) {
-            if (this.scrollingDown) {
+            // Always show header on documentation pages
+            if (this.isDocsPage) {
+                this.element.classList.add('is-shown');
+            }
+            else if (this.scrollingDown) {
                 this.element.classList.remove('is-shown');
             }
             else {
