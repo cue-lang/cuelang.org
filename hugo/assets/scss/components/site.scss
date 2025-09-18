@@ -26,8 +26,13 @@
         flex-wrap: wrap;
         position: relative;
 
-        > * {
+        >* {
             width: 100%;
+        }
+
+        // On documentation pages, add margin for fixed header
+        [data-page-type="docs"] & {
+            margin-top: var(--header-height, $h-header);
         }
     }
 

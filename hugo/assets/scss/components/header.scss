@@ -16,6 +16,12 @@
     height: var(--header-height);
     width: 100%;
 
+    // On documentation pages, header is always fixed
+    [data-page-type="docs"] & {
+        position: fixed;
+        z-index: 100;
+    }
+
     &__container {
         @include container($w-site);
 
@@ -91,7 +97,7 @@
             height: $h-header--sticky;
             max-width: 100%;
 
-            & > * {
+            &>* {
                 z-index: 2;
             }
 
@@ -152,6 +158,14 @@
         #{ $self }__container {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+
+    // On documentation pages, keep header always visible when sticky
+    [data-page-type="docs"] &.is-sticky {
+        #{ $self }__container {
+            transform: translateY(0);
+            transition: none;
         }
     }
 
