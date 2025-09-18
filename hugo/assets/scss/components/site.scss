@@ -24,6 +24,7 @@
         display: flex;
         flex: 1 0 auto;
         flex-wrap: wrap;
+        margin-top: var(--header-height, $h-header);
         position: relative;
 
         > * {
