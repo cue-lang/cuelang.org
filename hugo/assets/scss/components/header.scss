@@ -14,7 +14,10 @@
     background-color: var(--header-background, $c-blue--lighter);
     display: block;
     height: var(--header-height);
+    position: fixed;
+    top: 0;
     width: 100%;
+    z-index: 100;
 
     &__container {
         @include container($w-site);
@@ -141,10 +144,11 @@
 
     &.is-sticky {
         #{ $self }__container {
-            opacity: 0; // Hides flickering
+            opacity: 1;
             position: fixed;
-            transform: translateY(-110px); // more then height because of logo / box shadow
-            transition: transform 0.2s;
+            transform: translateY(0);
+            transition: none;
+            z-index: 100;
         }
     }
 
@@ -152,6 +156,7 @@
         #{ $self }__container {
             opacity: 1;
             transform: translateY(0);
+            transition: none;
         }
     }
 
