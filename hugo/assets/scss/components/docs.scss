@@ -91,6 +91,10 @@
                 text-align: left;
             }
 
+            .article__content {
+                margin: 0;
+            }
+
             .breadcrumb__list {
                 max-width: none;
                 padding: 0 $p-gutter;
