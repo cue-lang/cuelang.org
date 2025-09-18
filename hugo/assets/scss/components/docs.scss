@@ -74,12 +74,12 @@
 
     @include screen($screen-normal) {
         align-items: start;
-        display: grid;
         grid-template-areas: 'aside main empty';
         grid-template-columns: 300px minmax(700px, ($w-content + 100px)) 1fr;
 
         &__main {
             grid-area: main;
+            margin-left: 320px;
             padding-top: 54px;
         }
 
@@ -92,14 +92,17 @@
             height: 100%;
             inset: auto;
             overflow: auto;
-            position: relative;
-            z-index: initial;
+            position: fixed;
+            top: 0;
+            width: 320px;
+            z-index: 1;
         }
 
         &__nav {
             background-color: transparent;
             box-shadow: none;
-            padding-top: 40px;
+            height: 100%;
+            padding-top: calc($h-header--large + 15px);
             position: relative;
             transform: translateX(0);
             transition: initial;
