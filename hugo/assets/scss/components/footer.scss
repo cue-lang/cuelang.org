@@ -27,7 +27,7 @@
             gap: 0;
             max-width: $w-content;
 
-            > * {
+            >* {
                 flex: 0 0 100%;
                 margin: 0 0 3rem;
             }
@@ -37,6 +37,63 @@
     &__legal {
         background-color: var(--footer-sitemap-legal, $c-white);
         padding: 2rem 0 3rem;
+
+        // Social media icons styling
+        .nav__icon {
+            height: 20px;
+            width: 20px;
+        }
+
+        .nav__item {
+            align-items: center;
+            display: inline-flex;
+
+            .nav__link {
+                align-items: center;
+                display: flex;
+                gap: 0.5rem;
+                padding: 0.25rem;
+
+                // For icon-only links, hide text and center icon
+                &[title] .nav__text {
+                    @include sr-only;
+                }
+            }
+        }
+
+        // Mobile-only: stack text items, display icons horizontally
+        @media (max-width: #{$screen-simple - 1px}) {
+            padding: 0.5rem 0 3rem;
+
+            .nav--legal {
+                .nav__list {
+                    display: block;
+                    text-align: center;
+                }
+
+                .nav__item {
+                    display: block;
+
+                    .nav__link {
+                        justify-content: center;
+                    }
+
+                    // Add extra space before the first icon
+                    &:nth-child(4) {
+                        display: inline-block;
+                        margin-right: 0.5rem;
+                        margin-top: 1rem;
+                    }
+
+                    // Social media icons (5th item onward) should display inline
+                    &:nth-child(n+5) {
+                        display: inline-block;
+                        margin-right: 0.5rem;
+                        margin-top: 0;
+                    }
+                }
+            }
+        }
     }
 
     &__branding {
@@ -73,7 +130,7 @@
             padding: 2rem 0;
 
             #{ $self }__container {
-                > * {
+                >* {
                     flex: 0 0 50%;
                     margin: 3rem 0;
                 }
@@ -86,6 +143,21 @@
 
         &__legal {
             padding: 1rem 0;
+
+            .nav--legal {
+                .nav__item {
+                    // Add large gap before first icon to push icons to the right
+                    &:nth-child(4) {
+                        margin-left: auto;
+                        margin-right: 0.5rem;
+                    }
+
+                    // Other icons have normal spacing
+                    &:nth-child(n+5) {
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
         }
     }
 
@@ -103,7 +175,7 @@
                 align-items: flex-start;
                 justify-content: space-between;
 
-                > * {
+                >* {
                     flex: 0 0 auto;
                     margin: 0;
                     max-width: 25%;
