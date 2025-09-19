@@ -116,4 +116,29 @@
             }
         }
     }
+
+    // Social media icons styling
+    &__legal {
+        .nav__icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav__item {
+            display: inline-flex;
+            align-items: center;
+
+            .nav__link {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.25rem;
+
+                // For icon-only links, hide text and center icon
+                &[title] .nav__text {
+                    @include sr-only;
+                }
+            }
+        }
+    }
 }
