@@ -21,7 +21,7 @@ They support Euclidean division (`div` / `mod`) and truncated division (`quo` / 
 {{< code-tabs >}}
 {{< code-tab name="operators.cue" language="cue" area="top-left" >}}
 a: 1 + 1             // type int
-b: "XXX" + "OOO"     // type string
+b: "xxx" + "OOO"     // type string
 c: 2 * 2             // type int
 d: 2 * 2.0           // type float
 e: 3.14159 - 0.14159 // type float
@@ -40,7 +40,7 @@ l: mod(10, 3) // type int
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgb3BlcmF0b3JzLmN1ZQ==" >}}
 $ cue eval operators.cue
 a: 2
-b: "XXXOOO"
+b: "xxxOOO"
 c: 4
 d: 4.0
 e: 3.00000
