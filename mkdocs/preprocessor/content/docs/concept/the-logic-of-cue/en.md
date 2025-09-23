@@ -73,18 +73,21 @@ This diagrams below show a lattice of all values of respectively a
 2- and 3- element set, ordered by the subset relation.
 
 {{< columns >}}
-{{< mermaid >}}
+``` mermaid
 graph TD
     xy("{x, y}")
     xy --> x("{x}")
     xy --> y("{y}")
     x --> B("{}")
     y --> B
-{{< /mermaid >}}
+```
 
 {{< columns-separator >}}
 
-{{< mermaid caption="Squint harder if you can't recognize the cube." >}}
+``` mermaid
+---
+title: "Squint harder if you can't recognize the cube."
+---
 graph TD
     linkStyle default interpolate basis
     xyz("{x, y, z}")
@@ -101,7 +104,7 @@ graph TD
     y("{y}") --> B
     z("{z}") --> B
     B("{}")
-{{< /mermaid >}}
+```
 {{< /columns >}}
 
 <p>
@@ -135,7 +138,7 @@ when it helps for this purpose.
 
 Let's start simple, with booleans.
 
-{{< mermaid >}}
+``` mermaid
 graph TD
     B(bool)
     B --> T(true)
@@ -143,7 +146,7 @@ graph TD
     T --> E
     F --> E
     E("⊥ (bottom)")
-{{< /mermaid >}}
+```
 
 This diagram shows that CUE interprets both `true` and `false` as
 an instance of `bool`.
@@ -184,7 +187,7 @@ Let's consider a lattice with some example numeric values.
 We cannot show a complete lattice, of course, as the number of elements is
 infinite (it actually is, CUE has arbitrary precision arithmetic).
 
-{{< mermaid >}}
+``` mermaid
 graph TD
     N(number)
     N --> I("int")
@@ -204,7 +207,7 @@ graph TD
     IFI --> E
     CCF --> E
     E("⊥ (bottom)")
-{{< /mermaid >}}
+```
 
 Here we see what is traditionally a type class (number and int)
 and some concrete instances, that is, specific numbers.
@@ -226,7 +229,7 @@ number types in comparisons.
 
 
 <!----
-{{< mermaid >}}
+``` mermaid
 graph TD
     N(number)
     N -- > I("int")
@@ -242,14 +245,14 @@ graph TD
     One -- > E
     IFI -- > E
     E("⊥ (bottom)")
-{{< /mermaid >}}
+```
 ---->
 
 #### CUE types
 
 Let's look at all types CUE supports.
 
-{{< mermaid >}}
+``` mermaid
 graph TD
     A("⊤ (top)")
     A --> B(bool)
@@ -268,7 +271,7 @@ graph TD
     T --> E
     L --> E
     E("⊥ (bottom)")
-{{< /mermaid >}}
+```
 
 There are actually values between top and the basic types.
 The `|` operator in CUE allows one to define "sum types" like `int | string`.
@@ -284,7 +287,7 @@ These various uses of `|` are not the result of operator overloading: they are
 all the same operation in CUE.
 
 <!--
-{{< mermaid >}}
+``` mermaid
 graph TD
     A("⊤ (top)")
     A -- > B(bytes)
@@ -293,7 +296,7 @@ graph TD
     D -- > E
     U -- > E
     E("⊥ (bottom)")
-{{< /mermaid >}}
+```
 -->
 
 #### Structs
@@ -314,11 +317,11 @@ graph TD
     M --> C
     C --> L
     classDef node text-align:left
-{{< /mermaid >}}
+```
 
 {{< columns-separator >}}
 
-{{< mermaid >}}
+``` mermaid
 graph TD
     T("⊤")
     T --> ai["a: int"]
@@ -336,7 +339,7 @@ graph TD
     b1 --> a1b1
     b1 --> E
     E("⊥")
-{{< /mermaid >}}
+```
 {{< /columns >}}
 
 Loosely speaking, a struct is an instance of another if it has at least
@@ -356,18 +359,24 @@ an instance may change an optional field to required, but not remove it.
 The backwards compatibility metaphor applies here as well.
 
 {{< columns >}}
-{{< mermaid caption="Required is more specific than optional" >}}
+``` mermaid
+---
+title: "Required is more specific than optional"
+---
 graph TD
     ao["a?: int"]
     ao --> ar["a: int"]
     ao --> aolt["a?: int & <10"]
     aolt --> arlt["a: int & <10"]
     ar --> arlt
-{{< /mermaid >}}
+```
 
 {{< columns-separator >}}
 
-{{< mermaid caption="Conflicting values for optional fields result in disallowing that field, conflicting required fields result in a faulty struct" >}}
+``` mermaid
+---
+title: "Conflicting values for optional fields result in disallowing that field, conflicting required fields result in a faulty struct"
+---
 graph TD
     ao0["a?: 0"]
     ao1["a?: 1"]
@@ -380,7 +389,7 @@ graph TD
     ar0 --> E
     ar1 --> E
     E("⊥")
-{{< /mermaid >}}
+```
 {{< /columns >}}
 
 <p>

@@ -69,7 +69,10 @@ import _ "cuelang.org/go/cue/cuecontext"
 - Adds standard library definitions (such as for JSON/YAML encoding/decoding,
   math functions).
 
-{{< mermaid caption="Importing cuelang.org/go/cue/cuecontext" >}}
+``` mermaid
+---
+title: "Importing cuelang.org/go/cue/cuecontext"
+---
 graph LR
     N0["cuelabs.dev/go/oci/ociregistry"]
     N1["cuelang.org/go"]
@@ -131,7 +134,7 @@ graph LR
     class N0,N4,N5,N6,N8,N9,N10,N11,N12,N14,N15,N18,N19,N21,N22 red;
     classDef green fill:#ddffdd,stroke:#333,stroke-width:1px;
     class N2 green;
-{{< /mermaid >}}
+```
 
 ### When importing `cuelang.org/go/cue/load`
 
@@ -145,7 +148,10 @@ import _ "cuelang.org/go/cue/load"
 - Includes compiler, file loading logic, and schema resolution.
 - The largest footprint; includes encoding and parser dependencies.
 
-{{< mermaid caption="Importing cuelang.org/go/cue/load" >}}
+``` mermaid
+---
+title: "Importing cuelang.org/go/cue/load"
+---
 graph LR
     N0["cuelabs.dev/go/oci/ociregistry"]
     N1["cuelang.org/go"]
@@ -214,7 +220,7 @@ graph LR
     class N5,N6,N8,N9,N10,N22,N23 red;
     classDef green fill:#ddffdd,stroke:#333,stroke-width:1px;
     class N2 green;
-{{< /mermaid >}}
+```
 
 ## Mitigations and Future Directions
 
@@ -235,7 +241,10 @@ library dependencies.
 This is what a minimal dependency graph looks like that only imports
 `cuelang.org/go/cue`:
 
-{{< mermaid caption="Minimal dependency graph (not yet implemented)" >}}
+``` mermaid
+---
+title: "Minimal dependency graph (not yet implemented)"
+---
 graph LR
     N0["cuelabs.dev/go/oci/ociregistry"]
     N1["cuelang.org/go"]
@@ -293,7 +302,7 @@ graph LR
     class N0,N4,N5,N6,N7,N8,N9,N10,N11,N12,N13,N14,N15,N16,N17,N18,N19,N21,N22 red;
     classDef green fill:#ddffdd,stroke:#333,stroke-width:1px;
     class N2 green;
-{{< /mermaid >}}
+```
 
 ### Pluggable Loader Redesign
 
