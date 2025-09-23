@@ -22,14 +22,12 @@ accomplish that with the `cue` command line. First with JSON, then with YAML.
 
 <!--more-->
 
-{{< spotlight >}}
 
 ### Prerequisites
 
 -   You have [CUE installed]({{< relref "docs/introduction/installation" >}})
     locally. This allows you to run `cue` commands
 
-{{< /spotlight >}}
 
 ## Encoding Nested JSON
 
