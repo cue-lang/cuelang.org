@@ -22,7 +22,7 @@ deployment: alertmanager: {
 		"--web.external-url=https://alertmanager.example.com",
 	]
 
-	// XXX: adding another label cause an error at the wrong position:
+	// Adding another label cause an error at the wrong position:
 	// expose port alertmanager configMap
 	expose: port: alertmanager: 9093
 
