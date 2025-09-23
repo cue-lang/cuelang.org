@@ -316,10 +316,13 @@ cat cue.mod/module.cue
 {{{end}}}
 
 Our dependencies currently look like this:
-{{< mermaid caption="Current dependencies" >}}
+``` mermaid
+---
+title: "Current dependencies"
+---
 flowchart TD
     frostyapp--  v0.0.1 --> frostyconfig
-{{< /mermaid >}}
+```
 {{{end}}}
 
 ## Evaluate the configuration
@@ -449,11 +452,14 @@ Here is what the `cue.mod/module.cue` file now looks like:
 cat cue.mod/module.cue
 {{{end}}}
 
-{{< mermaid caption="Current dependencies" >}}
+``` mermaid
+---
+title: "Current dependencies"
+---
 flowchart TD
     frostyapp--  v0.0.1 --> frostytemplate
     frostytemplate--  v0.0.1 --> frostyconfig
-{{< /mermaid >}}
+```
 {{{end}}}
 
 {{{with step}}}
@@ -551,12 +557,15 @@ their versions in `cue.mod/module.cue` file. This gives predictability
 and dependability but does mean that our `frostyapp` application
 will not use the new schema version until it is explicitly updated to do so.
 
-{{< mermaid caption="Current dependencies" >}}
+``` mermaid
+---
+title: "Current dependencies"
+---
 flowchart TD
     frostyapp--  v0.0.1 --> frostytemplate
     frostyapp--  v0.1.0 --> frostyconfig
     frostytemplate--  v0.0.1 --> frostyconfig
-{{< /mermaid >}}
+```
 {{{end}}}
 
 {{< info >}}
