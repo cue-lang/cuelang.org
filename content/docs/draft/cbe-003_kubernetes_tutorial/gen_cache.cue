@@ -21,8 +21,8 @@ package site
 								kubectl:             "0w0s5MUeqO8pS0fPRYNRCimJ1n+VjajydUd8yP5e2Aw="
 							}
 							multi_step: {
-								hash:       "9R0J69TN2GD855KSS7S7UD3O2K85SV2VALBFA06H74ECI4AHQAS0===="
-								scriptHash: "CUIAEEOA08UQPMHJ69CITFFR8SQ689RQ3841MOQ42N9DJBATNSO0===="
+								hash:       "MG01LB2KRJ6LT9LQRDLSPAPGQTHHS96VF2GIODL5JIDADSLKR2I0===="
+								scriptHash: "L2DE6E9PKJL1HVTL4RM43Q87A1098Q7DRNSC1J9KJ8HRP7VJDIK0===="
 								steps: [{
 									doc:      "#ellipsis 5"
 									cmd:      "find ./original -type f | sort"

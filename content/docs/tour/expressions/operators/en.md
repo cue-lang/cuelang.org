@@ -23,7 +23,7 @@ exec cue eval operators.cue
 cmp stdout out
 -- operators.cue --
 a: 1 + 1             // type int
-b: "XXX" + "OOO"     // type string
+b: "xxx" + "OOO"     // type string
 c: 2 * 2             // type int
 d: 2 * 2.0           // type float
 e: 3.14159 - 0.14159 // type float
@@ -40,7 +40,7 @@ k: div(10, 3) // type int
 l: mod(10, 3) // type int
 -- out --
 a: 2
-b: "XXXOOO"
+b: "xxxOOO"
 c: 4
 d: 4.0
 e: 3.00000
