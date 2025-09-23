@@ -5,7 +5,10 @@ weight: 10
 
 CUE defines the following type hierarchy:
 
-{{< mermaid caption="CUE's predefined type hierarchy" >}}
+``` mermaid
+---
+title: "CUE's predefined type hierarchy"
+---
 flowchart TD
 
 top["_"]
@@ -20,7 +23,7 @@ top --> bytes --> bottom
 top --> number --> int & float --> bottom
 top --> struct --> bottom
 top --> list --> bottom
-{{< /mermaid >}}
+```
 
 CUE defines the value **top** (or any),
 written "`_`", <!-- ` vim syntax highlighting hack -->
