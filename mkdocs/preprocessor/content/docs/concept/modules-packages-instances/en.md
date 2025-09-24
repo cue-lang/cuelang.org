@@ -177,7 +177,7 @@ use-case. They are intended to be used for the following:
 {{<info>}}
 Read the FAQ "{{< linkto/inline "concept/faq/new-modules-vs-old-modules" >}}" to
 learn about the differences between these two types of CUE module. Please help
-the CUE project by providing your feedback in {{<issue 2865/>}} **whenever you
+the CUE project by providing your feedback in [issue #2865](/issue/2865) **whenever you
 find yourself needing to use these deprecated directories** - this will help
 guide and shape the future of the modules implementation.
 {{</info>}}

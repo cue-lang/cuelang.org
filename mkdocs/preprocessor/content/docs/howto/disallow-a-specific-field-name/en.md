@@ -48,7 +48,7 @@ open.
 
 {{< info >}}
 The technique demonstrated here may be superseded by the `error()` builtin
-function proposed in {{< issue 943 />}}.
+function proposed in [issue #943](/issue/943).
 
 **This function is not yet available**, but would allow for custom error
 messages instead of the\
@@ -61,5 +61,5 @@ messages instead of the\
 - Glossary: [the **`close`** built-in function]({{< relref
     "docs/reference/glossary#close-built-in-function"
   >}})
-- {{< issue 943 >}}Issue #943{{< /issue >}} contains details of the proposed
+- [Issue #943](/issue/943) contains details of the proposed
   `error()` builtin function
