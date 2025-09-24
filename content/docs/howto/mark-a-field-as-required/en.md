@@ -50,6 +50,4 @@ s1:
 
 ## Related content
 
-- [**Required field constraints**]({{< relref
-    "docs/tour/types/structs"
-  >}})
+- [**Required field constraints**]({{< relref "docs/tour/types/structs" >}})
