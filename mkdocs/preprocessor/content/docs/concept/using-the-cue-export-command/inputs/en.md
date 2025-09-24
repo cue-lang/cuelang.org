@@ -658,7 +658,7 @@ B: invalid value 1000 (out of bound <=99):
 
 `cue export` recognizes JSON Schema and OpenAPI {{{.constraintFile}}} inputs
 through their signature fields. This behaviour can be changed by
-[using a qualifier]({{< relref "#input-file-encodings" >}}) to instruct the
+[using a qualifier](#input-file-encodings) to instruct the
 command to treat the {{{.constraintFile}}} input as pure data:
 
 {{{with code "en" "constraint file exported as data"}}}
@@ -706,7 +706,7 @@ contains a `package` clause or not.
 
 To indicate that `cue export` should interpret the stream through a different
 encoding, use
-[a qualifier]({{< relref "#input-file-encodings" >}}):
+[a qualifier](#input-file-encodings):
 
 {{{with upload "en" "stdin data"}}}
 -- data.yml --
