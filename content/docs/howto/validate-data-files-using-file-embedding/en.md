@@ -12,7 +12,7 @@ feature provides a flexible way to validate the contents of data files, and to
 record the precise constraints that should be used to validate each file in the
 future.
 File embedding is an alternative to using
-[the `--path`/`-l` flag]({{<relref"docs/concept/using-the-cue-export-command/inputs/#static-locations">}})
+[the `--path`/`-l` flag]({{<relref"docs/concept/using-the-cue-export-command/inputs#static-locations">}})
 to specify data files' locations using command parameters.
 Here's how to use it to validate data files:
 <!--more-->
