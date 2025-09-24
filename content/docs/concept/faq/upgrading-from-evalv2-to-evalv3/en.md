@@ -103,7 +103,7 @@ provided by [Unity](https://cuelabs.dev/unity/). Add your project to the
 Unity corpus to ensure it is tested with future language and evaluator changes.
 
 If you encounter a new bug which still happens with
-[the development version]({{<relref"docs/introduction/installation">}}#install-from-source)
+[the development version]({{<relref"docs/introduction/installation#install-from-source" >}})
 of CUE, and it's not already
 [tracked on GitHub](https://github.com/cue-lang/cue/issues?q=is%3Aissue%20state%3Aopen%20label%3Aevalv3),
 please [file a new bug report](https://github.com/cue-lang/cue/issues/new?template=bug_report.md)
