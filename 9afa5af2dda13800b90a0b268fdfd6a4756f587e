@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "22ed03d9_035331fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-09-24T12:51:33Z",
+      "side": 1,
+      "message": "PTAL. This is a Hugo no-op, but required for the MkDocs work, so can be submitted harmlessly any time ahead of the MkDocs stack\u0027s review.",
+      "revId": "9afa5af2dda13800b90a0b268fdfd6a4756f587e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
