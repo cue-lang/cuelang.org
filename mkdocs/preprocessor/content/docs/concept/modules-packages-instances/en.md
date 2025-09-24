@@ -135,7 +135,7 @@ cue.mod
 This directory is predominantly managed by the `cue` tool.
 
 The `module.cue` file defines settings such as the
-[*module path*]({{< relref "#import-path" >}}),
+[*module path*](#import-path),
 which allows packages defined within the module to be imported from within the
 module itself.
 It also holds version information of imported packages to determine the precise
@@ -301,7 +301,7 @@ import (
 {{{end}}}
 
 Packages for which the first path component is **not** a fully qualified domain
-name are [builtin packages]({{< relref "#builtin-packages" >}}) and are not
+name are [builtin packages](#builtin-packages) and are not
 stored on disk, as with `list` in the example above. Any CUE code can import
 builtin packages, whether part of a module or not.
 
