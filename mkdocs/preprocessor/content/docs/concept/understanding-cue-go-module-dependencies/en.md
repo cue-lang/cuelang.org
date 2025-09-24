@@ -313,7 +313,7 @@ graph LR
   [cue/cuecontext](https://pkg.go.dev/cuelang.org/go/cue/context) package.
 * This would enable custom encoders and limit included dependencies to just
   what's needed.
-* Tracked in {{<issue 3911/>}}.
+* Tracked in [issue #3911](/issue/3911).
 
 ## Final Thoughts
 
