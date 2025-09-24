@@ -42,4 +42,4 @@ We do this to ensure a deterministic output.
 
 - Language Tour: [Field Comprehensions]({{< relref "docs/tour/expressions/fieldcomp" >}})
 - Language Tour: [List Comprehensions]({{< relref "docs/tour/expressions/listcomp" >}})
-- Language Specification: [Embedding]({{< relref "docs/reference/spec/#embedding" >}})
+- Language Specification: [Embedding]({{< relref "docs/reference/spec#embedding" >}})
