@@ -276,7 +276,7 @@ between all the formats that CUE speaks, linking constraints with data sources
 of truth, no matter where they exist.
 
 For now, only OpenAPI's data schemas, in the `components.schemas` namespace,
-are handled by CUE. More complete support is tracked in {{<issue 3133/>}}.
+are handled by CUE. More complete support is tracked in [issue #3133](/issue/3133).
 
 ## Related content
 
@@ -284,5 +284,5 @@ are handled by CUE. More complete support is tracked in {{<issue 3133/>}}.
 - {{< linkto/related/reference "command/cue-help-import" >}}
 - {{< linkto/related/reference "command/cue-help-vet" >}}
 - The [`encoding/openapi`](https://pkg.go.dev/cuelang.org/go/encoding/openapi) package
-- {{<issue 3133>}}Issue #3133{{</issue>}} tracks the support of other namespaces defined by
+- [Issue #3133](/issue/3133) tracks the support of other namespaces defined by
   [the OpenAPI standard](https://github.com/OAI/OpenAPI-Specification/tree/3.0.0)

@@ -36,7 +36,7 @@ In this guide we'll see:
   [`encoding/jsonschema`](https://pkg.go.dev/cuelang.org/go/encoding/jsonschema)
   Go API validating data against a JSON Schema.
 
-The ability to export CUE constraints as JSON Schema is tracked in {{<issue 929/>}}.
+The ability to export CUE constraints as JSON Schema is tracked in [issue #929](/issue/929).
 
 ## Using JSON Schema with the `cue` command
 
@@ -294,7 +294,7 @@ of truth, no matter where they exist.
 
 To meet this goal, CUE will gain the ability to export native CUE constraints
 as JSON Schema, enabling their use by tools that aren't aware of CUE. This is
-tracked in {{<issue 929/>}}.
+tracked in [issue #929](/issue/929).
 
 ## Related content
 
@@ -302,4 +302,4 @@ tracked in {{<issue 929/>}}.
 - The [`encoding/jsonschema`](https://pkg.go.dev/cuelang.org/go/encoding/jsonschema) Go API
 - {{< linkto/related/reference "command/cue-help-vet" >}}
 - {{< linkto/related/reference "command/cue-help-filetypes" >}}
-- {{<issue 929>}}Issue #929{{</issue>}} tracks the conversion of CUE to JSON Schema
+- [Issue #929](/issue/929) tracks the conversion of CUE to JSON Schema

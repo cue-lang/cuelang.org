@@ -96,7 +96,7 @@ output: [for v in input {
 {{< info >}}
 The method of testing a value's type shown in this guide is likely to be
 replaced by tests using more specific and precise builtins when
-{{< issue 943 />}} is implemented, such as `isconcrete`.
+[issue #943](/issue/943) is implemented, such as `isconcrete`.
 
 The builtins mentioned in that issue **are not yet available**, but we mention
 them here to help guide the implementation choices you make in the interim.
