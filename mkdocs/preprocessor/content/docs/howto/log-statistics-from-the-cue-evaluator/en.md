@@ -44,5 +44,5 @@ For example: to emit YAML, specify `yaml:-`.
 
 ## Related content
 
-- {{< issue 2856 >}}Issue #2856{{</issue>}} tracks enhancements to the set of statistics captured by `cue`
+- [Issue #2856](/issue/2856) tracks enhancements to the set of statistics captured by `cue`
 - {{< linkto/related/reference "command/cue-help-filetypes" >}}

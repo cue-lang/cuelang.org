@@ -42,7 +42,7 @@ _A_ok: conflicting values false and true:
 {{< info >}}
 The method of negating a disjunction shown in this guide is likely to be
 replaced by a constraint using a more specific and precise builtin when
-{{< issue 943 />}} is implemented.
+[issue #943](/issue/943) is implemented.
 
 The builtins mentioned in that issue **are not yet available**, but we mention
 them here to help guide the implementation choices you make in the interim.
