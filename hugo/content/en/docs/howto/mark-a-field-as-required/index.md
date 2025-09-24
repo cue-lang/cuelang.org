@@ -52,6 +52,4 @@ $ cue vet -c .:example data.yml
 
 ## Related content
 
-- [**Required field constraints**]({{< relref
-    "docs/tour/types/structs"
-  >}})
+- [**Required field constraints**]({{< relref "docs/tour/types/structs" >}})
