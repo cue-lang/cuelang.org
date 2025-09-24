@@ -104,7 +104,7 @@ To validate an entire configuration before exporting part of it, use
 [`cue vet`]({{< relref "/docs/reference/command/cue-help-vet" >}}) before you
 run `cue export`.
 
-{{<issue 3371>}}Issue #3371{{</issue>}} tracks a bug where the entirety of a
+[Issue #3371](/issue/3371) tracks a bug where the entirety of a
 CUE package input must evaluate successfully, no matter what value is provided
 for the `--expression` (`-e`) flag.
 

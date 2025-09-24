@@ -48,7 +48,7 @@ C: string @tag(name)
 {{{end}}}
 Environment variables can be injected explicitly by the shell, as shown here
 with the value of the `name` tag being set by the `USER` variable.
-{{<issue 3811>}}Issue #3811{{</issue>}} tracks a proposal to simplify the
+[Issue #3811](/issue/3811) tracks a proposal to simplify the
 injection of multiple environment variables -- please do provide your feedback
 on that issue.
 
@@ -130,5 +130,5 @@ A: ["foo-with-suffix", "bar-with-suffix"]
 - {{< linkto/related/howto "conditionally-include-cue-files-using-build-attributes" >}}
   -- shorthand tag attributes can also be used as build attributes, which
   affect which CUE files are included in an evaluation
-- {{<issue 3811>}}Issue #3811{{</issue>}} tracks a proposal to simplify the
+- [Issue #3811](/issue/3811) tracks a proposal to simplify the
   injection of multiple environment variables

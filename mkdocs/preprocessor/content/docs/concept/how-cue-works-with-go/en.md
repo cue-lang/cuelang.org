@@ -107,7 +107,7 @@ of the CUE module that holds a configuration,
 but we are working on a system for providing schemas for well-known services at
 a well-known location.
 This will remove the need to generate such CUE locally --
-see {{<issue 2939>}}discussion #2939{{</issue>}} for more details.
+see [discussion #2939](/issue/2939) for more details.
 
 ## Using CUE's Go API
 
@@ -381,4 +381,4 @@ CUE features such as data validation, policy enforcement, and more.
   | [`encoding/json`](https://pkg.go.dev/cuelang.org/go/encoding/json#section-documentation)
 - CUE By Example:
   [Controlling Kubernetes with CUE](https://github.com/cue-labs/cue-by-example/blob/main/003_kubernetes_tutorial/README.md)
-- Discussion {{<issue 2939>}}#2939{{</issue>}}: Modules and package management proposal
+- Discussion [#2939](/issue/2939): Modules and package management proposal
