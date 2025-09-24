@@ -9,9 +9,9 @@ toc_hide: false
 ### `and()` {#and-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#and" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-and" >}})
-- A [built-in function]({{< relref "#built-in-functions" >}}) that accepts a
-  [list]({{< relref "#list" >}}) and returns the
-  [unification]({{< relref "#unification" >}}) of all elements in the list
+- A [built-in function](#built-in-functions) that accepts a
+  [list](#list) and returns the
+  [unification](#unification) of all elements in the list
 
 
 
@@ -19,7 +19,7 @@ toc_hide: false
 
 ### `bool` {#bool-type}
 🔗 [Language Spec]({{< relref "docs/reference/spec#boolean-values" >}})
-- A primitive [type]({{< relref "#type" >}}) representing the set of Boolean
+- A primitive [type](#type) representing the set of Boolean
   truth values denoted by the keywords `true` and `false`
 
 ### Built-in functions
@@ -27,20 +27,20 @@ toc_hide: false
 - Predeclared functions provided by the CUE runtime that are available without
   being imported
 - *see also:*
-   [`and()`]({{< relref "#and-built-in-function" >}})
-|  [`close()`]({{< relref "#close-built-in-function" >}})
-|  [`div()`]({{< relref "#div-built-in-function" >}})
-|  [`mod()`]({{< relref "#mod-built-in-function" >}})
-|  [`len()`]({{< relref "#len-built-in-function" >}})
-|  [`or()`]({{< relref "#or-built-in-function" >}})
-|  [`quo()`]({{< relref "#quo-built-in-function" >}})
-|  [`rem()`]({{< relref "#rem-built-in-function" >}})
+   [`and()`](#and-built-in-function)
+|  [`close()`](#close-built-in-function)
+|  [`div()`](#div-built-in-function)
+|  [`mod()`](#mod-built-in-function)
+|  [`len()`](#len-built-in-function)
+|  [`or()`](#or-built-in-function)
+|  [`quo()`](#quo-built-in-function)
+|  [`rem()`](#rem-built-in-function)
 
 ### `bytes` {#bytes-type}
 🔗  <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/data/bytes-values" >}}) -->
    [Language Spec]({{< relref "docs/reference/spec#bytes" >}})
 |  [Tour]({{< relref "docs/tour/types/bytes" >}})
-- A primitive [type]({{< relref "#type" >}}) representing a possibly empty
+- A primitive [type](#type) representing a possibly empty
   sequence of arbitrary bytes
 
 
@@ -50,8 +50,8 @@ toc_hide: false
 ### `close()` {#close-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#close" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-close" >}})
-- A [built-in function]({{< relref "#built-in-functions" >}}) that converts a
-  partially defined ("open") [struct]({{< relref "#struct" >}}) to a fully
+- A [built-in function](#built-in-functions) that converts a
+  partially defined ("open") [struct](#struct) to a fully
   defined ("closed") struct
 
 <!-- TODO ## Closed -->
@@ -64,9 +64,9 @@ toc_hide: false
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/schemas-and-validation/disjunctions#default-values" >}}) -->
    [Tour]({{< relref "docs/tour/types/defaults" >}})
 |  [Howto Guide]({{< relref "docs/howto/specify-a-default-value-for-a-field" >}})
-- The single element of a [disjunction]({{< relref "#disjunction" >}}) that CUE
-  assigns to a [field]({{< relref "#field" >}}) if and only if
-  [unification]({{< relref "#unification" >}}) fails to resolve a concrete value
+- The single element of a [disjunction](#disjunction) that CUE
+  assigns to a [field](#field) if and only if
+  [unification](#unification) fails to resolve a concrete value
   for the field
 - An element of a disjunction prefixed with an asterisk (`*`)
 
@@ -78,7 +78,7 @@ toc_hide: false
 ### `div()` {#div-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-functions-div-mod-quo-rem" >}})
-- A [built-in function]({{< relref "#built-in-functions" >}}) that performs
+- A [built-in function](#built-in-functions) that performs
   Euclidean division with its parameters and returns the integer quotient
 
 
@@ -97,18 +97,18 @@ toc_hide: false
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/schemas-and-validation/field-constraints" >}}) -->
    [Language Spec]({{< relref "docs/reference/spec#field-constraints" >}})
 |  [Tour]({{< relref "docs/tour/types/structs" >}})
-- A field constraint restricts a [field]({{< relref "#field" >}})'s value
+- A field constraint restricts a [field](#field)'s value
   without actually defining the field, with the field only forming part of the
-  output if it is successfully [unified]({{< relref "#unification" >}}) with a
+  output if it is successfully [unified](#unification) with a
   concrete value
 - *see also:*
-    [Required field constraint]({{< relref "#required-field-constraint" >}})
-  | [Optional field constraint]({{< relref "#optional-field-constraint" >}})
+    [Required field constraint](#required-field-constraint)
+  | [Optional field constraint](#optional-field-constraint)
 
 ### `float` {#float-type}
 🔗 [Language Spec]({{< relref "docs/reference/spec#numeric-values" >}})
 |  [Tour]({{< relref "docs/tour/types/numbers" >}})
-- A primitive [type]({{< relref "#type" >}}) representing the set of all
+- A primitive [type](#type) representing the set of all
   decimal floating-point numbers
 
 
@@ -125,7 +125,7 @@ toc_hide: false
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/data/numeric-values" >}}) -->
    [Language Spec]({{< relref "docs/reference/spec#numeric-values" >}})
 |  [Tour]({{< relref "docs/tour/types/numbers" >}})
-- A primitive [type]({{< relref "#type" >}}) representing the set of all
+- A primitive [type](#type) representing the set of all
   integer numbers
 
 
@@ -149,7 +149,7 @@ toc_hide: false
 ### `len()` {#len-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#len" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-len" >}})
-- A [built-in function]({{< relref "#built-in-functions" >}}) that returns the
+- A [built-in function](#built-in-functions) that returns the
   lengths of various types as an integer
 
 ### List
@@ -166,7 +166,7 @@ toc_hide: false
 ### `mod()` {#mod-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-functions-div-mod-quo-rem" >}})
-- A [built-in function]({{< relref "#built-in-functions" >}}) that performs
+- A [built-in function](#built-in-functions) that performs
   Euclidean division with its parameters and returns the integer remainder
 
 <!-- TODO ## Module -->
@@ -177,7 +177,7 @@ toc_hide: false
 
 ### `null` {#null-type}
 🔗 [Language Spec]({{< relref "docs/reference/spec#null" >}})
-- A primitive [type]({{< relref "#type" >}}) whose only value, the *null
+- A primitive [type](#type) whose only value, the *null
   value*, is represented with the keyword `null`. Comparable with itself and
   any other type, the comparison with a `null` value always being equal and the
   comparison with any other type always being unequal
@@ -185,9 +185,9 @@ toc_hide: false
 ### `number` {#number-type}
 🔗 [Language Spec]({{< relref "docs/reference/spec#numeric-values" >}})
 |  [Tour]({{< relref "docs/tour/types/numbers" >}})
-- A generic primitive [type]({{< relref "#type" >}}) representing the set of
-  all members of both [`int`]({{< relref "#int-type" >}}) and
-  [`float`]({{< relref "#float-type" >}}) types
+- A generic primitive [type](#type) representing the set of
+  all members of both [`int`](#int-type) and
+  [`float`](#float-type) types
 
 
 
@@ -199,16 +199,16 @@ toc_hide: false
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/schemas-and-validation/field-constraints#optional-field-constraints" >}}) -->
    [Tour]({{< relref "docs/tour/types/structs" >}})
 |  [Howto Guide]({{< relref "docs/howto/mark-a-field-as-optional" >}})
-- A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
-  [field]({{< relref "#field" >}})'s value if the field is present, whilst also
+- A [field constraint](#field-constraint) that restricts the
+  [field](#field)'s value if the field is present, whilst also
   permitting the field's absence
 
 ### `or()` {#or-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#or" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-function-or" >}})
-- A [built-in function]({{< relref "#built-in-functions" >}}) that accepts a
-  [list]({{< relref "#list" >}}) and produces a
-  [disjunction]({{< relref "#disjunction" >}})
+- A [built-in function](#built-in-functions) that accepts a
+  [list](#list) and produces a
+  [disjunction](#disjunction)
 
 
 
@@ -223,7 +223,7 @@ toc_hide: false
 ### `quo()` {#quo-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-functions-div-mod-quo-rem" >}})
-- A [built-in function]({{< relref "#built-in-functions" >}}) that performs
+- A [built-in function](#built-in-functions) that performs
   truncated division with its parameters and returns the integer quotient
 
 
@@ -234,22 +234,22 @@ toc_hide: false
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/data/string-values#alternate-escape-sequences" >}}) -->
    [Language Spec]({{< relref "docs/reference/spec#string-and-byte-sequence-literals" >}})
 |  [Tour]({{< relref "docs/tour/types/stringraw" >}})
-- A [`string`]({{< relref "#string-type" >}}) literal enclosed with an equal
+- A [`string`](#string-type) literal enclosed with an equal
   number of hashes on both sides, allowing escape sequences to appear inside
   the text verbatim, without their usual escaping taking effect
 
 ### `rem()` {#rem-built-in-function}
 🔗 [Language Spec]({{< relref "docs/reference/spec#div-mod-quo-and-rem" >}})
 |  [Howto Guide]({{< relref "docs/howto/use-the-built-in-functions-div-mod-quo-rem" >}})
-- A [built-in function]({{< relref "#built-in-functions" >}}) that performs
+- A [built-in function](#built-in-functions) that performs
   truncated division with its parameters and returns the integer remainder
 
 ### Required field constraint
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/schemas-and-validation/field-constraints#required-field-constraints" >}}) -->
    [Tour]({{< relref "docs/tour/types/structs" >}})
 |  [Howto Guide]({{< relref "docs/howto/mark-a-field-as-required" >}})
-- A [field constraint]({{< relref "#field-constraint" >}}) that restricts the
-  [field]({{< relref "#field" >}})'s value whilst also requiring the field to
+- A [field constraint](#field-constraint) that restricts the
+  [field](#field)'s value whilst also requiring the field to
   be present
 
 
@@ -260,9 +260,9 @@ toc_hide: false
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/data/string-values" >}}) -->
    [Language Spec]({{< relref "docs/reference/spec#strings" >}})
 |  [Tour]({{< relref "docs/tour/types/stringlit" >}})
-- A primitive [type]({{< relref "#type" >}}) representing the set of UTF-8
+- A primitive [type](#type) representing the set of UTF-8
   strings
-- *see also:* [Raw strings]({{< relref "#raw-strings" >}})
+- *see also:* [Raw strings](#raw-strings)
 
 ### Struct {#struct-type}
 🔗 <!-- TODO:postLG [Language Guide](\{\{\< relref "docs/language-guide/data/maps-and-fields" >}}) -->
@@ -270,7 +270,7 @@ toc_hide: false
 |  [Tour]({{< relref "docs/tour/types/structs" >}})
 <!-- Link to this section? [Language Spec]({{< relref "docs/reference/spec#values-1" >}}) -->
 - A composite type representing a set of elements (called
-  [fields]({{< relref "#field" >}})) each of which has a name (called a label)
+  [fields](#field)) each of which has a name (called a label)
   and a value
 
 

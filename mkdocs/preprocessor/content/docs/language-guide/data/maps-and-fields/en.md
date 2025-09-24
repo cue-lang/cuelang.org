@@ -15,7 +15,7 @@ Double quotes can be omitted if the name is a valid {{{def "identifier"}}}
 that starts with a letter or `$` and otherwise only contains letters, digits,
 `$` or `_`.
 Identifiers may also start with `#` or `_`, in which case the field is a
-[helper field]({{< relref "#helper-field" >}}) with special meaning.
+[helper field](#helper-field) with special meaning.
 
 {{{with code "en" "field-names-double-quotes"}}}
 -- in.cue --
