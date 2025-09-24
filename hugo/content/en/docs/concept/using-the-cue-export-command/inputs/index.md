@@ -65,7 +65,7 @@ $ cue export
 {{< /code-tabs >}}
 
 The package is loaded as a
-[package instance]({{< relref "/docs/concept/modules-packages-instances" >}}#instances).
+[package instance]({{< relref "/docs/concept/modules-packages-instances#instances" >}}).
 
 The command fails if more than one package exists in the current directory
 and the input isn't explicitly specified:
