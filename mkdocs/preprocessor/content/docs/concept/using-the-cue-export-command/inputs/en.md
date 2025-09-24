@@ -342,7 +342,7 @@ single {{{.package}}} input. The {{{.package}}} input must be the first input
 specified in the list of arguments.
 
 {{<info>}}
-{{<issue 3341>}}Issue #3341{{</issue>}} tracks a problem when combining a
+[Issue #3341](/issue/3341) tracks a problem when combining a
 {{{.package}}} input with a {{{.constraintFile}}} and some other input types.
 {{</info>}}
 
@@ -652,7 +652,7 @@ B: invalid value 1000 (out of bound <=99):
 {{{end}}}
 
 {{<info>}}
-{{<issue 3341>}}Issue #3341{{</issue>}} tracks a problem when combining a
+[Issue #3341](/issue/3341) tracks a problem when combining a
 {{{.package}}} input with a {{{.constraintFile}}} and some other input types.
 {{</info>}}
 
