@@ -127,7 +127,7 @@ staticcheck ./...
 
 ## Related content
 
-- Issue {{< issue 2865 >}}#2865{{</issue>}} tracks the plans for CUE to support
+- Issue [#2865](/issue/2865) tracks the plans for CUE to support
   finding well-known types (such as the Kubernetes example used above) at a
   well-known location, without having to import them manually.
 - {{< linkto/related/howto "generate-cue-from-local-go" >}}
