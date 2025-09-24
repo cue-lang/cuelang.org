@@ -33,7 +33,7 @@ behaviour as the "old" modules implementation.
 
 To address the shortcomings of the old modules implementation, we went through
 a number of design and proposal iterations. These culminated in the
-{{<issue 2939>}}modules proposal v3{{</issue>}}, which was accompanied by an
+[modules proposal v3](/issue/2939), which was accompanied by an
 experimental implementation in pre-releases of the v0.8.x series from version
 `v0.8.0-alpha.1` in February 2024. Old modules remained the default behaviour
 at this time, but the experimental implementation could be enabled by setting
@@ -187,4 +187,4 @@ Work on the
 [Central Registry](https://registry.cue.works/)
 is a key part of these goals.
 We welcome and encourage you to share your experiences and use cases for either
-of these features in {{<issue 2865/>}}.
+of these features in [issue #2865](/issue/2865).

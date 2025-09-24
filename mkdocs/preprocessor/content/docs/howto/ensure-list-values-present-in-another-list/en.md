@@ -48,13 +48,13 @@ The technique it demonstrates can also be used to validate incomplete
 (non-concrete) and composite (struct and list) values, but the rules around its
 use are nuanced and evolving.
 
-{{<issue 2583>}}Issue #2583{{</issue>}} tracks some open questions about
+[Issue #2583](/issue/2583) tracks some open questions about
 comparability in CUE that are worth considering before using this technique
 to validate more complex values.
 {{</info>}}
 
 ## Related content
 
-- {{<issue 2583>}}Issue #2583{{</issue>}}
+- [Issue #2583](/issue/2583)
 - Reference: [The CUE Language Specification: Comparison operators]({{< relref "docs/reference/spec" >}}#comparison-operators)
   -- CUE's comparability rules
