@@ -60,8 +60,6 @@ messages instead of the\
 ## Related content
 
 - The CUE Tour: [**Definitions**]({{< relref "docs/tour/basics/definitions" >}})
-- Glossary: [the **`close`** built-in function]({{< relref
-    "docs/reference/glossary#close-built-in-function"
-  >}})
+- Glossary: [the **`close`** built-in function]({{< relref "docs/reference/glossary#close-built-in-function" >}})
 - {{< issue 943 >}}Issue #943{{< /issue >}} contains details of the proposed
   `error()` builtin function
