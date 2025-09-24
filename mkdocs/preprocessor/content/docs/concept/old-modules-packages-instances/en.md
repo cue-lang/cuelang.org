@@ -125,7 +125,7 @@ predominantly managed by the `cue` tool.
 
 The `module.cue` file defines settings such as
 globally unique _module identifier_ (more on this in the
-[Import Path]({{< relref "#import-path" >}}) section).
+[Import Path](#import-path) section).
 This information allows packages defined within the module to be importable
 within the module itself.
 In the future, it may hold version information of imported packages to determine
