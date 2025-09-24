@@ -43,7 +43,7 @@ mirroring cue.dev/x/k8s.io@v0.5.0
 
 The [`cue mod mirror`]({{<relref"docs/reference/command/cue-help-mod-mirror">}})
 command copies each module from and to the appropriate registry for its
-[module path]({{<relref"docs/reference/modules/#module-path">}}) --
+[module path]({{<relref"docs/reference/modules#module-path">}}) --
 which is usually the Central Registry, but can be configured differently (see
 <code>{{<linkto/inline"reference/command/cue-help-registryconfig">}}</code>
 for more information).

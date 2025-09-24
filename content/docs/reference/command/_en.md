@@ -41,5 +41,5 @@ configurations encoded in formats like JSON or YAML.
 ### Help texts
 
 The built-in help texts available in the
-[latest version]({{<relref"docs/introduction/installation">}}#installing-the-cue-command)
+[latest version]({{<relref"docs/introduction/installation#installing-the-cue-command" >}})
 of `cue`:

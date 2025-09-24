@@ -42,8 +42,8 @@ theAnswer: _|_ // theAnswer: invalid value "42" (out of bound !~"[0-9]")
 Futher details of how CUE supports regular expressions can be found in the
 [`regexp`](https://pkg.go.dev/cuelang.org/go/pkg/regexp#pkg-overview)
 package documentation, and in the CUE language specification
-([Comparison operators]({{< relref "docs/reference/spec" >}}#comparison-operators)
+([Comparison operators]({{< relref "docs/reference/spec#comparison-operators" >}})
 and
-[Pattern constraints]({{< relref "docs/reference/spec" >}}#pattern-and-default-constraints)).
+[Pattern constraints]({{< relref "docs/reference/spec#pattern-and-default-constraints" >}})).
 All regular expressions in CUE use Golang's
 [RE2](https://golang.org/s/re2syntax) syntax.
