@@ -88,5 +88,5 @@ please do join
 ## Related content
 
 - Reference: The CUE Language Specification:
-  [the built-in function `error`]({{<relref"docs/reference/spec/#error">}})
+  [the built-in function `error`]({{<relref"docs/reference/spec#error">}})
 - {{<linkto/related/tour"types/disjunctions">}}

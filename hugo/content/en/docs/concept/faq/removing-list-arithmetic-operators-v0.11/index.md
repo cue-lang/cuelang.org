@@ -18,7 +18,7 @@ Your CUE is not affected if a 0.11 version of `cue vet` evaluates it successfull
 <!--more-->
 
 This CUE no longer works, and must be updated as
-[demonstrated below]({{< relref "removing-list-arithmetic-operators-v0.11" >}}#what-changes-are-needed-in-my-cue):
+[demonstrated below]({{< relref "removing-list-arithmetic-operators-v0.11#what-changes-are-needed-in-my-cue" >}}):
 
 {{< code-tabs >}}
 {{< code-tab name="list-arithmetic.cue" language="cue" area="top-left" >}}
@@ -122,7 +122,7 @@ B: x + y // Invalid use of the "+" operator with two list references.
 {{< /code-tab >}}{{< /code-tabs >}}
 
 This file must be
-[manually updated]({{< relref "removing-list-arithmetic-operators-v0.11" >}}#what-changes-are-needed-in-my-cue)
+[manually updated]({{< relref "removing-list-arithmetic-operators-v0.11#what-changes-are-needed-in-my-cue" >}})
 with the following CUE:
 
 {{< code-tabs >}}

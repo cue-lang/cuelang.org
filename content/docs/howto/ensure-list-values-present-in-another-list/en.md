@@ -56,5 +56,5 @@ to validate more complex values.
 ## Related content
 
 - {{<issue 2583>}}Issue #2583{{</issue>}}
-- Reference: [The CUE Language Specification: Comparison operators]({{< relref "docs/reference/spec" >}}#comparison-operators)
+- Reference: [The CUE Language Specification: Comparison operators]({{< relref "docs/reference/spec#comparison-operators" >}})
   -- CUE's comparability rules

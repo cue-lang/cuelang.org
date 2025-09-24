@@ -10,11 +10,11 @@ toc_hide: true
 CUE is designed to make data validation **simple**, **powerful**, and **flexible**.
 
 To achieve this, the project publishes the `cue`
-[command line tool]({{< relref "docs/introduction/installation/#install-cue-from-official-release-binaries" >}}),
+[command line tool]({{< relref "docs/introduction/installation#install-cue-from-official-release-binaries" >}}),
 which allows a wide range of data validation tasks to be completed without
 writing any code.
 For more complex validation scenarios, CUE's
-[powerful Go APIs]({{< relref "how-cue-works-with-go/#using-cues-go-api" >}})
+[powerful Go APIs]({{< relref "how-cue-works-with-go#using-cues-go-api" >}})
 deliver fine grained control.
 
 This guide demonstrates some of the data validation capabilities of the `cue` command.
