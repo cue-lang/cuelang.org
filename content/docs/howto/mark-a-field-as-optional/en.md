@@ -63,17 +63,9 @@ s1:
 
 ## Related content
 
-- [**Optional field constraints**]({{< relref
-    "docs/tour/types/structs"
-  >}})
-- [**Commented CUE guides**]({{< relref
-    "docs/howto/about-commented-cue-guides"
-  >}})
+- [**Optional field constraints**]({{< relref "docs/tour/types/structs" >}})
+- [**Commented CUE guides**]({{< relref "docs/howto/about-commented-cue-guides" >}})
 <!-- TODO:postLG
-- [**Regular fields**]({{</* relref
-    "docs/language-guide/data/maps-and-fields#field-names"
-  */>}})
-- [**Value constraints**]({{</* relref
-    "docs/language-guide/schemas-and-validation/value-constraints"
-  */>}})
+- [**Regular fields**]({{</* relref "docs/language-guide/data/maps-and-fields#field-names" */>}})
+- [**Value constraints**]({{</* relref "docs/language-guide/schemas-and-validation/value-constraints" */>}})
 -->
