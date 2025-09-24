@@ -140,7 +140,7 @@ which allows packages defined within the module to be imported from within the
 module itself.
 It also holds version information of imported packages to determine the precise
 origin of imported files. The modules reference documentation fully specifies
-[the contents of `module.cue`]({{< relref "docs/reference/modules" >}}#cue-mod-file).
+[the contents of `module.cue`]({{< relref "docs/reference/modules#cue-mod-file" >}}).
 
 #### Deprecated directories
 
@@ -161,11 +161,11 @@ its own dependency on module `C` through `cue mod`, or its own
 `pkg`/`usr`/`gen` directories. If module `B` had instead declared the
 dependency using the `cue mod` command and the `module.cue` file, then module
 `C` would be accessible to module `A` through the
-[shared module cache]({{< relref "docs/reference/modules" >}}#module-cache).)
+[shared module cache]({{< relref "docs/reference/modules#module-cache" >}}).)
 
 If a dependency is managed by the `cue mod` command but is also found in any of
 the `pkg`/`gen`/`usr` directories then
-[an error occurs]({{< relref "docs/concept/faq/new-modules-vs-old-modules" >}}#can-i-use-cuemodusr-with-new-modules).
+[an error occurs]({{< relref "docs/concept/faq/new-modules-vs-old-modules#can-i-use-cuemodusr-with-new-modules" >}}).
 These directories are still supported as they can be useful in a limited set of
 circumstances, but only when CUE's current modules can't handle a particular
 use-case. They are intended to be used for the following:
@@ -318,7 +318,7 @@ location on disk using several mechanisms in parallel:
   - the dependency is fetched from the
     [configured module registry]({{< relref "docs/reference/command/cue-help-registryconfig" >}})
     if it's not already present in the
-    [shared module cache]({{< relref "docs/reference/modules" >}}#module-cache);
+    [shared module cache]({{< relref "docs/reference/modules#module-cache" >}});
   - taking the dependency's module path into account, the directory
     inside the dependency that matches the import path is examined;
   - if that directory contains a package then the package is located
@@ -333,7 +333,7 @@ location then that directory location (and its package content) is used.
 
 If **more than one** of these mechanisms discovers an appropriate directory
 location then
-[an error occurs]({{< relref "docs/concept/faq/new-modules-vs-old-modules" >}}#can-i-use-cuemodusr-with-new-modules).
+[an error occurs]({{< relref "docs/concept/faq/new-modules-vs-old-modules#can-i-use-cuemodusr-with-new-modules" >}}).
 If **none** of these mechanisms discovers an appropriate directory location
 then an error occurs.
 

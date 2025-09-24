@@ -7,7 +7,7 @@ tags:
 ---
 {{<info>}}
 This command is only available in a recent CUE
-[pre-release]({{<relref"docs/introduction/installation/#download-an-official-cue-binary">}}).
+[pre-release]({{<relref"docs/introduction/installation#download-an-official-cue-binary">}}).
 {{</info>}}
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZXhwZXJpbWVudHM=" }
 $ cue help experiments

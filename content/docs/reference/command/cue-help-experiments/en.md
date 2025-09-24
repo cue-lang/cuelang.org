@@ -10,7 +10,7 @@ export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 {{{end}}}
 {{<info>}}
 This command is only available in a recent CUE
-[pre-release]({{<relref"docs/introduction/installation/#download-an-official-cue-binary">}}).
+[pre-release]({{<relref"docs/introduction/installation#download-an-official-cue-binary">}}).
 {{</info>}}
 {{{with script "en" "cue cli help text"}}}
 cue help experiments

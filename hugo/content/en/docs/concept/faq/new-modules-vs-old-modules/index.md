@@ -110,7 +110,7 @@ that it was written against an older version of the CUE language spec and
 semantics.
 
 See
-[the Modules reference document]({{< relref "docs/reference/modules" >}}#cue-mod-file)
+[the Modules reference document]({{< relref "docs/reference/modules#cue-mod-file" >}})
 for an explanation of the various fields in a `cue.mod/module.cue` file.
 
 ## What about old modules that don't have a `language.version` field?
