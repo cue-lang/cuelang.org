@@ -11,7 +11,7 @@ CUE tutorials are practical lessons that help you try out language features,
 workflows, and tools in practice settings on your own computer.
 
 If you're new to CUE then start by reading the
-[CUE Tour]({{< relref "tour" >}}), and <!-- TODO:postLG
+[CUE Tour]({{< relref "docs/tour" >}}), and <!-- TODO:postLG
 [Language Guide]({{</* relref "docs/language-guide" */>}}), and -->
 then try out some tutorials specially
 [chosen for you]({{< relref "new-to-cue" >}}).

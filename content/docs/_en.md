@@ -32,10 +32,10 @@ area: invalid value 166.5 (out of bound <100):
 {{{end}}}
 
 CUE supports and simplifies a wide variety of applications, such as
-[data validation]({{< relref "concept/how-cue-enables-data-validation" >}}),
-[configuration]({{< relref "concept/how-cue-enables-configuration" >}}),
+[data validation]({{< relref "docs/concept/how-cue-enables-data-validation" >}}),
+[configuration]({{< relref "docs/concept/how-cue-enables-configuration" >}}),
 [querying]({{< relref "docs/concept/querying-use-case" >}}),
-and [code generation]({{< relref "concept/code-generation-and-extraction-use-case" >}}),
+and [code generation]({{< relref "docs/concept/code-generation-and-extraction-use-case" >}}),
 with its underlying inference engine enabling data validation in code, and
 flexible generation pipelines.
 
