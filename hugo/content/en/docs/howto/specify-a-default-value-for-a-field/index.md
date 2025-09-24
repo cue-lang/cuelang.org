@@ -262,21 +262,11 @@ overriding values.
 
 ## See also
 
-- [**Default values**]({{< relref
-    "docs/tour/types/defaults"
-  >}})
-- [**Disjunctions**]({{< relref
-    "docs/tour/types/disjunctions"
-  >}})
-- [**Field constraints**]({{< relref
-    "docs/tour/types/structs"
-  >}})
+- [**Default values**]({{< relref "docs/tour/types/defaults" >}})
+- [**Disjunctions**]({{< relref "docs/tour/types/disjunctions" >}})
+- [**Field constraints**]({{< relref "docs/tour/types/structs" >}})
 <!-- TODO:postLG
-- [**Value constraints**]({{</* relref
-    "docs/language-guide/schemas-and-validation/value-constraints"
-  */>}})
-- [**Regular fields**]({{</* relref
-    "docs/language-guide/data/maps-and-fields#field-names"
-  */>}})
+- [**Value constraints**]({{</* relref "docs/language-guide/schemas-and-validation/value-constraints" */>}})
+- [**Regular fields**]({{</* relref "docs/language-guide/data/maps-and-fields#field-names" */>}})
 - [**Unification**](TODO)
 -->
