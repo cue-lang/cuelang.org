@@ -186,7 +186,7 @@ for more information.
 {{<warning>}}
 The `gengotypes` command is still in an experimental stage, which means that it
 may be changed or removed at any time. The objective is for the CUE project to
-gain experience through [your feedback]({{<relref"/community">}}) about this
+gain experience through [your feedback](/community) about this
 experimental command, and then move the feature elsewhere.
 {{</warning>}}
 
