@@ -1,4 +1,4 @@
-site_name: "Documentation"
+site_name: "CUE"
 site_url: "https://cuelang.org/mkdocs/docs/"
 strict: false # FIXME: enable strict mode
 
@@ -18,12 +18,68 @@ theme:
   # custom_dir: overrides/
   # logo: assets/images/logo.svg
   # favicon: assets/images/favicon.svg
-  # features:
+  features:
   #   - content.code.copy # copy buttons on code blocks
   #   - navigation.tabs # horizontal nav bar in page header
   #   - navigation.tabs.sticky # horizontal nav bar is always visible
   #   - navigation.sections
   #   - announce.dismiss # notification bar can be dismissed
+    - header.autohide # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#automatic-hiding
+    - navigation.tabs # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs
+    - navigation.indexes # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages
+      # Pruning feels like a good idea, given its description. With navigation.indexes we won't have expandable
+      # sections, so why wouldn't we enable it? FIXME: check UI when a section doesn't have an index - might that occur?
+    - # navigation.prune # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-pruning
+
+# Page titles:
+# IF a page title is set here in the nav struct (e.g. "foo: some/page/index.md") then the title is set not only for the
+# nav, but also as the on-page title - overriding the page's "title" front matter field.
+# UNLESS the page's Markdown contains an H1 - in which case the nav displays the title set here, and the page displays
+# the H1 at the top - omitting either of the nav's setting or the source's "title" front matter.
+# Neither of these links fully describes this observed behaviour, but are relevant:
+# - https://squidfunk.github.io/mkdocs-material/reference/#setting-the-page-title
+# - https://www.mkdocs.org/user-guide/writing-your-docs/#meta-data
+nav:
+- Documentation:
+  - docs/index.md
+  - Introduction:
+    - docs/introduction/index.md
+    - docs/introduction/installation/index.md
+  - Tour:
+    - docs/tour/index.md
+    - docs/tour/basics/index.md
+    - docs/tour/types/index.md
+    - docs/tour/references/index.md
+    - docs/tour/expressions/index.md
+    - docs/tour/packages/index.md
+  - Integrations:
+    - docs/integration/index.md
+    - docs/integration/openapi/index.md
+    - docs/integration/json/index.md
+    - docs/integration/yaml/index.md
+    - docs/integration/protobuf/index.md
+  - Tutorials:
+    - docs/tutorial/index.md
+    - docs/tutorial/new-to-cue/index.md
+  - How-to Guides:
+    - docs/howto/index.md
+    - docs/howto/popular-guides/index.md
+    - Commented CUE Guides: docs/missing/FIXME.md
+  - Concept Guides:
+    - docs/concept/index.md
+    - Popular guides: docs/concept/popular-guides/index.md
+    - The Logic of CUE: docs/missing/FIXME.md
+    - Modules: docs/concept/modules/index.md
+    - Frequently Asked Questions: docs/concept/faq/index.md
+  - References:
+    - docs/reference/index.md
+    - docs/reference/spec/index.md
+    - docs/reference/glossary/index.md
+    - docs/reference/command/index.md
+    - docs/reference/code-of-conduct/index.md
+- Play: /play/
+- Community: /community/
+
 extra:
   social:
     - icon: fontawesome/brands/github
