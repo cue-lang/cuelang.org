@@ -2,6 +2,7 @@
 title: Understanding CUE's Go module dependencies
 authors: [rogpeppe]
 tags: [go api]
+toc_hide: true
 ---
 
 This guide explains why certain dependencies appear in a Go module graph when
