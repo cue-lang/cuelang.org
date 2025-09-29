@@ -93,5 +93,5 @@ A: matchIf(#A, #A, #A) & {
 
 This behaviour *may* change with future CUE releases.
 If support for hidden fields or definitions is important to how you would like
-to use `matchIf`, please join [the CUE community]({{< relref "/community" >}})
+to use `matchIf`, please join [the CUE community](/community)
 and tell us about your use case.
