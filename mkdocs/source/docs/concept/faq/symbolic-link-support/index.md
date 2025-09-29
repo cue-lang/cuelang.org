@@ -25,7 +25,7 @@ This includes creating symlinks that point to:
 - CUE code (e.g. `file.cue` points to `some.other.file`)
 - package directories (e.g. `foo/` points to `bar/`)
 - files included via the
-  [`@embed()` attribute]({{< relref "/docs/howto/embed-files-in-cue-evaluation" >}})
+  [`@embed()` attribute]({{< relref "docs/howto/embed-files-in-cue-evaluation" >}})
 
 Symlinks can point to targets anywhere on your computer's filesystem and not
 only files inside your CUE module.

@@ -64,7 +64,7 @@ C: 3.33 * B
 {{{end}}}
 
 The package is loaded as a
-[package instance]({{< relref "/docs/concept/modules-packages-instances#instances" >}}).
+[package instance]({{< relref "docs/concept/modules-packages-instances#instances" >}}).
 
 The command fails if more than one package exists in the current directory
 and the input isn't explicitly specified:
@@ -824,7 +824,7 @@ data: true
 {{{end}}}
 
 Functions from the CUE
-[standard library]({{< relref "/docs/tour/packages/standard-library" >}}) may
+[standard library]({{< relref "docs/tour/packages/standard-library" >}}) may
 be included in the specification of a dynamic expression, without their
 containing packages being imported:
 

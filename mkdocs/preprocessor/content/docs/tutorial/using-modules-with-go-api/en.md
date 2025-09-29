@@ -42,7 +42,7 @@ Along the way you will:
   use any terminal on Linux or macOS, or PowerShell, `cmd.exe` or
   [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) on Windows.
 - **An installed `go` binary** -- [installation details](https://go.dev/doc/install)
-- **An installed `cue` binary** -- [installation details]({{< relref "/docs/introduction/installation" >}})
+- **An installed `cue` binary** -- [installation details]({{< relref "docs/introduction/installation" >}})
 
 This tutorial uses the following version of CUE:
 

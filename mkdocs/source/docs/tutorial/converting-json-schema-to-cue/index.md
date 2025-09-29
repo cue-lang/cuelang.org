@@ -24,7 +24,7 @@ and then use the result to validate some data.
 ## Prerequisites
 
 - **The `cue` binary** --
-  follow the [installation instructions]({{< relref "/docs/introduction/installation" >}})
+  follow the [installation instructions]({{< relref "docs/introduction/installation" >}})
   if you don't already use `cue`
 - **A tool to edit text files** --
   any text editor you have will be fine, such as
@@ -38,8 +38,8 @@ and then use the result to validate some data.
   to run commands.
 - **Some awareness of CUE schemata** --
   the language tour's pages on
-  [Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
-  [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) are a good refresher
+  [Constraints]({{< relref "docs/tour/basics/constraints" >}}) and
+  [Definitions]({{< relref "docs/tour/basics/definitions" >}}) are a good refresher
 
 This tutorial is written using the following version of `cue`:
 
