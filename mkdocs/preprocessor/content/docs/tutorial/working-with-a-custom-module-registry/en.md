@@ -44,10 +44,10 @@ Along the way you will:
   or macOS, and on PowerShell, `cmd.exe` or
   [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) in Windows.
 - **An installed `cue` binary**
-  ([installation details]({{< relref "/docs/introduction/installation" >}}))
+  ([installation details]({{< relref "docs/introduction/installation" >}}))
 - **Some awareness of CUE schemata**
-  ([Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
-   [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) in the CUE tour)
+  ([Constraints]({{< relref "docs/tour/basics/constraints" >}}) and
+   [Definitions]({{< relref "docs/tour/basics/definitions" >}}) in the CUE tour)
 
 This tutorial is written using the following version of `cmd/cue`:
 

@@ -44,10 +44,10 @@ that contains list arithmetic operators:
   use [`list.Repeat`](/go/pkg/list#Repeat) instead.
 - Wherever the `+` operator is used to combine lists:
   use either [`list.Concat`](/go/pkg/list#Concat) or a nested `for` loop instead.
-- Use [`cue fix`]({{< relref "/docs/reference/command/cue-help-fix" >}}) to try
+- Use [`cue fix`]({{< relref "docs/reference/command/cue-help-fix" >}}) to try
   and make the changes automatically.
 
-[`cue fix`]({{< relref "/docs/reference/command/cue-help-fix" >}})
+[`cue fix`]({{< relref "docs/reference/command/cue-help-fix" >}})
 will make these changes for you in many cases, but only if you are using `cue`
 command version `v0.11.0` or later. Here's how to use `cue fix`:
 

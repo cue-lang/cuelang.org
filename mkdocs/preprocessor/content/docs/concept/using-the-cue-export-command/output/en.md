@@ -100,12 +100,12 @@ fails with an error if asked to encode other data types as text or binary.
 {{<info>}}
 Information on the encodings and filetypes supported by the `cue` command is
 available in
-[`cue help filetypes`]({{< relref "/docs/reference/command/cue-help-filetypes" >}}).
+[`cue help filetypes`]({{< relref "docs/reference/command/cue-help-filetypes" >}}).
 That page documents data, graph, and schema encodings, of which the `cue
 export` command can only emit data encodings.
 Outputs using graph and schema encodings are supported by the
-[`cue def`]({{< relref "/docs/reference/command/cue-help-def" >}}) and
-[`cue eval`]({{< relref "/docs/reference/command/cue-help-eval" >}}) commands.
+[`cue def`]({{< relref "docs/reference/command/cue-help-def" >}}) and
+[`cue eval`]({{< relref "docs/reference/command/cue-help-eval" >}}) commands.
 {{</info>}}
 
 ## Output encoding: `--out`
@@ -237,7 +237,7 @@ command succeeds only when the value being emitted is concrete.
 This means that the CUE emitted by `cue export` will contain only fields that
 contain fully-specified values.
 Additionally, the CUE that `cue export` emits will contain only
-[regular fields]({{< relref "/docs/tour/types/structs" >}}).
+[regular fields]({{< relref "docs/tour/types/structs" >}}).
 Any hidden fields, definitions, comprehensions, and other CUE language features
 will not be present, except insofar as their values affect regular fields:
 

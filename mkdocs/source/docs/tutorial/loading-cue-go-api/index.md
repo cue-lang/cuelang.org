@@ -23,10 +23,10 @@ evaluate some CUE.
 - **An installed `go` binary**
   ([installation details](https://go.dev/doc/install))
 - **An installed `cue` binary**
-  ([installation details]({{< relref "/docs/introduction/installation" >}}))
+  ([installation details]({{< relref "docs/introduction/installation" >}}))
 - **Some awareness of CUE schemata**
-  ([Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
-   [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) in the CUE tour)
+  ([Constraints]({{< relref "docs/tour/basics/constraints" >}}) and
+   [Definitions]({{< relref "docs/tour/basics/definitions" >}}) in the CUE tour)
 
 This tutorial is written using the following versions of `go` and `cue`:
 

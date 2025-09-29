@@ -9,7 +9,7 @@ index_hide: true
 The `cue export` command takes a configuration and turns some of it (or all of
 it) into validated, concrete data encoded in a format such as JSON or YAML.
 The `cue export`
-[reference page]({{< relref "/docs/reference/command/cue-export" >}}) explains
+[reference page]({{< relref "docs/reference/command/cue-export" >}}) explains
 it more formally, like this:
 
 > "The `cue export` command

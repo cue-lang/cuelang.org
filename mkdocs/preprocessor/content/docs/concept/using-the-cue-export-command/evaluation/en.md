@@ -101,7 +101,7 @@ bar: {
 {{{end}}}
 
 To validate an entire configuration before exporting part of it, use
-[`cue vet`]({{< relref "/docs/reference/command/cue-help-vet" >}}) before you
+[`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}}) before you
 run `cue export`.
 
 [Issue #3371](/issue/3371) tracks a bug where the entirety of a
