@@ -169,7 +169,7 @@ to and from CUE**, and `jsonpb` rewrites a CUE expression based on the Protobuf
 interpretation of JSON.
 
 Your feedback on their utility and structure is invaluable - please join the
-[CUE community]({{< relref "/community" >}}) on Slack and GitHub, and let us
+[CUE community](/community) on Slack and GitHub, and let us
 know how you're using these APIs!
 
 ## Protobuf mappings

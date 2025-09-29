@@ -177,7 +177,7 @@ official documentation.
 
 ## I have a question that isn't answered here
 
-Please join the [CUE community]({{< relref "/community" >}}) on GitHub, Slack,
+Please join the [CUE community](/community) on GitHub, Slack,
 or Discord and ask the question there -- we'll be happy to help!
 
 ## Related content
