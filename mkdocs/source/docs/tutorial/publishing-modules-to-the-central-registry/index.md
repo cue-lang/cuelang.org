@@ -25,7 +25,7 @@ create a second module that depends on the first.
   create it under your personal GitHub account (it doesn't matter if it is public or private)
 - **A [Central Registry](https://registry.cue.works/) account**
 - **The `cue` binary** --
-  follow the [installation instructions]({{< relref "/docs/introduction/installation" >}})
+  follow the [installation instructions]({{< relref "docs/introduction/installation" >}})
   if you don't already use `cue`
 - **A tool to edit text files** --
   any text editor you have will be fine, such as
@@ -39,8 +39,8 @@ create a second module that depends on the first.
   to run commands.
 - **Some awareness of CUE schemata** --
   the language tour's pages on
-  [Constraints]({{< relref "/docs/tour/basics/constraints" >}}) and
-  [Definitions]({{< relref "/docs/tour/basics/definitions" >}}) are a good refresher
+  [Constraints]({{< relref "docs/tour/basics/constraints" >}}) and
+  [Definitions]({{< relref "docs/tour/basics/definitions" >}}) are a good refresher
 
 This tutorial is written using the following version of `cue`:
 

@@ -7,13 +7,13 @@ toc_hide: true
 
 This guide demonstrates how to use tag variables to inject system information
 into CUE evaluations. A separate guide details
-[how to inject arbitrary information]({{< relref "/docs/howto/inject-value-into-evaluation-using-tag-attribute" >}}).
+[how to inject arbitrary information]({{< relref "docs/howto/inject-value-into-evaluation-using-tag-attribute" >}}).
 
 One of CUE's core concepts is that evaluations should be *repeatable:* given
 the same input, the same output should be produced.
 However, sometimes it can be necessary to introduce context or other information
 into an evaluation that might cause the output to vary. As described in the
-[`cue help injection`]({{< relref "/docs/reference/command/cue-help-injection" >}})
+[`cue help injection`]({{< relref "docs/reference/command/cue-help-injection" >}})
 reference, CUE allows information to be introduced, or *injected*, by using tag
 attributes and tag variables. This guide demonstrates tag variables.
 
