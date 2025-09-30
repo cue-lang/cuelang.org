@@ -1,0 +1,8 @@
+.card-title a.card-link {
+    font-size: 1.5em;
+    font-weight: bolder;
+}
+
+a.card-link, a.card-link:hover {
+    color: initial;
+}
