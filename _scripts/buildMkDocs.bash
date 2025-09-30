@@ -13,4 +13,7 @@ _scripts/runPreprocessor.bash execute \
     --mkdocs-output mkdocs/source/ \
 || echo "FIXME: Preprocessor failure masked."
 
+# Workaround for https://cuelang.org/issue/4044
+cp -priv mkdocs/static/* mkdocs/source/
+
 mkdocs build --config-file mkdocs/config.yml
