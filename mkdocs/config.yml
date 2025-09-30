@@ -10,8 +10,8 @@ site_dir: "../hugo/static/mkdocs/"
 
 use_directory_urls: true
 
-#extra_css:
-#  - assets/stylesheets/docs.css
+extra_css:
+  - assets/stylesheets/docs.css
 
 theme:
   name: material
