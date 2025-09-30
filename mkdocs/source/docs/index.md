@@ -34,47 +34,84 @@ Browse through the different documentation sections,
 or use the search box in the top-right corner of each page.
 Here's what you'll find in each section:
 
-{{< cards >}}
+<div class="grid cards" markdown>
 
-{{< card href="introduction/" label="Introduction" title="A great place to start" >}}
-  Take a trip through what's possible with CUE, and learn how to install it on
-  your computer
-{{< /card >}}
+-   <a href="/docs/introduction/" class="card-link">
+    A great place to start
+    { .card-title }
 
-{{< card href="tour/" label="Tour" title="New to CUE?" >}}
-  See CUE's features and syntax up close in this tour that's suitable for
-  newcomers to the language
-{{< /card >}}
+    Take a trip through what's possible with CUE, and learn how to install it
+    on your computer
 
-<!-- TODO:postLG
-{{</* card href="language-guide/" label="Language Guide" title="A deep dive into CUE" */>}}
-  Follow a detailed learning journey broken down into the different aspects of
-  CUE: data, templating, schemas, queries, policy, file organization, and
-  interoperability with other languages and encodings
-{{</* /card */>}}
--->
+    :material-chevron-right-circle:{ .xl .middle }
+    Introduction
+    </a>
 
-{{< card href="integration/" label="Integrations" title="JSON, YAML, Go, and more" >}}
-  Learn how CUE integrates with a wide ecosystem of formats and tools
-{{< /card >}}
+-   <a href="/docs/tour/" class="card-link">
+    New to CUE?
+    { .card-title }
 
-{{< card href="tutorial/" label="Tutorials" title="Techniques and tools" >}}
-  Learn about different language and tooling features through self-contained
-  lessons that you can run on your own computer
-{{< /card >}}
+    See CUE's features and syntax up close in this tour that's suitable for
+    newcomers to the language
 
-{{< card href="howto/" label="How-to Guides" title="Directions to specific goals" >}}
-  Follow practical steps guiding you through completing tasks with CUE
-{{< /card >}}
+    :material-chevron-right-circle:{ .xl .middle }
+    Tour
+    </a>
 
-{{< card href="concept/" label="Concept Guides" title="Theory and foundations" >}}
-  Discover the approaches that CUE makes possible by exploring the ideas and
-  theory that drive the language
-{{< /card >}}
+-   <a href="/docs/integration/" class="card-link">
+    JSON, YAML, Go, and more
+    { .card-title }
 
-{{< card href="reference/" label="References" title="References" >}}
-  Read the CUE language specification, a glossary of terms, the project's code
-  of conduct, and other core documents
-{{< /card >}}
+    Learn how CUE integrates with a wide ecosystem of formats and tools
+    <br>
+    <br>
 
-{{< /cards >}}
+    :material-chevron-right-circle:{ .xl .middle }
+    Integrations
+    </a>
+
+-   <a href="/docs/tutorial/" class="card-link">
+    Techniques and tools
+    { .card-title }
+
+    Learn about different language and tooling features through self-contained
+    lessons that you can run on your own computer
+
+    :material-chevron-right-circle:{ .xl .middle }
+    Tutorials
+    </a>
+
+-   <a href="/docs/howto/" class="card-link">
+    Directions to specific goals
+    { .card-title }
+
+    Follow practical steps guiding you through completing tasks with CUE
+    <br>
+    <br>
+
+    :material-chevron-right-circle:{ .xl .middle }
+    How-to Guides
+    </a>
+
+-   <a href="/docs/concept/" class="card-link">
+    Theory and foundations
+    { .card-title }
+
+    Discover the approaches that CUE makes possible by exploring the ideas and
+    theory that drive the language
+
+    :material-chevron-right-circle:{ .xl .middle }
+    Concept Guides
+    </a>
+
+-   <a href="/docs/reference/" class="card-link">
+    References
+    { .card-title }
+
+    Read the CUE language specification, a glossary of terms, the project's
+    code of conduct, and other core documents
+
+    :material-chevron-right-circle:{ .xl .middle }
+    References
+    </a>
+</div>
