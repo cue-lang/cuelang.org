@@ -35,7 +35,8 @@ pythonVersion: "3.13"
 hugoVersion: "0.147.9"
 
 // mkdocs-material builds the /docs/ hierarchy.
-mkdocsMaterialVersion: "9.6.21"
+mkdocsMaterialVersion:   "9.6.21"
+mkdocsAwesomeNavVersion: "3.2.0"
 
 // netlifyCLIVersion is the version of the Netlify CLI used to deploy tip and
 // deploy previews of CLs

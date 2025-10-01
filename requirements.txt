@@ -1,6 +1,7 @@
 # Code generated site_tool.cue; DO NOT EDIT.
 
 mkdocs-material==9.6.21
+mkdocs-awesome-nav==3.2.0
 
 # Fork of Pygments that includes CUE syntax highlighting.
 # TODO: remove when CUE support is available upstream.
