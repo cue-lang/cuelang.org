@@ -4,6 +4,7 @@ tags:
 - go api
 authors: [myitcv,jpluscplusm]
 toc_hide: true
+headless: true
 ---
 
 The CUE Go API contains several functions that might need to communicate

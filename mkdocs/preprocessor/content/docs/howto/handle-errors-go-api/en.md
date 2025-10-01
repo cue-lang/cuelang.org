@@ -4,6 +4,7 @@ tags:
 - go api
 authors: [myitcv,jpluscplusm]
 toc_hide: true
+headless: true
 ---
 
 {{{with _script_ "en" "set caches to speed up re-running"}}}

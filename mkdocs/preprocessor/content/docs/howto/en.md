@@ -5,6 +5,7 @@ toc_hide: false
 index_hide: true
 aliases:
 - /docs/howto/find-a-guide/
+headless: false
 ---
 
 How-to guides contain either step-by-step instructions or stand-alone CUE.

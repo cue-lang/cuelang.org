@@ -26,10 +26,15 @@ theme:
   #   - announce.dismiss # notification bar can be dismissed
     - header.autohide # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-header/#automatic-hiding
     - navigation.tabs # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs
-    - navigation.indexes # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages
+   #- navigation.indexes # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#section-index-pages
       # Pruning feels like a good idea, given its description. With navigation.indexes we won't have expandable
       # sections, so why wouldn't we enable it? FIXME: check UI when a section doesn't have an index - might that occur?
     - # navigation.prune # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-pruning
+
+plugins:
+  - search
+  - mkdocs-nav-weight:
+      headless_included: true
 
 # Page titles:
 # IF a page title is set here in the nav struct (e.g. "foo: some/page/index.md") then the title is set not only for the
