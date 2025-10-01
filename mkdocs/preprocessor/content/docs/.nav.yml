@@ -1,0 +1,40 @@
+title: Documentation
+
+nav:
+  - index.md
+  - introduction
+  - tour
+  - integration
+  - tutorial
+  - howto
+  - concept
+  - reference
+
+
+#  - Tour
+#    - tour/index.md
+#    - tour/basics/index.md
+#    - tour/types/index.md
+#    - tour/references/index.md
+#    - tour/expressions/index.md
+#    - tour/packages/index.md
+#  - Tutorials:
+#    - tutorial/index.md
+#    - tutorial/new-to-cue/index.md
+#  - How-to Guides:
+#    - howto/index.md
+#    - howto/popular-guides/index.md
+#    - Commented CUE Guides: missing/FIXME.md
+#    - howto/**/*.md
+#  - Concept Guides:
+#    - concept/index.md
+#    - Popular guides: concept/popular-guides/index.md
+#    - The Logic of CUE: missing/FIXME.md
+#    - Modules: concept/modules/index.md
+#    - Frequently Asked Questions: concept/faq/index.md
+#  - References:
+#    - reference/index.md
+#    - reference/spec/index.md
+#    - reference/glossary/index.md
+#    - reference/command/index.md
+#    - reference/code-of-conduct/index.md

@@ -1,0 +1,7 @@
+title: Integrations
+nav:
+  - index.md
+  - openapi
+  - json/index.md
+  - yaml/index.md
+  - protobuf/index.md
