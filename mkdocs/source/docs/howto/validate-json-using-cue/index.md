@@ -4,6 +4,7 @@ weight:
 toc_hide: true
 tags:
     - cue command
+nav_section: How-to Guides
 ---
 
 ## Introduction
