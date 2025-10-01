@@ -5,8 +5,8 @@ strict: false # FIXME: enable strict mode
 # docs_dir, site_dir, and watch are relative to this config file.
 docs_dir: "source/"
 site_dir: "../hugo/static/mkdocs/"
-#watch:
-#  - "overrides/"
+watch:
+  - "overrides/"
 
 use_directory_urls: true
 
@@ -15,7 +15,7 @@ extra_css:
 
 theme:
   name: material
-  # custom_dir: overrides/
+  custom_dir: overrides/
   # logo: assets/images/logo.svg
   # favicon: assets/images/favicon.svg
   features:
@@ -30,6 +30,9 @@ theme:
       # Pruning feels like a good idea, given its description. With navigation.indexes we won't have expandable
       # sections, so why wouldn't we enable it? FIXME: check UI when a section doesn't have an index - might that occur?
     - # navigation.prune # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-pruning
+
+hooks:
+  - hooks/faux_nav.py
 
 # Page titles:
 # IF a page title is set here in the nav struct (e.g. "foo: some/page/index.md") then the title is set not only for the

@@ -11,6 +11,7 @@
     <span class="{{ class }}"></span>
   {% endif %}
 {% endmacro %}
+
 {% macro render_content(nav_item, ref) %}
   {% set ref = ref or nav_item %}
   {% if nav_item.meta and nav_item.meta.icon %}
@@ -27,6 +28,7 @@
     {{ render_status(nav_item, nav_item.meta.status) }}
   {% endif %}
 {% endmacro %}
+
 {% macro render_pruned(nav_item, ref) %}
   {% set ref = ref or nav_item %}
   {% set first = nav_item.children | first %}
@@ -41,20 +43,49 @@
     </a>
   {% endif %}
 {% endmacro %}
+
+{# --- recursive macro to mark ancestors active --- #}
+{% macro mark_active_recursive(nav_item) %}
+    {% set nav_item.active = true %}
+    {% if nav_item.parent is defined %}
+        {{ mark_active_recursive(nav_item.parent) }}
+    {% endif %}
+{% endmacro %}
+
+{# --- recursive macro to detect any active descendant --- #}
+{% macro any_active_descendant(nav_item) %}
+    {% if nav_item.active %}
+        true
+    {% elif nav_item.children %}
+        {% for child in nav_item.children %}
+            {% if any_active_descendant(child) %}
+                true
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
 {% macro render(nav_item, path, level, parent) %}
+
+  {# --- orphan-page logic --- #}
+  {% set nav_item_active = nav_item.active | default(false) %}
+  {% set children = nav_item.children if nav_item.children is not none else [] %}
+  {% if page is not none and page in children %}
+      {% set nav_item_active = true %}
+      {% if parent is defined %}
+          {{ mark_active_recursive(parent) }}
+      {% endif %}
+  {% endif %}
+
   {% set class = "md-nav__item" %}
-  {% if nav_item.active %}
+  {% if nav_item_active %}
     {% set class = class ~ " md-nav__item--active" %}
   {% endif %}
-  {% if nav_item.pages %}
-    {% if page in nav_item.pages %}
-      {% set nav_item = page %}
-    {% endif %}
-  {% endif %}
-  {% if nav_item.children %}
-    {% set _ = namespace(index = none) %}
+
+  {% if children %}
+    {% set _ = namespace(index = none, is_section = false, is_pruned = false) %}
     {% if "navigation.indexes" in features %}
-      {% for item in nav_item.children %}
+      {% for item in children %}
         {% if item.is_index and _.index is none %}
           {% set _.index = item %}
         {% endif %}
@@ -62,62 +93,63 @@
     {% endif %}
     {% set index = _.index %}
     {% if "navigation.tabs" in features %}
-      {% if level == 1 and nav_item.active %}
+      {% if level == 1 and nav_item_active %}
         {% set class = class ~ " md-nav__item--section" %}
-        {% set is_section = true %}
+        {% set _.is_section = true %}
       {% endif %}
       {% if "navigation.sections" in features %}
-        {% if level == 2 and parent.active %}
+        {% if level == 2 and nav_item_active %}
           {% set class = class ~ " md-nav__item--section" %}
-          {% set is_section = true %}
+          {% set _.is_section = true %}
         {% endif %}
       {% endif %}
     {% elif "navigation.sections" in features %}
       {% if level == 1 %}
         {% set class = class ~ " md-nav__item--section" %}
-        {% set is_section = true %}
+        {% set _.is_section = true %}
       {% endif %}
     {% endif %}
     {% if "navigation.prune" in features %}
-      {% if not is_section and not nav_item.active %}
+      {% if not _.is_section and not nav_item_active %}
         {% set class = class ~ " md-nav__item--pruned" %}
-        {% set is_pruned = true %}
+        {% set _.is_pruned = true %}
       {% endif %}
     {% endif %}
-    <li class="{{ class }} md-nav__item--nested">
-      {% if not is_pruned %}
-        {% set checked = "checked" if nav_item.active %}
-        {% if "navigation.expand" in features and not checked %}
-          {% set indeterminate = "md-toggle--indeterminate" %}
-        {% endif %}
-        <input class="md-nav__toggle md-toggle {{ indeterminate }}" type="checkbox" id="{{ path }}" {{ checked }}>
+
+    {# --- determine if toggle input should be checked based on any descendant active --- #}
+    {% set checked = "checked" if nav_item_active or (children | selectattr('active') | list) else "" %}
+
+    <li class="{{ class }} {% if children %}md-nav__item--nested{% endif %}">
+      {% if not _.is_pruned %}
+        <input class="md-nav__toggle md-toggle" type="checkbox" id="{{ path }}" {{ checked }}>
         {% if not index %}
-          {% set tabindex = "0" if not is_section %}
+          {% set tabindex = "0" if not _.is_section %}
           <label class="md-nav__link" for="{{ path }}" id="{{ path }}_label" tabindex="{{ tabindex }}">
             {{ render_content(nav_item) }}
             <span class="md-nav__icon md-icon"></span>
           </label>
         {% else %}
-          {% set class = "md-nav__link--active" if index == page %}
+          {% set class_link = "md-nav__link--active" if index == page %}
           <div class="md-nav__link md-nav__container">
-            <a href="{{ index.url | url }}" class="md-nav__link {{ class }}">
+            <a href="{{ index.url | url }}" class="md-nav__link {{ class_link }}">
               {{ render_content(index, nav_item) }}
             </a>
-            {% if nav_item.children | length > 1 %}
-              {% set tabindex = "0" if not is_section %}
-              <label class="md-nav__link {{ class }}" for="{{ path }}" id="{{ path }}_label" tabindex="{{ tabindex }}">
+            {% if children | length > 1 %}
+              {% set tabindex = "0" if not _.is_section %}
+              <label class="md-nav__link {{ class_link }}" for="{{ path }}" id="{{ path }}_label" tabindex="{{ tabindex }}">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             {% endif %}
           </div>
         {% endif %}
-        <nav class="md-nav" data-md-level="{{ level }}" aria-labelledby="{{ path }}_label" aria-expanded="{{ nav_item.active | tojson }}">
+
+        <nav class="md-nav" data-md-level="{{ level }}" aria-labelledby="{{ path }}_label" aria-expanded="{{ nav_item_active | tojson }}">
           <label class="md-nav__title" for="{{ path }}">
             <span class="md-nav__icon md-icon"></span>
             {{ nav_item.title }}
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            {% for item in nav_item.children %}
+            {% for item in children %}
               {% if not index or item != index %}
                 {{ render(item, path ~ "_" ~ loop.index, level + 1, nav_item) }}
               {% endif %}
@@ -128,6 +160,7 @@
         {{ render_pruned(nav_item) }}
       {% endif %}
     </li>
+
   {% elif nav_item == page %}
     <li class="{{ class }}">
       {% set toc = page.toc %}
