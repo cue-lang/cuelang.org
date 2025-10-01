@@ -333,6 +333,7 @@ template: ci.#writefs & {
                 # \(donotedit)
 
                 mkdocs-material==\(repo.mkdocsMaterialVersion)
+                mkdocs-nav-weight==\(repo.mkdocsNavWeightVersion)
 
                 # Fork of Pygments that includes CUE syntax highlighting.
                 # TODO: remove when CUE support is available upstream.
