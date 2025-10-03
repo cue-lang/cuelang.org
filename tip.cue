@@ -1,0 +1,4 @@
+package site
+
+_version: "v0.15.0-alpha.1.0.20251003162346-5c15642ab78c" @tag(version)
+versions: cue: [string]: v: _version

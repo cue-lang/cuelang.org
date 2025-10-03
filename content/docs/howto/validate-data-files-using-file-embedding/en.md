@@ -54,6 +54,7 @@ O: 222
 -- out --
 alpha.O: conflicting values 2.2 and int (mismatched types float and int):
     ./constraints.cue:4:17
+    ./validate.cue:8:8
     data/alpha.json:3:10
 beta.X: invalid value 11 (out of bound >100):
     ./constraints.cue:8:16
