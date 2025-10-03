@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "KSEVLD1M2IVPP34GR4IMBLN2S083PLLEODK0H8Q9OADLA6F419DG===="
-									scriptHash: "N3HH7G4RSMKOEA5U29UAN8IRH231R692I9R8FTL9F8GCER9VSTD0===="
+									hash:       "GJN97S5G696AL5VGI5PKRBN5O0CSLVNGUOQQ8GDS76BK4B6R5DT0===="
+									scriptHash: "K17RG4A3HVF5UQCPBC6VB84QMEGH024P815EEEJAVI1SCH5R4PAG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.1:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0-alpha.1.0.20251003162346-5c15642ab78c:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -20,7 +20,7 @@ package site
 										cmd:      "cue help exp gengotypes"
 										exitCode: 0
 										output: """
-												ARNING: THIS COMMAND IS EXPERIMENTAL.
+												WARNING: THIS COMMAND IS EXPERIMENTAL.
 
 												gengotypes generates Go type definitions from exported CUE definitions.
 

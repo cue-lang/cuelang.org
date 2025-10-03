@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "M0NJ9TI4IL484C389I3MOH5BVSO6CTAAHO10BIHJPCQ7NQTDVC6G===="
-									scriptHash: "IJV7OK2G6IECJ856LP1FCBHHHGKFKN1M3GNNQFFAT4TT80MPC6HG===="
+									hash:       "F6R2J14N5MM35MOKE616C5GBRBBQOM64OVET87FB86E6E64V3Q20===="
+									scriptHash: "CEH1EGGRSFJI4BGNT240QELV5CPJ5KF88GV05NBSJUDP9KM6F0F0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.1:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0-alpha.1.0.20251003162346-5c15642ab78c:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -50,6 +50,7 @@ package site
 												  cue help commands       user-defined commands
 												  cue help embed          file embedding
 												  cue help environment    environment variables
+												  cue help experiments    experimental language features
 												  cue help filetypes      supported file types and qualifiers
 												  cue help flags          common flags for composing packages
 												  cue help injection      inject files or values into specific fields for a build
