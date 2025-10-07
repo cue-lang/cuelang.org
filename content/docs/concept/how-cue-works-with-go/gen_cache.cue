@@ -14,10 +14,13 @@ package site
 								"load non-cue - yaml file":   "FoxlV1JunjaHrgSuQD079G6yx/JK0MZaZ2m/DB0pzjw="
 								"check go data - cue schema": "SpLFf9+KlgoM1Yax+H30Q+L9PEFg5qhZRArXFgruwss="
 								"check go data - main.go":    "bsti/QYYaTnFRtmFS+RTHlNXBty9VFK9qxfEEFFZ3ac="
+								"validate go values":         "qGmQStwJ6WXCw1428J7JlUI1f2jT5tjkt5LELAs668c="
+								"copy cue values":            "02/sGyCEx/O61yKTXa7yUu1RYgd3KpoiT0Bg7nFdakA="
+								"modify cue values":          "lYX4SmEtx/i7D8TstrSIya9YDE4xpcP7xy0x3Xhn39c="
 							}
 							multi_step: {
-								hash:       "P3JFPTG7F40RSSDGHPDMBSQOBCJ3O566HADL6D88IQLGKNQBGVKG===="
-								scriptHash: "O45QT7L0K47A8JD1MUC98I901IPF5J9UC1NU8THJ285JOQ7OPIB0===="
+								hash:       "G2U384K42BPM09NR94ARAI9CV5DV76QM379CQFD6J0NCN8E3T5SG===="
+								scriptHash: "M06DC15T20530LCN0F7AN1RD81B75MTHSVSI842ORKNLVDAHBP7G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export LC_ALL=C"
@@ -246,6 +249,159 @@ package site
 											❌ Person: NOT ok
 											#Person.age: invalid value 999 (out of bound <=150)
 											exit status 1
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "staticcheck ./..."
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "rm -rf $HOME/*"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go mod init cue.example"
+									exitCode: 0
+									output: """
+											go: creating new go.mod: module cue.example
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go get cuelang.org/go@v0.14.2"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go mod tidy"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go run ."
+									exitCode: 1
+									output: """
+											❌ Person: NOT ok
+											age: invalid value 999 (out of bound <=150)
+											exit status 1
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "staticcheck ./..."
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "rm -rf $HOME/*"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go mod init cue.example"
+									exitCode: 0
+									output: """
+											go: creating new go.mod: module cue.example
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go get cuelang.org/go@v0.14.2"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go mod tidy"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go run ."
+									exitCode: 0
+									output: """
+											First decode: {2 4}
+											Second decode failed: B: cannot use value "foo" (type string) as int
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "staticcheck ./..."
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "rm -rf $HOME/*"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go mod init cue.example"
+									exitCode: 0
+									output: """
+											go: creating new go.mod: module cue.example
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go get cuelang.org/go@v0.14.2"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go mod tidy"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go run ."
+									exitCode: 0
+									output: """
+											Hello Kinshasa!
 
 											"""
 								}, {
