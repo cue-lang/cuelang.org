@@ -1,15 +1,13 @@
 ---
 title: How CUE works with Go
-tags:
-- encodings
-- go api
-authors:
-- jpluscplusm
-- myitcv
+tags: [encodings, go api]
+authors: [jpluscplusm, myitcv]
 toc_hide: true
+aliases:
+- /docs/integration/go/
 ---
 
-{{{with _script_ "en" "HIDDEN_ set up caches"}}}
+{{{with _script_ "en" "HIDDEN: set up caches"}}}
 export LC_ALL=C
 export GOMODCACHE=/caches/gomodcache
 export GOCACHE=/caches/gobuild
@@ -19,18 +17,23 @@ export STATICCHECK_CACHE=/caches/staticcheck
 CUE is designed to complement and work with the Go programming language.
 It offers a powerful API that enables Go code to take advantage of CUE's
 advanced capabilites.
-Additionally, CUE makes it easy to use Go as your source of truth by using the
-`cue` command to convert Go types to CUE.
+CUE also makes it easy to use Go as your source of truth
+by using the `cue` command to convert Go types to CUE.
 
-In this guide we'll demonstrate importing some Kubernetes API code to generate
-CUE schemas. We'll also use the API to convert both CUE and non-CUE data to
-native Go values, and validate some Go data natively with CUE.
+In this guide we will use CUE's Go API and the `cue` command to:
+
+- convert Go types to CUE, using Kubernetes API code as an example
+- decode CUE values into Go values
+- load CUE and non-CUE data into Go values
+- validate Go values
+- add information to CUE values based on Go values
+- generate Go code from CUE
 
 <!--more-->
 
 ## Converting Go types to CUE
 
-{{{with _script_ "en" "HIDDEN_ cue get go - reset"}}}
+{{{with _script_ "en" "HIDDEN: cue get go - reset"}}}
 rm -rf $HOME/*
 cue mod init cue.example
 go mod init cue.example
@@ -109,22 +112,89 @@ a well-known location.
 This will remove the need to generate such CUE locally --
 see {{<issue 2939>}}discussion #2939{{</issue>}} for more details.
 
-## Using CUE's Go API
+## CUE's Go API
 
 The Go API injects the power and expressiveness of CUE into your Go programs,
 allowing them to
-**load and validate both CUE and non-CUE data** (such as JSON or YAML),
+load and validate both CUE and non-CUE data (such as JSON or YAML),
 and to
-**check data marshalled by Go**, wherever it comes from.
+check data marshalled by Go -- wherever it comes from.
 
-### Loading CUE data
+### Decoding CUE values into Go values
 
-{{{with _script_ "en" "HIDDEN_ load cue - reset"}}}
+{{{with _script_ "en" "HIDDEN: copy cue values - reset"}}}
 rm -rf $HOME/*
 go mod init cue.example
 {{{end}}}
 
-In this example, we load some data from the following CUE file and display it:
+The simplest way to populate a Go value from the contents of a CUE value
+is to use the CUE value's `Decode` method:
+
+{{{with upload "en" "copy cue values"}}}
+-- main.go --
+package main
+
+import (
+	"fmt"
+	"log"
+
+	"cuelang.org/go/cue/cuecontext"
+)
+
+type AB struct {
+	A int
+	B int
+}
+
+func main() {
+	ctx := cuecontext.New()
+
+	var x AB
+
+	// First CUE value: both A and B are integers.
+	v1 := ctx.CompileString(`{ A: 42, B: 100 }`)
+	if err := v1.Decode(&x); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("✅ First decode suceeded:", x)
+
+	// Second CUE value: B is now a string.
+	v2 := ctx.CompileString(`{ A: 42, B: "foo" }`)
+	if err := v2.Decode(&x); err != nil {
+		fmt.Println("❌ Second decode failed:", err)
+	}
+}
+{{{end}}}
+
+We add a dependency on the latest version of the `cuelang.org/go` module, tidy
+our Go module, and run our code:
+
+{{{with script "en" "copy cue values"}}}
+#ellipsis 0
+go get cuelang.org/go@${CUELANG_CUE_LATEST}
+#ellipsis 0
+go mod tidy
+go run .
+{{{end}}}
+
+As expected, our second decode failed because of a type mismatch.
+Our first decode demonstrates that CUE values have a default formatter that
+renders them sensibly.
+
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+go vet ./...
+#ellipsis 0
+staticcheck ./...
+{{{end}}}
+
+### Loading CUE data
+
+{{{with _script_ "en" "HIDDEN: load cue - reset"}}}
+rm -rf $HOME/*
+go mod init cue.example
+{{{end}}}
+
+In this next example we load some data from the following CUE file, and then display it:
 
 {{{with upload "en" "load cue - cue data"}}}
 -- file.cue --
@@ -174,9 +244,9 @@ Finally, running the Go program displays the CUE data:
 go run .
 {{{end}}}
 
-CUE values have a default formatter that renders them sensibly.
+The CUE value default formatter renders our data sensibly.
 
-{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #1"}}}
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #2"}}}
 go vet ./...
 #ellipsis 0
 staticcheck ./...
@@ -184,7 +254,7 @@ staticcheck ./...
 
 ### Loading non-CUE data
 
-{{{with _script_ "en" "HIDDEN_ load non-cue - reset"}}}
+{{{with _script_ "en" "HIDDEN: load non-cue - reset"}}}
 rm -rf $HOME/*
 go mod init cue.example
 {{{end}}}
@@ -255,15 +325,15 @@ go mod tidy
 go run .
 {{{end}}}
 
-{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #2"}}}
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #3"}}}
 go vet ./...
 #ellipsis 0
 staticcheck ./...
 {{{end}}}
 
-### Checking Go data with CUE schema
+### Checking Go values with CUE schema
 
-{{{with _script_ "en" "HIDDEN_ check go data - reset"}}}
+{{{with _script_ "en" "HIDDEN: check go data - reset"}}}
 rm -rf $HOME/*
 go mod init cue.example
 {{{end}}}
@@ -331,7 +401,7 @@ func main() {
 }
 {{{end}}}
 
-This time we see that CUE correctly caught a problem in our data:
+We see that CUE correctly caught a problem in our data:
 
 {{{with script "en" "checking go get module"}}}
 #ellipsis 0
@@ -341,11 +411,86 @@ go mod tidy
 ! go run .
 {{{end}}}
 
-{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #3"}}}
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #4"}}}
 go vet ./...
 #ellipsis 0
 staticcheck ./...
 {{{end}}}
+
+### Adding information to CUE values
+
+{{{with _script_ "en" "HIDDEN: add info - reset"}}}
+rm -rf $HOME/*
+go mod init cue.example
+{{{end}}}
+
+Information can be added to a CUE value using the `FillPath` method:
+
+{{{with upload "en" "add info"}}}
+#location top bottom
+-- config.cue --
+msg:   "Hello, \(place)!"
+place: string | *"everyone"
+-- main.go --
+package main
+
+import (
+	_ "embed"
+	"fmt"
+	"log"
+
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
+)
+
+//go:embed config.cue
+var config string
+
+func main() {
+	ctx := cuecontext.New()
+	instance := ctx.CompileString(config)
+	var msg string
+	var err error
+
+	// Print the `msg` field's value.
+	if msg, err = instance.LookupPath(cue.ParsePath("msg")).String(); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(msg)
+
+	// Add information to the `place` field in the form of a concrete value.
+	filled := instance.FillPath(cue.ParsePath("place"), "Kinshasa")
+
+	// Print the `msg` field's value again.
+	if msg, err = filled.LookupPath(cue.ParsePath("msg")).String(); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(msg)
+}
+{{{end}}}
+
+{{{with script "en" "add info"}}}
+#ellipsis 0
+go get cuelang.org/go@${CUELANG_CUE_LATEST}
+#ellipsis 0
+go mod tidy
+go run .
+{{{end}}}
+
+Information added with the `FillPath` method is unified with any value that
+already exists at the path.
+
+{{{with _script_ "en" "https://github.com/cue-lang/docs-and-content/issues/186 #5"}}}
+go vet ./...
+#ellipsis 0
+staticcheck ./...
+{{{end}}}
+
+## Generating Go code
+
+Go types can be generated from CUE definitions using the experimental
+`gengotypes` command, as demonstrated in
+{{< linkto/inline "howto/generate-go-types-from-cue-definitions" >}}.
 
 <!-- TODO
   - Checking Go data with CUE schema
@@ -357,7 +502,7 @@ staticcheck ./...
 
 The CUE project believes that its role can be one of *interlingua*:
 a **bidirectional bridge** between all the formats that CUE speaks,
-linking sources of truth with data - wherever they exist.
+linking sources of truth with data -- wherever they exist.
 
 On the way towards that goal, the project has plans to extend CUE to
 **directly generate code in Go** (and other languages),
