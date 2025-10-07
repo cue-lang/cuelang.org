@@ -18,6 +18,10 @@ package aliases
   { from: "/community/conduct/", to: "/docs/reference/code-of-conduct/" },
   { from: "/docs/integration/go/", to: "/docs/concept/how-cue-works-with-go/" },
   { from: "/docs/concept/json/", to: "/docs/concept/how-cue-works-with-json/" },
+  { from: "/docs/integration/json/", to: "/docs/concept/how-cue-works-with-json/" },
+  { from: "/docs/integration/openapi/", to: "/docs/concept/how-cue-works-with-openapi/" },
+  { from: "/docs/integration/protobuf/", to: "/docs/concept/how-cue-works-with-protocol-buffers/" },
   { from: "/docs/concept/yaml/", to: "/docs/concept/how-cue-works-with-yaml/" },
+  { from: "/docs/integration/yaml/", to: "/docs/concept/how-cue-works-with-yaml/" },
   { from: "/docs/howto/ensure-min-max-list/", to: "/docs/howto/use-list-maxitems-list-minitems-to-constrain-list-length/" },
 ]
