@@ -14,10 +14,12 @@ package site
 								"load non-cue - yaml file":   "FoxlV1JunjaHrgSuQD079G6yx/JK0MZaZ2m/DB0pzjw="
 								"check go data - cue schema": "SpLFf9+KlgoM1Yax+H30Q+L9PEFg5qhZRArXFgruwss="
 								"check go data - main.go":    "bsti/QYYaTnFRtmFS+RTHlNXBty9VFK9qxfEEFFZ3ac="
+								"copy cue values":            "02/sGyCEx/O61yKTXa7yUu1RYgd3KpoiT0Bg7nFdakA="
+								"modify cue values":          "3f95NI88srSori2nnbLOoH5GCJ9jshYDtAXKSAYKLOE="
 							}
 							multi_step: {
-								hash:       "P3JFPTG7F40RSSDGHPDMBSQOBCJ3O566HADL6D88IQLGKNQBGVKG===="
-								scriptHash: "O45QT7L0K47A8JD1MUC98I901IPF5J9UC1NU8THJ285JOQ7OPIB0===="
+								hash:       "J5TS7IDGEFKAP0A4A81702TUP8PRJ6PB3OEB5VKADS2FPDIUTMQ0===="
+								scriptHash: "UJQI3JOSGROK8RMHRRIPPNBLV7JVKQ5TTMDD4ATA3V7AOH5HT720===="
 								steps: [{
 									doc:      ""
 									cmd:      "export LC_ALL=C"
@@ -246,6 +248,108 @@ package site
 											❌ Person: NOT ok
 											#Person.age: invalid value 999 (out of bound <=150)
 											exit status 1
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "staticcheck ./..."
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "rm -rf $HOME/*"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go mod init cue.example"
+									exitCode: 0
+									output: """
+											go: creating new go.mod: module cue.example
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go get cuelang.org/go@v0.14.2"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go mod tidy"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go run ."
+									exitCode: 0
+									output: """
+											First decode: {2 4}
+											Second decode failed: B: cannot use value "foo" (type string) as int
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "staticcheck ./..."
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "rm -rf $HOME/*"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go mod init cue.example"
+									exitCode: 0
+									output: """
+											go: creating new go.mod: module cue.example
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go get cuelang.org/go@v0.14.2"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go mod tidy"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go run ."
+									exitCode: 0
+									output: """
+											Hello, everyone!
+											Hello, Kinshasa!
 
 											"""
 								}, {
