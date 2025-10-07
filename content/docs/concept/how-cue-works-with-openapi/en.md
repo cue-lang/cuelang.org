@@ -7,6 +7,8 @@ authors:
 - jpluscplusm
 - myitcv
 toc_hide: true
+aliases:
+- /docs/integration/openapi/
 ---
 
 {{{with _script_ "en" "HIDDEN: set up caches"}}}
