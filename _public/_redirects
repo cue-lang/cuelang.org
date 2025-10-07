@@ -58,5 +58,9 @@
 /community/conduct/                 /docs/reference/code-of-conduct/ 302!
 /docs/integration/go/               /docs/concept/how-cue-works-with-go/ 302!
 /docs/concept/json/                 /docs/concept/how-cue-works-with-json/ 302!
+/docs/integration/json/             /docs/concept/how-cue-works-with-json/ 302!
+/docs/integration/openapi/          /docs/concept/how-cue-works-with-openapi/ 302!
+/docs/integration/protobuf/         /docs/concept/how-cue-works-with-protocol-buffers/ 302!
 /docs/concept/yaml/                 /docs/concept/how-cue-works-with-yaml/ 302!
+/docs/integration/yaml/             /docs/concept/how-cue-works-with-yaml/ 302!
 /docs/howto/ensure-min-max-list/    /docs/howto/use-list-maxitems-list-minitems-to-constrain-list-length/ 302!
