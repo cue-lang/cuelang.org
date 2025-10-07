@@ -8,16 +8,17 @@ package site
 						cache: {
 							upload: {
 								"cue get go - main cue":      "Cg9485b/YhDxIndUokNXGmM9st343jfdYFmTvhla0Zs="
+								"copy cue values":            "xhwgc3aiCnhaJ1tv4pKaOSBT5UoIv+Hk0M8neO6lGXE="
 								"load cue - cue data":        "oasPD/IhRippEHB6Z23sKgye435CT8D9BDfp/kP+ZEE="
 								"load cue - main.go":         "fux7WQzTFPGu2ejUkoMpHmHIri9D1iL2JMOR2wWw8PI="
-								"load non-cue - main.go":     "Q/W/O4l8d8X8yzTezOMFTN7wUAA2rdvyvUIG9LGdOxo="
-								"load non-cue - yaml file":   "jdVS9NLZOdbnTFaGMkDCaVTprlejXExOedLzgZuXKzs="
+								"load non-cue":               "wxYv0KRyTF6treChFVrnJkNBAtq7aBvlDgRlWV/EVdI="
 								"check go data - cue schema": "4gyfrsn1x9r3bA4x78SLtX8JkL/qUmC19ll5ihu6fbw="
 								"check go data - main.go":    "Mqr+PZqnoEvS4BeQafzMIzgGfsK1XIF/u33utBROzzk="
+								"add info":                   "yceed9k5NyQv1okSUocv06wenW4o0oBmyV9TXofthOs="
 							}
 							multi_step: {
-								hash:       "ON123TE4DOMQRU26K3C9JE2GLGE9TRKAMGKNPSC3UOBFM3P6EV00===="
-								scriptHash: "O45QT7L0K47A8JD1MUC98I901IPF5J9UC1NU8THJ285JOQ7OPIB0===="
+								hash:       "RII0F57VOG46IH8P2EDM0DDI4RNKTUPOT41OBI2OIC6H4J3C261G===="
+								scriptHash: "1VACUP0L41V548TK35CTKE8O53B1G99EA0ENON19QO00Q7SNLNPG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export LC_ALL=C"
@@ -118,7 +119,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.14.2"
+									cmd:      "go get cuelang.org/go@v0.14.2 # Depend on the cuelang.org/go module"
 									exitCode: 0
 									output: """
 											...
@@ -126,7 +127,58 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go mod tidy"
+									cmd:      "go mod tidy # Tidy our module"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go run ."
+									exitCode: 0
+									output: """
+											✅ First decode suceeded: {42 100}
+											❌ Second decode failed: B: cannot use value "foo" (type string) as int
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "staticcheck ./..."
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "rm -rf $HOME/*"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go mod init cue.example"
+									exitCode: 0
+									output: """
+											go: creating new go.mod: module cue.example
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go get cuelang.org/go@v0.14.2 # Depend on the cuelang.org/go module"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go mod tidy # Tidy our module"
 									exitCode: 0
 									output: """
 											...
@@ -174,7 +226,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.14.2"
+									cmd:      "go get cuelang.org/go@v0.14.2 # Depend on the cuelang.org/go module"
 									exitCode: 0
 									output: """
 											...
@@ -182,7 +234,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go mod tidy"
+									cmd:      "go mod tidy # Tidy our module"
 									exitCode: 0
 									output: """
 											...
@@ -224,7 +276,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.14.2"
+									cmd:      "go get cuelang.org/go@v0.14.2 # Depend on the cuelang.org/go module"
 									exitCode: 0
 									output: """
 											...
@@ -232,7 +284,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go mod tidy"
+									cmd:      "go mod tidy # Tidy our module"
 									exitCode: 0
 									output: """
 											...
@@ -246,6 +298,57 @@ package site
 											❌ Person: NOT ok
 											#Person.age: invalid value 999 (out of bound <=150)
 											exit status 1
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "staticcheck ./..."
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "rm -rf $HOME/*"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "go mod init cue.example"
+									exitCode: 0
+									output: """
+											go: creating new go.mod: module cue.example
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go get cuelang.org/go@v0.14.2 # Depend on the cuelang.org/go module"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go mod tidy # Tidy our module"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go run ."
+									exitCode: 0
+									output: """
+											Hello, everyone!
+											Hello, folks!
 
 											"""
 								}, {
