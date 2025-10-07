@@ -5,6 +5,8 @@ toc_hide: false
 index_hide: true
 ---
 
+## Encodings and languages
+
 CUE has first-class support for a growing range of formats and ecosystems:
 
 {{< cards >}}
@@ -97,7 +99,7 @@ Follow this introductory tutorial to get started with CUE in Java.
 {{< /card >}}
 {{< /cards >}}
 
-## Technologies
+## Technologies and systems
 
 CUE is independent of the technologies it can be used alongside.\
 Some examples of its use with specific tools, systems, and providers are collected in
