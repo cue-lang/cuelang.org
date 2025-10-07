@@ -16,6 +16,24 @@
       "message": "Closes: https://github.com/cue-lang/docs-and-content/issues/108 ?",
       "revId": "bbe446828d29b28b3b4fa8d6243ea2fbdab81a46",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e841f21b_ee4577e7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-07T11:07:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3b32bc25_3c2b97ad",
+      "revId": "bbe446828d29b28b3b4fa8d6243ea2fbdab81a46",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
