@@ -16,6 +16,7 @@ package aliases
   { from: "/docs/tour/types/defs/", to: "/docs/tour/types/definitions/" },
   { from: "/docs/tour/basics/duplicate-fields/", to: "/docs/tour/basics/unification/" },
   { from: "/community/conduct/", to: "/docs/reference/code-of-conduct/" },
+  { from: "/docs/integration/go/", to: "/docs/concept/how-cue-works-with-go/" },
   { from: "/docs/concept/json/", to: "/docs/concept/how-cue-works-with-json/" },
   { from: "/docs/concept/yaml/", to: "/docs/concept/how-cue-works-with-yaml/" },
   { from: "/docs/howto/ensure-min-max-list/", to: "/docs/howto/use-list-maxitems-list-minitems-to-constrain-list-length/" },

@@ -1,23 +1,26 @@
 ---
 title: How CUE works with Go
-tags:
-- encodings
-- go api
-authors:
-- jpluscplusm
-- myitcv
+tags: [encodings, go api]
+authors: [jpluscplusm, myitcv]
 toc_hide: true
+aliases:
+- /docs/integration/go/
 ---
 
 CUE is designed to complement and work with the Go programming language.
 It offers a powerful API that enables Go code to take advantage of CUE's
 advanced capabilites.
-Additionally, CUE makes it easy to use Go as your source of truth by using the
-`cue` command to convert Go types to CUE.
+CUE also makes it easy to use Go as your source of truth
+by using the `cue` command to convert Go types to CUE.
 
-In this guide we'll demonstrate importing some Kubernetes API code to generate
-CUE schemas. We'll also use the API to convert both CUE and non-CUE data to
-native Go values, and validate some Go data natively with CUE.
+In this guide we will use CUE's Go API and the `cue` command to:
+
+- convert Go types to CUE, using Kubernetes API code as an example
+- decode CUE values into Go values
+- load CUE and non-CUE data into Go values
+- validate Go values
+- add information to CUE values based on Go values
+- generate Go code from CUE
 
 <!--more-->
 
@@ -112,16 +115,72 @@ a well-known location.
 This will remove the need to generate such CUE locally --
 see {{<issue 2939>}}discussion #2939{{</issue>}} for more details.
 
-## Using CUE's Go API
+## CUE's Go API
 
 The Go API injects the power and expressiveness of CUE into your Go programs,
 allowing them to
-**load and validate both CUE and non-CUE data** (such as JSON or YAML),
+load and validate both CUE and non-CUE data (such as JSON or YAML),
 and to
-**check data marshalled by Go**, wherever it comes from.
+check data marshalled by Go -- wherever it comes from.
 
+### Decoding CUE values into Go values
+The simplest way to populate a Go value from the contents of a CUE value
+is to use the CUE value's `Decode` method:
+
+{{< code-tabs >}}
+{{< code-tab name="main.go" language="go" area="top-left" >}}
+package main
+
+import (
+	"fmt"
+	"log"
+
+	"cuelang.org/go/cue/cuecontext"
+)
+
+type AB struct {
+	A int
+	B int
+}
+
+func main() {
+	ctx := cuecontext.New()
+
+	var x AB
+
+	// First CUE value: both A and B are integers.
+	v1 := ctx.CompileString(`{ A: 42, B: 100 }`)
+	if err := v1.Decode(&x); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("✅ First decode suceeded:", x)
+
+	// Second CUE value: B is now a string.
+	v2 := ctx.CompileString(`{ A: 42, B: "foo" }`)
+	if err := v2.Decode(&x); err != nil {
+		fmt.Println("❌ Second decode failed:", err)
+	}
+}
+{{< /code-tab >}}{{< /code-tabs >}}
+
+We add a dependency on the latest version of the `cuelang.org/go` module, tidy
+our Go module, and run our code:
+
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjIKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
+$ go get cuelang.org/go@v0.14.2
+...
+$ go mod tidy
+...
+$ go run .
+✅ First decode suceeded: {42 100}
+❌ Second decode failed: B: cannot use value "foo" (type string) as int
+````
+
+As expected, our second decode failed because of a type mismatch.
+Our first decode demonstrates that CUE values have a default formatter that
+renders them sensibly.
 ### Loading CUE data
-In this example, we load some data from the following CUE file and display it:
+In this next example we load some data from the following CUE file, and then display it:
 
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
@@ -178,7 +237,7 @@ $ go run .
 }
 ````
 
-CUE values have a default formatter that renders them sensibly.
+The CUE value default formatter renders our data sensibly.
 ### Loading non-CUE data
 The API also makes it easy to validate data held in YAML and JSON files.
 
@@ -246,7 +305,7 @@ $ go mod tidy
 $ go run .
 ✅ YAML: ok
 ````
-### Checking Go data with CUE schema
+### Checking Go values with CUE schema
 CUE can also validate data that's only available inside Go.
 Perhaps it's only fetched at runtime, from some file;
 or from some remote service over the network.
@@ -310,7 +369,7 @@ func main() {
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 
-This time we see that CUE correctly caught a problem in our data:
+We see that CUE correctly caught a problem in our data:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjIKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
 $ go get cuelang.org/go@v0.14.2
@@ -322,6 +381,69 @@ $ go run .
 #Person.age: invalid value 999 (out of bound <=150)
 exit status 1
 ````
+### Adding information to CUE values
+Information can be added to a CUE value using the `FillPath` method:
+
+{{< code-tabs >}}
+{{< code-tab name="config.cue" language="cue" area="top" >}}
+msg:   "Hello, \(place)!"
+place: string | *"everyone"
+{{< /code-tab >}}{{< code-tab name="main.go" language="go" area="bottom" >}}
+package main
+
+import (
+	_ "embed"
+	"fmt"
+	"log"
+
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
+)
+
+//go:embed config.cue
+var config string
+
+func main() {
+	ctx := cuecontext.New()
+	instance := ctx.CompileString(config)
+	var msg string
+	var err error
+
+	// Print the `msg` field's value.
+	if msg, err = instance.LookupPath(cue.ParsePath("msg")).String(); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(msg)
+
+	// Add information to the `place` field in the form of a concrete value.
+	filled := instance.FillPath(cue.ParsePath("place"), "Kinshasa")
+
+	// Print the `msg` field's value again.
+	if msg, err = filled.LookupPath(cue.ParsePath("msg")).String(); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println(msg)
+}
+{{< /code-tab >}}{{< /code-tabs >}}
+
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjIKZ28gbW9kIHRpZHkKZ28gcnVuIC4=" }
+$ go get cuelang.org/go@v0.14.2
+...
+$ go mod tidy
+...
+$ go run .
+Hello, everyone!
+Hello, Kinshasa!
+````
+
+Information added with the `FillPath` method is unified with any value that
+already exists at the path.
+## Generating Go code
+
+Go types can be generated from CUE definitions using the experimental
+`gengotypes` command, as demonstrated in
+{{< linkto/inline "howto/generate-go-types-from-cue-definitions" >}}.
+
 <!-- TODO
   - Checking Go data with CUE schema
     - "CUE that validates that a struct have only keys beginning with "a" and values that are either `5 | string`"
@@ -332,7 +454,7 @@ exit status 1
 
 The CUE project believes that its role can be one of *interlingua*:
 a **bidirectional bridge** between all the formats that CUE speaks,
-linking sources of truth with data - wherever they exist.
+linking sources of truth with data -- wherever they exist.
 
 On the way towards that goal, the project has plans to extend CUE to
 **directly generate code in Go** (and other languages),
