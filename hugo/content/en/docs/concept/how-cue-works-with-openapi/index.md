@@ -7,6 +7,8 @@ authors:
 - jpluscplusm
 - myitcv
 toc_hide: true
+aliases:
+- /docs/integration/openapi/
 ---
 
 CUE has first class support for OpenAPI data schemas: the `cue` command
