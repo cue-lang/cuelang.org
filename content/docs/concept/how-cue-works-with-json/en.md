@@ -5,6 +5,7 @@ authors: [jpluscplusm]
 toc_hide: true
 aliases:
 - /docs/concept/json/
+- /docs/integration/json/
 ---
 
 ## Reading and writing JSON

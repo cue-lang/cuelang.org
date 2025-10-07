@@ -6,6 +6,8 @@ tags:
 authors:
 - jpluscplusm
 toc_hide: true
+aliases:
+- /docs/integration/protobuf/
 ---
 
 [Protocol Buffers](https://protobuf.dev/), also known as *Protobuf*, is a
