@@ -150,7 +150,7 @@ CUE's logical inference engine automatically reduces constraints.
 Its API makes it possible to compute and select between
 various normal forms to optimize for a certain representation.
 This is used in
-[CUE's OpenAPI generator]({{< relref "docs/integration/openapi" >}}),
+[CUE's OpenAPI generator]({{< relref "docs/concept/how-cue-works-with-openapi" >}}),
 for instance.
 
 
