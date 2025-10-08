@@ -54,6 +54,14 @@ cue: {
 	[=~"^exp "]: experimental:        true
 	"mod mirror": experimental:       true
 	"refactor imports": experimental: true
+
+	// NB Before you remove this line and publish the cmd/cue@latest "cue help
+	// experiments" text on cuelang.org, consider that the main point of experiments is
+	// for active users to try alphas and pre-releases, and give us their feedback on
+	// those versions' experiments. Because this page's primary audience isn't running
+	// cmd/cue@latest, giving those users access to the pre-release docs (at least; or
+	// possibly even cuelang.org's cmd/cue "tip") is useful.
+	experiments: cueVersion: "prerelease"
 }
 
 // Introduce experimental and unreleased commands.
@@ -120,6 +128,8 @@ tags: "cue": [_]: [...or([for command, _ in cue {command}])]
 cue: {
 	commands: relatedCommands: ["cue help cmd"]
 	cmd: relatedCommands: ["cue help commands"]
+	environment: relatedCommands: ["cue help experiments"]
+	experiments: relatedCommands: ["cue help environment"]
 	mod: relatedCommands: [
 		"cue help modules",
 		"cue help mod edit",
@@ -161,6 +171,7 @@ cue: close({
 	eval:               _
 	exp:                _
 	"exp gengotypes":   _
+	experiments:        _
 	export:             _
 	filetypes:          _
 	fix:                _

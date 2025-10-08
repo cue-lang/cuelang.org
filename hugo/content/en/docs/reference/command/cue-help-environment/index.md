@@ -66,3 +66,7 @@ where the value is a boolean "true" or "1" if omitted. For example:
 	CUE_EXPERIMENT=toenable,todisable=0
 
 ````
+
+## Related content
+
+- {{< linkto/related/reference "command/cue-help-experiments" >}}
