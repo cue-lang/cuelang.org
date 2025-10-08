@@ -58,7 +58,7 @@ h: 4.4 * 2
 {{{end}}}
 
 In addition to JSON, `cue` can read and write
-[a range of other formats]({{< relref "docs/integration" >}}).
+[a range of other formats]({{< relref "docs/integrations" >}}).
 
 ## Validating JSON files against a schema
 
