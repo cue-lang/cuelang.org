@@ -54,6 +54,7 @@ cue: {
 	[=~"^exp "]: experimental:        true
 	"mod mirror": experimental:       true
 	"refactor imports": experimental: true
+	experiments: cueVersion:          "tip"
 }
 
 // Introduce experimental and unreleased commands.
@@ -120,6 +121,8 @@ tags: "cue": [_]: [...or([for command, _ in cue {command}])]
 cue: {
 	commands: relatedCommands: ["cue help cmd"]
 	cmd: relatedCommands: ["cue help commands"]
+	environment: relatedCommands: ["cue help experiments"]
+	experiments: relatedCommands: ["cue help environment"]
 	mod: relatedCommands: [
 		"cue help modules",
 		"cue help mod edit",
@@ -161,6 +164,7 @@ cue: close({
 	eval:               _
 	exp:                _
 	"exp gengotypes":   _
+	experiments:        _
 	export:             _
 	filetypes:          _
 	fix:                _
