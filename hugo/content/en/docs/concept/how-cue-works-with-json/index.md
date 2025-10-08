@@ -59,7 +59,7 @@ $ cue export data.json data.yml data.cue
 {{< /code-tabs >}}
 
 In addition to JSON, `cue` can read and write
-[a range of other formats]({{< relref "docs/integration" >}}).
+[a range of other formats]({{< relref "docs/integrations" >}}).
 
 ## Validating JSON files against a schema
 

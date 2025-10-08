@@ -369,7 +369,7 @@ schemas formats alongside CUE. It does this through its first class support for
 various alternative schema and data formats - which can be combined, imported,
 and exported.
 
-The [Integrations]({{< relref "docs/integration" >}}) page contains links to the
+The [Integrations]({{< relref "docs/integrations" >}}) page contains links to the
 different formats that CUE supports, but here's an example that demonstrates
 CUE's flexibility through multiple formats being used *simultaneously:*
 
@@ -525,7 +525,7 @@ Interested in learning more about CUE? Here's what you could try next:
 - Take a tour through the CUE language with the
   [language tour]({{< relref "docs/tour" >}})
 - Read about
-  [the technologies that CUE directly integrates with]({{< relref "docs/integration" >}}),
+  [the technologies that CUE directly integrates with]({{< relref "docs/integrations" >}}),
   such as:
   - {{< linkto/related/concept "how-cue-works-with-json" >}}
   - {{< linkto/related/concept "how-cue-works-with-yaml" >}}

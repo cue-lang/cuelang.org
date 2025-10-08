@@ -20,7 +20,6 @@
 /docs/tour/packages/                /docs/tour/packages/packages/ 302!
 /docs/usecases/configuration/       /docs/concept/configuration-use-case/ 302!
 /docs/usecases*                     /docs/concept/popular-guides/#common-use-cases 301!
-/docs/integrations*                 /docs/integration/ 302!
 /docs/concepts/intro/               /docs/concept/the-logic-of-cue/ 302!
 /docs/concepts/logic/               /docs/concept/the-logic-of-cue/ 302!
 /docs/concepts*                     /docs/concept/ 301!
@@ -48,6 +47,7 @@
 /download/                          /docs/introduction/installation/ 302!
 /install/                           /docs/introduction/installation/ 302!
 /dl/                                /docs/introduction/installation/ 302!
+/docs/integration/                  /docs/integrations/ 302!
 /docs/tour/expressions/interpolfield/ /docs/tour/expressions/dynamic-fields/ 302!
 /docs/tutorial/find-a-tutorial/     /docs/tutorial/ 302!
 /docs/howto/find-a-guide/           /docs/howto/ 302!
