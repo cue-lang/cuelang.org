@@ -69,7 +69,7 @@ Here's what you'll find in each section:
 {{</* /card */>}}
 -->
 
-{{< card href="integration/" label="Integrations" title="JSON, YAML, Go, and more" >}}
+{{< card href="integrations/" label="Integrations" title="JSON, YAML, Go, and more" >}}
   Learn how CUE integrates with a wide ecosystem of formats and tools
 {{< /card >}}
 

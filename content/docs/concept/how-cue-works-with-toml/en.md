@@ -54,7 +54,7 @@ i = 8.5
 {{{end}}}
 
 The `cue` command can read and write
-[a range of other formats]({{< relref "docs/integration" >}})
+[a range of other formats]({{< relref "docs/integrations" >}})
 as well as TOML.
 
 ## Validating TOML files against a schema
