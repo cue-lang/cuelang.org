@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"4":  "kwOZBOwJVZs+7Bbv4fvFs9mXK6Tc6J34ko5yD9UX3tM="
-								"5":  "tLWmN5/ZxEK+778n9Sdz9IrkC9ybyOtJmrZNK9luZGI="
-								"10": "4HrECU1E4rFbNZ31dGYi/tyWCMoq9PdCQUxRo+GGE2s="
-								"11": "JkgWJEduUJS78A/4L9G1QFYD4F9FcuVR4cGRS9lN2yk="
-								"12": "jAMxVa5ZgrMET7CRykt1mrbQRkg+UVKgPz5ecEtaMvI="
-								"14": "WabvJHwb35r/Bdkt9dBSeNcq5/TR0R6gAPepBA7Zmyg="
+								"4":  "4etlyzlfJ3fkrzMqLjvlkFldMGmHhjrZDPV4IYL3iZQ="
+								"5":  "a+LWoDsaD825skB/EQJso0CV8y3oTyKH2Fz2YvAHadI="
+								"10": "Y/fpgf4t9Ehgp6Rw9cGe5yYFuncgVBLa4YyGgYkjfl4="
+								"11": "znMJOiyCchzozpeIA21E/CLUUtGPpeq3A4NRlLlLxk8="
+								"12": "NHBVB/jcCT3bKvRxu9JciFSf+CLzKfl1phoi1QZ3joc="
+								"14": "X1DcKGTCJDQlbw5ZsZTGmetkV/GGHoVVWUXLAO+EWn8="
 							}
 							multi_step: {
-								hash:       "AQ7956UR7S1IT0082FF3I6V0T4G19J3MNA5FCMJT3HV87RET4RRG===="
+								hash:       "GF7EIM29RMSIS8RN7R0T3B70CRFSCTVR83DRIPFGSEMQPKA40KBG===="
 								scriptHash: "V6MFVA50A0EO31MT02SEL74V4D5N9JGMMGHCME73JE06JLCRC260===="
 								steps: [{
 									doc:      "# Required to interact with the central registry."
