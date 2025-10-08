@@ -12,3 +12,7 @@ export PATH=/cues/$CUELANG_CUE_LATEST:$PATH
 {{{with script "en" "cue cli help text"}}}
 cue help environment
 {{{end}}}
+
+## Related content
+
+- {{< linkto/related/reference "command/cue-help-experiments" >}}
