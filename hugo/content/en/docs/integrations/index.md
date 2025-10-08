@@ -3,6 +3,8 @@ title: Integrations
 weight: 25
 toc_hide: false
 index_hide: true
+aliases:
+- /docs/integration/
 ---
 
 ## Encodings and languages

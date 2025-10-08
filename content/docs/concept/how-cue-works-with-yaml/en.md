@@ -53,7 +53,7 @@ h: 8.8
 {{{end}}}
 
 In addition to YAML, `cue` can read and write
-[a range of other formats]({{< relref "docs/integration" >}}).
+[a range of other formats]({{< relref "docs/integrations" >}}).
 
 ## Validating YAML files against a schema
 
