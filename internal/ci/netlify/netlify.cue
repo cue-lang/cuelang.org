@@ -174,10 +174,6 @@ redirects: [
 		to:     "/docs/concept/popular-guides/#common-use-cases"
 		status: 301
 	}, {
-		from:   "/docs/integrations*"
-		to:     "/docs/integration/"
-		status: 302 // We'll reuse this path, later.
-	}, {
 		from: "/docs/concepts/intro/"
 		to:   "/docs/concept/the-logic-of-cue/"
 	}, {
