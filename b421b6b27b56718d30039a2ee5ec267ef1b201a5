@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18526860_b993ff3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 18
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-09T07:59:20Z",
+      "side": 1,
+      "message": "PTAL",
+      "revId": "b421b6b27b56718d30039a2ee5ec267ef1b201a5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "655d5f9f_3ebff602",
+        "filename": "content/docs/concept/modules/_en.md",
+        "patchSetId": 18
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-09T07:59:20Z",
+      "side": 1,
+      "message": "```suggestion\n**It\u0027s always a good idea to do this,\n```\n\n... maybe?",
+      "revId": "b421b6b27b56718d30039a2ee5ec267ef1b201a5",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
