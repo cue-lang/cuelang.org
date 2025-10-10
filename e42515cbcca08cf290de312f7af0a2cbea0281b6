@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "61b376ce_54802d27",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-10-10T13:22:21Z",
+      "side": 1,
+      "message": "should we be noting why this page is using the latest pre-release? because I think it should stay that way forever - given how the main point of experiments is for active users to try the alphas and report feedback, this page having the latest content is useful.",
+      "revId": "e42515cbcca08cf290de312f7af0a2cbea0281b6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
