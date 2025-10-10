@@ -16,6 +16,24 @@
       "message": "should we be noting why this page is using the latest pre-release? because I think it should stay that way forever - given how the main point of experiments is for active users to try the alphas and report feedback, this page having the latest content is useful.",
       "revId": "e42515cbcca08cf290de312f7af0a2cbea0281b6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a7b3d0c1_9cb65b1b",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-10T14:57:40Z",
+      "side": 1,
+      "message": "That\u0027s a really good point - I\u0027ve basically added your comment in the CUE source, advising that it shouldn\u0027t be reverted when we\u0027d otherwise, normally, remove pre-release references (i.e. just after minor v0.14.0/v0.15.0/v0.16.0/etc releases).\n\nThe slight nuance is that folks updating the `cue help experiments` text should now keep a somewhat longer window of time in mind, before they remove a `stable` or `withdrawn` experiment from the text. In other words, just because an experiment has been `stable`/`withdrawn` for long enough that it should be removed, *now* it should wait to be removed for some longer period - possibly (IMHO; off the top of my head) for an additional minor release cycle.",
+      "parentUuid": "61b376ce_54802d27",
+      "revId": "e42515cbcca08cf290de312f7af0a2cbea0281b6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
