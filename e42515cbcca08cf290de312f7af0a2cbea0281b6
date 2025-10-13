@@ -34,6 +34,24 @@
       "parentUuid": "61b376ce_54802d27",
       "revId": "e42515cbcca08cf290de312f7af0a2cbea0281b6",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9246e9f_9854f32a",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 4
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-10-13T16:31:25Z",
+      "side": 1,
+      "message": "We will basically never remove experiments from the table, because we need to remember that they existed for old language versions practically forever. Whether `cue help experiments` should grow in length forever is a different problem, which we might need to worry about in a year or two :)",
+      "parentUuid": "a7b3d0c1_9cb65b1b",
+      "revId": "e42515cbcca08cf290de312f7af0a2cbea0281b6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
