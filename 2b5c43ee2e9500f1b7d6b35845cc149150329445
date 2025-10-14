@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fd1e161_6985cc37",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T14:10:07Z",
+      "side": 1,
+      "message": "I don\u0027t think we need this warning any longer.",
+      "revId": "2b5c43ee2e9500f1b7d6b35845cc149150329445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d514e309_245b4dd7",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T14:10:07Z",
+      "side": 1,
+      "message": "\"to do just that\" - you\u0027ve literally just finished a sentence where you say the \"that list elements\u0027 concrete values are unique\" but using different words. I don\u0027t think we need to repeat it. The point about being concrete isn\u0027t something we need to cover at this point.",
+      "range": {
+        "startLine": 15,
+        "startChar": 9,
+        "endLine": 15,
+        "endChar": 55
+      },
+      "revId": "2b5c43ee2e9500f1b7d6b35845cc149150329445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bbf38e27_6fa5e7ce",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T14:10:07Z",
+      "side": 1,
+      "message": "Is there a reason `bool` is not in this list?\n\nFYI - comparing floats is hazardous because you\u0027re generally speaking working with approximations. I think we can ignore this here, but just flagging.",
+      "range": {
+        "startLine": 19,
+        "startChar": 31,
+        "endLine": 19,
+        "endChar": 37
+      },
+      "revId": "2b5c43ee2e9500f1b7d6b35845cc149150329445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "37e9cfa6_b69582d5",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T14:10:07Z",
+      "side": 1,
+      "message": "Is the easiest way not to use `list.UniqueItems`?",
+      "range": {
+        "startLine": 51,
+        "startChar": 0,
+        "endLine": 51,
+        "endChar": 16
+      },
+      "revId": "2b5c43ee2e9500f1b7d6b35845cc149150329445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dfb9ef5e_f1213aea",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 11
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T14:10:07Z",
+      "side": 1,
+      "message": "As I\u0027ve mentioned before, I\u0027m not a fan of inlining all this stuff. It becomes unreadable for newcomers.\n\nWe can use a `let` here to factor our `keys` (or some such name). Ditto below.",
+      "revId": "2b5c43ee2e9500f1b7d6b35845cc149150329445",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
