@@ -1,0 +1,250 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "db5d267c_9d697ba4",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "The contract doesn\u0027t read as nicely here to my mind: \"we will\" is clearer.",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 19
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c74d6785_1c6d0016",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "\"Go code\"",
+      "range": {
+        "startLine": 29,
+        "startChar": 44,
+        "endLine": 29,
+        "endChar": 48
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c12ad4b8_bd6dd576",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "\"using\"",
+      "range": {
+        "startLine": 29,
+        "startChar": 14,
+        "endLine": 29,
+        "endChar": 28
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3fad2362_353afb01",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "\"CUE\u0027s Go API\"",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 12
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "455d5df7_7a4d3be4",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "\"values\" is more common. Variables have values, not data (at least most commonly). I appreciate this requires a change later too.",
+      "range": {
+        "startLine": 31,
+        "startChar": 19,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ef5bbdd2_5147f47e",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "I don\u0027t think the advice is correct to say those manually created files should be placed in `cue.mod/gen`; that is mentally \"reserved\" for generated files, as the `gen` name implies. `cue.mod/usr` is \"merged\", and so the files should be placed there, within the same directory structure. I don\u0027t think the caveat/detail on the `_go_gen.cue` file is necessary, and it significantly complicates the message.",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 17
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e4e39ba_1be2e121",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "These links are slightly misleading. The first one implies that the `cue` package itself does the parsing etc, rather than the packages _beneath_ `cue`. It feels like you are trying to provide an abbreviated form of https://pkg.go.dev/cuelang.org/go/cue#section-directories. I would do just that, but you don\u0027t have to list all packages: `...` could indicate \"there are other packages\". Alternatively, you could avoid the partial listing and refer people to https://pkg.go.dev/cuelang.org/go and expand the directory view (the package one-liner should give a sufficient explanation). Maybe @mvdan@mvdan.cc has ideas on whether including a partial list vs none is better.",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f16b0272_5fee3ab0",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "How is this different to the previous section? I think we need to be clear on what this section could/should be doing.\n\nOne of the things the `gocodec` package does is interrogate Go types for struct field tags that contain CUE: https://github.com/cue-lang/cue/blob/658608c0dbeebafab4145ba44bf1153e19916349/encoding/gocode/gocodec/codec_test.go#L28\n\nI would suggest we first work out what it is we want to be saying on this page with respect to that package.",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53d60e24_a86ff9f7",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "\"Copying\" is a bit vague; is \"Decoding\" not ok? It\u0027s the name of the method after all.",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4ba930e_c3d53daf",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "\"populate\" - the verb \"set\" is typically used with variables, whereas in this situation we are \"populating\" the value pointed to by the argument to `Decode`.",
+      "range": {
+        "startLine": 479,
+        "startChar": 20,
+        "endLine": 479,
+        "endChar": 23
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bad1a293_93cb8b59",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "Is there a reason you are using the word \"instance\" here? https://pkg.go.dev/cuelang.org/go/cue#Context.CompileString returns a `Value`. You also need to be careful about the word \"set\" - it suggests mutation, which is not what happens; CUE values are immutable.",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1eb03115_a311a4cf",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T08:59:36Z",
+      "side": 1,
+      "message": "cc @mvdan@mvdan.cc but I would say the second paragraph should come first. The `gocode` approach is definitely legacy to my mind. `cue exp gengotypes` is the \"new way\".",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
