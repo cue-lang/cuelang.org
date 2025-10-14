@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08799968_18e981b2",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T11:42:29Z",
+      "side": 1,
+      "message": "\"custom error message\" - it\u0027s just a message, right?",
+      "range": {
+        "startLine": 9,
+        "startChar": 54,
+        "endLine": 10,
+        "endChar": 7
+      },
+      "revId": "e981b39ea87a582505fb3cbb61ad7804783f51d2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "69cbb55d_3db09ec8",
+        "filename": "content/docs/howto/use-the-built-in-function-error/en.md",
+        "patchSetId": 15
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T11:42:29Z",
+      "side": 1,
+      "message": "If you want to link to the spec, I would say that\u0027s below the example. You\u0027re just trying to motivate an example, not cause people to jump elsewhere. They might want further reading after seeing the example.",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 74
+      },
+      "revId": "e981b39ea87a582505fb3cbb61ad7804783f51d2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
