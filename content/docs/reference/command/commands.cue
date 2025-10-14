@@ -20,22 +20,24 @@ _cuePathBase: {
 	// TODO: use site.cue's canonical data for these values (from the keys of
 	// versions["cue"]) when a solution to the panic captured at
 	// https://cuelang.org/cl/1209140 is available.
-	cueVersion!:   "latest" | "tip" | "prerelease"
-	experimental!: bool
-	introduction!: string
+	cueVersion!:       "latest" | "tip" | "prerelease"
+	experimental!:     bool
+	introduction!:     string
+	hideIntroduction!: bool
 	tagSet!: [string]: true // true is chosen over top purely to produce concrete data.
 	tagList!: [...]
 	relatedCommands!: [...string]
 }
 
 cue: [SubCommand=string]: #CueCommand & {
-	_dirSuffix:   strings.Replace(SubCommand, " ", "-", -1)
-	dir:          *"cue-help-\(_dirSuffix)" | _
-	execCmd:      *"cue help \(SubCommand)" | _
-	title:        *"cue help \(SubCommand)" | _
-	cueVersion:   *"latest" | _
-	experimental: *false | _
-	introduction: *"" | _
+	_dirSuffix:       strings.Replace(SubCommand, " ", "-", -1)
+	dir:              *"cue-help-\(_dirSuffix)" | _
+	execCmd:          *"cue help \(SubCommand)" | _
+	title:            *"cue help \(SubCommand)" | _
+	cueVersion:       *"latest" | _
+	experimental:     *false | _
+	introduction:     *"" | _
+	hideIntroduction: *false | _
 	tagSet: *{} | _
 	tagList: [for tag, _ in tagSet {tag}]
 	relatedCommands: *[] | _
@@ -55,24 +57,30 @@ cue: {
 	"mod mirror": experimental:       true
 	"refactor imports": experimental: true
 
-	// NB Before you remove this line and publish the cmd/cue@latest "cue help
+	// NB Before you remove this customisation and publish the cmd/cue@latest "cue help
 	// experiments" text on cuelang.org, consider that the main point of experiments is
 	// for active users to try alphas and pre-releases, and give us their feedback on
 	// those versions' experiments. Because this page's primary audience isn't running
 	// cmd/cue@latest, giving those users access to the pre-release docs (at least; or
 	// possibly even cuelang.org's cmd/cue "tip") is useful.
-	experiments: cueVersion: "prerelease"
+	experiments: {
+		cueVersion: "prerelease"
+		// Consider uncommenting this line, instead of removing this command's
+		// customisation entirely.
+		//hideIntroduction: true
+	}
 }
 
 // Introduce experimental and unreleased commands.
 cue: [_]: {
-	experimental: _
-	cueVersion:   _
+	experimental:     _
+	cueVersion:       _
+	hideIntroduction: _
 	let tip = (cueVersion == "tip")
 	let prerelease = (cueVersion == "prerelease")
 	let unreleased = tip || prerelease
 
-	if experimental || unreleased {
+	if !hideIntroduction && (experimental || unreleased) {
 		introduction: strings.Join([
 			"{{<info>}}",
 			if tip {"This command is not yet available in the latest CUE release."},
