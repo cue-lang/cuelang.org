@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "39235724_34647a4b",
+        "filename": "hugo/content/en/docs/integrations/index.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T11:23:32Z",
+      "side": 1,
+      "message": "I think we should have short one-liners here, borrowing from the cue.dev material.",
+      "revId": "92f1a5d8a5966e9b27788affe5dba291ffa9a94e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
