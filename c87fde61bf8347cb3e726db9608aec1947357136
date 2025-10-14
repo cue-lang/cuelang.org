@@ -318,6 +318,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5bf95eb8_0f993132",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T11:11:31Z",
+      "side": 1,
+      "message": "Ah ok.",
+      "parentUuid": "5badae66_fbdb07f7",
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6392446d_5d949033",
@@ -355,6 +373,30 @@
       "side": 1,
       "message": "I originally had the text\n\n\u003e Note that the comparison operator doesn\u0027t report a `false` boolean value when\ncomparing a non-concrete value.\n\n... because I think a reasonable assumption that *might* be made by the reader is:\n\n\u003e Return `true` if comparison operands are identical,\n\u003e return `false` otherwise\".\n\nWould reverting to the original text be acceptable, or would you like the point+example to be omitted entirely?\n\nPlease note that a single evaluation where both operator forms are given non-concrete operands cannot currently be used to demonstrate both failures simultaneously. The unary operator\u0027s failure is the only one displayed by the `cue` command, masking the comparison operator\u0027s failure until the unary failure is resolved.",
       "parentUuid": "6392446d_5d949033",
+      "range": {
+        "startLine": 72,
+        "startChar": 1,
+        "endLine": 74,
+        "endChar": 52
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b0d9448_7bb48a4f",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T11:11:31Z",
+      "side": 1,
+      "message": "Ah ok, I see. I would bundle them into the same example in any case and raise an issue (please) about that \"missing\" error message. No need to call out the discrepancy in the text, the user will see an error at some point if they try it.",
+      "parentUuid": "465febda_0271cb01",
       "range": {
         "startLine": 72,
         "startChar": 1,

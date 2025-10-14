@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "c3477b9ccf8b09e013943751749debd5cae32f26",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9dc30e16_c32939aa",
+        "filename": "content/docs/howto/try-structcmp-experiment/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T11:11:31Z",
+      "side": 1,
+      "message": "I would perhaps name these fields `\"a \u003d\u003d a\"` etc - because otherwise there\u0027s an unhelpful level of indirection for the reader which is quite hard to follow.",
+      "revId": "c3477b9ccf8b09e013943751749debd5cae32f26",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
