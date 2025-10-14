@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ba5996b_a90df005",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:40:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "13625384_a04191a1",
+      "range": {
+        "startLine": 1,
+        "startChar": 3,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc0ff2f5_a903b602",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-10-14T04:42:34Z",
       "side": 1,
       "message": "Please can we make this plainer English? FYI as the name of the experiment implies, what\u0027s \"new\" is the ability to compare struct values. Lists were already supported, and lists are composite. Hence I think we can make this sentence plainer with something like \"...was introduced to support struct comparison.\" The implication is that we can now compare any composite value, not just lists. Saying that struct values are now comparable makes the bullet points expanding on `\u003d\u003d` easier.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f895979_27f5d21a",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:40:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc0ff2f5_a903b602",
       "range": {
         "startLine": 11,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "370a8fbb_672a77c6",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:40:53Z",
+      "side": 1,
+      "message": "I\u0027ve removed this list, allowing the example to do the explanation more visually.",
+      "parentUuid": "dd70f15c_d7db0f9b",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 25
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "71b9c33f_9a1e8226",
@@ -83,6 +155,30 @@
       "writtenOn": "2025-10-14T04:42:34Z",
       "side": 1,
       "message": "Ditto re composite vs struct.",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 11
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "41e36058_a265bc3b",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:40:53Z",
+      "side": 1,
+      "message": "List removed, as above.",
+      "parentUuid": "71b9c33f_9a1e8226",
       "range": {
         "startLine": 15,
         "startChar": 2,
@@ -116,6 +212,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f540fffc_743f39ff",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:40:53Z",
+      "side": 1,
+      "message": "List removed, as above.",
+      "parentUuid": "0378d97b_1ddd7204",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 20
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e6b99bc_34c9f81e",
@@ -129,6 +249,30 @@
       "writtenOn": "2025-10-14T04:42:34Z",
       "side": 1,
       "message": "\"composite field it\u0027s applied to\" - the way this sentence reads it sounds like the operand to `\u003d\u003d` is applied to a field. I think simpler wording will help.",
+      "range": {
+        "startLine": 17,
+        "startChar": 11,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1fadd0b2_425ec649",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:40:53Z",
+      "side": 1,
+      "message": "List removed, as above.",
+      "parentUuid": "7e6b99bc_34c9f81e",
       "range": {
         "startLine": 17,
         "startChar": 11,
@@ -158,6 +302,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5badae66_fbdb07f7",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:40:53Z",
+      "side": 1,
+      "message": "The `cue export` command is demonstrated throughout, for consistency with the first example. If `_B` isn\u0027t hidden (or a definition) then the `cue export` command emits an additional, unrelated error about its incomplete value.",
+      "parentUuid": "94fe67b8_8736a3fb",
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6392446d_5d949033",
         "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
         "patchSetId": 12
@@ -169,6 +331,30 @@
       "writtenOn": "2025-10-14T04:42:34Z",
       "side": 1,
       "message": "I don\u0027t follow what you\u0027re trying to say here at all: \"either boolean value\"? Put another way, what was insufficient about the previous point about `\u003d\u003d` requiring concrete arguments?",
+      "range": {
+        "startLine": 72,
+        "startChar": 1,
+        "endLine": 74,
+        "endChar": 52
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "465febda_0271cb01",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:40:53Z",
+      "side": 1,
+      "message": "I originally had the text\n\n\u003e Note that the comparison operator doesn\u0027t report a `false` boolean value when\ncomparing a non-concrete value.\n\n... because I think a reasonable assumption that *might* be made by the reader is:\n\n\u003e Return `true` if comparison operands are identical,\n\u003e return `false` otherwise\".\n\nWould reverting to the original text be acceptable, or would you like the point+example to be omitted entirely?\n\nPlease note that a single evaluation where both operator forms are given non-concrete operands cannot currently be used to demonstrate both failures simultaneously. The unary operator\u0027s failure is the only one displayed by the `cue` command, masking the comparison operator\u0027s failure until the unary failure is resolved.",
+      "parentUuid": "6392446d_5d949033",
       "range": {
         "startLine": 72,
         "startChar": 1,
