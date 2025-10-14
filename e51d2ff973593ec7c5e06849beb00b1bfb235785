@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1cb6467_e66c73c3",
+        "filename": "content/docs/howto/validate-integer-value-parity/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T12:48:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b5c05b9_da9e780e",
+      "range": {
+        "startLine": 16,
+        "startChar": 8,
+        "endLine": 16,
+        "endChar": 48
+      },
+      "revId": "e51d2ff973593ec7c5e06849beb00b1bfb235785",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "a5cffb06_3d782ecd",
@@ -37,6 +61,24 @@
       "writtenOn": "2025-10-14T11:38:38Z",
       "side": 1,
       "message": "Don\u0027t need this any more I would suggest. Anyone using v0.11.0 is _very_ behind at this point. We support the latest two versions.",
+      "revId": "e51d2ff973593ec7c5e06849beb00b1bfb235785",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6a45dfd_50f82da7",
+        "filename": "content/docs/howto/validate-integer-value-parity/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T12:48:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a5cffb06_3d782ecd",
       "revId": "e51d2ff973593ec7c5e06849beb00b1bfb235785",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
