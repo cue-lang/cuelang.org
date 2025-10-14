@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c498abad_cdeae12c",
+        "filename": "content/docs/integration/_en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T11:14:21Z",
+      "side": 1,
+      "message": "We should absolutely update these links to cue.dev please. Perhaps in a follow-up CL? Indeed I suspect we should refresh this list based on the curated modules, with the cue-by-example \"examples\" as a section below.",
+      "revId": "d71b407100ebf7f64fc997045df038aa5526f1a6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
