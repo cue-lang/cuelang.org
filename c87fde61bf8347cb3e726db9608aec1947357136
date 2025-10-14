@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13625384_a04191a1",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T04:42:34Z",
+      "side": 1,
+      "message": "\"Trying\" perhaps?",
+      "range": {
+        "startLine": 1,
+        "startChar": 3,
+        "endLine": 2,
+        "endChar": 21
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc0ff2f5_a903b602",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T04:42:34Z",
+      "side": 1,
+      "message": "Please can we make this plainer English? FYI as the name of the experiment implies, what\u0027s \"new\" is the ability to compare struct values. Lists were already supported, and lists are composite. Hence I think we can make this sentence plainer with something like \"...was introduced to support struct comparison.\" The implication is that we can now compare any composite value, not just lists. Saying that struct values are now comparable makes the bullet points expanding on `\u003d\u003d` easier.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 27
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd70f15c_d7db0f9b",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T04:42:34Z",
+      "side": 1,
+      "message": "`A \u003d\u003d B` is an expression. I would opt for simpler language again to describe in more human terms what `A \u003d\u003d B` allows you to do. I actually think that trying to do this before an example makes it harder.",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 25
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "71b9c33f_9a1e8226",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T04:42:34Z",
+      "side": 1,
+      "message": "Ditto re composite vs struct.",
+      "range": {
+        "startLine": 15,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 11
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0378d97b_1ddd7204",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T04:42:34Z",
+      "side": 1,
+      "message": "Ditto re expression vs operator. And I think we can make this language plainer. Same comment applies regarding the example vs prose at this stage. You might find it easier to move straight to an example, or else include a simpler less-technical explanation up front.",
+      "range": {
+        "startLine": 16,
+        "startChar": 12,
+        "endLine": 16,
+        "endChar": 20
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7e6b99bc_34c9f81e",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T04:42:34Z",
+      "side": 1,
+      "message": "\"composite field it\u0027s applied to\" - the way this sentence reads it sounds like the operand to `\u003d\u003d` is applied to a field. I think simpler wording will help.",
+      "range": {
+        "startLine": 17,
+        "startChar": 11,
+        "endLine": 17,
+        "endChar": 42
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "94fe67b8_8736a3fb",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T04:42:34Z",
+      "side": 1,
+      "message": "Why is `B` hidden?",
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6392446d_5d949033",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T04:42:34Z",
+      "side": 1,
+      "message": "I don\u0027t follow what you\u0027re trying to say here at all: \"either boolean value\"? Put another way, what was insufficient about the previous point about `\u003d\u003d` requiring concrete arguments?",
+      "range": {
+        "startLine": 72,
+        "startChar": 1,
+        "endLine": 74,
+        "endChar": 52
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
