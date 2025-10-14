@@ -33,6 +33,24 @@
       "message": "Is this comment is a reference to the fact that `/docs/reference/command/cue-help-experiments/` contains the text \"This command is only available in a recent CUE pre-release.\"? If so, I\u0027m not clear that it should persist once `cue help experiments` is released. It is incorrect to say that `cue help experiments` is only available in the pre-release. A page that demonstrates an experiment, whether available in an actual or pre-release, should make clear the version requirement. This page will be trying to do too much otherwise, and it\u0027s not necessary IMO.",
       "revId": "9f403ddb03a4cac7df4e041a61ec3e739798160a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "680f1f19_7a674750",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T07:23:40Z",
+      "side": 1,
+      "message": "No, it\u0027s because of [Daniel\u0027s comment](https://cue.gerrithub.io/c/cue-lang/cuelang.org/+/1224001/comment/61b376ce_54802d27/) and is suggesting that, even when this command is available in the latest release, the *text* displayed on this page should probably keep moving forwards and reflecting the most up-to-date (pre-release/tip) cmd/cue version.\n\nA follow up will add the ability for a page to mask its \"only available in a pre-release\" header, and this page can engage that feature when v0.15.0 is released.\n\n@paul@myitcv.io Does that sound like an acceptable plan?",
+      "parentUuid": "c70dc24c_6794ff2b",
+      "revId": "9f403ddb03a4cac7df4e041a61ec3e739798160a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
