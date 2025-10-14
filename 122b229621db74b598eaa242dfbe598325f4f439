@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7512731d_3ef30947",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "db5d267c_9d697ba4",
+      "range": {
+        "startLine": 27,
+        "startChar": 16,
+        "endLine": 27,
+        "endChar": 19
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c74d6785_1c6d0016",
@@ -70,6 +94,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "379310af_74bb2658",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c74d6785_1c6d0016",
+      "range": {
+        "startLine": 29,
+        "startChar": 44,
+        "endLine": 29,
+        "endChar": 48
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ff33a161_7e49de02",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c12ad4b8_bd6dd576",
+      "range": {
+        "startLine": 29,
+        "startChar": 14,
+        "endLine": 29,
+        "endChar": 28
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3fad2362_353afb01",
@@ -83,6 +155,30 @@
       "writtenOn": "2025-10-14T08:59:36Z",
       "side": 1,
       "message": "\"CUE\u0027s Go API\"",
+      "range": {
+        "startLine": 30,
+        "startChar": 6,
+        "endLine": 30,
+        "endChar": 12
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3371733_83ba13a7",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3fad2362_353afb01",
       "range": {
         "startLine": 30,
         "startChar": 6,
@@ -129,6 +225,30 @@
       "writtenOn": "2025-10-14T08:59:36Z",
       "side": 1,
       "message": "I don\u0027t think the advice is correct to say those manually created files should be placed in `cue.mod/gen`; that is mentally \"reserved\" for generated files, as the `gen` name implies. `cue.mod/usr` is \"merged\", and so the files should be placed there, within the same directory structure. I don\u0027t think the caveat/detail on the `_go_gen.cue` file is necessary, and it significantly complicates the message.",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 17
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "67256474_a0a43758",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:37:46Z",
+      "side": 1,
+      "message": "I\u0027ve removed this entire `info` block, as I believe you\u0027re suggesting.",
+      "parentUuid": "ef5bbdd2_5147f47e",
       "range": {
         "startLine": 119,
         "startChar": 0,
@@ -190,6 +310,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e0d32d8_baa3e0a4",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 472,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "53d60e24_a86ff9f7",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f4ba930e_c3d53daf",
@@ -213,6 +351,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "da9c5461_f850cf12",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 479,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:37:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4ba930e_c3d53daf",
+      "range": {
+        "startLine": 479,
+        "startChar": 20,
+        "endLine": 479,
+        "endChar": 23
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bad1a293_93cb8b59",
@@ -226,6 +388,24 @@
       "writtenOn": "2025-10-14T08:59:36Z",
       "side": 1,
       "message": "Is there a reason you are using the word \"instance\" here? https://pkg.go.dev/cuelang.org/go/cue#Context.CompileString returns a `Value`. You also need to be careful about the word \"set\" - it suggests mutation, which is not what happens; CUE values are immutable.",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "15df3fc3_011341f2",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-14T10:37:46Z",
+      "side": 1,
+      "message": "\u003e Is there a reason you are using the word \"instance\" here?\n\nThis prose, along with the very significant majority of the text added to this file in this CL, was lifted directly from its previous home `/docs/integration/go/` and was brought over without modification.\n\nDo you have an alternative wording in mind that satisfactorily addresses this whole sentence\u0027s flaws?",
+      "parentUuid": "bad1a293_93cb8b59",
       "revId": "122b229621db74b598eaa242dfbe598325f4f439",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
