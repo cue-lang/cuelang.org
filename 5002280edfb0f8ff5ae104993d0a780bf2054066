@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "5002280edfb0f8ff5ae104993d0a780bf2054066",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a2e23c1_c4724393",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T11:33:41Z",
+      "side": 1,
+      "message": "I\u0027ve replied in https://cue.gerrithub.io/c/cue-lang/cuelang.org/+/1224001/comment/c70dc24c_6794ff2b/; I\u0027m not clear this is the right thing to do.",
+      "revId": "5002280edfb0f8ff5ae104993d0a780bf2054066",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
