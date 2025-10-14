@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "9f403ddb03a4cac7df4e041a61ec3e739798160a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c70dc24c_6794ff2b",
+        "filename": "content/docs/reference/command/commands.cue",
+        "patchSetId": 6
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-14T04:47:03Z",
+      "side": 1,
+      "message": "Is this comment is a reference to the fact that `/docs/reference/command/cue-help-experiments/` contains the text \"This command is only available in a recent CUE pre-release.\"? If so, I\u0027m not clear that it should persist once `cue help experiments` is released. It is incorrect to say that `cue help experiments` is only available in the pre-release. A page that demonstrates an experiment, whether available in an actual or pre-release, should make clear the version requirement. This page will be trying to do too much otherwise, and it\u0027s not necessary IMO.",
+      "revId": "9f403ddb03a4cac7df4e041a61ec3e739798160a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
