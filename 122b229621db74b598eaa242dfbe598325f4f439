@@ -278,6 +278,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bdf01787_b84c4444",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-10-15T09:53:33Z",
+      "side": 1,
+      "message": "yeah my inclination is that we shouldn\u0027t duplicate the directory view here. If you find the directory view to not be helpful enough, e.g. because docs are missing for some of those entries, then I\u0027d rather have patches to add them in as package docs. The duplication could also lead to this list being out of date.",
+      "parentUuid": "8e4e39ba_1be2e121",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f16b0272_5fee3ab0",
         "filename": "content/docs/concept/how-cue-works-with-go/en.md",
         "patchSetId": 4
@@ -423,6 +441,24 @@
       "writtenOn": "2025-10-14T08:59:36Z",
       "side": 1,
       "message": "cc @mvdan@mvdan.cc but I would say the second paragraph should come first. The `gocode` approach is definitely legacy to my mind. `cue exp gengotypes` is the \"new way\".",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5297d18f_0fe8af25",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-10-15T09:53:33Z",
+      "side": 1,
+      "message": "I\u0027d agree with that; gocode should be mentioned last, if at all.\n\nI\u0027m honestly still baffled by the gocode and gocodec packages; I\u0027ve never used them and don\u0027t understand why they need to exist going forward. Ditto for cuego, really. I\u0027ve filed https://github.com/cue-lang/cue/issues/4137 to track that.",
+      "parentUuid": "1eb03115_a311a4cf",
       "revId": "122b229621db74b598eaa242dfbe598325f4f439",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
