@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "537ee168_0bba22ac",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 188,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-15T09:03:23Z",
+      "side": 1,
+      "message": "@paul@myitcv.io I\u0027ve added this section so that the entire page doesn\u0027t need a \"Requires CUE v0.14.0+\" marker. Let me know what you think.",
+      "revId": "ee6ae6f483e14c752619a612b7b0b7caa2282a41",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
