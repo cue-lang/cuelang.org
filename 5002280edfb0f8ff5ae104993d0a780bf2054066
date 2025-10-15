@@ -33,6 +33,41 @@
       "message": "I\u0027ve replied in https://cue.gerrithub.io/c/cue-lang/cuelang.org/+/1224001/comment/c70dc24c_6794ff2b/; I\u0027m not clear this is the right thing to do.",
       "revId": "5002280edfb0f8ff5ae104993d0a780bf2054066",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fd72ba9e_91fd829b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-15T10:56:57Z",
+      "side": 1,
+      "message": "This can be resolved as per https://cue.gerrithub.io/c/cue-lang/cuelang.org/+/1224001/comment/c70dc24c_6794ff2b/.",
+      "parentUuid": "4a2e23c1_c4724393",
+      "revId": "5002280edfb0f8ff5ae104993d0a780bf2054066",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92dc24d1_e3838236",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-15T10:56:57Z",
+      "side": 1,
+      "message": "PTAL",
+      "revId": "5002280edfb0f8ff5ae104993d0a780bf2054066",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
