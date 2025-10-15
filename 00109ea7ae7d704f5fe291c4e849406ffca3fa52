@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "18a687bd_286f7f88",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 28
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-15T12:49:37Z",
+      "side": 1,
+      "message": "PTAL.\n\nThe previous comment threads seem somewhat outdated, but I\u0027ve left them as they were at their last update so as not to lose their context just yet.",
+      "revId": "00109ea7ae7d704f5fe291c4e849406ffca3fa52",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

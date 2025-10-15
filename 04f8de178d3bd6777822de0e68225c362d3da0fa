@@ -16,6 +16,24 @@
       "message": "Also related to cue-lang/docs-and-content#125.",
       "revId": "04f8de178d3bd6777822de0e68225c362d3da0fa",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a45878d1_9b39f85e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 21
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-15T12:49:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "95afc01c_252798f7",
+      "revId": "04f8de178d3bd6777822de0e68225c362d3da0fa",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
