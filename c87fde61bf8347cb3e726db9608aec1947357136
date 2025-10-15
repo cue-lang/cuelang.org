@@ -405,6 +405,30 @@
       },
       "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea3555cd_417d884a",
+        "filename": "content/docs/howto/enable-use-structcmp-experiment/en.md",
+        "patchSetId": 12
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-15T07:24:30Z",
+      "side": 1,
+      "message": "Done, and tracked in cue-lang/cue#4136.",
+      "parentUuid": "2b0d9448_7bb48a4f",
+      "range": {
+        "startLine": 72,
+        "startChar": 1,
+        "endLine": 74,
+        "endChar": 52
+      },
+      "revId": "c87fde61bf8347cb3e726db9608aec1947357136",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

@@ -33,6 +33,24 @@
       "message": "I would perhaps name these fields `\"a \u003d\u003d a\"` etc - because otherwise there\u0027s an unhelpful level of indirection for the reader which is quite hard to follow.",
       "revId": "c3477b9ccf8b09e013943751749debd5cae32f26",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "537634a6_787f7412",
+        "filename": "content/docs/howto/try-structcmp-experiment/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-15T07:24:30Z",
+      "side": 1,
+      "message": "Sure, but they\u0027ll be `_a \u003d\u003d _b` so that the export doesn\u0027t emit the fields being compared. That was the point of the `_data` container: to avoid having the `_` prefix on the field identifier itself. I\u0027ll make the change and you can see what you think.",
+      "parentUuid": "9dc30e16_c32939aa",
+      "revId": "c3477b9ccf8b09e013943751749debd5cae32f26",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
