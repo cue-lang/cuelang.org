@@ -6,6 +6,9 @@ github_repo = 'https://github.com/cue-lang/cuelang.org'
 images = ['img/social.png']
 logo = 'svg/logo.svg'
 
+[icons]
+throw_on_error = true
+
 [notification]
 content = '**CUE v0.14 is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/v0.14.0)'
 type = 'cue-minor-release-v0.14'
