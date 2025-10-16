@@ -46,6 +46,10 @@ site: config: {
 	mediaTypes: "text/netlify": delimiter: ""
 	mediaTypes: "notARealMediaType/cue": suffixes: ["cue"]
 	build: noJSConfigInAssets: true
+	module: imports: [
+		{path: "github.com/hugomods/icons/vendors/devicons"},
+		{path: "github.com/hugomods/icons/vendors/simple-icons"},
+	]
 }
 
 site: languages: {
@@ -129,6 +133,10 @@ site: params: {
 
 	// Google Custom Search Engine ID. GCS is disabled if not present.
 	gcs_engine_id: "004591905419617723008:8rmik2a7xb3"
+
+	// https://icons.hugomods.com/docs/config/#paramsiconsthrow_on_error
+	icons: throw_on_error: true
+
 	// Which logo to use in the main header.
 	logo: "svg/logo.svg"
 
