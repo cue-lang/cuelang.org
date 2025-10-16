@@ -212,6 +212,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "46f40c8a_e70d4f7e",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-16T13:39:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "455d5df7_7a4d3be4",
+      "range": {
+        "startLine": 31,
+        "startChar": 19,
+        "endLine": 31,
+        "endChar": 23
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ef5bbdd2_5147f47e",
@@ -294,6 +318,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "960267ed_f7bc186b",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-16T13:39:52Z",
+      "side": 1,
+      "message": "The duplication was present on the page that most of this content migrated from; I\u0027ve discarded it.",
+      "parentUuid": "bdf01787_b84c4444",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f16b0272_5fee3ab0",
@@ -307,6 +349,24 @@
       "writtenOn": "2025-10-14T08:59:36Z",
       "side": 1,
       "message": "How is this different to the previous section? I think we need to be clear on what this section could/should be doing.\n\nOne of the things the `gocodec` package does is interrogate Go types for struct field tags that contain CUE: https://github.com/cue-lang/cue/blob/658608c0dbeebafab4145ba44bf1153e19916349/encoding/gocode/gocodec/codec_test.go#L28\n\nI would suggest we first work out what it is we want to be saying on this page with respect to that package.",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b17ba420_4efaa651",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 385,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-16T13:39:52Z",
+      "side": 1,
+      "message": "As discussed with @mvdan@mvdan.cc offline, I\u0027ve now removed this entire section.",
+      "parentUuid": "f16b0272_5fee3ab0",
       "revId": "122b229621db74b598eaa242dfbe598325f4f439",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -430,6 +490,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0b702c76_3c80ae24",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-16T13:39:52Z",
+      "side": 1,
+      "message": "I\u0027ve added this below-the-example prose:\n\n\u003e The values set by the `FillPath` method are subject to CUE’s standard unification rules. The method cannot fill a field with a value that conflicts with constraints placed on its value elsewhere in the context.\n\nPTAL.",
+      "parentUuid": "15df3fc3_011341f2",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "1eb03115_a311a4cf",
         "filename": "content/docs/concept/how-cue-works-with-go/en.md",
         "patchSetId": 4
@@ -459,6 +537,24 @@
       "side": 1,
       "message": "I\u0027d agree with that; gocode should be mentioned last, if at all.\n\nI\u0027m honestly still baffled by the gocode and gocodec packages; I\u0027ve never used them and don\u0027t understand why they need to exist going forward. Ditto for cuego, really. I\u0027ve filed https://github.com/cue-lang/cue/issues/4137 to track that.",
       "parentUuid": "1eb03115_a311a4cf",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ade3ce80_2d904cb0",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 600,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-16T13:39:52Z",
+      "side": 1,
+      "message": "As discussed offline, I\u0027ve removed the first paragraph entirely.",
+      "parentUuid": "5297d18f_0fe8af25",
       "revId": "122b229621db74b598eaa242dfbe598325f4f439",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
