@@ -122,54 +122,71 @@ Here's a selection of the technologies and systems you'll find on cue.dev:
     href="https://cue.dev/docs/curated-module-argo-workflows/"
     label="cue.dev"
 >}}
+<center> {{< ico vendor=devicons name="argocd/argocd-original" size=4em >}} </center>
 {{< /card >}}
+
 {{< card
     title="Azure Pipelines"
     href="https://cue.dev/docs/curated-module-azure-pipelines/"
     label="cue.dev"
 >}}
+<center> {{< ico vendor=devicons name="azure/azure-original" size=4em >}} </center>
 {{< /card >}}
+
 {{< card
     title="Buildkite Pipelines"
     href="https://cue.dev/docs/curated-module-buildkite-pipelines/"
     label="cue.dev"
 >}}
+<center> {{< ico vendor=simple-icons name="buildkite" size=4em >}} </center>
 {{< /card >}}
+
 {{< card
     title="Docker Compose"
     href="https://cue.dev/docs/curated-module-docker-compose/"
     label="cue.dev"
 >}}
+<center> {{< ico vendor=devicons name="docker/docker-original" size=4em >}} </center>
 {{< /card >}}
+
 {{< card
     title="GitHub Actions"
     href="https://cue.dev/docs/curated-module-github-actions/`"
     label="cue.dev"
 >}}
+<center> {{< ico vendor=devicons name="github/github-original" size=4em >}} </center>
 {{< /card >}}
+
 {{< card
     title="GitLab CI/CD"
     href="https://cue.dev/docs/curated-module-gitlab-cicd/"
     label="cue.dev"
 >}}
+<center> {{< ico vendor=devicons name="gitlab/gitlab-original" size=4em >}} </center>
 {{< /card >}}
+
 {{< card
     title="GoReleaser"
     href="https://cue.dev/docs/curated-module-goreleaser/"
     label="cue.dev"
 >}}
+<center> {{< ico vendor=devicons name="go/go-original-wordmark" size=4em >}} </center>
 {{< /card >}}
+
 {{< card
-    title="Kubernetes + CRDs"
+    title="KubernetesCRDs"
     href="https://cue.dev/docs/curated-module-kubernetes/"
     label="cue.dev"
 >}}
+<center> {{< ico vendor=devicons name="kubernetes/kubernetes-original" size=4em >}} </center>
 {{< /card >}}
+
 {{< card
     title="Curated module index"
     href="https://cue.dev/docs/curated-modules/"
     label="cue.dev"
 >}}
+NPM packages, Kubernetes CRDs, and more ...
 {{< /card >}}
 
 {{</ cards >}}
@@ -190,6 +207,7 @@ for a collection of microservices into smaller, validated CUE configurations by
 automatically removing boilerplate;
 automating commands that don't know CUE yet (such as `kubectl`);
 and extracting schema definitions from Kubernetes source code.
+<center> {{< ico vendor=devicons name="kubernetes/kubernetes-original" size=4em >}} </center>
 {{< /card >}}
 
 {{< card
@@ -199,6 +217,7 @@ and extracting schema definitions from Kubernetes source code.
 >}}
 A pair of guides showing how to validate the JSON output from `terraform plan`
 using CUE as a policy language.
+<center> {{< ico vendor=devicons name="terraform/terraform-original" size=4em >}} </center>
 {{< /card >}}
 
 {{< card
