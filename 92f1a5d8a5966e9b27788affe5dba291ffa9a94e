@@ -16,6 +16,24 @@
       "message": "I think we should have short one-liners here, borrowing from the cue.dev material.",
       "revId": "92f1a5d8a5966e9b27788affe5dba291ffa9a94e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "52108282_42d26986",
+        "filename": "hugo/content/en/docs/integrations/index.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-16T09:37:28Z",
+      "side": 1,
+      "message": "As discussed offline, I\u0027ve updated the introduction to the cards to motivate the card grid better; and I also add tech-specific icons to each card, in a follow up.",
+      "parentUuid": "39235724_34647a4b",
+      "revId": "92f1a5d8a5966e9b27788affe5dba291ffa9a94e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
