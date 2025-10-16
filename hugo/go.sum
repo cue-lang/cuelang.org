@@ -1,0 +1,8 @@
+github.com/devicons/devicon v2.17.0+incompatible h1:3oFb7yUBEBjppp0Q0nIX0FD3psqBzJX5irlNH9dN+6M=
+github.com/devicons/devicon v2.17.0+incompatible/go.mod h1:5xWaezLtUi8HXB3mL9CGW0kbX2pJR0/Ser5Y1zJpKpY=
+github.com/hugomods/icons v0.6.6 h1:gGlafcBDRP7sSID+tgLcWdog+s/QBj8DIfU+h9tZj1U=
+github.com/hugomods/icons v0.6.6/go.mod h1:cIkSvK6W0q6N4U6n9KGz+QfRWQXAW0INd+1P31gPNGg=
+github.com/hugomods/icons/vendors/devicons v0.0.2 h1:iHjrQcRgtlm+G1r98ibw32wcZ25NBdoSb94Q6afv1ac=
+github.com/hugomods/icons/vendors/devicons v0.0.2/go.mod h1:WXbkgtMxTFrGEetPldyvUW9RqhSLyDR0uf1IJg9Cgic=
+github.com/hugomods/icons/vendors/simple-icons v1.1.1 h1:ZM+Oi+U3glq+WuVMsoplkQpCnRLd6UU416NZCydtPvw=
+github.com/hugomods/icons/vendors/simple-icons v1.1.1/go.mod h1:ZKdcZ++UGSRnEoaVL+MTth91x4NJRIe8aJOD8oAFcRA=
