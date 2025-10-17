@@ -51,6 +51,24 @@
       "parentUuid": "9dc30e16_c32939aa",
       "revId": "c3477b9ccf8b09e013943751749debd5cae32f26",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1bdaaf8f_1c78e808",
+        "filename": "content/docs/howto/try-structcmp-experiment/en.md",
+        "patchSetId": 14
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T10:12:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "537634a6_787f7412",
+      "revId": "c3477b9ccf8b09e013943751749debd5cae32f26",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
