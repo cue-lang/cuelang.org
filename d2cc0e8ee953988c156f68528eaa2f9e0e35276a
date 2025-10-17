@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae15fd6e_cedc4de4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-17T09:13:39Z",
+      "side": 1,
+      "message": "The positioning of the icons etc don\u0027t work to my mind, so let\u0027s put this on hold for now and leave the plain text.",
+      "revId": "d2cc0e8ee953988c156f68528eaa2f9e0e35276a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
