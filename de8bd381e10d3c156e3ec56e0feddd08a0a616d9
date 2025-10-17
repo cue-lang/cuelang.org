@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d5c14bac_f9c643ae",
+        "filename": "content/docs/integrations/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T12:16:02Z",
+      "side": 1,
+      "message": "I\u0027ve moved the text to the card label, where it feels much less shouty.",
+      "parentUuid": "61d13df0_d23e4589",
+      "range": {
+        "startLine": 96,
+        "startChar": 3,
+        "endLine": 96,
+        "endChar": 44
+      },
+      "revId": "de8bd381e10d3c156e3ec56e0feddd08a0a616d9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e00a86a2_69b556af",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-10-17T10:09:17Z",
       "side": 1,
       "message": "\"other\" - we don\u0027t need to say anything about the age of them.",
+      "range": {
+        "startLine": 177,
+        "startChar": 5,
+        "endLine": 177,
+        "endChar": 10
+      },
+      "revId": "de8bd381e10d3c156e3ec56e0feddd08a0a616d9",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "68d3229f_4ee46d9a",
+        "filename": "content/docs/integrations/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T12:16:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e00a86a2_69b556af",
       "range": {
         "startLine": 177,
         "startChar": 5,
