@@ -285,6 +285,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "9e269f2b_f14be721",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-17T10:07:02Z",
+      "side": 1,
+      "message": "I wasn\u0027t suggesting that per se, rather correcting that we should not be advising to place manually created files under `cue.mod/gen`. But if you think it reads cleaner to not go to this level of detail that\u0027s fine.",
+      "parentUuid": "67256474_a0a43758",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 17
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "8e4e39ba_1be2e121",
         "filename": "content/docs/concept/how-cue-works-with-go/en.md",
         "patchSetId": 4
@@ -502,6 +526,24 @@
       "side": 1,
       "message": "I\u0027ve added this below-the-example prose:\n\n\u003e The values set by the `FillPath` method are subject to CUE’s standard unification rules. The method cannot fill a field with a value that conflicts with constraints placed on its value elsewhere in the context.\n\nPTAL.",
       "parentUuid": "15df3fc3_011341f2",
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f58ff517_e666eeb0",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-17T10:07:02Z",
+      "side": 1,
+      "message": "I will reply below.",
+      "parentUuid": "0b702c76_3c80ae24",
       "revId": "122b229621db74b598eaa242dfbe598325f4f439",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
