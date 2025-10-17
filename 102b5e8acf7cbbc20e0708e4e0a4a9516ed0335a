@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5d207353_80f384c2",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T11:46:37Z",
+      "side": 1,
+      "message": "I\u0027ve gone with\n\n\u003e convert Go types to CUE schemas, using Kubernetes API code as an example\n\nLet me know if you\u0027d prefer otherwise.",
+      "parentUuid": "db0051b0_5f102012",
+      "range": {
+        "startLine": 29,
+        "startChar": 14,
+        "endLine": 29,
+        "endChar": 19
+      },
+      "revId": "102b5e8acf7cbbc20e0708e4e0a4a9516ed0335a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7e9746af_e38190db",
         "filename": "content/docs/concept/how-cue-works-with-go/en.md",
         "patchSetId": 7
@@ -54,6 +78,30 @@
       "writtenOn": "2025-10-17T10:07:02Z",
       "side": 1,
       "message": "\"native\" isn\u0027t required (and doesn\u0027t mean anything here to my mind)",
+      "range": {
+        "startLine": 30,
+        "startChar": 59,
+        "endLine": 30,
+        "endChar": 65
+      },
+      "revId": "102b5e8acf7cbbc20e0708e4e0a4a9516ed0335a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1324dc1a_25a7f216",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T11:46:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7e9746af_e38190db",
       "range": {
         "startLine": 30,
         "startChar": 59,
@@ -89,6 +137,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "479cb523_a12f07f2",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T11:46:37Z",
+      "side": 1,
+      "message": "I\u0027ve revisited the whole of this list, making it plainer and more direct. PTAL.",
+      "parentUuid": "fedff72f_55642c9e",
+      "range": {
+        "startLine": 32,
+        "startChar": 41,
+        "endLine": 32,
+        "endChar": 51
+      },
+      "revId": "102b5e8acf7cbbc20e0708e4e0a4a9516ed0335a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "7831aaad_28514718",
         "filename": "content/docs/concept/how-cue-works-with-go/en.md",
         "patchSetId": 7
@@ -100,6 +172,30 @@
       "writtenOn": "2025-10-17T10:07:02Z",
       "side": 1,
       "message": "Unnecessary wording?",
+      "range": {
+        "startLine": 33,
+        "startChar": 2,
+        "endLine": 33,
+        "endChar": 18
+      },
+      "revId": "102b5e8acf7cbbc20e0708e4e0a4a9516ed0335a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aa71794d_dc330eea",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T11:46:37Z",
+      "side": 1,
+      "message": "It was intended to reflect the fact that this page doesn\u0027t actually demo the generation, but link to a page that does. I\u0027ve used plainer language now.",
+      "parentUuid": "7831aaad_28514718",
       "range": {
         "startLine": 33,
         "startChar": 2,
@@ -129,6 +225,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2a62da76_199f73d1",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T11:46:37Z",
+      "side": 1,
+      "message": "I\u0027ve changed the section\u0027s heading, some of its prose, and the Go example\u0027s comments to use the phrase \"adding information\", as we discussed offline.\n\nPTAL.",
+      "parentUuid": "ea7da564_7e9f8e3e",
+      "revId": "102b5e8acf7cbbc20e0708e4e0a4a9516ed0335a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "89a3f1f1_f188aa1f",
         "filename": "content/docs/concept/how-cue-works-with-go/en.md",
         "patchSetId": 7
@@ -140,6 +254,30 @@
       "writtenOn": "2025-10-17T10:07:02Z",
       "side": 1,
       "message": "Can we not say this more plainly? \"subject to CUE\u0027s standard unification rules\" is overly academic. I would lean on the text from the docs here:\n\nhttps://pkg.go.dev/cuelang.org/go/cue#Value.FillPath\n\nJust talk in terms of unifying two values, with one having been placed at a path before the unification.\n\nI\u0027m also not clear you particularly need to call out the fact that errors could result in errors.",
+      "range": {
+        "startLine": 478,
+        "startChar": 0,
+        "endLine": 478,
+        "endChar": 88
+      },
+      "revId": "102b5e8acf7cbbc20e0708e4e0a4a9516ed0335a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b03ab962_14253f7f",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 478,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T11:46:37Z",
+      "side": 1,
+      "message": "I *think* I\u0027ve achieved this. PTAL.\n\n\u003e I\u0027m also not clear you particularly need to call out the fact that errors could result in errors.\n\nRemoved.",
+      "parentUuid": "89a3f1f1_f188aa1f",
       "range": {
         "startLine": 478,
         "startChar": 0,

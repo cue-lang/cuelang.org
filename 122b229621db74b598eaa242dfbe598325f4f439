@@ -307,6 +307,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f9579efa_4b53e5c7",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T11:46:37Z",
+      "side": 1,
+      "message": "The added warning/info reflected some prose removed from the /integration/go page. \n\nI think it\u0027s a good idea to remove it entirely, especially given the broader move to modules and deprecation of `cue.mod/{usr,pkg}`. If we need to clarify the \"refinement\" topic and `cue.mod/usr` in a modules-first world, this page feels like the wrong place to do that currently.",
+      "parentUuid": "9e269f2b_f14be721",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 17
+      },
+      "revId": "122b229621db74b598eaa242dfbe598325f4f439",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8e4e39ba_1be2e121",
