@@ -16,6 +16,63 @@
       "message": "PTAL",
       "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f512e3e5_2c501f76",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-17T04:55:57Z",
+      "side": 1,
+      "message": "Given this rewrite, why does this need to be separate from the simple types? BTW, lists themselves are missed as a result. I would suggest breaking things down by the kind of mechanism you are using. `list.UniqueItems` is the simplest way, and it now covers concrete values of all types. \n\nI would then have a heading that explains a more advanced mechanism for lists using structs/maps.\n\nBut I think you need to motivate _why_ you want to talk about the map/struct based approach to maintaining uniqueness. Right now, this article reads a bit like a laundry list of techniques without guidance on why I would choose one vs the other.",
+      "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a5ceffe_9f117f73",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-17T04:55:57Z",
+      "side": 1,
+      "message": "This isn\u0027t unique to structs, but is perhaps the most obvious use case. \n\nA list derived from a map’s keys is inherently unique. When constructing a list of structs from a map, including the key in each struct preserves that uniqueness.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 9
+      },
+      "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "036fb307_bec881dc",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-17T04:55:57Z",
+      "side": 1,
+      "message": "Let me make sure I\u0027ve understood this. The last three examples on this page show:\n\n1. A one-field key unique list\n1. A two-field key unique list\n1. An error case that is not unique using `error()`\n\nThe reference to `error()` comes a little late in some respects because it\u0027s used in 1.\n\nIs there really that much value in having three code blocks with very similar examples to make these points? \n\nSee my question above motivating _why_ we might be in this situation. How are we guiding the users as to which technique to use? I think we need headings for these cases.",
+      "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
