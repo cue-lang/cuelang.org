@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d08bd20e_addcd447",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-17T09:14:26Z",
+      "side": 1,
+      "message": "On the basis the next CL is on hold we can put this on hold.",
+      "revId": "4181407c8a2535036b929bfeb3d0ffdee0789e21",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
