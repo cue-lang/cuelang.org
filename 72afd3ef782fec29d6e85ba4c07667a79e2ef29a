@@ -16,6 +16,24 @@
       "message": "I think we\u0027re talking past each other on the naming. Per my offline message, this is what I was suggesting:\n\nhttps://tip.cuelang.org/play/?id\u003dspCwTK3E9iS#w\u003dfunction\u0026i\u003dcue\u0026f\u003deval\u0026o\u003dcue",
       "revId": "72afd3ef782fec29d6e85ba4c07667a79e2ef29a",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e8d45092_a83b31f6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-17T09:09:11Z",
+      "side": 1,
+      "message": "Re-opening.",
+      "parentUuid": "de853794_573ccd99",
+      "revId": "72afd3ef782fec29d6e85ba4c07667a79e2ef29a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
