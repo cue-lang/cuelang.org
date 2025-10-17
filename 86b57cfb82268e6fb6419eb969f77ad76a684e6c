@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0916fc7b_53eb7017",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T14:56:27Z",
+      "side": 1,
+      "message": "This was a really good point - I\u0027ve totally restructured the guide to provide a better narrative for the reader. PTAL.",
+      "parentUuid": "f512e3e5_2c501f76",
+      "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "6a5ceffe_9f117f73",
         "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
         "patchSetId": 13
@@ -60,6 +78,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "fea4332a_01036275",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T14:56:27Z",
+      "side": 1,
+      "message": "I\u0027ve updated the prose. PTAL.",
+      "parentUuid": "6a5ceffe_9f117f73",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 9
+      },
+      "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "036fb307_bec881dc",
         "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
         "patchSetId": 13
@@ -71,6 +113,24 @@
       "writtenOn": "2025-10-17T04:55:57Z",
       "side": 1,
       "message": "Let me make sure I\u0027ve understood this. The last three examples on this page show:\n\n1. A one-field key unique list\n1. A two-field key unique list\n1. An error case that is not unique using `error()`\n\nThe reference to `error()` comes a little late in some respects because it\u0027s used in 1.\n\nIs there really that much value in having three code blocks with very similar examples to make these points? \n\nSee my question above motivating _why_ we might be in this situation. How are we guiding the users as to which technique to use? I think we need headings for these cases.",
+      "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9bf7a691_f6ada87e",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-17T14:56:27Z",
+      "side": 1,
+      "message": "I\u0027ve streamlined the examples into a single block, showing one \u003e\u003dv0.14.0 technique (using `error`) and one \u003cv0.14.0. PTAL.",
+      "parentUuid": "036fb307_bec881dc",
       "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
