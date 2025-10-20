@@ -117,7 +117,7 @@ redirects: [
 		robotsTxt: disallow: false // No need to duplicate the Disallow entry from above.
 	}, {
 		from: "/cl/*"
-		to:   "https://review.gerrithub.io/c/:splat"
+		to:   "https://cue.gerrithub.io/c/:splat"
 	}, {
 		from: "/issue/*"
 		to:   "https://github.com/cue-lang/cue/issues/:splat"
