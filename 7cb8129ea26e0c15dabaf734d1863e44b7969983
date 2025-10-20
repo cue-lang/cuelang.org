@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4224c90f_bfb61f68",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "Simpler please. \"When working with lists, you sometimes need to ensure...\"\n\nI\u0027m not sure how many people who are working with configuration think of themselves as dealing with \"structured data\".",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 62
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91054cb0_1f5c2606",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "This is a long and fairly technical explanation of what is covered in what follows. It\u0027s like it\u0027s trying to fully cover the detail of each section. I would instead suggest more colloquial language. See comments on each section for thoughts on how to do that.\n\nYou also seem to switch to using \"unique\" here, and I\u0027m not quite sure why given the title.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 78
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d1c5e004_e37413ee",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "Saying “each element is unique” is a bit imprecise, because uniqueness is inherently a property of the list as a whole, not of individual elements in isolation.\n\nHow about something like:\n\n\"When you have a list of concrete values of any type, you can assert that the list contains no duplicate elements using the list.UniqueItems function as a field validator:\"",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 30
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58b41a57_77c10979",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "Again, let\u0027s try and be a bit more direct. Something along the lines of:\n\n```\nField D is also invalid, although no error message is shown. The missing message is tracked in {{\u003cissue 4140\u003e}}Issue #4140{{\u003c/issue\u003e}}.\n```",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 41
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ab3f6a34_d1a69268",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "I found this a little hard to read. How about something like:\n\n\"When you construct a list dynamically from a map, including the map’s keys in each element ensures that the resulting list has unique elements:\"",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 0
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66db7530_75f82849",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "I think we can again be much plainer in our language here. It\u0027s not necessarily the case that the constraint is \"for show\" - if we refactored how the list was constructed, it could well be performing a critical role.\n\nIf you want to include a mention of why you have included the constraint, then I would suggest simplifying the language.",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 61
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c51cc83_86dc0b2b",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "I think the wording here can be improved. It\u0027s almost like you\u0027re going to some serious lengths to avoid using the word \"key\" 😉\n\nHow about something along the lines of:\n\nWhen you have a list of structs, you may only need certain fields — together forming a key — to be unique.\nYou can enforce this by unifying the list with a check that emits a custom error if duplicate keys are found:",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 24
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "064ca331_2ef083ca",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "I would reflect on the comment above for tweaks in language throughout comments.",
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

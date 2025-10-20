@@ -53,6 +53,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbc7c806_d2e30505",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "I will mark this as closed and re-review the entire piece.",
+      "parentUuid": "0916fc7b_53eb7017",
+      "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6a5ceffe_9f117f73",
@@ -100,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca4cf29c_49e6514d",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "I will mark this as closed and re-review the entire piece.",
+      "parentUuid": "fea4332a_01036275",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 79,
+        "endChar": 9
+      },
+      "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "036fb307_bec881dc",
@@ -131,6 +173,24 @@
       "side": 1,
       "message": "I\u0027ve streamlined the examples into a single block, showing one \u003e\u003dv0.14.0 technique (using `error`) and one \u003cv0.14.0. PTAL.",
       "parentUuid": "036fb307_bec881dc",
+      "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "21ae75dd_1db01814",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 13
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-20T15:17:12Z",
+      "side": 1,
+      "message": "I will mark this as closed and re-review the entire piece.",
+      "parentUuid": "9bf7a691_f6ada87e",
       "revId": "86b57cfb82268e6fb6419eb969f77ad76a684e6c",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
