@@ -42,7 +42,7 @@ command: checkEndpoints: content: {
 		response: statusCode: 200
 	}
 
-	let metaGoImport = #"<meta name="go-import" content="cuelang.org/go git https://review.gerrithub.io/cue-lang/cue">"#
+	let metaGoImport = #"<meta name="go-import" content="cuelang.org/go git https://cue.gerrithub.io/cue-lang/cue">"#
 	for Url in [
 		"\(schemeHost)/go?go-get=1",              // cuelang.org/go Go module root
 		"\(schemeHost)/go/\(dummyPath)?go-get=1", // some cuelang.org/go Go package
