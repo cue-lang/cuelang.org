@@ -24,6 +24,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bacbe5a1_102c8177",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T15:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4224c90f_bfb61f68",
+      "range": {
+        "startLine": 10,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 62
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91054cb0_1f5c2606",
@@ -37,6 +61,30 @@
       "writtenOn": "2025-10-20T15:17:12Z",
       "side": 1,
       "message": "This is a long and fairly technical explanation of what is covered in what follows. It\u0027s like it\u0027s trying to fully cover the detail of each section. I would instead suggest more colloquial language. See comments on each section for thoughts on how to do that.\n\nYou also seem to switch to using \"unique\" here, and I\u0027m not quite sure why given the title.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 16,
+        "endChar": 78
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "47634bfc_204ff9e1",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T15:22:09Z",
+      "side": 1,
+      "message": "Rewritten and simplified significantly.",
+      "parentUuid": "91054cb0_1f5c2606",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -70,6 +118,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb916a49_bd9932db",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T15:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1c5e004_e37413ee",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 22,
+        "endChar": 30
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "58b41a57_77c10979",
@@ -83,6 +155,30 @@
       "writtenOn": "2025-10-20T15:17:12Z",
       "side": 1,
       "message": "Again, let\u0027s try and be a bit more direct. Something along the lines of:\n\n```\nField D is also invalid, although no error message is shown. The missing message is tracked in {{\u003cissue 4140\u003e}}Issue #4140{{\u003c/issue\u003e}}.\n```",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 83,
+        "endChar": 41
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b2a11154_06c06c02",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T15:22:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58b41a57_77c10979",
       "range": {
         "startLine": 81,
         "startChar": 0,
@@ -118,6 +214,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b1e00824_781c8b5e",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T15:22:09Z",
+      "side": 1,
+      "message": "Rewritten, hopefully easier to read! PTAL.",
+      "parentUuid": "ab3f6a34_d1a69268",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 0
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "66db7530_75f82849",
         "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
         "patchSetId": 17
@@ -129,6 +249,30 @@
       "writtenOn": "2025-10-20T15:17:12Z",
       "side": 1,
       "message": "I think we can again be much plainer in our language here. It\u0027s not necessarily the case that the constraint is \"for show\" - if we refactored how the list was constructed, it could well be performing a critical role.\n\nIf you want to include a mention of why you have included the constraint, then I would suggest simplifying the language.",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 61
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96ac286d_468e2584",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T15:22:09Z",
+      "side": 1,
+      "message": "Paragraph removed.",
+      "parentUuid": "66db7530_75f82849",
       "range": {
         "startLine": 126,
         "startChar": 0,
@@ -164,6 +308,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b2091c26_6db6db99",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T15:22:09Z",
+      "side": 1,
+      "message": "I don\u0027t follow this fully, I\u0027m afraid - please ping me whenever a brief clarifying chat would be convenient.",
+      "parentUuid": "1c51cc83_86dc0b2b",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 24
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "064ca331_2ef083ca",
         "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
         "patchSetId": 17
@@ -175,6 +343,24 @@
       "writtenOn": "2025-10-20T15:17:12Z",
       "side": 1,
       "message": "I would reflect on the comment above for tweaks in language throughout comments.",
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57a20dea_27f1498c",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T15:22:09Z",
+      "side": 1,
+      "message": "Pending discussion in https://cue.gerrithub.io/c/cue-lang/cuelang.org/+/1206577/comment/1c51cc83_86dc0b2b/.",
+      "parentUuid": "064ca331_2ef083ca",
       "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
