@@ -16,6 +16,24 @@
       "message": "@paul@myitcv.io I\u0027ve moved this new example (migrated from `/integration/go/`) to the top of the API section, reflecting its transplanted prose mentioning that it\u0027s \"the simplest way ...\" to achieve a common (to my eyes) task. I\u0027ve updated prose and mentions of the CUE value default formatter to match. \n\nLet me know if you feel this placement isn\u0027t appropriate, given either the API demonstrated or the example presented.",
       "revId": "63791c217d8851b023f6176950640ef338076130",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7eb341e_18c29303",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 8
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-21T17:16:23Z",
+      "side": 1,
+      "message": "I\u0027ll resolve here and reply elsewhere as required.",
+      "parentUuid": "084f17a3_084ea521",
+      "revId": "63791c217d8851b023f6176950640ef338076130",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }

@@ -65,6 +65,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a45ac2c8_da766312",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-21T17:16:23Z",
+      "side": 1,
+      "message": "Resolving here and replying again.",
+      "parentUuid": "5d207353_80f384c2",
+      "range": {
+        "startLine": 29,
+        "startChar": 14,
+        "endLine": 29,
+        "endChar": 19
+      },
+      "revId": "102b5e8acf7cbbc20e0708e4e0a4a9516ed0335a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7e9746af_e38190db",
@@ -149,6 +173,30 @@
       "side": 1,
       "message": "I\u0027ve revisited the whole of this list, making it plainer and more direct. PTAL.",
       "parentUuid": "fedff72f_55642c9e",
+      "range": {
+        "startLine": 32,
+        "startChar": 41,
+        "endLine": 32,
+        "endChar": 51
+      },
+      "revId": "102b5e8acf7cbbc20e0708e4e0a4a9516ed0335a",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6ede4663_6d2384ef",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-21T17:16:23Z",
+      "side": 1,
+      "message": "Resolving here and replying in specific places as required.",
+      "parentUuid": "479cb523_a12f07f2",
       "range": {
         "startLine": 32,
         "startChar": 41,
