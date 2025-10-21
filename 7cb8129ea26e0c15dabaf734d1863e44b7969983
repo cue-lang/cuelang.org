@@ -330,6 +330,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f3dbeb6_bdbcc7b6",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T16:07:12Z",
+      "side": 1,
+      "message": "Updated, as discussed offline.",
+      "parentUuid": "b2091c26_6db6db99",
+      "range": {
+        "startLine": 137,
+        "startChar": 0,
+        "endLine": 143,
+        "endChar": 24
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "064ca331_2ef083ca",
@@ -361,6 +385,24 @@
       "side": 1,
       "message": "Pending discussion in https://cue.gerrithub.io/c/cue-lang/cuelang.org/+/1206577/comment/1c51cc83_86dc0b2b/.",
       "parentUuid": "064ca331_2ef083ca",
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fefe5b19_498649eb",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T16:07:12Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "57a20dea_27f1498c",
       "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
