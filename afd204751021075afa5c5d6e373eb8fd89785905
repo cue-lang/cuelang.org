@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0e622c6_b3f2c231",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 24
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "PTAL at the example and narrative proposed in this WIP.",
+      "revId": "afd204751021075afa5c5d6e373eb8fd89785905",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}

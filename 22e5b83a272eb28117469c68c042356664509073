@@ -64,6 +64,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a745de4f_11425043",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1a741afd_11c3a56e",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 65
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3355f232_09570d12",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Rewritten as per offline discussion.",
+      "parentUuid": "e82555fa_60da22f4",
+      "range": {
+        "startLine": 8,
+        "startChar": 15,
+        "endLine": 8,
+        "endChar": 24
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d1589078_96799b15",
@@ -77,6 +125,30 @@
       "writtenOn": "2025-10-14T08:20:34Z",
       "side": 1,
       "message": "More bold text when I don\u0027t think it helps.",
+      "range": {
+        "startLine": 13,
+        "startChar": 5,
+        "endLine": 13,
+        "endChar": 43
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "31fb1a37_6ffa24b7",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d1589078_96799b15",
       "range": {
         "startLine": 13,
         "startChar": 5,
@@ -104,6 +176,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0493dfee_c36716aa",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "50739790_013b587c",
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cb6de604_def59531",
@@ -117,6 +207,30 @@
       "writtenOn": "2025-10-14T08:20:34Z",
       "side": 1,
       "message": "Why `/` and not `,`?",
+      "range": {
+        "startLine": 30,
+        "startChar": 51,
+        "endLine": 30,
+        "endChar": 53
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc88c193_99ba5ac2",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Rewritten as per offline discussion.",
+      "parentUuid": "cb6de604_def59531",
       "range": {
         "startLine": 30,
         "startChar": 51,
@@ -150,6 +264,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c7aa9a10_f67e8aa3",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4db91838_592336c4",
+      "range": {
+        "startLine": 31,
+        "startChar": 13,
+        "endLine": 32,
+        "endChar": 5
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "36c17f26_804e6bcb",
@@ -163,6 +301,30 @@
       "writtenOn": "2025-10-14T08:20:34Z",
       "side": 1,
       "message": "Do we need to repeat this as part of the heading?",
+      "range": {
+        "startLine": 72,
+        "startChar": 23,
+        "endLine": 72,
+        "endChar": 50
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "516131c3_635f72a7",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36c17f26_804e6bcb",
       "range": {
         "startLine": 72,
         "startChar": 23,
@@ -219,6 +381,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4912a45a_8f3e15b3",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9989fb5f_22d58775",
+      "range": {
+        "startLine": 77,
+        "startChar": 1,
+        "endLine": 77,
+        "endChar": 51
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "007566ee_64dbee6b",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Rewritten as per offline discussion.",
+      "parentUuid": "45c5d2cd_10aa4a20",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 51
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "50599504_d05c87f2",
@@ -232,6 +442,30 @@
       "writtenOn": "2025-10-14T08:20:34Z",
       "side": 1,
       "message": "This seems to come \"out of a hat\" - I think you need more explanation on what technique you are using here, in human terms.",
+      "range": {
+        "startLine": 80,
+        "startChar": 19,
+        "endLine": 80,
+        "endChar": 22
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "62aaed83_33d0e3a5",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Rewritten as per offline discussion.",
+      "parentUuid": "50599504_d05c87f2",
       "range": {
         "startLine": 80,
         "startChar": 19,
@@ -288,6 +522,54 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "97cbc8fe_2c950d20",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f3705193_5998497b",
+      "range": {
+        "startLine": 82,
+        "startChar": 37,
+        "endLine": 82,
+        "endChar": 45
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b8aec104_0d4bda3e",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8822c648_1bab4f36",
+      "range": {
+        "startLine": 81,
+        "startChar": 64,
+        "endLine": 82,
+        "endChar": 20
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "af8ff214_e55dd1f3",
@@ -329,6 +611,54 @@
         "startChar": 56,
         "endLine": 83,
         "endChar": 6
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f183de9e_b0d0d4b7",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7dad1b54_c1d60168",
+      "range": {
+        "startLine": 82,
+        "startChar": 56,
+        "endLine": 83,
+        "endChar": 6
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b7816fca_18fa22ca",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Rewritten as per offline discussion.",
+      "parentUuid": "af8ff214_e55dd1f3",
+      "range": {
+        "startLine": 83,
+        "startChar": 30,
+        "endLine": 83,
+        "endChar": 43
       },
       "revId": "22e5b83a272eb28117469c68c042356664509073",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
@@ -380,6 +710,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "3960cbaf_87f2a152",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Rewritten as per offline discussion.",
+      "parentUuid": "0218e413_b53091d2",
+      "range": {
+        "startLine": 115,
+        "startChar": 3,
+        "endLine": 115,
+        "endChar": 9
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8458dd75_49339c7a",
@@ -393,6 +747,30 @@
       "writtenOn": "2025-10-14T08:20:34Z",
       "side": 1,
       "message": "Why is this not a definition?",
+      "range": {
+        "startLine": 120,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 3
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c9632017_50e305be",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "8458dd75_49339c7a",
       "range": {
         "startLine": 120,
         "startChar": 0,
@@ -426,6 +804,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "303feb25_26b2c558",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0c6ddf50_829953da",
+      "range": {
+        "startLine": 149,
+        "startChar": 20,
+        "endLine": 149,
+        "endChar": 46
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "60834834_c55b7e59",
@@ -439,6 +841,30 @@
       "writtenOn": "2025-10-14T08:20:34Z",
       "side": 1,
       "message": "Does this paragraph need to be included? I\u0027m not clear what conclusion it draws in the context of this piece. It seems to be a bit of a distraction from our attempts to remove boilerplate. Why is it relevant?",
+      "range": {
+        "startLine": 151,
+        "startChar": 1,
+        "endLine": 156,
+        "endChar": 0
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cd178456_a750fa96",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Removed.",
+      "parentUuid": "60834834_c55b7e59",
       "range": {
         "startLine": 151,
         "startChar": 1,
@@ -489,6 +915,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bdf6def5_4e6eafb3",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "90531509_01b30e43",
+      "range": {
+        "startLine": 227,
+        "startChar": 15,
+        "endLine": 227,
+        "endChar": 41
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ff2dca7a_ababef22",
@@ -519,6 +969,30 @@
       "writtenOn": "2025-10-14T08:20:34Z",
       "side": 1,
       "message": "Bold text.",
+      "range": {
+        "startLine": 231,
+        "startChar": 1,
+        "endLine": 231,
+        "endChar": 56
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cfd7777_aaf7134b",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2b186715_1fbbeb8f",
       "range": {
         "startLine": 231,
         "startChar": 1,
@@ -592,6 +1066,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "256a01a5_906a6336",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 297,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e39ab0bb_2bee88f4",
+      "range": {
+        "startLine": 297,
+        "startChar": 28,
+        "endLine": 297,
+        "endChar": 61
+      },
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "30bb82d1_285af923",
@@ -655,6 +1153,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "79a6c4c4_9c741258",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "714594ed_769baf36",
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "e4f7dda3_331dbb3d",
@@ -668,6 +1184,24 @@
       "writtenOn": "2025-10-14T08:20:34Z",
       "side": 1,
       "message": "I think I\u0027ve made the point about bold text enough above.",
+      "revId": "22e5b83a272eb28117469c68c042356664509073",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2ed40ef_fe1949fa",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 20
+      },
+      "lineNbr": 384,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-21T14:06:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4f7dda3_331dbb3d",
       "revId": "22e5b83a272eb28117469c68c042356664509073",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
