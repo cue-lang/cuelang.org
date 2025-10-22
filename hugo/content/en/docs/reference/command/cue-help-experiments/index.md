@@ -33,6 +33,9 @@ Multiple experiments can be enabled:
 	@experiment(structcmp,self)
 	@experiment(explicitopen)
 
+The behavior of per-file experiments tracks the language version declared in their module,
+or if none exists, the language version reported by "cue version".
+
 Available per-file experiments:
 
   structcmp (preview: v0.14.0, stable: v0.15.0)
@@ -43,17 +46,21 @@ Available per-file experiments:
     Spec change:   https://cuelang.org/cl/1217013
     Spec change:   https://cuelang.org/cl/1217014
 
+  aliasv2 (preview: v0.15.0)
+    aliasv2 enables the use of 'self' identifier to refer to the
+    enclosing struct and enables the postfix alias syntax (~X and ~(K,V)).
+    The file where this experiment is enabled disallows the use of old prefix
+    alias syntax (X=).
+    Proposal:      https://cuelang.org/issue/4014
+    Spec change:   https://cuelang.org/cl/1222377
+    Requires cue fix when upgrading
+
   explicitopen (preview: v0.15.0)
     explicitopen enables the postfix ... operator to explicitly open
     closed structs, allowing additional fields to be added.
     Proposal:      https://cuelang.org/issue/4032
     Spec change:   https://cuelang.org/cl/1221642
     Requires cue fix when upgrading
-
-  self (preview: v0.15.0)
-    self enables the use of 'self' identifier to refer to the enclosing struct.
-    Proposal:      https://cuelang.org/issue/4014
-    Spec change:   https://cuelang.org/cl/1222377
 
 
 ## Global Experiments
@@ -62,6 +69,8 @@ Global experiments are enabled via the CUE_EXPERIMENT environment variable:
 
 	export CUE_EXPERIMENT=cmdreferencepkg,keepvalidators
 	cue export myfile.cue
+
+The behavior of global experiments tracks the language version reported by "cue version".
 
 Available global experiments:
 
@@ -101,7 +110,7 @@ Available global experiments:
     yamlv3decoder swaps the old internal/third_party/yaml decoder with the new
     decoder implemented in internal/encoding/yaml on top of yaml.v3.
 
-Experiment lifecycle:
+Each experiment's lifecycle tracks language versions as follows:
 - preview:   experimental feature that can be enabled
 - default:   experiment enabled by default, can still be disabled
 - stable:    experiment permanently enabled, experiment flag has no effect
