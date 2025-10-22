@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "H4BOLB4AVLP611QL30N6937M3GEKGDNM0SPT517UD1BQ0PMHRS1G===="
-									scriptHash: "T48B0MOIQKMSTHER4M99K6RABLGNOBNJ14DR82656BABFTQC0440===="
+									hash:       "B4DLVVU77RCHT8M87BMDNLJGR5TTINR0C5DKUOFH0M59I14195D0===="
+									scriptHash: "4GPPPJM26J2Q2OH0O6CG9LE4T7CAUGMV8K2O6E1FI9413KHN4SKG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.0-alpha.2:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0-alpha.3:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -42,6 +42,9 @@ package site
 												\t@experiment(structcmp,self)
 												\t@experiment(explicitopen)
 
+												The behavior of per-file experiments tracks the language version declared in their module,
+												or if none exists, the language version reported by "cue version".
+
 												Available per-file experiments:
 
 												  structcmp (preview: v0.14.0, stable: v0.15.0)
@@ -52,17 +55,21 @@ package site
 												    Spec change:   https://cuelang.org/cl/1217013
 												    Spec change:   https://cuelang.org/cl/1217014
 
+												  aliasv2 (preview: v0.15.0)
+												    aliasv2 enables the use of 'self' identifier to refer to the
+												    enclosing struct and enables the postfix alias syntax (~X and ~(K,V)).
+												    The file where this experiment is enabled disallows the use of old prefix
+												    alias syntax (X=).
+												    Proposal:      https://cuelang.org/issue/4014
+												    Spec change:   https://cuelang.org/cl/1222377
+												    Requires cue fix when upgrading
+
 												  explicitopen (preview: v0.15.0)
 												    explicitopen enables the postfix ... operator to explicitly open
 												    closed structs, allowing additional fields to be added.
 												    Proposal:      https://cuelang.org/issue/4032
 												    Spec change:   https://cuelang.org/cl/1221642
 												    Requires cue fix when upgrading
-
-												  self (preview: v0.15.0)
-												    self enables the use of 'self' identifier to refer to the enclosing struct.
-												    Proposal:      https://cuelang.org/issue/4014
-												    Spec change:   https://cuelang.org/cl/1222377
 
 
 												## Global Experiments
@@ -71,6 +78,8 @@ package site
 
 												\texport CUE_EXPERIMENT=cmdreferencepkg,keepvalidators
 												\tcue export myfile.cue
+
+												The behavior of global experiments tracks the language version reported by "cue version".
 
 												Available global experiments:
 
@@ -110,7 +119,7 @@ package site
 												    yamlv3decoder swaps the old internal/third_party/yaml decoder with the new
 												    decoder implemented in internal/encoding/yaml on top of yaml.v3.
 
-												Experiment lifecycle:
+												Each experiment's lifecycle tracks language versions as follows:
 												- preview:   experimental feature that can be enabled
 												- default:   experiment enabled by default, can still be disabled
 												- stable:    experiment permanently enabled, experiment flag has no effect

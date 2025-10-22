@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"main.go":                 "6HvV7QWO78c5dqsTDhf3j+3yE5wf0+0/ZPajc9I/WN0="
-									"HIDDEN: required output": "HaRCG0YA/YrqyIE6+HtQ3X5oSqAkt0m9su6Rg2UgFT0="
+									"main.go":                 "CXs2A/5/uJkqIwDlT0XdZzpbEPannsptUNdVeyDTJfU="
+									"HIDDEN: required output": "+2YRqqlOEUyxmRolzQoHlfBtktvu1n6BmYNS9+diLOw="
 								}
 								multi_step: {
-									hash:       "UA40FLK78GM7UV7V5B156VPAFGPVRNSAKPG4IU4DUTBSHQG5BLSG===="
+									hash:       "BB4CA1FS6OG9MUON30L48MCNV0EMQSSGHKEK8KV045OEHA1Q8PDG===="
 									scriptHash: "R3592TOIRF8E83T86OPE9JL2LO00QI4FB0FQN7VAHQG7A25EKNIG===="
 									steps: [{
 										doc:      ""
