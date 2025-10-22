@@ -236,6 +236,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9fb13be_0c7c7c2a",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 17
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-10-22T08:36:14Z",
+      "side": 1,
+      "message": "Resolving to reply to the rewording.",
+      "parentUuid": "b1e00824_781c8b5e",
+      "range": {
+        "startLine": 87,
+        "startChar": 0,
+        "endLine": 89,
+        "endChar": 0
+      },
+      "revId": "7cb8129ea26e0c15dabaf734d1863e44b7969983",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66db7530_75f82849",
