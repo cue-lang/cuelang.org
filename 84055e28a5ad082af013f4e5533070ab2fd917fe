@@ -43,6 +43,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ea087495_2f00253a",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-23T10:21:37Z",
+      "side": 1,
+      "message": "Updated. PTAL.",
+      "parentUuid": "f7f22757_1328d15b",
+      "range": {
+        "startLine": 83,
+        "startChar": 59,
+        "endLine": 83,
+        "endChar": 65
+      },
+      "revId": "84055e28a5ad082af013f4e5533070ab2fd917fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "e793e527_32cdde13",
         "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
         "patchSetId": 19
@@ -54,6 +78,30 @@
       "writtenOn": "2025-10-22T08:36:14Z",
       "side": 1,
       "message": "Simpler language. Something like: \"In this case, you can enforce that the list of \"keys\" is unique as follows:\"",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 86,
+        "endChar": 46
+      },
+      "revId": "84055e28a5ad082af013f4e5533070ab2fd917fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2bca3d7e_474e31b0",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-23T10:21:37Z",
+      "side": 1,
+      "message": "Rewritten. PTAL.",
+      "parentUuid": "e793e527_32cdde13",
       "range": {
         "startLine": 85,
         "startChar": 0,
@@ -87,6 +135,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7b6a3429_13f2b1df",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-23T10:21:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "775e647f_761a5916",
+      "range": {
+        "startLine": 109,
+        "startChar": 5,
+        "endLine": 109,
+        "endChar": 15
+      },
+      "revId": "84055e28a5ad082af013f4e5533070ab2fd917fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0ea2aec0_ca7a4be9",
@@ -104,6 +176,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f99f16dd_743d3db3",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-23T10:21:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0ea2aec0_ca7a4be9",
+      "revId": "84055e28a5ad082af013f4e5533070ab2fd917fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8995248b_614394b2",
@@ -117,6 +207,30 @@
       "writtenOn": "2025-10-22T08:36:14Z",
       "side": 1,
       "message": "This wording is misleading. It sounds like you\u0027re proposing using one of the map\u0027s keys in each element. That will not result in a unique list. My suggestion suffers the opposite problem: a strict reading might be that all of the map\u0027s keys need to appear in each element. Which is equally wrong. So some thought on wording required here.",
+      "range": {
+        "startLine": 145,
+        "startChar": 62,
+        "endLine": 146,
+        "endChar": 15
+      },
+      "revId": "84055e28a5ad082af013f4e5533070ab2fd917fe",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddc999a1_4530532c",
+        "filename": "content/docs/howto/ensure-list-contains-no-duplicates/en.md",
+        "patchSetId": 19
+      },
+      "lineNbr": 146,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-23T10:21:37Z",
+      "side": 1,
+      "message": "\u003e My suggestion suffers the opposite problem: a strict reading might be that all of the map\u0027s keys need to appear in each element.\n\nThat\u0027s why I reworded it 🙂\n\nI\u0027ve made this small change, which I think works:\n\n```suggestion\nWhen you use a map to construct a list dynamically, including a different map key in each\nelement ensures that the resulting list doesn\u0027t contain any duplicate elements:\n```",
+      "parentUuid": "8995248b_614394b2",
       "range": {
         "startLine": 145,
         "startChar": 62,
