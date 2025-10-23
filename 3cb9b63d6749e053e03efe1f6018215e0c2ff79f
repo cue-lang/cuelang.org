@@ -41,6 +41,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a15381db_2b410bcd",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-23T09:42:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4bb5f072_e95359be",
+      "range": {
+        "startLine": 25,
+        "startChar": 22,
+        "endLine": 25,
+        "endChar": 25
+      },
+      "revId": "3cb9b63d6749e053e03efe1f6018215e0c2ff79f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bcc0ebbd_f3c264b4",
@@ -54,6 +78,24 @@
       "writtenOn": "2025-10-21T17:16:23Z",
       "side": 1,
       "message": "I think we can look to avoid the repetition of this throughout... either that or combine the `go get ...` bit with the `go run .` without prose.",
+      "revId": "3cb9b63d6749e053e03efe1f6018215e0c2ff79f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a6fd34de_5f923b6c",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-23T09:42:35Z",
+      "side": 1,
+      "message": "PTAL at the latest PS, in which I\u0027ve:\n- combined the `go get` and `go run` blocks throughout;\n- prefaced each combined block with standardised \"We enable and run our code:\" prose, as I think the upload block and the script block need /something/ between them\n- Added identical inline, **same**-line comments to the `go mod` commands (anticipating that a reader might get linked to a single section on this page, thus the brief comments (which don\u0027t \"cost\" anything in terms of page length) stand repeating, IMHO)\n- moved any \"what this example shows\" commentary below the script block.",
+      "parentUuid": "bcc0ebbd_f3c264b4",
       "revId": "3cb9b63d6749e053e03efe1f6018215e0c2ff79f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -81,6 +123,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c3241abc_7c0e24f8",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-23T09:42:35Z",
+      "side": 1,
+      "message": "Updated to \"Validating\".",
+      "parentUuid": "1d9afa12_786c1b9a",
+      "range": {
+        "startLine": 255,
+        "startChar": 4,
+        "endLine": 255,
+        "endChar": 11
+      },
+      "revId": "3cb9b63d6749e053e03efe1f6018215e0c2ff79f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "197896da_83201d71",
@@ -94,6 +160,24 @@
       "writtenOn": "2025-10-21T17:16:23Z",
       "side": 1,
       "message": "This still suggests mutating a value. \"We are creating a new value by combining (unifying) two values...\" is the essence of what we are trying to convey. That one of the values involved is \"placed\" at a path prior to unification is somewhat orthogonal and just a common convenience. \n\nIndeed one way of making things flow here is to look at building on the use of `cue.Value.Unify()` in the previous example. `FillPath` is a unification... but where one of the values (the argument) is \"placed\" at a specific path \"first\".\n\nPerhaps these ideas help with the language tweak?",
+      "revId": "3cb9b63d6749e053e03efe1f6018215e0c2ff79f",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d87903ff_c63f7dde",
+        "filename": "content/docs/concept/how-cue-works-with-go/en.md",
+        "patchSetId": 10
+      },
+      "lineNbr": 420,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-10-23T09:42:35Z",
+      "side": 1,
+      "message": "I had been thinking in terms of the immutability of values at the CUE language level, not the Go level. I think the latest PS should fix this. PTAL",
+      "parentUuid": "197896da_83201d71",
       "revId": "3cb9b63d6749e053e03efe1f6018215e0c2ff79f",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
