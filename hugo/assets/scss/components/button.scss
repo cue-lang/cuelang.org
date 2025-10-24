@@ -49,6 +49,8 @@
 
         &.icon {
             display: inline-block; // Win from icon styles
+            height: 24px; // Safari fix for SVG icons
+            width: 24px;  // Safari fix for SVG icons
         }
 
         & + #{ $self }__text {
@@ -80,9 +82,14 @@
         --button-padding: 0.875rem;
 
         #{ $self }__icon {
-            height: 16px;
+            max-height: 16px;
+            max-width: 16px;
             vertical-align: 6px;
-            width: 16px;
+
+            &.icon {
+                height: 16px; // Safari fix for SVG icons
+                width: 16px;  // Safari fix for SVG icons
+            }
         }
     }
 
