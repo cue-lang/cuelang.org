@@ -17,7 +17,7 @@ Usage:
   cue exp [command]
 
 Available Commands:
-  gengotypes  generate Go types from CUE definitions
+  gengotypes    generate Go types from CUE definitions
 
 Global Flags:
   -E, --all-errors   print all available errors
