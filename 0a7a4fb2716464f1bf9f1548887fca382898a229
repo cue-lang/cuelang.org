@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f3b55a4_7e2dbb81",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013536
+      },
+      "writtenOn": "2025-10-25T11:12:32Z",
+      "side": 1,
+      "message": "Checked various mobile versions on Safari and Chrome to verify result.",
+      "revId": "0a7a4fb2716464f1bf9f1548887fca382898a229",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
