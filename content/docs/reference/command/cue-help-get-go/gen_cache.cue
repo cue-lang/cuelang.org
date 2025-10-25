@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "ELAE34IUANGK43C5JF3FQ1JBHV23TGM2FPP7SAJO0DAPAVHE6E30===="
-									scriptHash: "S5AF9VP3665V2VFRMOI0FCJOHJFK770H3MTQD1FS7QI6U0EB86K0===="
+									hash:       "NJVS7ALTPOBSMSF2M5N50E81H6BV8SKQ7C5HBCAPV4ACM045JQ30===="
+									scriptHash: "0GTEFFTDNEDRFJDE7UC4ATQCLCMA46H79G0DV5OCHEFMNUTTQIO0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.2:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0-alpha.3.0.20251025133102-654b5c06c385:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -171,6 +171,7 @@ package site
 												Flags:
 												  -e, --exclude string   comma-separated list of regexps of identifiers to omit
 												      --local            generates files in the main module locally
+												      --outfile string   generate one CUE file for a single Go package
 												  -p, --package string   package name for generated CUE files
 
 												Global Flags:

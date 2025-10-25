@@ -7,9 +7,9 @@ package site
 					page: {
 						cache: {
 							code: {
-								"proto-1": "BNhYbc/WqkexatHkXKyZBEN3Y7j7n3+26Bgnoh+qfcI="
-								go:        "eNylNUWu1JaxbTA/ncGeoB9oH48s8v7RG9GTNzcWvsc="
-								"proto-2": "/rYn8OhkUn1aHLOeZKieYhdw6yO7Uptq2SDa2T2vN0A="
+								"proto-1": "pSCJPBm41b0pAGrYdeFAAjiKyYxEB2y/SNfcU5/+WN8="
+								go:        "ng2DwmzlIHAz386mepKt8ItvDkbhw1ZPCaSGWw4LQC0="
+								"proto-2": "+EZ5+AA8TX/lhOgcE0xXMmP8uurYmhC2Pifmi2R8S+Q="
 							}
 						}
 					}

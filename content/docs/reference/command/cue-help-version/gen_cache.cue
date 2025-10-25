@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "0SQIMMUJVN9DVMS4J1S1NMP8SARIT60BGN8P441QL224EJ75VMEG===="
-									scriptHash: "DLBB7CUSTNJLDKONP6M754FIQHTUCL57R8C34NM6E9VQ1RQ5HI70===="
+									hash:       "PH6R9G6LG5BE5RE7FOCR1NIFQIRABTC8B6E08EIH6VTVCMSGJIPG===="
+									scriptHash: "5V6376C0LM1PAQMFV29CHVDLOLID96A8HPBJK0GJBE6IJ7SNK0LG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.2:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0-alpha.3.0.20251025133102-654b5c06c385:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -20,7 +20,7 @@ package site
 										cmd:      "cue help version"
 										exitCode: 0
 										output: """
-												print CUE version
+												print the CUE version and build information
 
 												Usage:
 												  cue version [flags]

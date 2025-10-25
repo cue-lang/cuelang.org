@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"docker-compose.yml broken":          "+b/1FyuG9Xwuz5rS7qwWNbSoISYRbfgTqtVk8tZfbV0="
-								schema:                               "aWPxGVn2hAzKFq9tE0fS+E4aA02C+8mUBBglzB3GFSU="
-								"docker-compose.yaml fixed":          "qMuWt6JHD4xDemjhD5TjK/F5wyCIiIozz5yIGkXdk6U="
-								"moreschema.cue":                     "TA6ia3BLTXa2fFnvrdq6FCCsMgpMRRKsqlmF45kuBG8="
-								"docker-compose.yaml really fixed":   "u0RJVmr1Vzu311ZMMncXohDvPuaRuda/Y7AaUJbFyrc="
-								"link splotpolicy and splotservice1": "yVDqyWhaB++e1i3dNbPNu5oz4fhAxP3tIKhlrvQXJs8="
+								"docker-compose.yml broken":          "kNcIIZNPoMJ17VyjpyJYzYUIioDXrOkreRpHTIYVE8k="
+								schema:                               "o2S5CIy20JwfsoVSXuQ83NxT3nH+F8tYnV+IvnZZOhU="
+								"docker-compose.yaml fixed":          "mF/DdpdD9L+jJaZYmPpqoWtpTIYvdgNgwhEpOR5Efms="
+								"moreschema.cue":                     "bXXty28sJrvp1TKzaKMVkOBa/InZZFw8jt+YSKqb4q0="
+								"docker-compose.yaml really fixed":   "JoiS24zxElMY5oGTCEMPg6pXKXsO+4Bs7VlGyxIZ6fo="
+								"link splotpolicy and splotservice1": "7EpBDn9kSPSO09imWZWoofCXMGIF4Ic0IrvhKhGl5ow="
 							}
 							multi_step: {
-								hash:       "IASLK6DL40KS0TR7KNBS3NOSUL16J3HN1LDL6SM4KFQRIQH2BBG0===="
+								hash:       "MFQLGCSNDVJQVV662DC939BG1M5C03MMCN9VP1S8323L78N0DHM0===="
 								scriptHash: "D400CN0SES1U7PK9SLC4NJT5DJ9RNFL9M51DT6ONBCC5N2KGFOP0===="
 								steps: [{
 									doc:      ""
@@ -71,7 +71,7 @@ package site
 									output: """
 											module: "cue.example"
 											language: {
-											\tversion: "v0.14.2"
+											\tversion: "v0.15.0"
 											}
 											deps: {
 											\t"github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
@@ -162,12 +162,15 @@ package site
 											content.services.db.image: conflicting values "docker.io/library/postgres:16.4" and "docker.io/library/postgres:17":
 											    ./docker-compose.cue:12:13
 											    ./schema.cue:10:12
+											    ./service1.cue:5:10
 											content.services.db.image: conflicting values "docker.io/library/postgres:16.5" and "docker.io/library/postgres:17":
 											    ./docker-compose.cue:12:13
 											    ./schema.cue:11:5
+											    ./service1.cue:5:10
 											content.services.db.image: conflicting values "docker.io/library/postgres:16.6" and "docker.io/library/postgres:17":
 											    ./docker-compose.cue:12:13
 											    ./schema.cue:12:5
+											    ./service1.cue:5:10
 
 											"""
 								}, {
