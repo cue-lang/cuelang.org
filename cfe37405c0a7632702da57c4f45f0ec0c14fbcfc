@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d09f1e3_d387dbaa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013536
+      },
+      "writtenOn": "2025-10-25T10:57:57Z",
+      "side": 1,
+      "message": "FYI, looking on the RDM mode in safari I see that the menu button suffers the same issue. I thought it was just weird design, but I think this is not intended as well.",
+      "revId": "cfe37405c0a7632702da57c4f45f0ec0c14fbcfc",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
