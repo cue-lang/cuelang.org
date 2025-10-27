@@ -20,24 +20,24 @@ _cuePathBase: {
 	// TODO: use site.cue's canonical data for these values (from the keys of
 	// versions["cue"]) when a solution to the panic captured at
 	// https://cuelang.org/cl/1209140 is available.
-	cueVersion!:       "latest" | "tip" | "prerelease"
-	experimental!:     bool
-	introduction!:     string
-	hideIntroduction!: bool
+	cueVersion!:      "latest" | "tip" | "prerelease"
+	experimental!:    bool
+	introduction!:    string
+	genIntroduction!: bool
 	tagSet!: [string]: true // true is chosen over top purely to produce concrete data.
 	tagList!: [...]
 	relatedCommands!: [...string]
 }
 
 cue: [SubCommand=string]: #CueCommand & {
-	_dirSuffix:       strings.Replace(SubCommand, " ", "-", -1)
-	dir:              *"cue-help-\(_dirSuffix)" | _
-	execCmd:          *"cue help \(SubCommand)" | _
-	title:            *"cue help \(SubCommand)" | _
-	cueVersion:       *"latest" | _
-	experimental:     *false | _
-	introduction:     *"" | _
-	hideIntroduction: *false | _
+	_dirSuffix:      strings.Replace(SubCommand, " ", "-", -1)
+	dir:             *"cue-help-\(_dirSuffix)" | _
+	execCmd:         *"cue help \(SubCommand)" | _
+	title:           *"cue help \(SubCommand)" | _
+	cueVersion:      *"latest" | _
+	experimental:    *false | _
+	introduction:    *"" | _
+	genIntroduction: *true | _
 	tagSet: *{} | _
 	tagList: [for tag, _ in tagSet {tag}]
 	relatedCommands: *[] | _
@@ -67,20 +67,31 @@ cue: {
 		cueVersion: "prerelease"
 		// Consider uncommenting this line, instead of removing this command's
 		// customisation entirely.
-		//hideIntroduction: true
+		//genIntroduction: false
+	}
+
+	fix: {
+		cueVersion:      "prerelease"
+		genIntroduction: false
+		introduction: """
+			{{<info>}}
+			The `--exp` flag is only available in a recent CUE
+			[pre-release]({{<relref"docs/introduction/installation#download-an-official-cue-binary">}}).
+			{{</info>}}
+			"""
 	}
 }
 
 // Introduce experimental and unreleased commands.
 cue: [_]: {
-	experimental:     _
-	cueVersion:       _
-	hideIntroduction: _
+	experimental:    _
+	cueVersion:      _
+	genIntroduction: _
 	let tip = (cueVersion == "tip")
 	let prerelease = (cueVersion == "prerelease")
 	let unreleased = tip || prerelease
 
-	if !hideIntroduction && (experimental || unreleased) {
+	if genIntroduction && (experimental || unreleased) {
 		introduction: strings.Join([
 			"{{<info>}}",
 			if tip {"This command is not yet available in the latest CUE release."},
