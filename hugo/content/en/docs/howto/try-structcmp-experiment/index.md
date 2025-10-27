@@ -6,10 +6,13 @@ tags: [language]
 ---
 {{<sidenote text="Requires CUE v0.14.0 or later">}}
 
-CUE v0.14.0 introduced the `structcmp`
-[experiment]({{<relref "docs/reference/command/cue-help-experiments" >}}),
-which allows both forms of the `==` operator to compare structs.
-The experiment needs to be enabled on a per-file basis, and behaves like this:
+CUE v0.14.0 introduced the "structcmp" experiment, which
+allows both forms of the `==` operator to compare structs.
+
+Enable the experiment on a per-file basis using the
+`@experiment(structcmp)`
+attribute.
+It behaves like this:
 
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
@@ -68,4 +71,5 @@ A: invalid right-hand value to '==' (type struct): _B.foo: incomplete value int:
 
 ## Related content
 
-- {{< linkto/related/reference "command/cue-help-experiments" >}}
+- {{< linkto/related/reference "command/cue-help-experiments" >}} --
+  a list of the language experiments that can be enabled or disabled
