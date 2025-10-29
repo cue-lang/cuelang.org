@@ -7,8 +7,8 @@ package site
 					page: {
 						cache: {
 							code: {
-								"cuelang.org/go/cue/cuecontext": "mH0AlUEGZGBGiDizlzNnGUxZsA3s6GfQl2d+/s//T50="
-								"cuelang.org/go/cue/load":       "Cv993fNzUrrQeg6dLcOX4JCtJtDEDVBBbY1xtkQ3/2E="
+								"cuelang.org/go/cue/cuecontext": "oLXrv9x7wT8uTWGf1WhWKpymtE/7R/975LN3bsRuDps="
+								"cuelang.org/go/cue/load":       "0VPZByb3teLcI5uSjfo7/1HaGOyMD2d5ayQOCautKIg="
 							}
 						}
 					}

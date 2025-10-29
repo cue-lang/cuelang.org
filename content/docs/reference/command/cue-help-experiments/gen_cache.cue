@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "B4DLVVU77RCHT8M87BMDNLJGR5TTINR0C5DKUOFH0M59I14195D0===="
-									scriptHash: "4GPPPJM26J2Q2OH0O6CG9LE4T7CAUGMV8K2O6E1FI9413KHN4SKG===="
+									hash:       "76K4AL4JS04R3P3HLLFUS0A4PIBEFDKO4LOIM26QNKGVUQSSSUL0===="
+									scriptHash: "D4G5HJJPECHRC439UFBJ20GUILR0D23RCIC8J6F4JGPHOS2FPI4G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.0-alpha.3:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0-rc.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -39,7 +39,7 @@ package site
 
 												Multiple experiments can be enabled:
 
-												\t@experiment(structcmp,self)
+												\t@experiment(structcmp,aliasv2)
 												\t@experiment(explicitopen)
 
 												The behavior of per-file experiments tracks the language version declared in their module,
