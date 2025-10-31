@@ -36,10 +36,19 @@ odd: [42, 13, 0]
 $ cue vet -c
 even.1: 13 is not even:
     ./file.cue:3:28
+    ./file.cue:3:11
+    ./file.cue:6:11
+    ./file.cue:7:12
 odd.0: 42 is not odd:
     ./file.cue:4:30
+    ./file.cue:4:11
+    ./file.cue:9:10
+    ./file.cue:10:7
 odd.2: 0 is not odd:
     ./file.cue:4:30
+    ./file.cue:4:11
+    ./file.cue:9:10
+    ./file.cue:10:15
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -67,10 +76,21 @@ odd: [42, 13, 0]
 $ cue vet -c
 even.1: 13 is not even:
     ./file.cue:5:31
+    ./file.cue:5:26
+    ./file.cue:11:11
+    ./file.cue:12:12
 odd.0: 42 is not odd:
     ./file.cue:6:31
+    ./file.cue:9:7
+    ./file.cue:9:14
+    ./file.cue:14:10
+    ./file.cue:15:7
 odd.2: 0 is not odd:
     ./file.cue:6:31
+    ./file.cue:9:7
+    ./file.cue:9:14
+    ./file.cue:14:10
+    ./file.cue:15:15
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

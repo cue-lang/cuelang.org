@@ -68,8 +68,10 @@ config:
 $ cue export problem1.cue --out yaml
 config.serviceA.metadata.name: incomplete value string:
     ./problem1.cue:2:13
+    ./problem1.cue:7:12
 config.serviceA.metadata.namespace: incomplete value string:
     ./problem1.cue:3:13
+    ./problem1.cue:7:12
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -171,8 +173,10 @@ config:
 $ cue export problem2.cue --out yaml
 config.serviceA.metadata.name: incomplete value string:
     ./problem2.cue:2:13
+    ./problem2.cue:7:12
 config.serviceA.metadata.namespace: incomplete value string:
     ./problem2.cue:3:13
+    ./problem2.cue:7:12
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

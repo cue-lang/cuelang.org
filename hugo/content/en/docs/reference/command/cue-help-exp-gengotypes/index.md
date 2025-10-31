@@ -10,7 +10,7 @@ This command is still in an experimental stage -- it may be changed or removed a
 {{</info>}}
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgZXhwIGdlbmdvdHlwZXM=" }
 $ cue help exp gengotypes
-ARNING: THIS COMMAND IS EXPERIMENTAL.
+WARNING: THIS COMMAND IS EXPERIMENTAL.
 
 gengotypes generates Go type definitions from exported CUE definitions.
 

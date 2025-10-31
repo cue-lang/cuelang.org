@@ -172,7 +172,7 @@ After `cue mod tidy` completes, check out the contents of `cue.mod/module.cue`:
 $ cat cue.mod/module.cue
 module: "cue.example"
 language: {
-	version: "v0.14.2"
+	version: "v0.15.0"
 }
 deps: {
 	"github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
@@ -262,12 +262,15 @@ content.services.db.image: 3 errors in empty disjunction:
 content.services.db.image: conflicting values "docker.io/library/postgres:16.4" and "docker.io/library/postgres:17":
     ./docker-compose.cue:12:13
     ./schema.cue:10:12
+    ./service1.cue:5:10
 content.services.db.image: conflicting values "docker.io/library/postgres:16.5" and "docker.io/library/postgres:17":
     ./docker-compose.cue:12:13
     ./schema.cue:11:5
+    ./service1.cue:5:10
 content.services.db.image: conflicting values "docker.io/library/postgres:16.6" and "docker.io/library/postgres:17":
     ./docker-compose.cue:12:13
     ./schema.cue:12:5
+    ./service1.cue:5:10
 $ sed -i 's/postgres:17/postgres:16.4/' docker-compose.cue
 $ cue vet -c .:splotservice1
 ````

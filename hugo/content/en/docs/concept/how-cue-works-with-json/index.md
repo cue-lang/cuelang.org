@@ -117,9 +117,11 @@ $ cue vet -c schema.cue -d '#Config' config-a.json config-b.json config-c.json
 region: 2 errors in empty disjunction:
 region: conflicting values "APAC" and "UK":
     ./config-b.json:4:15
+    ./schema.cue:5:15
     ./schema.cue:9:10
 region: conflicting values "IMEA" and "UK":
     ./config-b.json:4:15
+    ./schema.cue:5:15
     ./schema.cue:9:19
 cluster: invalid value "live03333333333333" (does not satisfy strings.MaxRunes(16)):
     ./schema.cue:4:15
@@ -331,6 +333,7 @@ item.table: invalid value "{ \"width\": \"34\", \"height\": 23, \"depth\": 0.2 }
     ./furniture.cue:10:17
     ./furniture.cue:4:10
     ./furniture.cue:15:14
+    json.Validate:1:1
     json.Validate:1:12
 {{< /code-tab >}}
 {{< /code-tabs >}}

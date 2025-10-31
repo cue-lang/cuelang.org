@@ -24,10 +24,17 @@ If no arguments are provided, the current module path is used.
 This is equivalent to specifying "." as an argument, which
 also refers to the current module.
 
+If the --deps flag is provided, all dependencies from the current
+module are resolved and displayed. The --deps flag cannot be used
+with module path arguments.
+
 Note that this command is not yet stable and may be changed.
 
 Usage:
   cue mod resolve [<modulepath>[@<version>] ...] [flags]
+
+Flags:
+      --deps   resolve all dependencies in the current module
 
 Global Flags:
   -E, --all-errors   print all available errors
