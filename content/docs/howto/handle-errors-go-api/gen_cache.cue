@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "p9uFKI5mjEAN2+qbT6Js4YcW3xnFGzP1c8JA3AK+B+s="
-								"initial go code":  "bVTQpGMbswORctcOsG1nrQiB4NCP2G2M+bladpaINEg="
+								"initial cue code": "xTUXe7iZE/pNPd9+szeUsE6ZKFewT23sVocb3kcFWOA="
+								"initial go code":  "Z26jPssPvsL7fYV9F9LMy4Fi4JtnQEwGbMzsZsxLqqI="
 							}
 							multi_step: {
-								hash:       "GVUEP9J0EBBN6Q56CNT2QPFS9891DE9EBC9K7SDGVE7G6TKG0DNG===="
-								scriptHash: "9PCA5SU60DB48ST1CSMF6SIKALB9HF2DO9SU69P5TSIIFPPSA8D0===="
+								hash:       "ALEFFD4UIHB4JLVNLSK7L6CCJ2UFO3JJ2MLQV46DJKFLFNKRUS20===="
+								scriptHash: "DG4UQ2E3BMEGTHOUMOR9DAKM18U338NO5GPE18FO127ADLRE259G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -40,9 +40,11 @@ package site
 									output: """
 											val.i: conflicting values "hello" and int (mismatched types string and int):
 											    ./bad.cue:4:5
+											    ./bad.cue:8:6
 											    ./bad.cue:9:5
 											val.s: conflicting values 42 and string (mismatched types int and string):
 											    ./bad.cue:5:5
+											    ./bad.cue:8:6
 											    ./bad.cue:10:5
 
 											"""
@@ -56,7 +58,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.14.2"
+									cmd:      "go get cuelang.org/go@v0.15.0-rc.1.0.20251031142455-4ba957271db1"
 									exitCode: 0
 									output: """
 											...
@@ -81,9 +83,11 @@ package site
 											# Error details [errors.Details(err)]:
 											val.i: conflicting values "hello" and int (mismatched types string and int):
 											    /home/runner/bad.cue:4:5
+											    /home/runner/bad.cue:8:6
 											    /home/runner/bad.cue:9:5
 											val.s: conflicting values 42 and string (mismatched types int and string):
 											    /home/runner/bad.cue:5:5
+											    /home/runner/bad.cue:8:6
 											    /home/runner/bad.cue:10:5
 
 											# Error count [len(errs)]:

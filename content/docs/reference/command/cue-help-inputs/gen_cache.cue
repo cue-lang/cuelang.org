@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "O05MDRTIO33HJDTQFJK7M505MFB1L3N1S7R4M5T3QK5FSLR0D78G===="
-									scriptHash: "ISUH38L7DSSNFN749DF55S2DGDKBAJPGEQGJJQMSMFKRI09JSF7G===="
+									hash:       "IF1G1H541NB1MKVE8SI146CQ96P82M0HG5VQSDRM9VDPUGR4FM3G===="
+									scriptHash: "PDMKLLLSG5NSPVRORNVGGGOEDP1QFF8HGENNRGPP9MDHEHAE5F40===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.2:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0-rc.1.0.20251031142455-4ba957271db1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -44,6 +44,10 @@ package site
 												to a registry location by consulting cue.mod/module.cue and the
 												registry configuration (see "cue help modules" and "cue help
 												registryconfig" for more details).
+
+												A package is loaded as a package instance: the unification of all CUE
+												files with the same package name found in the package's directory and
+												every ancestor directory leading up to the module root.
 
 												An import may contain a ":name" suffix to indicate a specific
 												package to load within a given path. It is necessary to specify this
