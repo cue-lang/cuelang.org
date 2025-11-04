@@ -763,6 +763,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cbb93617_80b17ad7",
+        "filename": "content/docs/concept/how-cue-enables-boilerplate-removal/en.md",
+        "patchSetId": 24
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-11-04T12:33:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e57811c_c0e15f7c",
+      "revId": "afd204751021075afa5c5d6e373eb8fd89785905",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7f14f387_1d790ac8",
