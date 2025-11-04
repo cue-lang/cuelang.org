@@ -42,8 +42,10 @@ webapp:
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-The CUE language provides several other features which help eliminate boilerplate code.
-This guide demonstrates these features in action by progressively simplifying a configuration.
+These features strongly support the DRY concept of *"Don't Repeat Yourself"*, but
+the CUE language also provides several other features which help eliminate boilerplate code.
+This guide demonstrates these features in action by
+progressively simplifying and DRYing up a configuration.
 The CUE source becomes more compact and easier for humans to work with, while
 the exported JSON or YAML remains identical for the systems that consume it.
 Make sure to read through to the end,
