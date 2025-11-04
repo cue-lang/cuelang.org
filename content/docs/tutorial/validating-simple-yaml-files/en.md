@@ -80,7 +80,7 @@ age: "15"
 Create a file called `pets.cue` to hold your schema, and place this CUE in it:
 
 {{{with upload "en" "pets.cue"}}}
-#codetab(pets.cue) linenos="table"
+#codetab(validating-yaml-with-cue/pets.cue) linenos="table"
 -- validating-yaml-with-cue/pets.cue --
 species!: "cat" | "dog"
 age?:     number

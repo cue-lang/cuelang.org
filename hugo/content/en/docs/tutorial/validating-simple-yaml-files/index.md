@@ -81,7 +81,7 @@ age: "15"
 Create a file called `pets.cue` to hold your schema, and place this CUE in it:
 
 {{< code-tabs >}}
-{{< code-tab name="validating-yaml-with-cue/pets.cue" language="cue" area="top-left" >}}
+{{< code-tab name="validating-yaml-with-cue/pets.cue" language="cue" area="top-left" linenos="table" >}}
 species!: "cat" | "dog"
 age?:     number
 {{< /code-tab >}}{{< /code-tabs >}}

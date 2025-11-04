@@ -8,7 +8,7 @@ package site
 						cache: {
 							upload: {
 								yamlBroken: "oSPvPNZ9DKLp6460kCk+8Nj3RYKD5cl7IF0cVAN1dGw="
-								"pets.cue": "/qV/HJOYoWeFYWtvQXls58f1/77QFEVLLjUuOra3XdU="
+								"pets.cue": "o3zzOrKnXDlW3p/kyD4nRJUdCjH40r94MDKoFncHYmA="
 								yamlFixed:  "7X3LDNcKHP3utfXP7VMAvZaeiZQe2lA8znYwwWUSm70="
 								yaml2:      "VS5fhAo76nsT46dE3jg6T7L2meccLMsWzsnix22ZZ88="
 							}
