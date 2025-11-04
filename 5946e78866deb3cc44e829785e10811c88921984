@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "5946e78866deb3cc44e829785e10811c88921984",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f65510fd_fe803e7a",
+        "filename": "content/docs/howto/try-aliasv2-experiment/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-11-04T10:13:23Z",
+      "side": 1,
+      "message": "I think it would be really helpful to show the old syntax equivalents too up front, so we can see the \"tl;dr\" right near the top.\n\nThen anyone that\u0027s reading this that is familiar with the old syntax will immediately have a \"rosetta stone\" guide to the meaning of the new syntax, as opposed to poring over the words here.\n\nLikewise, I think we should show the example in old form too (it\u0027d be cool if we\u0027d show both in the same place with some kind of tab or slider to switch between them, but I suspect that\u0027s beyond the bounds of possibility for our UI)",
+      "revId": "5946e78866deb3cc44e829785e10811c88921984",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
