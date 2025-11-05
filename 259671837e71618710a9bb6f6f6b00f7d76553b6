@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd892bdd_ab714e94",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-11-05T18:40:26Z",
+      "side": 1,
+      "message": "@rogpeppe@gmail.com PTAL at the updated aliasv2 page, as discussed.",
+      "revId": "259671837e71618710a9bb6f6f6b00f7d76553b6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
