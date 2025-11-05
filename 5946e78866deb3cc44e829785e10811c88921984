@@ -85,6 +85,58 @@
       "parentUuid": "f65510fd_fe803e7a",
       "revId": "5946e78866deb3cc44e829785e10811c88921984",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "22deb5fd_9ea134d7",
+        "filename": "content/docs/howto/try-aliasv2-experiment/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-11-05T12:16:50Z",
+      "side": 1,
+      "message": "Honestly, I think that the lightest \"how do I get started with this experiment\" example is to show a short example of both old and new syntax. Essentially everyone interested in this experiment will be familiar with the old syntax and no-one will be familiar with the new. Showing the correspondence between the old and new forms is the fastest \"at a glance\" intro to the feature, even if it\u0027s just in some comments in file.cue. \n\nI don\u0027t think that a concept guide would be the right place for that (we should orient the concept guide to explaining the feature as-is rather than in terms of some previous version), and moving it to an FAQ seems unnecessary when we\u0027ve got a document that specifically oriented towards explaining it as an experiment, which by definition is applied with respect to some non-experimental base.\n\nIf we were to have an FAQ entry, it could point to this document (probably the first place that someone interested will look) rather than the other way around.\n\nAt a minimum, I think there should be old/new examples of what I believe are by far the most common current patterns for using aliases, to give an identifier to a field that doesn\u0027t have an identifier-compatible name, and to bring map keys into struct members.\n```\n// old form\nx\u003d\"foo bar\": 42\ny: x\n\nfoo: [n\u003dstring]: {\n\tname: n\n}\n```\n\n```\n// new form\n\n\"foo bar\"~x: 42\ny:           x\n\nfoo: [string]~(n,_): {\n\tname: n\n}\n```\n\nNeither of these common patterns appear as such in this doc page currently.",
+      "parentUuid": "d8eb9c84_ca563bc1",
+      "revId": "5946e78866deb3cc44e829785e10811c88921984",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5bbb5f2_4f5a7d2c",
+        "filename": "content/docs/howto/try-aliasv2-experiment/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-11-05T12:16:50Z",
+      "side": 1,
+      "message": "It might be worth having an example that uses self at the top level of a package, thus providing access to top level fields in a way that was not previously possible.",
+      "revId": "5946e78866deb3cc44e829785e10811c88921984",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6c273cc2_756a8c1f",
+        "filename": "content/docs/howto/try-explicitopen-experiment/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-11-05T12:16:50Z",
+      "side": 1,
+      "message": "The way I like to explain this is that embedding a value is now _exactly_ equivalent to unifying with that value, so `{X, field: value}` is identical to `X \u0026 {field: value}`. It might be worth explaining that equivalence here, because I don\u0027t think it\u0027s that obvious currently.",
+      "revId": "5946e78866deb3cc44e829785e10811c88921984",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
