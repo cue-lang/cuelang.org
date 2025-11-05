@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "230783c38f8e6250c747568e0d416602615fdeeb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8617c48c_7a138b20",
+        "filename": "content/docs/howto/try-structcmp-experiment/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2025-11-05T12:18:52Z",
+      "side": 1,
+      "message": "`\u003d\u003d` is always doing a comparison - that its nature. If we can say \"unary\" I think we can say \"binary\" too.\n\n```suggestion\nThe \"structcmp\" experiment allows both unary and binary forms of the `\u003d\u003d`\n```",
+      "revId": "230783c38f8e6250c747568e0d416602615fdeeb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
