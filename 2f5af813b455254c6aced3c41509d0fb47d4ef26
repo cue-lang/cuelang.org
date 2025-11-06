@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "2f5af813b455254c6aced3c41509d0fb47d4ef26",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4d3e27d6_145a2b67",
+        "filename": "hugo/content/en/docs/howto/use-list-issorted-as-a-field-validator/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-11-06T13:07:34Z",
+      "side": 1,
+      "message": "Stutter tracked as https://github.com/cue-lang/cue/issues/4171.",
+      "revId": "2f5af813b455254c6aced3c41509d0fb47d4ef26",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
