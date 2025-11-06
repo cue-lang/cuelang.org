@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "7OBBUC4L00R1RQSTTE8N3V30UM3UNNG9Q0J09BJOVPB8R2RH4VFG===="
-									scriptHash: "JG6KV2R1E9DAGJQ5F5NBN0LIE255JLAEPTBMCLN87CD5HQD8HEV0===="
+									hash:       "T2HRKF0QG4MOL8CCMTINVE2EBVDV3R13HSPNP4GH5OAUO6I6GH50===="
+									scriptHash: "ON3AEUCGQLGVPKK3CKJTHKOK7TPVAL91U8R01JVIDHLSAD7F7H6G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.2:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -41,7 +41,7 @@ package site
 												  login       log into a CUE registry
 												  mod         module maintenance
 												  trim        remove superfluous fields
-												  version     print CUE version
+												  version     print the CUE version and build information
 												  vet         validate data
 
 												Use "cue help [command]" for more information about a command.
@@ -50,6 +50,7 @@ package site
 												  cue help commands       user-defined commands
 												  cue help embed          file embedding
 												  cue help environment    environment variables
+												  cue help experiments    experimental language features
 												  cue help filetypes      supported file types and qualifiers
 												  cue help flags          common flags for composing packages
 												  cue help injection      inject files or values into specific fields for a build

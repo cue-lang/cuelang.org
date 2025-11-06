@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "PLNFVRP329I10RHEHEFT9MK5IQL55THHF5BERCFA73UFOC59IC00===="
-									scriptHash: "Q2808O3E7LASHE06VL0DKJ1K2JH6255FU4L9HG3HVSRJ4DOT3IU0===="
+									hash:       "9MOHOGMG42VUI8IFB0NQR2071GFF554ITVL28MD4QRIPORHC5BC0===="
+									scriptHash: "1RORJGM7L8SFIDD4RSH1F9HHM2PF0AC1EM6TLNHR3GBMLS9JUN30===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.2:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -30,7 +30,7 @@ package site
 												  cue exp [command]
 
 												Available Commands:
-												  gengotypes  generate Go types from CUE definitions
+												  gengotypes    generate Go types from CUE definitions
 
 												Global Flags:
 												  -E, --all-errors   print all available errors

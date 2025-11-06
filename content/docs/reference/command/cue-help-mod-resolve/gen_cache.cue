@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "KBQIH6SF10Q094DTB3U48OLDC50GVNQDOLNGPIKAI17CM7BF3NK0===="
-									scriptHash: "OCL16O64O2CIA6FECL8UFIRO1A3VLGH67037A4JLMR70KVHQ9RUG===="
+									hash:       "33SRDNSJ92M322JLDE97RE4VOJRMLTNNUAETUK1KJ1FGDORSE69G===="
+									scriptHash: "406GIFFBS6I38PU62KI1INRN8TRKRKV8QNM8C3JTT85RVBK9SOG0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.2:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -36,10 +36,17 @@ package site
 												This is equivalent to specifying "." as an argument, which
 												also refers to the current module.
 
+												If the --deps flag is provided, all dependencies from the current
+												module are resolved and displayed. The --deps flag cannot be used
+												with module path arguments.
+
 												Note that this command is not yet stable and may be changed.
 
 												Usage:
 												  cue mod resolve [<modulepath>[@<version>] ...] [flags]
+
+												Flags:
+												      --deps   resolve all dependencies in the current module
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
