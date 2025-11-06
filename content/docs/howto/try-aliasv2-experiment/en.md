@@ -177,6 +177,9 @@ e: {
 	g:      Root["-foo"] + 2
 	"-foo": "not-44"
 }
+
+// The self identifier references containing lists.
+h: [10, self[0] + 1, self[1] * 2]
 -- out --
 a:
   foo:
@@ -188,6 +191,10 @@ d: 45
 e:
   g: 46
   -foo: not-44
+h:
+  - 10
+  - 11
+  - 22
 {{{end}}}
 
 ## Conclusion
