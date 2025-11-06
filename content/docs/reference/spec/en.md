@@ -582,7 +582,7 @@ An _atom_ is any value whose only instances are itself and bottom.
 Examples of atoms are `42.0`, `"hello"`, `true`, and `null`.
 
 A value is _concrete_ if it is either an atom, or a struct whose field values
-are all concrete, recursively.
+of regular (non-hidden and non-definition fields) are all concrete, recursively.
 
 CUE's values also include what we normally think of as types, like `string` and
 `float`.
@@ -983,7 +983,7 @@ A _bound_, syntactically a [unary expression](#operands), defines
 a logically infinite disjunction of concrete values represented as a single comparison.
 For example, `>= 2` represents the infinite disjunction `2|3|4|5|6|7|…`.
 
-For any [comparison operator](#comparison-operators) `op` except `==`,
+For any [comparison operator](#comparison-operators) `op`,
 `op a` is the disjunction of every `x` such that `x op a`.
 
 
@@ -998,7 +998,8 @@ int & 2 & >1.0 & <3.0   // _|_
 2.5 & >=(int & 1) & <5  // _|_
 >=0 & <=7 & >=3 & <=10  // >=3 & <=7
 !=null & 1              // 1
->=5 & <=5               // 5
+==[1, 2] & [1]          // _|_
+!=[1, 2] & [1]          // [1]
 ```
 
 
@@ -2320,7 +2321,7 @@ s: "etc. "*3  // "etc. etc. etc. "
 
 ##### Comparison operators
 
-Comparison operators compare two operands and yield an untyped boolean value.
+Comparison operators compare two concrete operands and yield a boolean value.
 
 ```
 ==    equal
@@ -2332,39 +2333,47 @@ Comparison operators compare two operands and yield an untyped boolean value.
 =~    matches regular expression
 !~    does not match regular expression
 ```
-
 <!-- regular expression operator inspired by Bash, Perl, and Ruby. -->
 
-In any comparison, the types of the two operands must unify or one of the
-operands must be null.
+In any comparison, both operands must be concrete; otherwise the result is
+bottom (`_|_`).
 
-The equality operators `==` and `!=` apply to operands that are comparable.
-The ordering operators `<`, `<=`, `>`, and `>=` apply to operands that are ordered.
-The matching operators `=~` and `!~` apply to a string and a regular
-expression operand.
-These terms and the result of the comparisons are defined as follows:
+The equality operators `==` and `!=` can be applied to any two concrete
+operands.
+The ordering operators `<`, `<=`, `>`, and `>=` apply only to operands of the
+same ordered type (numeric, string, or bytes).
+The matching operators `=~` and `!~` apply to a string and a regular expression
+operand.
 
-- Null is comparable with itself and any other type.
-  Two null values are always equal, null is unequal with anything else.
-- Boolean values are comparable.
-  Two boolean values are equal if they are either both true or both false.
-- Integer values are comparable and ordered, in the usual way.
-- Floating-point values are comparable and ordered, as per the definitions
-  for binary coded decimals in the IEEE-754-2008 standard.
-- Floating-point numbers may be compared with integers; the comparison is
-  performed as if the integer was first converted to a floating-point number.
-- String and bytes values are comparable and ordered lexically byte-wise.
-- Structs are comparable but not ordered. Two structs are equal if they have the
-  same set of regular field labels and the corresponding values are recursively
-  equal. Only regular fields are considered in the comparison; field order and
-  closedness are irrelevant.
-- Lists are comparable but not ordered. Two lists are equal if they have the
-  same length and their corresponding elements are recursively equal.
-- The regular expression syntax is the one accepted by RE2,
-  described in https://github.com/google/re2/wiki/Syntax,
-  except for `\C`.
-- `s =~ r` is true if `s` matches the regular expression `r`.
-- `s !~ r` is true if `s` does not match regular expression `r`.
+For equality comparisons (`==` and `!=`):
+
+- Two values of different basic types are always unequal, except for integers
+  and floating-point numbers (see below).
+- Null values are equal only to other null values.
+- Boolean values are equal if they are both true or both false.
+- Numeric values are equal if they represent the same number.
+  When comparing an integer with a floating-point number, the integer is first
+  converted to floating-point.
+- String values are equal if they contain the same sequence of bytes.
+- Bytes values are equal if they contain the same sequence of bytes.
+- Struct values are equal if they have the same set of regular field labels
+  and the corresponding values are recursively equal. Only regular fields are
+  considered; field order and closedness are irrelevant.
+- List values are equal if they have the same length and their corresponding
+  elements are recursively equal.
+
+For ordering comparisons (`<`, `<=`, `>`, `>=`):
+
+- Numeric values are ordered by their numeric value, with integer-to-float
+  conversion as described above.
+- String values are ordered lexically byte-wise.
+- Bytes values are ordered lexically byte-wise.
+
+For pattern matching (`=~`, `!~`):
+
+- The regular expression syntax is that accepted by RE2 (https://github.com/google/re2/wiki/Syntax), except for `\C`.
+- `s =~ r` is true if string `s` matches regular expression `r`.
+- `s !~ r` is true if string `s` does not match regular expression `r`.
 
 <!--- TODO: consider the following
 - For regular expression, named capture groups are interpreted as CUE references
@@ -2653,11 +2662,11 @@ The result of the expression is substituted as follows:
 - string: as is
 - bool: the JSON representation of the bool
 - number: a JSON representation of the number that preserves the
-precision of the underlying binary coded decimal
+  precision of the underlying binary-coded decimal
 - bytes: as if substituted within single quotes or
-converted to valid UTF-8 replacing the
-maximal subpart of ill-formed subsequences with a single
-replacement character (W3C encoding standard) otherwise
+  converted to valid UTF-8 replacing the
+  maximal subpart of ill-formed subsequences with a single
+  replacement character (W3C encoding standard) otherwise
 - list: illegal
 - struct: illegal
 
@@ -2788,6 +2797,82 @@ with `quo(x, y)` truncated towards zero.
 ```
 
 A zero divisor in either case results in bottom (an error).
+
+
+## Builtin Validators
+
+A validator validates the value at the position where it is defined.
+A successful validation yields the original value;
+a failed validation yields an error.
+
+Bounds (`<10`) are a type of validator.
+
+Functions that return a boolean value can be used as validators by omitting
+their first argument.
+
+The remainder of this section defines builtin validators. These can only be
+used as validators, so we will not refer to their function equivalents.
+
+These builtins refer to finalized values, which means that the value being
+validated is fully resolved, and defaults taken, before it is unified with the
+schema.
+
+### `matchN`
+
+The `matchN` builtin is a validator that checks if a specified number of schemas
+from a given list unify successfully with the finalized value being validated.
+
+`matchN` takes two arguments:
+- a numeric constraint specifying how many schemas must match,
+- a list of schemas to test against the value.
+
+The validator evaluates each schema in the list by unifying it with the value.
+It counts how many schemas unify successfully (without producing an error).
+The validator succeeds if the count satisfies the numeric constraint provided
+as the first argument.
+
+```
+// Exactly 2 schemas must match
+value: "foo" & matchN(2, [string, !="bar", <4])  // true: string and !="bar" match
+
+// At least 1 schema must match
+value: 5 & matchN(>=1, [int, >10])  // true: int matches
+
+// Exactly 0 schemas must match (none should match)
+value: "test" & matchN(0, [int, >100])  // true: neither matches
+```
+
+If the numeric constraint cannot be satisfied even with incomplete information,
+the error is marked as incomplete and will be reevaluated as more information
+becomes available.
+
+
+### `matchIf`
+
+The `matchIf` builtin is a conditional validator that applies different schema
+constraints based on whether an initial condition is satisfied.
+
+`matchIf` takes three arguments:
+- a condition schema (the "if" clause),
+- the schema to apply if the condition matches (the "then" clause),
+- the schema to apply if the condition does not match (the "else" clause).
+
+The validator first attempts to unify the finalized value with the condition
+schema.
+If the condition unifies successfully, the "then" schema is applied;
+otherwise, the "else" schema is applied.
+The validator succeeds if the chosen schema unifies successfully with the value.
+
+```
+// If value is a string, it must have length > 3; otherwise it must be > 10
+value: "hello" & matchIf(string, len(value) > 3, value > 10)  // true
+
+// If value matches {a: int}, it must have b field; otherwise a must be a string
+x: {a: 1} & matchIf(x, {a: int}, {a: int, b: int}, {a: string})  // false: missing b
+
+// If value is >5, it must be <10; otherwise it must be <3
+y: 2 & matchIf(y, >5, <10, <3)  // true: 2 is <=5, so <3 is checked
+```
 
 
 ## Cycles

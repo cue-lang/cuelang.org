@@ -105,9 +105,11 @@ $ cue vet -c schema.cue -d '#Config' config-a.toml config-b.toml config-c.toml
 region: 2 errors in empty disjunction:
 region: conflicting values "APAC" and "UK":
     ./config-b.toml:2:10
+    ./schema.cue:5:15
     ./schema.cue:9:10
 region: conflicting values "IMEA" and "UK":
     ./config-b.toml:2:10
+    ./schema.cue:5:15
     ./schema.cue:9:19
 cluster: invalid value "live03333333333333" (does not satisfy strings.MaxRunes(16)):
     ./schema.cue:4:15

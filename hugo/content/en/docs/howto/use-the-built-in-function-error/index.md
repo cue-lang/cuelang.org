@@ -42,6 +42,8 @@ A: conflicting values string and 2 (mismatched types string and int):
     ./file.cue:3:4
 B: Custom error B:
     ./file.cue:6:12
+    ./file.cue:6:4
+    ./file.cue:7:4
 C: failed arithmetic: division by zero:
     ./file.cue:11:4
 D: Custom error D:

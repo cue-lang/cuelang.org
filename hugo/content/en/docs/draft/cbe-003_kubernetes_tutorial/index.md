@@ -427,10 +427,10 @@ The corresponding boilerplate can now be removed with `cue trim`.
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQpjdWUgdHJpbSAuLy4uLgpmaW5kIC4gfCBncmVwIGt1YmUuY3VlIHwgeGFyZ3Mgd2MgLWwgfCB0YWlsIC0x" }
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1833 total
+ 1835 total
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1275 total
+ 1277 total
 ````
 
 `cue trim` removes configuration from files that is already generated
@@ -590,7 +590,7 @@ Then we run trim to further reduce our configuration:
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi8uLi4KZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1212 total
+ 1214 total
 ````
 
 This is after removing the rewritten and now redundant deployment definition.
@@ -635,7 +635,7 @@ deployment: breaddispatcher: spec: template: {
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1020 total
+ 1022 total
 ````
 
 Another 150 lines lost!
@@ -705,7 +705,7 @@ Two lines with annotations added, improving consistency.
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi9mcm9udGVuZC8uLi4gLXMKZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./frontend/... -s
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1005 total
+ 1007 total
 ````
 
 Another 40 odd lines removed.
@@ -826,7 +826,7 @@ $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 ...
 $ cp snapshot2 snapshot
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  997 total
+  999 total
 ````
 
 The diff shows that we added the `_hasDisks` option, but otherwise reveals no

@@ -162,6 +162,7 @@ We'll use this output to make sure that nothing's been changed by the introducti
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAtbyBjb25maWd1cmF0aW9uLnltbCAtZg==" }
 $ cue export -o configuration.yml -f
 app.alpha.port: conflicting values "8080" and int (mismatched types string and int):
+    ./a.cue:3:13
     ./a.cue:6:12
     ./schema.cue:6:13
 ````

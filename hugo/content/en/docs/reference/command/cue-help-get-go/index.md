@@ -158,6 +158,7 @@ Usage:
 Flags:
   -e, --exclude string   comma-separated list of regexps of identifiers to omit
       --local            generates files in the main module locally
+      --outfile string   generate one CUE file for a single Go package
   -p, --package string   package name for generated CUE files
 
 Global Flags:

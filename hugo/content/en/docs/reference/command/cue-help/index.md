@@ -28,7 +28,7 @@ Available Commands:
   login       log into a CUE registry
   mod         module maintenance
   trim        remove superfluous fields
-  version     print CUE version
+  version     print the CUE version and build information
   vet         validate data
 
 Use "cue help [command]" for more information about a command.
@@ -37,6 +37,7 @@ Additional help topics:
   cue help commands       user-defined commands
   cue help embed          file embedding
   cue help environment    environment variables
+  cue help experiments    experimental language features
   cue help filetypes      supported file types and qualifiers
   cue help flags          common flags for composing packages
   cue help injection      inject files or values into specific fields for a build

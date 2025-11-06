@@ -41,14 +41,15 @@ CUE: {
 	MisalignedConjunct:   0
 	MisalignedConstraint: 0
 	SkippedNotification:  0
+	ResolveDep:           0
 	Freed:                4
 	Reused:               0
 	Allocs:               4
 	Retained:             0
 }
 Go: {
-	AllocBytes:   1419584
-	AllocObjects: 7533
+	AllocBytes:   1553872
+	AllocObjects: 8207
 }
 ````
 

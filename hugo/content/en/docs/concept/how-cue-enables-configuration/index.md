@@ -127,6 +127,7 @@ jobs:
 $ cue vet -c check.cue .github/workflows/deploy-to-ecs.yml -d 'Workflow'
 jobs.deploy."runs-on": conflicting values "ubuntu-latest" and "ubuntu-20.04":
     .github/workflows/deploy-to-ecs.yml:22:14
+    ./check.cue:6:3
     ./check.cue:7:16
 {{< /code-tab >}}
 {{< /code-tabs >}}
