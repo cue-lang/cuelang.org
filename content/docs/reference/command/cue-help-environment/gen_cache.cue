@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "SGS6L2PROAV3HE49T8507RD5QVBO0HPPO6FEETQ1KQNKE3A7Q200===="
-									scriptHash: "OGPO1HM14IQNSG1QL00NBU906O9A0Q944SCV2PH2NEDIDC64G5JG===="
+									hash:       "G5JAFJOEVGVPC79VR1L5S2G5HPTDLKLAMPSF6C24IE07GRLFIN9G===="
+									scriptHash: "QEJI4UIQ25JMD6G8IA7ODBTJON07BFK2TLA050DGC38LG2N2QSI0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.2:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -49,16 +49,8 @@ package site
 												\t\tSee "cue help registryconfig" for details.
 
 												\tCUE_EXPERIMENT
-												\t\tComma-separated list of experiment flags to enable or disable:
-
-												\t\tevalv3 (default true)
-												\t\t\tEnable the new CUE evaluator, addressing performance issues
-												\t\t\tand bringing a better disjunction algorithm.
-												\t\tcmdreferencepkg (default true)
-												\t\t\tRequire referencing imported tool packages to declare "cue cmd" tasks.
-												\t\tkeepvalidators (default true)
-												\t\t\tPrevent validators from simplifying into concrete values.
-												\t\t\tSee: https://cuelang.org/discussion/3775
+												\t\tComma-separated list of experiment flags to enable or disable.
+												\t\tSee "cue help experiments" for details.
 
 												\tCUE_DEBUG
 												\t\tComma-separated list of debug flags to enable or disable, such as:

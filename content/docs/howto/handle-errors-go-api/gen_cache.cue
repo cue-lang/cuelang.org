@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "p9uFKI5mjEAN2+qbT6Js4YcW3xnFGzP1c8JA3AK+B+s="
-								"initial go code":  "bVTQpGMbswORctcOsG1nrQiB4NCP2G2M+bladpaINEg="
+								"initial cue code": "9hvIli6CzwR+GLZaPvw0JiMVv/BOSQ5VV+iVXXP20Ek="
+								"initial go code":  "jSwOyxzjmHcqdzy45GO/2XPtGokmM7y227xIFxlOiss="
 							}
 							multi_step: {
-								hash:       "GVUEP9J0EBBN6Q56CNT2QPFS9891DE9EBC9K7SDGVE7G6TKG0DNG===="
-								scriptHash: "9PCA5SU60DB48ST1CSMF6SIKALB9HF2DO9SU69P5TSIIFPPSA8D0===="
+								hash:       "C00FI2EINFH1JN3CSG2J3FINEUTHVEF07VISUHDPVHTPFV71TVB0===="
+								scriptHash: "PH8U26VLFRIC5QTRL5T7RB64AG7V8DN6GH1HKRC7CHBL8SFR3JDG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -40,9 +40,11 @@ package site
 									output: """
 											val.i: conflicting values "hello" and int (mismatched types string and int):
 											    ./bad.cue:4:5
+											    ./bad.cue:8:6
 											    ./bad.cue:9:5
 											val.s: conflicting values 42 and string (mismatched types int and string):
 											    ./bad.cue:5:5
+											    ./bad.cue:8:6
 											    ./bad.cue:10:5
 
 											"""
@@ -56,7 +58,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.14.2"
+									cmd:      "go get cuelang.org/go@v0.15.0"
 									exitCode: 0
 									output: """
 											...
@@ -81,9 +83,11 @@ package site
 											# Error details [errors.Details(err)]:
 											val.i: conflicting values "hello" and int (mismatched types string and int):
 											    /home/runner/bad.cue:4:5
+											    /home/runner/bad.cue:8:6
 											    /home/runner/bad.cue:9:5
 											val.s: conflicting values 42 and string (mismatched types int and string):
 											    /home/runner/bad.cue:5:5
+											    /home/runner/bad.cue:8:6
 											    /home/runner/bad.cue:10:5
 
 											# Error count [len(errs)]:

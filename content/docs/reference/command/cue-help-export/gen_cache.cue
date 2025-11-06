@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "DI0V7JLL678ONI1HSGAD7OU3S1DRFG280EQ4ON6N9KUA1RHDK240===="
-									scriptHash: "O94IV63INU6UGN3UO3UKO8NEB80UB639FJIGDVEOTSKSPE2MAE3G===="
+									hash:       "F69P6M3B5T612LEUP3I03NFKQN26824VN759E4AE7P4QS1OO78HG===="
+									scriptHash: "UNTDQAQ60T4LE67VDBPT952731EB3CSHI1I6KNKERTHG272DBDI0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.14.2:$PATH"
+										cmd:      "export PATH=/cues/v0.15.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -20,75 +20,72 @@ package site
 										cmd:      "cue help export"
 										exitCode: 0
 										output: """
-												export evaluates the configuration found in the current
-												directory and prints the emit value to stdout.
+												The export command evaluates a configuration and emits the value of one or more
+												expressions.
 
-												Examples:
-												Evaluated and emit
+												## Inputs
 
-												\t# a single file
-												\tcue export config.cue
+												When invoked without any arguments the command evaluates the CUE package in the
+												current directory. If more than one package is present in the current directory
+												then an input argument must be provided.
 
-												\t# multiple files: these are combined at the top-level. Order doesn't matter.
-												\tcue export file1.cue foo/file2.cue
+												Input arguments can be CUE packages, CUE files, non-CUE files, or some
+												combinations of those. See "cue help inputs" for more detail.
 
-												\t# all files within the "cloud" package, including all files in the
-												\t# current directory and its ancestor directories that are marked with the
-												\t# same package, up to the root of the containing module.
-												\tcue export .:cloud
+												## Output
 
-												\t# the package name can be omitted if the directory only contains files for
-												\t# the "cloud" package.
-												\tcue export
+												By default the top-level of the evaluation is emitted to standard output,
+												encoded as JSON. A different destination can be specified using the
+												--outfile/-o flag. An alternative encoding can be selected with the --out flag.
+												One or more different expressions can be emitted using the --expression/-e flag.
 
-												Emit value:
-												For CUE files, the generated configuration is derived from the top-level
-												single expression, the emit value. For example, the file
+												The command reports an error if the value of any expression to be emitted is
+												incomplete - that is, if it contains any non-concrete values that cannot be
+												represented in data-only encodings such as JSON.
 
-												\t// config.cue
-												\targ1: 1
-												\targ2: "my string"
+												The following encodings are recognized by the --out flag:
 
-												\t{
-												\t\ta: arg1
-												\t\tb: arg2
-												\t}
+												    cue        Output as CUE    (can encode any value)
+												    json       Output as JSON   (can encode any value)
+												    toml       Output as TOML   (can encode any value)
+												    yaml       Output as YAML   (can encode any value)
+												    text       Output as text   (can only encode values of type string)
+												    binary     Output as binary (can only encode values of type string or bytes)
 
-												yields the following JSON:
+												See "cue help filetypes" for more information on values accepted by --out.
 
-												\t{
-												\t\t"arg1": 1,
-												\t\t"a": 1,
-												\t\t"arg2": "my string",
-												\t\t"b": "my string"
-												\t}
+												## Examples
 
-												In absence of arguments, the current directory is loaded as a package instance.
-												A package instance for a directory contains all files in the directory and its
-												ancestor directories, up to the module root, belonging to the same package. If
-												a single package is not uniquely defined by the files in the current directory
-												then the package name must be specified as an explicit argument using
-												".:<package-name>" syntax.
+												- Export the contents of the only CUE package in the current directory as JSON:
+												  $ cue export
 
+												- Export the contents of an absolute package path as YAML:
+												  $ cue export cue.example/foo/bar --out yaml
 
-												Formats
+												- Unify the contents of the "example" package (which exists alongside other
+												  package in the current directory) with a YAML file, emitting the value of the
+												  "aKey" field as JSON:
+												  $ cue export .:example path/to/data.yml --expression aKey
 
-												The following formats are recognized:
+												- Export the contents of one of many CUE packages in a different, relative
+												  directory as TOML:
+												  $ cue export ./relative/path/to/directory:example --out toml
 
-												    cue  output as CUE
-												              Outputs any CUE value.
+												- Export the unified contents of multiple CUE files as CUE:
+												  $ cue export config.cue dir/extraData.cue --out cue
 
-												   json  output as JSON
-												              Outputs any CUE value.
+												- Unify the contents of a CUE package and a TOML file, emittting the values of
+												  multiple expressions (rather than the top-level of the evaluation) as JSON:
+												  $ cue export cue.example/some/package data.toml -e key1 -e key2
 
-												   yaml  output as YAML
-												              Outputs any CUE value.
+												## More help
 
-												   text  output as raw text
-												              The evaluated value must be of type string.
-
-												 binary  output as raw binary
-												              The evaluated value must be of type string or bytes.
+												- An in-depth guide to the "cue export" command:
+												    https://cuelang.org/docs/concept/using-the-cue-export-command/
+												- The "cue help inputs" command:
+												    https://cuelang.org/docs/reference/command/cue-help-inputs/
+												- The "cue help filetypes" command:
+												    https://cuelang.org/docs/reference/command/cue-help-filetypes/
 
 												Usage:
 												  cue export [flags]
