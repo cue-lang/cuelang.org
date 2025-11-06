@@ -33,6 +33,23 @@
       "message": "Stutter tracked as https://github.com/cue-lang/cue/issues/4171.",
       "revId": "2f5af813b455254c6aced3c41509d0fb47d4ef26",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "25414b7d_f3546aa7",
+        "filename": "hugo/content/en/docs/reference/command/cue-help-exp-gengotypes/index.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-11-06T13:12:27Z",
+      "side": 1,
+      "message": "hey, I wonder who was the genius that messed this up for v0.14 :)",
+      "revId": "2f5af813b455254c6aced3c41509d0fb47d4ef26",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
