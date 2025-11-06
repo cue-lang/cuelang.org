@@ -11,7 +11,7 @@ package site
 								"1 new": "nxPfn5SpmUHekMpOyGDGcOnXNm3psvRuKQZjFTWcwtU="
 							}
 							code: {
-								"2 new": "49o/cDoGgckZtwb5VXVZHrkzxKJn/Pjg/2KeyJYQYEs="
+								"2 new": "LLv5ph8BPtnBPvtWk+P+21yRQYaRYuV1zAWzj6I9v5w="
 							}
 							multi_step: {
 								hash:       "NGD7JD5BHLDTV27R09JF6B7G7O0UC6T09J9C1TMC6C84DK2FTETG===="
