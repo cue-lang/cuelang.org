@@ -13,18 +13,17 @@ export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 CUE v0.15.0-alpha.2 introduced the "aliasv2" experiment, which
 replaces alias syntax with a more consistent form.
 
-Enable the experiment on a per-file basis using the
-`@experiment(aliasv2)`
-attribute.
-
-{{<info>}}
-Because this experiment changes the meaning of currently valid CUE code, the command
+{{<warning>}}
+This experiment changes the meaning of currently valid CUE code.
+Once your module targets language version v0.15.0 or later, use
 `cue fix --exp=aliasv2`
-should be used to update your CUE *before* adding `@experiment(aliasv2)`.
-
-See [`cue help fix`]({{<relref "docs/reference/command/cue-help-fix" >}})
+to update its code and enable the experiment on a per-file basis.
+See
+[`cue help fix`]({{<relref "docs/reference/command/cue-help-fix" >}})
+and
+[`cue help mod edit`]({{<relref "docs/reference/command/cue-help-mod-edit" >}})
 for more information.
-{{</info>}}
+{{</warning>}}
 
 The experiment replaces CUE's current alias syntaxes
 with a unified syntax using the `~` operator in one of two forms,
@@ -210,5 +209,7 @@ and tell us about your experience with the experiment!
   a list of the language experiments that can be enabled or disabled
 - {{< linkto/related/reference "command/cue-help-fix" >}} --
   update CUE code automatically, applying the latest fixes and language experiments
+- {{< linkto/related/reference "command/cue-help-mod-edit" >}} --
+  update the language version targeted by a module
 - [Equivalent current and experimental syntaxes](https://github.com/cue-lang/proposal/blob/main/designs/language/4014-aliases-v2.md#summary-of-equivalent-forms) --
   each of CUE's alias forms expressed as its experimental equivalent <!-- TODO: replace with cuelang.org doc -->
