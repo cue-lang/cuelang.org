@@ -16,6 +16,23 @@
       "message": "PTAL",
       "revId": "872d4dfb01daafd124726702b6635503ab13685e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9e071456_9d3347ec",
+        "filename": "content/docs/howto/try-aliasv2-experiment/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-11-06T11:27:05Z",
+      "side": 1,
+      "message": "The mention of `cue help mod edit` feels a bit out of place as a reader here, as they probably don\u0027t know they can/should run `cue mod edit --language-version`. Make a mention of it? Like...\n\n\n\u003e See [`cue help fix`](same link), and [`cue mod edit --language-version`](cue help mod edit link) to upgrade the language version in your module.",
+      "revId": "872d4dfb01daafd124726702b6635503ab13685e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
