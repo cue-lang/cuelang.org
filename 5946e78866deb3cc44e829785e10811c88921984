@@ -191,6 +191,24 @@
       "message": "The way I like to explain this is that embedding a value is now _exactly_ equivalent to unifying with that value, so `{X, field: value}` is identical to `X \u0026 {field: value}`. It might be worth explaining that equivalence here, because I don\u0027t think it\u0027s that obvious currently.",
       "revId": "5946e78866deb3cc44e829785e10811c88921984",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26cea2ec_09f90729",
+        "filename": "content/docs/howto/try-explicitopen-experiment/en.md",
+        "patchSetId": 4
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1021694
+      },
+      "writtenOn": "2025-11-06T10:38:41Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6c273cc2_756a8c1f",
+      "revId": "5946e78866deb3cc44e829785e10811c88921984",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
