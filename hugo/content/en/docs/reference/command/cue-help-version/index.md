@@ -7,7 +7,7 @@ tags:
 ---
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgdmVyc2lvbg==" }
 $ cue help version
-print CUE version
+print the CUE version and build information
 
 Usage:
   cue version [flags]

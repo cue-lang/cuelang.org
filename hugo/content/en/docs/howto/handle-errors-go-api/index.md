@@ -57,9 +57,11 @@ Verify that the configuration does not validate successfully, as expected:
 $ cue vet -c
 val.i: conflicting values "hello" and int (mismatched types string and int):
     ./bad.cue:4:5
+    ./bad.cue:8:6
     ./bad.cue:9:5
 val.s: conflicting values 42 and string (mismatched types int and string):
     ./bad.cue:5:5
+    ./bad.cue:8:6
     ./bad.cue:10:5
 ````
 {{< /step >}}
@@ -124,8 +126,8 @@ func main() {
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE0LjIKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.14.2
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE1LjAKZ28gbW9kIHRpZHk=" }
+$ go get cuelang.org/go@v0.15.0
 ...
 $ go mod tidy
 ...
@@ -147,9 +149,11 @@ val.i: conflicting values "hello" and int (mismatched types string and int) (and
 # Error details [errors.Details(err)]:
 val.i: conflicting values "hello" and int (mismatched types string and int):
     /home/runner/bad.cue:4:5
+    /home/runner/bad.cue:8:6
     /home/runner/bad.cue:9:5
 val.s: conflicting values 42 and string (mismatched types int and string):
     /home/runner/bad.cue:5:5
+    /home/runner/bad.cue:8:6
     /home/runner/bad.cue:10:5
 
 # Error count [len(errs)]:
