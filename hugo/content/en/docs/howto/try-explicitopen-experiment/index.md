@@ -9,18 +9,17 @@ tags: [language]
 CUE v0.15.0-alpha.1 introduced the "explicitopen" experiment, which
 greatly simplifies CUE's concept of closedness.
 
-Enable the experiment on a per-file basis using the
-`@experiment(explicitopen)`
-attribute.
-
-{{<info>}}
-Because this experiment changes the meaning of currently valid CUE code, the
-command `cue fix --exp=explicitopen` should be used to update existing CUE
-files *before* adding the `@experiment` attribute.
-
-See [`cue help fix`]({{<relref "docs/reference/command/cue-help-fix" >}})
+{{<warning>}}
+This experiment changes the meaning of currently valid CUE code.
+Once your module targets language version v0.15.0 or later, use
+`cue fix --exp=explicitopen`
+to update its code and enable the experiment on a per-file basis.
+See
+[`cue help fix`]({{<relref "docs/reference/command/cue-help-fix" >}})
+and
+[`cue mod edit --language-version`]({{<relref "docs/reference/command/cue-help-mod-edit" >}})
 for more information.
-{{</info>}}
+{{</warning>}}
 
 ## The trailing `...` operator
 
@@ -123,3 +122,5 @@ and tell us about your experience with the experiment!
   a list of the language experiments that can be enabled or disabled
 - {{< linkto/related/reference "command/cue-help-fix" >}} --
   update CUE code automatically, applying the latest fixes and language experiments
+- {{< linkto/related/reference "command/cue-help-mod-edit" >}} --
+  update the language version targeted by a module
