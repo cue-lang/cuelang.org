@@ -29,14 +29,14 @@ jobs:
         name: Update Homebrew (macOS)
         run: brew update
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 0
       - name: Reset git directory modification times
         run: touch -t 202211302355 $(find * -type d)
       - name: Restore git file modification times
-        uses: chetan/git-restore-mtime-action@075f9bc9d159805603419d50f794bd9f33252ebe
+        uses: chetan/git-restore-mtime-action@cbf8161ddb4e9b162409104954fb540e8a38c1da
       - id: DispatchTrailer
         name: Try to extract Dispatch-Trailer
         run: |-
@@ -102,14 +102,12 @@ jobs:
         with:
           node-version: 22.17.1
       - name: Install Go
-        uses: actions/setup-go@v5
+        uses: actions/setup-go@v6
         with:
           cache: false
           go-version: 1.24.5
       - name: Set common go env vars
         run: |-
-          go env -w GOTOOLCHAIN=local
-
           case $(go env GOARCH) in
           amd64) go env -w GOAMD64=v3 ;;   # 2013 and later; makes `go test -race` 15% faster
           arm64) go env -w GOARM64=v8.6 ;; # Apple M2 and later
@@ -146,7 +144,7 @@ jobs:
           Dispatch-Trailer: {"type":"')))) || (github.ref == 'refs/heads/ci/test'))
         run: go env -w GOFLAGS=-count=1
       - name: Early git and code sanity checks
-        run: go run cuelang.org/go/internal/ci/checks@v0.13.2
+        run: go run cuelang.org/go/internal/ci/checks@v0.14.1
       - name: Perform early content checks
         run: _scripts/contentLint.bash
       - name: Populate CUE dependency cache
@@ -158,8 +156,8 @@ jobs:
       - name: Regenerate
         run: go generate ./...
       - name: Regenerate Playground
-        run: go generate ./...
         working-directory: playground
+        run: go generate ./...
       - if: always()
         name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
@@ -173,35 +171,35 @@ jobs:
       - env:
           CI_PUSH_CONTAINER_IMAGE: ${{ ( github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test')) ) && 'true' || 'false' }}
         run: ./_scripts/buildDockerImage.bash
-      - name: npm install to check package-lock.json clean
+      - working-directory: hugo
+        name: npm install to check package-lock.json clean
         run: npm install --package-lock-only --ignore-scripts
-        working-directory: hugo
-      - if: always()
+      - working-directory: hugo
+        if: always()
         name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
-        working-directory: hugo
-      - name: npm ci
+      - working-directory: hugo
+        name: npm ci
         run: npm ci
-        working-directory: hugo
       - name: Test
         run: go test ./...
       - name: Test Playground
-        run: go test ./...
         working-directory: playground
+        run: go test ./...
       - env:
           STATICCHECK_CACHE: /cache/staticcheck
         run: go tool staticcheck ./...
-      - env:
+      - working-directory: playground
+        env:
           STATICCHECK_CACHE: /cache/staticcheck
         run: go tool -modfile=../go.mod staticcheck ./...
-        working-directory: playground
       - run: |-
           go mod tidy -diff
           go vet ./...
-      - run: |-
+      - working-directory: playground
+        run: |-
           go mod tidy -diff
           go vet ./...
-        working-directory: playground
       - run: go tool cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
