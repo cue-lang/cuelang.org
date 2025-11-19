@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "88399000_c1d21bf9",
+        "filename": "content/docs/howto/export-multiple-files/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2025-11-19T16:33:41Z",
+      "side": 1,
+      "message": "We need to mention here that there is an issue for native export.",
+      "revId": "433bb9624c9f4d6ec148dc7027f6817a61168658",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
