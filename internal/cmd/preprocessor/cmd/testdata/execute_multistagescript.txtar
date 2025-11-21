@@ -258,7 +258,7 @@ cue version v0.15.3
 
 CUE language version v0.15.3
 
-Go version go1.25.0
+Go version go1.25.6
       -buildmode exe
        -compiler gc
        -trimpath true
@@ -284,12 +284,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "VAqp/HWriFmFemQAX75AK7TBp60oVZRJbtlQM+htDg8="
-						"upload-some-cue": "uG81OgEUa1vm69dlahIVfFLgFgMtEal4ctEDwbteXVs="
-						"in-subdir":       "odvOB7PmwjpXY+UHY0S295PxFUSRzdmXFpK1UWYEExQ="
+						"hidden file":     "FummNJI0199hydpwRVd25s/R2qL4ahNeD7qRaj+rGjk="
+						"upload-some-cue": "uAnOols+pxbOsMpRTclQSfrj1QSd2iWahqHylJsH4wc="
+						"in-subdir":       "84YQCJ1wFaKJSS/42o93nObN9taAPUgMwO10AMtXPu0="
 					}
 					multi_step: {
-						hash:       "3S16VEKNG21KFCK4CFLKEFAP997NDCH5J7ET8874HGVLRM009QQ0===="
+						hash:       "T5AN9MFOR0DRH5EVJKM9MD10BO5KCFMCMFEL7K2D58BVT452TBCG===="
 						scriptHash: "4R7CKCD6U3F6M7HMDOORM6L5LARG5T2HN3S7TGFFUFAJ61CAS8LG===="
 						steps: [{
 							doc:      ""
@@ -355,7 +355,7 @@ package site
 
 									CUE language version v0.15.3
 
-									Go version go1.25.0
+									Go version go1.25.6
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true
