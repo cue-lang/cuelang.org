@@ -7,8 +7,8 @@ package site
 					page: {
 						cache: {
 							multi_step: {
-								hash:       "QAUGV3KJA9O4ES2R9D5CGA4HQ24CH04BM7GEA5M3DGOE1OJVE2EG===="
-								scriptHash: "L0FQMUH3J90BONJPIB55LMQG8V9IM2GNSGAB887E0360KNS3PPA0===="
+								hash:       "25ACN6FHPSLUF11A2V8ROIPN03DR88DPKU2U3VBNR0P1QIIFGDUG===="
+								scriptHash: "37BT6DTJCA8615QVE576M4H53K8E2ND7B9JSB91BS547LKR9TFQ0===="
 								steps: [{
 									doc:      "# Access to Central Registry."
 									cmd:      "mkdir -p $HOME/.config/cue"
@@ -35,10 +35,10 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "cue mod mirror --to 127.0.0.1:55443 cue.dev/x/k8s.io"
+									cmd:      "cue mod mirror --to 127.0.0.1:55443 cue.dev/x/k8s.io@v0.6.0"
 									exitCode: 0
 									output: """
-											mirroring cue.dev/x/k8s.io@v0.5.0
+											mirroring cue.dev/x/k8s.io@v0.6.0
 
 											"""
 								}]

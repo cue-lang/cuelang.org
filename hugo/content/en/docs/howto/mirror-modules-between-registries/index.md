@@ -36,10 +36,13 @@ Every module mirrored to this ephemeral registry will disappear when you stop it
 {{< step stepNumber="2" >}}
 Copy the `k8s.io` curated module from the Central Registry to the local registry:
 
-````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBtaXJyb3IgLS10byAxMjcuMC4wLjE6NTU0NDMgY3VlLmRldi94L2s4cy5pbw==" }
-$ cue mod mirror --to 127.0.0.1:55443 cue.dev/x/k8s.io
-mirroring cue.dev/x/k8s.io@v0.5.0
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBtaXJyb3IgLS10byAxMjcuMC4wLjE6NTU0NDMgY3VlLmRldi94L2s4cy5pb0B2MC42LjA=" }
+$ cue mod mirror --to 127.0.0.1:55443 cue.dev/x/k8s.io@v0.6.0
+mirroring cue.dev/x/k8s.io@v0.6.0
 ````
+
+_To mirror the most recent release, use `@latest` or omit the version suffix
+entirely._
 
 The [`cue mod mirror`]({{<relref"docs/reference/command/cue-help-mod-mirror">}})
 command copies each module from and to the appropriate registry for its
