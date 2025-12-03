@@ -17,7 +17,7 @@ EOD
 
 tag=$(dockerImageTag)
 registryTag=ghcr.io/cue-lang/$tag
-commonBuildArgs="-t $tag --build-arg GOPRIVATE=\"$(go env GOPRIVATE)\" -f ./_docker/Dockerfile ./_docker"
+commonBuildArgs=(-t "$tag" --build-arg "GOPRIVATE=$(go env GOPRIVATE)" -f ./_docker/Dockerfile ./_docker)
 
 # Change to the directory containing the Dockerfile ahead of building
 cd internal/cmd/preprocessor/cmd
@@ -34,9 +34,9 @@ if ! docker inspect $tag >/dev/null 2>/dev/null; then
 	echo "local container image $tag not found; building ..."
 	if docker help | grep -q podman
 	then
-		docker build $commonBuildArgs
+		docker build "${commonBuildArgs[@]}"
 	else
-		docker buildx build --load $commonBuildArgs
+		docker buildx build --load "${commonBuildArgs[@]}"
 	fi
 else
 	echo "local container image $tag already exists; skipping build."
