@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e616e1ab_faf8dea8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2025-12-07T19:55:54Z",
+      "side": 1,
+      "message": "apologies that I missed this review. LGTM. agreed that adding a brief note about the native export issue would be useful.",
+      "revId": "433bb9624c9f4d6ec148dc7027f6817a61168658",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "88399000_c1d21bf9",
