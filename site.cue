@@ -5,7 +5,6 @@ import (
 	"strings"
 	"encoding/yaml"
 
-	"github.com/cue-lang/cuelang.org/internal/ci"
 	"github.com/cue-lang/tmp/internal/ci/base"
 	"github.com/cue-lang/cuelang.org/content/docs/reference/command"
 )
@@ -127,12 +126,12 @@ let donotedit = base.doNotEditMessage & {#generatedBy: "site_tool.cue", _}
 
 // template is an io/fs.FS-like map of files that are templated
 // by site_tool.cue:gen for the working of cuelang.org
-template: ci.#writefs & {
-	Tool: "site_tool.cue"
+template: base.#writefs & {
+	tool: "site_tool.cue"
 
 	let configDefault = "hugo/config/_default"
 
-	Remove: [
+	remove: [
 		// The generated artefacts from the CLI auto-generation. Do not remove
 		// the cache files, because otherwise on a Preprocessor-No-Write-Cache
 		// they will not get added back, a change that would, ironically, create
@@ -159,8 +158,8 @@ template: ci.#writefs & {
 			  \#(#cmd)
 			"""#
 	}
-	Create: {
-		"internal/cmd/preprocessor/cmd/_docker/Dockerfile": Contents: #"""
+	create: {
+		"internal/cmd/preprocessor/cmd/_docker/Dockerfile": contents: #"""
 			# syntax=docker/dockerfile:1
 
 			# \#(donotedit)
@@ -282,13 +281,13 @@ template: ci.#writefs & {
 		// such a way that we can derive that somehow, but that's not
 		// an exercise for now.
 		for v in ["config", "languages", "markup", "params"] {
-			"\(configDefault)/\(v).toml": Contents: site[v]
+			"\(configDefault)/\(v).toml": contents: site[v]
 		}
 		for v in ["en"] {
-			"\(configDefault)/menus/menus.\(v).toml": Contents: site.menus[v]
+			"\(configDefault)/menus/menus.\(v).toml": contents: site.menus[v]
 		}
 
-		"playground/src/config/gen_cuelang_org_go_version.ts": Contents: #"""
+		"playground/src/config/gen_cuelang_org_go_version.ts": contents: #"""
 			// \#(donotedit)
 
 			export const CUEVersion = '\#(versions.cue.playground.v)';
@@ -296,14 +295,15 @@ template: ci.#writefs & {
 			"""#
 
 		for _, cmd in command.cue {
-			"\(command.contentRoot)/\(cmd.dir)/page.cue": Contents: #"""
+			"\(command.contentRoot)/\(cmd.dir)/page.cue": contents: #"""
 					// \#(donotedit)
 					package site
 
 					\#(cmd.cuePath)
 
 					"""#
-			"\(command.contentRoot)/\(cmd.dir)/en.md": Contents:    #"""
+
+			"\(command.contentRoot)/\(cmd.dir)/en.md": contents: #"""
 					---
 					WARNING: "\#(donotedit)"
 					title: "\#(cmd.title)"
