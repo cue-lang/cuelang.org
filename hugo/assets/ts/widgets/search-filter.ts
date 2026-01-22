@@ -168,6 +168,12 @@ export class SearchFilter extends BaseWidget {
             urlParamsChanged = true;
         }
 
+        const initialSearchTerm = this.element.dataset.initialSearchTerm;
+        if (!query && this.parsedQuery.cleanQuery === '' && initialSearchTerm) {
+            this.parsedQuery.cleanQuery = initialSearchTerm;
+            urlParamsChanged = true;
+        }
+
         // Update parsed query & save selected items
         this.parsedQuery.facets[this.filterName] = selectedItems;
         this.selectedItems = selectedItems;
