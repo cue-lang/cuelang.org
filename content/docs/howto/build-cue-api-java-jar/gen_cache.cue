@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"HIDDEN: configure Maven download cache": "BVzjYeThlZIuHqDQKibViLCrkIcA4dpMchKkpTevUzw="
-								"test load":                              "7IX9EgN+uxu+/YAyK7g2XGQqz1zSQ02AT5ela42VhXw="
+								"HIDDEN: configure Maven download cache": "NN/633/7UMrhgnnUCgXpuhMdDtRW+JPHkkBblToiZ48="
+								"test load":                              "djiTJWoM/TFMR19zHjWcWBJXLiawzrkE1FTPM6KtN90="
 							}
 							multi_step: {
-								hash:       "E86F8PP2OT7JKGDHAQ6AMH2DG63DH677UAMS2QTK2R178532SV40===="
+								hash:       "78MNAPIUJV5A9AIUN8J1040G9D3NV92VAE4K17UCVUO90ARTB400===="
 								scriptHash: "D3P3UH58SHI11V1TRCCG8IUA6R9GR7J8MAFOVUOVTVDEO8T6MKEG===="
 								steps: [{
 									doc:      ""
@@ -34,7 +34,7 @@ package site
 									cmd:      "git --version"
 									exitCode: 0
 									output: """
-											git version 2.47.2
+											git version 2.47.3
 
 											"""
 								}, {
