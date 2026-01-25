@@ -10,7 +10,7 @@ Or, put differently: **all valid JSON is CUE** (but not vice versa).
 CUE significantly reduces the pain of dealing with JSON
 by introducing several conveniences, including:
 
-- C-style **comments** are allowed
+- single-line `//` **comments** are allowed
 - field names without special characters don't need to be quoted
 - commas after a field are optional (and are usually omitted)
 - commas after the final element of a list are allowed
