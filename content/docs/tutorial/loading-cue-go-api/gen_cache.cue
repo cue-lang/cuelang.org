@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "gAlBN3LOVQ1xPpawLcmvFoumhSmJw8mfnmnbLsGGfuY="
-								"initial go code":  "WR5FWwfQiVogK2nuLIyaWsCEO1GWvGrzWMj+aXtV890="
+								"initial cue code": "xy40Zi2fw+tLbp+i30l5T5UA55ewmZxkcu1cwYsUHzU="
+								"initial go code":  "gbEtcQUa/x0hUuQ0FKwLnXgwaojDoZsBgTwIJ2hNs6o="
 							}
 							multi_step: {
-								hash:       "MGNBM3GB2I784G8G7VNE39BVSD8KL8E5FC92TE2JB7V9L47E97IG===="
+								hash:       "GKK1Q9QU752LAS984SG7QBDIFAGQE2LBTTHFBDI1GR43R62H6M1G===="
 								scriptHash: "9KUQB3S86GALCFK6ACP73SBMD9QSQOJ6CK5RUJB5TSIOTM8BEJGG===="
 								steps: [{
 									doc:      ""
@@ -42,7 +42,7 @@ package site
 									cmd:      "go version"
 									exitCode: 0
 									output: """
-											go version go1.25.0 linux/amd64
+											go version go1.25.6 linux/amd64
 
 											"""
 								}, {
