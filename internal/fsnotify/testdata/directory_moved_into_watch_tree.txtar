@@ -13,6 +13,7 @@ touch dir/b/b.txt
 mv anotherdir/c dir/c
 sleep # to give the watcher time to catch up
 touch dir/c/subdir/c.txt
+sleep # to give the watcher time to catch up
 log
 cmp stdout 1.txt
 cd dir
