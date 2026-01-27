@@ -16,7 +16,7 @@ versions: {
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 		latest: {
-			v:             *"v0.15.3" | _
+			v:             *"v0.15.4" | _
 			majorDotMinor: strings.Join(list.Take(strings.Split(v, "."), 2), ".")
 		}
 		prerelease: v: *latest.v | _
