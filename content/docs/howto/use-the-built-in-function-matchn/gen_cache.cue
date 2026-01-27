@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							code: {
-								basic:                   "dJURoY20r3Bav/d3yxXlnHLJXyTPv85vDEXPbFTdpF8="
-								"one of":                "+vTcm3BwbjfOL3Cq/UJE2QDcjBknXMeSsvjlYQGHInA="
-								"any of":                "gs3pJoHHtzGLB+QA8vdJUFkSTydHvMmBeACsBPtOWKs="
-								"all of":                "DUyM+Z1JcknKF4qpr1/EpkaHYGdyj8ZYkHTQRUw0GbY="
-								not:                     "+SGGYRMPGPkFfTMCka3mftbAxsQt9ulapJJPiDQf+30="
-								"all but one":           "z7fp1WsSsMzwWqd4uFeE1eeguRN066WsKqA2SpXsp74="
-								composite:               "gLAk50eQSaiArPehs+rD+990YSYbGuafGnY8NRjTkd4="
-								"future: helper fields": "tYgP/EDlttvSoTKYf8UxXAfTldbnDOy5OaIy+/eBdsA="
+								basic:                   "xTuKj4ZgVxJUZSX1EN0rSR3hbRoOGJMrGFJWxw6U3qg="
+								"one of":                "7Je6Pjtm/SBnyEsmZvEAZITStf2h0R9oswj5lb1RRo0="
+								"any of":                "CgMIU71O7aSbXtO6bD/uqfuk9Va8pdpFxCRWhQRZ5SA="
+								"all of":                "D4OAayZokpQz1FEeS2JystenVPy/GWRn1mE81WE72qg="
+								not:                     "YAHixRNidwEoiSZzKGSzUIpC/WuTlKOQmRUprlUCdoQ="
+								"all but one":           "ApWX3ucgt/IGcl3XlhGvjfjPgncjg//5au5CGIEu2Lw="
+								composite:               "zMex54PjJI0qyHCVTK6EHbY88oAXi1zsZ42LbdTwnXE="
+								"future: helper fields": "pq2wvONee//4E4nKjjzEsn8hx1vYuf1kBc9dnPv1hPU="
 							}
 						}
 					}
