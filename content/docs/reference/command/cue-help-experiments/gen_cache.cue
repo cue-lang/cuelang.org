@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "NO7OLJE6TJPS3BTHRJP73BCDHA8KERUEE6P3TNF33C7RCQINM4P0===="
-									scriptHash: "CI2HMDRBO4SDS55843CTF03KU6F7KK808FFRRAL1OM6PKP9DAGP0===="
+									hash:       "TN0E0FVEM694VBLD0M1U4VVATIFDH5B7DVKVIQ6ADB3JSMNBK9EG===="
+									scriptHash: "2SAO4SNF3237OD0IVFNBIACO4JU4FNL89LV7ED2F69OU0HMUNGOG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -83,7 +83,7 @@ package site
 
 												Available global experiments:
 
-												  cmdreferencepkg (preview: v0.13.0, default: v0.14.0)
+												  cmdreferencepkg (preview: v0.13.0, default: v0.14.0, stable: v0.16.0)
 												    cmdreferencepkg requires referencing an imported tool package to declare tasks.
 												    Otherwise, declaring tasks via "$id" or "kind" string fields is allowed.
 
