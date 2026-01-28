@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "96bd7b51_16f7243a",
+        "filename": "site.cue",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-01-28T09:11:45Z",
+      "side": 1,
+      "message": "FYI - this is the only change required to upgrade the site itself to v0.15.4.\n\nThe upgrading of `go.mod` is orthogonal. But fine to also upgrade.",
+      "revId": "664e8be2b2c5d6d97c257077d6768e749b5d3b43",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
