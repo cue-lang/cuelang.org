@@ -27,6 +27,7 @@ Available Commands:
   init        initialize new module in current directory
   mirror      mirror module content between registries
   publish     publish the current module to a registry
+  registry    start a local in-memory module registry
   rename      rename the current module
   resolve     Show how a module path resolves to a registry
   tidy        download and tidy module dependencies
@@ -35,8 +36,6 @@ Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
   -s, --simplify     simplify output
-      --trace        trace computation
-  -v, --verbose      print information about progress
 
 Use "cue mod [command] --help" for more information about a command.
 ````

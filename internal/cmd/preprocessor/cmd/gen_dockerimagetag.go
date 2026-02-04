@@ -2,4 +2,4 @@
 
 package cmd
 
-const dockerImageTag = "preprocessor:4d197d386563aaf22763d9a4b7abd46aafcde5134d6212aa156840c5799d50a4"
+const dockerImageTag = "preprocessor:96304b199b216787f80848c9e79fc04cb3135d88eb5d79be9d2cf4ff5ef59224"
