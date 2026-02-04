@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "sKku370bAIVIH/PYsK7msRFnMsDCtoteT62AGvHUDP4="
-								"config.cue":               "7CH6FM6AejDnINKpRRxFVyXI9xY5HDe6lP44TMfYlfk="
-								"second-module-to-publish": "aMI+ihuY0gPbsXkL18jWiaavYaCHyoGha4mRFbVeIYc="
-								"update-frostyapp":         "8nmGkfGsCU9wY93gyDXDqGEY2Xul4e/X4KGgiNrAwAY="
-								"schema-v0.1.0":            "spiVotYMtD1nA8sJb5nbpgX8yqccXc0WeNIX3HHBUns="
+								"schema-v0.0.1":            "rtiicD4mjG4lU6agPLpxzqvM5ojDDZK1gMprn98Egak="
+								"config.cue":               "O4rI2f0DFCztOASs9toASbtWFvhAopdv5XCTeQXLXaQ="
+								"second-module-to-publish": "6EDtWZMX2PFvkn/Oren6tAyrrCs3hKMZMts9IsT1M44="
+								"update-frostyapp":         "NimtG3PdHQslmSAxIM2s4JDUnSZWFnK41ZZnSBBKGXo="
+								"schema-v0.1.0":            "ZboqJlophSZkKTu2yIdy3fB4khIKmL+OHiiZLlbsI68="
 							}
 							multi_step: {
-								hash:       "BV61MGVJQIHNKJQFQCNUOC2506U1MTO1OF6TT475NAQRPHGPUT30===="
+								hash:       "GLAFKHT6A9RLQB04TO3IUI3A0IH0MGPDEO31JK925D5EUES2B76G===="
 								scriptHash: "MHNUU8GT0EEGLQCV7OVKG62H1EG7POGJ8ANFSN43U1OTV4QH2F3G===="
 								steps: [{
 									doc:      ""
@@ -40,7 +40,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.15.4
+											cue version v0.16.0-alpha.1.0.20260204102828-049d6e12211e
 											...
 
 											"""
@@ -124,7 +124,7 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.15.4"
+											\tversion: "v0.16.0"
 											}
 											source: {
 											\tkind: "git"
@@ -208,7 +208,7 @@ package site
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
 											language: {
-											\tversion: "v0.15.4"
+											\tversion: "v0.16.0"
 											}
 											source: {
 											\tkind: "git"

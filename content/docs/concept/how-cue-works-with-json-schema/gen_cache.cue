@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.json":     "JJIuOoJkYpWHDsdmNOOh0GGaPYuEYyu7zvA9JBKJJOE="
-								"schema.cue":      "7ypaK1UQadGCbGJl2daASMIw9O7Kc4maUIyP1mzyEjY="
-								good:              "vbNV7p+Mp7dDnVeuwigLe/OsYqr4ce5gE3RGMLKv4NI="
-								bad:               "qoGzzn+Z/JmO45OEzBW0Xh9y9a/x1rvGLvnWbZ18Qwg="
-								"main go program": "uRnuPKZQLDS1CbikPP5vqxd/JLXKuEgpg3M+sl/6o6k="
+								"schema.json":     "IpI9oCawcApOulevyM06k0hwqtFVuR4BuBCyqzuVBTw="
+								"schema.cue":      "46pPt2yggw9v5EtzlmJL43ayRgTraEpAGotm1N+J0j4="
+								good:              "IgPSW15dHX+2fmX54weEtvGTF9YaRCYf3h8k2Y2o080="
+								bad:               "FfhlMmQhxaTw+y+cxCzfTakyOWaceOon7Gq5QJ2X5oE="
+								"main go program": "Zvut6393vM4+oNHQ9OunnLo7TpGKXpffnZ1CbzNSTxE="
 							}
 							multi_step: {
-								hash:       "6S45GL53JCRTDG78UE20AIS030T4HEQQKCCTENNBSUAGL8U3UKVG===="
-								scriptHash: "8V3FNLQ00N9CH6ANOD56F2IL4UDNK55DCTTVN5DRMRFS8Q4OSTLG===="
+								hash:       "KK60JVDUQ55611E5530LQD17AFT3K75IRSFKBC9PU0BLK9H4LTS0===="
+								scriptHash: "LPEVPUTNJ9ADQF53N10S8GRAKKBIA8G2CIC8SG9O2O1CV0B4E9N0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -53,7 +53,7 @@ package site
 									output: """
 											name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
 											    ./bad.json:2:13
-											    ./schema.json:13:13
+											    ./schema.json:13:14
 
 											"""
 								}, {
@@ -78,7 +78,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.15.4"
+									cmd:      "go get cuelang.org/go@v0.16.0-alpha.1.0.20260204102828-049d6e12211e"
 									exitCode: 0
 									output: """
 											...
@@ -110,7 +110,7 @@ package site
 									output: """
 											name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
 											    bad.json:2:13
-											    schema.json:13:13
+											    schema.json:13:14
 											exit status 1
 
 											"""

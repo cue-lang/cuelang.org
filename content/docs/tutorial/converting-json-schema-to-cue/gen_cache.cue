@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"json schema":        "SZV1ynUTJgB8fER4LXOWhXgVbnMaT1VphitjIUcoQfg="
-								"schema.cue":         "eXN1mP4MnUy7gu4arPl4SPm8MQb/gfnPvJ+eFYQFLl4="
-								"split_pea.yml":      "eo4ZEndz31UHfUozCEAkwEtj8gm0YoP+71+WixjPS74="
-								"pomodoro.yml":       "3QOin1FWQS+ao6BlGcmH9g3l6hyHGUEphARz3pPir18="
-								"pomodoro.yml fixed": "dacEq1Q6x2tUnmSARf2atcGEOWafVFvIL0HYq179bc4="
+								"json schema":        "e7QRfii+/iYDJ3wzQsn80klWP6HXj6mgTqc/nxBBl7g="
+								"schema.cue":         "zyP064WE8QUyyakEeKSbmBOCr/vMxJ/QV9k08TvqWds="
+								"split_pea.yml":      "mk4TXVFxVug+TYOsAeiuzN/88pGyGnRWwlK3F07/0vY="
+								"pomodoro.yml":       "TKPmrxuZCRun8sOxAPP9U1O45I7B/bzJzK8smhMCgTY="
+								"pomodoro.yml fixed": "Wgu+EauLopmxdI5DKquHX58UDshHtcF35KBZ8aUIQfw="
 							}
 							multi_step: {
-								hash:       "G7NJFF1LIONSC24O9STFPKPFQ5IPUQO9CC80O4IGT3S52E2AOLPG===="
+								hash:       "3T3J0MKORLUQRV7RU3J696PENL8M4LGK93NE8OAN3GPCQ2HDEHAG===="
 								scriptHash: "G1P78LAGG4P0LTVP123AUGTEBMR9LFCQE6P9P3HR8DBT7BUG71SG===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.15.4
+											cue version v0.16.0-alpha.1.0.20260204102828-049d6e12211e
 											...
 
 											"""
