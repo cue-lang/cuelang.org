@@ -99,7 +99,7 @@ site: markup: {
 }
 
 site: params: {
-	// Fallback Twitter card image (if not set on page).
+	// Fallback X (Twitter) card image (if not set on page).
 	images: ["img/social.png"]
 
 	// The GitHub repo associated with this site
@@ -298,7 +298,7 @@ site: menus: en: {
 		{
 			identifier: "x-twitter"
 			name:       "X (Twitter)"
-			url:        "https://twitter.com/cue_lang"
+			url:        "https://x.com/cue_lang"
 			pre:        "social-x"
 			weight:     203
 		},
@@ -408,7 +408,7 @@ site: menus: en: {
 		{
 			parent: "column4"
 			name:   "X (Twitter)"
-			url:    "https://twitter.com/cue_lang"
+			url:    "https://x.com/cue_lang"
 			weight: 443
 		},
 		{
