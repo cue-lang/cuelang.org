@@ -88,7 +88,7 @@ weight = 440
 [[footer]]
 name = 'X (Twitter)'
 parent = 'column4'
-url = 'https://twitter.com/cue_lang'
+url = 'https://x.com/cue_lang'
 weight = 443
 
 [[footer]]
@@ -128,7 +128,7 @@ weight = 202
 identifier = 'x-twitter'
 name = 'X (Twitter)'
 pre = 'social-x'
-url = 'https://twitter.com/cue_lang'
+url = 'https://x.com/cue_lang'
 weight = 203
 
 [[icons]]
