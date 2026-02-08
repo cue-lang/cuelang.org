@@ -56,6 +56,15 @@ On macOS and Linux, `cue` can be installed using Homebrew
 brew install cue-lang/tap/cue
 {{{end}}}
 
+#### Install using mise
+
+`cue` can be installed using mise ([mise](https://github.com/jdx/mise)):
+
+{{{with script "en" "mise use"}}}
+#norun
+mise use -g cue@latest
+{{{end}}}
+
 #### Install from Docker Hub
 
 The CUE project publishes official container images containing `cue` on Docker Hub
