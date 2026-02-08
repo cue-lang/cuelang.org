@@ -58,8 +58,7 @@ brew install cue-lang/tap/cue
 
 #### Install using mise
 
-On macOS and Linux, `cue` can be installed using mise
-([mise](https://github.com/jdx/mise)):
+`cue` can be installed using mise ([mise](https://github.com/jdx/mise)):
 
 {{{with script "en" "mise use"}}}
 #norun
