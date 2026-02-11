@@ -26,3 +26,5 @@ node_modules
 
 # This is a well-known temporary file used by _scripts/siteCUE.bash
 /defresult.cue
+
+/.netlify/
