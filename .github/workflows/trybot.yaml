@@ -100,7 +100,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22.17.1
+          node-version: 24.13.1
       - name: Install Go
         uses: actions/setup-go@v6
         with:
@@ -119,7 +119,7 @@ jobs:
         name: Install Hugo (${{ runner.os }})
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 0.147.9
+          hugo-version: 0.155.3
           extended: true
       - if: runner.os == 'macOS'
         name: Install Hugo (${{ runner.os }})
@@ -217,12 +217,12 @@ jobs:
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
         name: Install Netlify CLI
-        run: npm install -g netlify-cli@20.1.1
+        run: npm install -g netlify-cli@23.15.1
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
         name: Deploy preview of CL
-        run: 'netlify deploy --alias cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
+        run: netlify deploy --alias cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug  --auth ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
       - if: |-
