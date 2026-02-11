@@ -409,23 +409,28 @@ _installNetlifyCLI: githubactions.#Step & {
 
 // _netlifyDeploy is used to push CLs for preview but also to deploy tip
 _netlifyDeploy: githubactions.#Step & {
-	#prod:   *false | bool
-	#site:   string
+	#prod: *false | bool
+	#site: {
+		id!:   string
+		name!: string
+	}
 	#alias?: string
 	if #alias != _|_ {
-		#prime_url: CL: "https://\(#alias)--\(#site).netlify.app"
+		#prime_url: CL: "https://\(#alias)--\(#site.name).netlify.app"
 	}
 	if !#prod {
 		#alias: *"" | string
 	}
 	let nc = netlify.config
 	let prod = [if #prod {"--prod"}, ""][0]
-	let uSite = strings.ToUpper(strings.Replace(#site, "-", "_", -1))
+	let uSiteName = strings.ToUpper(strings.Replace(#site.name, "-", "_", -1))
 	let alias = [if #alias != _|_ if #alias != "" {"--alias \(#alias)"}, ""][0]
 
 	name: string
-	run:  "netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
-	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite)}}"
+	run:  """
+        netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site.id) --debug \(prod)
+        """
+	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSiteName)}}"
 }
 
 // _setupCaches is shared between trybot and update_tip.
