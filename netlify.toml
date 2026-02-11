@@ -8,8 +8,8 @@ publish = '_public'
 
 [build.environment]
 GO_VERSION = '1.26.0'
-HUGO_VERSION = '0.147.9'
-NODE_VERSION = '22.17.1'
+HUGO_VERSION = '0.155.3'
+NODE_VERSION = '24.13.1'
 
 [context]
 [context.deploy-preview]
