@@ -100,7 +100,7 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v4
         with:
-          node-version: 22.17.1
+          node-version: 24.13.1
       - name: Install Go
         uses: actions/setup-go@v6
         with:
@@ -119,7 +119,7 @@ jobs:
         name: Install Hugo (${{ runner.os }})
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 0.147.9
+          hugo-version: 0.155.3
           extended: true
       - if: runner.os == 'macOS'
         name: Install Hugo (${{ runner.os }})
@@ -206,7 +206,7 @@ jobs:
           Dispatch-Trailer: {"type":"trybot"'))
         run: echo "BUILD_DRAFTS=--buildDrafts" >> $GITHUB_ENV
       - name: Dist
-        run: ./_scripts/build.bash --baseURL https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--cue-cls.netlify.app ${BUILD_DRAFTS:-}
+        run: ./_scripts/build.bash --baseURL https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--72d2c75a-cd7f-484a-bc41-a1f6586f9e31.netlify.app ${BUILD_DRAFTS:-}
       - if: always()
         name: Check that git is clean at the end of the job
         run: test -z "$(git status --porcelain)" || (git status; git diff; false)
@@ -217,19 +217,19 @@ jobs:
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
         name: Install Netlify CLI
-        run: npm install -g netlify-cli@20.1.1
+        run: npm install -g netlify-cli@23.15.1
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
         name: Deploy preview of CL
-        run: 'netlify deploy --alias cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }} -f functions -d _public -m "Deploy preview of CL" -s cue-cls --debug '
+        run: netlify deploy --alias cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }} -f functions -d _public -m "Deploy preview of CL" -s 72d2c75a-cd7f-484a-bc41-a1f6586f9e31 --debug  --auth ${{ secrets.NETLIFY_AUTH_TOKEN_72D2C75A_CD7F_484A_BC41_A1F6586F9E31}}
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_CUE_CLS}}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN_72D2C75A_CD7F_484A_BC41_A1F6586F9E31}}
       - if: |-
           github.repository == 'cue-lang/cuelang.org-trybot' && (contains(github.event.head_commit.message, '
           Dispatch-Trailer: {"type":"trybot"'))
-        name: Perform monitoring checks on https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--cue-cls.netlify.app
-        run: _scripts/checkEndpoints.bash https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--cue-cls.netlify.app
+        name: Perform monitoring checks on https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--72d2c75a-cd7f-484a-bc41-a1f6586f9e31.netlify.app
+        run: _scripts/checkEndpoints.bash https://cl-${{ fromJSON(steps.DispatchTrailer.outputs.value).CL }}-${{ fromJSON(steps.DispatchTrailer.outputs.value).patchset }}--72d2c75a-cd7f-484a-bc41-a1f6586f9e31.netlify.app
       - if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master')
         run: npm run algolia
         working-directory: hugo

@@ -424,7 +424,9 @@ _netlifyDeploy: githubactions.#Step & {
 	let alias = [if #alias != _|_ if #alias != "" {"--alias \(#alias)"}, ""][0]
 
 	name: string
-	run:  "netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod)"
+	run:  """
+        netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site) --debug \(prod) --auth ${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite)}}
+        """
 	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSite)}}"
 }
 
