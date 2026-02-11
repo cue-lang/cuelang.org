@@ -20,7 +20,7 @@ botGitHubUserEmail: "cueckoo@gmail.com"
 // Use a specific latest version for release builds.
 // Note that we don't want ".x" for the sake of reproducibility,
 // so we instead pin a specific Go release.
-goVersion: "1.24.5"
+goVersion: "1.26.0"
 
 // Use a specific version of NodeJS for deploy purposes. This version
 // is consistent between netlify and GitHub Actions usage.
