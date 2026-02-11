@@ -14,7 +14,7 @@
     "fuse.js": "7.0.0",
     "lodash.merge": "4.6.2",
     "mathjax": "3.2.2",
-    "mermaid": "10.9.1"
+    "mermaid": "10.9.5"
   },
   "devDependencies": {
     "@types/lodash.merge": "4.6.9",
