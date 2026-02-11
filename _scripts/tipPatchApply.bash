@@ -13,6 +13,9 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
 patchPath=$(./_scripts/tipPatchPath.bash)
 
+git status
+git diff
+
 # We must be in a clean state first
 if test ! -z "$(git status --porcelain)"
 then
