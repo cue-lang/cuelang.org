@@ -191,6 +191,13 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			_porcuepineCueLogin,
 
+			// TODO: remove once we have fixed the fact that the Central Registry doesn't issue test tokens via OIDC.
+			{
+				run: """
+					go tool cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
+					"""
+			},
+
 			// Set BUILD_DRAFTS=--buildDrafts if we are in the trybot repo for CL.
 			// This env var is used by the _dist step.
 			{

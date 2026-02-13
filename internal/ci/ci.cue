@@ -24,84 +24,61 @@ import (
 	_netlify "github.com/cue-lang/cuelang.org/internal/ci/netlify"
 )
 
-// #writefs mirrors the type of the arguments expected by
-// internal/cmd/writefs
-#writefs: {
-	// Tool is the name of the tool that generated the files declared in Create
-	Tool!: string
+fs: base.#writefs & {
+	tool: "internal/ci/ci_tool.cue"
 
-	// Remove is the set of globs of filepaths to remove prior to Create
-	Remove?: [...string]
-
-	// Create is the set of files to create.
-	Create?: [filepath=string]: {
-		Type:     "symlink"
-		Contents: string
-	} | *{
-		Type: "file"
-
-		// In case filepath has an extension known to CUE (and writefs), the
-		// concrete CUE value of Contents can be of any type. Otherwise, Contents
-		// must be a string.
-		Contents: _
-	}
-}
-
-fs: #writefs & {
-	Tool: "internal/ci/ci_tool.cue"
-
-	Remove: [
+	remove: [
 		"../../.github/workflows/*\(base.workflowFileExtension)",
 	]
 
-	Create: {
+	create: {
 		let donotedit = base.doNotEditMessage & {#generatedBy: "internal/ci/ci_tool.cue", _}
 
 		// GitHub workflows
 		let concreteWorkflows = json.Unmarshal(json.Marshal(github.workflows))
 		for _name, _workflow in concreteWorkflows {
-			"../../.github/workflows/\(_name)\(base.workflowFileExtension)": Contents: _workflow
+			"../../.github/workflows/\(_name)\(base.workflowFileExtension)": contents: _workflow
 		}
 
 		// Netlify config
-		"../../netlify.toml": Contents: _netlify.config
+		"../../netlify.toml": contents: _netlify.config
 
 		"../../hugo/layouts/index.redir": {
-			let contents = _netlify.#toRedirects & {#input: _netlify.redirects, _}
-			Contents: """
+			let _contents = _netlify.#toRedirects & {#input: _netlify.redirects, _}
+			contents: """
 			# \(donotedit)
 
-			\(strings.TrimSpace(contents))
+			\(strings.TrimSpace(_contents))
 
 			"""
 		}
 
 		"../../hugo/layouts/robots.txt": {
-			let contents = _netlify.#toRobotsTxt & {#input: _netlify.redirects, _}
-			Contents: """
+			let _contents = _netlify.#toRobotsTxt & {#input: _netlify.redirects, _}
+			contents: """
 			# \(donotedit)
 
-			\(strings.TrimSpace(contents))
+			\(strings.TrimSpace(_contents))
 
 			"""
 		}
 
 		"../../codereview.cfg": {
-			let contents = base.toCodeReviewCfg & {#input: repo.codeReview, _}
-			Contents: """
+			let _contents = base.toCodeReviewCfg & {#input: repo.codeReview, _}
+			contents: """
 			# \(donotedit)
 
-			\(strings.TrimSpace(contents))
+			\(strings.TrimSpace(_contents))
 
 			"""
 		}
 
 		"../../_scripts/env.bash": {
-			let contents = strings.Join([for k, v in repo.env {"export \(k)=\(v)"}], "\n")
-			Contents: """
+			let _contents = strings.Join([for k, v in repo.env {"export \(k)=\(v)"}], "\n")
+			contents: """
 			# \(donotedit)
 
-			\(contents)
+			\(_contents)
 
 			"""
 		}
