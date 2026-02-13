@@ -20,6 +20,6 @@ import (
 )
 
 command: gen: exec.Run & {
-	cmd: ["go", "run", "github.com/cue-lang/cuelang.org/internal/cmd/writefs"]
+	cmd: ["go", "tool", "cue", "exp", "writefs"]
 	stdin: json.Marshal(fs)
 }

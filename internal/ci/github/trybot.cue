@@ -189,7 +189,30 @@ workflows: trybot: _repo.bashWorkflow & {
 				"working-directory": "playground"
 			},
 
-			_porcuepineCueLogin,
+			// A number of pages that are part of cuelang.org require interacting
+			// with the Central Registry. These pages require users with slightly
+			// different access levels, in order to simulate (for example) private
+			// modules, with some users granted access whilst others are denied.
+			// The Central Registry has a special endpoint which generates access
+			// tokens for a set of such test user IDs. Access to this endpoint is
+			// sensitive, because in theory there is privilege escalation (even
+			// though in reality the test user IDs are intentionally not used
+			// for anything sensitive). As such, we use porcuepine (an account
+			// that is controlled by CUE Labs who also run the Central
+			// Registry) here in order to more carefully control in a CI
+			// environment who has access to this endpoint.
+			//
+			// The "selection" of porcupine as the user now happens via OIDC
+			// within the Central Registry, to avoid having to set and maintain
+			// access tokens as secrets in workflows.
+			_repo.loginCentralRegistry,
+
+			// TODO: remove once we have fixed the fact that the Central Registry doesn't issue test tokens via OIDC.
+			{
+				run: """
+					go tool cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
+					"""
+			},
 
 			// Set BUILD_DRAFTS=--buildDrafts if we are in the trybot repo for CL.
 			// This env var is used by the _dist step.
@@ -475,22 +498,6 @@ _cacheWarm: githubactions.#Step & {
 	name: "Populate CUE dependency cache"
 	env: CUE_TOKEN: "${{ secrets.NOTCUECKOO_CUE_TOKEN }}"
 	run: "_scripts/cacheWarm.bash"
-}
-
-// A number of pages that are part of cuelang.org require interacting
-// with the Central Registry. These pages require users with slightly
-// different access levels, in order to simulate (for example) private
-// modules, with some users granted access whilst others are denied.
-// The Central Registry has a special endpoint which generates access
-// tokens for a set of such test user IDs. Access to this endpoint is
-// sensitive, because in theory there is privilege escalation (even
-// though in reality the test user IDs are intentionally not used
-// for anything sensitive). As such, we use porcuepine (an account
-// that is controlled by CUE Labs who also run the Central
-// Registry) here in order to more carefully control in a CI
-// environment who has access to this endpoint.
-_porcuepineCueLogin: _repo.loginCentralRegistry & {
-	#tokenExpression: "${{ secrets.PORCUEPINE_CUE_TOKEN }}"
 }
 
 // npm install in hugo to allow serve test to pass

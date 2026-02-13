@@ -78,7 +78,7 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 
 			_cacheWarm,
 
-			_porcuepineCueLogin,
+			_repo.loginCentralRegistry,
 
 			_applyTipPatches,
 
