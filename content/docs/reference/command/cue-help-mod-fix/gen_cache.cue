@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "RR54FB7IGBKUN75UKTN52MITRHSTQ4SHOG3N7EBGR3JT26MFJHA0===="
-									scriptHash: "T41J8ESFKGA7RQNH6MEJFRHGA366TPB9O3RGESCKQA9OFVI94M50===="
+									hash:       "79UFUFNP3KBCBESSRRDTFDE8N85J4R8HGH9VKQ5IJ62J8HA638I0===="
+									scriptHash: "3TJJLHPCAFTKVS375TNL2BEL5RT3TMJICS29E4HF0ED75M4807M0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.1.0.20260213130521-9e2dec3b9a23:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -32,8 +32,6 @@ package site
 												If the module.cue file is already compatible with the new syntax,
 												it is just formatted without making any other changes.
 
-												Note that this command is not yet stable and may be changed.
-
 												Usage:
 												  cue mod fix [flags]
 
@@ -41,8 +39,6 @@ package site
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												"""
 									}]

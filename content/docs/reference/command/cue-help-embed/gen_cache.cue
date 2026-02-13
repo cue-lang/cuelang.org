@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "1A6K8MUSL3K77J0PGTB4JVKHH886AUL1VEILUECHSKUANG6SHT0G===="
-									scriptHash: "VSIKK8IUTKTLFOQ4CDO0GIC7MHE4G0VLS2H9T7HVK0F6TDJF05Q0===="
+									hash:       "OBUCPI7GENHUF308HUIMKUM9IA4L86DJ4BENS2FI9MSRJ3VTPD70===="
+									scriptHash: "L7EE1U7K5MI91T5PE63G04TTBA22ENK45NOE5BGNBMLMT9PNJDU0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.1.0.20260213130521-9e2dec3b9a23:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -53,8 +53,9 @@ package site
 												For NDJSON or multi-document YAML files, embed as type=text
 												and use APIs like yaml.Extract to decode as a list.
 
-												For security reasons, only files contained in the same module
-												can be embedded. Embedding is forbidden when outside a module.
+												Only files in the same module containing the CUE file can be embedded.
+												Embedding is forbidden when outside a module, and parent directory
+												references are not allowed.
 
 												Note that embedding CUE files is not supported at this time.
 

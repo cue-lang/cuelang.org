@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "I8EM5I0FALSRIB0NT12OENP6KATTK5F9IJNA493PH2F5MSRS4520===="
-									scriptHash: "B891FIUJUJAS0NGS7KHO4RQ61IHQ0685KHNUASH83EIFQTRQF7E0===="
+									hash:       "N0E9JQ3VTT3QQPSCHM3J181NSEULF22EJP618E24B8PIV6N1CU40===="
+									scriptHash: "4TL9LKHA7FIBL1DAJ0ODMU56K5GKIA38N88OQI2UK9168UUOCLN0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.1.0.20260213130521-9e2dec3b9a23:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -40,8 +40,6 @@ package site
 												module are resolved and displayed. The --deps flag cannot be used
 												with module path arguments.
 
-												Note that this command is not yet stable and may be changed.
-
 												Usage:
 												  cue mod resolve [<modulepath>[@<version>] ...] [flags]
 
@@ -52,8 +50,6 @@ package site
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												"""
 									}]

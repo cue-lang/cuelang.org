@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "CU44EQTFQLA2TOJG1N4CC9M2QO7I1UIRTG1PO24IBR7GS0INMA70===="
-									scriptHash: "21LNKH3DA4VR1FGR8LT9APDDS5AU11FPN3UO9GFVGDIMJF4F71JG===="
+									hash:       "ENEG5B803DOILT37MK0OTAB99CNADSBEHV0QKO3B43PQCOMOBHSG===="
+									scriptHash: "LMH9NKI6DAH9OV8S70KT05G08G38VJARB4CV310FEKFSCLDJ66V0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.1.0.20260213130521-9e2dec3b9a23:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -31,13 +31,12 @@ package site
 
 												Available Commands:
 												  gengotypes    generate Go types from CUE definitions
+												  writefs       remove and create files in bulk
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												Use "cue exp [command] --help" for more information about a command.
 
