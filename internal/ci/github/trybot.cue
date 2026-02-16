@@ -46,18 +46,10 @@ workflows: trybot: _repo.bashWorkflow & {
 		}
 	}
 
-	// GitHub's server-side default of permissions:contents:"read" is removed if
-	// a workflow specifies the permissions struct.
-	permissions: {
-		// Server-side default.
-		contents: "read"
-		// Required to push the preprocessor's container image to the GitHub
-		// container registry.
-		packages: "write"
-	}
-
 	jobs: test: {
 		"runs-on": _repo.linuxMachine
+
+		_packagesPublish
 
 		// Only run a deploy of tip if we are running as part of the trybot repo,
 		// with a TryBot-Trailer, i.e. as part of CI check of the trybot workflow
@@ -553,4 +545,14 @@ _deployTipCuelangOrg: githubactions.#Step & {
 
 	// TODO: See comment in previous step
 	env: GOPRIVATE: "cuelang.org/go"
+}
+
+// GitHub's server-side default of permissions:contents:"read" is removed if
+// a workflow specifies the permissions struct.
+_packagesPublish: permissions: {
+	// Server-side default.
+	contents: "read"
+	// Required to push the preprocessor's container image to the GitHub
+	// container registry.
+	packages: "write"
 }
