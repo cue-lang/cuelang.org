@@ -53,6 +53,8 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 	jobs: test: {
 		"runs-on": _repo.linuxMachine + _repo.overrideCacheTagDispatch
 
+		_packagesPublish
+
 		// We only want to run this workflow in the main repo
 		if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
 
