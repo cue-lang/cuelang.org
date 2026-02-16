@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7446ab08_d40e2b5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-02-16T15:51:53Z",
+      "side": 1,
+      "message": "I suppose we could keep it for the frontend files, but indeed this seems actively harmful for our use of Go/CUE/etc.",
+      "revId": "17133c64efbbd1acfb433c38b9c8d64af5eb9899",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
