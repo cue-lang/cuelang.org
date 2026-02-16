@@ -53,6 +53,8 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 	jobs: test: {
 		"runs-on": _repo.linuxMachine + _repo.overrideCacheTagDispatch
 
+		_packagesPublish
+
 		// We only want to run this workflow in the main repo
 		if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
 
@@ -79,6 +81,13 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 			_cacheWarm,
 
 			_repo.loginCentralRegistry,
+
+			// TODO: remove once we have fixed the fact that the Central Registry doesn't issue test tokens via OIDC.
+			{
+				run: """
+					go tool cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
+					"""
+			},
 
 			_applyTipPatches,
 

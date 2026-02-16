@@ -8,7 +8,7 @@ deps: {
 		default: true
 	}
 	"github.com/cue-lang/tmp/internal/ci@v0": {
-		v:       "v0.0.13"
+		v:       "v0.0.14"
 		default: true
 	}
 }
