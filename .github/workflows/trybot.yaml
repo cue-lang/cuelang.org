@@ -25,6 +25,8 @@ jobs:
         shell: bash --noprofile --norc -euo pipefail {0}
     permissions:
       id-token: write
+      contents: read
+      packages: write
     steps:
       - if: runner.os == 'macOS'
         name: Update Homebrew (macOS)
@@ -250,6 +252,3 @@ jobs:
         name: Perform monitoring checks on https://tip.cuelang.org
         run: _scripts/checkEndpoints.bash https://tip.cuelang.org
     runs-on: namespace-profile-linux-amd64
-permissions:
-  contents: read
-  packages: write
