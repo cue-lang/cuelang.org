@@ -18,6 +18,10 @@ jobs:
         shell: bash --noprofile --norc -euo pipefail {0}
     permissions:
       id-token: write
+      contents: read
+      packages: write
+    runs-on: namespace-profile-linux-amd64;overrides.cache-tag=cue-dispatch-workflow
+    if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
@@ -137,6 +141,7 @@ jobs:
         run: _scripts/cacheWarm.bash
       - name: Login to CUE registry
         uses: cue-labs/registry-login-action@v1
+      - run: go tool cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
       - name: 'tip.cuelang.org: Patch the site to be compatible with the tip of cue-lang/cue'
         run: _scripts/tipPatchApply.bash
       - name: npm install in hugo
@@ -152,9 +157,9 @@ jobs:
           GOPRIVATE: cuelang.org/go
       - name: 'tip.cuelang.org: Deploy the site'
         run: |-
+          git config -l
           git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n cueckoo:${{ secrets.CUECKOO_GITHUB_PAT }} | base64)"
+          git config -l
           _scripts/tipDeploy.bash 'cueckoo' 'cueckoo@gmail.com'
         env:
           GOPRIVATE: cuelang.org/go
-    runs-on: namespace-profile-linux-amd64;overrides.cache-tag=cue-dispatch-workflow
-    if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
