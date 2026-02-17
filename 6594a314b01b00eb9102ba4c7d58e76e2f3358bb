@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3556d310_7b301690",
+        "filename": "content/docs/concept/faq/adding-else-to-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-17T16:17:33Z",
+      "side": 1,
+      "message": "I find the use of these columns rather clumsy in places, and here is one such place. \n\nI would suggest we put both files in the same package, use a 3-pane view code block (https://cuelang.org/examples/cue/preprocessor/#code-blocks), with terminal below exporting the package `.`\n\nThat way we trivially show the true equivalence of the two, and we lose the massive \"frame\" between the panes.",
+      "revId": "6594a314b01b00eb9102ba4c7d58e76e2f3358bb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cb2482cd_ce6ad469",
+        "filename": "content/docs/concept/faq/adding-else-to-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-17T16:17:33Z",
+      "side": 1,
+      "message": "Again you want a code block (https://cuelang.org/examples/cue/preprocessor/#code-blocks) here.",
+      "revId": "6594a314b01b00eb9102ba4c7d58e76e2f3358bb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
