@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "08a103d2_cd051e64",
+        "filename": "content/docs/concept/faq/adding-else-to-comprehensions-v0.16/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-17T14:52:47Z",
+      "side": 1,
+      "message": "This is a bit of a trap to lead people into:\n\nhttps://cuelang.org/docs/howto/combine-conditions-using-chained-if/\n\nHowever, if you \"chain\" the `if` comprehensions I\u0027m not entirely sure the `else` \"works as intended\":\n\n```\nif foo if bar {\n\n} else {\n\n}\n```",
+      "revId": "48221fd405302a61e8080f0c4af2426cbde6b085",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
