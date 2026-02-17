@@ -9,8 +9,8 @@
     @include button-base;
 
     @include button-style(
-        var(--button-background, #{ $c-blue--light }),
-        var(--button-border, #{ $c-blue--light }),
+        var(--button-background, #{ $c-blue }),
+        var(--button-border, #{ $c-blue }),
         var(--button-color, #{ $c-white }),
         var(--button-background-hover, #{ $c-blue }),
         var(--button-border-hover, #{ $c-blue }),
