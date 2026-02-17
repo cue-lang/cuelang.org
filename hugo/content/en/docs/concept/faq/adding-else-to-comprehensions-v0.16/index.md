@@ -67,8 +67,6 @@ if name =~ #"\.cue$"# {
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="ZW52IFBBVEg9L2N1ZXMvJENVRUxBTkdfQ1VFX1RJUDokUEFUSA==" >}}
 $ env PATH=/cues/$CUELANG_CUE_TIP:$PATH
 cueInputs:
-  cueInputs:
-    fallback.cue: -1
   fallback.cue: -1
 {{< /code-tab >}}
 {{< /code-tabs >}}
