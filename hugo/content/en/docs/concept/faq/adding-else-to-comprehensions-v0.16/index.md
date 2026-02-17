@@ -94,9 +94,6 @@ $ cue export for-with-else.cue
         "baz.toml"
     ],
     "cueInputs": {
-        "cueInputs": {
-            "fallback.cue": -1
-        },
         "fallback.cue": -1
     }
 }
