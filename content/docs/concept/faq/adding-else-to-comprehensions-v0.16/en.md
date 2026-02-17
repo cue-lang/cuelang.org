@@ -73,8 +73,6 @@ if name =~ #"\.cue$"# {
 }
 -- out --
 cueInputs:
-  cueInputs:
-    fallback.cue: -1
   fallback.cue: -1
 {{{end}}}
 
