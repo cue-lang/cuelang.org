@@ -26,14 +26,14 @@ address!: string
 
 // We must not allow our data model to contain
 // people's ages, so we disallow the age field.
-age?: _|_
+age?: error("field name forbidden")
 -- data.yaml --
 name: Charlie Cartwright
 address: Ripon, North Yorkshire
 species: cat
 age: 15.5
 -- out --
-explicit error (_|_ literal) in source:
+age: field name forbidden:
     ./file.cue:10:7
 {{{end}}}
 
@@ -46,18 +46,9 @@ cannot be used to disallow specific fields because the schema author cannot
 specify each and every acceptable field - and therefore the schema must be left
 open.
 
-{{< info >}}
-The technique demonstrated here may be superseded by the `error()` builtin
-function proposed in {{< issue 943 />}}.
-
-**This function is not yet available**, but would allow for custom error
-messages instead of the\
-`explicit error (_|_ literal) in source` shown above.
-{{< /info >}}
-
 ## Related content
 
 - The CUE Tour: [**Definitions**]({{< relref "docs/tour/basics/definitions" >}})
 - Glossary: [the **`close`** built-in function]({{< relref "docs/reference/glossary#close-built-in-function" >}})
-- {{< issue 943 >}}Issue #943{{< /issue >}} contains details of the proposed
-  `error()` builtin function
+- Reference: The CUE Language Specification:
+  [the built-in function `error`]({{<relref"docs/reference/spec#error">}})
