@@ -16,6 +16,24 @@
       "message": "This is a bit of a trap to lead people into:\n\nhttps://cuelang.org/docs/howto/combine-conditions-using-chained-if/\n\nHowever, if you \"chain\" the `if` comprehensions I\u0027m not entirely sure the `else` \"works as intended\":\n\n```\nif foo if bar {\n\n} else {\n\n}\n```",
       "revId": "48221fd405302a61e8080f0c4af2426cbde6b085",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7c7cf70e_08ec7e0b",
+        "filename": "content/docs/concept/faq/adding-else-to-comprehensions-v0.16/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-02-17T15:51:27Z",
+      "side": 1,
+      "message": "we discussed this in person - in the end I\u0027ve come full circle and think that we should keep the page as-is, to not get into the shortcircuit details nor introduce new users to the \"chained ifs\" too early. Plus, now we are able to tackle more language bugs like short circuiting with AI, if we wish to :)",
+      "parentUuid": "08a103d2_cd051e64",
+      "revId": "48221fd405302a61e8080f0c4af2426cbde6b085",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
