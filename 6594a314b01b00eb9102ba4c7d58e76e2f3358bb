@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "73237204_e555ace1",
+        "filename": "content/docs/concept/faq/adding-else-to-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-02-18T10:36:23Z",
+      "side": 1,
+      "message": "done, minus the unification of the leaf values, to still show the \"side by side\" of the results visually.",
+      "parentUuid": "3556d310_7b301690",
+      "revId": "6594a314b01b00eb9102ba4c7d58e76e2f3358bb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "cb2482cd_ce6ad469",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-02-17T16:17:33Z",
       "side": 1,
       "message": "Again you want a code block (https://cuelang.org/examples/cue/preprocessor/#code-blocks) here.",
+      "revId": "6594a314b01b00eb9102ba4c7d58e76e2f3358bb",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "416290c9_a3e3b136",
+        "filename": "content/docs/concept/faq/adding-else-to-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-02-18T10:36:23Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cb2482cd_ce6ad469",
       "revId": "6594a314b01b00eb9102ba4c7d58e76e2f3358bb",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
