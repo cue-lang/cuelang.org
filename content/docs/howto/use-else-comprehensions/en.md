@@ -1,5 +1,5 @@
 ---
-title: Adding "else" to comprehensions in CUE 0.16
+title: Use "else" comprehensions
 authors: [mvdan]
 tags: [language]
 toc_hide: false
@@ -7,10 +7,20 @@ toc_hide: false
 
 {{<sidenote text="Requires CUE v0.16.0 or later">}}
 
-CUE v0.16.0-alpha.2 introduced a new optional `else` clause in comprehensions
-for CUE modules targetting the language version v0.16.0 or later,
-which you can opt into via
-[`cue mod edit --language-version`]({{<relref "docs/reference/command/cue-help-mod-edit" >}}).
+CUE v0.16.0-alpha.2 introduced a new optional `else` clause in comprehensions.
+
+To use this language feature, update your module to target language version
+v0.16.0 or later with [`cue mod edit`]({{<relref
+"docs/reference/command/cue-help-mod-edit" >}}):
+
+{{{with _script_ "en" "create module"}}}
+export PATH=/cues/$CUELANG_CUE_TIP:$PATH
+cue mod init mod.com
+{{{end}}}
+
+{{{with script "en" "edit language version"}}}
+cue mod edit --language-version v0.16.0
+{{{end}}}
 
 With this change to the language, an `if` or `for` comprehension may be followed
 by an `else` clause which triggers when the comprehension produced zero values.
@@ -61,9 +71,12 @@ An `else` clause can also be used as a fallback for loops that produce zero valu
 # See: https://cuelang.org/issue/4123
 #nofmt(for-with-else.cue)
 env PATH=/cues/$CUELANG_CUE_TIP:$PATH
-exec cue export --out yaml for-with-else.cue
+
+exec cue export --out yaml
 cmp stdout out
 -- for-with-else.cue --
+package p
+
 _inputs: ["foo.txt", "bar.xml", "baz.toml"]
 
 for i, name in _inputs
