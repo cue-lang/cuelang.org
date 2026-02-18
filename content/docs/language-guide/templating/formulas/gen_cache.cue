@@ -8,18 +8,18 @@ package site
 						page: {
 							cache: {
 								code: {
-									"numbers-arithmetic":           "asYJ+ACwGtbIWR+Nlc01lg4cyV5s1x4yVfin3/wMYuM="
-									"strings-arithmetic":           "q65H2ean99CD49jwESQ/KNPBvJiigG6+pQ8yjqVRrlM="
-									"strings-interpolation":        "U0TlfSA5Q9fF67JPulVbjFCw9+qjZCHpGqol7Fg1w3E="
-									"strings-interpolation-fields": "jt4JExQj+Xmt4H3vNaqQESGx7nAxWlAhwbtxTdal7Sg="
-									"comparators-ordered":          "IiPl+snt5ENF8PZj2NQlatqG2Ulux/yeV1Cgz6X1gSo="
-									"comparators-equality":         "1t8AMGfZ6I5PsapRQ4omm1TROQqdtRPfDKwsk7Q6ZzQ="
-									regexp:                         "YPcKRmW6EPoFtlOZw3UBcAyr3NeoxrJY0ufhreTIB+I="
-									"boolean-arithmetic":           "qPuDXPNT4274Sui1ObqB33XSf7FvEtdMQ2xCfE/9mWw="
-									"boolean-arithmetic-error":     "7ILJqJZJAKJ89LeKO9SX1Ucntx+ouCfzUJiXCdRBiVA="
-									"stdlib-usage":                 "hwKIUbrvxbzGf9doTcTJdq6XQuXsx0LaynvGtrQ9W2Y="
-									"core-builtin-len":             "8FhbWmRPKybHJLYWudFtLz8wVcoGhGRxIdXmJ9BKCjU="
-									"composition-operator":         "I4jwv1Z967yHkwRO2zxVkkVBXD2eVVl/uq/IGp1mfyo="
+									"numbers-arithmetic":           "DH2ggP8NNukJ0WcSb+UEQcWdhi/xSoWjTc/VANaCQ/U="
+									"strings-arithmetic":           "45Mj4Y0WlHWVPXkV1pvmpmsWZqkZTvkL9IcHUV/a9lU="
+									"strings-interpolation":        "xTkb344rSRXWb3m6jAcwOtNm3jtj5EDoziAA2pmfWvw="
+									"strings-interpolation-fields": "Z2ky6eLdNaXmj3/2qV614YOd14fvyhHj/QFOnjRbF8I="
+									"comparators-ordered":          "yzUFdhEbeeG/GmtBIlO0Rm9kvSu1Cn/85FP/pXDuPJI="
+									"comparators-equality":         "qY7SYNyOXhY8ciC8WEiDxdEH/GOQeCZTyY/drwAGQdk="
+									regexp:                         "eBSaPVNZ5X/teqq4djDMshgKkpOJyJcuTYyYHC2pnMg="
+									"boolean-arithmetic":           "GziEtmb6ZGH6jThxAWC8Ia6gMnO2X0o9rxCmanMunFY="
+									"boolean-arithmetic-error":     "iVm2cyYk49gSMB7dyJpW4TYhS92ChOK4gEwPtX67ymE="
+									"stdlib-usage":                 "SEDZ4QJYGifZ+7Qm3VE00Ix2HrQtZutxL7kFqXJAjfA="
+									"core-builtin-len":             "cl4uAXD0/i7q0IV69GC4kxE0ruPva2jRSFgRXvzw328="
+									"composition-operator":         "IXSUAKBNWrZTqT5BJartAGzUitfMmC/TAzGl9sZKbTk="
 								}
 							}
 						}
