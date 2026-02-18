@@ -24,8 +24,8 @@ jobs:
       run:
         shell: bash --noprofile --norc -euo pipefail {0}
     permissions:
-      id-token: write
       contents: read
+      id-token: write
       packages: write
     runs-on: namespace-profile-linux-amd64
     steps:
