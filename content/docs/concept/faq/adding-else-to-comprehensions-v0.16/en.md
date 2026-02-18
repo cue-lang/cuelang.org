@@ -61,9 +61,12 @@ An `else` clause can also be used as a fallback for loops that produce zero valu
 # See: https://cuelang.org/issue/4123
 #nofmt(for-with-else.cue)
 env PATH=/cues/$CUELANG_CUE_TIP:$PATH
-exec cue export --out yaml for-with-else.cue
+
+exec cue export --out yaml
 cmp stdout out
 -- for-with-else.cue --
+package p
+
 _inputs: ["foo.txt", "bar.xml", "baz.toml"]
 
 for i, name in _inputs
