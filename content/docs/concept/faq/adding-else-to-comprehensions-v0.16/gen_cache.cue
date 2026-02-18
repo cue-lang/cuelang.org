@@ -9,7 +9,7 @@ package site
 							cache: {
 								code: {
 									"if-else before and after": "ZeUMqiauudNRtgzzlgrJ1+iCj7ZdSVC/8OWcEqinX9o="
-									"for-else":                 "0NtKbMNUkUFskgEmLIvG8MfR79p4KutFRyTyIU5aKTs="
+									"for-else":                 "uqpPCgjXYtHrd0ymybSe1P0kCCqMZqu0gqndZ+AKy64="
 								}
 							}
 						}
