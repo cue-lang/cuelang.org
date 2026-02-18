@@ -55,6 +55,8 @@ An `else` clause can also be used as a fallback for loops that produce zero valu
 
 {{< code-tabs >}}
 {{< code-tab name="for-with-else.cue" language="cue" area="top" >}}
+package p
+
 _inputs: ["foo.txt", "bar.xml", "baz.toml"]
 
 for i, name in _inputs
@@ -64,8 +66,8 @@ if name =~ #"\.cue$"# {
 	cueInputs: "fallback.cue": -1
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="ZW52IFBBVEg9L2N1ZXMvJENVRUxBTkdfQ1VFX1RJUDokUEFUSA==" >}}
-$ env PATH=/cues/$CUELANG_CUE_TIP:$PATH
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" >}}
+$ cue export --out yaml
 cueInputs:
   fallback.cue: -1
 {{< /code-tab >}}
