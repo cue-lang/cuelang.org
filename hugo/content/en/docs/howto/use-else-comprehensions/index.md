@@ -1,5 +1,5 @@
 ---
-title: Adding "else" to comprehensions in CUE 0.16
+title: Use "else" comprehensions
 authors: [mvdan]
 tags: [language]
 toc_hide: false
@@ -7,10 +7,15 @@ toc_hide: false
 
 {{<sidenote text="Requires CUE v0.16.0 or later">}}
 
-CUE v0.16.0-alpha.2 introduced a new optional `else` clause in comprehensions
-for CUE modules targetting the language version v0.16.0 or later,
-which you can opt into via
-[`cue mod edit --language-version`]({{<relref "docs/reference/command/cue-help-mod-edit" >}}).
+CUE v0.16.0-alpha.2 introduced a new optional `else` clause in comprehensions.
+
+To use this language feature, update your module to target language version
+v0.16.0 or later with [`cue mod edit`]({{<relref
+"docs/reference/command/cue-help-mod-edit" >}}):
+
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBlZGl0IC0tbGFuZ3VhZ2UtdmVyc2lvbiB2MC4xNi4w" }
+$ cue mod edit --language-version v0.16.0
+````
 
 With this change to the language, an `if` or `for` comprehension may be followed
 by an `else` clause which triggers when the comprehension produced zero values.
@@ -55,6 +60,8 @@ An `else` clause can also be used as a fallback for loops that produce zero valu
 
 {{< code-tabs >}}
 {{< code-tab name="for-with-else.cue" language="cue" area="top" >}}
+package p
+
 _inputs: ["foo.txt", "bar.xml", "baz.toml"]
 
 for i, name in _inputs
@@ -64,8 +71,8 @@ if name =~ #"\.cue$"# {
 	cueInputs: "fallback.cue": -1
 }
 {{< /code-tab >}}
-{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="ZW52IFBBVEg9L2N1ZXMvJENVRUxBTkdfQ1VFX1RJUDokUEFUSA==" >}}
-$ env PATH=/cues/$CUELANG_CUE_TIP:$PATH
+{{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtLW91dCB5YW1s" >}}
+$ cue export --out yaml
 cueInputs:
   fallback.cue: -1
 {{< /code-tab >}}

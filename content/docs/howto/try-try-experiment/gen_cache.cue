@@ -1,0 +1,40 @@
+package site
+{
+	content: {
+		docs: {
+			howto: {
+				"try-try-experiment": {
+					page: {
+						cache: {
+							code: {
+								"if-else before and after": "5NVtczg4TdGGxZtwqsHutnYgsixzBbsFGlBTyhXA84A="
+								"try-bind":                 "/FT8RPJ0iR0fH9OTkiiUwuG4f9+/KZAh8RX+HQG9MdA="
+								"try-else":                 "II+tXwMVvY8i3ccYxIs2f0wxVFPF34brlB7HK7iOYJc="
+							}
+							multi_step: {
+								hash:       "H78NQT90LLG895CI8GIH479E80QE3OTMBA02VMGRRGRLFBPJK7CG===="
+								scriptHash: "60QC1PORO9JK71AK4S3JHND8ARV9S4KP3QK3A7VMBLP5O5DAL4QG===="
+								steps: [{
+									doc:      ""
+									cmd:      "export PATH=/cues/v0.16.0-alpha.1.0.20260217185644-f2e829930055:$PATH"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod init mod.com"
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      ""
+									cmd:      "cue mod edit --language-version v0.16.0"
+									exitCode: 0
+									output:   ""
+								}]
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
