@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2580baf6_6dc6c1f0",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-02-18T16:22:11Z",
+      "side": 1,
+      "message": "the current mechanism is used in the \"else\" page too, FWIW",
+      "parentUuid": "d8e3a2f1_8b096fe6",
+      "range": {
+        "startLine": 15,
+        "startChar": 23,
+        "endLine": 15,
+        "endChar": 54
+      },
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ba5e5962_3ddab95f",
         "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
         "patchSetId": 2
