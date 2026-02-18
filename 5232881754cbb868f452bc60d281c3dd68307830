@@ -1,0 +1,136 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2afa814c_b09056f6",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-18T15:44:23Z",
+      "side": 1,
+      "message": "Why not spell this `cue mod edit --language-version v0.16.0` to be explicit?\n\nOr perhaps put in a code block to make it copy-able?\n\nThe linked page doesn\u0027t give the user something they can directly use either, they have to go searching for it.",
+      "range": {
+        "startLine": 15,
+        "startChar": 23,
+        "endLine": 15,
+        "endChar": 54
+      },
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ba5e5962_3ddab95f",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-18T15:44:23Z",
+      "side": 1,
+      "message": "Hmm, am I holding `try` wrongly? I thought it intended to allow me to intentionally swallow errors related to unset optional fields?\n\nSee comment below about the related `else` clause.\n\nWithout a spec entry for `try`, I think we need to take 1-2 sentences to clearly explain what\u0027s going on.",
+      "range": {
+        "startLine": 19,
+        "startChar": 25,
+        "endLine": 19,
+        "endChar": 78
+      },
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6d44a7b8_18d5d165",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-18T15:44:23Z",
+      "side": 1,
+      "message": "Superfluous text; can just be removed. It doesn\u0027t say anything really.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 20,
+        "endChar": 39
+      },
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a8452ba2_bbbef2b8",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-18T15:44:23Z",
+      "side": 1,
+      "message": "\"...can be used in conjunction with an optional field reference to...\"",
+      "range": {
+        "startLine": 22,
+        "startChar": 15,
+        "endLine": 22,
+        "endChar": 26
+      },
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "90fb819c_92aac156",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-18T15:44:23Z",
+      "side": 1,
+      "message": "I would spell this out without so much \"compaction\" in the code:\n\n```\n@experiment(try)\n\npackage p\n\n#WithBinding: {\n\ta?: int\n\n\ttry x \u003d {\n\t\tvalue: a? + 1\n\t}\n\tif x.value \u003e 5 {\n\t\tb: x\n\t}\n}\nwithBindingMissing: #WithBinding \u0026 {}\nwithBindingPresent: #WithBinding \u0026 {a: 10}\n```",
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "662ab801_f2b1fb6f",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-18T15:44:23Z",
+      "side": 1,
+      "message": "Whilst technically true, I would perhaps (also) link this to the comment above about what `try` does in the case of errors.",
+      "range": {
+        "startLine": 100,
+        "startChar": 43,
+        "endLine": 100,
+        "endChar": 63
+      },
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
