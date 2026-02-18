@@ -1,9 +1,9 @@
 module github.com/cue-lang/cuelang.org
 
-go 1.24.0
+go 1.25.0
 
 require (
-	cuelang.org/go v0.16.0-alpha.1
+	cuelang.org/go v0.16.0-alpha.1.0.20260218101106-62de631a0e5b
 	github.com/apex/gateway v1.1.2
 	github.com/aws/aws-lambda-go v1.32.1
 	github.com/fsnotify/fsnotify v1.6.0
