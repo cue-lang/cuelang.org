@@ -148,8 +148,8 @@ Fetch a schema for GitLab pipelines, as defined by the GitLab project, and
 place it in the `internal/ci/gitlab` directory:
 
 :computer: `terminal`
-````text { title="TERMINAL" type="terminal" codeToCopy="Y3VybCAtc1NvIGludGVybmFsL2NpL2dpdGxhYi9naXRsYWIuY2ljZC5waXBlbGluZS5zY2hlbWEuanNvbiBodHRwczovL2dpdGxhYi5jb20vZ2l0bGFiLW9yZy9naXRsYWIvLS9yYXcvMjc3YzlmNmI2NDNjOTJkMDAxMDFhY2EwZjJiNGI4NzRhMTQ0ZjdjNS9hcHAvYXNzZXRzL2phdmFzY3JpcHRzL2VkaXRvci9zY2hlbWEvY2kuanNvbg==" }
-$ curl -sSo internal/ci/gitlab/gitlab.cicd.pipeline.schema.json https://gitlab.com/gitlab-org/gitlab/-/raw/277c9f6b643c92d00101aca0f2b4b874a144f7c5/app/assets/javascripts/editor/schema/ci.json
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VybCAtZnNTbyBpbnRlcm5hbC9jaS9naXRsYWIvZ2l0bGFiLmNpY2QucGlwZWxpbmUuc2NoZW1hLmpzb24gaHR0cHM6Ly9naXRsYWIuY29tL2dpdGxhYi1vcmcvZ2l0bGFiLy0vcmF3LzI3N2M5ZjZiNjQzYzkyZDAwMTAxYWNhMGYyYjRiODc0YTE0NGY3YzUvYXBwL2Fzc2V0cy9qYXZhc2NyaXB0cy9lZGl0b3Ivc2NoZW1hL2NpLmpzb24=" }
+$ curl -fsSo internal/ci/gitlab/gitlab.cicd.pipeline.schema.json https://gitlab.com/gitlab-org/gitlab/-/raw/277c9f6b643c92d00101aca0f2b4b874a144f7c5/app/assets/javascripts/editor/schema/ci.json
 ````
 
 We use a specific commit from the upstream repository to make sure that this

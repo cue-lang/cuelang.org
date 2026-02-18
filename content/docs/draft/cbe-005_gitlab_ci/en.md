@@ -172,7 +172,7 @@ place it in the `internal/ci/gitlab` directory:
 
 :computer: `terminal`
 {{{with script "en" "8"}}}
-curl -sSo internal/ci/gitlab/gitlab.cicd.pipeline.schema.json https://gitlab.com/gitlab-org/gitlab/-/raw/277c9f6b643c92d00101aca0f2b4b874a144f7c5/app/assets/javascripts/editor/schema/ci.json
+curl -fsSo internal/ci/gitlab/gitlab.cicd.pipeline.schema.json https://gitlab.com/gitlab-org/gitlab/-/raw/277c9f6b643c92d00101aca0f2b4b874a144f7c5/app/assets/javascripts/editor/schema/ci.json
 {{{end}}}
 
 We use a specific commit from the upstream repository to make sure that this
