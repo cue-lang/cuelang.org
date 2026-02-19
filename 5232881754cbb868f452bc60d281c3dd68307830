@@ -72,6 +72,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "2018551b_1ece3cdc",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-19T10:55:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2580baf6_6dc6c1f0",
+      "range": {
+        "startLine": 15,
+        "startChar": 23,
+        "endLine": 15,
+        "endChar": 54
+      },
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ba5e5962_3ddab95f",
@@ -109,6 +133,30 @@
       "side": 1,
       "message": "This wording is lifted directly from the summary of the \"try\" design. The swallowing of errors relates to existing users doing checks against bottom, which performs more checks than just \"field exists\", and also doesn\u0027t allow being specific about which elements of a path are allowed to be missing.\n\nI\u0027m trying to strike a balance between summarizing the benefits but not being too verbose with prose and examples. Do you have a particular suggestion here?",
       "parentUuid": "ba5e5962_3ddab95f",
+      "range": {
+        "startLine": 19,
+        "startChar": 25,
+        "endLine": 19,
+        "endChar": 78
+      },
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1cd6752a_b9b4fc77",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-19T10:55:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a9ca0331_973dc4b3",
       "range": {
         "startLine": 19,
         "startChar": 25,
@@ -213,6 +261,30 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9522f4cc_647f7ce7",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-19T10:55:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "00b4bc36_44c0908f",
+      "range": {
+        "startLine": 22,
+        "startChar": 15,
+        "endLine": 22,
+        "endChar": 26
+      },
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "90fb819c_92aac156",
@@ -285,6 +357,30 @@
       "side": 1,
       "message": "Do you have a particular example in mind? Ideally I wouldn\u0027t want to add another set of examples to this page, to keep it nice and short.",
       "parentUuid": "662ab801_f2b1fb6f",
+      "range": {
+        "startLine": 100,
+        "startChar": 43,
+        "endLine": 100,
+        "endChar": 63
+      },
+      "revId": "5232881754cbb868f452bc60d281c3dd68307830",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "872d9237_f546e269",
+        "filename": "content/docs/concept/faq/adding-try-comprehensions-v0.16/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-02-19T10:55:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "627e66e5_e678e609",
       "range": {
         "startLine": 100,
         "startChar": 43,
