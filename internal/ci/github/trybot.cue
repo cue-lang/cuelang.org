@@ -110,8 +110,6 @@ workflows: trybot: _repo.bashWorkflow & {
 
 			_contentLint,
 
-			_cacheWarm,
-
 			// We can perform an early check that ensures page.cue files are
 			// consistent with respect to their containing directory path.,
 			{
@@ -198,13 +196,6 @@ workflows: trybot: _repo.bashWorkflow & {
 			// within the Central Registry, to avoid having to set and maintain
 			// access tokens as secrets in workflows.
 			_repo.loginCentralRegistry,
-
-			// TODO: remove once we have fixed the fact that the Central Registry doesn't issue test tokens via OIDC.
-			{
-				run: """
-					go tool cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
-					"""
-			},
 
 			// Set BUILD_DRAFTS=--buildDrafts if we are in the trybot repo for CL.
 			// This env var is used by the _dist step.
@@ -477,19 +468,6 @@ _setNoWriteCache: githubactions.#Step & {
 _contentLint: githubactions.#Step & {
 	name: "Perform early content checks"
 	run:  "_scripts/contentLint.bash"
-}
-
-// _cacheWarm warms the CUE module cache with any CUE dependencies, so that any
-// credentials used to authenticate to the central registry only need to be in
-// scope for the duration of this script.
-//
-// This is the only step that needs to be given (read-only) access to the Central Registry.
-// TODO: adopt any more specific command coming from https://cuelang.org/issue/3512.
-// TODO: add cache dir to CI cache when it's visible via https://cuelang.org/issue/2838.
-_cacheWarm: githubactions.#Step & {
-	name: "Populate CUE dependency cache"
-	env: CUE_TOKEN: "${{ secrets.NOTCUECKOO_CUE_TOKEN }}"
-	run: "_scripts/cacheWarm.bash"
 }
 
 // npm install in hugo to allow serve test to pass

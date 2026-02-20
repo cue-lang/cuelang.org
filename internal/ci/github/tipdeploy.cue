@@ -78,16 +78,7 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 
 			_contentLint,
 
-			_cacheWarm,
-
 			_repo.loginCentralRegistry,
-
-			// TODO: remove once we have fixed the fact that the Central Registry doesn't issue test tokens via OIDC.
-			{
-				run: """
-					go tool cue login --token=${{ secrets.PORCUEPINE_CUE_TOKEN }}
-					"""
-			},
 
 			_applyTipPatches,
 
