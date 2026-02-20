@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "7OAIUG6AJ92KVHMFLU4PDH4EJ4ACVO05088KKJBGFVOAGDJ64QGG===="
-									scriptHash: "0KJAICEB327ESNDFTP4DVUVTBI4599KGQR72H8Q8LU1H0TOUTAC0===="
+									hash:       "0OEIDUDUFN5H6NFBDH3OCP1DGJ105HHVHOJSHAT90I11MS8RI1B0===="
+									scriptHash: "113H5J74USJH8A12GJORBDGCA87IH3DD3U0LGB7R96DA14CO94R0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -32,8 +32,6 @@ package site
 												See "cue help environment" for details on how $CUE_REGISTRY is used to
 												determine the modules registry.
 
-												Note that this command is not yet stable and may be changed.
-
 												Usage:
 												  cue mod tidy [flags]
 
@@ -44,8 +42,6 @@ package site
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												"""
 									}]

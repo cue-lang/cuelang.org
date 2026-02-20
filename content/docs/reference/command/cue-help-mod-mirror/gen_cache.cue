@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "JR63O4PU4QSCJS31EBDNTI4S71JHOLCDS906S5I20E36QBQR8BM0===="
-									scriptHash: "O0DO3BV2FC4N7QTQ351454KHJDJPBRBNJ5FJT11Q3BF3JRCRKG7G===="
+									hash:       "RI45B49B5PKOIRBK54T5P8E27D293688CUTI7PFGCVEH82UUO89G===="
+									scriptHash: "OVCO452UDVC5D8UD52VMVGUPKH987DMH5K6NKRNP9T4ETTILTRLG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -20,8 +20,6 @@ package site
 										cmd:      "cue help mod mirror"
 										exitCode: 0
 										output: """
-												WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 												This commmand ensures that a set of modules and their dependencies
 												are available ("mirrored") in a registry.
 
@@ -51,8 +49,6 @@ package site
 												are specified on the command line, all the current module's dependencies will
 												be mirrored.
 
-												Note that this command is not yet stable and may be changed.
-
 												Usage:
 												  cue mod mirror [module...] [flags]
 
@@ -68,8 +64,6 @@ package site
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												"""
 									}]

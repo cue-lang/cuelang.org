@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "BFKKMU9BGLP0J9RSNQ1HEFM4OUVMBVHE0H8998VFFN5M7N46CFJ0===="
-									scriptHash: "UP3FQCMQACTQUS2P6MU8VPRDL2TE7E0KD6Q9HTG25LHO6KBUCUDG===="
+									hash:       "MJRSLDQ82RJ220SM83G5E422P4JMK2L3CT8UODP4TVDCTSBRJMN0===="
+									scriptHash: "D30B14LSTMG966NSOTUOV1QUUDH4MQ99P2J2HK3BDVNJCALFJ2EG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -37,8 +37,6 @@ package site
 												The --source flag changes the module's declared source.
 												The --drop-source flag removes the source field.
 
-												Note that this command is not yet stable and may be changed.
-
 												Usage:
 												  cue mod edit [flags]
 
@@ -54,8 +52,6 @@ package site
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												"""
 									}]

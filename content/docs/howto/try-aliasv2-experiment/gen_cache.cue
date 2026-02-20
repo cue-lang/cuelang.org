@@ -7,18 +7,18 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"1 old": "mHlpJbVWKVNR00OESDHpKVBrrr+MuI7zuRwthZPTV+c="
-								"1 new": "MT8SBjiCKS9I957LKNXzGOhr5YOZ5hPAWaR0NCgQSBQ="
+								"1 old": "IVO/l/LiucCuCB+09IrNvrdonreqeT2LW0uChNC5gn0="
+								"1 new": "4udaL2EjGLvGAR9hS2McarI+oHdQBAubNVd8ITA9XZQ="
 							}
 							code: {
-								"2 new": "Fi3YCCp1e9HBvgp0gpB/SnL2zzj28KSNbdK+lJ2j/hw="
+								"2 new": "hnKrnPajR6YIrUPNveT4GeMNxGF55RDs20l4SD9/Fpk="
 							}
 							multi_step: {
-								hash:       "PTI0O09F0F724BE538BH02E0MJF2N4S6QDB8VU5EJMJUO77GO44G===="
-								scriptHash: "441HBFTMAI4SM712BHK334K1NHFLOHB7OTOGOKJT9MD3MFOS8810===="
+								hash:       "QGG05PSI1ADHPHQ5R1C529IHLOIM93Q1FQ9KLVO8ND9Q57AAL6TG===="
+								scriptHash: "0VOF75ORFQ0DDQ5BK9FJ6AK18O5FQNR111OMRL2CIQ14E1HUNQ80===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.16.0-alpha.1:$PATH"
+									cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {

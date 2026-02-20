@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "22N9Q4DO6EL1VFP4HQF7R3U4MO4ASVG9BG0UMFL456GTOK8SER10===="
-									scriptHash: "FRU2CPGQKR63PA51A0GCV1CS4T4DHIV51FU7PDNT5ELT9U2AQ8UG===="
+									hash:       "6AM4NF0ILRNVM7Q3PG4MVBAPB50S1PD3MD8J7Q3OOV3VADIS08QG===="
+									scriptHash: "PT81N4FQLKHDV6MRTL287S6TJ43169HU0A3692C7OPBQD171HDC0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -39,6 +39,7 @@ package site
 												  init        initialize new module in current directory
 												  mirror      mirror module content between registries
 												  publish     publish the current module to a registry
+												  registry    start a local in-memory module registry
 												  rename      rename the current module
 												  resolve     Show how a module path resolves to a registry
 												  tidy        download and tidy module dependencies
@@ -47,8 +48,6 @@ package site
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												Use "cue mod [command] --help" for more information about a command.
 

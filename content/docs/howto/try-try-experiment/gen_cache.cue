@@ -7,16 +7,16 @@ package site
 					page: {
 						cache: {
 							code: {
-								"if-else before and after": "5NVtczg4TdGGxZtwqsHutnYgsixzBbsFGlBTyhXA84A="
-								"try-bind":                 "/FT8RPJ0iR0fH9OTkiiUwuG4f9+/KZAh8RX+HQG9MdA="
-								"try-else":                 "II+tXwMVvY8i3ccYxIs2f0wxVFPF34brlB7HK7iOYJc="
+								"if-else before and after": "nFcmdBmIXswOc3IBnP7Vo4WNbKmQgGR5Puf5lhYDTn4="
+								"try-bind":                 "3d23u6wPznTcLshJlvky15rgWMFIMQAkMIowHE8Law4="
+								"try-else":                 "YP2Vk3TghPG+WYEdnnXebTWszhs6UlBURrmWfE+IcIM="
 							}
 							multi_step: {
-								hash:       "H78NQT90LLG895CI8GIH479E80QE3OTMBA02VMGRRGRLFBPJK7CG===="
-								scriptHash: "60QC1PORO9JK71AK4S3JHND8ARV9S4KP3QK3A7VMBLP5O5DAL4QG===="
+								hash:       "NLNJ0US5FDPDE0V9IJFAHND362N9UC4I2RTIB8KG55EGK6UC21R0===="
+								scriptHash: "UOGI5MOG1BRRQC6582JQC5U10URGH621GC303D63K7UJSTPLKBPG===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.16.0-alpha.1.0.20260217185644-f2e829930055:$PATH"
+									cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {

@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "OA2J460FODKDEKRPLMUES6L8PS3AADAOFJ56PGFC6VJDKGTR9D30===="
-									scriptHash: "75EJ954K2AR1C8TKVG998EE2C385EBB5BHSS4H4RKP8RVJA8UK3G===="
+									hash:       "7DKFB6COGCLA8J3FPA4K3NPAR43O64RCOLJSTU05S789OG2T3O80===="
+									scriptHash: "FLKA5LTD1COV8EF3FKP4QKO1M3JIEIAJMR6703UTVQA13TG466HG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -74,13 +74,12 @@ package site
 												  -n, --dry-run          only run simulation
 												  -f, --force            force overwriting existing files
 												  -o, --outfile string   filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
+												      --trace            trace computation
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												"""
 									}]

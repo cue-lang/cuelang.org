@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "QUJOPBJHRTDVUF3V6232PO4FQC6ASQI15NN9MKK8Q1QGJJ1BRIA0===="
-									scriptHash: "LAU215ADLEFI226LSKE422NN254OC6CO9C5PE1TMIIJ4H3F7UD4G===="
+									hash:       "VD7BQK0T7C5V3MDF43MJ2UQFTSH9TICDHT7800MDILSAIL50TAA0===="
+									scriptHash: "HTID648D0R49PC0OK4GQA3JRARLHR4RBSPFUN0T1I1JDSS9EIMT0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -34,8 +34,6 @@ package site
 												in OCI Image Layout format. See this link for more details on the format:
 												https://github.com/opencontainers/image-spec/blob/8f3820ccf8f65db8744e626df17fe8a64462aece/image-layout.md
 
-												Note that this command is not yet stable and may be changed.
-
 												Usage:
 												  cue mod publish <version> [flags]
 
@@ -48,8 +46,6 @@ package site
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												"""
 									}]

@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "THI5GCN9ARG11KEQ52FDGU75HQIH5HG05F6C917PU41M4J2PU7R0===="
-									scriptHash: "2SAO4SNF3237OD0IVFNBIACO4JU4FNL89LV7ED2F69OU0HMUNGOG===="
+									hash:       "ERIFPSKF7KUIKCC50MLQ2JUKPH2BGLKLREMDEFPUF6E791S16SC0===="
+									scriptHash: "DQVPIQ6KIARUC2C89EKDO5RP9UFBS35E75RVUGM1OK8HM9JFA5DG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.0-alpha.1:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -70,6 +70,14 @@ package site
 												    Proposal:      https://cuelang.org/issue/4032
 												    Spec change:   https://cuelang.org/cl/1221642
 												    Requires cue fix when upgrading
+
+												  try (preview: v0.16.0)
+												    try enables the try clause and optional reference markers (?).
+												    The try clause allows conditional field inclusion based on whether
+												    optional references resolve. The ? marker on references (a?, a.b?, a[i]?)
+												    is only valid within a try context.
+												    Proposal:      https://cuelang.org/issue/4019
+												    Spec change:   https://cuelang.org/cl/1231444
 
 
 												## Global Experiments

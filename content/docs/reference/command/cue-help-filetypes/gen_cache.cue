@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "LBQTKGOMAGOV2EGM578A9GC1JL99A1Q0NKUMG98JM6LV028J0NSG===="
-									scriptHash: "T9AA8S5MI7NDUS976PG0UF2RECKK8IVAP62VN66M7UKM45CR0MIG===="
+									hash:       "MFSS69OVC56PTQ5OVUKTI9U0S09QM1FR08ATRRG07JFSUSP980M0===="
+									scriptHash: "GQQVIBFD0LDV6L93H1S732GTOK1NP4DAGVI6J2Q8OKAFLI1O6GI0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -67,7 +67,7 @@ package site
 
 												A qualifier applies to all files following it on the command line
 												until the next qualifier. The cue tool does not allow a ':' in
-												filenames.
+												relative filenames.
 
 												The following tags can be used in qualifiers to further
 												influence input or output. For input these act as
@@ -88,6 +88,9 @@ package site
 												    strictFeatures\treport errors for lossy mappings. (jsonschema)
 												    strictKeywords\treport errors for unknown keywords (jsonschema)
 												    strict\t\t\treport errors for either of the above (jsonschema)
+												    openOnlyWhenExplicit
+												    \t\t\t\trequire a schema to be explicitly opened before a
+												    \t\t\t\t... will be added to a struct (jsonschema)
 
 												Many commands also support the --out and --outfile/-o flags.
 												The --out flag specifies the output type using a qualifier

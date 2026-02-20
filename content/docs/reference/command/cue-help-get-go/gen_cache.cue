@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "UQS1VAVGNGCIF81DLU0MK0LIA6L2QOSLSNHJMU3PC3VH0Q25A330===="
-									scriptHash: "S02NGFM9LIHR6FTAJB0284EGILUIKOR3TNPCTS2AGALBN0D0924G===="
+									hash:       "QLFOF7DK4LLV4T0H7I84A7HGF2PTDBJ2RMFELGA2UMJL5LFH4850===="
+									scriptHash: "F1ESK7EFLFIDKURBEQ872VGNHQV7776I32PC16VA3RTJFJMA9M80===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -41,7 +41,8 @@ package site
 												Go structs are converted to cue structs adhering to the following conventions:
 
 												\t- field names are translated based on the definition of a "json" or "yaml"
-												\t  tag, in that order.
+												\t  tag, in that order. A --codec flag can be used to change the priority of
+												\t  the tag search.
 
 												\t- embedded structs marked with a json inline tag unify with struct
 												\t  definition. For instance, the Go struct
@@ -169,17 +170,17 @@ package site
 												  cue get go [packages] [flags]
 
 												Flags:
+												      --codec string     comma-separated priority list of struct tags to use for field names (default "json,yaml")
 												  -e, --exclude string   comma-separated list of regexps of identifiers to omit
 												      --local            generates files in the main module locally
 												      --outfile string   generate one CUE file for a single Go package
 												  -p, --package string   package name for generated CUE files
+												  -v, --verbose          print information about progress
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												"""
 									}]

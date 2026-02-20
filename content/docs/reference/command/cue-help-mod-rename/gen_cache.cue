@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "V2H7FKA09VSIP4P7AKMNJGPN2FGSDUP2ONRR1GL2A3H6CDOPRL7G===="
-									scriptHash: "VQQJFRJ0ET9TL12SHFOJKPODHM9RROMQ2OBES990DKA9D3E4CPN0===="
+									hash:       "AHR3FC4KML6CF0ELM2D4OT027GMKVRSPS87VEMP0RAPAVG42L5M0===="
+									scriptHash: "Q01GSTGVBQO39CTAHA9DHIMS1LCR6OSHG17F034O1S3L6J75QK9G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0-alpha.2.0.20260220153551-3dfa50a46189:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -23,8 +23,6 @@ package site
 												Rename changes the name of the current module,
 												updating import statements in source files as required.
 
-												Note that this command is not yet stable and may be changed.
-
 												Usage:
 												  cue mod rename <newModulePath> [flags]
 
@@ -32,8 +30,6 @@ package site
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												"""
 									}]
