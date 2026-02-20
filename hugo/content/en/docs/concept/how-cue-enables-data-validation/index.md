@@ -458,15 +458,15 @@ aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain
     ./policy.cue:6:12
     ./data.yml:1:10
     ./policy.cue:6:29
-    ./schema.json:9:21
+    ./schema.json:9:22
     ./schema.proto:2:3
 aString: invalid value "Doesn't start with 'Multiplication', and doesn't contain the square of anInt" (out of bound =~"^Multiplication"):
-    ./schema.json:9:21
+    ./schema.json:9:22
     ./data.yml:1:10
     ./policy.cue:6:12
     ./schema.proto:2:3
 anInt: incompatible integer bounds >99.0 and <100:
-    ./schema.json:14:21
+    ./schema.json:14:22
     ./policy.cue:9:10
 ````
 

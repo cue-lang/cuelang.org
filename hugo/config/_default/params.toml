@@ -7,13 +7,8 @@ images = ['img/social.png']
 logo = 'svg/logo.svg'
 
 [notification]
-content = '**CUE v0.15 is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/v0.15.0)'
-type = 'cue-minor-release-v0.15'
-
-[notification.button]
-icon = 'download'
-link = '/docs/introduction/installation/'
-text = 'Install CUE'
+content = '**CUE v0.16.0-alpha.2.0.20260220153551-3dfa50a46189**'
+type = 'cue-tip-release-v0.16.0-alpha.2.0.20260220153551-3dfa50a46189'
 
 [[tags]]
 color = 'red'

@@ -10,8 +10,6 @@ This command is still in an experimental stage -- it may be changed or removed a
 {{</info>}}
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGhlbHAgbW9kIG1pcnJvcg==" }
 $ cue help mod mirror
-WARNING: THIS COMMAND IS EXPERIMENTAL.
-
 This commmand ensures that a set of modules and their dependencies
 are available ("mirrored") in a registry.
 
@@ -41,8 +39,6 @@ dependencies will be used. When --mod is given and no modules
 are specified on the command line, all the current module's dependencies will
 be mirrored.
 
-Note that this command is not yet stable and may be changed.
-
 Usage:
   cue mod mirror [module...] [flags]
 
@@ -58,6 +54,4 @@ Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
   -s, --simplify     simplify output
-      --trace        trace computation
-  -v, --verbose      print information about progress
 ````

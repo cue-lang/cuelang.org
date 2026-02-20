@@ -54,7 +54,7 @@ definitions.
 
 A qualifier applies to all files following it on the command line
 until the next qualifier. The cue tool does not allow a ':' in
-filenames.
+relative filenames.
 
 The following tags can be used in qualifiers to further
 influence input or output. For input these act as
@@ -75,6 +75,9 @@ valid with is mentioned in parentheses at the end.
     strictFeatures	report errors for lossy mappings. (jsonschema)
     strictKeywords	report errors for unknown keywords (jsonschema)
     strict			report errors for either of the above (jsonschema)
+    openOnlyWhenExplicit
+    				require a schema to be explicitly opened before a
+    				... will be added to a struct (jsonschema)
 
 Many commands also support the --out and --outfile/-o flags.
 The --out flag specifies the output type using a qualifier

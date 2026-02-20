@@ -133,16 +133,12 @@ site: params: {
 	logo: "svg/logo.svg"
 
 	// Site-wide notification-bar.
+	//
+	// TODO: ensure the content below aligns with baseEnv above
 	notification: {
-		type: "cue-minor-release-\(versions.cue.latest.majorDotMinor)"
-		// Omitting the button field removes the bar's button entirely.
-		button: {
-			link: "/docs/introduction/installation/"
-			icon: "download"
-			text: "Install CUE"
-		}
+		type: "cue-tip-release-\(versions.cue.tip.v)"
 		// Markdown is permitted in the content field.
-		content: "**CUE \(versions.cue.latest.majorDotMinor) is now available** -- learn more about its [new features and improvements](https://github.com/cue-lang/cue/releases/tag/\(versions.cue.latest.majorDotMinor).0)"
+		content: "**CUE \(versions.cue.tip.v)**"
 	}
 
 	// The tag order in this file determines their relative positions at

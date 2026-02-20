@@ -28,7 +28,8 @@ Rules of Converting Go types to CUE
 Go structs are converted to cue structs adhering to the following conventions:
 
 	- field names are translated based on the definition of a "json" or "yaml"
-	  tag, in that order.
+	  tag, in that order. A --codec flag can be used to change the priority of
+	  the tag search.
 
 	- embedded structs marked with a json inline tag unify with struct
 	  definition. For instance, the Go struct
@@ -156,15 +157,15 @@ Usage:
   cue get go [packages] [flags]
 
 Flags:
+      --codec string     comma-separated priority list of struct tags to use for field names (default "json,yaml")
   -e, --exclude string   comma-separated list of regexps of identifiers to omit
       --local            generates files in the main module locally
       --outfile string   generate one CUE file for a single Go package
   -p, --package string   package name for generated CUE files
+  -v, --verbose          print information about progress
 
 Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
   -s, --simplify     simplify output
-      --trace        trace computation
-  -v, --verbose      print information about progress
 ````

@@ -25,8 +25,6 @@ The --module flag changes the module's path (the module.cue file's module field)
 The --source flag changes the module's declared source.
 The --drop-source flag removes the source field.
 
-Note that this command is not yet stable and may be changed.
-
 Usage:
   cue mod edit [flags]
 
@@ -42,6 +40,4 @@ Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
   -s, --simplify     simplify output
-      --trace        trace computation
-  -v, --verbose      print information about progress
 ````

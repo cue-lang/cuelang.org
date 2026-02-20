@@ -250,7 +250,7 @@ package      import
 The following keywords are used in comprehensions.
 
 ```
-for          in           if           let
+for          in           if           let          else
 ```
 
 <!--
@@ -1864,10 +1864,10 @@ float64   >=-1.797693134862315708145274237317043567981e+308 &
 
 An identifier of a package may be exported to permit access to it
 from another package.
-All identifiers not starting with `_` (so all regular fields and definitions
-starting with `#`) are exported.
-Any identifier starting with `_` is not visible outside the package and resides
-in a separate namespace than namesake identifiers of other packages.
+All identifiers not starting with `_` are exported,
+such as regular fields or definitions starting with `#`.
+Any identifier starting with `_` is hidden from other packages;
+it resides in a separate namespace than namesake identifiers of other packages.
 
 ```
 package mypackage
@@ -2622,8 +2622,23 @@ Within structs, the values yielded by a comprehension are embedded within the
 struct.
 Both structs and lists may contain multiple comprehensions.
 
+A comprehension may have an optional `else` clause.
+The else clause is evaluated and its contents yielded
+if the comprehension completes without yielding any values.
+For an `if` comprehension, this occurs when the condition is false.
+For a `for` comprehension, this occurs when the source is empty
+or when all iterations are filtered out by subsequent `if` clauses.
+
+The else clause body is evaluated in the enclosing scope,
+not the comprehension's internal scope.
+This means identifiers bound by `for` or `let` clauses
+are not accessible within the else clause.
+
+If the comprehension source or condition contains an error,
+the error propagates rather than triggering the else clause.
+
 ```
-Comprehension       = Clauses StructLit .
+Comprehension       = Clauses StructLit [ ElseClause ] .
 
 Clauses             = StartClause { [ "," ] Clause } .
 StartClause         = ForClause | GuardClause .
@@ -2631,6 +2646,7 @@ Clause              = StartClause | LetClause .
 ForClause           = "for" identifier [ "," identifier ] "in" Expression .
 GuardClause         = "if" Expression .
 LetClause           = "let" identifier "=" Expression .
+ElseClause          = "else" StructLit .
 ```
 
 ```
@@ -2645,6 +2661,24 @@ c: {
     }
 }
 d: { "1": 2, "2": 3, "3": 4 }
+
+// else clause examples
+e: {
+    if false { a: 1 } else { b: 2 }
+}
+f: { b: 2 }
+
+g: {
+    for x in [] { "\(x)": x } else { empty: true }
+}
+h: { empty: true }
+
+// else clause accesses outer scope
+i: {
+    let threshold = 10
+    for x in [] { x } else { fallback: threshold }
+}
+j: { fallback: 10 }
 ```
 
 
@@ -2684,9 +2718,9 @@ Builtin functions are predeclared. They are called like any other function.
 ### `error`
 The `error` builtin allows users to create custom error values with a specified
 message.
-User-generated errors can be included in disjunctions; if at least one disjunct
-is valid, any user errors are ignored.
-However, if all disjuncts fail, all user error messages are reported together.
+Custom errors can be included in disjunctions; if at least one disjunct
+is valid, any custom errors are ignored.
+However, if all disjuncts fail, all custom error messages are reported together.
 
 `error` takes a single string argument. If this argument is a literal
 interpolation, it will be extra resilient: if any of the arguments to the

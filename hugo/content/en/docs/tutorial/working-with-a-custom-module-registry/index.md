@@ -43,7 +43,7 @@ This tutorial is written using the following version of `cmd/cue`:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.15.4
+cue version v0.16.0-alpha.2.0.20260220153551-3dfa50a46189
 ...
 ````
 
@@ -302,7 +302,7 @@ We can see that the dependencies have now been added to the
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
-	version: "v0.15.4"
+	version: "v0.16.0"
 }
 source: {
 	kind: "git"
@@ -452,7 +452,7 @@ Here is what the `cue.mod/module.cue` file now looks like:
 $ cat cue.mod/module.cue
 module: "glacial-tech.example/frostyapp@v0"
 language: {
-	version: "v0.15.4"
+	version: "v0.16.0"
 }
 source: {
 	kind: "git"

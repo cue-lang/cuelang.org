@@ -446,21 +446,21 @@ $ cue export .:A data.cue
     "x": "foo"
 }
 $ cue export data.cue .:A
-no encoding specified for file ".:A"
+cannot combine scope with file
 $ cue export .:A data.yml
 {
     "x": "foo",
     "y": 2
 }
 $ cue export data.yml .:A
-no encoding specified for file ".:A"
+cannot combine scope with file
 $ cue export .:A packageB.cue
 {
     "x": "foo",
     "y": 2
 }
 $ cue export packageB.cue .:A
-no encoding specified for file ".:A"
+cannot combine scope with file
 
 # "If <u style='text-decoration-style: dotted;'>CUE package file</u> inputs are present then their package clauses need to be
 # the same as each other"
@@ -703,10 +703,10 @@ B: 1000
 {{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV4cG9ydCBkYXRhLnltbCBzY2hlbWEuanNvbg==" >}}
 $ cue export data.yml schema.json
 A: invalid value 50 (out of bound >=100):
-    ./schema.json:7:13
+    ./schema.json:7:14
     ./data.yml:1:4
 B: invalid value 1000 (out of bound <=99):
-    ./schema.json:11:13
+    ./schema.json:11:14
     ./data.yml:2:4
 {{< /code-tab >}}
 {{< /code-tabs >}}
