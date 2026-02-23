@@ -7,27 +7,29 @@ toc_hide: false
 
 {{<sidenote text="Requires CUE v0.16.0 or later">}}
 
-CUE v0.16.0-alpha.2 introduced a new optional `else` clause in comprehensions.
+CUE v0.16.0-alpha.2 introduced the "try" experiment, which also adds
+new optional `else` and `fallback` clauses in comprehensions.
 
-To use this language feature, update your module to target language version
-v0.16.0 or later with [`cue mod edit`]({{<relref
-"docs/reference/command/cue-help-mod-edit" >}}):
+To use this language feature, update your module to target language version v0.16.0
+or later with [`cue mod edit`]({{<relref "docs/reference/command/cue-help-mod-edit" >}}):
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBlZGl0IC0tbGFuZ3VhZ2UtdmVyc2lvbiB2MC4xNi4w" }
 $ cue mod edit --language-version v0.16.0
 ````
 
-With this change to the language, an `if` or `for` comprehension may be followed
-by an `else` clause which triggers when the comprehension produced zero values.
-For example, this occurs when:
-- An `if` clause condition is false
-- A `for` clause iterates over an empty collection
-- A `for` clause has all iterations filtered out by `if` clauses
+You can now enable the experiment on a per-file basis using `@experiment(try)`.
+
+With this change to the language, an `if` comprehension may be followed
+by an `else` clause which triggers when the condition is not met,
+and a `for` comprehension may be followed by a `fallthrough` clause
+which triggers when the comprehension produced zero values.
 
 An `else` clause can help avoid repetition or verbosity, for instance:
 
 {{< code-tabs >}}
 {{< code-tab name="if-without-else.cue" language="cue" area="top-left" >}}
+// No experiment required
+
 package p
 
 _foo: true
@@ -41,6 +43,8 @@ if !(_foo && _bar) {
 }
 {{< /code-tab >}}
 {{< code-tab name="if-with-else.cue" language="cue" area="top-right" >}}
+@experiment(try)
+
 package p
 
 if _foo && _bar {
@@ -56,10 +60,12 @@ withoutElse: condition met
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
-An `else` clause can also be used as a fallback for loops that produce zero values:
+A `fallback` clause can be used for loops which can produce zero values:
 
 {{< code-tabs >}}
-{{< code-tab name="for-with-else.cue" language="cue" area="top" >}}
+{{< code-tab name="for-with-fallback.cue" language="cue" area="top" >}}
+@experiment(try)
+
 package p
 
 _inputs: ["foo.txt", "bar.xml", "baz.toml"]
@@ -67,7 +73,7 @@ _inputs: ["foo.txt", "bar.xml", "baz.toml"]
 for i, name in _inputs
 if name =~ #"\.cue$"# {
 	cueInputs: (name): i
-} else {
+} fallback {
 	cueInputs: "fallback.cue": -1
 }
 {{< /code-tab >}}
