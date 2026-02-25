@@ -26,7 +26,7 @@ You can now enable the experiment on a per-file basis using `@experiment(try)`.
 
 With this change to the language, an `if` comprehension may be followed
 by an `else` clause which triggers when the condition is not met,
-and a `for` comprehension may be followed by a `fallthrough` clause
+and a `for` comprehension may be followed by a `fallback` clause
 which triggers when the comprehension produced zero values.
 
 An `else` clause can help avoid repetition or verbosity, for instance:
