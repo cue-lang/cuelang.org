@@ -15,8 +15,8 @@ package site
 								"14": "wSD6jBw3WiA8aaENIqEs608WMNao7OYKh9I2ytHtU5Q="
 							}
 							multi_step: {
-								hash:       "MB2PQNMCPKN6ROR0LR7M6JB72T53KT446VPNG093OD18H2LIRDT0===="
-								scriptHash: "UTIVS0RV5DF0Q37M31FDIK5TK5BQTMADUV0K0M077TLE8ROH41OG===="
+								hash:       "ONDSU5OI2LDKVQNMOTIC886TLAOKD0JQ44V1RDCR6OL61M5PSDCG===="
+								scriptHash: "MV1AFJV551Q8JCLL5PGIGKL6Q30SEVG3GCJO7NC4I949A04OM380===="
 								steps: [{
 									doc:      "# Set up example content as a git repo."
 									cmd:      "cd gitlab"
@@ -131,7 +131,7 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "curl -fsSo internal/ci/gitlab/gitlab.cicd.pipeline.schema.json https://gitlab.com/gitlab-org/gitlab/-/raw/277c9f6b643c92d00101aca0f2b4b874a144f7c5/app/assets/javascripts/editor/schema/ci.json"
+									cmd:      "cp ../gitlab.cicd.pipeline.schema.json internal/ci/gitlab/"
 									exitCode: 0
 									output:   ""
 								}, {
