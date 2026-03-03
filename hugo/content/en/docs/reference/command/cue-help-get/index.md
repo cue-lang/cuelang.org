@@ -35,3 +35,4 @@ Global Flags:
 
 Use "cue get [command] --help" for more information about a command.
 ````
+

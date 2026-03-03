@@ -1,4 +1,1 @@
-// Code generated site_tool.cue; DO NOT EDIT.
-package site
-
-{"content":{"docs":{"reference":{"command":{"cue-help-completion":{"page":{}}}}}}}
+"// Code generated site_tool.cue; DO NOT EDIT.\npackage site\n\n{\"content\":{\"docs\":{\"reference\":{\"command\":{\"cue-help-completion\":{\"page\":{}}}}}}}\n"
