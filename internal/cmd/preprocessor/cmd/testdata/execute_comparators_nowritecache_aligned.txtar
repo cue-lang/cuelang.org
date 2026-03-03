@@ -1,0 +1,87 @@
+# Test that preprocessor comparators correctly handle column-aligned output
+# when --nowritecache is set with a cache miss, specifically when numbers
+# have different digit counts between the cached and actual outputs.
+#
+# CUE evaluator stats output uses right-aligned numeric columns. When numbers
+# change digit count between runs, the column padding (spaces before numbers)
+# changes too. A comparator pattern of (?m)\d+,?$ only normalizes digits,
+# not the preceding whitespace, causing false mismatches. The fix is to use
+# (?m)\s+\d+,?$ which normalizes both the whitespace padding and the digits.
+
+unquote content/dir/en.md
+
+# Run the preprocessor to generate initial cache and output files.
+exec preprocessor execute --debug=all
+
+# Save copies
+cp content/dir/en.md content/dir/en.md.original
+
+# Modify gen_cache.cue to:
+# 1. Change the hash to trigger cache miss (simulating preprocessor change)
+# 2. Change the cached step output to have different digit counts:
+#   FieldA: "42" (2 digits) -> "1" (1 digit)
+#   FieldB: "123456" (6 digits) -> "1" (1 digit)
+#   FieldC: "7" (1 digit) -> "12345" (5 digits)
+exec sed -i 's/hash:       "[^"]*"/hash:       "INVALIDHASHVALUE"/' content/dir/gen_cache.cue
+exec sed -i 's/FieldA:        42/FieldA:         1/' content/dir/gen_cache.cue
+exec sed -i 's/FieldB:    123456/FieldB:         1/' content/dir/gen_cache.cue
+exec sed -i 's/FieldC:         7/FieldC:     12345/' content/dir/gen_cache.cue
+cp content/dir/gen_cache.cue content/dir/gen_cache.cue.modified
+
+# Run with --nowritecache. The script re-runs (cache miss) and produces
+# the original output. The comparator normalizes both the actual and
+# cached outputs (including whitespace padding) and determines they're
+# equivalent, then uses the cached version.
+exec preprocessor execute --debug=all --nowritecache
+stderr $WORK${/}'content'${/}'dir'${/}'en.md: cache miss for multi-step script'
+
+# gen_cache.cue was NOT updated (nowritecache prevented it)
+cmp content/dir/gen_cache.cue content/dir/gen_cache.cue.modified
+
+# Source file was not changed
+cmp content/dir/en.md content/dir/en.md.original
+
+# The target file should contain the CACHED version of the output (with the
+# modified numbers), because the comparator determined equivalence between
+# actual and cached outputs despite different digit counts in column-aligned
+# fields. If the target instead has the original numbers, the comparator
+# failed to handle the whitespace/digit-count variation.
+exec grep 'FieldA:         1' hugo/content/en/dir/index.md
+
+-- hugo/.keep --
+-- site.cue --
+package site
+
+import "strings"
+
+versions: cue: [x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
+
+versions: cue: default: v: "v0.9.0-alpha.3"
+-- content/dir/page.cue --
+package site
+
+content: dir: page: {
+	leftDelim:  "{{{"
+	rightDelim: "}}}"
+
+	comparators: [{
+		kind:          "patternComparator"
+		commandPrefix: "cat stats.txt"
+		pattern: expr: #"(?m)\s+\d+,?$"#
+	}]
+}
+-- content/dir/en.md --
+>---
+>title: Stats Test
+>---
+>{{{with upload "en" "stats file"}}}
+>-- stats.txt --
+>Stats: {
+>	FieldA:        42
+>	FieldB:    123456
+>	FieldC:         7
+>}
+>{{{end}}}
+>{{{with script "en" "read stats"}}}
+>cat stats.txt
+>{{{end}}}
