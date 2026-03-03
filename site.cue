@@ -287,12 +287,16 @@ template: base.#writefs & {
 			"\(configDefault)/menus/menus.\(v).toml": contents: site.menus[v]
 		}
 
-		"playground/src/config/gen_cuelang_org_go_version.ts": contents: #"""
+		"playground/src/config/gen_cuelang_org_go_version.ts": {
+
+			encoding: "text"
+			contents: #"""
 			// \#(donotedit)
 
 			export const CUEVersion = '\#(versions.cue.playground.v)';
 
 			"""#
+		}
 
 		for _, cmd in command.cue {
 			"\(command.contentRoot)/\(cmd.dir)/page.cue": contents: #"""
@@ -302,7 +306,10 @@ template: base.#writefs & {
 					\#(cmd.cuePath)
 
 					"""#
-			"\(command.contentRoot)/\(cmd.dir)/en.md": contents:    #"""
+			"\(command.contentRoot)/\(cmd.dir)/en.md": {
+
+				encoding: "text"
+				contents: #"""
 					---
 					WARNING: "\#(donotedit)"
 					title: "\#(cmd.title)"
@@ -318,14 +325,15 @@ template: base.#writefs & {
 					\#(cmd.execCmd)
 					{{{end}}}
 					\#( strings.Join([if len(cmd.relatedCommands) > 0 for e in [
-										"", "## Related content", "",
-										for c in cmd.relatedCommands
-										let path = strings.Replace(c, " ", "-", -1) {
-					#"- {{< linkto/related/reference "command/\#(path)" >}}"#
-				},
-			] {e},
-			], "\n"))
+						"", "## Related content", "",
+						for c in cmd.relatedCommands
+						let path = strings.Replace(c, " ", "-", -1) {
+						#"- {{< linkto/related/reference "command/\#(path)" >}}"#
+					},
+				] {e},
+				], "\n"))
 					"""#
+			}
 		}
 	}
 }
