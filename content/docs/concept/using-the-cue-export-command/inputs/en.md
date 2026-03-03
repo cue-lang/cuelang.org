@@ -644,10 +644,10 @@ A: 50
 B: 1000
 -- out --
 A: invalid value 50 (out of bound >=100):
-    ./schema.json:7:13
+    ./schema.json:7:14
     ./data.yml:1:4
 B: invalid value 1000 (out of bound <=99):
-    ./schema.json:11:13
+    ./schema.json:11:14
     ./data.yml:2:4
 {{{end}}}
 

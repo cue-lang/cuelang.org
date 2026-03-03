@@ -18,13 +18,12 @@ Usage:
 
 Available Commands:
   gengotypes    generate Go types from CUE definitions
+  writefs       remove and create files in bulk
 
 Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
   -s, --simplify     simplify output
-      --trace        trace computation
-  -v, --verbose      print information about progress
 
 Use "cue exp [command] --help" for more information about a command.
 ````
