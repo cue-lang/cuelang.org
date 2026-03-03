@@ -10,16 +10,16 @@ import (
 )
 
 versions: {
-	go:            "go1.25.6"
+	go:            "go1.26.0"
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 		latest: {
-			v:             *"v0.15.4" | _
+			v:             *"v0.16.0" | _
 			majorDotMinor: strings.Join(list.Take(strings.Split(v, "."), 2), ".")
 		}
-		prerelease: v: *"v0.16.0-alpha.2" | _
-		tip: v:        *"v0.16.0-alpha.2.0.20260223153954-fe9f5031cea0" | _
+		prerelease: v: *latest.v | _
+		tip: v:        *latest.v | _
 		default: v:    latest.v
 		playground: v: latest.v
 	}
@@ -30,7 +30,7 @@ versions: {
 	testscript:  "v1.13.1"
 	libcue:      "1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf" // https://github.com/cue-lang/libcue
 	cueApiJava:  "3c12bb9e9ea203d4de8308b4145e876e4b60207e" // https://github.com/cue-lang/cue-api-java
-	staticcheck: "v0.6.0"
+	staticcheck: "v0.7.0"
 
 	// Container image pinning: specify a tag with a ":" prefix, or pin to a
 	// specific digest by using a "@" prefix.

@@ -38,7 +38,7 @@ Check that the Go prerequisites are met:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Z28gdmVyc2lvbgpnbyBlbnYgQ0dPX0VOQUJMRUQ=" }
 $ go version
-go version go1.25.6 linux/amd64
+go version go1.26.0 linux/amd64
 $ go env CGO_ENABLED
 1
 ````

@@ -55,10 +55,10 @@ _sortAtSymbolCountDescending: {
 stringsCountDescending: ["@", "@@", "X"]
 stringsCountDescending: list.IsSorted(_sortAtSymbolCountDescending) // validation failure
 -- out --
-stringsDescending: invalid value ["A","B","C"] (does not satisfy list.IsSorted({T:number | string,x:number | string,y:number | string,less:_|_(Descending.less: Descending.less: unresolved disjunction number | string (type (string|number)) (and 1 more errors))})):
+stringsDescending: invalid value ["A","B","C"] (does not satisfy list.IsSorted({T:number | string,x:number | string,y:number | string,less:_|_(Descending.less: unresolved disjunction number | string (type (string|number)) (and 1 more errors))})):
     ./file.cue:16:20
     ./file.cue:17:20
-stringsCountDescending: invalid value ["@","@@","X"] (does not satisfy list.IsSorted({x:string,y:string,less:_|_(_sortAtSymbolCountDescending.less: _sortAtSymbolCountDescending.less: error in call to strings.Count: non-concrete value string (and 1 more errors))})):
+stringsCountDescending: invalid value ["@","@@","X"] (does not satisfy list.IsSorted({x:string,y:string,less:_|_(_sortAtSymbolCountDescending.less: error in call to strings.Count: non-concrete value string (and 1 more errors))})):
     ./file.cue:33:25
     ./file.cue:32:25
 {{{end}}}

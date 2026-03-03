@@ -30,8 +30,6 @@ this command will fail.
 See "cue help environment" for details on how $CUE_REGISTRY is used to
 determine the modules registry.
 
-Note that this command is not yet stable and may be changed.
-
 Usage:
   cue mod get [flags]
 
@@ -39,8 +37,6 @@ Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
   -s, --simplify     simplify output
-      --trace        trace computation
-  -v, --verbose      print information about progress
 ````
 
 ## Related content
