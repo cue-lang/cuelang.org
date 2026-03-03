@@ -8,37 +8,37 @@ package site
 						page: {
 							cache: {
 								code: {
-									"cue export # package x1":                                   "pw3QYyJP/g7EvFCqh63E0xVJJr4NOF1Yx/kLOcLvIyg="
-									"! cue export # package x2":                                 "gHiZcQ6fIwlulIF3qDshqS5XnN4FSsps2YEUgyQ9xVs="
-									"cue export . # package x1":                                 "/+qQ8gqve6b/7aazkoOXRGhvazy7mS3EA3SDZ6+pAu4="
-									"cue export .:one":                                          "9DwOccksQlHEWqJPRMdVGmmLcGfAg6wir51E76gI4n4="
-									"cue export data.yaml":                                      "la2yHmHHrbzEoFpeDcXlM3TwiU0i5OTRmt6LbMG7ubY="
-									"cue export yaml: some.yaml.data":                           "+NWqcjJzOi/YehqUDJsFtKyFoScfNCTr4/7xqRRF9wo="
-									"cue export .:one .:two .:three":                            "Q8b49dMIdAeMR6+FjridcO8AW5iHz/769INGdkkhX9Y="
-									"cue export package + package file + data + packageless":    "GWJ/+vXt+VL5/o806LNi40kQ655T1pWZR/qnsMbcD7A="
-									"package file + data":                                       "itw/Tkk8aYZR9Wn6onOy27NUSflQGR2r4Acsvolv8es="
-									"cue export package + 2x package file + data + packageless": "lbv3qLCGbYiMlohU4Nbuv9tm7Eisg/rC/chtzJiCoCA="
-									"data file inputs":                                          "zR+ua8w3MmldsANMAXCQI27PW9Z4UePsZX6Y9szGqkQ="
-									"data file inputs failure":                                  "UcSlWemWlLkka8C/gsYzsbPWUeemiw97C0IXiIZhyGk="
-									"constraint file validating data":                           "2Y+Xy26OtwzcstyIoj85YT+HkVjiGLSiMZLcqadit98="
-									"constraint file exported as data":                          "RdyXb2H1yK5a64IZYGsWqdk7QTgNibldzkUy8wL5s4I="
-									"-l static single":                                          "nHxX6G1xVeKVKI7QsiBBfiLafs1Y4dS8RgDYq0jfCUM="
-									"-l static multiple":                                        "LxViuGNv3W20iwDjv474S3nxMJpcmG4vR9WEIK9bw/E="
-									"-l static multiple files":                                  "HBHR6+RN/O6dpoUyIbxGvP4v/4TDFLtzd6Jot9Jup+A="
-									"-l dynamic single":                                         "fSyNwiStHLaI7MTiR/lyhYnmmaShQcWhy4Ph3pcdyY0="
-									"-l dynamic single with function":                           "acDeGMCWu94Q+vVS7iAFdCi2zAEdXngrNEnvSZVWwWE="
-									"-l dynamic --with-context":                                 "tBQrAMOQ7FHPGGsyIlMyTebki5eCO6yvQ3wh6HbJcww="
-									"multi-doc merge":                                           "i+Bmo0f9B1ciXlXFJ6EntWqea6acGDp8WGUhr4L6Vdo="
-									"multi-doc list":                                            "eVYEbsQEnY/LUArRdVjIe+BTpPXmYQfM5KniQS5bAoY="
+									"cue export # package x1":                                   "LFu66DkO7bBQ0dn5hRyLmxhkhOYbhHmM4OuISJZlquI="
+									"! cue export # package x2":                                 "SNXIXKxCB9bR3Rldnc51naJLP7l8GTjOO55Pb2ZyN/0="
+									"cue export . # package x1":                                 "wERswXS2cZ5nnAZotEfI2gNHqsiYv6Wv+Gh/mFACQf0="
+									"cue export .:one":                                          "FbsB9VwBSjf5UlLpP2uTXY8YN6CiWJirmb9okmOL5Xg="
+									"cue export data.yaml":                                      "Lyj7QKVO1y3u4qmhpwksN9LuBUBoNk97zMhJoImoFlk="
+									"cue export yaml: some.yaml.data":                           "rvr+xHVz1jE4VX+hokar+eIhHvLwbXZrxUUTl3ope9Y="
+									"cue export .:one .:two .:three":                            "0UBs9Qsw0W2Ms/T2EcrYdUBv6e1yjjjEyzuTbKRUtpQ="
+									"cue export package + package file + data + packageless":    "rddNg4kNY51WNpEl8/Cug4FDqqNBfDDQSw8a09Hzxro="
+									"package file + data":                                       "s7nyr5lOzT5MqA4GX06iXgO7ltsx5P2OxPhVswaYI1A="
+									"cue export package + 2x package file + data + packageless": "qjpJ0zkM0zzoA/QjEuRhabVBL+Ylk/o3QJ+bYiRYfFo="
+									"data file inputs":                                          "EtG8DxjW6aUpEU63BTg/1FYKLMhKTt17upW49lgN5Ro="
+									"data file inputs failure":                                  "ShbeRMEqQnBoueW1ulNJzwufzRyJ5OCVMMwBiEGuwWY="
+									"constraint file validating data":                           "WWb4Lgaf2EnykLlkvb48A0VRi3DZh6TVrg39AP3DeEU="
+									"constraint file exported as data":                          "lev2VOks104tgaY8OlaXv8hTV/nwDDsgj6H3oOsuD/k="
+									"-l static single":                                          "qLm3hfUprUo6LLbOKw4UAf9DrbI+S2GgLstUF2ggjUs="
+									"-l static multiple":                                        "/medZ4BhCcDZzuOSUP41M9Q7Dl4QPK2DF+RiD0vzDqM="
+									"-l static multiple files":                                  "6WY6S8MGyldJNCIejp/+Faal+E5rNgeJ1TTyk+XF1b8="
+									"-l dynamic single":                                         "X2L1kKrteKnvTN/7ZmSFDUrOJkxLAs6Yo5CONFkOr7k="
+									"-l dynamic single with function":                           "WBgwd7/OiCn/xPgNpbNwla3yvADbXmP/YnkXBp/jEW0="
+									"-l dynamic --with-context":                                 "EDQeO8/CrRXLI+diBaRJswa+HJNY7vOzyBRmvDNXCRc="
+									"multi-doc merge":                                           "9yzqVp+cw1ZNA9/LXo/nDTxRSiSpMHFfZNdlpx4eJZs="
+									"multi-doc list":                                            "/W9MftdIcttu5ZcP45vhOm6mofl2wPXJMz/KIWVmtGo="
 								}
 								upload: {
-									"test cue package inputs prose":              "2C2B0hJnXVn4rgX14ZggWnMSXbNz+hTQy4oy++dFls4="
-									"test multiple cue package inputs prose":     "6V0IxZnZRPSg2mzO3QVWSXQwNc0iQGYZq/TgpbSXbPU="
-									"test cue package + other input types prose": "oOXmbFzI7EY20erAgUm3XwL57rltyTx1g2GKUhszcy8="
-									"stdin data":                                 "XdC7hm7cajTAcrBN/yVWb+SOSb9yuwKuTdGwNWnlB+Q="
+									"test cue package inputs prose":              "KkZRPZIGGdfZHmSkpjQ7zHzUn/WhZj+0269oYtkpxYs="
+									"test multiple cue package inputs prose":     "beOiXLqAIpEX6OiYoZg2Y4GLSjVWsevQyspXjGYbKB4="
+									"test cue package + other input types prose": "IGpcGPCLP2DrUBJRTtSVZHrXsvwLlIRsR+1nCBe7NpM="
+									"stdin data":                                 "pRe20Vjyskm5kpjLDqGZT4mzZwP/aPutbU3pIUTd+pc="
 								}
 								multi_step: {
-									hash:       "11A36K66A1M8TR8V587RIGSOGN3GE96190GOJNC7LHE7KJDDP4MG===="
+									hash:       "3HCQJ61H0QMGLNGGLARDTP16BNVGPK3OMDQ48RMG5T4S8ACO0NVG===="
 									scriptHash: "89HBMOT8AA8UQ8IK2O3ALTSIC68PN1CPK8P82O16CPN7KV1FOF80===="
 									steps: [{
 										doc:      "# \"A <u style='text-decoration-style: dotted;'>CUE package</u> input can either be combined with other <u style='text-decoration-style: dotted;'>CUE package</u> inputs,\""
@@ -233,7 +233,7 @@ package site
 										cmd:      "cue export data.cue .:A"
 										exitCode: 1
 										output: """
-												no encoding specified for file ".:A"
+												cannot combine scope with file
 
 												"""
 									}, {
@@ -252,7 +252,7 @@ package site
 										cmd:      "cue export data.yml .:A"
 										exitCode: 1
 										output: """
-												no encoding specified for file ".:A"
+												cannot combine scope with file
 
 												"""
 									}, {
@@ -271,7 +271,7 @@ package site
 										cmd:      "cue export packageB.cue .:A"
 										exitCode: 1
 										output: """
-												no encoding specified for file ".:A"
+												cannot combine scope with file
 
 												"""
 									}, {

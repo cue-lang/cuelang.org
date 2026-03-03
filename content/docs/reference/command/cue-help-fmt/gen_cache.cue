@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "T5B8MQE0D9DHAFMRF70QUBR828OL5RVN5BFAJ92M0PRND7K8TE70===="
-									scriptHash: "85LFK5SUM5N5JTCDPMF4JHIU2I1O0CFTEV0E64L56234EN2L6460===="
+									hash:       "IN44IO7HBB9TLTCMBHHTU5BT32DF0DJJK89PO6JMC1QBC5Q9DAL0===="
+									scriptHash: "LEU7HJC0L4KBRB6228RN7TPK88COKFLP99EURB3PIF1HTSU9TP00===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.15.4:$PATH"
+										cmd:      "export PATH=/cues/v0.16.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -20,27 +20,38 @@ package site
 										cmd:      "cue help fmt"
 										exitCode: 0
 										output: """
-												Fmt formats the given files or the files for the given packages in place
+												fmt rewrites CUE files in the standard format.
 
-												Arguments are interpreted as import paths (see 'cue help inputs') unless --files is set,
-												in which case the arguments are file paths to descend into and format all CUE files.
+												Arguments are interpreted as import paths (see 'cue help inputs') and all CUE files
+												in them are formatted, including those behind build attributes or without package names.
+
+												Use --files to treat arguments as paths to files or directories to recursively format.
 												Directories named "cue.mod" and those beginning with "." and "_" are skipped unless
 												given as explicit arguments.
 
+												Examples:
+
+												  # Format stdin
+												  cue fmt -
+
+												  # Fail with a diff if a subset of packages needs formatting
+												  cue fmt --diff ./foo/...
+
+												  # Fail with a list of files if any CUE file in a whole repository needs formatting
+												  cue fmt --check --files .
+
 												Usage:
-												  cue fmt [-s] [inputs] [flags]
+												  cue fmt [flags]
 
 												Flags:
 												      --check   exits with non-zero status if any files are not formatted
 												  -d, --diff    display diffs instead of rewriting files
-												      --files   treat arguments as file paths to descend into rather than import paths
+												      --files   treat arguments as paths to files or directories to recursively format
 
 												Global Flags:
 												  -E, --all-errors   print all available errors
 												  -i, --ignore       proceed in the presence of errors
 												  -s, --simplify     simplify output
-												      --trace        trace computation
-												  -v, --verbose      print information about progress
 
 												"""
 									}]

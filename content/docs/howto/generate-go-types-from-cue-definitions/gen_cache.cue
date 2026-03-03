@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"example 1":              "vfJHpdst3v+/3YcX5atjNgiFdqT3kmWVwwQBf1efDs0="
-								"cue_types_gen.go 1":     "QAeYogEnNaQUw0gKWOTky8xVfnW2OwXz8QTNfZjg2Bg="
-								"example 2":              "Yi186iQSAUCM4Mfp1YuZZLQ87GASwoWBp2K4UYOGLTI="
-								"cue_types_pet_gen.go 2": "ZVyMvfDWnVGXCelJzrX+2zTxIDS962v3WaJNWe0cUJg="
+								"example 1":              "DG9pwRvAY+mkHPFPPEMDpc2cXeb/5adB8y0/2WfIFQY="
+								"cue_types_gen.go 1":     "q2cHgc2JOGMFrhT3XC1hGfptoyLezwPotQjGz3X3jp4="
+								"example 2":              "dRrDkVd10E4NGrZkP+foD73xKaxhWlPiYSaznIWDT/U="
+								"cue_types_pet_gen.go 2": "8doa56iB3jQm1tHEsntoxV+umLiqjfKAKFqjzfi6ZLY="
 							}
 							multi_step: {
-								hash:       "K2IRCOL9SGVKP7M1LQ1DIS7M9109AC25JP7NBTHP0041BBGJEPG0===="
+								hash:       "NS9N686E2I5I45IMF5CRBN3DR0SPA434R8HSESQOJBBP75QGOTHG===="
 								scriptHash: "ENTKF17DD7DNV7030J6UPAS40QU1DIO156V282TQ7OB9E272PPE0===="
 								steps: [{
 									doc:      ""

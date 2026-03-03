@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.json":     "vKc93s4XPEeNj4VJG3TmSUBeDm+ofG9yJr2J+QOEXbc="
-								"schema.cue":      "5O+5xRbd9sC8+eFDiuD2jxPBaK/Gz3lng1yRqs6UCoE="
-								good:              "ilmsEcQX6HWTkV4NNcq8JC/TKczeFYIC0KJroBoux+o="
-								bad:               "NNSFEdkbc3jrI5PunO/zgcvpCDj4p6bS3AmWOxxIBeQ="
-								"main go program": "h431DzhTGs1CFOGpn7Id73K1tpPjm8GuN/15KP71d7g="
+								"schema.json":     "4EQvUD7rp4zaWpJBsSsitjF6yFQWM4MRIk+q4sDKGJw="
+								"schema.cue":      "RNpqKP3vZoBWCJuShfADaW8ffcUWf8EjkGWv0TyehTc="
+								good:              "yU6J+rH/WE2BEnzbr65+0ievN+4ctQJKRGslhbnxSHA="
+								bad:               "Fd6iTdLbhbnfWGmfUyKMu+6g39pWcUSa/RixrqKe1p8="
+								"main go program": "GxSXUkdOzwRK+GW2Ei1rbGGHtIGJjsJk0oUZ1SfsCN4="
 							}
 							multi_step: {
-								hash:       "GPNPQ5DD9IF2LQE2IEBCIS8D38L3UELJ2U9RAGQMEJSVEBUVJ9VG===="
-								scriptHash: "8V3FNLQ00N9CH6ANOD56F2IL4UDNK55DCTTVN5DRMRFS8Q4OSTLG===="
+								hash:       "2R4IIN0UABCSRS5JHQRQ1TUHGP90QBPO1O81IROFC773DM31J3MG===="
+								scriptHash: "D8DT9ONN7HRFFFHEKT71CROSQ15QFUK0K56IKVF8HJLRMJ34GMF0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -53,7 +53,7 @@ package site
 									output: """
 											name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
 											    ./bad.json:2:13
-											    ./schema.json:13:13
+											    ./schema.json:13:14
 
 											"""
 								}, {
@@ -78,7 +78,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.15.4"
+									cmd:      "go get cuelang.org/go@v0.16.0"
 									exitCode: 0
 									output: """
 											...
@@ -110,7 +110,7 @@ package site
 									output: """
 											name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
 											    bad.json:2:13
-											    schema.json:13:13
+											    schema.json:13:14
 											exit status 1
 
 											"""
