@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "90808ef9_4f2496a3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1020333
+      },
+      "writtenOn": "2026-03-03T15:30:23Z",
+      "side": 1,
+      "message": "+2 on behalf of @paul@myitcv.io in order to unblock; there is a bug in the detection of changes to the statistics page which is causing it to be regenerated each time.",
+      "revId": "99345f571d0d6b8f9002bd59e857edbd4fdbc46d",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
