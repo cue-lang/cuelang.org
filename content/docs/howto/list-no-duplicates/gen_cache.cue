@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							code: {
-								strings:           "DnvocmRKKY0SWR2vxlSr5l+lGYsxak/XIhFykxpizp8="
-								ints:              "4lyJYuSWVfgeCpASbm1b0LR668dzjO4/0wny225ujUw="
-								"struct from map": "BYIIzKJfTexRA46LG2uRlSqIYDBrntIcBORbj+mL/c4="
-								"auxiliary field": "hOJc+p4fcT1u2vik9k9B84/dl+ps3oNXn/afHYSFeHg="
-								"multiple keys":   "3v2vZ5PAZU4+JIJWTx2WvWg9n6qGgQb9tOG8gBFaknA="
+								strings:           "ny3JEFFnqE7uceOTiux8F917OW8MG4CtRg3WX5+4jh4="
+								ints:              "LvPJ4ICAZyCeEt62WpUkF3NQslBUx+qBFlmXajkyGdY="
+								"struct from map": "dhUErWrEKbjkCCssFugX6NqkFciOvx4IjJSd5HQQfts="
+								"auxiliary field": "sa76dak3l4I/RrGCGYWKkG46PVmdcZuheUum0Bs6maY="
+								"multiple keys":   "DXB2tTwJdRpEcc8mA3f5WerfmcHfKc64Op8ZLPU+ekU="
 							}
 						}
 					}

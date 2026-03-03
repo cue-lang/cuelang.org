@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								upload: {
-									"main.go":                 "z/W8fL/TqYkjTgXVDWn61gracz36zuIYaE38gCZMk6I="
-									"HIDDEN: required output": "TIEyDuIU4B/it6Jm58RN67BxGKq2yX90qxbtOHo3l48="
+									"main.go":                 "ouudvTwWDp3+gyWuGFjy+9HeA/4bFMj6Fq5JzcBU9Jg="
+									"HIDDEN: required output": "s5w4jGgHHo6hPFEDcyT8y5PtO2tdNe9iZbzKUp+AUJI="
 								}
 								multi_step: {
-									hash:       "89A4JFFV52EI1HMV0LGCC7JVC8TL3BOQSDRP1T47K5A28ARBC080===="
+									hash:       "TD29IO5336UBPN62SHGU9BLSNO7PKE83DL77H3HUQASU6CVQDBN0===="
 									scriptHash: "R3592TOIRF8E83T86OPE9JL2LO00QI4FB0FQN7VAHQG7A25EKNIG===="
 									steps: [{
 										doc:      ""
@@ -60,7 +60,7 @@ package site
 										cmd:      "cue version"
 										exitCode: 0
 										output: """
-												cue version v0.15.4
+												cue version v0.16.0
 												...
 
 												"""
