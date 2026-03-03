@@ -22,8 +22,6 @@ The --out flag can be used to write the module's contents to a directory
 in OCI Image Layout format. See this link for more details on the format:
 https://github.com/opencontainers/image-spec/blob/8f3820ccf8f65db8744e626df17fe8a64462aece/image-layout.md
 
-Note that this command is not yet stable and may be changed.
-
 Usage:
   cue mod publish <version> [flags]
 
@@ -36,8 +34,6 @@ Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
   -s, --simplify     simplify output
-      --trace        trace computation
-  -v, --verbose      print information about progress
 ````
 
 ## Related content

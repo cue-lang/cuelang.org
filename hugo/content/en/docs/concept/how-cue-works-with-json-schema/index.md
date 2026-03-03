@@ -154,7 +154,7 @@ The `cue vet` command can also validate the data using the JSON Schema directly:
 $ cue vet -c schema.json good.json bad.json
 name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
     ./bad.json:2:13
-    ./schema.json:13:13
+    ./schema.json:13:14
 ````
 
 The `cue` command normally recognises JSON Schema's signature fields and treats
@@ -274,7 +274,7 @@ $ go run . schema.json good.json
 $ go run . schema.json bad.json
 name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (mismatched types list and string):
     bad.json:2:13
-    schema.json:13:13
+    schema.json:13:14
 exit status 1
 ````
 ## Future plans
