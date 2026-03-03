@@ -48,8 +48,13 @@ CUE: {
 	Retained:             0
 }
 Go: {
-	AllocBytes:   1553872
-	AllocObjects: 8207
+	AllocBytes:   1953616
+	AllocObjects: 8577
+}
+Proc: {
+	UserNano:    2817000
+	SysNano:     1896000
+	MaxRssBytes: 19873792
 }
 ````
 

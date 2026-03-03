@@ -254,15 +254,15 @@ hello
 ````text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9u" }
 $ export MYVAR=value
 $ cue version
-cue version v0.15.4
+cue version v0.16.0
 
-CUE language version v0.15.4
+CUE language version v0.16.0
 
-Go version go1.25.6
+Go version go1.26.0
       -buildmode exe
        -compiler gc
        -trimpath true
-  DefaultGODEBUG containermaxprocs=0,decoratemappings=0,tlssha1=1,updatemaxprocs=0,x509sha256skid=0
+  DefaultGODEBUG cryptocustomrand=1,tlssecpmlkem=0,urlstrictcolons=0
      CGO_ENABLED 0
           GOARCH amd64
             GOOS linux
@@ -284,12 +284,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "hQAPNRBaufTD2JFy2a6BoYey4iSi+dlPY2pZN86D428="
-						"upload-some-cue": "7TM3gnqbc4DfIl2bq1Qwkz72BfSgEhVouoOi7rjXFNM="
-						"in-subdir":       "ROZ7chPfFd9X7tmGr/xVuHOAmlIto/xdJ3ho3KdV2+E="
+						"hidden file":     "z+9xqntyCodsLk6ahmAmX1zaFV4jbI9z39935DgZkrI="
+						"upload-some-cue": "opjEzj3QUvEI7TA8knm7g9Quy0ICy0WFXqMCj90+v3o="
+						"in-subdir":       "BcInt/cG9L4r5i9C2mzILORdLa/IRGIlGL7xRZnrTrU="
 					}
 					multi_step: {
-						hash:       "LCQM5FIVSSB8V95H68JUJFEG7VA742RKGV3A0RH38S0JH7S8J7D0===="
+						hash:       "6E1RPE3BGL06M5QOJ36L2M5LC0EUIM3MNLJGDG64VMSJ4VUQBFRG===="
 						scriptHash: "4R7CKCD6U3F6M7HMDOORM6L5LARG5T2HN3S7TGFFUFAJ61CAS8LG===="
 						steps: [{
 							doc:      ""
@@ -351,15 +351,15 @@ package site
 							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version v0.15.4
+									cue version v0.16.0
 
-									CUE language version v0.15.4
+									CUE language version v0.16.0
 
-									Go version go1.25.6
+									Go version go1.26.0
 									      -buildmode exe
 									       -compiler gc
 									       -trimpath true
-									  DefaultGODEBUG containermaxprocs=0,decoratemappings=0,tlssha1=1,updatemaxprocs=0,x509sha256skid=0
+									  DefaultGODEBUG cryptocustomrand=1,tlssecpmlkem=0,urlstrictcolons=0
 									     CGO_ENABLED 0
 									          GOARCH amd64
 									            GOOS linux

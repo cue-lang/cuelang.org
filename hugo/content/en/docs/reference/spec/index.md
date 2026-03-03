@@ -32,7 +32,7 @@ data in a straightforward manner.
 The grammar is compact and regular, allowing for easy analysis by automatic
 tools such as integrated development environments.
 
-This document is maintained by mpvl@golang.org.
+This document is maintained by mpvl@cue.dev and the rest of the CUE team.
 CUE has a lot of similarities with the Go language. This document draws heavily
 from the Go specification as a result.
 
@@ -1864,10 +1864,10 @@ float64   >=-1.797693134862315708145274237317043567981e+308 &
 
 An identifier of a package may be exported to permit access to it
 from another package.
-All identifiers not starting with `_` (so all regular fields and definitions
-starting with `#`) are exported.
-Any identifier starting with `_` is not visible outside the package and resides
-in a separate namespace than namesake identifiers of other packages.
+All identifiers not starting with `_` are exported,
+such as regular fields or definitions starting with `#`.
+Any identifier starting with `_` is hidden from other packages;
+it resides in a separate namespace than namesake identifiers of other packages.
 
 ```
 package mypackage
@@ -2631,6 +2631,7 @@ Clause              = StartClause | LetClause .
 ForClause           = "for" identifier [ "," identifier ] "in" Expression .
 GuardClause         = "if" Expression .
 LetClause           = "let" identifier "=" Expression .
+ElseClause          = "else" StructLit .
 ```
 
 ```
@@ -2684,9 +2685,9 @@ Builtin functions are predeclared. They are called like any other function.
 ### `error`
 The `error` builtin allows users to create custom error values with a specified
 message.
-User-generated errors can be included in disjunctions; if at least one disjunct
-is valid, any user errors are ignored.
-However, if all disjuncts fail, all user error messages are reported together.
+Custom errors can be included in disjunctions; if at least one disjunct
+is valid, any custom errors are ignored.
+However, if all disjuncts fail, all custom error messages are reported together.
 
 `error` takes a single string argument. If this argument is a literal
 interpolation, it will be extra resilient: if any of the arguments to the
@@ -2865,13 +2866,13 @@ The validator succeeds if the chosen schema unifies successfully with the value.
 
 ```
 // If value is a string, it must have length > 3; otherwise it must be > 10
-value: "hello" & matchIf(string, len(value) > 3, value > 10)  // true
+value: "hello" & matchIf(string, len(value) > 3, value > 10) // OK; len("hello") is >3
 
 // If value matches {a: int}, it must have b field; otherwise a must be a string
-x: {a: 1} & matchIf(x, {a: int}, {a: int, b: int}, {a: string})  // false: missing b
+x: {a: 1} & matchIf({a: int}, {a: int, b!: int}, {a: string}) // error; missing field b
 
 // If value is >5, it must be <10; otherwise it must be <3
-y: 2 & matchIf(y, >5, <10, <3)  // true: 2 is <=5, so <3 is checked
+y: 2 & matchIf(>5, <10, <3) // OK; 2 is <3
 ```
 
 
