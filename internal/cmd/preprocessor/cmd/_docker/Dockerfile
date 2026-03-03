@@ -116,3 +116,4 @@ RUN --mount=type=tmpfs,target=/tmpfs/ \
  && cp target/CUE*.jar /usr/local/share/java/CUE.jar
 
 ENTRYPOINT ["/usr/bin/entrypoint.sh"]
+

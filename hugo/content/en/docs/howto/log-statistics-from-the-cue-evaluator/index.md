@@ -52,9 +52,9 @@ Go: {
 	AllocObjects: 8564
 }
 Proc: {
-	UserNano:    3628000
+	UserNano:    3260000
 	SysNano:     0
-	MaxRssBytes: 20987904
+	MaxRssBytes: 23425024
 }
 ````
 
