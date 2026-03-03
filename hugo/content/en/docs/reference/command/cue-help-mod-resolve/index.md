@@ -28,8 +28,6 @@ If the --deps flag is provided, all dependencies from the current
 module are resolved and displayed. The --deps flag cannot be used
 with module path arguments.
 
-Note that this command is not yet stable and may be changed.
-
 Usage:
   cue mod resolve [<modulepath>[@<version>] ...] [flags]
 
@@ -40,8 +38,6 @@ Global Flags:
   -E, --all-errors   print all available errors
   -i, --ignore       proceed in the presence of errors
   -s, --simplify     simplify output
-      --trace        trace computation
-  -v, --verbose      print information about progress
 ````
 
 ## Related content
