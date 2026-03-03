@@ -45,6 +45,7 @@ fs: base.#writefs & {
 
 		"../../hugo/layouts/index.redir": {
 			let _contents = _netlify.#toRedirects & {#input: _netlify.redirects, _}
+			encoding: "text"
 			contents: """
 			# \(donotedit)
 
@@ -55,6 +56,7 @@ fs: base.#writefs & {
 
 		"../../hugo/layouts/robots.txt": {
 			let _contents = _netlify.#toRobotsTxt & {#input: _netlify.redirects, _}
+			encoding: "text"
 			contents: """
 			# \(donotedit)
 
@@ -65,6 +67,7 @@ fs: base.#writefs & {
 
 		"../../codereview.cfg": {
 			let _contents = base.toCodeReviewCfg & {#input: repo.codeReview, _}
+			encoding: "text"
 			contents: """
 			# \(donotedit)
 
@@ -75,6 +78,7 @@ fs: base.#writefs & {
 
 		"../../_scripts/env.bash": {
 			let _contents = strings.Join([for k, v in repo.env {"export \(k)=\(v)"}], "\n")
+			encoding: "text"
 			contents: """
 			# \(donotedit)
 
