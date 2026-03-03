@@ -299,13 +299,16 @@ template: base.#writefs & {
 		}
 
 		for _, cmd in command.cue {
-			"\(command.contentRoot)/\(cmd.dir)/page.cue": contents: #"""
+			"\(command.contentRoot)/\(cmd.dir)/page.cue": {
+				encoding: "text"
+				contents: #"""
 					// \#(donotedit)
 					package site
 
 					\#(cmd.cuePath)
 
 					"""#
+			}
 			"\(command.contentRoot)/\(cmd.dir)/en.md": {
 
 				encoding: "text"
