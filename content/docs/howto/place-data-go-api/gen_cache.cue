@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "OnpByjKLwBr9CgN5R9nC+E1Um4VUBeiHk+8JOfytwk8="
-								"go program":       "85tV/fG1Rw+s6WVTtCLcO6yp5tO3SWLpE4gO82smtvM="
+								"initial cue code": "3GEfqiAhhxP/2SX9j6Z1vsNZA+KYiaHdJnxI2mdjk7w="
+								"go program":       "uGdkIyDqznaiSfwvAPGzrgRqvyCMRvqa2e5nLBVjGuo="
 							}
 							multi_step: {
-								hash:       "B8Q82DP0QSMAJ6V5FNLRI2C1N6SU91B637IVM06IIPFB742RQEHG===="
-								scriptHash: "MFB1LS4AUBHSM6BA345AFFVUJJM3SO4M2RCI3FBQOLVSJKNOCBU0===="
+								hash:       "00RQ3BDH9V3E6M2NFJ4UTKOB6A70NDM4EDM0KH4BGSEE60LK3IQG===="
+								scriptHash: "H2M2971G9ABE54K6RM5GGELUHIDEK3J5ACAT1IC41IS217M1KBO0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -52,7 +52,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.16.0"
+									cmd:      "go get cuelang.org/go@v0.16.0-rc.1.0.20260306143617-9147ea2b06d9"
 									exitCode: 0
 									output: """
 											...
