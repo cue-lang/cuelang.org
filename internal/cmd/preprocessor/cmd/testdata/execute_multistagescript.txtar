@@ -254,7 +254,7 @@ hello
 ````text { title="TERMINAL" type="terminal" codeToCopy="ZXhwb3J0IE1ZVkFSPXZhbHVlCmN1ZSB2ZXJzaW9u" }
 $ export MYVAR=value
 $ cue version
-cue version v0.16.0
+cue version v0.16.0-rc.1.0.20260306143617-9147ea2b06d9
 
 CUE language version v0.16.0
 
@@ -284,12 +284,12 @@ package site
 			page: {
 				cache: {
 					upload: {
-						"hidden file":     "/rbmuJ3Hj1JLcIiWdpVcpbhwmjurbyjL9JwPKIZqf2Q="
-						"upload-some-cue": "0bH2ErLzewkdApR6eDhqBSEBpHP6zyCmFecWDI99U3M="
-						"in-subdir":       "ciIZpRBfkelEeVwPfC81LUPDeO8KfWdxE9XVZZGr8/U="
+						"hidden file":     "LuOoAznwcBJLwAgATvO4/a+SDvdfkHOFkYn/Y1++FJw="
+						"upload-some-cue": "mUBWvtYXtCIMqIMSg37MDKen+t9Oj6JEzgh2mkUGYtM="
+						"in-subdir":       "nsV6ve85b5uVdETky72Yf/JHqneT9y3t8tEpj9CjddY="
 					}
 					multi_step: {
-						hash:       "HTVHHE0IVH4N8LTQ5EHPEIR5V3TGRGVD11K9TB8PCLPH83ORV0RG===="
+						hash:       "7PQE4JF4563TQJPGPB0R1RHV1CIDRC1039AUBUL6MVEFAMES26OG===="
 						scriptHash: "4R7CKCD6U3F6M7HMDOORM6L5LARG5T2HN3S7TGFFUFAJ61CAS8LG===="
 						steps: [{
 							doc:      ""
@@ -351,7 +351,7 @@ package site
 							cmd:      "cue version"
 							exitCode: 0
 							output: """
-									cue version v0.16.0
+									cue version v0.16.0-rc.1.0.20260306143617-9147ea2b06d9
 
 									CUE language version v0.16.0
 

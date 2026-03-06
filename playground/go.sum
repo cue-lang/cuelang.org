@@ -1,7 +1,7 @@
 cuelabs.dev/go/oci/ociregistry v0.0.0-20251212221603-3adeb8663819 h1:Zh+Ur3OsoWpvALHPLT45nOekHkgOt+IOfutBbPqM17I=
 cuelabs.dev/go/oci/ociregistry v0.0.0-20251212221603-3adeb8663819/go.mod h1:WjmQxb+W6nVNCgj8nXrF24lIz95AHwnSl36tpjDZSU8=
-cuelang.org/go v0.16.0 h1:mmt9SL/IzfSIiBKuP5wxdO4xLjvIHr3urpbjCDdMV5U=
-cuelang.org/go v0.16.0/go.mod h1:4veMX+GpsK0B91b1seGXoozG80LJCczvG1M1Re/knxo=
+cuelang.org/go v0.16.0-rc.1.0.20260306143617-9147ea2b06d9 h1:4B2dih//xukDJZRWKjR3obVO68jnADPB/sFSqEbQUDQ=
+cuelang.org/go v0.16.0-rc.1.0.20260306143617-9147ea2b06d9/go.mod h1:x2v9ht7UJXDB6vL0Vof0V+13o1CcYjNpHmo6Q7rZghI=
 github.com/cockroachdb/apd/v3 v3.2.1 h1:U+8j7t0axsIgvQUqthuNm82HIrYXodOV2iWLWtEaIwg=
 github.com/cockroachdb/apd/v3 v3.2.1/go.mod h1:klXJcjp+FffLTHlhIG69tezTDvdP065naDsHzKhYSqc=
 github.com/emicklei/proto v1.14.3 h1:zEhlzNkpP8kN6utonKMzlPfIvy82t5Kb9mufaJxSe1Q=
