@@ -16,6 +16,24 @@
       "message": "Briefly mention what `-f` does below.",
       "revId": "45dfcfeb1b1103ba4a08deb8099906e2e1bb01b2",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f75e98ab_2f1ce3a8",
+        "filename": "content/docs/howto/import-closed-json-schema-as-cue/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-03-10T14:34:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "128d0810_7f5abd59",
+      "revId": "45dfcfeb1b1103ba4a08deb8099906e2e1bb01b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
