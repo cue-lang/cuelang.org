@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "128d0810_7f5abd59",
+        "filename": "content/docs/howto/import-closed-json-schema-as-cue/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-03-10T14:30:07Z",
+      "side": 1,
+      "message": "Briefly mention what `-f` does below.",
+      "revId": "45dfcfeb1b1103ba4a08deb8099906e2e1bb01b2",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
