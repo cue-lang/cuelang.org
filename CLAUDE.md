@@ -385,8 +385,12 @@ To update the documented CUE version, modify `versions.cue.latest.v` in
 - Always use `--no-gpg-sign` (or `-c commit.gpgsign=false`) to skip
   GPG signing, which requires interactive input
 - No AI authorship attribution in commit messages
-- All commits must include a `Change-Id` line (added automatically by
-  `git codereview change`)
+- All commits must include a `Change-Id` trailer (added automatically
+  by `git codereview change`). The `Change-Id` is what GerritHub uses
+  to uniquely identify a change — it **must never be modified or
+  removed** when amending, rebasing, or editing a commit. Changing the
+  `Change-Id` creates a new GerritHub change instead of updating the
+  existing one
 
 ### Editing commits in a stack
 
