@@ -35,6 +35,15 @@ cuelang.org/
 └── site_tool.cue      # CUE tool for generating artifacts
 ```
 
+### Generated files
+
+Many files in the repo are generated from other sources. **Look for
+header comments** like `# Code generated site_tool.cue; DO NOT EDIT.` or
+similar `Code generated` / `DO NOT EDIT` markers — these indicate the
+file is generated, should not be edited directly, and point back to the
+source that generates them. Use these headers to understand the flow
+between source and generated files.
+
 ## Documentation Structure (Diataxis)
 
 The documentation at `content/docs/` follows the
@@ -358,7 +367,43 @@ gh api repos/cue-lang/cue/discussions --jq '.[] | {number, title}'
 gh api repos/cue-lang/cue/discussions/<number>
 ```
 
+## Tags
+
+Page tags (listed in frontmatter under `tags:`) must exist in the master
+tag list defined in `hugo.cue` at `site.params.tags`. If a tag is used in
+a page's frontmatter but is not in this list, it will **not render** on
+the page.
+
+### Adding a new tag
+
+1. Add the tag to the `tags` list in `hugo.cue` with a `name` and
+   `color` (one of: red, orange, green, pink, purple, lilac, blue,
+   lavender)
+2. Run `go generate` in the repo root (see below) — this generates the
+   corresponding Hugo config (e.g. `hugo/config/_default/params.toml`)
+3. Use the tag in page frontmatter
+
+### Existing tags
+
+Check `hugo.cue` for the current list. The tag order in that file
+determines their relative positions when rendered on pages.
+
 ## Site Configuration
+
+The site's configuration is defined as CUE in the repo root (`hugo.cue`,
+`site.cue`, etc.) and then generated into Hugo's TOML config files via a
+`go:generate` directive in `site.go`. The generated files live under
+`hugo/config/_default/` and are marked with a
+`# Code generated site_tool.cue; DO NOT EDIT.` header.
+
+The pipeline: CUE source files → `go generate ./` →
+`_scripts/siteCUE.bash cmd gen` → `site_tool.cue` generates Hugo config
+TOML files (e.g. `params.toml`, `config.toml`, `languages.toml`,
+`markup.toml`).
+
+**After changing any root CUE config** (e.g. adding a tag in `hugo.cue`,
+updating versions in `site.cue`), run `go generate ./` in the repo root
+to regenerate the Hugo config files and commit the results.
 
 ### site.cue (root)
 
@@ -370,10 +415,17 @@ Defines versions, environment defaults, and content configuration:
 - `_contentDefaults` - default page settings (delimiters, sanitisers,
   comparators)
 
+### hugo.cue
+
+Defines Hugo-specific configuration: base URL, output formats, media
+types, imaging, markup settings, menus, i18n strings, and the master
+tag list (`site.params.tags`).
+
 ### Version updates
 
 To update the documented CUE version, modify `versions.cue.latest.v` in
-`site.cue` and follow the cache regeneration workflow.
+`site.cue`, run `go generate ./`, and follow the cache regeneration
+workflow.
 
 ## Commit Message Guidelines
 

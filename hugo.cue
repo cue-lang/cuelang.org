@@ -187,6 +187,9 @@ site: params: {
 	}, {
 		name:  "workflow command"
 		color: "blue"
+	}, {
+		name:  "jsonschema"
+		color: "green"
 	}]
 }
 

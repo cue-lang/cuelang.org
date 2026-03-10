@@ -62,3 +62,7 @@ name = 'java api'
 [[tags]]
 color = 'blue'
 name = 'workflow command'
+
+[[tags]]
+color = 'green'
+name = 'jsonschema'
