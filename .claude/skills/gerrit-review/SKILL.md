@@ -7,14 +7,37 @@ argument-hint: "[change-number-or-url]"
 
 Fetch review feedback from a GerritHub change and present it clearly.
 
-## Extracting the change number
+## Resolving the change number
 
-The argument `$ARGUMENTS` is either:
+The argument `$ARGUMENTS` can be any of:
 - A bare change number (e.g. `1233340`)
 - A GerritHub URL (e.g. `https://cue.gerrithub.io/c/cue-lang/cuelang.org/+/1233340`)
+- A git ref like `HEAD`, `HEAD~2`, or a commit SHA
+- The literal string `HEAD` (meaning the current commit)
 
-Extract the change number from whichever form is provided. For URLs the
-change number is the final numeric path segment.
+### From a URL or bare number
+
+Extract the change number directly. For URLs the change number is the
+final numeric path segment.
+
+### From a git ref (commit SHA, HEAD, etc.)
+
+Extract the `Change-Id` trailer from the commit message:
+
+```bash
+git log -1 --format=%B <REF> | grep '^Change-Id:' | sed 's/Change-Id: //'
+```
+
+Then query GerritHub to resolve the Change-Id to a change number:
+
+```bash
+curl --netrc -s 'https://cue.gerrithub.io/a/changes/?q=<CHANGE_ID>' | tail -c +5
+```
+
+This returns a JSON array. The first element's `_number` field is the
+change number. This works because the Change-Id uniquely identifies a
+GerritHub change regardless of how many times the local commit has been
+rewritten or rebased.
 
 ## Gerrit API base URL
 

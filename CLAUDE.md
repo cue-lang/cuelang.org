@@ -392,6 +392,18 @@ To update the documented CUE version, modify `versions.cue.latest.v` in
   `Change-Id` creates a new GerritHub change instead of updating the
   existing one
 
+### Content commit trailers
+
+When creating or modifying content pages, add a `Preview-Path:` trailer
+to the commit message so that Netlify deploy previews link directly to
+the relevant page in the `hugo/` directory:
+
+```
+Preview-Path: /docs/howto/my-new-guide
+```
+
+This is the URL path on cuelang.org (without the hostname).
+
 ### Editing commits in a stack
 
 ```bash
