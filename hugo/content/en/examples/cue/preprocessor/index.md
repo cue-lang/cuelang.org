@@ -137,6 +137,52 @@ this script fail to return the anticipated exit code then the site build will
 not succeed:
 Here is some more prose.
 
+## Asserting file contents with `#assert` uploads
+
+An `upload` block with the `#assert` tag does not create a file. Instead,
+it asserts that a file **already exists** with exactly the content shown,
+having been created by a preceding `script` block. If the file's content
+doesn't match, the site build fails.
+
+This is an alternative to using `cat` in a `script` block to display a
+file's contents. With `#assert`, the file is displayed to the reader in an
+`upload`-style pane (with syntax highlighting and a filename header), while
+simultaneously verifying that it has the expected content.
+
+### Example
+
+```
+Here is a command that produces a file:
+{{{with script "en" "produce output"}}}
+cue import -l '#Schema:' schema.json
+{{{end}}}
+
+Here is the file it produced:
+{{{with upload "en" "assert schema"}}}
+#assert
+-- schema.cue --
+#Schema: {
+	name!: string
+	age?:  int
+	...
+}
+{{{end}}}
+```
+
+In this example, the `upload` block doesn't create `schema.cue` -- it
+verifies that the preceding `cue import` command produced exactly the
+content shown. If the content doesn't match, the preprocessor reports
+an error and the build fails.
+
+### When to use `#assert` uploads
+
+- **Showing the output of a command that produces a file** -- use
+  `#assert` instead of `cat` in a script block, because `upload` panes
+  render with syntax highlighting and a clear filename header.
+- **Verifying generated content** -- when a `script` block creates or
+  modifies a file (via `cue import`, `cue export`, `cue def`, etc.),
+  an `#assert` upload both displays and validates the result.
+
 ## `code` blocks
 
 The contents of `script` and `upload` blocks interact with each other,
