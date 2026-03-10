@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "142959e8_be7db5d3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-03-10T14:00:54Z",
+      "side": 1,
+      "message": "CLAUDE.md is probably missing an instruction that says when we create some content we should add the `Preview-Path:` trailer. In this case it would be:\n\n```\nPreview-Path: /docs/howto/import-closed-json-schema-as-cue\n```",
+      "revId": "7d712142d5ca1a80cc87e4e0c1051f3d4fae4a0b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a02ce613_28efe08a",
+        "filename": "content/docs/howto/import-closed-json-schema-as-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-03-10T14:00:54Z",
+      "side": 1,
+      "message": "We probably want a `jsonschema` tag as well.",
+      "revId": "7d712142d5ca1a80cc87e4e0c1051f3d4fae4a0b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4783d611_4e114272",
+        "filename": "content/docs/howto/import-closed-json-schema-as-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-03-10T14:00:54Z",
+      "side": 1,
+      "message": "Note that `cat` is not the approach we follow here. We should use `#assert` upload blocks. Please make sure claude.md is clear on this.",
+      "revId": "7d712142d5ca1a80cc87e4e0c1051f3d4fae4a0b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d6a884e0_fe5802de",
+        "filename": "content/docs/howto/import-closed-json-schema-as-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-03-10T14:00:54Z",
+      "side": 1,
+      "message": "Don\u0027t use `rm`. Instead use `cue import -f` in the following command.",
+      "revId": "7d712142d5ca1a80cc87e4e0c1051f3d4fae4a0b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6029177f_ee235977",
+        "filename": "content/docs/howto/import-closed-json-schema-as-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 91,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-03-10T14:00:54Z",
+      "side": 1,
+      "message": "Again, we should be using `#assert` upload blocks here.",
+      "revId": "7d712142d5ca1a80cc87e4e0c1051f3d4fae4a0b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b1cc977a_ca80c3d9",
+        "filename": "content/docs/howto/import-closed-json-schema-as-cue/en.md",
+        "patchSetId": 1
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-03-10T14:00:54Z",
+      "side": 1,
+      "message": "I don\u0027t think we need this last step.",
+      "revId": "7d712142d5ca1a80cc87e4e0c1051f3d4fae4a0b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
