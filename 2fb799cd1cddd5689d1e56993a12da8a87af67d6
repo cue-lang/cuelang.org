@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "096aca51_d7f43c0c",
+        "filename": "content/examples/cue/preprocessor/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 149,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-03-11T09:57:54Z",
+      "side": 1,
+      "message": "given that #assert is in txtar format, can you assert that multiple files exist at once? if so, I\u0027d perhaps",
+      "revId": "2fb799cd1cddd5689d1e56993a12da8a87af67d6",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
