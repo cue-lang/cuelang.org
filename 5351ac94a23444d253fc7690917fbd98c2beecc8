@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "627f91af_05180463",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-03-11T10:45:24Z",
+      "side": 1,
+      "message": "perhaps remind the AI that this can be just\n\n\u003e Fixes cue-lang/docs-and-content#230.",
+      "revId": "5351ac94a23444d253fc7690917fbd98c2beecc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2b92dff4_e40ef287",
+        "filename": "content/docs/howto/import-closed-json-schema-as-cue/en.md",
+        "patchSetId": 5
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-03-11T10:45:24Z",
+      "side": 1,
+      "message": "I\u0027d include \"by default\" in here somewhere, as this is all about the logic when additionalProperties is not set in the JSON Schema. When it is present, our option changes nothing.",
+      "revId": "5351ac94a23444d253fc7690917fbd98c2beecc8",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
