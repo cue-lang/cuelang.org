@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9835dce7_ecbb7421",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-03-11T10:05:18Z",
+      "side": 1,
+      "message": "would it make sense to rewrite the \"Gerrit comments\" skill script in Go? at least our ability to review and understand Go is much greater than Python, even if the Go would be twice as many lines or more.\n\nI also wonder if we should have these reusable AI programs somewhere like https://github.com/cue-lang/contrib-tools, because for example this one will be useful for pretty much every repo that we have. For example, we could make them subcommands of `cueckoo`, given that we already rely on it.",
+      "revId": "f8cdd1cd10d08b392f459f8fafa87950ce593c18",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c89c120_d83dbd2d",
+        "filename": "CLAUDE.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-03-11T10:05:18Z",
+      "side": 1,
+      "message": "this seems out of date?",
+      "revId": "f8cdd1cd10d08b392f459f8fafa87950ce593c18",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19af612b_998d7257",
+        "filename": "CLAUDE.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 423,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-03-11T10:05:18Z",
+      "side": 1,
+      "message": "probably best to consistently use `go tool cue` for the sake of versioning",
+      "revId": "f8cdd1cd10d08b392f459f8fafa87950ce593c18",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
