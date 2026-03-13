@@ -484,22 +484,16 @@ documented under [`cue help environment`]({{< relref "docs/reference/command/cue
 
 ## Authorization
 
-For custom OCI registries, CUE understands the usual conventions
-for authorization: specifically the usual way to configure
-registry authorization information for custom OCI registries
-is by setting them up in the `$HOME/.docker/config.json` file.
-You can
-[use `docker login`](https://docs.docker.com/engine/reference/commandline/login/)
-to do this or
-[edit the file directly](https://www.flatcar.org/docs/latest/container-runtimes/registry-authentication/).
+For registries that support it, such as the [CUE Central Registry](https://registry.cue.works/),
+[`cue login`]({{< relref "docs/reference/command/cue-help-login" >}})
+authenticates via the OAuth 2.0 Device Authorization Grant.
 
-The CUE command knows how to read auth tokens from the `$HOME/.docker/config.json`,
-including running helper commands to fetch them from secure storage.
-
-For organizations that don't allow the use of docker, [podman
-login](https://docs.podman.io/en/latest/markdown/podman-login.1.html) allows
-using the `--compat-auth-file $HOME/.docker/config.json` flag to generate a
-docker compatible json file.
+CUE also reads auth configuration from
+[`docker login`](https://docs.docker.com/engine/reference/commandline/login/)
+and [`podman login`](https://docs.podman.io/en/stable/markdown/podman-login.1.html),
+including credential helpers,
+via files such as `$HOME/.docker/config.json` or `$XDG_RUNTIME_DIR/containers/auth.json`.
+This is the primary method for authenticating with OCI registries like Docker Hub.
 
 ## Glossary {#glossary}
 
