@@ -1,0 +1,58 @@
+# Solution 1: "Deepest file only" with #Defaults
+#
+# The tool picks only the deepest values.cue file for a given target.
+# Each file imports a shared #Defaults definition and overrides what it needs.
+#
+# Problem: when adding a new leaf, you must repeat all parent overrides.
+# For example, us-east-2/cluster-01 must repeat cpu:2 from production level.
+
+exec cue mod init test.example
+
+# us-east-1: leaf file provides all overrides on top of defaults.
+exec cue export ./values/production/us-east-1
+cmp stdout us-east-1.golden
+
+# us-east-2: no leaf, so the production file is the deepest — works fine.
+exec cue export ./values/production/us-east-2
+cmp stdout us-east-2.golden
+
+-- lib/defaults.cue --
+package lib
+
+#Defaults: {
+	count: *3 | int
+	cpu:   *1 | int
+}
+
+-- values/production/us-east-1/values.cue --
+package config
+
+import "test.example/lib"
+
+lib.#Defaults & {
+	count: 6
+	cpu:   4
+}
+
+-- values/production/us-east-2/values.cue --
+package config
+
+import "test.example/lib"
+
+// This is the deepest file for us-east-2.
+// It must specify cpu:2 itself — there's no automatic inheritance
+// from a "production level" since only this file is evaluated.
+lib.#Defaults & {
+	cpu: 2
+}
+
+-- us-east-1.golden --
+{
+    "count": 6,
+    "cpu": 4
+}
+-- us-east-2.golden --
+{
+    "count": 3,
+    "cpu": 2
+}

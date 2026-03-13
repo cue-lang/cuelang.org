@@ -1,0 +1,122 @@
+# Solution: Jace's #WeightedDefaults — explicit numeric weights in pure CUE
+#
+# Each field uses a #WeightedDefaults helper where numeric keys represent
+# priority levels. list.Max picks the highest weight, and that value wins.
+# This avoids competing * defaults entirely — instead of CUE's built-in
+# default mechanism, priority is encoded explicitly in the weight keys.
+#
+# Supports a "!" suffix for forced/pseudo-concrete values that prevent
+# higher numeric weights from overriding (e.g., "2!" beats "3").
+#
+# Jace's approach applied to the layered config problem:
+#   weight "0" = base defaults
+#   weight "1" = production overrides
+#   weight "2" = region-specific overrides
+
+exec cue mod init test.example
+
+exec cue export ./values/production/us-east-1
+cmp stdout us-east-1.golden
+
+exec cue export ./values/production/us-east-2
+cmp stdout us-east-2.golden
+
+-- lib/weighted.cue --
+package lib
+
+import (
+	"list"
+	"strconv"
+	"strings"
+)
+
+#WeightedDefaults: {
+	T: _
+	opts: [=~"^[0-9]+!?$"]: T
+
+	let force = [for k, _ in opts if strings.HasSuffix(k, "!") {k}]
+	let weights = [for k, _ in opts if !strings.HasSuffix(k, "!") {strconv.Atoi(k)}]
+
+	value: *null | T
+
+	if len(force) == 0 {
+		if len(weights) > 0 {
+			let maxWeight = list.Max(weights)
+			value: opts["\(maxWeight)"]
+		}
+	}
+
+	if len(force) == 1 {
+		if len(weights) > 0 {
+			let maxWeight = list.Max(weights)
+			let forceWeight = strconv.Atoi(strings.TrimSuffix(force[0], "!"))
+			if maxWeight > forceWeight {
+				value: error("numeric weight \(maxWeight) cannot exceed force weight \(forceWeight)!")
+			}
+		}
+		value: opts["\(force[0])"]
+	}
+
+	if len(force) > 1 {
+		value: error("multiple \"!\" forced weights not allowed")
+	}
+}
+
+-- lib/fields.cue --
+package lib
+
+// Each field is a #WeightedDefaults instance.
+// Layers contribute by adding their weight key to opts.
+
+#Count: #WeightedDefaults & {T: int}
+#CPU:   #WeightedDefaults & {T: int}
+
+-- values/values.cue --
+package config
+
+import "test.example/lib"
+
+// Base defaults: weight 0
+_count: lib.#Count
+_count: opts: "0": 3
+
+_cpu: lib.#CPU
+_cpu: opts: "0": 1
+
+count: _count.value
+cpu:   _cpu.value
+
+-- values/production/values.cue --
+package config
+
+import "test.example/lib"
+
+// Production overrides: weight 1
+_cpu: lib.#CPU
+_cpu: opts: "1": 2
+
+-- values/production/us-east-1/values.cue --
+package config
+
+import "test.example/lib"
+
+// Region overrides: weight 2
+_count: lib.#Count
+_count: opts: "2": 6
+
+_cpu: lib.#CPU
+_cpu: opts: "2": 4
+
+-- values/production/us-east-2/values.cue --
+package config
+
+-- us-east-1.golden --
+{
+    "count": 6,
+    "cpu": 4
+}
+-- us-east-2.golden --
+{
+    "count": 3,
+    "cpu": 2
+}

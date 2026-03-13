@@ -1,0 +1,66 @@
+# Reproduction of Jace's layered config problem.
+#
+# A deployment tool merges values files from broad to specific:
+#
+#   values/values.cue                        → base defaults (all clusters)
+#   values/production/values.cue             → production overrides
+#   values/production/us-east-1/values.cue   → region-specific overrides
+#
+# CUE's ancestor directory unification means evaluating a package automatically
+# unifies it with same-named packages in parent directories. So:
+#
+#   cue eval ./values/production/us-east-1  → unifies all three layers
+#   cue eval ./values/production            → unifies base + production
+#
+# The expectation is:
+#
+#   production/us-east-1: count:6, cpu:4  (region overrides everything)
+#   production/us-east-2: count:3, cpu:2  (production cpu wins over base cpu)
+#
+# The problem: unifying base + production gives two competing defaults on cpu,
+# and CUE resolves (*1 | int) & (*2 | int) to (1 | 2 | int) — neither default
+# wins, and the result is not concrete.
+
+exec cue mod init test.example
+
+# us-east-1 works fine: all three layers unify, region provides concrete values.
+exec cue export ./values/production/us-east-1
+cmp stdout us-east-1.golden
+
+# us-east-2: no region-specific overrides, just an empty package file.
+# Ancestor unification pulls in base + production.
+# Jace wants cpu:2 (production wins over base).
+# Actual result: cpu is (1 | 2 | int) — no default, not concrete.
+exec cue export ./values/production/us-east-2
+cmp stdout us-east-2.golden
+
+-- values/values.cue --
+package config
+
+count: *3 | int
+cpu:   *1 | int
+
+-- values/production/values.cue --
+package config
+
+cpu: *2 | int
+
+-- values/production/us-east-1/values.cue --
+package config
+
+count: 6
+cpu:   4
+
+-- values/production/us-east-2/values.cue --
+package config
+
+-- us-east-1.golden --
+{
+    "count": 6,
+    "cpu": 4
+}
+-- us-east-2.golden --
+{
+    "count": 3,
+    "cpu": 2
+}

@@ -1,0 +1,68 @@
+# Solution: @layer attribute (internal CUE feature, not yet in cmd/cue)
+#
+# The @layer attribute assigns a numeric priority to each file. When two files
+# both provide a default for the same field, the higher-priority layer's
+# default wins. This directly solves Jace's competing defaults problem.
+#
+# @layer(N) — higher N = higher priority default wins
+#
+# In Jace's hierarchy:
+#   values/values.cue              @layer(1)  — base defaults
+#   values/production/values.cue   @layer(2)  — production overrides
+#   values/production/us-east-1/   @layer(3)  — region-specific overrides
+#
+# For us-east-2 (no region file), unifying layers 1+2:
+#   cpu: (*1 | int) & (*2 | int)  →  cpu: *2 | int | 1
+#   The layer-2 default of 2 wins over the layer-1 default of 1.
+
+# NOTE: @layer is an internal feature and won't work with cmd/cue today.
+# This sketch shows what the solution would look like.
+
+exec cue mod init test.example
+
+# us-east-1: region provides concrete values, defaults don't matter.
+exec cue export ./values/production/us-east-1
+cmp stdout us-east-1.golden
+
+# us-east-2: with @layer, production's cpu:2 default wins over base's cpu:1.
+exec cue export ./values/production/us-east-2
+cmp stdout us-east-2.golden
+
+-- values/values.cue --
+@layer(1)
+
+package config
+
+count: *3 | int
+cpu:   *1 | int
+
+-- values/production/values.cue --
+@layer(2)
+
+package config
+
+cpu: *2 | int
+
+-- values/production/us-east-1/values.cue --
+@layer(3)
+
+package config
+
+count: 6
+cpu:   4
+
+-- values/production/us-east-2/values.cue --
+@layer(3)
+
+package config
+
+-- us-east-1.golden --
+{
+    "count": 6,
+    "cpu": 4
+}
+-- us-east-2.golden --
+{
+    "count": 3,
+    "cpu": 2
+}

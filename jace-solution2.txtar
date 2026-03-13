@@ -1,0 +1,62 @@
+# Solution 2: Named definitions per variant
+#
+# All variants are defined centrally as named definitions. Each leaf file
+# simply references its definition. Proposed by Jace in the thread.
+#
+# Problem: doesn't scale — you need a named definition for every target,
+# and can't compose #ProductionUSEast1 from #Production when it overrides
+# fields that #Production also sets as defaults.
+
+exec cue mod init test.example
+
+exec cue export ./values/production/us-east-1
+cmp stdout us-east-1.golden
+
+exec cue export ./values/production/us-east-2
+cmp stdout us-east-2.golden
+
+-- lib/defaults.cue --
+package lib
+
+#Defaults: {
+	count: *3 | int
+	cpu:   *1 | int
+}
+
+#Production: #Defaults & {
+	cpu: 2
+}
+
+// Can't be composed from #Production because it overrides cpu too,
+// which would reintroduce competing defaults.
+#ProductionUSEast1: #Defaults & {
+	count: 6
+	cpu:   4
+}
+
+#ProductionUSEast2: #Production
+
+-- values/production/us-east-1/values.cue --
+package config
+
+import "test.example/lib"
+
+lib.#ProductionUSEast1
+
+-- values/production/us-east-2/values.cue --
+package config
+
+import "test.example/lib"
+
+lib.#ProductionUSEast2
+
+-- us-east-1.golden --
+{
+    "count": 6,
+    "cpu": 4
+}
+-- us-east-2.golden --
+{
+    "count": 3,
+    "cpu": 2
+}

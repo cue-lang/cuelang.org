@@ -1,0 +1,61 @@
+# Solution 3: the nurk's approach — hidden fields with external static defaults
+#
+# Avoid using * defaults entirely. Instead, use hidden fields to pass in
+# a set of external defaults, and use those as the fallback values.
+#
+# This sidesteps competing defaults by making the "default" selection explicit
+# through a header struct rather than CUE's default mechanism.
+
+exec cue mod init test.example
+
+exec cue export ./values/production/us-east-1
+cmp stdout us-east-1.golden
+
+exec cue export ./values/production/us-east-2
+cmp stdout us-east-2.golden
+
+-- lib/defaults.cue --
+package lib
+
+#Values: {
+	// External defaults passed in via #h
+	#h: {count: int, cpu: int}
+
+	// Each field falls back to #h if not overridden
+	count: *#h.count | int
+	cpu:   *#h.cpu | int
+}
+
+#BaseDefaults: {count: 3, cpu: 1}
+#ProductionDefaults: {count: 3, cpu: 2}
+
+-- values/production/us-east-1/values.cue --
+package config
+
+import "test.example/lib"
+
+lib.#Values & {
+	#h:    lib.#ProductionDefaults
+	count: 6
+	cpu:   4
+}
+
+-- values/production/us-east-2/values.cue --
+package config
+
+import "test.example/lib"
+
+lib.#Values & {
+	#h: lib.#ProductionDefaults
+}
+
+-- us-east-1.golden --
+{
+    "count": 6,
+    "cpu": 4
+}
+-- us-east-2.golden --
+{
+    "count": 3,
+    "cpu": 2
+}
