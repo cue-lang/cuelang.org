@@ -7,7 +7,7 @@ package site
 					page: {
 						cache: {
 							multi_step: {
-								hash:       "J5IACPFS1QEKTMQOH30SMFTUI6KVG076LF6GOT7G3ISJ064128QG===="
+								hash:       "JQBCLI8IRP3BLF6LEIDMDQL8GTJGKL5O47C530P3HAAE7VELP59G===="
 								scriptHash: "37BT6DTJCA8615QVE576M4H53K8E2ND7B9JSB91BS547LKR9TFQ0===="
 								steps: [{
 									doc:      "# Access to Central Registry."

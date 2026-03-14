@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"basic.proto":            "epWUlSnXFXaTZcTvbzOanmnPKhOO/BUcpsWIJmi39Qc="
-								"basic.cue":              "ERTzppX+nRZVSV4woLe16+R8+uEpn9z1GLvmkaHEY/w="
-								"go convert basic.proto": "dKsCgRqESJ4qfKR378Cy8w+h2ihQCcrr9F+PGSdbyn0="
+								"basic.proto":            "+YN9l9Vt29untgrrTAEZTl86jgl207nJY5yDxtegd/A="
+								"basic.cue":              "PN3uAPr+61+6aC0Oip915eiBSAq7lzrpvMzlK2JjOsE="
+								"go convert basic.proto": "pS75Fr0LR48cQI1+gsGh3dcuZp9oZW2A/wOHr9S2L9E="
 							}
 							multi_step: {
-								hash:       "68SNQGSI8IV63J8B5G9I9TV9FMVU42IJNOEV992KRAP46BC7MHE0===="
-								scriptHash: "PSDMVV15MQKF9NFUCPR81E53AA4N0SRVVCRGIAV8T40FFH7STR8G===="
+								hash:       "R11T2EQO2JUNNRMDP25A8L03CSD3BH6JLL4299CBP5203UUGSEU0===="
+								scriptHash: "FROV04J39LNLST0A8VO2IAEHNRLFUPLC9U4B0JKLHIME4K8THHU0===="
 								steps: [{
 									doc:      ""
 									cmd:      "cue import basic.proto"
@@ -51,7 +51,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.16.0"
+									cmd:      "go get cuelang.org/go@v0.16.0-rc.1.0.20260314205741-820e1530e9ff"
 									exitCode: 0
 									output: """
 											...

@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1": "IgNy8NTlkONWEZ3xLVdKj7MLkNzKrbaf7tlirBm3OYc="
-								"config.cue":    "9qutC5SfQpw93wVwOpnARdchp09q8LWpvdTcuVGY9Q4="
+								"schema-v0.0.1": "G/FDeQM7vKk4BIRRv1hD35sfc1gjNZAXQjNceWWecQE="
+								"config.cue":    "wuIw9he0iW/0OcA4e+VfieaLyaBZqDFZKxVvFB2Hvl0="
 							}
 							multi_step: {
-								hash:       "RQD43UEDK74HU81VFQQFD9LKUP5AB4LQREDRHM1DV4A3S3G3H0J0===="
+								hash:       "U5469Q20D356E63M65IF9D3NH89F0GV18V7UU9LT8M5FO93R1GPG===="
 								scriptHash: "JHP3LU89JJU18OTK4RDNQ1EAJVDUO2E7GM3JNCB653S5V0GOT6NG===="
 								steps: [{
 									doc:      "# Git config."
@@ -42,7 +42,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.16.0
+											cue version v0.16.0-rc.1.0.20260314205741-820e1530e9ff
 											...
 
 											"""
