@@ -45,9 +45,32 @@ Jsonnet, HCL, Flabbergast, Nix, JSONPath, Haskell, Objective-C, and Python.
 
 ## Notation
 
+<!--
+We annotate code blocks with syntax highlighting like ```ebnf.
+It turns out that we can use a space to add arbitrary text
+without breaking syntax highlighting in Hugo,
+so we use that to annotate code blocks with intent:
+
+* `cue` for standalone CUE files which we expect to parse OK;
+  we do not yet mark what we want to do with them (export, eval, vet)
+  nor do we record what the expected outcome is yet.
+
+* `cue untested` for syntax that is CUE-like but invalid.
+
+* `cue parse` for CUE files which we expect parse OK,
+  but we do not expect to compile or evaluate correctly.
+
+* `cue ! parse` for CUE which we expect to fail parsing;
+  the error is recorded as an HTML comment after the code block.
+
+* `cue rows` for tables of input-output rows.
+  Just like `cue`, we do not yet mark what to do with them,
+  but the output column is generally the expected outcome.
+-->
+
 The syntax is specified using Extended Backus-Naur Form (EBNF):
 
-```
+```ebnf
 Production  = production_name "=" [ Expression ] "." .
 Expression  = Alternative { "|" Alternative } .
 Alternative = Term { Term } .
@@ -103,7 +126,7 @@ the source.
 
 The following terms are used to denote specific Unicode character classes:
 
-```
+```ebnf
 newline        = /* the Unicode code point U+000A */ .
 unicode_char   = /* an arbitrary Unicode code point except newline */ .
 unicode_letter = /* a Unicode code point classified as "Letter" */ .
@@ -120,7 +143,7 @@ as Unicode letters, and those in the Number category Nd as Unicode digits.
 
 The underscore character `_` (U+005F) is considered a letter.
 
-```
+```ebnf
 letter        = unicode_letter | "_" | "$" .
 decimal_digit = "0" … "9" .
 binary_digit  = "0" … "1" .
@@ -195,11 +218,11 @@ TODO: allow identifiers as defined in Unicode UAX #31
 Identifiers are normalized using the NFC normal form.
 -->
 
-```
+```ebnf
 identifier  = [ "#" | "_#" ] letter { letter | unicode_digit } .
 ```
 
-```
+```cue parse
 a
 _x9
 fieldName
@@ -285,7 +308,7 @@ Free tokens:  ; ~ ^
 
 There are several kinds of numeric literals.
 
-```
+```ebnf
 int_lit     = decimal_lit | si_lit | octal_lit | binary_lit | hex_lit .
 decimal_lit = "0" | ( "1" … "9" ) { [ "_" ] decimal_digit } .
 decimals    = decimal_digit { [ "_" ] decimal_digit } .
@@ -314,7 +337,7 @@ Multipliers can be used with fractional numbers.
 When multiplying a fraction by a multiplier, the result is truncated
 towards zero if it is not an integer.
 
-```
+```cue parse
 42
 1.5G    // 1_500_000_000
 1.3Ki   // 1.3 * 1024 = trunc(1331.2) = 1331
@@ -333,7 +356,7 @@ exponent part is an `e` or `E` followed by an optionally signed decimal exponent
 One of the integer part or the fractional part may be elided; one of the decimal
 point or the exponent may be elided.
 
-```
+```cue parse
 0.
 72.40
 072.40  // == 72.40
@@ -439,7 +462,7 @@ newline is already implicitly elided.
 
 All other sequences starting with a backslash are illegal inside literals.
 
-```
+```ebnf
 escaped_char     = `\` { `#` } ( "a" | "b" | "f" | "n" | "r" | "t" | "v" | "/" | `\` | "'" | `"` ) .
 byte_value       = octal_byte_value | hex_byte_value .
 octal_byte_value = `\` { `#` } octal_digit octal_digit octal_digit .
@@ -469,7 +492,7 @@ multiline_bytes_lit  = "'''" newline
 Carriage return characters (`\r`) inside string literals are discarded from
 the string value.
 
-```
+```cue ! parse
 'a\000\xab'
 '\007'
 '\377'
@@ -488,10 +511,16 @@ the string value.
 #"This is an \#(interpolation)"#
 #"The sequence "\U0001F604" renders as \#U0001F604."#
 ```
+<!-- error:
+illegal character U+0027 ''' in escape sequence:
+    spec.md:503:5
+escape sequence is invalid Unicode code point:
+    spec.md:512:3
+-->
 
 These examples all represent the same string:
 
-```
+```cue parse
 "日本語"                                 // UTF-8 input text
 '日本語'                                 // UTF-8 input text as byte sequence
 "\u65e5\u672c\u8a9e"                    // the explicit Unicode code points
@@ -519,7 +548,8 @@ lines in the string literal.
 A closing triple quote may not appear in the string.
 To include it is suffices to escape one of the quotes.
 
-```
+<!-- TODO: should the backslash here work? -->
+```cue ! parse
 """
     lily:
     out of the water
@@ -532,10 +562,14 @@ To include it is suffices to escape one of the quotes.
         — Nick Virgilio, Selected Haiku, 1988
     """
 ```
+<!-- error:
+unknown escape sequence:
+    spec.md:563:14
+-->
 
 This represents the same string as:
 
-```
+```cue
 "lily:\nout of the water\nout of itself\n\n" +
 "bass\npicking bugs\noff the moon\n" +
 "    — Nick Virgilio, Selected Haiku, 1988"
@@ -672,7 +706,7 @@ In other words, unification distributes over disjunction.
 (a_0 | ... |a_n) & b ==> a_0&b | ... | a_n&b.
 ```
 
-```
+```cue rows
 Expression                Result
 ({a:1} | {b:2}) & {c:3}   {a:1, c:3} | {b:2, c:3}
 (int | string) & "foo"    "foo"
@@ -815,7 +849,7 @@ compatible way later if really desirable, as long as we require that
 disjunction literals be normalized).
 -->
 
-```
+```cue rows
 Expression                       Resolves to
 "tcp" | "udp"                    "tcp" | "udp"
 *"tcp" | "udp"                   "tcp"
@@ -854,7 +888,7 @@ Any evaluation error is represented as bottom.
 Implementations may associate error strings with different instances of bottom;
 logically they all remain the same value.
 
-```
+```ebnf
 bottom_lit = "_|_" .
 ```
 
@@ -864,7 +898,7 @@ bottom_lit = "_|_" .
 Top is represented by the underscore character `_`, lexically an identifier.
 Unifying any value `v` with top results in `v` itself.
 
-```
+```cue rows
 Expr        Result
 _ &  5        5
 _ &  _        _
@@ -879,11 +913,11 @@ The _null value_ is represented with the keyword `null`.
 It has only one parent, top, and one child, bottom.
 It is unordered with respect to any other value.
 
-```
+```ebnf
 null_lit   = "null" .
 ```
 
-```
+```cue rows
 null & 8     _|_
 null & _     null
 null & _|_   _|_
@@ -897,11 +931,11 @@ the keywords `true` and `false`.
 The predeclared boolean type is `bool`; it is a defined type and a separate
 element in the lattice.
 
-```
+```ebnf
 bool_lit = "true" | "false" .
 ```
 
-```
+```cue rows
 bool & true          true
 true & true          true
 true & false         _|_
@@ -987,7 +1021,7 @@ For any [comparison operator](#comparison-operators) `op`,
 `op a` is the disjunction of every `x` such that `x op a`.
 
 
-```
+```cue parse
 2 & >=2 & <=5           // 2, where 2 is either an int or float.
 2.5 & >=1 & <=5         // 2.5
 2 & >=1.0 & <3.0        // 2.0
@@ -1042,7 +1076,7 @@ fields evaluates to bottom, recursively.
 A struct literal may contain multiple fields with the same label,
 the result of which is the unification of all those fields.
 
-```
+```ebnf
 StructLit       = "{" { Declaration "," } "}" .
 Declaration     = Field | Ellipsis | Embedding | LetClause | attribute .
 Ellipsis        = "..." [ Expression ] .
@@ -1060,7 +1094,7 @@ attr_tokens     = { attr_token |
 attr_token      = /* any token except '(', ')', '[', ']', '{', or '}' */
 ```
 
-```
+```cue rows
 Expression                             Result
 {a: int, a: 1}                         {a: 1}
 {a: int} & {a: 1}                      {a: 1}
@@ -1100,7 +1134,7 @@ for any given `x`.
 Implementations may error upon encountering a required field constraint
 when manifesting CUE as data.
 
-```
+```cue rows
 Expression                             Result
 {foo?: 3} & {foo: 3}                   {foo: 3}
 {foo!: 3} & {foo: 3}                   {foo: 3}
@@ -1161,7 +1195,7 @@ A _dynamic field_ is a field whose label is determined by
 an expression wrapped in parentheses.
 A dynamic field may be marked as optional or required.
 
-```
+```cue rows
 Expression                             Result
 a:   "foo"                             a:   "foo"
 b:   "bar"                             b:   "bar"
@@ -1204,8 +1238,8 @@ in `a` with that label.
 The token `...` is a shorthand for `..._`.
 _Note_: default constraints of the form `..._` are not yet implemented.
 
-
-```
+<!-- NOTE: default constraints not yet implemented -->
+```cue ! parse
 a: {
     foo:      string  // foo is a string
     [=~"^i"]: int     // all other fields starting with i are integers
@@ -1221,6 +1255,12 @@ b: a & {
     other: "a string"
 }
 ```
+<!-- error:
+missing ',' in struct literal:
+    spec.md:1253:8
+expected '}', found 'EOF':
+    spec.md:1260:3
+-->
 
 <!--
 TODO: are these two equivalent? Rog says that maybe you'll be able to refer
@@ -1288,7 +1328,7 @@ future extensions and relaxations:
     additionalProperties and additionalItems.
 -->
 
-```
+```cue
 intMap: [string]: int
 intMap: {
     t1: 43
@@ -1307,7 +1347,7 @@ The optional field set defined by `nameMap` matches every field,
 in this case just `hank`, and unifies the associated constraint
 with the matched field, resulting in:
 
-```
+```cue
 nameMap: hank: {
     firstName: "Hank"
     nickName:  "Hank"
@@ -1321,7 +1361,7 @@ By default, structs are open to adding fields.
 Instances of an open struct `p` may contain fields not defined in `p`.
 This is makes it easy to add fields, but can lead to bugs:
 
-```
+```cue
 S: {
     field1: string
 }
@@ -1358,7 +1398,7 @@ Syntactically, structs are closed explicitly with the `close` builtin or
 implicitly and recursively by [definitions](#definitions-and-hidden-fields).
 
 
-```
+```cue
 A: close({
     field1: string
     field2: string
@@ -1413,7 +1453,7 @@ The result of `{ A }` is `A` for any `A` (including definitions).
 
 Syntactically, embeddings may be any expression.
 
-```
+```cue
 S1: {
     a: 1
     b: 2
@@ -1461,7 +1501,7 @@ already define or explicitly allow with a pattern constraint or `...`.
 If referencing a definition would always result in an error, implementations
 may report this inconsistency at the point of its declaration.
 
-```
+```cue
 #MyStruct: {
     sub: field:    string
 }
@@ -1489,7 +1529,7 @@ D2: #D & { a: 12, b: 33 }  // _|_ // cannot define both `a` and `b`
 ```
 
 
-```
+```cue
 #A: {a: int}
 
 B: {
@@ -1543,7 +1583,7 @@ such as a mapping to a protocol buffer <!-- TODO: add link --> tag or alternativ
 name of the field when mapping to a different language.
 
 
-```
+```cue
 // Package attribute
 @protobuf(proto3)
 
@@ -1573,7 +1613,7 @@ Aliases name values that can be referred to
 within the [scope](#declarations-and-scopes) in which they are declared.
 The name of an alias must be unique within its scope.
 
-```
+```ebnf
 AliasExpr  = [ identifier "=" ] Expression .
 ```
 
@@ -1625,7 +1665,7 @@ Before a list element (`[ X=value, X+1 ]`) (Not yet implemented)
      Consider removing.
 -->
 
-```
+```cue
 // A field alias
 foo: X  // 4
 X="not an identifier": 4
@@ -1649,7 +1689,7 @@ The identifier is only visible within the [scope](#declarations-and-scopes)
 in which it is declared.
 The identifier must be unique within its scope.
 
-```
+```cue
 let x = expr
 
 a: x + 1
@@ -1662,11 +1702,11 @@ A field whose value is a struct with a single field may be written as
 a colon-separated sequence of the two field names,
 followed by a colon and the value of that single field.
 
-```
+```cue
 job: myTask: replicas: 2
 ```
 expands to
-```
+```cue
 job: {
     myTask: {
         replicas: 2
@@ -1729,14 +1769,14 @@ The length of a closed list is the number of elements it contains.
 The length of an open list is the number of elements as a lower bound
 and an unlimited number of elements as its upper bound.
 
-```
+```ebnf
 ListLit       = "[" [ ElementList [ "," ] ] "]" .
 ElementList   = Ellipsis | Embedding { "," Embedding } [ "," Ellipsis ] .
 ```
 
 Lists can be thought of as structs:
 
-```
+```cue
 List: *null | {
     Elem: _
     Tail: List
@@ -1746,11 +1786,11 @@ List: *null | {
 For closed lists, `Tail` is `null` for the last element, for open lists it is
 `*null | List`, defaulting to the shortest variant.
 For instance, the open list [ 1, 2, ... ] can be represented as:
-```
+```cue
 open: List & { Elem: 1, Tail: { Elem: 2 } }
 ```
 and the closed version of this list, [ 1, 2 ], as
-```
+```cue
 closed: List & { Elem: 1, Tail: { Elem: 2, Tail: null } }
 ```
 
@@ -1869,7 +1909,7 @@ such as regular fields or definitions starting with `#`.
 Any identifier starting with `_` is hidden from other packages;
 it resides in a separate namespace than namesake identifiers of other packages.
 
-```
+```cue
 package mypackage
 
 foo:   string  // visible outside mypackage
@@ -1903,7 +1943,7 @@ A field associates the value of an expression to a label within a struct.
 If this label is an identifier, it binds the field to that identifier,
 so the field's value can be referenced by writing the identifier.
 String labels are not bound to fields.
-```
+```cue
 a: {
     b: 2
     "s": 3
@@ -1962,7 +2002,7 @@ Operands denote the elementary values in an expression.
 An operand may be a literal, a (possibly qualified) identifier denoting
 a field, alias, or let declaration, or a parenthesized expression.
 
-```
+```ebnf
 Operand     = Literal | OperandName | "(" Expression ")" .
 Literal     = BasicLit | ListLit | StructLit .
 BasicLit    = int_lit | float_lit | string_lit |
@@ -1974,7 +2014,7 @@ OperandName = identifier | QualifiedIdent .
 
 A qualified identifier is an identifier qualified with a package name prefix.
 
-```
+```ebnf
 QualifiedIdent = PackageName "." identifier .
 ```
 
@@ -1982,7 +2022,7 @@ A qualified identifier accesses an identifier in a different package,
 which must be [imported](#import-declarations).
 The identifier must be declared in the [package block](#blocks) of that package.
 
-```
+```cue parse
 math.Sin    // denotes the Sin function in package math
 ```
 
@@ -1996,7 +2036,7 @@ the fields they were originally bound to.
 Implementations may use a different mechanism to evaluate as long as
 these semantics are maintained.
 
-```
+```cue
 a: {
     place:    string
     greeting: "Hello, \(place)!"
@@ -2015,7 +2055,7 @@ e: c.greeting  // "Hello, you!"
 
 Primary expressions are the operands for unary and binary expressions.
 
-```
+```ebnf
 PrimaryExpr =
 	Operand |
 	PrimaryExpr Selector |
@@ -2049,7 +2089,7 @@ Argument       = Expression | ( identifier ":" Expression ).
 TODO: considering allowing decimal_lit for selectors.
 --->
 
-```
+```cue parse
 x
 2
 (s + ".txt")
@@ -2065,7 +2105,7 @@ f.p[i].x
 For a [primary expression](#primary-expressions) `x` that is not a [package name](#package-clause),
 the selector expression
 
-```
+```cue parse
 x.f
 ```
 
@@ -2113,7 +2153,7 @@ the result of the expression is bottom (an error).
 In the latter case the expression is incomplete.
 The operand of a selector may be associated with a default.
 
-```
+```cue
 T: {
     x:     int
     y:     3
@@ -2144,7 +2184,7 @@ f: e.a  // 4 after selecting default from (({a: 1|*2} | {a: 3|*4}).a, 4)
 
 A primary expression of the form
 
-```
+```cue parse
 a[x]
 ```
 
@@ -2176,7 +2216,7 @@ for `a` of struct type:
 - bottom (an error), otherwise
 
 
-```
+```cue
 a: [ 1, 2 ][1]     // 2
 b: [ 1, 2 ][2]     // _|_
 c: [ 1, 2, ...][2] // _|_
@@ -2191,7 +2231,7 @@ z: x[y]  // 4
 
 Operators combine operands into expressions.
 
-```
+```ebnf
 Expression = UnaryExpr | Expression binary_op Expression .
 UnaryExpr  = PrimaryExpr | unary_op UnaryExpr .
 
@@ -2260,7 +2300,7 @@ Precedence    Operator
 Binary operators of the same precedence associate from left to right.
 For instance, `x / y * z` is the same as `(x / y) * z`.
 
-```
+```cue parse
 +x
 23 + 3*x[i]
 x <= f()
@@ -2305,14 +2345,14 @@ The unary operators `+` and `-` are defined for numeric values as follows:
 #### String operators
 
 Strings can be concatenated using the `+` operator:
-```
+```cue parse
 s: "hi " + name + " and good bye"
 ```
 String addition creates a new string by concatenating the operands.
 
 A string can be repeated by multiplying it:
 
-```
+```cue parse
 s: "etc. "*3  // "etc. etc. etc. "
 ```
 
@@ -2382,7 +2422,7 @@ For pattern matching (`=~`, `!~`):
 <!-- TODO: Implementations should adopt an algorithm that runs in linear time? -->
 <!-- Consider implementing Level 2 of Unicode regular expression. -->
 
-```
+```cue parse
 3 < 4       // true
 3 < 4.0     // true
 null == 2   // false
@@ -2570,7 +2610,7 @@ calls `f` with arguments `a1, a2, … an`. Arguments must be expressions
 of which the values are an instance of the parameter types of `F`
 and are evaluated before the function is called.
 
-```
+```cue parse
 a: math.Atan2(x, y)
 ```
 
@@ -2622,7 +2662,7 @@ Within structs, the values yielded by a comprehension are embedded within the
 struct.
 Both structs and lists may contain multiple comprehensions.
 
-```
+```ebnf
 Comprehension       = Clauses StructLit .
 
 Clauses             = StartClause { [ "," ] Clause } .
@@ -2634,7 +2674,7 @@ LetClause           = "let" identifier "=" Expression .
 ElseClause          = "else" StructLit .
 ```
 
-```
+```cue
 a: [1, 2, 3, 4]
 b: [for x in a if x > 1 { x+1 }]  // [3, 4, 5]
 
@@ -2672,7 +2712,7 @@ The result of the expression is substituted as follows:
 - struct: illegal
 
 
-```
+```cue
 a: "World"
 b: "Hello \( a )!" // Hello World!
 ```
@@ -2694,7 +2734,7 @@ interpolation, it will be extra resilient: if any of the arguments to the
 interpolation fail, they will be printed as an expression. This allows failing
 expressions to be a part of the error message.
 
-```
+```cue
 a: 1/0 | error("infinity and beyond!: \(1/0)")
 ```
 
@@ -2718,7 +2758,7 @@ precisely named builtin functions:
   - list.Len(x)
 -->
 
-```
+```cue rows
 Expression           Result
 len("Hellø")         6
 len([1, 2, 3])       3
@@ -2738,7 +2778,7 @@ The builtin function `and` takes a list and returns the result of applying
 the `&` operator to all elements in the list.
 It returns top for the empty list.
 
-```
+```cue rows
 Expression:          Result
 and([a, b])          a & b
 and([a])             a
@@ -2751,7 +2791,7 @@ The builtin function `or` takes a list and returns the result of applying
 the `|` operator to all elements in the list.
 It returns bottom for the empty list.
 
-```
+```cue rows
 Expression:          Result
 or([a, b])           a | b
 or([a])              a
@@ -2770,7 +2810,8 @@ r = x - y*q  with 0 <= r < |y|
 ```
 where `|y|` denotes the absolute value of `y`.
 
-```
+<!-- TODO: check tables like these -->
+```cue untested
  x     y   div(x, y)  mod(x, y)
  5     3        1          2
 -5     3       -2          1
@@ -2789,7 +2830,8 @@ x = q*y + r  and  |r| < |y|
 
 with `quo(x, y)` truncated towards zero.
 
-```
+<!-- TODO: check tables like these -->
+```cue untested
  x     y   quo(x, y)  rem(x, y)
  5     3        1          2
 -5     3       -1         -2
@@ -2832,7 +2874,7 @@ It counts how many schemas unify successfully (without producing an error).
 The validator succeeds if the count satisfies the numeric constraint provided
 as the first argument.
 
-```
+```cue
 // Exactly 2 schemas must match
 value: "foo" & matchN(2, [string, !="bar", <4])  // true: string and !="bar" match
 
@@ -2864,7 +2906,7 @@ If the condition unifies successfully, the "then" schema is applied;
 otherwise, the "else" schema is applied.
 The validator succeeds if the chosen schema unifies successfully with the value.
 
-```
+```cue
 // If value is a string, it must have length > 3; otherwise it must be > 10
 value: "hello" & matchIf(string, len(value) > 3, value > 10) // OK; len("hello") is >3
 
@@ -2887,7 +2929,7 @@ during evaluation according to the rules in this section.
 A _reference cycle_ occurs if a field references itself, either directly or
 indirectly.
 
-```
+```cue
 // x references itself
 x: x
 
@@ -2909,7 +2951,7 @@ As it does not matter how we fail, we can assume the result to be `a`
 and postpone validating `a == e` until after all references
 in `e` have been resolved.
 
-```
+```cue rows
 // Config            Evaluates to (requiring concrete values)
 x: {                  x: {
     a: b + 100            a: _|_ // cycle detected
@@ -2936,15 +2978,16 @@ and take `v` as the result of unification.
 <!-- Tomabechi's graph unification algorithm
 can detect such cycles at near-zero cost. -->
 
-```
-Configuration    Evaluated
-//    c           Cycles in nodes of type struct evaluate
-//  ↙︎   ↖         to the fixed point of unifying their
-// a  →  b        values ad infinitum.
+```cue
+// Configuration     Evaluated
+//
+//       c           Cycles in nodes of type struct evaluate
+//     ↙︎   ↖         to the fixed point of unifying their
+//    a  →  b        values ad infinitum.
 
-a: b & { x: 1 }   // a: { x: 1, y: 2, z: 3 }
-b: c & { y: 2 }   // b: { x: 1, y: 2, z: 3 }
-c: a & { z: 3 }   // c: { x: 1, y: 2, z: 3 }
+a: b & { x: 1 }      // a: { x: 1, y: 2, z: 3 }
+b: c & { y: 2 }      // b: { x: 1, y: 2, z: 3 }
+c: a & { z: 3 }      // c: { x: 1, y: 2, z: 3 }
 
 // resolve a             b & {x:1}
 // substitute b          c & {y:2} & {x:1}
@@ -2956,7 +2999,7 @@ c: a & { z: 3 }   // c: { x: 1, y: 2, z: 3 }
 This rule also applies to field values that are disjunctions of unification
 operations of the above form.
 
-```
+```cue
 a: b&{x:1} | {y:1}  // {x:1,y:3,z:2} | {y:1}
 b: {x:2} | c&{z:2}  // {x:2} | {x:1,y:3,z:2}
 c: a&{y:3} | {z:3}  // {x:1,y:3,z:2} | {z:3}
@@ -2981,7 +3024,7 @@ evaluate to this value.
 
 A structural cycle is when a node references one of its ancestor nodes.
 It is possible to construct a structural cycle by unifying two acyclic values:
-```
+```cue
 // acyclic
 y: {
     f: h: g
@@ -2998,7 +3041,7 @@ z: x & y
 Implementations should be able to detect such structural cycles dynamically.
 
 A structural cycle can result in infinite structure or evaluation loops.
-```
+```cue
 // infinite structure
 a: b: a
 
@@ -3016,7 +3059,7 @@ So if `a` is cyclic, all of its descendants are also regarded as cyclic.
 A given node `x`, whose value is composed of the conjuncts `c1 & ... & cn`,
 is valid if any of its conjuncts is not cyclic.
 
-```
+```cue
 // Disallowed: a list of infinite length with all elements being 1.
 #List: {
     head: 1
@@ -3076,11 +3119,11 @@ If the result of the unification of all embedded values is not a struct,
 it will be output instead of its enclosing file when exporting CUE
 to a data format
 
-```
+```ebnf
 SourceFile = { attribute "," } [ PackageClause "," ] { ImportDecl "," } { Declaration "," } .
 ```
 
-```
+```cue
 "Hello \(#place)!"
 
 #place: "world"
@@ -3093,7 +3136,7 @@ SourceFile = { attribute "," } [ PackageClause "," ] { ImportDecl "," } { Declar
 A package clause is an optional clause that defines the package to which
 a source file the file belongs.
 
-```
+```ebnf
 PackageClause  = "package" PackageName .
 PackageName    = identifier .
 ```
@@ -3105,7 +3148,7 @@ as if there were no package clause. This can be useful to allow adding
 package level attributes or doc comments to a CUE file without a package
 name.
 
-```
+```cue
 package math
 ```
 
@@ -3141,7 +3184,7 @@ and enables access to exported identifiers of that package.
 The import names an identifier (PackageName) to be used for access and an
 ImportPath that specifies the package to be imported.
 
-```
+```ebnf
 ImportDecl       = "import" ( ImportSpec | "(" { ImportSpec "," } ")" ) .
 ImportSpec       = [ PackageName ] ImportPath .
 ImportLocation   = { unicode_value } .
@@ -3181,7 +3224,7 @@ that import the package after the various types of import declaration.
 
 <!-- TODO: a better example than lib/math:math, where the suffix is a no-op -->
 
-```
+```cue untested
 Import declaration          Local name of Sin
 
 import   "lib/math"         math.Sin
