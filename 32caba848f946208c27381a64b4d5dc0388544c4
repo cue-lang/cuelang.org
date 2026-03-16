@@ -16,6 +16,24 @@
       "message": "nit: I would say \"OCI registries\" to be very clear.",
       "revId": "32caba848f946208c27381a64b4d5dc0388544c4",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4542e44e_3a780422",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 490,
+      "author": {
+        "id": 1017723
+      },
+      "writtenOn": "2026-03-16T17:21:45Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f4f54c9_f9e37b2e",
+      "revId": "32caba848f946208c27381a64b4d5dc0388544c4",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
