@@ -149,6 +149,8 @@ other = "Open share options"
 other = "Copy link"
 [share_share_on]
 other = "Share on"
+[share_opens_new_tab]
+other = "opens in new tab"
 
 # Popup
 [popup_open]
