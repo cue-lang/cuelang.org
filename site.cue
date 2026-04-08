@@ -10,12 +10,12 @@ import (
 )
 
 versions: {
-	go:            "go1.26.0"
+	go:            "go1.26.2"
 	bareGoVersion: strings.TrimPrefix(go, "go")
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 		latest: {
-			v:             *"v0.16.0" | _
+			v:             *"v0.16.1" | _
 			majorDotMinor: strings.Join(list.Take(strings.Split(v, "."), 2), ".")
 		}
 		prerelease: v: *latest.v | _
@@ -207,8 +207,8 @@ template: base.#writefs & {
 			\#(
 			strings.Join([for _, version in versions.cue {
 				"""
-					ENV \(version.var)="\(version.v)"
-					"""
+				ENV \(version.var)="\(version.v)"
+				"""
 			},
 			], "\n"))
 
@@ -227,8 +227,8 @@ template: base.#writefs & {
 			\#(
 			strings.Join([for _, version in versions._cueVersionList {
 				"""
-					COPY --from=build /cues/\(version)/cue /cues/\(version)/cue
-					"""
+				COPY --from=build /cues/\(version)/cue /cues/\(version)/cue
+				"""
 			},
 			], "\n"))
 
@@ -291,11 +291,11 @@ template: base.#writefs & {
 
 			encoding: "text"
 			contents: #"""
-			// \#(donotedit)
+				// \#(donotedit)
 
-			export const CUEVersion = '\#(versions.cue.playground.v)';
+				export const CUEVersion = '\#(versions.cue.playground.v)';
 
-			"""#
+				"""#
 		}
 
 		for _, cmd in command.cue {
@@ -328,9 +328,9 @@ template: base.#writefs & {
 					\#(cmd.execCmd)
 					{{{end}}}
 					\#( strings.Join([if len(cmd.relatedCommands) > 0 for e in [
-						"", "## Related content", "",
-						for c in cmd.relatedCommands
-						let path = strings.Replace(c, " ", "-", -1) {
+					"", "## Related content", "",
+					for c in cmd.relatedCommands
+					let path = strings.Replace(c, " ", "-", -1) {
 						#"- {{< linkto/related/reference "command/\#(path)" >}}"#
 					},
 				] {e},
