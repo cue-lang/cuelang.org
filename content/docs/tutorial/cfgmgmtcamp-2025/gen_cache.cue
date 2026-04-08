@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"docker-compose.yml broken":          "9QFWHuroxXSkY6nenACij6BYYB6v9mjhU+4ExBC90kU="
-								schema:                               "mzFRraBGqM7romnZI01eKUoVMrTCkJ0HlFcB/30g4yc="
-								"docker-compose.yaml fixed":          "GUTtRm3pswpXDl034htwOl+sznqWl+J4KYDRH7hF5Lg="
-								"moreschema.cue":                     "ixkazdXcGWKJCzMLGmADtTwktmyQFBfXCCUAvt3KUIA="
-								"docker-compose.yaml really fixed":   "q5/be1/rd7yZzx4w5fyWQPZMZxeOsm6wGMSDPauTJdU="
-								"link splotpolicy and splotservice1": "DjM8ehMuVVKKqyFVlTA5tbBpaR4kOPlWfw3RSvt65Cw="
+								"docker-compose.yml broken":          "0CdET9dqLGlhKUVyGt09q5bc7/dLBN4BQ6rBJaC3s64="
+								schema:                               "zD1us89OmXipwmO7zD/XKM5ntWV8rE+VktH4XvDdDZ4="
+								"docker-compose.yaml fixed":          "w8lKDjCQb+ou8nubx45KCLuobekl80oxhuW+xCaq1Uo="
+								"moreschema.cue":                     "UB9Wnzf+ht5EYcg2d0SYde+lwFSNRDGaGeEYzH65RyY="
+								"docker-compose.yaml really fixed":   "bWf1eR0VNHjfMy5kd1wdFH+9bhR9o7Qq0Xj+Ro/rHGA="
+								"link splotpolicy and splotservice1": "MaLZk+D7LoYuYZjhDmG69kL+lpnVk4oPHcPNTA10DiU="
 							}
 							multi_step: {
-								hash:       "P24KM0DDVH12PNL98N9FICBGQ9CS07GTNKTVANRGAQTRNGV4PC40===="
+								hash:       "9F0IHPEA96U6MSUR4AF6RIQCJ7AK6HVVE8H42D3V4E4OFO832L0G===="
 								scriptHash: "D400CN0SES1U7PK9SLC4NJT5DJ9RNFL9M51DT6ONBCC5N2KGFOP0===="
 								steps: [{
 									doc:      ""
@@ -71,7 +71,7 @@ package site
 									output: """
 											module: "cue.example"
 											language: {
-											\tversion: "v0.16.0"
+											\tversion: "v0.16.1"
 											}
 											deps: {
 											\t"github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {

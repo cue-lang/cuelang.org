@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "F7GC9F315AAEB1U64LR0MSQ2MQTV2FGBH384LMVNL662V8S2LML0===="
-									scriptHash: "A0RGQ8N5TU739RK9V5ICLL2P40GGKRACEA5ALV9SQ7OF5LTRA6DG===="
+									hash:       "H86CLGF3V3VA7AEHOBHF0L0E6T1RP1PJO946NM5593CESVB3FRLG===="
+									scriptHash: "CEN7JMK972JN7TN3IEKN0UBDFA0LRKG61L00UDV8UDO63A7KE5A0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.0:$PATH"
+										cmd:      "export PATH=/cues/v0.16.1:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -28,6 +28,11 @@ package site
 
 												Once the authorization is successful, a token is stored in a logins.json file
 												inside $CUE_CONFIG_DIR; see 'cue help environment'.
+
+												To log into other OCI registries, use 'docker login' or 'podman login'.
+												The cue tool supports credentials configured via these tools:
+
+												\thttps://cuelang.org/docs/reference/modules/#authorization
 
 												Usage:
 												  cue login [registry] [flags]
