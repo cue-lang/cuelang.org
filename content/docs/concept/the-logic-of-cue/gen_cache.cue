@@ -7,16 +7,16 @@ package site
 					page: {
 						cache: {
 							code: {
-								"order unaware":          "I00gUbyRWDp3CwZmitl6ShfjGsksUg3zVF4WDoBEpcA="
-								"new order":              "0VBVmTkq/pfv45r0EVruKspFPcYx5ljmjCTQdU8i+M4="
-								"allowed values":         "Af8L/T+yWOEGfxTxjF2hfJ/B+zC+gQD9TcYYbbo7+hA="
-								default:                  "3B8Ja8vqBKXWChCsoIo8Lk4A3CmH8dgDvO71Hq5F79A="
-								"revisit allowed values": "M+bfI79G+2UqiyM5GLccZ9c94cjd7CKkjI71JobletU="
-								"revisit default":        "M6np5jclX9KZT3sm6OjMGYUP8cncwT0iWVNpB/MIPYM="
-								acmeMonitoring:           "B9s2FhyG3qbJtXCLp7L9UiqVjhy1j6q4ndZs4zArMH4="
-								cycles:                   "UMr5LfwBrH28O0bHZtN3pbV2z5LTHtNk4SoLfA9ze8g="
-								sums:                     "6rkyzupD7P3VJbu4LHl5qLaOblOzswByeQ4YGY8R0yY="
-								"sums answers":           "H2mZM+QOnY9MsET0VVZuuXqfD6v4o42iakSCxKPbFmE="
+								"order unaware":          "tUnR68CmCvmlzyyip2vZvbBEbo+PCSzmzKF4bXNsCT0="
+								"new order":              "f0cAkc0fDnkvN+qIZ7Be4MWFU7VT1qB2WKtxMCjWpKI="
+								"allowed values":         "gtHDhQMOj9F8voEdAzXe0tikah/uZW96hLPQyRpc2w8="
+								default:                  "gt+PMXHVCPHheBcpK1CsaPOwyiqbHe8pSSHuRY4j274="
+								"revisit allowed values": "05dD+ob3hvlJhNk3An6YUxr2Y/WNQxradtXbUn6b7RQ="
+								"revisit default":        "/6uGxrjgjp85ENczOUbytfs1r2CFWl9wni8tOG51VA4="
+								acmeMonitoring:           "95fesWppCaQXAG4eQVcX3rkXfdNKbA4l3GipRY/UNvE="
+								cycles:                   "mKZgDR+OVACbEmvEatqEEFKB/J8NB41rC7p4JzCeaDU="
+								sums:                     "8zHNGvzcbfSnPXMFdZQU9f0ZJhzgUgWW8k87c//fOYA="
+								"sums answers":           "NzctOdTGI2+ypefqgXAfClhtwZnT3I4dsDWIGmI3R8Q="
 							}
 						}
 					}
