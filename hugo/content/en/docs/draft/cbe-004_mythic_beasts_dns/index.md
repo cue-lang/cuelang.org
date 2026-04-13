@@ -230,7 +230,8 @@ zones: [_]: #Zone
 	#DKIM?: pubkey?: string
 }
 
-#Host: #FQDN | "@" // "@" indicates the zone apex/root
+// We don't use net.FQDN in #Host as it forbids underscores.
+#Host: string | "@" // "@" indicates the zone apex/root
 #FQDN: net.FQDN & string
 
 #A: [#IPv4]:     #Record
