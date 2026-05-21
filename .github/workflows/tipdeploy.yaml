@@ -144,16 +144,12 @@ jobs:
         run: npm install
         working-directory: hugo
       - name: 'tip.cuelang.org: Configure the site to use the tip of cue-lang/cue'
-        env:
-          GOPRIVATE: cuelang.org/go
-        run: _scripts/tipUseAlternativeCUE.bash
+        run: |-
+          sha=$(curl -fsSL https://review.gerrithub.io/projects/cue-lang%2Fcue/branches/master | tail -c +6 | jq -r .revision)
+          _scripts/tipUseAlternativeCUE.bash "$sha"
       - name: 'tip.cuelang.org: Build the site against the tip of cue-lang/cue'
         run: _scripts/regenPostInfraChange.bash
-        env:
-          GOPRIVATE: cuelang.org/go
       - name: 'tip.cuelang.org: Deploy the site'
         run: |-
           git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n cueckoo:${{ secrets.CUECKOO_GITHUB_PAT }} | base64)"
           _scripts/tipDeploy.bash 'cueckoo' 'cueckoo@gmail.com'
-        env:
-          GOPRIVATE: cuelang.org/go

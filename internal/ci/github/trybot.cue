@@ -434,8 +434,8 @@ _netlifyDeploy: githubactions.#Step & {
 
 	name: string
 	run:  """
-        netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site.id) --debug \(prod)
-        """
+		netlify deploy \(alias) -f \(nc.build.functions) -d \(nc.build.publish) -m \(strconv.Quote(name)) -s \(#site.id) --debug \(prod)
+		"""
 	env: NETLIFY_AUTH_TOKEN: "${{ secrets.NETLIFY_AUTH_TOKEN_\(uSiteName)}}"
 }
 
@@ -495,34 +495,25 @@ _applyTipPatches: githubactions.#Step & {
 _useTipOfCUE: githubactions.#Step & {
 	name: "tip.cuelang.org: Configure the site to use the tip of cue-lang/cue"
 
-	// Force Go to bypass the module proxy and sumdb for the
-	// cuelang.org/go module, ensuring that the absolute latest CUE
-	// pseudo-version is available to test against.
-	//
-	// TODO: is the use of GOPRIVATE (as opposed to GONOPROXY) really
-	// necessary? Tracking https://golang.org/issue/70042 to confirm.
-	env: GOPRIVATE: "cuelang.org/go"
-
-	run: "_scripts/tipUseAlternativeCUE.bash"
+	// Get the latest commit hash from GerritHub, since GOPROXY can lag for up to 30 minutes.
+	// Gerrit's REST API prepends `)]}'` to JSON responses as XSSI protection, which we strip.
+	run: """
+		sha=$(curl -fsSL https://review.gerrithub.io/projects/cue-lang%2Fcue/branches/master | tail -c +6 | jq -r .revision)
+		_scripts/tipUseAlternativeCUE.bash "$sha"
+		"""
 }
 
 _regenPostInfraChange: githubactions.#Step & {
 	name: "tip.cuelang.org: Build the site against the tip of cue-lang/cue"
 	run:  "_scripts/regenPostInfraChange.bash"
-
-	// TODO: See comment in previous step
-	env: GOPRIVATE: "cuelang.org/go"
 }
 
 _deployTipCuelangOrg: githubactions.#Step & {
 	name: "tip.cuelang.org: Deploy the site"
 	run:  """
-				git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_repo.botGitHubUser):${{ secrets.\(_repo.botGitHubUserTokenSecretsKey) }} | base64)"
-				_scripts/tipDeploy.bash '\(_repo.botGitHubUser)' '\(_repo.botGitHubUserEmail)'
-				"""
-
-	// TODO: See comment in previous step
-	env: GOPRIVATE: "cuelang.org/go"
+		git config http.https://github.com/.extraheader "AUTHORIZATION: basic $(echo -n \(_repo.botGitHubUser):${{ secrets.\(_repo.botGitHubUserTokenSecretsKey) }} | base64)"
+		_scripts/tipDeploy.bash '\(_repo.botGitHubUser)' '\(_repo.botGitHubUserEmail)'
+		"""
 }
 
 // GitHub's server-side default of permissions:contents:"read" is removed if
