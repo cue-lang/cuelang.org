@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f6d340d3_ab8d23a3",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2026-05-21T18:52:05Z",
+      "side": 1,
+      "message": "Maybe slightly more robust just to skip the first line?\n\n\n\n```suggestion\n\t\tsha\u003d$(curl -fsSL https://review.gerrithub.io/projects/cue-lang%2Fcue/branches/master | tail +2 | jq -r .revision)\n```",
+      "revId": "cc95dd513b920bda42f12be5685c8ec10cef08dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
