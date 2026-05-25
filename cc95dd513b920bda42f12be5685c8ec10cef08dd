@@ -16,6 +16,24 @@
       "message": "Maybe slightly more robust just to skip the first line?\n\n\n\n```suggestion\n\t\tsha\u003d$(curl -fsSL https://review.gerrithub.io/projects/cue-lang%2Fcue/branches/master | tail +2 | jq -r .revision)\n```",
       "revId": "cc95dd513b920bda42f12be5685c8ec10cef08dd",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c096b58c_b39a1b23",
+        "filename": "internal/ci/github/trybot.cue",
+        "patchSetId": 1
+      },
+      "lineNbr": 501,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-05-25T13:53:24Z",
+      "side": 1,
+      "message": "I assume you meant `tail -n +2` - done. This is indeed a bit better as the rest api docs talk about a \"first line\" rather than a set number of bytes.",
+      "parentUuid": "f6d340d3_ab8d23a3",
+      "revId": "cc95dd513b920bda42f12be5685c8ec10cef08dd",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
