@@ -18,14 +18,28 @@ versionRef=${1:-master}
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
-# Resolve $versionRef to a pseudo-version. Notice this intentionally honours
-# GOPROXY rather that setting a specific value in the script, allowing the
-# setting to be controlled by this script's invocation.
+# Resolve $versionRef to a pseudo-version via GOPROXY. We pin GOPROXY to
+# proxy.golang.org so that a failure to resolve the commit does not fall back
+# to a direct VCS fetch, which is slow and flaky. The proxy can still return
+# a 404 "invalid version" response for a very recently pushed commit it has
+# not processed yet (see https://github.com/golang/go/issues/53906), so retry
+# a few times with a sleep to give the proxy a chance to catch up.
 td=$(mktemp -d)
 trap "rm -rf $td" EXIT
 pushd $td >/dev/null
 go mod init mod.example
-go get cuelang.org/go@$versionRef
+export GOPROXY=https://proxy.golang.org
+for i in 1 2 3 4 5; do
+	if go get cuelang.org/go@$versionRef; then
+		break
+	fi
+	if [ $i -eq 5 ]; then
+		echo "tip: giving up on go get cuelang.org/go@$versionRef after $i attempts" >&2
+		exit 1
+	fi
+	echo "tip: go get failed, retrying in 30s (attempt $i)" >&2
+	sleep 30
+done
 version=$(go list -m -f={{.Version}} cuelang.org/go)
 popd >/dev/null
 
