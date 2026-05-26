@@ -16,6 +16,24 @@
       "message": "nit: explitly checking the last try number seems a bit fragile.\nHow about:\n```\nmaxTries\u003d5\nfor i in $(seq maxTries); do\n   ....\n   if [ $i -eq $maxTries ]; then\n```\n\nThat is, assuming the `seq` command is available in the container I guess.",
       "revId": "e4bbc10fba7b5bef0e6fb04632876405de0c033e",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24a0a7d2_fdde0ba6",
+        "filename": "_scripts/tipUseAlternativeCUE.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-05-26T16:11:28Z",
+      "side": 1,
+      "message": "seq is coreutils, so it moves us away from portable bash. the bash way would be `{1..5}`, but that doesn\u0027t work with variables. I don\u0027t think it\u0027s a big deal either way for such a small loop, so I\u0027ll leave as is for now.",
+      "parentUuid": "ceb9e5ad_fe70907c",
+      "revId": "e4bbc10fba7b5bef0e6fb04632876405de0c033e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
