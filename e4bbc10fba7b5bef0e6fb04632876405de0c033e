@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ceb9e5ad_fe70907c",
+        "filename": "_scripts/tipUseAlternativeCUE.bash",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2026-05-26T16:02:27Z",
+      "side": 1,
+      "message": "nit: explitly checking the last try number seems a bit fragile.\nHow about:\n```\nmaxTries\u003d5\nfor i in $(seq maxTries); do\n   ....\n   if [ $i -eq $maxTries ]; then\n```\n\nThat is, assuming the `seq` command is available in the container I guess.",
+      "revId": "e4bbc10fba7b5bef0e6fb04632876405de0c033e",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
