@@ -47,9 +47,10 @@ func TestScripts(t *testing.T) {
 		Dir:           "testdata",
 		Setup:         setup,
 		Cmds: map[string]func(ts *testscript.TestScript, neg bool, args []string){
-			"touch": touchCmd,
-			"sleep": sleepCmd,
-			"log":   logCmd,
+			"touch":     touchCmd,
+			"touchwait": touchwaitCmd,
+			"sleep":     sleepCmd,
+			"log":       logCmd,
 		},
 	})
 }
@@ -274,10 +275,6 @@ type batchedWatcherHandler[T any] struct {
 	specialWatch chan string
 	specialWait  chan struct{}
 	handler      eventHandler[T]
-
-	// lastLoggedName is the path of the most recently logged event. It is used
-	// to coalesce consecutive events for the same path; see handleEvent.
-	lastLoggedName string
 }
 
 var _ specialHander = (*batchedWatcherHandler[fsnotify.Event])(nil)
@@ -313,33 +310,28 @@ func (b *batchedWatcherHandler[T]) run() {
 }
 
 // handleEvent logs ev, coalescing consecutive events that refer to the same
-// path into a single log line.
+// path into a single log line (see watcherLog.logEvent).
 //
 // The OS/fsnotify layer does not emit a deterministic number of low-level
 // events for a single logical filesystem operation. Moving a directory into
 // the watched tree, for example, reliably surfaces as a Create for the new
 // path but on some runs is accompanied by a spurious follow-up Rename for that
-// same path. These tests only care about the sequence of paths the watcher
-// reports — and, crucially, that a file deep inside a moved-in directory is
-// observed at all, which proves the recursive watch was re-established — not
-// about how many raw events each path produced. Collapsing runs of same-path
-// events keeps the golden output stable across these inherently racy runs.
+// same path; and the touchwait command deliberately touches a file repeatedly
+// until its watch is established. These tests only care about the sequence of
+// paths the watcher reports — and, crucially, that a file deep inside a
+// moved-in directory is observed at all, which proves the recursive watch was
+// re-established — not about how many raw events each path produced. Collapsing
+// runs of same-path events keeps the golden output stable across these
+// inherently racy runs.
 func handleEvent(b *batchedWatcherHandler[fsnotify.Event], specialFile string, ev fsnotify.Event) string {
-	if ev.Name != b.lastLoggedName {
-		b.lastLoggedName = ev.Name
-		// Make ev.Name relative for logging
-		rel, err := filepath.Rel(b.s.rootdir, ev.Name)
-		if err != nil {
-			b.s.log.logf("error: failed to derive %q relative to %q: %v", ev.Name, b.s.rootdir, err)
-		} else {
-			b.s.log.logf("name: %s, op: %v\n", rel, ev.Op)
-		}
+	// Make ev.Name relative for logging
+	rel, err := filepath.Rel(b.s.rootdir, ev.Name)
+	if err != nil {
+		b.s.log.logf("error: failed to derive %q relative to %q: %v", ev.Name, b.s.rootdir, err)
+	} else {
+		b.s.log.logEvent(ev.Name, "name: %s, op: %v\n", rel, ev.Op)
 	}
 	if ev.Name == specialFile {
-		// The special file marks the end of an observation window. Reset the
-		// coalescing state so the first event of the next window is always
-		// logged, even if it happens to repeat the special file's path.
-		b.lastLoggedName = ""
 		b.specialWait <- struct{}{}
 		return ""
 	}
@@ -452,6 +444,50 @@ func touchCmd(ts *testscript.TestScript, neg bool, args []string) {
 	}
 }
 
+// touchwait repeatedly touches a single file until the watcher observes an
+// event for it. Unlike sleep, this reliably waits for the recursive watcher to
+// establish the watch covering the file — for example after a directory has
+// been moved into the watched tree, the watch on a file nested inside it is not
+// established until the watcher has processed the move — without having to
+// guess how long that takes. Repeated touches are harmless because consecutive
+// events for the same path are coalesced (see watcherLog.logEvent), so the file
+// is logged exactly once regardless of how many touches were needed.
+func touchwaitCmd(ts *testscript.TestScript, neg bool, args []string) {
+	if neg {
+		ts.Fatalf("touchwait cannot be negated")
+	}
+	if len(args) != 1 {
+		ts.Fatalf("touchwait takes exactly one argument")
+	}
+	sc, ok := ts.Value(setupContextKey).(*setupCtx)
+	if !ok {
+		ts.Fatalf("failed to find setup context")
+	}
+	f := ts.MkAbs(args[0])
+
+	// The handler signals on SpecialWait once it observes an event for f.
+	done := make(chan struct{})
+	go func() {
+		<-sc.hander.SpecialWait()
+		close(done)
+	}()
+	sc.hander.SpecialWatch() <- f
+
+	for {
+		now := time.Now()
+		if err := os.Chtimes(f, now, now); err != nil {
+			ts.Fatalf("failed to touch %s: %v", f, err)
+		}
+		select {
+		case <-done:
+			return
+		case <-time.After(10 * time.Millisecond):
+			// f's event has not been observed yet, so the watch covering it is
+			// probably not established. Touch again.
+		}
+	}
+}
+
 // sleep optionally takes a single argument, a time.Duration that can be parsed
 // by time.ParseDuration, and sleeps for that length of time. If no duration is
 // passed then a sensible default value is used, a default that works in "most"
@@ -485,6 +521,13 @@ func sleepCmd(ts *testscript.TestScript, neg bool, args []string) {
 type watcherLog struct {
 	logLock sync.Mutex
 	log     *bytes.Buffer
+
+	// lastName is the path of the most recently logged event. logEvent uses it
+	// to coalesce consecutive events for the same path. It is reset by snapshot,
+	// i.e. at the boundary between observation windows, so the first event of a
+	// new window is always logged even if it repeats the previous window's last
+	// path.
+	lastName string
 }
 
 func (tw *watcherLog) logf(format string, args ...any) {
@@ -493,9 +536,24 @@ func (tw *watcherLog) logf(format string, args ...any) {
 	fmt.Fprintf(tw.log, format, args...)
 }
 
+// logEvent logs an event for path name, coalescing it away if it refers to the
+// same path as the previously logged event. See handleEvent for why
+// consecutive same-path events must be collapsed.
+func (tw *watcherLog) logEvent(name, format string, args ...any) {
+	tw.logLock.Lock()
+	defer tw.logLock.Unlock()
+	if name == tw.lastName {
+		return
+	}
+	tw.lastName = name
+	fmt.Fprintf(tw.log, format, args...)
+}
+
 func (tw *watcherLog) snapshot() ([]byte, error) {
 	tw.logLock.Lock()
 	got, err := io.ReadAll(tw.log)
+	// A snapshot ends an observation window, so reset the coalescing state.
+	tw.lastName = ""
 	tw.logLock.Unlock()
 	return got, err
 }

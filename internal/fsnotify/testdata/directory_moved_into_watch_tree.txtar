@@ -11,9 +11,10 @@
 touch dir/a.txt
 touch dir/b/b.txt
 mv anotherdir/c dir/c
-sleep # to give the watcher time to catch up
-touch dir/c/subdir/c.txt
-sleep # to give the watcher time to catch up
+# Touch the nested file until the watcher observes it. This reliably waits for
+# the recursive watch on the moved-in directory to be established, rather than
+# guessing with a fixed sleep.
+touchwait dir/c/subdir/c.txt
 log
 cmp stdout 1.txt
 cd dir
