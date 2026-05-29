@@ -54,6 +54,57 @@ func TestScripts(t *testing.T) {
 	})
 }
 
+// TestCoalesceEvents locks in the coalescing behaviour relied on by the
+// testscript-based tests in a deterministic way: it feeds handleEvent a
+// sequence of events that includes the kind of spurious, racy duplicate the
+// OS/fsnotify layer is known to emit (here a Rename on a moved-in directory
+// that already produced a Create) and asserts that consecutive same-path
+// events are collapsed to a single log line. See handleEvent for why this
+// matters.
+func TestCoalesceEvents(t *testing.T) {
+	s := &setupCtx{
+		rootdir: filepath.FromSlash("/root"),
+		log:     &watcherLog{log: bytes.NewBuffer(nil)},
+	}
+	b := newBatchedWatcherHandler[fsnotify.Event](s, nil, handleEvent)
+
+	special := filepath.FromSlash("/root/.special")
+	events := []fsnotify.Event{
+		{Name: filepath.FromSlash("/root/a.txt"), Op: fsnotify.Chmod},
+		{Name: filepath.FromSlash("/root/b/b.txt"), Op: fsnotify.Chmod},
+		{Name: filepath.FromSlash("/root/c"), Op: fsnotify.Create},
+		{Name: filepath.FromSlash("/root/c"), Op: fsnotify.Rename}, // spurious duplicate, must be coalesced away
+		{Name: filepath.FromSlash("/root/c/subdir/c.txt"), Op: fsnotify.Chmod},
+		{Name: special, Op: fsnotify.Chmod},
+	}
+
+	// handleEvent signals specialWait (unbuffered) when it sees the special
+	// file, so drain it concurrently as run would.
+	done := make(chan struct{})
+	go func() {
+		<-b.SpecialWait()
+		close(done)
+	}()
+	for _, ev := range events {
+		handleEvent(b, special, ev)
+	}
+	<-done
+
+	got, err := s.log.snapshot()
+	if err != nil {
+		t.Fatalf("failed to snapshot log: %v", err)
+	}
+	want := `name: a.txt, op: CHMOD
+name: b/b.txt, op: CHMOD
+name: c, op: CREATE
+name: c/subdir/c.txt, op: CHMOD
+name: .special, op: CHMOD
+`
+	if string(got) != want {
+		t.Fatalf("unexpected log:\n got: %q\nwant: %q", got, want)
+	}
+}
+
 func setup(e *testscript.Env) (err error) {
 	defer func() {
 		r := recover()
@@ -223,6 +274,10 @@ type batchedWatcherHandler[T any] struct {
 	specialWatch chan string
 	specialWait  chan struct{}
 	handler      eventHandler[T]
+
+	// lastLoggedName is the path of the most recently logged event. It is used
+	// to coalesce consecutive events for the same path; see handleEvent.
+	lastLoggedName string
 }
 
 var _ specialHander = (*batchedWatcherHandler[fsnotify.Event])(nil)
@@ -257,15 +312,34 @@ func (b *batchedWatcherHandler[T]) run() {
 	}
 }
 
+// handleEvent logs ev, coalescing consecutive events that refer to the same
+// path into a single log line.
+//
+// The OS/fsnotify layer does not emit a deterministic number of low-level
+// events for a single logical filesystem operation. Moving a directory into
+// the watched tree, for example, reliably surfaces as a Create for the new
+// path but on some runs is accompanied by a spurious follow-up Rename for that
+// same path. These tests only care about the sequence of paths the watcher
+// reports — and, crucially, that a file deep inside a moved-in directory is
+// observed at all, which proves the recursive watch was re-established — not
+// about how many raw events each path produced. Collapsing runs of same-path
+// events keeps the golden output stable across these inherently racy runs.
 func handleEvent(b *batchedWatcherHandler[fsnotify.Event], specialFile string, ev fsnotify.Event) string {
-	// Make ev.Name relative for logging
-	rel, err := filepath.Rel(b.s.rootdir, ev.Name)
-	if err != nil {
-		b.s.log.logf("error: failed to derive %q relative to %q: %v", ev.Name, b.s.rootdir, err)
-	} else {
-		b.s.log.logf("name: %s, op: %v\n", rel, ev.Op)
+	if ev.Name != b.lastLoggedName {
+		b.lastLoggedName = ev.Name
+		// Make ev.Name relative for logging
+		rel, err := filepath.Rel(b.s.rootdir, ev.Name)
+		if err != nil {
+			b.s.log.logf("error: failed to derive %q relative to %q: %v", ev.Name, b.s.rootdir, err)
+		} else {
+			b.s.log.logf("name: %s, op: %v\n", rel, ev.Op)
+		}
 	}
 	if ev.Name == specialFile {
+		// The special file marks the end of an observation window. Reset the
+		// coalescing state so the first event of the next window is always
+		// logged, even if it happens to repeat the special file's path.
+		b.lastLoggedName = ""
 		b.specialWait <- struct{}{}
 		return ""
 	}
