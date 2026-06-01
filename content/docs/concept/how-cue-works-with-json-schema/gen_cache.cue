@@ -7,15 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.json":     "M7gEAc4TD/u8vX+yowHSDxSSLW3QmdYmf1MDfK22mTU="
-								"schema.cue":      "0RZexfuHDnR9LrNvVpQS1QAUbLQmcERibpTl7/NPzpQ="
-								good:              "pCtyHi8d4eT19ADRvrWpAoMQwBNkxZ+MRfVkB/BV9oc="
-								bad:               "nzNnzczUBZa9z99pGnOUeKtP+JFnE69ngDzOsm9hfLs="
-								"main go program": "mTLGkBsFkCD9NXw1mD5lHTcakA2jJohLR9ejbL3sqxE="
+								"schema.json":         "M7gEAc4TD/u8vX+yowHSDxSSLW3QmdYmf1MDfK22mTU="
+								"schema.cue":          "0RZexfuHDnR9LrNvVpQS1QAUbLQmcERibpTl7/NPzpQ="
+								good:                  "pCtyHi8d4eT19ADRvrWpAoMQwBNkxZ+MRfVkB/BV9oc="
+								bad:                   "nzNnzczUBZa9z99pGnOUeKtP+JFnE69ngDzOsm9hfLs="
+								"main go program":     "mTLGkBsFkCD9NXw1mD5lHTcakA2jJohLR9ejbL3sqxE="
+								"generate schema.cue": "TUnjGlto3ca7rwwnz62fhK6jX7FrWH/754g5qQ0t8wU="
+								"gen main.go":         "G6FFx5kj2N/eU61kdf53IDJG3faYjAKX1YiqcvrUSl0="
 							}
 							multi_step: {
-								hash:       "7IT8MB92U9R26CVGR54JI1KOGCENJU9VVBG4EGB4AS4N8R7F06IG===="
-								scriptHash: "2PKS75A3MH9OEUPDCOQPEE7672VP63H4SOV0JITBQ2O6LV71C4JG===="
+								hash:       "L49BIR79N8NECFKI5QN6GV0MB0JGHTQQUIAT6F7DDSF45M1CC860===="
+								scriptHash: "0R39MUMGJUH6D768D8FJ88ER2CSR0G312ML4Q63CHLSDK4A8FGB0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -112,6 +114,74 @@ package site
 											    bad.json:2:13
 											    schema.json:13:14
 											exit status 1
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "go vet ./..."
+									exitCode: 0
+									output:   ""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "staticcheck ./..."
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      ""
+									cmd:      "cue def --out jsonschema -e '#Team' generate_schema.cue"
+									exitCode: 0
+									output: """
+											{
+											    "$schema": "https://json-schema.org/draft/2020-12/schema",
+											    "type": "object",
+											    "additionalProperties": false,
+											    "properties": {
+											        "lead": {
+											            "type": "string"
+											        },
+											        "members": {
+											            "type": "array",
+											            "items": {
+											                "type": "string"
+											            }
+											        },
+											        "name": {
+											            "type": "string"
+											        }
+											    },
+											    "required": [
+											        "name"
+											    ]
+											}
+
+											"""
+								}, {
+									doc:      "#ellipsis 0"
+									cmd:      "go mod tidy"
+									exitCode: 0
+									output: """
+											...
+
+											"""
+								}, {
+									doc:      "#ellipsis 10"
+									cmd:      "go run ./gen generate_schema.cue '#Team'"
+									exitCode: 0
+									output: """
+											{
+											    "Lbrace": {},
+											    "Elts": [
+											        {
+											            "Label": {
+											                "NamePos": {},
+											                "Name": "$schema",
+											                "Scope": null,
+											                "Node": null
+											            },
+											...
 
 											"""
 								}, {

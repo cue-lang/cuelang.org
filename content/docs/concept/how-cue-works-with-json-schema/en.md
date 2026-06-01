@@ -17,26 +17,29 @@ export STATICCHECK_CACHE=/caches/staticcheck
 {{{end}}}
 
 CUE has first class support for [JSON Schema](https://json-schema.org/):
-both the `cue` command and the Go API understand the format.
+both the `cue` command and the Go API can convert between CUE and JSON Schema
+in both directions.
 
 Constraints stored as JSON Schema are available for `cue` commands to use as if
 they were expressed in CUE.
 This allows you to work with JSON Schema constraints directly, using them to
 validate data, and to represent them natively in CUE's more succinct and
 expressive form.
+CUE definitions can also be exported as JSON Schema, letting you share your CUE
+schemas with tools that understand JSON Schema but not CUE.
 
 <!--more-->
 
 In this guide we'll see:
 - [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}}) converting a
   JSON Schema to CUE,
+- [`cue def`]({{< relref "docs/reference/command/cue-help-def" >}}) generating JSON
+  Schema from CUE,
 - [`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}}) using JSON Schema
   constraints directly,
 - and the
   [`encoding/jsonschema`](https://pkg.go.dev/cuelang.org/go/encoding/jsonschema)
-  Go API validating data against a JSON Schema.
-
-The ability to export CUE constraints as JSON Schema is tracked in {{<issue 929/>}}.
+  Go API converting between CUE and JSON Schema.
 
 ## Using JSON Schema with the `cue` command
 
@@ -286,20 +289,114 @@ go vet ./...
 staticcheck ./...
 {{{end}}}
 
-## Future plans
+## Generating JSON Schema from CUE
 
-One of CUE's goals is to act as an *interlingua*: a bidirectional bridge
-between all the formats that CUE speaks, linking constraints and data sources
-of truth, no matter where they exist.
+The [`cue def`]({{< relref "docs/reference/command/cue-help-def" >}}) command can
+produce JSON Schema from CUE definitions.
 
-To meet this goal, CUE will gain the ability to export native CUE constraints
-as JSON Schema, enabling their use by tools that aren't aware of CUE. This is
-tracked in {{<issue 929/>}}.
+Let's start with a CUE definition:
+
+{{{with upload "en" "generate schema.cue"}}}
+-- generate_schema.cue --
+#Team: {
+	name: string
+	members: [...string]
+	lead?: string
+}
+{{{end}}}
+
+We use `cue def` with the `--out jsonschema` flag to generate a JSON Schema,
+selecting the `#Team` definition with `-e`:
+
+{{{with script "en" "cue def jsonschema"}}}
+cue def --out jsonschema -e '#Team' generate_schema.cue
+{{{end}}}
+
+The generated JSON Schema uses
+[Draft 2020-12](https://json-schema.org/draft/2020-12/schema) and faithfully
+represents the CUE constraints: required fields become entries in the
+`required` array, optional fields are omitted from it, and the list type
+becomes a JSON Schema `array` with typed `items`.
+
+## Generating JSON Schema with the Go API
+
+The
+[`encoding/jsonschema`](https://pkg.go.dev/cuelang.org/go/encoding/jsonschema)
+API can also generate JSON Schema from CUE values.
+
+This Go program takes a CUE file and definition name, and prints the
+corresponding JSON Schema:
+
+{{{with upload "en" "gen main.go"}}}
+-- gen/main.go --
+package main
+
+import (
+	"encoding/json"
+	"flag"
+	"fmt"
+	"log"
+	"os"
+
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
+	"cuelang.org/go/encoding/jsonschema"
+)
+
+func main() {
+	log.SetFlags(0)
+	flag.Parse()
+	args := flag.Args()
+
+	if len(args) != 2 {
+		log.Fatalf("usage:\n\t%s FILE.cue '#Definition'\n", os.Args[0])
+	}
+
+	ctx := cuecontext.New()
+
+	src, err := os.ReadFile(args[0])
+	if err != nil {
+		log.Fatal(err)
+	}
+	val := ctx.CompileBytes(src)
+	def := val.LookupPath(cue.ParsePath(args[1]))
+
+	schema, err := jsonschema.Generate(def, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	data, err := json.MarshalIndent(schema, "", "    ")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("%s\n", data)
+}
+{{{end}}}
+
+{{{with _script_ "en" "go mod tidy gen"}}}
+#ellipsis 0
+go mod tidy
+{{{end}}}
+
+{{{with script "en" "go run gen"}}}
+#ellipsis 10
+go run ./gen generate_schema.cue '#Team'
+{{{end}}}
+
+{{{with _script_ "en" "go vet gen"}}}
+go vet ./...
+#ellipsis 0
+staticcheck ./...
+{{{end}}}
 
 ## Related content
 
 - {{< linkto/related/reference "command/cue-help-import" >}}
+- {{< linkto/related/reference "command/cue-help-def" >}}
 - The [`encoding/jsonschema`](https://pkg.go.dev/cuelang.org/go/encoding/jsonschema) Go API
 - {{< linkto/related/reference "command/cue-help-vet" >}}
 - {{< linkto/related/reference "command/cue-help-filetypes" >}}
-- {{<issue 929>}}Issue #929{{</issue>}} tracks the conversion of CUE to JSON Schema
+- {{< linkto/related/tutorial "converting-cue-to-json-schema" >}}
+- {{< linkto/related/tutorial "converting-json-schema-to-cue" >}}
+- {{< linkto/related/howto "generate-json-schema-from-cue" >}}
+- {{< linkto/related/howto "control-json-schema-generation" >}}
