@@ -1,0 +1,48 @@
+---
+title: Generating JSON Schema from CUE
+tags: [encodings, cue command]
+authors: [rogpeppe]
+toc_hide: true
+---
+
+CUE definitions can be converted to
+[JSON Schema](https://json-schema.org/),
+letting you share your CUE schemas with tools and systems that understand
+JSON Schema but not CUE.
+
+This guide shows you how to generate JSON Schema from a CUE definition using
+`cue def`.
+
+<!--more-->
+
+{{{with step}}}
+Create a CUE file containing a definition:
+
+{{{with upload "en" "schema.cue"}}}
+-- schema.cue --
+#Person: {
+	name:   string
+	age:    int & >0
+	email?: string
+}
+{{{end}}}
+{{{end}}}
+
+{{{with step}}}
+Generate JSON Schema from the definition using `cue def`:
+
+{{{with script "en" "cue def jsonschema"}}}
+cue def --out jsonschema -e '#Person' schema.cue
+{{{end}}}
+
+The `--out jsonschema` flag tells `cue` to produce JSON Schema output, and the
+`-e` flag selects the definition to convert.
+{{{end}}}
+
+## Related content
+
+- {{< linkto/related/concept "how-cue-works-with-json-schema" >}}
+- {{< linkto/related/tutorial "converting-cue-to-json-schema" >}}
+- {{< linkto/related/howto "control-json-schema-generation" >}}
+- {{< linkto/related/reference "command/cue-help-def" >}}
+- {{< linkto/related/reference "command/cue-help-filetypes" >}}
