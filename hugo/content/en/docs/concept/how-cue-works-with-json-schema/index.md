@@ -11,26 +11,29 @@ toc_hide: true
 ---
 
 CUE has first class support for [JSON Schema](https://json-schema.org/):
-both the `cue` command and the Go API understand the format.
+both the `cue` command and the Go API can convert between CUE and JSON Schema
+in both directions.
 
 Constraints stored as JSON Schema are available for `cue` commands to use as if
 they were expressed in CUE.
 This allows you to work with JSON Schema constraints directly, using them to
 validate data, and to represent them natively in CUE's more succinct and
 expressive form.
+CUE definitions can also be exported as JSON Schema, letting you share your CUE
+schemas with tools that understand JSON Schema but not CUE.
 
 <!--more-->
 
 In this guide we'll see:
 - [`cue import`]({{< relref "docs/reference/command/cue-help-import" >}}) converting a
   JSON Schema to CUE,
+- [`cue def`]({{< relref "docs/reference/command/cue-help-def" >}}) generating JSON
+  Schema from CUE,
 - [`cue vet`]({{< relref "docs/reference/command/cue-help-vet" >}}) using JSON Schema
   constraints directly,
 - and the
   [`encoding/jsonschema`](https://pkg.go.dev/cuelang.org/go/encoding/jsonschema)
-  Go API validating data against a JSON Schema.
-
-The ability to export CUE constraints as JSON Schema is tracked in {{<issue 929/>}}.
+  Go API converting between CUE and JSON Schema.
 
 ## Using JSON Schema with the `cue` command
 
@@ -277,20 +280,287 @@ name: conflicting values ["Charlie","Cartwright"] and strings.MinRunes(1) (misma
     schema.json:13:14
 exit status 1
 ````
-## Future plans
+## Generating JSON Schema from CUE
 
-One of CUE's goals is to act as an *interlingua*: a bidirectional bridge
-between all the formats that CUE speaks, linking constraints and data sources
-of truth, no matter where they exist.
+The [`cue def`]({{< relref "docs/reference/command/cue-help-def" >}}) command can
+produce JSON Schema from CUE definitions.
 
-To meet this goal, CUE will gain the ability to export native CUE constraints
-as JSON Schema, enabling their use by tools that aren't aware of CUE. This is
-tracked in {{<issue 929/>}}.
+Let's start with a CUE definition:
 
+{{< code-tabs >}}
+{{< code-tab name="generate_schema.cue" language="cue" area="top-left" >}}
+@experiment(explicitopen)
+
+#Team: {
+	name: string
+	members: [...string]
+	lead?: string
+}
+{{< /code-tab >}}{{< /code-tabs >}}
+
+The `@experiment(explicitopen)` attribute makes the open and closed status of
+CUE structs translate predictably into JSON Schema, so we recommend enabling it
+whenever you generate JSON Schema. See
+[`cue help experiments`]({{< relref "docs/reference/command/cue-help-experiments" >}})
+for details about the experiment itself.
+
+We use `cue def` with the `--out jsonschema` flag to generate a JSON Schema,
+selecting the `#Team` definition with `-e`:
+
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiAtLW91dCBqc29uc2NoZW1hIC1lICcjVGVhbScgZ2VuZXJhdGVfc2NoZW1hLmN1ZQ==" }
+$ cue def --out jsonschema -e '#Team' generate_schema.cue
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "lead": {
+            "type": "string"
+        },
+        "members": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "name": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}
+````
+
+The generated schema faithfully represents the CUE constraints: required fields
+become entries in the `required` array, optional fields are omitted from it, and
+the list type becomes a JSON Schema `array` with typed `items`.
+
+The output uses
+[Draft 2020-12](https://json-schema.org/draft/2020-12/schema), which is
+currently the only JSON Schema version that `cue` generates.
+
+### Open and closed structs
+
+CUE definitions are closed by default, meaning they reject fields not mentioned
+in the definition. Adding `...` to a definition makes it open, allowing
+additional fields. This maps directly to `additionalProperties` in the generated
+JSON Schema:
+
+{{< code-tabs >}}
+{{< code-tab name="open.cue" language="cue" area="top-left" >}}
+@experiment(explicitopen)
+
+#Closed: {
+	name: string
+}
+
+#Open: {
+	name: string
+	...
+}
+{{< /code-tab >}}{{< /code-tabs >}}
+
+The closed definition produces `"additionalProperties": false`:
+
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiAtLW91dCBqc29uc2NoZW1hIC1lICcjQ2xvc2VkJyBvcGVuLmN1ZQ==" }
+$ cue def --out jsonschema -e '#Closed' open.cue
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}
+````
+
+The open definition produces `"additionalProperties": true`, allowing the schema
+to accept fields beyond those explicitly listed:
+
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiAtLW91dCBqc29uc2NoZW1hIC1lICcjT3Blbicgb3Blbi5jdWU=" }
+$ cue def --out jsonschema -e '#Open' open.cue
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": true,
+    "properties": {
+        "name": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}
+````
+
+### References between definitions
+
+When one definition references another, the referenced definition appears in the
+`$defs` section of the generated schema:
+
+{{< code-tabs >}}
+{{< code-tab name="defs.cue" language="cue" area="top-left" >}}
+@experiment(explicitopen)
+
+#Address: {
+	street: string
+	city:   string
+	zip:    string
+}
+
+#Person: {
+	name:    string
+	address: #Address
+}
+{{< /code-tab >}}{{< /code-tabs >}}
+
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiAtLW91dCBqc29uc2NoZW1hIC1lICcjUGVyc29uJyBkZWZzLmN1ZQ==" }
+$ cue def --out jsonschema -e '#Person' defs.cue
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$defs": {
+        "#Address": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "city": {
+                    "type": "string"
+                },
+                "street": {
+                    "type": "string"
+                },
+                "zip": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "city",
+                "street",
+                "zip"
+            ]
+        }
+    },
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "address": {
+            "$ref": "#/$defs/%23Address"
+        },
+        "name": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "address",
+        "name"
+    ]
+}
+````
+
+### Writing output to a file
+
+Use the `-o` flag to write the generated schema directly to a file:
+
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGRlZiAtLW91dCBqc29uc2NoZW1hIC1lICcjQ2xvc2VkJyAtbyBjbG9zZWQuc2NoZW1hLmpzb24gb3Blbi5jdWUKY2F0IGNsb3NlZC5zY2hlbWEuanNvbg==" }
+$ cue def --out jsonschema -e '#Closed' -o closed.schema.json open.cue
+$ cat closed.schema.json
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "name": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "name"
+    ]
+}
+````
+
+## Generating JSON Schema with the Go API
+
+The
+[`encoding/jsonschema`](https://pkg.go.dev/cuelang.org/go/encoding/jsonschema)
+API can also generate JSON Schema from CUE values.
+
+This Go program takes a CUE file and definition name, and prints the
+corresponding JSON Schema:
+
+{{< code-tabs >}}
+{{< code-tab name="gen/main.go" language="go" area="top-left" >}}
+package main
+
+import (
+	"encoding/json"
+	"flag"
+	"fmt"
+	"log"
+	"os"
+
+	"cuelang.org/go/cue"
+	"cuelang.org/go/cue/cuecontext"
+	"cuelang.org/go/encoding/jsonschema"
+)
+
+func main() {
+	log.SetFlags(0)
+	flag.Parse()
+	args := flag.Args()
+
+	if len(args) != 2 {
+		log.Fatalf("usage:\n\t%s FILE.cue '#Definition'\n", os.Args[0])
+	}
+
+	ctx := cuecontext.New()
+
+	src, err := os.ReadFile(args[0])
+	if err != nil {
+		log.Fatal(err)
+	}
+	val := ctx.CompileBytes(src)
+	def := val.LookupPath(cue.ParsePath(args[1]))
+
+	schema, err := jsonschema.Generate(def, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+	data, err := json.MarshalIndent(schema, "", "    ")
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("%s\n", data)
+}
+{{< /code-tab >}}{{< /code-tabs >}}
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4vZ2VuIGdlbmVyYXRlX3NjaGVtYS5jdWUgJyNUZWFtJw==" }
+$ go run ./gen generate_schema.cue '#Team'
+{
+    "Lbrace": {},
+    "Elts": [
+        {
+            "Label": {
+                "NamePos": {},
+                "Name": "$schema",
+                "Scope": null,
+                "Node": null
+            },
+...
+````
 ## Related content
 
 - {{< linkto/related/reference "command/cue-help-import" >}}
+- {{< linkto/related/reference "command/cue-help-def" >}}
 - The [`encoding/jsonschema`](https://pkg.go.dev/cuelang.org/go/encoding/jsonschema) Go API
 - {{< linkto/related/reference "command/cue-help-vet" >}}
 - {{< linkto/related/reference "command/cue-help-filetypes" >}}
-- {{<issue 929>}}Issue #929{{</issue>}} tracks the conversion of CUE to JSON Schema
+- {{< linkto/related/tutorial "converting-cue-to-json-schema" >}}
+- {{< linkto/related/tutorial "converting-json-schema-to-cue" >}}
