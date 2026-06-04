@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d6532ef_079cdf6a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-06-04T16:43:08Z",
+      "side": 1,
+      "message": "beyond explicitopen, were there any other big caveats that we should note in the concept page?",
+      "revId": "735f12ff52a786f47e0659b4d768d565ffbf272b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5eba6e3_e493bf9f",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-06-04T16:43:08Z",
+      "side": 1,
+      "message": "I thought that closedness only worked correctly with `@experiment(explicitopen)`; this section needs to use that in the examples and briefly mention that. You can link to the page, so that you don\u0027t need to go into much detail about the experiment itself.\n\nThe same probably applies to the other pages. To avoid duplicating the same warning about explicitopen too much, I might fold control-json-schema-generation into this page (the import side already mentions `-l` above), remove generate-jsonschema-from-cue (as mentioned below), and only duplicate the note between the two remaining pages.",
+      "revId": "735f12ff52a786f47e0659b4d768d565ffbf272b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dbb4b88c_46d538e0",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-06-04T16:43:08Z",
+      "side": 1,
+      "message": "assuming no other JSON Schema versions are supported when generating right now, I\u0027d briefly mention that, with something like:\n\n\u003e Generating other JSON Schema draft versions is not supported at the moment\n\nOr if it\u0027s by design, something like:\n\n\u003e Only the latest draft JSON Schema version is supported, which is currently Draft 2020-12.",
+      "revId": "735f12ff52a786f47e0659b4d768d565ffbf272b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f8e1c70_a0ca29bc",
+        "filename": "content/docs/howto/generate-json-schema-from-cue/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-06-04T16:43:08Z",
+      "side": 1,
+      "message": "The concept guide already contains this example, so I\u0027d drop this page entirely as a duplicate. We don\u0027t need to cover every angle in the diataxis.",
+      "revId": "735f12ff52a786f47e0659b4d768d565ffbf272b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
