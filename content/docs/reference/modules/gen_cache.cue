@@ -7,8 +7,8 @@ package site
 					page: {
 						cache: {
 							code: {
-								"module.cue schema":  "U0UY9lw2tDgi6O7VNCAK8oGiugQ97sUgNUX4NrGLdHo="
-								"module.cue example": "OncdJ9wIVnACsqBqZnNfSzxJfUHI1SCTzJtiWV9to+c="
+								"module.cue schema":  "0dvoA+K4/B4PXGvqMfl4YgP1vyvMqs+byg8t0fp6RIk="
+								"module.cue example": "m4VqvAmmsM2YunebhdjS1CL0GsANpB0tp4dVYoXZVdk="
 							}
 						}
 					}
