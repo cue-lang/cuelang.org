@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ae6a2b1c_4b90320e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2026-06-05T08:33:55Z",
+      "side": 1,
+      "message": "Good question. The caveats I\u0027m aware of for CUE -\u003e JSON Schema generation are:\n\n- explicitopen: now enabled in all the generation examples and mentioned briefly with a link to `cue help experiments`.\n- Draft version: only Draft 2020-12 is generated. Now noted on the concept page.\n- Lossiness: constructs with no JSON Schema equivalent don\u0027t round-trip. For example, an interpolated/computed string field generates `true` (i.e. accept anything), and CUE defaults (`*x`) are dropped from the output.\n\nI\u0027ve left the lossiness point out of the prose to keep the pages focused on the common cases, but I\u0027m happy to add a short note if you think it\u0027s worth calling out.",
+      "parentUuid": "5d6532ef_079cdf6a",
+      "revId": "735f12ff52a786f47e0659b4d768d565ffbf272b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c5eba6e3_e493bf9f",
@@ -31,6 +49,24 @@
       "writtenOn": "2026-06-04T16:43:08Z",
       "side": 1,
       "message": "I thought that closedness only worked correctly with `@experiment(explicitopen)`; this section needs to use that in the examples and briefly mention that. You can link to the page, so that you don\u0027t need to go into much detail about the experiment itself.\n\nThe same probably applies to the other pages. To avoid duplicating the same warning about explicitopen too much, I might fold control-json-schema-generation into this page (the import side already mentions `-l` above), remove generate-jsonschema-from-cue (as mentioned below), and only duplicate the note between the two remaining pages.",
+      "revId": "735f12ff52a786f47e0659b4d768d565ffbf272b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a09d378_fe0c72aa",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 292,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2026-06-05T08:33:55Z",
+      "side": 1,
+      "message": "Done. Enabled `@experiment(explicitopen)` in all the generation examples (this concept page and the tutorial), each with a brief note linking to `cue help experiments`. I confirmed the experiment matters: without it, opening a closed struct via embedding silently produces a contradictory schema, whereas with it cue reports the error.\n\nI\u0027ve also followed your restructuring suggestion: folded control-json-schema-generation (definition selection, open/closed structs, references appearing in $defs, and writing output to a file) into this concept page and removed it as a standalone page, and removed generate-json-schema-from-cue entirely. The explicitopen note is now duplicated only between this page and the tutorial.",
+      "parentUuid": "c5eba6e3_e493bf9f",
       "revId": "735f12ff52a786f47e0659b4d768d565ffbf272b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
@@ -52,6 +88,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "14b44d01_7e3bc950",
+        "filename": "content/docs/concept/how-cue-works-with-json-schema/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 319,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2026-06-05T08:33:55Z",
+      "side": 1,
+      "message": "Done. Added after the generation example: \"The output uses Draft 2020-12, which is currently the only JSON Schema version that cue generates.\"",
+      "parentUuid": "dbb4b88c_46d538e0",
+      "revId": "735f12ff52a786f47e0659b4d768d565ffbf272b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3f8e1c70_a0ca29bc",
@@ -65,6 +119,24 @@
       "writtenOn": "2026-06-04T16:43:08Z",
       "side": 1,
       "message": "The concept guide already contains this example, so I\u0027d drop this page entirely as a duplicate. We don\u0027t need to cover every angle in the diataxis.",
+      "revId": "735f12ff52a786f47e0659b4d768d565ffbf272b",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2d59604_fa9c0205",
+        "filename": "content/docs/howto/generate-json-schema-from-cue/en.md",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2026-06-05T08:33:55Z",
+      "side": 1,
+      "message": "Done. Removed this page entirely; the same example lives in the concept guide.",
+      "parentUuid": "3f8e1c70_a0ca29bc",
       "revId": "735f12ff52a786f47e0659b4d768d565ffbf272b",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
