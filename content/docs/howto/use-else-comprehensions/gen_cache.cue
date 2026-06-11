@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							code: {
-								"if-else before and after": "FR8AkcVHcMvMeCBkepRqGTfF6VN20x9WFp2Ax9ed7Gg="
-								"for-fallback":             "yJOhl/URT8mFhK8f66YTh0iggXGKJx0CrGM8geQhAyg="
+								"if-else before and after": "hKwmq59NZyeNSPMm6gt6tfPUK3O3G14IAKwswj9geRs="
+								"for-fallback":             "xQxEfmSYoBBv0JeVv0iU+dmVMYbHAMcpG9whyoGo3Wo="
 							}
 							multi_step: {
-								hash:       "T91AO4B12BUNP5HGS8JBE0GDCABTOQ2GO0784PIDLNMAGPI1J0HG===="
-								scriptHash: "G5AUG3KP470H257PEHHEPH7L6P7MJQOP65TJQNPRNC42FMU0LLMG===="
+								hash:       "OJSERLAL2KVMVEB5G2HB23RPLS6TMV9R60N0NGSHRFEEKI8RU6JG===="
+								scriptHash: "KL26L20PO1JAC46LAHMB5VAVGTTC42MJKDT8G5OA5SSDC6T6CAUG===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.16.1:$PATH"
+									cmd:      "export PATH=/cues/v0.17.0-alpha.2.0.20260610123057-092c2816a629:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
