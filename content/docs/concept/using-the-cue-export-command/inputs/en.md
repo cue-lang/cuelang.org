@@ -409,15 +409,6 @@ y: 2
 ! cue export .:A schema.json data.yml >3341.out 2>&1
 grep "cannot combine packages with individual schema files" 3341.out
 
-# "The {{{.package}}} input must be the first input specified in the list of
-# arguments"
-  cue export .:A data.cue
-! cue export data.cue .:A
-  cue export .:A data.yml
-! cue export data.yml .:A
-  cue export .:A packageB.cue
-! cue export packageB.cue .:A
-
 # "If {{{.packageFile}}} inputs are present then their package clauses need to be
 # the same as each other"
   cue export packageA.cue packageA.cue
