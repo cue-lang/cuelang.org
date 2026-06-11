@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "763809d4_6ccc193f",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-06-11T13:50:07Z",
+      "side": 1,
+      "message": "clarify that you mean `language.version` by this, which implicitly requires the CUE version to meet that version minimum too. simply upgrading CUE without bumping `language.version` won\u0027t be enough",
+      "revId": "bd3720c18d9e3d144b2191e9e62c68aa22847e05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b584b2a5_4e804829",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-06-11T13:50:07Z",
+      "side": 1,
+      "message": "I\u0027d personally omit this; it\u0027s a minor feature to be nice to users but doesn\u0027t really affect the design of modules",
+      "range": {
+        "startLine": 372,
+        "startChar": 35,
+        "endLine": 374,
+        "endChar": 34
+      },
+      "revId": "bd3720c18d9e3d144b2191e9e62c68aa22847e05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3abb4ee3_d13dc966",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-06-11T13:50:07Z",
+      "side": 1,
+      "message": "I\u0027d shorten this paragraph a bit. The pages for `mod edit` and `mod tidy` already go into detail about their behavior. We just need to mention briefly that module replaces can be managed with these commands.",
+      "revId": "bd3720c18d9e3d144b2191e9e62c68aa22847e05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0dc65e75_025f559a",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1017720
+      },
+      "writtenOn": "2026-06-11T13:50:07Z",
+      "side": 1,
+      "message": "as mentioned in Discord, I think this section should include a line that `cue.mod/local-module.cue` must not appear in a module zip file. otherwise someone constructing module zips by looking at this section might very easily miss that detail.",
+      "revId": "bd3720c18d9e3d144b2191e9e62c68aa22847e05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    }
+  ]
+}
