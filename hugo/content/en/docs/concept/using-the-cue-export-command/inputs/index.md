@@ -432,35 +432,12 @@ y: 2
 { "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
   "properties": { "x": { "type": "string", "minLength": 1 } } }
 {{< /code-tab >}}{{< /code-tabs >}}
-````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOkEgc2NoZW1hLmpzb24gZGF0YS55bWwgPjMzNDEub3V0IDI+JjEKZ3JlcCAiY2Fubm90IGNvbWJpbmUgcGFja2FnZXMgd2l0aCBpbmRpdmlkdWFsIHNjaGVtYSBmaWxlcyIgMzM0MS5vdXQKY3VlIGV4cG9ydCAuOkEgZGF0YS5jdWUKY3VlIGV4cG9ydCBkYXRhLmN1ZSAuOkEKY3VlIGV4cG9ydCAuOkEgZGF0YS55bWwKY3VlIGV4cG9ydCBkYXRhLnltbCAuOkEKY3VlIGV4cG9ydCAuOkEgcGFja2FnZUIuY3VlCmN1ZSBleHBvcnQgcGFja2FnZUIuY3VlIC46QQpjdWUgZXhwb3J0IHBhY2thZ2VBLmN1ZSBwYWNrYWdlQS5jdWUKY3VlIGV4cG9ydCBwYWNrYWdlQS5jdWUgcGFja2FnZUIuY3VlCmN1ZSBleHBvcnQgLjpBIHBhY2thZ2VCLmN1ZQpybSAtZiAqLmN1ZSBkYXRhLnltbCBzY2hlbWEuanNvbiAqLm91dA==" }
+````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOkEgc2NoZW1hLmpzb24gZGF0YS55bWwgPjMzNDEub3V0IDI+JjEKZ3JlcCAiY2Fubm90IGNvbWJpbmUgcGFja2FnZXMgd2l0aCBpbmRpdmlkdWFsIHNjaGVtYSBmaWxlcyIgMzM0MS5vdXQKY3VlIGV4cG9ydCBwYWNrYWdlQS5jdWUgcGFja2FnZUEuY3VlCmN1ZSBleHBvcnQgcGFja2FnZUEuY3VlIHBhY2thZ2VCLmN1ZQpjdWUgZXhwb3J0IC46QSBwYWNrYWdlQi5jdWUKcm0gLWYgKi5jdWUgZGF0YS55bWwgc2NoZW1hLmpzb24gKi5vdXQ=" }
 # "Issue #3341 tracks a problem when combining a *CUE
 # package* input with a <u style='text-decoration-style: dotted;'>constraint file</u> and some other input types)."
 $ cue export .:A schema.json data.yml >3341.out 2>&1
 $ grep "cannot combine packages with individual schema files" 3341.out
 cannot combine packages with individual schema files
-
-# "The <u style='text-decoration-style: dotted;'>CUE package</u> input must be the first input specified in the list of
-# arguments"
-$ cue export .:A data.cue
-{
-    "x": "foo"
-}
-$ cue export data.cue .:A
-cannot combine scope with file
-$ cue export .:A data.yml
-{
-    "x": "foo",
-    "y": 2
-}
-$ cue export data.yml .:A
-cannot combine scope with file
-$ cue export .:A packageB.cue
-{
-    "x": "foo",
-    "y": 2
-}
-$ cue export packageB.cue .:A
-cannot combine scope with file
 
 # "If <u style='text-decoration-style: dotted;'>CUE package file</u> inputs are present then their package clauses need to be
 # the same as each other"

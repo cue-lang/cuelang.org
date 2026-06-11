@@ -38,8 +38,8 @@ package site
 									"stdin data":                                 "QixrNnkn5vycB0AtJCgcmrDYcW0U/EO4m+smPLBFvfw="
 								}
 								multi_step: {
-									hash:       "1BBJ2STBKEARM71B3PAQNOC0D62RDNQITP2C3BFJDH69D3EMMIAG===="
-									scriptHash: "89HBMOT8AA8UQ8IK2O3ALTSIC68PN1CPK8P82O16CPN7KV1FOF80===="
+									hash:       "HFSTUE6THSUV70R2GUVOPI82EFFK7P02E11SA32KG0OS4N7K89JG===="
+									scriptHash: "8M2BR6AKAE9FNP3DHB8JD628IAOH3AD1CBOP6HPP0SP6CV7DTNF0===="
 									steps: [{
 										doc:      "# \"A <u style='text-decoration-style: dotted;'>CUE package</u> input can either be combined with other <u style='text-decoration-style: dotted;'>CUE package</u> inputs,\""
 										cmd:      "cue export .:A .:B"
@@ -213,65 +213,6 @@ package site
 										exitCode: 0
 										output: """
 												cannot combine packages with individual schema files
-
-												"""
-									}, {
-										doc: """
-												# "The <u style='text-decoration-style: dotted;'>CUE package</u> input must be the first input specified in the list of
-												# arguments"
-												"""
-										cmd:      "cue export .:A data.cue"
-										exitCode: 0
-										output: """
-												{
-												    "x": "foo"
-												}
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export data.cue .:A"
-										exitCode: 1
-										output: """
-												cannot combine scope with file
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export .:A data.yml"
-										exitCode: 0
-										output: """
-												{
-												    "x": "foo",
-												    "y": 2
-												}
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export data.yml .:A"
-										exitCode: 1
-										output: """
-												cannot combine scope with file
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export .:A packageB.cue"
-										exitCode: 0
-										output: """
-												{
-												    "x": "foo",
-												    "y": 2
-												}
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export packageB.cue .:A"
-										exitCode: 1
-										output: """
-												cannot combine scope with file
 
 												"""
 									}, {
