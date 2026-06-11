@@ -346,7 +346,68 @@ The `module.cue` file is designed to be human readable and machine writable. The
 For now, the only one is `cue mod tidy` which will fetch dependencies
 and canonicalize the `module.cue` file to reflect all the most recent versions.
 
-A `cue.mod/module.cue` file is required for all modules.
+A `cue.mod/module.cue` file is required for all modules. Replace directives,
+which override how dependencies are resolved during local development, are
+configured separately in a [`cue.mod/local-module.cue` file](#local-module-file),
+described next.
+
+## `cue.mod/local-module.cue` files {#local-module-file}
+
+Replace directives require `language.version` to be v0.17.0 or later.
+
+A module can override how its dependencies are resolved by placing a
+<dfn>replace directive</dfn> in a `cue.mod/local-module.cue` file alongside its
+`cue.mod/module.cue` file. This is useful during development -- for example, to
+point a dependency at a local checkout that you are editing, or at a fork --
+without changing the published `module.cue` file.
+
+A `local-module.cue` file holds development-time configuration only. It is never
+part of a published module -- it is omitted from the module's contents at
+publish time -- and it only takes effect when its module is the
+[main module](#glos-main-module). For this reason replace directives are not
+ permitted in `module.cue`: placing one there is an error that directs you
+to use `local-module.cue` instead. One exception to this is that
+`cue mod tidy` accepts replace directives and will move them to
+`local-module.cue` as appropriate.
+
+Unlike `module.cue`, a `local-module.cue` file does not declare a `module` path
+or `language.version` of its own; both are inherited from the accompanying
+`module.cue` file. It contains only a `deps` field, holding the main module's
+view of its dependencies, with `replace` directives attached:
+
+```cue
+deps: {
+	"foo.example/other/thing@v1": {
+		replace: "../thing"
+	}
+	"foo.example/new/thing@v2": {
+		replace: "foo.example/fork/thing@v2.0.1"
+	}
+}
+```
+
+The value of a `replace` field is interpreted as follows:
+
+- If it begins with `./` or `../`, or is an absolute path, it names a local
+  directory whose contents are used in place of the dependency. That directory
+  must itself be a module -- it must contain its own `cue.mod/module.cue` file.
+- Otherwise it is a [module path](#module-path) with a version, such as
+  `foo.example/fork/thing@v2.0.1`, naming a different module version to use in
+  place of the dependency.
+
+Replace directives are specific to the [major version](#glos-major-version) of
+the module path being replaced: replacing `foo.example/thing@v1` has no effect
+on `foo.example/thing@v2`.
+
+Within `local-module.cue`, the `v` (version) field of a dependency may be
+omitted when the same dependency also appears in `module.cue`, in which case the
+version is taken from there. A dependency that is present only to carry a replace
+directive -- one that is not otherwise required -- may omit its version
+entirely.
+
+The [`cue mod edit`]({{<relref "docs/reference/command/cue-help-mod-edit">}})
+command manages replace directives with its `--replace` and `--drop-replace`
+flags.
 
 ## Minimal version selection (MVS) {#minimal-version-selection}
 
@@ -463,6 +524,7 @@ a wide range of platforms.
 * A `cue.mod/module.cue` file must appear in the top-level directory.
   If present, it must have the name `cue.mod/module.cue` (all
   lowercase). Directories named `cue.mod` are not allowed in any other directory.
+* The `cue.mod/local-module.cue` file must not be present.
 * File and directory names within a module may consist of Unicode letters, ASCII
   digits, the ASCII space character (U+0020), and the ASCII punctuation
   characters `!#$%&()+,-.=@[]^_{}~`. Note that package paths may not contain all
@@ -530,6 +592,14 @@ files](#cue-mod-file).
 <a id="glos-import-path"></a>
 **import path:** A string used to import a package in a CUE source file.
 Synonymous with [package path](#glos-package-path).
+
+<a id="glos-local-module-file"></a>
+**`cue.mod/local-module.cue` file:** An optional file, alongside
+[`cue.mod/module.cue`](#glos-cue-mod-file), that holds development-time
+dependency configuration -- in particular [replace
+directives](#glos-replace-directive). It is never part of a published module and
+takes effect only when its module is the [main module](#glos-main-module). See
+the section on [`cue.mod/local-module.cue` files](#local-module-file).
 
 <a id="glos-main-module"></a>
 **main module:** The module in which the `cue` command is invoked. The main
@@ -609,6 +679,14 @@ the corresponding release version: `v1.2.3-pre` comes before `v1.2.3`. See also
 **release version:** A version without a pre-release suffix. For example,
 `v1.2.3`, not `v1.2.3-pre`. See also [pre-release
 version](#glos-pre-release-version).
+
+<a id="glos-replace-directive"></a>
+**replace directive:** An entry in a [`cue.mod/local-module.cue`
+file](#glos-local-module-file) that overrides how a dependency is resolved,
+substituting either a local directory or a different module version in its
+place. Replace directives take effect only in the [main
+module](#glos-main-module) and are never published. See the section on
+[`cue.mod/local-module.cue` files](#local-module-file).
 
 <a id="glos-repository-root-path"></a>
 **repository root path:** The portion of a [module path](#glos-module-path) that
