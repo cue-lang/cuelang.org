@@ -18,6 +18,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "79978d68_c3fe2892",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 359,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2026-06-11T16:00:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "763809d4_6ccc193f",
+      "revId": "bd3720c18d9e3d144b2191e9e62c68aa22847e05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b584b2a5_4e804829",
@@ -31,6 +49,30 @@
       "writtenOn": "2026-06-11T13:50:07Z",
       "side": 1,
       "message": "I\u0027d personally omit this; it\u0027s a minor feature to be nice to users but doesn\u0027t really affect the design of modules",
+      "range": {
+        "startLine": 372,
+        "startChar": 35,
+        "endLine": 374,
+        "endChar": 34
+      },
+      "revId": "bd3720c18d9e3d144b2191e9e62c68aa22847e05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b579d00d_db5d20da",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 374,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2026-06-11T16:00:19Z",
+      "side": 1,
+      "message": "I actually explicitly added this: it\u0027s a significant feature in the UX and hence worth calling out I think, so I\u0027m inclined to leave it.",
+      "parentUuid": "b584b2a5_4e804829",
       "range": {
         "startLine": 372,
         "startChar": 35,
@@ -58,6 +100,24 @@
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "16b2b9f4_bd4321a5",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 418,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2026-06-11T16:00:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3abb4ee3_d13dc966",
+      "revId": "bd3720c18d9e3d144b2191e9e62c68aa22847e05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0dc65e75_025f559a",
@@ -71,6 +131,24 @@
       "writtenOn": "2026-06-11T13:50:07Z",
       "side": 1,
       "message": "as mentioned in Discord, I think this section should include a line that `cue.mod/local-module.cue` must not appear in a module zip file. otherwise someone constructing module zips by looking at this section might very easily miss that detail.",
+      "revId": "bd3720c18d9e3d144b2191e9e62c68aa22847e05",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "aee44db5_bf909c9d",
+        "filename": "content/docs/reference/modules/en.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 502,
+      "author": {
+        "id": 1007275
+      },
+      "writtenOn": "2026-06-11T16:00:19Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0dc65e75_025f559a",
       "revId": "bd3720c18d9e3d144b2191e9e62c68aa22847e05",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
