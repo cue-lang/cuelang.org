@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"create hello module":            "cH1CJwNQVBUQwK90GL+3Zu9zbpNOPjIoZDzvlTPgCRs="
-								"create local greeting checkout": "Or/3J2MNnXi+3sFHk5N3QHQ31hZvsGIyRXOZy9iD1FM="
+								"create hello module":            "i/4wmiYtpyUSq+o6XhMTb0paXR5llzEhBVLlAzSMa1U="
+								"create local greeting checkout": "ZPRYHJzyNPjl5zndS7Vpd7QIInyNBZuahLxby0ijO2o="
 							}
 							multi_step: {
-								hash:       "9OJU84PHTV72FF85VC19UMQFQ0AJK1EAPNNIT8KR9KSGKC9FEN70===="
-								scriptHash: "H2TMS4GAT2UN6LCDOF2AUBV6ELH47UV0EE6SUPR729KR0N16LL30===="
+								hash:       "F6NF8UEM7NB2MLIRNSUA7FDPGBCRETMOCQTQSK5USERPCAMQUSKG===="
+								scriptHash: "7UE99ST3HK1VGIKI86P0UKEV5SC88N5HVVKK0I3765SD90J2UT90===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.17.0-alpha.2.0.20260610123057-092c2816a629:$PATH"
+									cmd:      "export PATH=/cues/v0.17.0-alpha.3.0.20260615112339-9916719a3eb1:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -30,7 +30,7 @@ package site
 									output: """
 											deps: {
 											\t"example.com/greeting@v0": {
-											\t\treplace: "./greeting"
+											\t\treplaceWith: "./greeting"
 											\t}
 											}
 
