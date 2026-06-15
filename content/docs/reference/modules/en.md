@@ -382,10 +382,10 @@ view of its dependencies, with `replaceWith` fields attached:
 -- local-module.cue --
 deps: {
 	"foo.example/other/thing@v1": {
-		replace: "../thing"
+		replaceWith: "../thing"
 	}
 	"foo.example/new/thing@v2": {
-		replace: "foo.example/fork/thing@v2.0.1"
+		replaceWith: "foo.example/fork/thing@v2.0.1"
 	}
 }
 {{{end}}}
