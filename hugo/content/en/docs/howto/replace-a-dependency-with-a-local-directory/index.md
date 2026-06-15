@@ -77,7 +77,7 @@ This creates a `cue.mod/local-module.cue` file holding the module replace:
 $ cat cue.mod/local-module.cue
 deps: {
 	"example.com/greeting@v0": {
-		replace: "./greeting"
+		replaceWith: "./greeting"
 	}
 }
 ````
