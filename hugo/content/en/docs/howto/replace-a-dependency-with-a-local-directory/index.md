@@ -7,15 +7,15 @@ authors: [rogpeppe]
 
 {{<sidenote text="Requires CUE v0.17.0 or later">}}
 
-This guide demonstrates how to use a
-[replace directive]({{<relref "docs/reference/modules#local-module-file">}})
+This guide demonstrates how to use
+[module replace]({{<relref "docs/reference/modules#local-module-file">}})
 to point one of your module's dependencies at a local directory, so that you
 can develop the dependency and the module that consumes it side by side without
 publishing the dependency first.
 
 <!--more-->
 
-Replace directives are written to a
+Module replaces are written to a
 [`cue.mod/local-module.cue`]({{<relref "docs/reference/modules#local-module-file">}})
 file. This file holds development-time configuration only: it is never part of
 a published module, so a replacement you add here cannot leak into the version
@@ -63,7 +63,7 @@ message: "Hello from my local checkout"
 {{< /step >}}
 
 {{< step stepNumber="3" >}}
-Add a replace directive that substitutes the local `./greeting` directory for
+Add a module replace that substitutes the local `./greeting` directory for
 the `example.com/greeting@v0` dependency, using
 [`cue mod edit`]({{<relref "docs/reference/command/cue-help-mod-edit">}}):
 
@@ -71,7 +71,7 @@ the `example.com/greeting@v0` dependency, using
 $ cue mod edit --replace example.com/greeting@v0=./greeting
 ````
 
-This creates a `cue.mod/local-module.cue` file holding the directive:
+This creates a `cue.mod/local-module.cue` file holding the module replace:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbG9jYWwtbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/local-module.cue
@@ -115,13 +115,13 @@ module, with no need to publish a new version of the dependency.
 {{< /step >}}
 
 {{< step stepNumber="5" >}}
-When you are finished, remove the replace directive again with `--drop-replace`:
+When you are finished, remove the module replace again with `--drop-replace`:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIG1vZCBlZGl0IC0tZHJvcC1yZXBsYWNlIGV4YW1wbGUuY29tL2dyZWV0aW5nQHYw" }
 $ cue mod edit --drop-replace example.com/greeting@v0
 ````
 
-Because it held the only replace directive, the `cue.mod/local-module.cue` file
+Because it held the only module replace, the `cue.mod/local-module.cue` file
 is removed entirely, leaving just `cue.mod/module.cue`:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="bHMgY3VlLm1vZA==" }
