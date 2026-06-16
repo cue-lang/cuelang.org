@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "3JEOHNHHDU10K06DE1I9JOP69MB3HIMSQASIT26SSSF3TL4CNVAG===="
-									scriptHash: "5796GKOP7OHCJB5LJ13GL2TCQLEOFPTFUMOETPLOCJUECQQFR6TG===="
+									hash:       "F30L43Q15DV3PL41RFBGQ9HB1ST3CGFU9MQ78JUDF9PLQF8N6LAG===="
+									scriptHash: "7FC0ELH271D31868GG2FIKQLDCK35RFAHK5FFJVC21VJBT2JVKQG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0-alpha.3:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -78,6 +78,15 @@ package site
 												    is only valid within a try context.
 												    Proposal:      https://cuelang.org/issue/4019
 												    Spec change:   https://cuelang.org/cl/1231444
+
+												  shortcircuit (preview: v0.17.0)
+												    shortcircuit enables short-circuit evaluation for the logical operators
+												    && and ||. When the result is fully determined by the left operand alone
+												    (false && ... or true || ...), the right operand is not evaluated and any
+												    error or incomplete value it carries is suppressed.
+												    This matches the behavior documented in the CUE spec ("The right operand
+												    is evaluated conditionally") and is consistent with all mainstream
+												    languages.
 
 
 												## Global Experiments

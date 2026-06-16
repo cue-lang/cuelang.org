@@ -7,29 +7,29 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"data: alex":                    "T1A3GJyNiyv700WTnVZQLhRW9zzZ195m8dxjMR9pfyk="
-								"data: bryn (broken)":           "d3RfrwrunSLpZFtcY1DrjLLrM7NmbpGoshHzvnw5T/k="
-								"data: charlie":                 "CwSGY6hs1oygbyyJpljRi+nOrpQ70E3CFCiN9MrI3aM="
-								"schema: CUE":                   "Z2t4q9den47JIVr11/WGP/tfy2fJpBRXBQNu46MDk64="
-								"data: bryn (fixed)":            "sED0R+K/8nGE2UVj+wZOQ+5mgq5Zx9mWxUvAlJpBwj0="
-								"data: alex (reminder)":         "yaHZHOO+O0Gy4IyHwmsvBaJ/K1AQ+KatIlN3ICpSimA="
-								"data: bryn (reminder)":         "ChsZkVCZgaAkJCUENGhDO07ma0MhcWmjkRzjpvVl8io="
-								"data: charlie (reminder)":      "QFnzzUGgetyo4T5QSAkG5RMBcsEvU9T8cQ+bfqTvzno="
-								"schema: CUE (reminder)":        "1YITqpInggEjLlsRck42C/Z4spGzyGfvirjt+4EgD+Q="
-								"policy: CUE (too restrictive)": "WM5lHXacm8s5+3y3gHqqEZ8xoHWg5dD8iCQVDHrS6Tg="
-								"policy: CUE (correct)":         "R871pML4cmUApd4JV8y1ewafjlabFRtEDhe9EJhLStk="
-								"schema.proto":                  "hOvGzw5b10gAwZc5eHPANpcxnQRQOFADfN7T3r8k5wI="
-								"schema.json":                   "DBhnN6FVwN8PKGxgVg2cMnAJWleI1T9yQx9qcyNVf+0="
-								"policy.cue":                    "GIfKnluSuGrLzGuOmy1EKhVgsCAjhlKwGgTu220Kd1A="
-								"data.yml (broken)":             "WBMP+eb3891dKeRIEF91k9gv5EdIdzZpakpSJIXQLFw="
-								"data.yml (fixed)":              "4vB7JIc/lLpdnD69miEe5W0o+KM7q0I7+xvoVHZP+Jg="
+								"data: alex":                    "lowaEPe9kY8wblhCH5y3aMIzWQdB5B2YKPjA92dqMsU="
+								"data: bryn (broken)":           "eeufpxqsrNYeFmSclEXUjHjdl3NTabHDG4BoPOMZAVw="
+								"data: charlie":                 "R9UMEBz+UMuPusqvsSU5dqvrYvcvbb3OkGE+qXW6X48="
+								"schema: CUE":                   "a+mCgue770ETYiWacStPiXeO37Vq2Fqt0afDKxW7oKY="
+								"data: bryn (fixed)":            "wIA5gdPBIGAbh+LfwY55J4no/06zIC7vxOwrT5lsPaU="
+								"data: alex (reminder)":         "2xoWRQd0+C9oVBNiOd7uSqMLSb5Qj5KoKXXxoVI7BDc="
+								"data: bryn (reminder)":         "d3liR8yheji3s1ZrTontYPZIcgYf2MVbG9xnvgJYkxE="
+								"data: charlie (reminder)":      "Me0DaD5Hstyv3/2nKiMcKe2lad3J3zNezUKPauqn0iw="
+								"schema: CUE (reminder)":        "/R9awJiNbCGyStJHzRqjXStUPdxpY8ZkHWw4mtUXzv4="
+								"policy: CUE (too restrictive)": "GN/FsM5QTtR4Gu23dwB5M5EF9V91BpFx/YkzO2P2KFg="
+								"policy: CUE (correct)":         "Gv9z4ufglWBHMvqWlAh2jP/otD3xyHS2J0PAigCyv20="
+								"schema.proto":                  "omnPyKNXCm198DOJgxuPO5bLbauKMlCL08j8kNfqSv8="
+								"schema.json":                   "4lvjYcQ/6Oz02r/hJNQ7vlOFRMIBb2Mj5GKNmStRbjg="
+								"policy.cue":                    "9vFpVaMsEUzaZf4HfW6+MDvHVUCkCWOYrEC3V1CHo4I="
+								"data.yml (broken)":             "sHaPc8bGCwNY8YiJqevGgz39lGoL/m3eSOsUds1qDpI="
+								"data.yml (fixed)":              "kSpz236IVaKHkinvcccQImM8evzaQrc5dJnGdWrPRik="
 							}
 							code: {
-								constraints: "nAIEv49vyZQ3ONBdfCReX1txlTyBWxEaeWZj+wvIaNc="
-								definition:  "ER+iMw2HPyk3dMP1Rr94MTAXXPqOESmK+95nOQNPufU="
+								constraints: "aOYewwQgyS7RvfK4jA72wKKA28bcz1dgcm79vqJftDk="
+								definition:  "z1jMayLWdDs/MUA/bGekiuoLMrbbsKfNhTlSB78hpq4="
 							}
 							multi_step: {
-								hash:       "N7B5VQCMI9EF2813GBLHCGV3VMFO8UF0TFN035HR08S7MI3G42HG===="
+								hash:       "PO0EOM9A6BDOSOLAN3DRTOCNE91PET5SAASJF12SAJVIDMIKU6E0===="
 								scriptHash: "I810RVUS4KMU003KOBIBKJ0OSCMTLPSLOID2M86CFKAO5BUPA5GG===="
 								steps: [{
 									doc:      ""
