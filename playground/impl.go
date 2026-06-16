@@ -19,6 +19,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"strings"
+	"testing/fstest"
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/ast"
@@ -105,13 +106,21 @@ func handleCUECompile(in input, fn function, out output, inputVal string) (strin
 		return "", fmt.Errorf("failed to format module file: %w", err)
 	}
 
+	// Use an io/fs to serve supplementary files like cue.mod/module.cue.
+	// We don't use [load.Config.Overlay] as that overlays on the real filesystem,
+	// and Go's js/wasm port has no real filesystem, so any attempts to e.g.
+	// read or stat a cue.mod/local-module.cue file will fail.
+	// By using [load.Config.FS], we only use our [fstest.MapFS] directly.
+	mapFS := fstest.MapFS{
+		"cue.mod/module.cue": &fstest.MapFile{
+			Data: modFileBytes,
+		},
+	}
 	loadCfg := &load.Config{
 		Stdin:      strings.NewReader(inputVal),
 		Dir:        "/",
 		ModuleRoot: "/",
-		Overlay: map[string]load.Source{
-			"/cue.mod/module.cue": load.FromBytes(modFileBytes),
-		},
+		FS:         mapFS,
 	}
 	builds := load.Instances([]string{string(in) + ":", "-"}, loadCfg)
 	if err := builds[0].Err; err != nil {
