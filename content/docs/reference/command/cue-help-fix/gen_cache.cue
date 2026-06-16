@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "2E34K16KU8SBJKD28IKL8M4SP81E4DDQR9UFOO9A3UG59EONHE00===="
-									scriptHash: "B4NCEEJQF2LSHH82STG767SU2LI4R4EVFD26MG0595DNNMAVJI2G===="
+									hash:       "LD05I92MFKSVFFOM3R4L36DS8NF49HBLLJLLAFSK7DJEQ9P5HD90===="
+									scriptHash: "3LVHAQ7IGHTP4AFNQ4RRTP5PAOT5UPSV3OGTNS6PUC5PQJ2U2SUG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0-alpha.3:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -49,16 +49,18 @@ package site
 												current version.
 
 												Usage:
-												  cue fix [packages] [flags]
+												  cue fix [flags] [packages]
 
 												Flags:
-												      --exp strings   list of experiments to port
-												  -f, --force         rewrite even when there are errors
+												      --exp strings          list of experiments to port
+												  -f, --force                rewrite even when there are errors
+												      --remove-list-commas   remove commas from multiline list elements (v0.17.0+)
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]
