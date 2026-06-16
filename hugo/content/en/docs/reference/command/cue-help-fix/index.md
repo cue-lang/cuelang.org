@@ -40,15 +40,17 @@ The special value --exp=all enables all experimental features that apply to the
 current version.
 
 Usage:
-  cue fix [packages] [flags]
+  cue fix [flags] [packages]
 
 Flags:
-      --exp strings   list of experiments to port
-  -f, --force         rewrite even when there are errors
+      --exp strings          list of experiments to port
+  -f, --force                rewrite even when there are errors
+      --remove-list-commas   remove commas from multiline list elements (v0.17.0+)
 
 Global Flags:
-  -E, --all-errors   print all available errors
-  -i, --ignore       proceed in the presence of errors
-  -s, --simplify     simplify output
+  -E, --all-errors     print all available errors
+  -C, --chdir string   change working directory before running command (must be the first flag)
+  -i, --ignore         proceed in the presence of errors
+  -s, --simplify       simplify output
 ````
 
