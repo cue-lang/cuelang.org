@@ -80,8 +80,8 @@ k: foo: p: 48
 
 // Refer to a field whose name is
 // not a valid identifier.
-"-foo"~A: 42
-b:        A + 1
+"-foo"~(A): 42
+b:          A + 1
 
 // Refer to a field's label.
 c: [string]~(L,_): {
@@ -99,7 +99,7 @@ d: _d & {
 }
 
 // Refer to a field inside a pattern constraint.
-h: [string]~PCF: {
+h: [string]~(PCF): {
 	i: PCF.j + 1
 }
 h: foo: j: 46

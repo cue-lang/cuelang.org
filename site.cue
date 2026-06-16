@@ -18,10 +18,10 @@ versions: {
 			v:             *"v0.16.1" | _
 			majorDotMinor: strings.Join(list.Take(strings.Split(v, "."), 2), ".")
 		}
-		prerelease: v: *latest.v | _
+		prerelease: v: *"v0.17.0-alpha.3" | _
 		tip: v:        *"v0.17.0-alpha.3.0.20260615112339-9916719a3eb1" | _
 		default: v:    latest.v
-		playground: v: latest.v
+		playground: v: prerelease.v // to use cue/load.Config.FS
 	}
 	let versionSet = {for _, v in cue {"\(v.v)": true}}
 	_cueVersionList: list.SortStrings([
