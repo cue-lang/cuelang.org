@@ -60,6 +60,7 @@ const (
 	flagPrintDockerImage  flagName = "print-docker-image"
 
 	envTestUserAuthn = "PREPROCESSOR_TEST_USER_AUTHN"
+	envUpdate        = "PREPROCESSOR_UPDATE"
 )
 
 const (

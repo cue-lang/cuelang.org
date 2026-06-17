@@ -53,6 +53,16 @@ func TestScripts(t *testing.T) {
 				}
 				env.Setenv("DOCKER_HOST", dockerHost)
 			}
+
+			// Thread CUE_UPDATE (which drives testscript's UpdateScripts, and
+			// hence updates of golden files compared via cmp) through to the
+			// preprocessor itself, so that "exec preprocessor execute" runs in
+			// --update mode and regenerates the golden files it owns (the
+			// formatted/executed contents embedded in code, script and upload
+			// nodes). Individual scripts can opt back out with --update=false.
+			if os.Getenv("CUE_UPDATE") != "" {
+				env.Setenv(envUpdate, "true")
+			}
 			return nil
 		},
 		UpdateScripts: os.Getenv("CUE_UPDATE") != "",

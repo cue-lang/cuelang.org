@@ -6,8 +6,10 @@ unquote content/dir/en.md
 unquote content/dir2/en.md
 unquote golden/content/dir/en.md
 
-# Ensure we get an error in case the assert-ions are not satisfied
-! exec preprocessor execute
+# Ensure we get an error in case the assert-ions are not satisfied.
+# Force --update=false because this step deliberately tests the non-update
+# failure path, which would otherwise be masked when running under CUE_UPDATE.
+! exec preprocessor execute --update=false
 stderr '--- /home/runner/path/to/file\.txt\.got'
 stderr '\+\+\+ /home/runner/path/to/file\.txt\.want'
 stderr '-hello'
