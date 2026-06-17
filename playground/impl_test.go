@@ -15,143 +15,140 @@
 package main
 
 import (
-	"fmt"
+	"os"
 	"testing"
+
+	"github.com/cue-lang/cuelang.org/playground/internal/tdtest"
 )
 
-var testTable = []struct {
+// TestMain wires CUE_UPDATE through to tdtest, so that running
+//
+//	CUE_UPDATE=1 go test ./...
+//
+// rewrites the OutVal and Err golden values in testTable below in place.
+func TestMain(m *testing.M) {
+	tdtest.UpdateTests = os.Getenv("CUE_UPDATE") != ""
+	os.Exit(m.Run())
+}
+
+type testCase struct {
 	In     input
 	Fn     function
 	Out    output
 	InVal  string
 	OutVal string
 	Err    string
-}{
-	{inputCUE, functionDef, outputCUE, "", "\n", ""},
-	{inputCUE, functionExport, outputCUE, "", "\n", ""},
-	{inputCUE, functionExport, outputCUE, "a: b: 5\na: c: 4", "a: {\n\tb: 5\n\tc: 4\n}\n", ""},
-	{inputCUE, functionExport, outputJSON, "test: 5", "{\n    \"test\": 5\n}\n", ""},
+}
+
+var testTable = []testCase{
+	{In: inputCUE, Fn: functionDef, Out: outputCUE, InVal: "", OutVal: "\n"},
+	{In: inputCUE, Fn: functionExport, Out: outputCUE, InVal: "", OutVal: "\n"},
+	{In: inputCUE, Fn: functionExport, Out: outputCUE, InVal: "a: b: 5\na: c: 4", OutVal: `a: {
+	b: 5
+	c: 4
+}
+`},
+	{In: inputCUE, Fn: functionExport, Out: outputJSON, InVal: "test: 5", OutVal: "{\n    \"test\": 5\n}\n"},
 
 	// Incomplete values.
-	{inputCUE, functionDef, outputCUE, "foo: int", "foo: int\n", ""},
-	{inputCUE, functionEval, outputCUE, "foo: int", "foo: int\n", ""},
-	{inputCUE, functionExport, outputCUE, "foo: int", "", "foo: incomplete value int"},
-	{inputCUE, functionExport, outputJSON, "foo: int", "", "foo: incomplete value int"},
+	{In: inputCUE, Fn: functionDef, Out: outputCUE, InVal: "foo: int", OutVal: "foo: int\n"},
+	{In: inputCUE, Fn: functionEval, Out: outputCUE, InVal: "foo: int", OutVal: "foo: int\n"},
+	{In: inputCUE, Fn: functionExport, Out: outputCUE, InVal: "foo: int", Err: "foo: incomplete value int"},
+	{In: inputCUE, Fn: functionExport, Out: outputJSON, InVal: "foo: int", Err: "foo: incomplete value int"},
 
 	// Required fields only fail in export mode.
-	{inputCUE, functionDef, outputCUE, "foo!: int", "foo!: int\n", ""},
-	{inputCUE, functionEval, outputCUE, "foo!: int", "foo!: int\n", ""},
-	{inputCUE, functionExport, outputCUE, "foo!: int", "", "foo: field is required but not present"},
+	{In: inputCUE, Fn: functionDef, Out: outputCUE, InVal: "foo!: int", OutVal: "foo!: int\n"},
+	{In: inputCUE, Fn: functionEval, Out: outputCUE, InVal: "foo!: int", OutVal: "foo!: int\n"},
+	{In: inputCUE, Fn: functionExport, Out: outputCUE, InVal: "foo!: int", Err: "foo: field is required but not present"},
 
 	// Selecting defaults; def does less.
-	{inputCUE, functionDef, outputCUE, "foo: int | *3", "foo: int | *3\n", ""},
-	{inputCUE, functionEval, outputCUE, "foo: int | *3", "foo: 3\n", ""},
-	{inputCUE, functionExport, outputCUE, "foo: int | *3", "foo: 3\n", ""},
-	{inputCUE, functionExport, outputJSON, "foo: int | *3", "{\n    \"foo\": 3\n}\n", ""},
+	{In: inputCUE, Fn: functionDef, Out: outputCUE, InVal: "foo: int | *3", OutVal: "foo: int | *3\n"},
+	{In: inputCUE, Fn: functionEval, Out: outputCUE, InVal: "foo: int | *3", OutVal: "foo: 3\n"},
+	{In: inputCUE, Fn: functionExport, Out: outputCUE, InVal: "foo: int | *3", OutVal: "foo: 3\n"},
+	{In: inputCUE, Fn: functionExport, Out: outputJSON, InVal: "foo: int | *3", OutVal: "{\n    \"foo\": 3\n}\n"},
 
 	// Simplifying values; def does less.
-	{inputCUE, functionDef, outputCUE, "foo: [1, 2, 3][1]", "foo: [1, 2, 3][1]\n", ""},
-	{inputCUE, functionEval, outputCUE, "foo: [1, 2, 3][1]", "foo: 2\n", ""},
-	{inputCUE, functionExport, outputCUE, "foo: [1, 2, 3][1]", "foo: 2\n", ""},
-	{inputCUE, functionExport, outputJSON, "foo: [1, 2, 3][1]", "{\n    \"foo\": 2\n}\n", ""},
+	{In: inputCUE, Fn: functionDef, Out: outputCUE, InVal: "foo: [1, 2, 3][1]", OutVal: "foo: [1, 2, 3][1]\n"},
+	{In: inputCUE, Fn: functionEval, Out: outputCUE, InVal: "foo: [1, 2, 3][1]", OutVal: "foo: 2\n"},
+	{In: inputCUE, Fn: functionExport, Out: outputCUE, InVal: "foo: [1, 2, 3][1]", OutVal: "foo: 2\n"},
+	{In: inputCUE, Fn: functionExport, Out: outputJSON, InVal: "foo: [1, 2, 3][1]", OutVal: "{\n    \"foo\": 2\n}\n"},
 
 	// Pattern constraints with different output formats; see https://cuelang.org/issue/2417
 	{
-		inputCUE, functionExport, outputCUE,
-		`
+		In: inputCUE, Fn: functionExport, Out: outputCUE,
+		InVal: `
 			[ID=_]: x: y: ID
 			"foo": {}
 		`,
-		"foo: {\n\tx: {\n\t\ty: \"foo\"\n\t}\n}\n",
-		"",
+		OutVal: "foo: {\n\tx: {\n\t\ty: \"foo\"\n\t}\n}\n",
 	},
 	{
-		inputCUE, functionExport, outputJSON,
-		`
+		In: inputCUE, Fn: functionExport, Out: outputJSON,
+		InVal: `
 			[ID=_]: x: y: ID
 			"foo": {}
 		`,
-		"{\n    \"foo\": {\n        \"x\": {\n            \"y\": \"foo\"\n        }\n    }\n}\n",
-		"",
+		OutVal: "{\n    \"foo\": {\n        \"x\": {\n            \"y\": \"foo\"\n        }\n    }\n}\n",
 	},
 
 	// Cases which one could argue should be errors, beyond just being incomplete.
 	{
-		inputCUE, functionEval, outputCUE,
-		`
+		In: inputCUE, Fn: functionEval, Out: outputCUE,
+		InVal: `
 			x: string
 			y: (x): string
 		`,
-		"x: string\ny: {\n\t(x): string\n}\n",
-		"",
+		OutVal: "x: string\ny: {\n\t(x): string\n}\n",
 	},
 	{
-		inputCUE, functionEval, outputCUE,
-		`
+		In: inputCUE, Fn: functionEval, Out: outputCUE,
+		InVal: `
 			x: x2: "foo"
 			y: x.missing
 		`,
-		"x: {\n\tx2: \"foo\"\n}\ny: x.missing\n",
-		"",
+		OutVal: "x: {\n\tx2: \"foo\"\n}\ny: x.missing\n",
 	},
 
 	// Simple format checks; no errors
 	{
-		inputCUE, functionFmt, outputCUE,
-		"  package foo\n",
-		"package foo\n",
-		"",
+		In: inputCUE, Fn: functionFmt, Out: outputCUE,
+		InVal:  "  package foo\n",
+		OutVal: "package foo\n",
 	},
 	{
-		inputJSON, functionFmt, outputJSON,
+		In: inputJSON, Fn: functionFmt, Out: outputJSON,
 
 		// Preserve double-declaration; this is format-only, not evaluation
-		"{\n\"x\":  5,\n\"x\":  5\n}\n",
-		"{\n  \"x\": 5,\n  \"x\": 5\n}\n",
-		"",
+		InVal:  "{\n\"x\":  5,\n\"x\":  5\n}\n",
+		OutVal: "{\n  \"x\": 5,\n  \"x\": 5\n}\n",
 	},
 
 	// Error format checks
 	{
-		inputCUE, functionFmt, outputCUE,
-		"  {\n",
-		"  {\n",
-		"",
+		In: inputCUE, Fn: functionFmt, Out: outputCUE,
+		InVal:  "  {\n",
+		OutVal: "  {\n",
 	},
 	{
-		inputJSON, functionFmt, outputJSON,
-		"{\nx:  5\n}\n",
-		"{\nx:  5\n}\n",
-		"",
+		In: inputJSON, Fn: functionFmt, Out: outputJSON,
+		InVal:  "{\nx:  5\n}\n",
+		OutVal: "{\nx:  5\n}\n",
 	},
 	{
-		inputYaml, functionFmt, outputYaml,
-		"x:  5\n",
-		"",
-		"don't (yet) know how to format \"yaml\"",
+		In: inputYaml, Fn: functionFmt, Out: outputYaml,
+		InVal: "x:  5\n",
+		Err:   "don't (yet) know how to format \"yaml\"",
 	},
 }
 
 func TestHandleCUECompile(t *testing.T) {
-	for _, tv := range testTable {
-		t.Run("", func(t *testing.T) {
-			desc := fmt.Sprintf("handleCUECompile(%q, %q, %q, %q)", tv.In, tv.Fn, tv.Out, tv.InVal)
-			out, err := handleCUECompile(tv.In, tv.Fn, tv.Out, tv.InVal)
-			if tv.Err != "" {
-				if err != nil {
-					if err.Error() != tv.Err {
-						t.Fatalf("%v: expected error string %q; got %q", desc, tv.Err, err)
-					}
-				} else {
-					t.Fatalf("%v: expected error, did not see one. Output was %q", desc, out)
-				}
-			} else {
-				if err != nil {
-					t.Fatalf("%v: got unexpected error: %v", desc, err)
-				} else if out != tv.OutVal {
-					t.Fatalf("%v: expected output %q: got %q", desc, tv.OutVal, out)
-				}
-			}
-		})
-	}
+	tdtest.Run(t, testTable, func(t *tdtest.T, tc *testCase) {
+		out, err := handleCUECompile(tc.In, tc.Fn, tc.Out, tc.InVal)
+		var gotErr string
+		if err != nil {
+			gotErr = err.Error()
+		}
+		t.Equal(out, tc.OutVal)
+		t.Equal(gotErr, tc.Err)
+	})
 }
