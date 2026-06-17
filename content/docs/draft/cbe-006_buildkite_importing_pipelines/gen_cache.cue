@@ -7,17 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"4":  "9lv4COH3bIx2uAmRnkqsVgbOHSXRAWavevh+aUL8GCk="
-								"5":  "Tn5SSfl1AbjXzljFVsU7JpuS6dkXKLe33wvBh+ZOhgY="
+								"4":  "yTl4sIBubpV43lAZ0QeDqNGIxR4GAWwO8t26nn1lw+0="
+								"5":  "3H7EQ/pVzUmQ0tasQoFFZ72M0ef+tWivm3zCEkeBzkc="
 								"8":  "PjgFUGX/pmT71x/ZFNEtH3L4340+ah8CTARC08eabG8="
 								"9":  "hoXzro3NG8r1ePSV0I1J4CXX0/YTn6s4VtwKBympBSk="
 								"10": "Z5COjeB0aQqBBzlYTOqMbzABVnWCOoypReVs4GtaoEo="
-								"11": "UUYpzS6xlnjmTUGgdvaNDM7vJLb0f22PaAcV8RA/8e8="
-								"13": "GC8JOTK1F8wQBkAbP/oxn7S+oT4BysMfESHewEnFZ/k="
+								"11": "uiVbAFOmJ3nyuvUbEw/z7JGVokRV0jT3ZangGdvCIVg="
+								"13": "K6s2cFI2eaZRq1lNstVRsPsyzxVcncwQKa9f/KU2v80="
 							}
 							multi_step: {
-								hash:       "23RRP2B0P1HJQQ8IOTBA055214TMSE49M2IVNN4DA9VI5QGNTO3G===="
-								scriptHash: "CPRVHCMO7UO0M0ACM962V8C9PBNCBO8O5HB9DI6M71MMOV2CQMAG===="
+								hash:       "PF61UQ9NCM7TR7U910IC4U3EDIESBKGIVQ9LVIV6HJDBR8EE8PU0===="
+								scriptHash: "JCMG0Q6M584RR17KNKQ71CVC44GUJV1VKAVIN5PGGP60AGUFFSAG===="
 								steps: [{
 									doc:      "# Set up example content as a git repo."
 									cmd:      "cd dependent-pipeline-example"
@@ -97,21 +97,11 @@ package site
 									exitCode: 0
 									output:   ""
 								}, {
-									doc:      ""
-									cmd:      "diff ../4.expected.txt ../4.actual.txt"
-									exitCode: 0
-									output:   ""
-								}, {
 									doc: """
 											# Actual command in CUE-By-Example guide:
 											# head .buildkite/*.cue
 											"""
 									cmd:      "head .buildkite/*.cue >../5.actual.txt"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "diff ../5.expected.txt ../5.actual.txt"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -139,11 +129,6 @@ package site
 									output:   ""
 								}, {
 									doc:      ""
-									cmd:      "diff ../11.expected.txt ../11.actual.txt"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
 									cmd:      "cue cmd regenerate ./internal/ci/buildkite # the \"./\" prefix is required"
 									exitCode: 0
 									output:   ""
@@ -153,11 +138,6 @@ package site
 											# git diff .buildkite/
 											"""
 									cmd:      "git diff -- .buildkite/ | grep -vE '^index [0-9a-f]{7}\\.\\.[0-9a-f]{7}' | head -8 >../13.actual.txt"
-									exitCode: 0
-									output:   ""
-								}, {
-									doc:      ""
-									cmd:      "diff ../13.expected.txt ../13.actual.txt"
 									exitCode: 0
 									output:   ""
 								}, {

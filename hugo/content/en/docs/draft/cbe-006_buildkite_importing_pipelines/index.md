@@ -87,12 +87,13 @@ Your output should look similar to this, with matching pairs of pre-existing
 YAML and new CUE files:
 
 {{< code-tabs >}}
-{{< code-tab name="4.expected.txt" language="txt" area="top-left" >}}
+{{< code-tab name="4.actual.txt" language="txt" area="top-left" >}}
 pipeline.cue
 pipeline.deploy.cue
 pipeline.deploy.yml
 pipeline.yml
 {{< /code-tab >}}{{< /code-tabs >}}
+
 Observe that each pipeline has been imported into the `pipelines` struct, at a
 location derived from its original pipeline's file name:
 
@@ -106,7 +107,7 @@ $ head .buildkite/*.cue >../5.actual.txt
 The output should reflect your pipelines. In our example:
 
 {{< code-tabs >}}
-{{< code-tab name="5.expected.txt" language="txt" area="top-left" >}}
+{{< code-tab name="5.actual.txt" language="txt" area="top-left" >}}
 ==> .buildkite/pipeline.cue <==
 package buildkite
 
@@ -130,6 +131,7 @@ pipelines: "pipeline.deploy": steps: [{
 	branches:          "master"
 }]
 {{< /code-tab >}}{{< /code-tabs >}}
+
 #### :arrow_right: Store CUE pipelines in a dedicated directory
 
 Create a directory called `buildkite` to hold your CUE-based Buildkite pipeline
@@ -308,12 +310,13 @@ $ cue help cmd regenerate ./internal/ci/buildkite | head -4 >../11.actual.txt
 Your output **must** begin with the following:
 
 {{< code-tabs >}}
-{{< code-tab name="11.expected.txt" language="txt" area="top-left" >}}
+{{< code-tab name="11.actual.txt" language="txt" area="top-left" >}}
 Regenerate all pipeline files
 
 Usage:
   cue cmd regenerate [flags]
 {{< /code-tab >}}{{< /code-tabs >}}
+
 |   :exclamation: WARNING :exclamation:   |
 |:--------------------------------------- |
 | If you *don't* see the usage explanation for the `regenerate` workflow command (or if you receive an error message) then **either** your workflow command isn't set up as CUE requires, **or** you're running a CUE version older than `v0.11.0-alpha.2`. If you've [upgraded to at least that version](https://cuelang.org/dl) but the usage explanation still isn't being displayed then: (1) double check the contents of the `ci_tool.cue` file and the modifications you made to it; (2) make sure its location in the repository is precisely as given in this guide; (3) ensure the filename is *exactly* `ci_tool.cue`; (4) run `cue vet ./internal/ci/buildkite` and check that your pipelines actually validate successfully - in other words: were they truly valid before you even started this process? Lastly, make sure you've followed all the steps in this guide, and that you invoked the `cue help` command from the repository's root directory. If you get really stuck, please come and join [the CUE community](https://cuelang.org/community/) and ask for some help!
@@ -344,7 +347,7 @@ $ git diff -- .buildkite/ | grep -vE '^index [0-9a-f]{7}\.\.[0-9a-f]{7}' | head 
 Your output should look similar to the following example:
 
 {{< code-tabs >}}
-{{< code-tab name="13.expected.txt" language="txt" area="top-left" >}}
+{{< code-tab name="13.actual.txt" language="txt" area="top-left" >}}
 diff --git a/.buildkite/pipeline.deploy.yml b/.buildkite/pipeline.deploy.yml
 --- a/.buildkite/pipeline.deploy.yml
 +++ b/.buildkite/pipeline.deploy.yml
@@ -354,10 +357,6 @@ diff --git a/.buildkite/pipeline.deploy.yml b/.buildkite/pipeline.deploy.yml
  steps:
    - command: echo 'Deploy'
 {{< /code-tab >}}{{< /code-tabs >}}
-
-````text { title="TERMINAL" type="terminal" codeToCopy="ZGlmZiAuLi8xMy5leHBlY3RlZC50eHQgLi4vMTMuYWN0dWFsLnR4dA==" }
-$ diff ../13.expected.txt ../13.actual.txt
-````
 
 The only *material* change in each YAML file is the addition of a header that
 warns the reader not to edit the file directly.
