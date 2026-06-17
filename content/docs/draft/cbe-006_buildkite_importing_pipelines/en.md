@@ -99,15 +99,12 @@ Your output should look similar to this, with matching pairs of pre-existing
 YAML and new CUE files:
 
 {{{with upload "en" "4"}}}
--- 4.expected.txt --
+#assert
+-- 4.actual.txt --
 pipeline.cue
 pipeline.deploy.cue
 pipeline.deploy.yml
 pipeline.yml
-{{{end}}}
-
-{{{with _script_ "en" "4-check"}}}
-diff ../4.expected.txt ../4.actual.txt
 {{{end}}}
 
 Observe that each pipeline has been imported into the `pipelines` struct, at a
@@ -123,7 +120,8 @@ head .buildkite/*.cue >../5.actual.txt
 The output should reflect your pipelines. In our example:
 
 {{{with upload "en" "5"}}}
--- 5.expected.txt --
+#assert
+-- 5.actual.txt --
 ==> .buildkite/pipeline.cue <==
 package buildkite
 
@@ -146,10 +144,6 @@ pipelines: "pipeline.deploy": steps: [{
 	concurrency:       1
 	branches:          "master"
 }]
-{{{end}}}
-
-{{{with _script_ "en" "5-check"}}}
-diff ../5.expected.txt ../5.actual.txt
 {{{end}}}
 
 #### :arrow_right: Store CUE pipelines in a dedicated directory
@@ -329,15 +323,12 @@ cue help cmd regenerate ./internal/ci/buildkite | head -4 >../11.actual.txt
 Your output **must** begin with the following:
 
 {{{with upload "en" "11"}}}
--- 11.expected.txt --
+#assert
+-- 11.actual.txt --
 Regenerate all pipeline files
 
 Usage:
   cue cmd regenerate [flags]
-{{{end}}}
-
-{{{with _script_ "en" "11-check"}}}
-diff ../11.expected.txt ../11.actual.txt
 {{{end}}}
 
 |   :exclamation: WARNING :exclamation:   |
@@ -370,7 +361,8 @@ git diff -- .buildkite/ | grep -vE '^index [0-9a-f]{7}\.\.[0-9a-f]{7}' | head -8
 Your output should look similar to the following example:
 
 {{{with upload "en" "13"}}}
--- 13.expected.txt --
+#assert
+-- 13.actual.txt --
 diff --git a/.buildkite/pipeline.deploy.yml b/.buildkite/pipeline.deploy.yml
 --- a/.buildkite/pipeline.deploy.yml
 +++ b/.buildkite/pipeline.deploy.yml
@@ -379,10 +371,6 @@ diff --git a/.buildkite/pipeline.deploy.yml b/.buildkite/pipeline.deploy.yml
 +
  steps:
    - command: echo 'Deploy'
-{{{end}}}
-
-{{{with script "en" "13-check"}}}
-diff ../13.expected.txt ../13.actual.txt
 {{{end}}}
 
 The only *material* change in each YAML file is the addition of a header that
