@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							code: {
-								"if-else before and after": "Vfdcq2pUXmVdhDTxPuxdJsV6AZm2gDKadz+V/7bZtpU="
-								"try-bind":                 "8Tot4/8xuesT8nuHY9cHUMzL9CcIUeknPd47dNyKoTg="
-								"try-else":                 "foJzkXc2hwMn0fZNa9sB2bCYt5KH6sigwz86mRJiLbE="
+								"if-else before and after": "AHb9OpeU7WxHJZy83/79RiFdvH0zFZUGZOJbEufjBfk="
+								"try-bind":                 "YXQfsyuG6TsrLP1nDtdah3q5MC6wKCyTTAceZ+UzDB8="
+								"try-else":                 "uJum2VMaZ0JW8SGe56veGOvNzhKmHPNA86VqdU++Cmk="
 							}
 							multi_step: {
-								hash:       "71E90J60B2DDGQ6DV2QV4CK74A2ATHU0S3IR7V1V61EJ087ERSSG===="
+								hash:       "F0HA7SVNFM0VT1CVKD6ON01TODSGND615CLNISQ4QBGUUVO07VKG===="
 								scriptHash: "C2SSE4THMKNJN67HUI07UK7POKSV0JP3CGA2MVQKBEV5LK4E1SSG===="
 								steps: [{
 									doc:      ""
