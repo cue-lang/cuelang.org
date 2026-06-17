@@ -28,3 +28,5 @@ node_modules
 /defresult.cue
 
 /.netlify/
+
+.claude/worktrees/
