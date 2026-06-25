@@ -14,7 +14,6 @@ import (
 schemeHost: *"http://localhost" | string @tag(schemeHost)
 
 command: checkEndpoints: redirections: {
-
 	// serverSide iterates over a list of path/redirection field pairs, and
 	// invokes curl for each pair's path, and then checks that the response
 	// returned is a real HTTP 3xx redirect to the redirection field's value.
@@ -36,13 +35,12 @@ command: checkEndpoints: redirections: {
 
 // content checks that specific endpoints serve required content via an HTTP 200.
 command: checkEndpoints: content: {
-
 	[=~"^https?://"]: {
 		followRedirects: false
 		response: statusCode: 200
 	}
 
-	let metaGoImport = #"<meta name="go-import" content="cuelang.org/go git https://cue.gerrithub.io/cue-lang/cue">"#
+	let metaGoImport = #"<meta name="go-import" content="cuelang.org/go git https://github.com/cue-lang/cue">"#
 	for Url in [
 		"\(schemeHost)/go?go-get=1",              // cuelang.org/go Go module root
 		"\(schemeHost)/go/\(dummyPath)?go-get=1", // some cuelang.org/go Go package
