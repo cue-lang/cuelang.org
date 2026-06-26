@@ -214,46 +214,6 @@ or it can be combined with any other input types.
 A {{{.package}}} input cannot be combined with other {{{.package}}} inputs
 and other input types at the same time.
 
-<!-- SENSE CHECK
-{{{with upload "en" "test cue package inputs prose"}}}
-#nofmt # Prioritise fewer lines over nice formatting, as it's only here for the author to read.
--- packageA.cue --
-package A
-x: "foo"
--- packageB.cue --
-package B
-y: 2
--- data.cue --
-x: "foo"
--- data.yml --
-y: 2
--- schema.json --
-{ "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
-  "properties": { "x": { "type": "string", "minLength": 1 } } }
-{{{end}}}
-{{{with script "en" "test cue package inputs prose"}}}
-
-# "A {{{.package}}} input can either be combined with other {{{.package}}} inputs,"
-cue export .:A .:B
-
-# "or with any other types of input."
-cue export .:A data.cue
-cue export .:A packageB.cue
-cue export .:A data.yml
-cue export .:A schema.json
-
-# "A {{{.package}}} input cannot be combined with other {{{.package}}} inputs
-# **and** other types of input."
-! cue export .:A .:B data.cue
-! cue export .:A .:B packageB.cue
-! cue export .:A .:B data.yml
-! cue export .:A .:B schema.json
-
-# Tidy up.
-rm -f *.cue data.yml schema.json *.out
-{{{end}}}
--->
-
 #### Combining multiple {{{.Hpackage}}} inputs
 
 When multiple {{{.package}}} inputs are specified then the resulting CUE

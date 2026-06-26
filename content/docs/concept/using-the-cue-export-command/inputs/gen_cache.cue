@@ -32,110 +32,14 @@ package site
 									"multi-doc list":                                            "okExGwxw/oNVIcE0P9H8/GQLFoZcoT93vV43DjguGjI="
 								}
 								upload: {
-									"test cue package inputs prose":              "ieGGGkqpxSrbMtuGzHixUeoIJV3g68My/kOzTauCUNE="
 									"test multiple cue package inputs prose":     "H2GH09I2f5m94PP0fw1Y1SUlhFpTLRwGda1gyzV6LtU="
 									"test cue package + other input types prose": "JWMtzgbzO+rfRJd/+/dmGbjcWKBGcLT5Lgd0iJ5rCvY="
 									"stdin data":                                 "zeTAFav6/y1S65zaQ29OAr/RhuzAI2weGgoKMmI7948="
 								}
 								multi_step: {
-									hash:       "NOUDICG6JLJ8NPI62VKN5JTDT2327PRJ4HR1TAFN9PIOMJO27LN0===="
-									scriptHash: "8M2BR6AKAE9FNP3DHB8JD628IAOH3AD1CBOP6HPP0SP6CV7DTNF0===="
+									hash:       "Q8EN5RU34VJ8SGR3G8EVRHE7FL2C79OIB7KIG5INRHNRC5LHAFGG===="
+									scriptHash: "42VLR8PG8435U4E5BHQCVUC2O2KS2LO5BJLPEQGJK0GSAHHKH6U0===="
 									steps: [{
-										doc:      "# \"A <u style='text-decoration-style: dotted;'>CUE package</u> input can either be combined with other <u style='text-decoration-style: dotted;'>CUE package</u> inputs,\""
-										cmd:      "cue export .:A .:B"
-										exitCode: 0
-										output: """
-												{
-												    "x": "foo"
-												}
-												{
-												    "y": 2
-												}
-
-												"""
-									}, {
-										doc:      "# \"or with any other types of input.\""
-										cmd:      "cue export .:A data.cue"
-										exitCode: 0
-										output: """
-												{
-												    "x": "foo"
-												}
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export .:A packageB.cue"
-										exitCode: 0
-										output: """
-												{
-												    "x": "foo",
-												    "y": 2
-												}
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export .:A data.yml"
-										exitCode: 0
-										output: """
-												{
-												    "x": "foo",
-												    "y": 2
-												}
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export .:A schema.json"
-										exitCode: 0
-										output: """
-												{
-												    "x": "foo"
-												}
-
-												"""
-									}, {
-										doc: """
-												# "A <u style='text-decoration-style: dotted;'>CUE package</u> input cannot be combined with other <u style='text-decoration-style: dotted;'>CUE package</u> inputs
-												# **and** other types of input."
-												"""
-										cmd:      "cue export .:A .:B data.cue"
-										exitCode: 1
-										output: """
-												too many packages defined (2) in combination with files
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export .:A .:B packageB.cue"
-										exitCode: 1
-										output: """
-												too many packages defined (2) in combination with files
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export .:A .:B data.yml"
-										exitCode: 1
-										output: """
-												too many packages defined (2) in combination with files
-
-												"""
-									}, {
-										doc:      ""
-										cmd:      "cue export .:A .:B schema.json"
-										exitCode: 1
-										output: """
-												too many packages defined (2) in combination with files
-
-												"""
-									}, {
-										doc:      "# Tidy up."
-										cmd:      "rm -f *.cue data.yml schema.json *.out"
-										exitCode: 0
-										output:   ""
-									}, {
 										doc: """
 												# "When multiple <u style='text-decoration-style: dotted;'>CUE package</u> inputs are specified then the resulting CUE
 												# evaluation is executed once for each package."

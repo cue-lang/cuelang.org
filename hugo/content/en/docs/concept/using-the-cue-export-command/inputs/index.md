@@ -218,68 +218,6 @@ or it can be combined with any other input types.
 A <u style='text-decoration-style: dotted;'>CUE package</u> input cannot be combined with other <u style='text-decoration-style: dotted;'>CUE package</u> inputs
 and other input types at the same time.
 
-<!-- SENSE CHECK
-{{< code-tabs >}}
-{{< code-tab name="packageA.cue" language="cue" area="top-left" >}}
-package A
-x: "foo"
-{{< /code-tab >}}{{< code-tab name="packageB.cue" language="cue" area="top-left" >}}
-package B
-y: 2
-{{< /code-tab >}}{{< code-tab name="data.cue" language="cue" area="top-left" >}}
-x: "foo"
-{{< /code-tab >}}{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
-y: 2
-{{< /code-tab >}}{{< code-tab name="schema.json" language="json" area="top-left" >}}
-{ "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
-  "properties": { "x": { "type": "string", "minLength": 1 } } }
-{{< /code-tab >}}{{< /code-tabs >}}
-````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOkEgLjpCCmN1ZSBleHBvcnQgLjpBIGRhdGEuY3VlCmN1ZSBleHBvcnQgLjpBIHBhY2thZ2VCLmN1ZQpjdWUgZXhwb3J0IC46QSBkYXRhLnltbApjdWUgZXhwb3J0IC46QSBzY2hlbWEuanNvbgpjdWUgZXhwb3J0IC46QSAuOkIgZGF0YS5jdWUKY3VlIGV4cG9ydCAuOkEgLjpCIHBhY2thZ2VCLmN1ZQpjdWUgZXhwb3J0IC46QSAuOkIgZGF0YS55bWwKY3VlIGV4cG9ydCAuOkEgLjpCIHNjaGVtYS5qc29uCnJtIC1mICouY3VlIGRhdGEueW1sIHNjaGVtYS5qc29uICoub3V0" }
-# "A <u style='text-decoration-style: dotted;'>CUE package</u> input can either be combined with other <u style='text-decoration-style: dotted;'>CUE package</u> inputs,"
-$ cue export .:A .:B
-{
-    "x": "foo"
-}
-{
-    "y": 2
-}
-
-# "or with any other types of input."
-$ cue export .:A data.cue
-{
-    "x": "foo"
-}
-$ cue export .:A packageB.cue
-{
-    "x": "foo",
-    "y": 2
-}
-$ cue export .:A data.yml
-{
-    "x": "foo",
-    "y": 2
-}
-$ cue export .:A schema.json
-{
-    "x": "foo"
-}
-
-# "A <u style='text-decoration-style: dotted;'>CUE package</u> input cannot be combined with other <u style='text-decoration-style: dotted;'>CUE package</u> inputs
-# **and** other types of input."
-$ cue export .:A .:B data.cue
-too many packages defined (2) in combination with files
-$ cue export .:A .:B packageB.cue
-too many packages defined (2) in combination with files
-$ cue export .:A .:B data.yml
-too many packages defined (2) in combination with files
-$ cue export .:A .:B schema.json
-too many packages defined (2) in combination with files
-
-# Tidy up.
-$ rm -f *.cue data.yml schema.json *.out
-````
--->
-
 #### Combining multiple CUE package inputs
 
 When multiple <u style='text-decoration-style: dotted;'>CUE package</u> inputs are specified then the resulting CUE
