@@ -154,7 +154,7 @@ this in the usual way by unifying the two definitions, in which case the more
 restrictive enum interpretation of #Switch remains.
 
 Usage:
-  cue get go [packages] [flags]
+  cue get go [flags] [packages]
 
 Flags:
       --codec string     comma-separated priority list of struct tags to use for field names (default "json,yaml")
@@ -165,8 +165,9 @@ Flags:
   -v, --verbose          print information about progress
 
 Global Flags:
-  -E, --all-errors   print all available errors
-  -i, --ignore       proceed in the presence of errors
-  -s, --simplify     simplify output
+  -E, --all-errors     print all available errors
+  -C, --chdir string   change working directory before running command (must be the first flag)
+  -i, --ignore         proceed in the presence of errors
+  -s, --simplify       simplify output
 ````
 

@@ -1,4 +1,4 @@
 // Code generated site_tool.cue; DO NOT EDIT.
 
-export const CUEVersion = 'v0.17.0-alpha.3';
+export const CUEVersion = 'v0.17.0';
 

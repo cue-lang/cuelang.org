@@ -11,10 +11,13 @@ def prints consolidated configuration as a single file.
 
 Printing is skipped if validation fails.
 
+Input arguments can be CUE packages, CUE files, non-CUE files, or some
+combinations of those. See "cue help inputs" for more detail.
+
 The --expression flag is used to only print parts of a configuration.
 
 Usage:
-  cue def [flags]
+  cue def [flags] [inputs]
 
 Flags:
   -e, --expression stringArray   evaluate this expression only
@@ -33,11 +36,12 @@ Flags:
   -I, --proto_path stringArray   paths in which to search for imports
   -d, --schema string            expression to select schema for evaluating values in non-CUE files
   -A, --show-attributes          display field attributes
-      --with-context             import as object with contextual data
+      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 Global Flags:
-  -E, --all-errors   print all available errors
-  -i, --ignore       proceed in the presence of errors
-  -s, --simplify     simplify output
+  -E, --all-errors     print all available errors
+  -C, --chdir string   change working directory before running command (must be the first flag)
+  -i, --ignore         proceed in the presence of errors
+  -s, --simplify       simplify output
 ````
 

@@ -35,10 +35,10 @@ v6NotV4: "2001:0db8:85a3::8a2e:0370:7334"
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
 $ cue vet -c
-octetTooLarge: invalid value [300,51,100,14] (does not satisfy net.IPv4):
+octetTooLarge: invalid value [300,51,100,14] (does not satisfy net.IPv4): invalid IP byte value 300:
     ./file.cue:6:6
     ./file.cue:14:16
-tooManyOctets: invalid value "198.51.100.14.0" (does not satisfy net.IPv4):
+tooManyOctets: invalid value "198.51.100.14.0" (does not satisfy net.IPv4): ParseAddr("198.51.100.14.0"): IPv4 address too long:
     ./file.cue:6:6
     ./file.cue:13:16
 v6NotV4: invalid value "2001:0db8:85a3::8a2e:0370:7334" (does not satisfy net.IPv4):

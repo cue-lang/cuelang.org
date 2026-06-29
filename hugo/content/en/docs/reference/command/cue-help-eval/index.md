@@ -11,6 +11,9 @@ eval evaluates, validates, and prints a configuration.
 
 Printing is skipped if validation fails.
 
+Input arguments can be CUE packages, CUE files, non-CUE files, or some
+combinations of those. See "cue help inputs" for more detail.
+
 The --expression flag is used to evaluate an expression within the
 configuration file, instead of the entire configuration file itself.
 
@@ -25,7 +28,7 @@ Examples:
   "c"
 
 Usage:
-  cue eval [flags]
+  cue eval [flags] [inputs]
 
 Flags:
   -a, --all                      show optional and hidden fields
@@ -47,11 +50,12 @@ Flags:
   -A, --show-attributes          display field attributes
   -H, --show-hidden              display hidden fields
   -O, --show-optional            display optional fields
-      --with-context             import as object with contextual data
+      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 Global Flags:
-  -E, --all-errors   print all available errors
-  -i, --ignore       proceed in the presence of errors
-  -s, --simplify     simplify output
+  -E, --all-errors     print all available errors
+  -C, --chdir string   change working directory before running command (must be the first flag)
+  -i, --ignore         proceed in the presence of errors
+  -s, --simplify       simplify output
 ````
 
