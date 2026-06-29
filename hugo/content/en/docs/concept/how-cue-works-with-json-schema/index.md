@@ -109,9 +109,8 @@ import "strings"
 	// Where does this person live?
 	address?: strings.MinRunes(1) & strings.MaxRunes(200)
 
-	// This is a very long comment for some reason, which will keep
-	// going and going past the point where it should probably have
-	// stopped.
+	// This is a very long comment for some reason, which will keep going and going
+	// past the point where it should probably have stopped.
 	children?: [...string]
 	"home phone"?: string @deprecated()
 	...
@@ -427,7 +426,7 @@ $ cue def --out jsonschema -e '#Person' defs.cue
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$defs": {
-        "#Address": {
+        "Address": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -452,7 +451,7 @@ $ cue def --out jsonschema -e '#Person' defs.cue
     "additionalProperties": false,
     "properties": {
         "address": {
-            "$ref": "#/$defs/%23Address"
+            "$ref": "#/$defs/Address"
         },
         "name": {
             "type": "string"

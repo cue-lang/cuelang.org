@@ -15,13 +15,13 @@ versions: {
 	cue: {
 		[x=string]: var: "CUELANG_CUE_\(strings.ToUpper(x))"
 		latest: {
-			v:             *"v0.16.1" | _
+			v:             *"v0.17.0" | _
 			majorDotMinor: strings.Join(list.Take(strings.Split(v, "."), 2), ".")
 		}
-		prerelease: v: *"v0.17.0-alpha.3" | _
-		tip: v:        *"v0.17.0-alpha.3.0.20260615112339-9916719a3eb1" | _
+		prerelease: v: *latest.v | _
+		tip: v:        *latest.v | _
 		default: v:    latest.v
-		playground: v: prerelease.v // to use cue/load.Config.FS
+		playground: v: latest.v
 	}
 	let versionSet = {for _, v in cue {"\(v.v)": true}}
 	_cueVersionList: list.SortStrings([
@@ -184,8 +184,8 @@ template: base.#writefs & {
 			RUN mkdir /cues
 
 			\#(strings.Join([for _, version in versions._cueVersionList {
-			#RunGoCommand & {_, #cmd: "GOBIN=/cues/\(version) go install -trimpath cuelang.org/go/cmd/cue@\(version)"}
-		}], "\n\n"))
+				#RunGoCommand & {_, #cmd: "GOBIN=/cues/\(version) go install -trimpath cuelang.org/go/cmd/cue@\(version)"}
+			}], "\n\n"))
 
 			RUN git clone https://github.com/cue-lang/libcue.git /libcue
 			RUN git -C /libcue reset --hard \#(versions.libcue)
@@ -205,12 +205,12 @@ template: base.#writefs & {
 
 			ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
 			\#(
-			strings.Join([for _, version in versions.cue {
-				"""
-				ENV \(version.var)="\(version.v)"
-				"""
-			},
-			], "\n"))
+				strings.Join([for _, version in versions.cue {
+					"""
+						ENV \(version.var)="\(version.v)"
+						"""
+				}], "\n")
+			)
 
 			WORKDIR /
 
@@ -225,12 +225,12 @@ template: base.#writefs & {
 			COPY --from=build /go/bin/testscript /go/bin
 			COPY --from=build /go/bin/staticcheck /go/bin
 			\#(
-			strings.Join([for _, version in versions._cueVersionList {
-				"""
-				COPY --from=build /cues/\(version)/cue /cues/\(version)/cue
-				"""
-			},
-			], "\n"))
+				strings.Join([for _, version in versions._cueVersionList {
+					"""
+						COPY --from=build /cues/\(version)/cue /cues/\(version)/cue
+						"""
+				}], "\n")
+			)
 
 			COPY --from=build /libcue/libcue.so /usr/local/lib/
 			ENV LD_LIBRARY_PATH="/usr/local/lib"
@@ -327,14 +327,13 @@ template: base.#writefs & {
 					{{{with script "en" "cue cli help text"}}}
 					\#(cmd.execCmd)
 					{{{end}}}
-					\#( strings.Join([if len(cmd.relatedCommands) > 0 for e in [
-					"", "## Related content", "",
-					for c in cmd.relatedCommands
-					let path = strings.Replace(c, " ", "-", -1) {
-						#"- {{< linkto/related/reference "command/\#(path)" >}}"#
-					},
-				] {e},
-				], "\n"))
+					\#(strings.Join([if len(cmd.relatedCommands) > 0 for e in [
+						"", "## Related content", "",
+						for c in cmd.relatedCommands
+						let path = strings.Replace(c, " ", "-", -1) {
+							#"- {{< linkto/related/reference "command/\#(path)" >}}"#
+						},
+					] {e}], "\n"))
 					"""#
 			}
 		}

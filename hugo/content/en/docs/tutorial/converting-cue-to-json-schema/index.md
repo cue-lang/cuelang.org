@@ -45,7 +45,7 @@ This tutorial is written using the following version of `cue`:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.16.1
+cue version v0.17.0
 ...
 ````
 
@@ -93,7 +93,7 @@ $ cue def --out jsonschema -e '#Event' schema.cue
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$defs": {
-        "#Session": {
+        "Session": {
             "type": "object",
             "additionalProperties": false,
             "properties": {
@@ -132,7 +132,7 @@ $ cue def --out jsonschema -e '#Event' schema.cue
         "sessions": {
             "type": "array",
             "items": {
-                "$ref": "#/$defs/%23Session"
+                "$ref": "#/$defs/Session"
             }
         },
         "venue": {

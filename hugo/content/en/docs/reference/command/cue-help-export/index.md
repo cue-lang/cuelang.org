@@ -75,7 +75,7 @@ See "cue help filetypes" for more information on values accepted by --out.
     https://cuelang.org/docs/reference/command/cue-help-filetypes/
 
 Usage:
-  cue export [flags]
+  cue export [flags] [inputs]
 
 Flags:
       --escape                   use HTML escaping
@@ -93,11 +93,12 @@ Flags:
       --proto_enum string        mode for rendering enums (int|json) (default "int")
   -I, --proto_path stringArray   paths in which to search for imports
   -d, --schema string            expression to select schema for evaluating values in non-CUE files
-      --with-context             import as object with contextual data
+      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 Global Flags:
-  -E, --all-errors   print all available errors
-  -i, --ignore       proceed in the presence of errors
-  -s, --simplify     simplify output
+  -E, --all-errors     print all available errors
+  -C, --chdir string   change working directory before running command (must be the first flag)
+  -i, --ignore         proceed in the presence of errors
+  -s, --simplify       simplify output
 ````
 

@@ -3,7 +3,7 @@ module github.com/cue-lang/cuelang.org/playground
 go 1.25.0
 
 require (
-	cuelang.org/go v0.17.0-alpha.3
+	cuelang.org/go v0.17.0
 	golang.org/x/tools v0.45.0
 )
 

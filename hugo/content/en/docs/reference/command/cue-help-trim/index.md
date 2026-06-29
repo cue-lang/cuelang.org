@@ -55,7 +55,7 @@ It is guaranteed that the resulting files give the same output as before the
 removal.
 
 Usage:
-  cue trim [flags]
+  cue trim [flags] [inputs]
 
 Flags:
   -n, --dry-run          only run simulation
@@ -64,8 +64,9 @@ Flags:
       --trace            trace computation
 
 Global Flags:
-  -E, --all-errors   print all available errors
-  -i, --ignore       proceed in the presence of errors
-  -s, --simplify     simplify output
+  -E, --all-errors     print all available errors
+  -C, --chdir string   change working directory before running command (must be the first flag)
+  -i, --ignore         proceed in the presence of errors
+  -s, --simplify       simplify output
 ````
 

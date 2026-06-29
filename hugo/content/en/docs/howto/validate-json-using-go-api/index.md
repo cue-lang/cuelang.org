@@ -145,8 +145,8 @@ single JSON file, printing the validation result to its standard output stream.
 
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
-````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE2LjEKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.16.1
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE3LjAKZ28gbW9kIHRpZHk=" }
+$ go get cuelang.org/go@v0.17.0
 ...
 $ go mod tidy
 ...

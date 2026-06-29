@@ -215,7 +215,7 @@ Example:
   }
 
 Usage:
-  cue import [mode] [inputs] [flags]
+  cue import [flags] [mode] [inputs]
 
 Flags:
       --dry-run                  show what files would be created
@@ -232,11 +232,12 @@ Flags:
   -I, --proto_path stringArray   paths in which to search for imports
   -R, --recursive                recursively parse string values
   -d, --schema string            expression to select schema for evaluating values in non-CUE files
-      --with-context             import as object with contextual data
+      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 Global Flags:
-  -E, --all-errors   print all available errors
-  -i, --ignore       proceed in the presence of errors
-  -s, --simplify     simplify output
+  -E, --all-errors     print all available errors
+  -C, --chdir string   change working directory before running command (must be the first flag)
+  -i, --ignore         proceed in the presence of errors
+  -s, --simplify       simplify output
 ````
 

@@ -1,6 +1,6 @@
 module: "github.com/cue-lang/cuelang.org@v0"
 language: {
-	version: "v0.16.0"
+	version: "v0.17.0"
 }
 deps: {
 	"cue.dev/x/githubactions@v0": {
