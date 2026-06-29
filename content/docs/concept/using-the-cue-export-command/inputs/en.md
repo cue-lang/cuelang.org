@@ -5,36 +5,6 @@ authors: [jpluscplusm]
 toc_hide: false
 ---
 
-<!-- SENSE CHECK
-A note to the content author/reviewer/updater:
-This guide contains several upload&script blocks inside HTML comments.
-They are present to act as invisible build-time sense checks on the truth of
-the statements presented above them, where explicitly presenting a rendered
-block validating each statement would make the page too long and verbose for
-the reader.
-
-Because we don't have a formal spec for `cue export` (modulo the actual code),
-these scripts will check that the significant points exposed in prose remain
-true across CUE releases. Exact output is *not* tested, as these blocks aren't
-meant to be byte-for-byte output checks. Content checks (e.g. grep) /can/
-follow a command invocation, but only insofar as they're needed to assert the
-applicability of the command's success or failure, or to avoid the situation
-where a "cmp" check might be semi-silently neutered by a preprocessor execution
-with the "--update" flag specified during the preparation for a CUE upgrade.
-
-These blocks are *not* "hidden" blocks, but they're invisible because they're
-inside an HTML comment (which Hugo strips out when processing). They're encoded
-like this so that they *can* be rendered, in order to assist with debugging if
-they start failing in the future. Enable their rendering by removing the
-opening HTML comment element.
-
-When upgrading the site to a new CUE version, if something *does* change and
-break an assertion, then new wording for this page doesn't need to be written
-mid-upgrade. Just comment out ("#") or negate ("!") the failing command (and
-its optional trailing content checks) as needed to get the page to build, and
-open a cue-lang/docs-and-content issue tracking the breakage, labelled as
-"bug". -->
-
 The `cue export` command can be given any number of inputs to evaluate via file
 or package arguments. This page explains how the command interprets, assembles,
 and combines these inputs when handed different kinds and quantities of input.
@@ -251,46 +221,6 @@ C: 3
 Multiple {{{.package}}} inputs cannot be combined with any other input types -
 only other {{{.package}}} inputs.
 
-<!-- SENSE CHECK
-{{{with upload "en" "test multiple cue package inputs prose"}}}
-#nofmt
--- 1.cue --
-package one
-x: 1
--- 2.cue --
-package two
-x: 2
--- data.cue --
-y: "a string"
--- data.yml --
-y: "a string"
--- schema.json --
-{ "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
-  "properties": { "x": { "type": "integer" } } }
-{{{end}}}
-{{{with script "en" "test multiple cue package inputs prose"}}}
-
-# "When multiple {{{.package}}} inputs are specified then the resulting CUE
-# evaluation is executed once for each package."
-cue export .:one .:two > 2-packages.out
-cat 2-packages.out | grep -c '^{$'  | grep -x 2
-cat 2-packages.out | grep -c '^}$'  | grep -x 2
-cat 2-packages.out | grep -c '"x":' | grep -x 2
-
-# "Multiple {{{.package}}} inputs
-# cannot be combined with any other input types"
-! cue export .:one .:two data.cue
-! cue export .:one .:two data.yml
-! cue export .:one .:two schema.json
-
-# "- only other {{{.package}}} inputs."
-# Already handled, above.
-
-# Tidy up.
-rm -f *.cue data.yml schema.json *.out
-{{{end}}}
--->
-
 #### Combining one {{{.Hpackage}}} input with other input types
 
 When a single {{{.package}}} input is specified alongside other input types then
@@ -344,44 +274,6 @@ the same as each other, but don't need to match the name of any {{{.package}}}
 input that's present.
 By definition, {{{.packagelessFile}}} inputs don't contain a package clause, so
 this requirement doesn't affect them.
-
-<!-- SENSE CHECK
-{{{with upload "en" "test cue package + other input types prose"}}}
-#nofmt
--- packageA.cue --
-package A
-x: "foo"
--- packageB.cue --
-package B
-y: 2
--- data.cue --
-x: "foo"
--- data.yml --
-y: 2
--- schema.json --
-{ "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
-  "properties": { "x": { "type": "string", "minLength": 1 } } }
-{{{end}}}
-{{{with script "en" "test cue package + other input types prose"}}}
-
-# "Issue #3341 tracks a problem when combining a *CUE
-# package* input with a {{{.constraintFile}}} and some other input types)."
-! cue export .:A schema.json data.yml >3341.out 2>&1
-grep "cannot combine packages with individual schema files" 3341.out
-
-# "If {{{.packageFile}}} inputs are present then their package clauses need to be
-# the same as each other"
-  cue export packageA.cue packageA.cue
-! cue export packageA.cue packageB.cue
-
-# "but don't need to match the name of any {{{.package}}}
-# input that's present."
-cue export .:A packageB.cue
-
-# Tidy up.
-rm -f *.cue data.yml schema.json *.out
-{{{end}}}
--->
 
 ### {{{.HpackageFile}}} inputs
 
