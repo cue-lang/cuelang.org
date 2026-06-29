@@ -5,36 +5,6 @@ authors: [jpluscplusm]
 toc_hide: false
 ---
 
-<!-- SENSE CHECK
-A note to the content author/reviewer/updater:
-This guide contains several upload&script blocks inside HTML comments.
-They are present to act as invisible build-time sense checks on the truth of
-the statements presented above them, where explicitly presenting a rendered
-block validating each statement would make the page too long and verbose for
-the reader.
-
-Because we don't have a formal spec for `cue export` (modulo the actual code),
-these scripts will check that the significant points exposed in prose remain
-true across CUE releases. Exact output is *not* tested, as these blocks aren't
-meant to be byte-for-byte output checks. Content checks (e.g. grep) /can/
-follow a command invocation, but only insofar as they're needed to assert the
-applicability of the command's success or failure, or to avoid the situation
-where a "cmp" check might be semi-silently neutered by a preprocessor execution
-with the "--update" flag specified during the preparation for a CUE upgrade.
-
-These blocks are *not* "hidden" blocks, but they're invisible because they're
-inside an HTML comment (which Hugo strips out when processing). They're encoded
-like this so that they *can* be rendered, in order to assist with debugging if
-they start failing in the future. Enable their rendering by removing the
-opening HTML comment element.
-
-When upgrading the site to a new CUE version, if something *does* change and
-break an assertion, then new wording for this page doesn't need to be written
-mid-upgrade. Just comment out ("#") or negate ("!") the failing command (and
-its optional trailing content checks) as needed to get the page to build, and
-open a cue-lang/docs-and-content issue tracking the breakage, labelled as
-"bug". -->
-
 The `cue export` command can be given any number of inputs to evaluate via file
 or package arguments. This page explains how the command interprets, assembles,
 and combines these inputs when handed different kinds and quantities of input.
@@ -256,47 +226,6 @@ $ cue export .:one :two .:three
 Multiple <u style='text-decoration-style: dotted;'>CUE package</u> inputs cannot be combined with any other input types -
 only other <u style='text-decoration-style: dotted;'>CUE package</u> inputs.
 
-<!-- SENSE CHECK
-{{< code-tabs >}}
-{{< code-tab name="1.cue" language="cue" area="top-left" >}}
-package one
-x: 1
-{{< /code-tab >}}{{< code-tab name="2.cue" language="cue" area="top-left" >}}
-package two
-x: 2
-{{< /code-tab >}}{{< code-tab name="data.cue" language="cue" area="top-left" >}}
-y: "a string"
-{{< /code-tab >}}{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
-y: "a string"
-{{< /code-tab >}}{{< code-tab name="schema.json" language="json" area="top-left" >}}
-{ "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
-  "properties": { "x": { "type": "integer" } } }
-{{< /code-tab >}}{{< /code-tabs >}}
-````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOm9uZSAuOnR3byA+Mi1wYWNrYWdlcy5vdXQKY2F0IDItcGFja2FnZXMub3V0IHwgZ3JlcCAtYyAnXnskJyB8IGdyZXAgLXggMgpjYXQgMi1wYWNrYWdlcy5vdXQgfCBncmVwIC1jICdefSQnIHwgZ3JlcCAteCAyCmNhdCAyLXBhY2thZ2VzLm91dCB8IGdyZXAgLWMgJyJ4IjonIHwgZ3JlcCAteCAyCmN1ZSBleHBvcnQgLjpvbmUgLjp0d28gZGF0YS5jdWUKY3VlIGV4cG9ydCAuOm9uZSAuOnR3byBkYXRhLnltbApjdWUgZXhwb3J0IC46b25lIC46dHdvIHNjaGVtYS5qc29uCnJtIC1mICouY3VlIGRhdGEueW1sIHNjaGVtYS5qc29uICoub3V0" }
-# "When multiple <u style='text-decoration-style: dotted;'>CUE package</u> inputs are specified then the resulting CUE
-# evaluation is executed once for each package."
-$ cue export .:one .:two >2-packages.out
-$ cat 2-packages.out | grep -c '^{$' | grep -x 2
-2
-$ cat 2-packages.out | grep -c '^}$' | grep -x 2
-2
-$ cat 2-packages.out | grep -c '"x":' | grep -x 2
-2
-
-# "Multiple <u style='text-decoration-style: dotted;'>CUE package</u> inputs
-# cannot be combined with any other input types"
-$ cue export .:one .:two data.cue
-too many packages defined (2) in combination with files
-$ cue export .:one .:two data.yml
-too many packages defined (2) in combination with files
-$ cue export .:one .:two schema.json
-too many packages defined (2) in combination with files
-
-# Tidy up.
-$ rm -f *.cue data.yml schema.json *.out
-````
--->
-
 #### Combining one CUE package input with other input types
 
 When a single <u style='text-decoration-style: dotted;'>CUE package</u> input is specified alongside other input types then
@@ -353,51 +282,6 @@ the same as each other, but don't need to match the name of any <u style='text-d
 input that's present.
 By definition, <u style='text-decoration-style: dotted;'>package-less CUE file</u> inputs don't contain a package clause, so
 this requirement doesn't affect them.
-
-<!-- SENSE CHECK
-{{< code-tabs >}}
-{{< code-tab name="packageA.cue" language="cue" area="top-left" >}}
-package A
-x: "foo"
-{{< /code-tab >}}{{< code-tab name="packageB.cue" language="cue" area="top-left" >}}
-package B
-y: 2
-{{< /code-tab >}}{{< code-tab name="data.cue" language="cue" area="top-left" >}}
-x: "foo"
-{{< /code-tab >}}{{< code-tab name="data.yml" language="yaml" area="top-left" >}}
-y: 2
-{{< /code-tab >}}{{< code-tab name="schema.json" language="json" area="top-left" >}}
-{ "$schema": "http://json-schema.org/draft-07/schema#", "type": "object",
-  "properties": { "x": { "type": "string", "minLength": 1 } } }
-{{< /code-tab >}}{{< /code-tabs >}}
-````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV4cG9ydCAuOkEgc2NoZW1hLmpzb24gZGF0YS55bWwgPjMzNDEub3V0IDI+JjEKZ3JlcCAiY2Fubm90IGNvbWJpbmUgcGFja2FnZXMgd2l0aCBpbmRpdmlkdWFsIHNjaGVtYSBmaWxlcyIgMzM0MS5vdXQKY3VlIGV4cG9ydCBwYWNrYWdlQS5jdWUgcGFja2FnZUEuY3VlCmN1ZSBleHBvcnQgcGFja2FnZUEuY3VlIHBhY2thZ2VCLmN1ZQpjdWUgZXhwb3J0IC46QSBwYWNrYWdlQi5jdWUKcm0gLWYgKi5jdWUgZGF0YS55bWwgc2NoZW1hLmpzb24gKi5vdXQ=" }
-# "Issue #3341 tracks a problem when combining a *CUE
-# package* input with a <u style='text-decoration-style: dotted;'>constraint file</u> and some other input types)."
-$ cue export .:A schema.json data.yml >3341.out 2>&1
-$ grep "cannot combine packages with individual schema files" 3341.out
-cannot combine packages with individual schema files
-
-# "If <u style='text-decoration-style: dotted;'>CUE package file</u> inputs are present then their package clauses need to be
-# the same as each other"
-$ cue export packageA.cue packageA.cue
-{
-    "x": "foo"
-}
-$ cue export packageA.cue packageB.cue
-found packages "A" (packageA.cue) and "B" (packageB.cue) in "."
-
-# "but don't need to match the name of any <u style='text-decoration-style: dotted;'>CUE package</u>
-# input that's present."
-$ cue export .:A packageB.cue
-{
-    "x": "foo",
-    "y": 2
-}
-
-# Tidy up.
-$ rm -f *.cue data.yml schema.json *.out
-````
--->
 
 ### CUE package file inputs
 
