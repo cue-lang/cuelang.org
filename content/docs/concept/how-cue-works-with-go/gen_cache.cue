@@ -7,17 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"cue get go - main cue":      "hTFd1Tcnb0ffUwtVXgoZwKMXBCImhV+inCR7sdHVN0A="
-								"load cue - cue data":        "RmeNMK+GppgBkOrO20xvsIAOqSCLuta6G/0U61LGsfo="
-								"load cue - main.go":         "3zeubF22Xn71so/lX3HKt/IDah7WFpGSg+bbjP6Gkww="
-								"load non-cue - main.go":     "qLnwxfrV9Rf18zqywWAqgY6UvYztDAI8w+9HDuSwN2k="
-								"load non-cue - yaml file":   "+oX3xCPFrUlL030Ozt1AomsVcP6xzOr+VJSkvxU3B9U="
-								"check go data - cue schema": "3XHM3NeiHoc4fimzUY1OO0INZXegdJ7si9hVYpFwNKk="
-								"check go data - main.go":    "2gJbOxtj4DYbY4CtNO60UM6jhTdOIKTkbKok+6SwInE="
+								"cue get go - main cue":      "RzO3mOg9wuSFJ5eYgy2GBAYcwfWH+5qM1J1EG9Vf43Q="
+								"load cue - cue data":        "mPRlOa2lcNyfJXpYskRG8uEXKnFLSQJG3ktEqu3tJYc="
+								"load cue - main.go":         "kTMw+miGUNSUz/lvEfip0+HASuZi4ygutchgO/wXouo="
+								"load non-cue - main.go":     "j31noMOhzqCvg1qD3Gr2d4o6gpypPYp5JiFDhSTr2+A="
+								"load non-cue - yaml file":   "bm9v4lZpGI+dGBKWpwqHChdLnSX5kGb6SR2dJTx8Rk0="
+								"check go data - cue schema": "x5ofAr/+Xq/f4rT8Kr1iB838ZNjh99J1KSdH1iQyetI="
+								"check go data - main.go":    "53TUPYozAPorOLM28pnZw3O7ZAX7rivEBrEb5CBCyJQ="
 							}
 							multi_step: {
-								hash:       "2UTHV0SVVTD3KS0OH2GG7ETHQ2CG1KLVA8BN4JI6JFAIS3KDQPK0===="
-								scriptHash: "O21VF0VUG9775G5P6PVRQMMEN8C1J8QR86EVF4T2IBKQMNSMPT90===="
+								hash:       "5FD796EF2FDM6M5F35NV70TLKGHAIS3RNJNFTBCTBPMK2EB6RISG===="
+								scriptHash: "K5JNQP4LIO7E86AMS7LADUERUAVMK8OVJVM2K63V2S73QBRFHTJG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export LC_ALL=C"
@@ -97,9 +97,9 @@ package site
 									cmd:      "cue eval"
 									exitCode: 0
 									output: """
-											service: {}
-											deployment: {}
-											daemonSet: {}
+											service:     {}
+											deployment:  {}
+											daemonSet:   {}
 											statefulSet: {}
 
 											"""
@@ -118,7 +118,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.16.1"
+									cmd:      "go get cuelang.org/go@v0.18.0-0.dev.0.20260702073200-7686325819d2"
 									exitCode: 0
 									output: """
 											...
@@ -140,9 +140,7 @@ package site
 											{
 											\tl: [1, 2, 3]
 											\tv: "hello"
-											\tmessage: {
-											\t\thello: "world!"
-											\t}
+											\tmessage: hello: "world!"
 											}
 
 											"""
@@ -174,7 +172,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.16.1"
+									cmd:      "go get cuelang.org/go@v0.18.0-0.dev.0.20260702073200-7686325819d2"
 									exitCode: 0
 									output: """
 											...
@@ -224,7 +222,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.16.1"
+									cmd:      "go get cuelang.org/go@v0.18.0-0.dev.0.20260702073200-7686325819d2"
 									exitCode: 0
 									output: """
 											...

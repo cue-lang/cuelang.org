@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"docker-compose.yml broken":          "U+5syk1r3fLb06WR5RNwfEIx+K4GDnBR+ctFyDrQkPg="
-								schema:                               "Zlvi6FQq+sQjFtNzx1LVyQTWh4FgemIYJN09WWMUzsM="
-								"docker-compose.yaml fixed":          "RkCqjOyyuKVyiawKw9CPlsfG9zAJd3RtWW7dJyj+KQ8="
-								"moreschema.cue":                     "y7Sr2ahVyJ+glDdMgLOUkyORk6bH2B/aE4t6SJdo/OU="
-								"docker-compose.yaml really fixed":   "dxFgDQM8YX8r2GoqgY5GMvjRdY+t5LYsqoHJXs3PX4s="
-								"link splotpolicy and splotservice1": "YVCAn56zu5xmRW8+d91QPXQRo2r95loMwA+X4ei+TlQ="
+								"docker-compose.yml broken":          "HVJ8ekdNXAhNrRBZgFuPS8qxWH3kImLTQjtj1sx11U0="
+								schema:                               "coHVH2vCW4yUmDrXBJDqqabgJ1Dvhy0iw2a8ZscAZ94="
+								"docker-compose.yaml fixed":          "VOx0mS7mzdXTwe75qxzWYUpgulq/bh+BLVADqwT56qE="
+								"moreschema.cue":                     "+H7xSuge4BLJC4/I+9gaBAtSNjGhNbdq8Cpd7Ya1WYs="
+								"docker-compose.yaml really fixed":   "wRXs+1+bYv9/5n23aPDYKzX8bMY6q2oFtBv5zrlsUHs="
+								"link splotpolicy and splotservice1": "Cs9781vm46Qqb94LcrsVRe5g7IeTipiMjw3oYkTsgOM="
 							}
 							multi_step: {
-								hash:       "IH2LUDBVNSQSR59234AEDL26QANEASTL8LBPHG4FLDSK6DEKAPCG===="
+								hash:       "FF479U2M20F5S4NB62MMOK1JMG3DO61L1A6GO8DEGI5S761SAM0G===="
 								scriptHash: "D400CN0SES1U7PK9SLC4NJT5DJ9RNFL9M51DT6ONBCC5N2KGFOP0===="
 								steps: [{
 									doc:      ""
@@ -70,14 +70,10 @@ package site
 									exitCode: 0
 									output: """
 											module: "cue.example"
-											language: {
-											\tversion: "v0.16.1"
-											}
-											deps: {
-											\t"github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
-											\t\tv:       "v0.0.1"
-											\t\tdefault: true
-											\t}
+											language: version: "v0.18.0"
+											deps: "github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
+											\tv:       "v0.0.1"
+											\tdefault: true
 											}
 
 											"""

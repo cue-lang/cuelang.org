@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "IQ894QKC998SNP0P7LT1TT5LCOQBQMCOKH6FCCH4IBM08U6ETJ3G===="
-									scriptHash: "OUDJIB8KFP3TE6KL3NDJTI7STABSH8FJDO58ERPOG950NEECUTGG===="
+									hash:       "HIHNPM1GFNU9SKTEBI4N0UHQQCKMKN0M702S88GNB39RCUR966M0===="
+									scriptHash: "A8EOEJ341NT6EO5539V9NH9VT828AKPJSHCBQG3RM2SEMKBJMEN0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-0.dev.0.20260702073200-7686325819d2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -228,29 +228,30 @@ package site
 												  }
 
 												Usage:
-												  cue import [mode] [inputs] [flags]
+												  cue import [flags] [mode] [inputs]
 
 												Flags:
 												      --dry-run                  show what files would be created
 												      --ext stringArray          match files with these extensions
 												      --files                    split multiple entries into different files
-												  -f, --force                    force overwriting existing files
+												  -f, --force                    overwrite existing regular files
 												      --list                     concatenate multiple objects into a list
 												      --merge                    merge non-CUE files (default true)
 												  -n, --name string              regexp filter for non-CUE file names in directories
 												  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
-												  -p, --package string           package name for non-CUE files
+												  -p, --package string           package name for non-CUE files and CUE output
 												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
 												  -I, --proto_path stringArray   paths in which to search for imports
 												  -R, --recursive                recursively parse string values
-												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
-												      --with-context             import as object with contextual data
+												  -d, --schema stringArray       expression to select schema for evaluating values in non-CUE files
+												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

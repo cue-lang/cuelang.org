@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "514KBCNP0B03RCB7PTE49U2AQR371T4RIKK8ULVQV8KKD50VJEP0===="
-									scriptHash: "VS5D4V2574184AF0UGLREQV9P6P8I25KMSO7MIVE66ARDCVFGOH0===="
+									hash:       "9UED4FBLUSBJS2HTBATH978FF59HVCC7JSEKHVRQ7ELLTO1S1A6G===="
+									scriptHash: "O1FL7DD67PBU327357T6O02H7QOF2PR3EE75DDBK4RH83GMNOVQG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-0.dev.0.20260702073200-7686325819d2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -34,9 +34,10 @@ package site
 												  writefs       remove and create files in bulk
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												Use "cue exp [command] --help" for more information about a command.
 

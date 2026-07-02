@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "VEUS5LLK62KNKHR4G7DLKGB0TBJ0IFOPJND2IIUTCK72VH62G7AG===="
-									scriptHash: "7FC0ELH271D31868GG2FIKQLDCK35RFAHK5FFJVC21VJBT2JVKQG===="
+									hash:       "ASR3I8CFDP8M3T30KUJHSN6P7CHAMRILO0APDL68BL6GUJOFKAMG===="
+									scriptHash: "R1G3EQ51D2V2P9JGHNCC68DQK4RTSOQIHD41C41OEI73Q5OC728G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0-alpha.3:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-0.dev.0.20260702073200-7686325819d2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -100,22 +100,34 @@ package site
 
 												Available global experiments:
 
-												  cmdreferencepkg (preview: v0.13.0, default: v0.14.0, stable: v0.16.0)
-												    cmdreferencepkg requires referencing an imported tool package to declare tasks.
-												    Otherwise, declaring tasks via "$id" or "kind" string fields is allowed.
+												  modules (preview: v0.8.0, default: v0.9.0, stable: v0.11.0)
+												    modules enables support for the modules and package management proposal
+												    as described in https://cuelang.org/discussion/2939.
+
+												  evalv3 (preview: v0.9.0, default: v0.13.0, stable: v0.15.0)
+												    evalv3 enables the new CUE evaluator, addressing performance issues
+												    and bringing better algorithms for disjunctions, closedness, and cycles.
+
+												  yamlv3decoder (preview: v0.9.0, default: v0.9.0, stable: v0.11.0)
+												    yamlv3decoder swaps the old internal/third_party/yaml decoder with the new
+												    decoder implemented in internal/encoding/yaml on top of yaml.v3.
+
+												  embed (preview: v0.10.0, default: v0.12.0, stable: v0.14.0)
+												    embed enables support for embedded data files as described in
+												    https://cuelang.org/discussion/3264.
 
 												  decodeint64 (preview: v0.11.0, default: v0.12.0, stable: v0.13.0)
 												    decodeint64 changes [cuelang.org/go/cue.Value.Decode] to choose
 												    'int64' rather than 'int' as the default type for CUE integer values
 												    to ensure consistency with 32-bit platforms.
 
-												  embed (preview: v0.10.0, default: v0.12.0, stable: v0.14.0)
-												    embed enables support for embedded data files as described in
-												    https://cuelang.org/discussion/3264.
+												  toposort (preview: v0.11.0, default: v0.12.0, stable: v0.14.0)
+												    toposort enables topological sorting of struct fields.
+												    Provide feedback via https://cuelang.org/issue/3558.
 
-												  evalv3 (preview: v0.9.0, default: v0.13.0, stable: v0.15.0)
-												    evalv3 enables the new CUE evaluator, addressing performance issues
-												    and bringing better algorithms for disjunctions, closedness, and cycles.
+												  cmdreferencepkg (preview: v0.13.0, default: v0.14.0, stable: v0.16.0)
+												    cmdreferencepkg requires referencing an imported tool package to declare tasks.
+												    Otherwise, declaring tasks via "$id" or "kind" string fields is allowed.
 
 												  keepvalidators (preview: v0.14.0, default: v0.14.0, stable: v0.15.0)
 												    keepvalidators prevents validators from simplifying into concrete values,
@@ -124,17 +136,9 @@ package site
 												    Spec change:  https://cuelang.org/cl/1217013
 												    Spec change:  https://cuelang.org/cl/1217014
 
-												  modules (preview: v0.8.0, default: v0.9.0, stable: v0.11.0)
-												    modules enables support for the modules and package management proposal
-												    as described in https://cuelang.org/discussion/2939.
-
-												  toposort (preview: v0.11.0, default: v0.12.0, stable: v0.14.0)
-												    toposort enables topological sorting of struct fields.
-												    Provide feedback via https://cuelang.org/issue/3558.
-
-												  yamlv3decoder (preview: v0.9.0, default: v0.9.0, stable: v0.11.0)
-												    yamlv3decoder swaps the old internal/third_party/yaml decoder with the new
-												    decoder implemented in internal/encoding/yaml on top of yaml.v3.
+												  formatv2 (preview: v0.18.0, default: v0.18.0)
+												    formatv2 selects the Wadler-Lindig pretty-printer as the
+												    implementation behind "cue fmt" and "cue/format".
 
 												Each experiment's lifecycle tracks language versions as follows:
 												- preview:   experimental feature that can be enabled

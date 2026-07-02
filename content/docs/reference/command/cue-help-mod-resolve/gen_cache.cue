@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "UG4UR7BLM0T957DTVVENRLLP3JATMSIGMLJ5N9LO4HLLR2OP26F0===="
-									scriptHash: "7KA2R20STRT42HT25SALTS9IDU5FV680TIDF9EF90QJJKKRSL27G===="
+									hash:       "9AR92A0V4Q8K8OJ9BEOBNRPAMRNUNSRABP3CPSC4VQV8FGJLJUN0===="
+									scriptHash: "6HNK21K7T4K8773BNF7ND7RSFO51QFDV3F7E7S9D7474OPUJ241G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-0.dev.0.20260702073200-7686325819d2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -47,9 +47,10 @@ package site
 												      --deps   resolve all dependencies in the current module
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

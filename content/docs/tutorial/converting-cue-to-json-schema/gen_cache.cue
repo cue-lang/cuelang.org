@@ -7,20 +7,20 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.cue":     "6K9jAyj4hWXro5Krzg3OipUpEMKFC2dx9haaNNE6ico="
-								"good.json":      "6VrfH0enTQby0yte+BTkxOndd49ojimt2KL3pDha8r8="
-								"bad.json":       "4D8AR0gmWNwlTlxpNsaBT3m1FCW9M0ERhfkoCLs7RMo="
-								"bad.json fixed": "+f3Lqk4mrkDd76CksgzMYaX9D2L6p0C3DhRo8DK/A9w="
+								"schema.cue":     "Rc3hY5k9S+lrgqiLOzDqpWFcrUkcvNNvx0Y9/Uwl5Z0="
+								"good.json":      "U6xhNvrwuZrf8OtQWUgIneLsfWFpvY+f6raaYZRn+Cg="
+								"bad.json":       "4/Hf7OpiYxxjWruy5IqW5pSPQiSZm9alyA5WO2jkYKA="
+								"bad.json fixed": "5lDART4QzoheE5UnDScuyCKj7M+SLkQxG15ozzlDHpE="
 							}
 							multi_step: {
-								hash:       "NIEIU31GNO8OK5Q2SHFJSKSFDMKTBP0R4ACSFC3OMKL5SR99JSMG===="
-								scriptHash: "NR56U4K5GGIOULD3SBG940S9TPIOJT788OQMQ83B35PJ9OR40MPG===="
+								hash:       "UIB9SQDHFJNGRUJIB5BPQR1LVVNGDDNGG9S6RIV6GQF26ICR2PAG===="
+								scriptHash: "2A5RA9M3RQ9OQTK27K5KC6L7C2RA3D099T3NB61DA5CV0UGHQDHG===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.16.1
+											cue version v0.18.0-0.dev.0.20260702073200-7686325819d2
 											...
 
 											"""
@@ -32,7 +32,7 @@ package site
 											{
 											    "$schema": "https://json-schema.org/draft/2020-12/schema",
 											    "$defs": {
-											        "#Session": {
+											        "Session": {
 											            "type": "object",
 											            "additionalProperties": false,
 											            "properties": {
@@ -71,7 +71,7 @@ package site
 											        "sessions": {
 											            "type": "array",
 											            "items": {
-											                "$ref": "#/$defs/%23Session"
+											                "$ref": "#/$defs/Session"
 											            }
 											        },
 											        "venue": {

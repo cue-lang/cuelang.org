@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "CHJT290C3PC4DJ8VDG74PSHSPNEKVBG98TJUN88DUOBPODN0DJPG===="
-									scriptHash: "9E35NP46657OUAK1M1P9C7SSBMTCJN6F644UJ07VI075DA7I62I0===="
+									hash:       "SPG7PS4GEA81V3LN5SJAI303U2UMPBBRTD7MSBLPUC4J7TKQSL9G===="
+									scriptHash: "RN2SC8UN4V4H7GR662ENENLVSLNC1CU86SRHNTV2PL206DOQU3TG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-0.dev.0.20260702073200-7686325819d2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -94,9 +94,10 @@ package site
 												      --update-ident   update imported identifier name too
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

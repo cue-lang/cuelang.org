@@ -7,21 +7,21 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial template":  "akZ94beTaaJp+mwxc+1sPXPLtuqT1+ekx43a8Djphso="
-								kube2:               "vArZ2Dsxngo0n1giJw/weADSyoU6YP4q84djYKFECdM="
-								kube3:               "c7D6PTlrIuQkPap4LiBVQcy0QXVeak3/mzozBkShOhs="
-								"template frontend": "oRf+lsIhCl5nK7RnHX2kFuwak82hX3GZO5YYqDBubqM="
-								"template kitchen":  "ez0axnefgvOQco5F7U/YjOEW0UkvKjNwh3QgBy/ldpY="
-								kitchen3:            "NDuBu8N1ua9HBqQaC0gsZ+6WrZ2NbagxmyZSmiFYnls="
-								sous:                "CnddEKUJupCR01ARoAm2ONtTjXaREM8b6NMz6kVFWgk="
-								"kube tool":         "3q3DaidyYOfVP7xO197NADtifNZND5gNsngIZJdBu6g="
-								"ls tool":           "PNR+YEYWLlEIXkFJGvSluVJQjyBBoTrH5WGnUMA4Axs="
-								"dump tool":         "8ChPVoga1zX2SPvN0a1wENt195AgneyoztnbfLPLNVk="
-								"create tool":       "hr6OorVszTg03vDXsmvj/bg1znwHHiLPhehj7GraP8s="
-								kubectl:             "aSTKoTuHB1L+hTCJLVd4YfkFZPzl7WZdo+fsFnp+ZXI="
+								"initial template":  "sW3zhvxEUBDdPorX87g/PMEwV3rokINvXOvWUxz+DEA="
+								kube2:               "QYo2zpVTRJ2VoAPExrWBY1TlJB6ny1frnuZ+i8wO4sc="
+								kube3:               "POblGYI/gtZiZGOrvRQqTyFa4uRoPQCWt0rDBaXTCHM="
+								"template frontend": "BB//ACf6+CNCat6EyQE7ClpE+TQvMig2u07z71FhLEc="
+								"template kitchen":  "86EcnNqnMmB26F1v3uoeccXhpbgAyUDR4lGZA51dtdg="
+								kitchen3:            "q+m262aa8BjtmsgeMa0KFy9+zyYaUZh2Mzy5iwCjYtU="
+								sous:                "8mHmdIubKeCR1o0lnRRUa94Kilx+6nfPDRVDmGiOIk4="
+								"kube tool":         "PQnVRPylJNnVPqKKsu3lxyogpuoeAU+6P7aJ4ezaNOQ="
+								"ls tool":           "zPu7uBff/CFjhcYQUK/tfF3EpbIqTldhhgJ3cdz0ePE="
+								"dump tool":         "I6anIZpG607ounvgUj+cahSeNtGWuRVSF4cRHPy7j+k="
+								"create tool":       "PWtCrEOT30Pj/Avyu7uafMylWXbXfPEC2K9fiYbA4ME="
+								kubectl:             "u2nZD765p364EAoLIzu80T7/DXKK2L6roGtlR5X3UqQ="
 							}
 							multi_step: {
-								hash:       "I4H1VVGGUNHCGTQF2P9GCPJRUE26DE90CT733V8M9MQQACCR73K0===="
+								hash:       "4NNC03CQ3OD6R3B10VMLR1HGVCJ7ME72QK74FS6AAN5PJB8TRIOG===="
 								scriptHash: "L2DE6E9PKJL1HVTL4RM43Q87A1098Q7DRNSC1J9KJ8HRP7VJDIK0===="
 								steps: [{
 									doc:      "#ellipsis 5"
@@ -138,14 +138,14 @@ package site
 									output: #"""
 											apiVersion: "v1"
 											kind:       "ConfigMap"
-											metadata: {
-											    name: "prometheus"
-											}
+											metadata: name: "prometheus"
 											data: {
 											    "alert.rules": """
 											        groups:
 											          - name: rules.yaml
 											            rules:
+											              - alert: InstanceDown
+											                expr: up == 0
 											...
 
 											"""#
@@ -225,23 +225,23 @@ package site
 											--- snapshot
 											+++ snapshot2
 											@@ -1,3 +1,9 @@
-											+service: {}
+											+service:    {}
 											+deployment: {}
 											+// ---
-											+service: {}
+											+service:    {}
 											+deployment: {}
 											+// ---
-											 service: {
-											     bartender: {
-											         apiVersion: "v1"
-											@@ -208,6 +214,7 @@
-											             selector: {
-											                 app:    "maitred"
-											                 domain: "prod"
-											+                component: "frontend"
-											             }
+											 service: bartender: {
+											     apiVersion: "v1"
+											     kind:       "Service"
+											@@ -175,6 +181,7 @@
+											         selector: {
+											             app:    "maitred"
+											             domain: "prod"
+											+            component: "frontend"
 											         }
 											     }
+											 }
 											...
 
 											"""
@@ -255,7 +255,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1822 total
+											 1832 total
 
 											"""
 								}, {
@@ -268,7 +268,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1264 total
+											 1274 total
 
 											"""
 								}, {
@@ -281,7 +281,7 @@ package site
 									cmd:      "diff -wu snapshot snapshot2 | wc -l"
 									exitCode: 0
 									output: """
-											587
+											547
 
 											"""
 								}, {
@@ -324,7 +324,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1201 total
+											 1211 total
 
 											"""
 								}, {
@@ -371,7 +371,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1009 total
+											 1019 total
 
 											"""
 								}, {
@@ -396,14 +396,14 @@ package site
 									output: """
 											--- snapshot
 											+++ snapshot2
-											@@ -170,6 +170,7 @@
-											                 metadata: {
-											                     annotations: {
-											                         "prometheus.io.scrape": "true"
-											+                        "prometheus.io.port":   "7080"
-											                     }
-											                     labels: {
-											                         app:       "host"
+											@@ -145,7 +145,10 @@
+											         selector: {}
+											         template: {
+											             metadata: {
+											-                annotations: "prometheus.io.scrape": "true"
+											+                annotations: {
+											+                    "prometheus.io.scrape": "true"
+											+                    "prometheus.io.port":   "7080"
 											...
 
 											"""
@@ -422,7 +422,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  994 total
+											 1004 total
 
 											"""
 								}, {
@@ -463,7 +463,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  986 total
+											  996 total
 
 											"""
 								}, {

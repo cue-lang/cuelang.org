@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "21S4LSLVVCEH2UJDK1P21TFHL078SNTPDJSJFAR8FMUDPTCA7H60===="
-									scriptHash: "K1GACGML1KQB9PAPS85A8G3SQUIOVIG2OVNO0PKCIA3DM5V26JH0===="
+									hash:       "F4ND6K8DVC78CNVM78M676ITR16HH25K1B9CHM8JBUGRUPTQTDQG===="
+									scriptHash: "GF9SQ4QODUHMT5THHJOVLQPQ036M5OGL2B1V0LK4PBKN1HR3GR30===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-0.dev.0.20260702073200-7686325819d2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -68,18 +68,19 @@ package site
 												removal.
 
 												Usage:
-												  cue trim [flags]
+												  cue trim [flags] [inputs]
 
 												Flags:
 												  -n, --dry-run          only run simulation
-												  -f, --force            force overwriting existing files
+												  -f, --force            overwrite existing regular files
 												  -o, --outfile string   filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
 												      --trace            trace computation
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

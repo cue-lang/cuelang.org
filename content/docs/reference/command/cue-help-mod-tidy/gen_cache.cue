@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "HP7LA89NGE2A0O8PL3L78V3FV0E2G5RCJ50EIVGORUSMAICMB2H0===="
-									scriptHash: "EVHP9JS29OOV0RH7HRDFPODNRNE1R6H596GL97VIJK31N75P03F0===="
+									hash:       "AP3FQEV00H0027P53HLLCPTFSLHUNM0A621T953UL7NAFFLH6NL0===="
+									scriptHash: "9FBIDDCCJ5CGP8N103LOEFPAEL43LATVHJJ302BCOJ32K3K92C1G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-0.dev.0.20260702073200-7686325819d2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -36,12 +36,14 @@ package site
 												  cue mod tidy [flags]
 
 												Flags:
-												      --check   check for tidiness after fetching dependencies; fail if module.cue would be updated
+												      --check        check for tidiness after fetching dependencies; fail if module.cue would be updated
+												      --local-only   only update cue.mod/local-module.cue, leaving cue.mod/module.cue unchanged
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

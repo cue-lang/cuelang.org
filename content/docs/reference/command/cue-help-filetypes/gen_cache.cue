@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "DCGR2FEIM7AHOIH0JF89LTO5L7S0TLR9C9G50ECD9F2E607R00Q0===="
-									scriptHash: "ANVK35GP2E4O9USMB3JHSL4BSIH69G837R8CSUM8V8AATUCF7NN0===="
+									hash:       "RC4NU468V8SD6S17RU7VDHMLBMNN8AAQSERJEE191PJ02BTE9U30===="
+									scriptHash: "89JGHEAA9UUNB3O092L5IU816EJNCR0FGJKQ5EQ2H9MBBLMN2H9G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-0.dev.0.20260702073200-7686325819d2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -85,17 +85,24 @@ package site
 												and influence the functioning of the codec. The tag they are
 												valid with is mentioned in parentheses at the end.
 
-												    strictFeatures\treport errors for lossy mappings. (jsonschema)
-												    strictKeywords\treport errors for unknown keywords (jsonschema)
-												    strict\t\t\treport errors for either of the above (jsonschema)
+												    strictFeatures  report errors for lossy mappings. (jsonschema)
+												    strictKeywords  report errors for unknown keywords (jsonschema)
+												    strict          report errors for either of the above (jsonschema)
 												    openOnlyWhenExplicit
-												    \t\t\t\trequire a schema to be explicitly opened before a
-												    \t\t\t\t... will be added to a struct (jsonschema)
+												                    require a schema to be explicitly opened before a
+												                    ... will be added to a struct (jsonschema)
+
+												    indentSequences
+												                    indent sequence elements relative to their
+												                    enclosing mapping key; true by default (yaml)
 
 												Many commands also support the --out and --outfile/-o flags.
 												The --out flag specifies the output type using a qualifier
 												(without the ':'). The -o flag specifies an output file
 												possibly prefixed with a qualifier.
+
+												Note that jsonschema is currently experimental as an output type: the
+												form of generated schemas may change from release to release.
 
 												Examples:
 

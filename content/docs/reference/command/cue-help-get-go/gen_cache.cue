@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "LU2M84955CD9PSTUPETM8729D6CG52R6VBA6UDCGC1R5EISOQ1Q0===="
-									scriptHash: "GOI7M7HVQDN71OGPOT6QKLCHPRJV7KQ0G02UENKV1RMIVN7RJQ2G===="
+									hash:       "5HVOD9F8M7JPAL3M5Q8LOR3F1ANTA0CHIM3IO096E33H9444UDQ0===="
+									scriptHash: "9HS8A25CKE81HSB4PU1A9P468SAR8PTO7TS12UQ2ECFTC3M7K0KG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-0.dev.0.20260702073200-7686325819d2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -167,7 +167,7 @@ package site
 												restrictive enum interpretation of #Switch remains.
 
 												Usage:
-												  cue get go [packages] [flags]
+												  cue get go [flags] [packages]
 
 												Flags:
 												      --codec string     comma-separated priority list of struct tags to use for field names (default "json,yaml")
@@ -178,9 +178,10 @@ package site
 												  -v, --verbose          print information about progress
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

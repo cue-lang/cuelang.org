@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "AKMAOA820O6OMIQRMQ0653H8F1VN1KRBNLF3CDGFLQQMBJL1QGU0===="
-									scriptHash: "OF675IOMFKN5FC1OQ396MO1CQ7VDDP3Q57U7R8GB0BPUG6PQCFK0===="
+									hash:       "7KFVD6C82P88QDI53041RFD4FV0T929E7I5KS07MRGMRFH0KKGNG===="
+									scriptHash: "B4PO2M197NKIE57HQT20I44UD39VRN4DSHF7ILP26D28PH97TMJ0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-0.dev.0.20260702073200-7686325819d2:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -56,14 +56,28 @@ package site
 												\t\tComma-separated list of debug flags to enable or disable, such as:
 
 												\t\thttp
-												\t\t\tLog a JSON message per HTTP request and response made
+												\t\t\thttp enables JSON logging per HTTP request and response made
 												\t\t\twhen interacting with module registries.
+												\t\tstrict
+												\t\t\tstrict sets whether extra aggressive checking should be done.
+												\t\t\tThis should typically default to true for pre-releases and default to
+												\t\t\tfalse otherwise.
+												\t\tlogeval
+												\t\t\tlogeval sets the log level for the evaluator.
+												\t\t\tThere are currently only two levels:
+												\t\t\t0: no logging
+												\t\t\t1: logging
+												\t\tsharing
+												\t\t\tsharing enables structure sharing.
 												\t\tsortfields
-												\t\t\tForce fields in stucts to be sorted lexicographically.
+												\t\t\tsortfields forces fields in a struct to be sorted
+												\t\t\tlexicographically.
+												\t\topendef
+												\t\t\topendef disables the check for closedness of definitions.
 												\t\ttoolsflow
-												\t\t\tPrint task dependency mermaid graphs in 'cue cmd'.
+												\t\t\ttoolsflow causes [cuelang.org/go/tools/flow] to print a task dependency mermaid graph.
 												\t\tparsertrace
-												\t\t\tPrint a trace of parsed CUE productions.
+												\t\t\tparsertrace causes [cuelang.org/go/cue/parser] to print a trace of parsed productions.
 
 												CUE_EXPERIMENT and CUE_DEBUG are comma-separated lists of key-value strings,
 												where the value is a boolean "true" or "1" if omitted. For example:
