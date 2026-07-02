@@ -10,6 +10,9 @@ $ cue help vet
 The vet command validates CUE and other data files.
 The command is silent when it succeeds; otherwise it reports any errors found.
 
+Input arguments can be CUE packages, CUE files, non-CUE files, or some
+combinations of those. See "cue help inputs" for more detail.
+
 By default, vet ensures that the result of validation is concrete
 by reporting an error if any resulting regular fields have non-concrete values.
 Use -c=false to not require concreteness, or -c to show these error messages.
@@ -42,7 +45,7 @@ Examples:
 The -d flag can be repeated to validate against multiple schemas at once.
 
 Usage:
-  cue vet [flags]
+  cue vet [flags] [inputs]
 
 Flags:
   -c, --concrete                 require the evaluation to be concrete, or set -c=false to allow incomplete values
@@ -51,16 +54,17 @@ Flags:
       --list                     concatenate multiple objects into a list
       --merge                    merge non-CUE files (default true)
   -n, --name string              regexp filter for non-CUE file names in directories
-  -p, --package string           package name for non-CUE files
+  -p, --package string           package name for non-CUE files and CUE output
   -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
       --proto_enum string        mode for rendering enums (int|json) (default "int")
   -I, --proto_path stringArray   paths in which to search for imports
-  -d, --schema string            expression to select schema for evaluating values in non-CUE files
-      --with-context             import as object with contextual data
+  -d, --schema stringArray       expression to select schema for evaluating values in non-CUE files
+      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 Global Flags:
-  -E, --all-errors   print all available errors
-  -i, --ignore       proceed in the presence of errors
-  -s, --simplify     simplify output
+  -E, --all-errors     print all available errors
+  -C, --chdir string   change working directory before running command (must be the first flag)
+  -i, --ignore         proceed in the presence of errors
+  -s, --simplify       simplify output
 ````
 

@@ -261,7 +261,7 @@ App: {
 	name!:      !~#"\."# // no dots
 	memory:     >=1024 & <10240
 	replicas:   >=2
-	replicaMem: memory/replicas & >=1024
+	replicaMem: memory / replicas & >=1024
 }
 
 Config: {
@@ -287,7 +287,8 @@ output: Config & {
 	region:       deployment.region
 	clusterName:  deployment.cluster
 	id: strings.ToLower(strings.Join(
-		[appName, clusterName, region], "."))
+		[appName, clusterName, region], "."
+	))
 }
 -- values.yml --
 app:
@@ -349,7 +350,7 @@ App: {
 	name:       !~#"\."# // no dots
 	memory:     >=1024 & <10240
 	replicas:   >=2
-	replicaMem: memory/replicas & >=1024
+	replicaMem: memory / replicas & >=1024
 }
 
 Config: {
@@ -361,7 +362,7 @@ Config: {
 }
 -- out --
 app.replicaMem: invalid value 768.0 (out of bound >=1024):
-    ./policy.cue:9:32
+    ./policy.cue:9:34
     ./policy.cue:9:14
 {{{end}}}
 

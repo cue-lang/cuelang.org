@@ -106,9 +106,7 @@ a: X={
 	bar: X.foo
 }
 -- out.cue --
-a: {
-    bar: X.foo
-}
+a: bar: X.foo
 {{{end}}}
 
 <!--

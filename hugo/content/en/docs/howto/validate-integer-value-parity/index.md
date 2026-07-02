@@ -81,14 +81,14 @@ even.1: 13 is not even:
     ./file.cue:12:12
 odd.0: 42 is not odd:
     ./file.cue:6:31
-    ./file.cue:9:7
-    ./file.cue:9:14
+    ./file.cue:6:10
+    ./file.cue:6:17
     ./file.cue:14:10
     ./file.cue:15:7
 odd.2: 0 is not odd:
     ./file.cue:6:31
-    ./file.cue:9:7
-    ./file.cue:9:14
+    ./file.cue:6:10
+    ./file.cue:6:17
     ./file.cue:14:10
     ./file.cue:15:15
 {{< /code-tab >}}

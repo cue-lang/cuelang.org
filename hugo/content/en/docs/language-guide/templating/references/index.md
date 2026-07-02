@@ -111,9 +111,7 @@ a: X={
 }
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-a: {
-    bar: X.foo
-}
+a: bar: X.foo
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

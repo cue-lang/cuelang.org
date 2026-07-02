@@ -48,7 +48,7 @@ C: matchIf({x?: string}, {o?: <100}, {o?: >100})
 D: matchIf({x?: int}, _oUnder100, _oOver100)
 
 _oUnder100: {o?: <100}
-_oOver100: {o?: >100}
+_oOver100:  {o?: >100}
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
 $ cue vet -c
@@ -62,7 +62,7 @@ D: invalid value {x:"some string",o:99} (does not satisfy matchIf): invalid valu
     ./example.cue:17:4
     ./example.cue:13:4
     ./example.cue:13:26
-    ./example.cue:20:17
+    ./example.cue:20:18
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

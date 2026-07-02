@@ -22,6 +22,8 @@ To ensure that the resulting Go code works, any imported CUE packages or
 referenced CUE definitions are transitively generated as well.
 Code is generated in each CUE package directory at cue_types_${pkgname}_gen.go,
 where the package name is omitted from the filename if it is implied by the import path.
+The --outfile flag can be used to write the output for a single CUE package to a specific file,
+or to stdout when set to "-".
 
 Generated Go type and field names may differ from the original CUE names by default.
 For instance, an exported definition "#foo" becomes "Foo",
@@ -62,9 +64,13 @@ The default is "zero", representing a missing field as the zero value.
 Usage:
   cue exp gengotypes [flags]
 
+Flags:
+  -o, --outfile string   generate one Go file for a single CUE package
+
 Global Flags:
-  -E, --all-errors   print all available errors
-  -i, --ignore       proceed in the presence of errors
-  -s, --simplify     simplify output
+  -E, --all-errors     print all available errors
+  -C, --chdir string   change working directory before running command (must be the first flag)
+  -i, --ignore         proceed in the presence of errors
+  -s, --simplify       simplify output
 ````
 

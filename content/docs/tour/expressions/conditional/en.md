@@ -22,8 +22,10 @@ if price > 100 {
 -- stock.yaml --
 price: 200
 -- out --
-authorisedBy: field is required but not present
-reason: field is required but not present
+authorisedBy: field is required but not present:
+    ./file.cue:7:2
+reason: field is required but not present:
+    ./file.cue:6:2
 {{{end}}}
 
 {{< info >}}

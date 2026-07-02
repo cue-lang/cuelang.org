@@ -45,19 +45,13 @@ _sortAtSymbolCountDescending: {
 	y:    string
 	less: strings.Count(x, "@") > strings.Count(y, "@")
 }
-stringsCountDescending: list.Sort( ["X", "@@", "@"], _sortAtSymbolCountDescending)
+stringsCountDescending: list.Sort(["X", "@@", "@"], _sortAtSymbolCountDescending)
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
-sort: [1, 2.2, 3]
-stringsDescending: ["C", "B", "A"]
-structsCustom: [{
-    a: 1
-}, {
-    a: 2
-}, {
-    a: 3
-}]
+sort:                   [1, 2.2, 3]
+stringsDescending:      ["C", "B", "A"]
+structsCustom:          [{a: 1}, {a: 2}, {a: 3}]
 stringsCountDescending: ["@@", "@", "X"]
 {{< /code-tab >}}
 {{< /code-tabs >}}

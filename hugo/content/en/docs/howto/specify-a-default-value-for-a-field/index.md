@@ -151,10 +151,10 @@ successfully used as a default:
 package example
 
 a: 5
-b: *( a + 10) | int
+b: *(a + 10) | int
 
 c: "hello"
-d: *( c + ", world!") | string
+d: *(c + ", world!") | string
 {{< /code-tab >}}
 {{< code-tab name="JSON" language="json" area="top-right" type="terminal" >}}
 {

@@ -35,7 +35,7 @@ This tutorial uses the following version of CUE:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.16.1
+cue version v0.18.0-0.dev.0.20260702073200-7686325819d2
 ...
 ````
 
@@ -182,8 +182,8 @@ and then prints a message based on the `config` field.
 {{< step stepNumber="7" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE2LjEKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.16.1
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE4LjAtMC5kZXYuMC4yMDI2MDcwMjA3MzIwMC03Njg2MzI1ODE5ZDIKZ28gbW9kIHRpZHk=" }
+$ go get cuelang.org/go@v0.18.0-0.dev.0.20260702073200-7686325819d2
 ...
 $ go mod tidy
 ...
@@ -202,9 +202,7 @@ $ go run .
 {
 	appName: "alpha"
 	port:    80
-	features: {
-		logging: true
-	}
+	features: logging: true
 }
 ````
 {{< /step >}}

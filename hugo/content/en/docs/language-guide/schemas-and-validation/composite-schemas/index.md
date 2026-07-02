@@ -81,12 +81,8 @@ definition.
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 #Base: {}
-#Animal: {
-    kind!: string
-}
-#Mammal: {
-    lungCapacityL: number
-}
+#Animal: kind!:         string
+#Mammal: lungCapacityL: number
 #Dog: {
     kind!:         "dog"
     house:         string

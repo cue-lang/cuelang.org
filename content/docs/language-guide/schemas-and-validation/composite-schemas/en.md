@@ -79,12 +79,8 @@ definition.
 }
 -- out.cue --
 #Base: {}
-#Animal: {
-    kind!: string
-}
-#Mammal: {
-    lungCapacityL: number
-}
+#Animal: kind!:         string
+#Mammal: lungCapacityL: number
 #Dog: {
     kind!:         "dog"
     house:         string

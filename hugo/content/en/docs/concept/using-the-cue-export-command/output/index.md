@@ -51,7 +51,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
@@ -80,7 +80,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
@@ -148,7 +148,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
@@ -182,7 +182,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}

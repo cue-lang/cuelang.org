@@ -171,8 +171,8 @@ package dns
 zones: [Zone=string]: {
 	"@": {
 		MX: {
-			_mx_ttl: 3600
-			"aspmx.l.google.com": {pri: 1, ttl: _mx_ttl}
+			_mx_ttl:                   3600
+			"aspmx.l.google.com":      {pri: 1, ttl: _mx_ttl}
 			"alt1.aspmx.l.google.com": {pri: 5, ttl: _mx_ttl}
 			"alt2.aspmx.l.google.com": {pri: 5, ttl: _mx_ttl}
 			"alt3.aspmx.l.google.com": {pri: 10, ttl: _mx_ttl}

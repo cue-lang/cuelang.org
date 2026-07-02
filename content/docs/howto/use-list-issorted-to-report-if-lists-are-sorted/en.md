@@ -41,7 +41,7 @@ stringsDescending: list.IsSorted(["C", "B", "A"], list.Descending)
 // Mixed type lists require a custom comparator containing a "less" field that
 // encodes a comparison between its "x" and "y" fields, reflecting x<y. See
 // list.Sort for details.
-structsCustomTrue: list.IsSorted( [{a: 1}, {a: 2}, {a: 3}], {x: {}, y: {}, less: x.a < y.a})
+structsCustomTrue:  list.IsSorted([{a: 1}, {a: 2}, {a: 3}], {x: {}, y: {}, less: x.a < y.a})
 structsCustomFalse: list.IsSorted([{a: 2}, {a: 3}, {a: 1}], {x: {}, y: {}, less: x.a < y.a})
 
 // This comparator tests if lists of strings are in descending order of how
@@ -51,7 +51,7 @@ _sortAtSymbolCountDescending: {
 	y:    string
 	less: strings.Count(x, "@") > strings.Count(y, "@")
 }
-stringsCountDescendingTrue: list.IsSorted( ["@@", "@", "X"], _sortAtSymbolCountDescending)
+stringsCountDescendingTrue:  list.IsSorted(["@@", "@", "X"], _sortAtSymbolCountDescending)
 stringsCountDescendingFalse: list.IsSorted(["X", "@", "@@"], _sortAtSymbolCountDescending)
 -- out --
 isSorted:                    true

@@ -46,7 +46,7 @@ This tutorial is written using the following version of `cue`:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.16.1
+cue version v0.18.0-0.dev.0.20260702073200-7686325819d2
 ...
 ````
 
@@ -259,17 +259,9 @@ We can see that the dependencies have now been added to the
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/module.cue
 module: "github.com/cueckoo/frostyapp@v0"
-language: {
-	version: "v0.16.1"
-}
-source: {
-	kind: "git"
-}
-deps: {
-	"github.com/cueckoo/frostyconfig@v0": {
-		v: "v0.0.1"
-	}
-}
+language: version: "v0.18.0"
+source: kind:      "git"
+deps: "github.com/cueckoo/frostyconfig@v0": v: "v0.0.1"
 ````
 
 {{< /step >}}

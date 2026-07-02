@@ -32,7 +32,7 @@ This tutorial is written using the following versions of `go` and `cue`:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24KZ28gdmVyc2lvbg==" }
 $ cue version
-cue version v0.16.1
+cue version v0.18.0-0.dev.0.20260702073200-7686325819d2
 ...
 $ go version
 go version go1.26.4 linux/amd64
@@ -130,8 +130,8 @@ func main() {
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE2LjEKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.16.1
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE4LjAtMC5kZXYuMC4yMDI2MDcwMjA3MzIwMC03Njg2MzI1ODE5ZDIKZ28gbW9kIHRpZHk=" }
+$ go get cuelang.org/go@v0.18.0-0.dev.0.20260702073200-7686325819d2
 ...
 $ go mod tidy
 ...

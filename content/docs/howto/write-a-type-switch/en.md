@@ -75,7 +75,7 @@ output: [for v in input {
     type:      "a string"
     isANumber: false
 }, {
-    source: ["some", "list"]
+    source:    ["some", "list"]
     type:      "a list"
     isANumber: false
 }, {
