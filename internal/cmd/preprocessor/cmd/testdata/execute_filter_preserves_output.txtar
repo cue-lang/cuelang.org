@@ -1,17 +1,14 @@
 # Verify that executing a subset of pages, via a directory filter or a
 # working directory below the content root, does not delete the output of
 # other pages, while a full run still removes stale output.
-#
-# TODO(https://cuelang.org/issue/3579): the '! exists' assertions below,
-# except for the final one, document the current broken behavior: those
-# files must be preserved, as they belong to pages not covered by the run.
+# See https://cuelang.org/issue/3579.
 
 # Run the preprocessor with a directory filter. The output of dir2 and the
 # stale file must be left alone.
 exec preprocessor execute content/dir1
 cmp hugo/content/en/dir1/index.md golden/hugo/content/en/dir1/index.md
-! exists hugo/content/en/dir2/index.md
-! exists hugo/content/en/stale/index.md
+grep 'pre-existing dir2 output' hugo/content/en/dir2/index.md
+exists hugo/content/en/stale/index.md
 
 # Run the preprocessor from a working directory below the content root. Such
 # runs currently fail because page config is looked up at the wrong path, but
@@ -20,7 +17,9 @@ cd content/dir2
 ! exec preprocessor execute
 stderr 'found no config'
 cd $WORK
-! exists hugo/content/en/dir1/index.md
+cmp hugo/content/en/dir1/index.md golden/hugo/content/en/dir1/index.md
+grep 'pre-existing dir2 output' hugo/content/en/dir2/index.md
+exists hugo/content/en/stale/index.md
 
 # A full run must still remove stale output.
 exec preprocessor execute

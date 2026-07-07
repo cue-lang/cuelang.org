@@ -122,16 +122,22 @@ func (ec *executeContext) execute() error {
 
 	// At this point we know we are not in --check mode, check we are not in
 	// serve mode and delete hugo/content as a temporary(ish) measure to ensure
-	// that we don't leave any stale files around.
-	if !flagServe.Bool(ec.executor.cmd) {
+	// that we don't leave any stale files around. Only do so when this run
+	// regenerates every page: with a directory filter, or with a working
+	// directory below the content root, removing the entire target directory
+	// would delete output belonging to pages this run does not process.
+	// See https://cuelang.org/issue/3579.
+	if !flagServe.Bool(ec.executor.cmd) && ec.filter == nil {
 		var targetDir string
 		if ec.mkdocsOutput != "" {
 			targetDir = ec.mkdocsOutput
-		} else {
+		} else if ec.executor.wd == filepath.Join(ec.executor.root, "content") {
 			targetDir = filepath.Join(ec.executor.root, "hugo", "content")
 		}
-		if err := os.RemoveAll(targetDir); err != nil {
-			return ec.errorf("%v: failed to remove %s: %v", ec, targetDir, err)
+		if targetDir != "" {
+			if err := os.RemoveAll(targetDir); err != nil {
+				return ec.errorf("%v: failed to remove %s: %v", ec, targetDir, err)
+			}
 		}
 	}
 
