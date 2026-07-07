@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"create hello module":            "FsU1UmaQBc0BQikvktj+MskCJ5gSDtrBBXzvUvBnkwE="
-								"create local greeting checkout": "CHoiwG3NHqX3vNBWMeh4FpEi8VotGqMbdyOOTycvYHM="
+								"create hello module":            "7+mb4H8MRvXYIo+FbydooD27cJKlePl67gAp2KSnPWU="
+								"create local greeting checkout": "OcoVh4/5fxHe688vVZVy1pFCQ8nFZ1zKI/i088uXSno="
 							}
 							multi_step: {
-								hash:       "CN4ERUUMLC00U4CTJB8D9D6KIFPLPGBURLIVLTP6U5NH08JADM2G===="
+								hash:       "6NC0BQ3IHEHA0T1J0PIKLRSNA8E3VK34GS1QLEM65452DJHO9N8G===="
 								scriptHash: "CVC494O8AA2L13V32DG3ND957I2BJG6V1ACGHD6G7RQFHHNSL2CG===="
 								steps: [{
 									doc:      ""
