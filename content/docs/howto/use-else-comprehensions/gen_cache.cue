@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							code: {
-								"if-else before and after": "qLLZRzvIc757yxUVm49QO0rhAWwMuynMEveEvw5lmgw="
-								"for-fallback":             "86FjBm9g7+4Z8iQTHrYoRXZ2Xd9CpvQ6VaVH2q88ItA="
+								"if-else before and after": "YPBRKaQNKuJSKE6RaXVrZOmI2fOLZO1hAS/nxxTVje0="
+								"for-fallback":             "78gDoBorpid+XphtmUNSlBhb4JRBUFZpRwjv+kSUOz8="
 							}
 							multi_step: {
-								hash:       "B6I430DUSQLK4690J3O0QQBEJNGD29J321AKP6VKO82ROAC85Q00===="
+								hash:       "CPD55K4GHU0I1JH8BGMC9QV79VDSFITMJF9ONN9I7F4SVS8I2S3G===="
 								scriptHash: "6QSED1UMQU6F0F95R42V8SCR7I126EM72GJCTQKOKB8VIIBLGP3G===="
 								steps: [{
 									doc:      ""
