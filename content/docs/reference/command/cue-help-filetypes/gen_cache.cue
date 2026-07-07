@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "DCGR2FEIM7AHOIH0JF89LTO5L7S0TLR9C9G50ECD9F2E607R00Q0===="
-									scriptHash: "ANVK35GP2E4O9USMB3JHSL4BSIH69G837R8CSUM8V8AATUCF7NN0===="
+									hash:       "NTDHK0SFS2SKF583PCPOK2ALM9OJEO65LG34GPTAUQHDS7FCQHK0===="
+									scriptHash: "JOUUK6CUJNVJAFJCVQRT65O38BR9F2NOHSI38M2NHLVL59A7MHD0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -96,6 +96,9 @@ package site
 												The --out flag specifies the output type using a qualifier
 												(without the ':'). The -o flag specifies an output file
 												possibly prefixed with a qualifier.
+
+												Note that jsonschema is currently experimental as an output type: the
+												form of generated schemas may change from release to release.
 
 												Examples:
 

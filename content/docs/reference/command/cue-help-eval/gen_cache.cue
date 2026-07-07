@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "927I6BFSL59G4FVU5PR0RN37H7GLTD1BG6IHCUG8LRLQIS3I3ASG===="
-									scriptHash: "K0O1GF6KOEE5V2O360N52JPEQVLQPCLI8MN67EBCPN92CIMQPOT0===="
+									hash:       "4GE7PH4U0M7BBBJM5B7OP1N6Q94G53TKSJCTT3S8EMV1KNBTQP6G===="
+									scriptHash: "D2IB0PII6QQF918CUH2LJFAJQJ9PE90QSCRG2EI6OL7EA4JOAMVG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -23,6 +23,9 @@ package site
 												eval evaluates, validates, and prints a configuration.
 
 												Printing is skipped if validation fails.
+
+												Input arguments can be CUE packages, CUE files, non-CUE files, or some
+												combinations of those. See "cue help inputs" for more detail.
 
 												The --expression flag is used to evaluate an expression within the
 												configuration file, instead of the entire configuration file itself.
@@ -38,7 +41,7 @@ package site
 												  "c"
 
 												Usage:
-												  cue eval [flags]
+												  cue eval [flags] [inputs]
 
 												Flags:
 												  -a, --all                      show optional and hidden fields
@@ -60,12 +63,13 @@ package site
 												  -A, --show-attributes          display field attributes
 												  -H, --show-hidden              display hidden fields
 												  -O, --show-optional            display optional fields
-												      --with-context             import as object with contextual data
+												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

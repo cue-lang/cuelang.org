@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "IQ894QKC998SNP0P7LT1TT5LCOQBQMCOKH6FCCH4IBM08U6ETJ3G===="
-									scriptHash: "OUDJIB8KFP3TE6KL3NDJTI7STABSH8FJDO58ERPOG950NEECUTGG===="
+									hash:       "CFGTJ9MU690GENMP8GM7B9NFPS0GR3PABJOIQPTDITIRJ9SLH580===="
+									scriptHash: "B66G7RQJRSADVN3P2OCOULI8SOK23Q3MH9FTM1J2GSA8IL412RF0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -228,7 +228,7 @@ package site
 												  }
 
 												Usage:
-												  cue import [mode] [inputs] [flags]
+												  cue import [flags] [mode] [inputs]
 
 												Flags:
 												      --dry-run                  show what files would be created
@@ -245,12 +245,13 @@ package site
 												  -I, --proto_path stringArray   paths in which to search for imports
 												  -R, --recursive                recursively parse string values
 												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
-												      --with-context             import as object with contextual data
+												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

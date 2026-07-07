@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"create hello module":            "Cb3CbZDnIOdiYNS8EkaBMK2/ujNl2jxZ5koQvHzXBJ8="
-								"create local greeting checkout": "+ijDi4Hm+vYGiJbfzDXwN1Nh/O+7awngFksMDvI5bGE="
+								"create hello module":            "FsU1UmaQBc0BQikvktj+MskCJ5gSDtrBBXzvUvBnkwE="
+								"create local greeting checkout": "CHoiwG3NHqX3vNBWMeh4FpEi8VotGqMbdyOOTycvYHM="
 							}
 							multi_step: {
-								hash:       "SGKA5FP15PUC03LTK2DSJO12HVJ9158VL3MN8OV0JTL5S8SVPA9G===="
-								scriptHash: "7UE99ST3HK1VGIKI86P0UKEV5SC88N5HVVKK0I3765SD90J2UT90===="
+								hash:       "CN4ERUUMLC00U4CTJB8D9D6KIFPLPGBURLIVLTP6U5NH08JADM2G===="
+								scriptHash: "CVC494O8AA2L13V32DG3ND957I2BJG6V1ACGHD6G7RQFHHNSL2CG===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.17.0-alpha.3.0.20260615112339-9916719a3eb1:$PATH"
+									cmd:      "export PATH=/cues/v0.17.0:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {

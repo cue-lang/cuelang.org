@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "4V45H6PPJSHFUSD618MU3DT20BLK44PETG4TD9NBCNGU02SH4LJG===="
-									scriptHash: "ACQLP1KNE6EFTF74VGAJR2HJRF8LG1Q9RCN0LTA9T1Q6FOCQPM0G===="
+									hash:       "5ARQMDMAA86RS9QL3UODESCFNSE6UM2GVEV0J3H8OC0NDNCSBCDG===="
+									scriptHash: "VBKDH98QBS5ESO1HMAG1H4VNP8P207NNT0ID4FJ6F0R81ESS3H10===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -24,10 +24,13 @@ package site
 
 												Printing is skipped if validation fails.
 
+												Input arguments can be CUE packages, CUE files, non-CUE files, or some
+												combinations of those. See "cue help inputs" for more detail.
+
 												The --expression flag is used to only print parts of a configuration.
 
 												Usage:
-												  cue def [flags]
+												  cue def [flags] [inputs]
 
 												Flags:
 												  -e, --expression stringArray   evaluate this expression only
@@ -46,12 +49,13 @@ package site
 												  -I, --proto_path stringArray   paths in which to search for imports
 												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
 												  -A, --show-attributes          display field attributes
-												      --with-context             import as object with contextual data
+												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

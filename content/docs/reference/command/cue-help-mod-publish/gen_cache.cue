@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "3V8HQ8US6P0AUS7LE5N07SA7OF8NBGICJ2Q02RCI2LKADO6VQOVG===="
-									scriptHash: "3B1LORAGGJG9U5OF5GI43N2PI2IIHJRCUNN86QPGO4R3G1J0671G===="
+									hash:       "C3E4QRFDDD4IQTBRS3QC6RHVQKANIC71O2KUADA2ENRDUESMD0PG===="
+									scriptHash: "SO4G88TO2QKB0AJ1J9D840S98R8H5H0G7MH9OPVJOPRQK0MLA38G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -43,9 +43,10 @@ package site
 												      --out string   write module contents to specified directory in OCI Image Layout format (implies --dry-run)
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

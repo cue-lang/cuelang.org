@@ -7,19 +7,19 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.json":         "MV3OiZsZkVnRwYh9ntXinL1hHc44YY1yGIe0XgIGjeQ="
-								"schema.cue":          "pvZoBA5LkkPoEjYnxT8zi37rtyV1DDeCczIbczO7EeE="
-								good:                  "TqlM0IPijAgMaVsvlhn+vNLvIJTWBvfj8tzP9SPhubg="
-								bad:                   "J0bVyCXjOBd2dEF0YB0QhZqXiipKsp7PLFe6RzM3sj0="
-								"main go program":     "cFUuSXg/Vx1qIIASxggD81NEAysfr5EOXtUgOfy4SEk="
-								"generate schema.cue": "DyLGzwMP8ti4RELLB1MtDclRM8r3fY9H2FSNqInm9xw="
-								"open.cue":            "kW+L+TXFtfj8V1nWGJ5tDqkCirbhUTb/p/jtbYXPMrQ="
-								"defs.cue":            "Hd3GKXiQ3tAF6cxouLH9kl+uJgwnEylAIz7jv/22214="
-								"gen main.go":         "0luGBEm6FYVc2dk0Y/r5E6yG12rkmSd5KwDvPhXy0RI="
+								"schema.json":         "PZjy4IocM98TbrOHkmf1X7spQkgkU+xiJXDOpxWI3bw="
+								"schema.cue":          "/t4/1RBrvPIirWrDRQgMLuCOlEG/CswSbCPuK9AAh5I="
+								good:                  "2o2sWqJ/9PoK6wVY7i43vm0Z9ZKO8AZOTswDSYkny7E="
+								bad:                   "7Rpv5ys1XUu8AMqZG7X5cDFimLYNK6YOCILvZAQB8eA="
+								"main go program":     "Qo97nBupHsOgRvBc/EhAfxu+QfRP4Hp5muoJoGg0w9o="
+								"generate schema.cue": "+YHhmf7o7Z4QjlDUsn2TScPNPn2dWeGHo+WtwlRHqSQ="
+								"open.cue":            "4uvEvDfvkoWWsVrtHMczBhf0dUi3A6X10UyCZOqRb0M="
+								"defs.cue":            "yGyeU0UIKJdU9i3rOyfu+MnnvxOYqOV2RubOw8+pYXY="
+								"gen main.go":         "y1DwJRllR9zoBAqUhB3m7TKmT+T0u2bWCJCetfKoR8s="
 							}
 							multi_step: {
-								hash:       "OEO8HFM6OTI10AQHT8KGNB4JIMOTPGAK9JK0M9I2BBBDOK4CN9TG===="
-								scriptHash: "55E0MA26GV8SR56O7C97V6OPPBJE879LJKUFGMQHPM37DADKDV10===="
+								hash:       "8GG8V8AC580ORH448UMR15QKG7T4H2IUCD8MINQ0P656KQDET28G===="
+								scriptHash: "0PTHB4U1JU8EUTIUOUBDMRBDEJ5ABVNPNFTO40LSQ325RUONMJ90===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -82,7 +82,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.16.1"
+									cmd:      "go get cuelang.org/go@v0.17.0"
 									exitCode: 0
 									output: """
 											...
@@ -208,7 +208,7 @@ package site
 											{
 											    "$schema": "https://json-schema.org/draft/2020-12/schema",
 											    "$defs": {
-											        "#Address": {
+											        "Address": {
 											            "type": "object",
 											            "additionalProperties": false,
 											            "properties": {
@@ -233,7 +233,7 @@ package site
 											    "additionalProperties": false,
 											    "properties": {
 											        "address": {
-											            "$ref": "#/$defs/%23Address"
+											            "$ref": "#/$defs/Address"
 											        },
 											        "name": {
 											            "type": "string"

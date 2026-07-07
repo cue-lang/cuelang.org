@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "2Q48U0U3OUMBCOF36U5T12B3JUV4AVEJH0G1HQELF60HCSR13ET0===="
-									scriptHash: "CEN7JMK972JN7TN3IEKN0UBDFA0LRKG61L00UDV8UDO63A7KE5A0===="
+									hash:       "BDQDAB8HM5PH9CEH0LUI0PFQ5NFJLDLOE8ECJTRF31L7I1FB02M0===="
+									scriptHash: "MBAT760EK319ID44GCKLD9U09R5T96ENQAERMQ1Q2CS9RPGSRL60===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -41,9 +41,10 @@ package site
 												      --token string   provide an access token rather than starting the OAuth device flow
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

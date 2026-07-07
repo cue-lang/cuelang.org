@@ -7,20 +7,20 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.cue":     "6K9jAyj4hWXro5Krzg3OipUpEMKFC2dx9haaNNE6ico="
-								"good.json":      "6VrfH0enTQby0yte+BTkxOndd49ojimt2KL3pDha8r8="
-								"bad.json":       "4D8AR0gmWNwlTlxpNsaBT3m1FCW9M0ERhfkoCLs7RMo="
-								"bad.json fixed": "+f3Lqk4mrkDd76CksgzMYaX9D2L6p0C3DhRo8DK/A9w="
+								"schema.cue":     "aDnyEHLWoIKV0Ep4fylYyex8X8Wfs8MdQIK9Fzr10EQ="
+								"good.json":      "eITv4Cfhcdh74xRDFc7AnwFPSiF9rQUcc4M4ay+U7x4="
+								"bad.json":       "u1rRfG0KVK7OLt8yxwYlf6+482GyxAdDHof+kihAMLM="
+								"bad.json fixed": "xrnl2snjXDmCJoVFHAXhHUqFUSXyodztVmZRFEbr2w4="
 							}
 							multi_step: {
-								hash:       "NIEIU31GNO8OK5Q2SHFJSKSFDMKTBP0R4ACSFC3OMKL5SR99JSMG===="
+								hash:       "1SEOD75BVILII8TM6SFAO8I9DHLBUDTHPTV9258VGVIV8G5QCM40===="
 								scriptHash: "NR56U4K5GGIOULD3SBG940S9TPIOJT788OQMQ83B35PJ9OR40MPG===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.16.1
+											cue version v0.17.0
 											...
 
 											"""
@@ -32,7 +32,7 @@ package site
 											{
 											    "$schema": "https://json-schema.org/draft/2020-12/schema",
 											    "$defs": {
-											        "#Session": {
+											        "Session": {
 											            "type": "object",
 											            "additionalProperties": false,
 											            "properties": {
@@ -71,7 +71,7 @@ package site
 											        "sessions": {
 											            "type": "array",
 											            "items": {
-											                "$ref": "#/$defs/%23Session"
+											                "$ref": "#/$defs/Session"
 											            }
 											        },
 											        "venue": {

@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial x.yaml": "gmnSfq6aswtj2bMyUv6xo8/1C3srKTqJA7C81P2XLDQ="
-								"initial x.cue":  "dU8NbTZd8cM+HHWd+U7zMXaoJbQVBHeeTOkZgs0tWEc="
-								"another person": "Pzd/VTpdDIX8sNtzdyuFn/FEdKFQSVhx5mpmytiryXk="
-								"fixed yaml":     "GtVk0//vVWEuO9zY9+S+thbZxskeNcb18x/I7t1K+eA="
+								"initial x.yaml": "jtqSQOnK8Xsag0tgQWezj0Y8OqE382m0+pyastLLKFA="
+								"initial x.cue":  "EHBHK/wbJr/N7unfbVAAoiujWxC/V7/jwihKMYa38js="
+								"another person": "6b8Caj6Day6/rPDCBwnIaSDa/PKeAxyGerlusW7n65s="
+								"fixed yaml":     "2KFdAJQB5zIqA0hjwY6Ou7adsdXCVH6l81EtnkKAdWE="
 							}
 							multi_step: {
-								hash:       "U4M380GQJ9994SD0FU6U8SEVE8K3UPJ1CPLDACIFQA444OR0DIM0===="
+								hash:       "AAMQ2DBJI47RQ02LM758GL670AMTVO12927GV2U762QUEG0Q18JG===="
 								scriptHash: "C4EFM89Q7KNVBA7IOJ3DV94IERP38E0P6JP82M64M56U8OD3P5B0===="
 								steps: [{
 									doc:      ""

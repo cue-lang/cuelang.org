@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "QVE2HS7MDFOR27594HU9VC3G299H08VT3P70O2BS67GTNS33H27G===="
-									scriptHash: "2N0T1MH1OQDHKM8FTLC0ANEEMI6A1U1RR0ICB5E394H23FOL9S2G===="
+									hash:       "F63RV3G6LHR6HMRVN9C4PBCD68543F2LPFRU1DV0RAA4C190MM00===="
+									scriptHash: "IDB5KSK5C5TCSS86QPM4IPU4N6VOJBT1OQVJE1COK20JTG3M0DD0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -22,6 +22,9 @@ package site
 										output: """
 												The vet command validates CUE and other data files.
 												The command is silent when it succeeds; otherwise it reports any errors found.
+
+												Input arguments can be CUE packages, CUE files, non-CUE files, or some
+												combinations of those. See "cue help inputs" for more detail.
 
 												By default, vet ensures that the result of validation is concrete
 												by reporting an error if any resulting regular fields have non-concrete values.
@@ -55,7 +58,7 @@ package site
 												The -d flag can be repeated to validate against multiple schemas at once.
 
 												Usage:
-												  cue vet [flags]
+												  cue vet [flags] [inputs]
 
 												Flags:
 												  -c, --concrete                 require the evaluation to be concrete, or set -c=false to allow incomplete values
@@ -69,12 +72,13 @@ package site
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
 												  -I, --proto_path stringArray   paths in which to search for imports
 												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
-												      --with-context             import as object with contextual data
+												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

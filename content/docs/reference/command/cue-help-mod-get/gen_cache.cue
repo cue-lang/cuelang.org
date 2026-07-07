@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "3O6S22E7PC48HQM7DGC563QVPE0GMKDI2D946RQNOUTQTFMHPT90===="
-									scriptHash: "TSBUM346I1UC8OBK1MOB6UFP943EH45BEUHSP76L4VS57P3KHE50===="
+									hash:       "OTE2MAPI8G2U2VJ4PQF9KJ1BRGNOFT0FRIL50Q552654583TIVG0===="
+									scriptHash: "P07HAEG3TKTN8I70TB0QUDVJO785VI2E9BU8HKJ57526404CNM40===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -46,9 +46,10 @@ package site
 												  cue mod get [flags]
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]
