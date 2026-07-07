@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "VEUS5LLK62KNKHR4G7DLKGB0TBJ0IFOPJND2IIUTCK72VH62G7AG===="
-									scriptHash: "7FC0ELH271D31868GG2FIKQLDCK35RFAHK5FFJVC21VJBT2JVKQG===="
+									hash:       "1B67R9R7VAOBRQ478OIEC01IC5P6SPO3O8E69DTHOEJHAH01I4PG===="
+									scriptHash: "AMOQMAHTI8OE7KU6GFFK0CTK03FAOALBOT35JOLQUCRIR6CKK2L0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0-alpha.3:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -116,6 +116,13 @@ package site
 												  evalv3 (preview: v0.9.0, default: v0.13.0, stable: v0.15.0)
 												    evalv3 enables the new CUE evaluator, addressing performance issues
 												    and bringing better algorithms for disjunctions, closedness, and cycles.
+
+												  formatv2 (preview: v0.18.0)
+												    formatv2 selects the Wadler-Lindig pretty-printer as the
+												    implementation behind "cue fmt" and "cue/format".
+												    It only exists from v0.18.0 onwards; v0.17 knows about it solely so that
+												    CUE_EXPERIMENT=formatv2=0 is accepted across both versions. Enabling it
+												    is rejected, as the implementation is not present.
 
 												  keepvalidators (preview: v0.14.0, default: v0.14.0, stable: v0.15.0)
 												    keepvalidators prevents validators from simplifying into concrete values,

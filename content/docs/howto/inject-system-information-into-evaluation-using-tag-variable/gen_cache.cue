@@ -7,10 +7,10 @@ package site
 					page: {
 						cache: {
 							upload: {
-								example: "TG2KawOL49JYXHrgdx11V/zmoYt4JG4RWOGfaLHQO7M="
+								example: "4a1uIYuCCOC++Sd0Ui5h93PijLi4hWrkMwSfB0hN2no="
 							}
 							multi_step: {
-								hash:       "M34M9AA4J9IP3V5TDIOI3BJ8IQ7EC9EDO03SB0BUOBG77TF9NPFG===="
+								hash:       "8VFFJIHIUO2DM22IQBI521ESNEAUCJ3D2SL4RBDDLOVO1OFIF3GG===="
 								scriptHash: "6PPT5UJN3U9APNN8NBEFAEO1S3PPKC3PB53DFF45QOQL1J9E0KUG===="
 								steps: [{
 									doc:      "# We use pipes on this page; make sure that `true|false|true` would fail:"

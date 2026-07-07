@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "C8RL7N5DH89BGIUL1G36M9EM8S7R8TKI986LEJS9VRDROBBTQ6JG===="
-									scriptHash: "O8KLLM0227MDF5O6IGB23J5QKOHIUJ9E9M6AGPC80F8Q5CLABM00===="
+									hash:       "OI8N2TUGEJCUUHR4GBTSJFB4P7O62T4O8U0U44QPP0IRAJFLMT00===="
+									scriptHash: "N5D385V4KO873QGEM6F84R4IUGTNG4M806O09PIVHLEQLTSSQ1JG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -32,6 +32,8 @@ package site
 												referenced CUE definitions are transitively generated as well.
 												Code is generated in each CUE package directory at cue_types_${pkgname}_gen.go,
 												where the package name is omitted from the filename if it is implied by the import path.
+												The --outfile flag can be used to write the output for a single CUE package to a specific file,
+												or to stdout when set to "-".
 
 												Generated Go type and field names may differ from the original CUE names by default.
 												For instance, an exported definition "#foo" becomes "Foo",
@@ -72,10 +74,14 @@ package site
 												Usage:
 												  cue exp gengotypes [flags]
 
+												Flags:
+												  -o, --outfile string   generate one Go file for a single CUE package
+
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

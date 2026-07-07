@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "RNBJ136FIVODG8QCSFK4UU2RS91E1NQBV3HLTAUDE7QN3F4RQ8E0===="
-									scriptHash: "CGB80GJOMFUN7CF66INACAF60BR6RB1UT9P9E3SNL9JRE8MHGGJG===="
+									hash:       "CCUICS3O9V72GERIO6RFON4I70E0R7P4GCVU3U2A07BA6Q5FO6H0===="
+									scriptHash: "KA4VIGTG36QVPNTBE0I3DRF82VSPS8IC2318DCCMC9NQR9R0H2A0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -41,7 +41,7 @@ package site
 												  cue fmt --check --files .
 
 												Usage:
-												  cue fmt [flags]
+												  cue fmt [flags] [inputs]
 
 												Flags:
 												      --check   exits with non-zero status if any files are not formatted
@@ -49,9 +49,10 @@ package site
 												      --files   treat arguments as paths to files or directories to recursively format
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]

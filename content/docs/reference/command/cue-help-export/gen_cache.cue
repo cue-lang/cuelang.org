@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "7SRH5C4R1HFAD4IS0C37DQ6EJ5J5O5KDHPPPRMG12K92QKCKR0R0===="
-									scriptHash: "4UKFA98TITPCVFCF9A9O429OTI0AVUT0DUPCT6PKSKGMBJP38Q80===="
+									hash:       "1IQOL3N6S099B3RABDS0SHLCBD835M81E59TFIE9VTLH513QK83G===="
+									scriptHash: "E3669D12NB5F0LEA9D1PCB4Q5UUF1R54BGQB2TKJMRH2IHKM3RJ0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.16.1:$PATH"
+										cmd:      "export PATH=/cues/v0.17.0:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -88,7 +88,7 @@ package site
 												    https://cuelang.org/docs/reference/command/cue-help-filetypes/
 
 												Usage:
-												  cue export [flags]
+												  cue export [flags] [inputs]
 
 												Flags:
 												      --escape                   use HTML escaping
@@ -106,12 +106,13 @@ package site
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
 												  -I, --proto_path stringArray   paths in which to search for imports
 												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
-												      --with-context             import as object with contextual data
+												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
-												  -E, --all-errors   print all available errors
-												  -i, --ignore       proceed in the presence of errors
-												  -s, --simplify     simplify output
+												  -E, --all-errors     print all available errors
+												  -C, --chdir string   change working directory before running command (must be the first flag)
+												  -i, --ignore         proceed in the presence of errors
+												  -s, --simplify       simplify output
 
 												"""
 									}]
