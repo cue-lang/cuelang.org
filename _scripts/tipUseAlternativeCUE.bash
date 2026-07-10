@@ -18,6 +18,22 @@ versionRef=${1:-master}
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
+# GerritHub is the source of truth for cue-lang/cue, but the Go module proxy
+# fetches the repository from its GitHub mirror. Wait for GitHub to know about
+# the requested commit before asking the proxy for it, since the proxy caches a
+# 404 response for up to 30 minutes.
+for i in 1 2 3 4 5; do
+	if curl -fsSL -o /dev/null "https://api.github.com/repos/cue-lang/cue/commits/$versionRef"; then
+		break
+	fi
+	if [ $i -eq 5 ]; then
+		echo "tip: giving up waiting for cue-lang/cue@$versionRef on GitHub after $i attempts" >&2
+		exit 1
+	fi
+	echo "tip: cue-lang/cue@$versionRef is not available on GitHub, retrying in 30s (attempt $i)" >&2
+	sleep 30
+done
+
 # Resolve $versionRef to a pseudo-version via GOPROXY. We pin GOPROXY to
 # proxy.golang.org so that a failure to resolve the commit does not fall back
 # to a direct VCS fetch, which is slow and flaky. The proxy can still return
