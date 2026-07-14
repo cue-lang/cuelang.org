@@ -32,7 +32,7 @@
         &:focus,
         &:hover {
             background-color: transparentize($c-blue--lighter, 0.4);
-            border: 1px solid transparentize($c-blue--light, 0.8);
+            border: 1px solid transparentize($c-blue, 0.8);
 
             #{ $self }__readmore {
                 --cards-icon-color: #{ $c-yellow };
