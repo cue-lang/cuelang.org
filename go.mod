@@ -1,6 +1,6 @@
 module github.com/cue-lang/cuelang.org
 
-go 1.25.0
+go 1.27.0
 
 require (
 	cuelang.org/go v0.17.0
