@@ -18,8 +18,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
-
-	"github.com/cue-lang/cuelang.org/internal/parse"
+	"text/template/parse"
 )
 
 // A node is an abstraction around the structures that can appear in a page.

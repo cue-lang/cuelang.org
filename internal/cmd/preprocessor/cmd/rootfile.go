@@ -31,10 +31,10 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"text/template/parse"
 
 	"cuelang.org/go/cue"
 	"cuelang.org/go/cue/format"
-	"github.com/cue-lang/cuelang.org/internal/parse"
 	"golang.org/x/tools/txtar"
 	"mvdan.cc/sh/v3/syntax"
 )
