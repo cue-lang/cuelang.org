@@ -1,6 +1,6 @@
 module github.com/cue-lang/cuelang.org
 
-go 1.25.0
+go 1.27.0
 
 require (
 	cuelang.org/go v0.17.0
@@ -42,9 +42,8 @@ require (
 	golang.org/x/exp/typeparams v0.0.0-20231108232855-2478ac86f678 // indirect
 	golang.org/x/net v0.56.0 // indirect
 	golang.org/x/sys v0.46.0 // indirect
-	golang.org/x/tools/go/expect v0.1.1-deprecated // indirect
 	google.golang.org/protobuf v1.33.0 // indirect
-	honnef.co/go/tools v0.6.1 // indirect
+	honnef.co/go/tools v0.8.1 // indirect
 )
 
 tool (
