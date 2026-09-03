@@ -22,10 +22,10 @@ import (
 	"path/filepath"
 	"slices"
 	"strings"
+	"text/template/parse"
 	"unicode"
 
 	"cuelang.org/go/cue/errors"
-	"github.com/cue-lang/cuelang.org/internal/parse"
 	"golang.org/x/tools/txtar"
 )
 
