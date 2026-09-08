@@ -16,6 +16,8 @@ package github
 
 import (
 	"list"
+
+	"cue.dev/x/githubactions"
 )
 
 // tipdeploy is responsible for publishing a new version of tip.cuelang.org.
@@ -35,6 +37,13 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 		// specifically the event of a new commit at the tip of CUE needs to
 		// trigger a new tip deploy.
 		workflow_dispatch: {}
+
+		// The tip of cue-lang/cue advances when a projection from its
+		// authoritative repository is published, and nothing tells this
+		// repository when that happens. Poll for it nightly: the changes job
+		// below checks whether tip.cuelang.org is behind, and the deploy runs
+		// only when it is.
+		schedule: [{cron: "27 4 * * *"}]
 	}
 
 	// We limit this workflow to run with parallelism of 1. This should
@@ -50,13 +59,26 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 		"cancel-in-progress": false
 	}
 
+	jobs: changes: {
+		"runs-on": _repo.linuxMachine + _repo.overrideCacheTagDispatch
+
+		// We only want to run this workflow in the main repo. GitHub skips
+		// the dependents of a skipped job, so the test job need not repeat
+		// this.
+		if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
+
+		outputs: deploy: "${{ steps.changes.outputs.deploy }}"
+
+		steps: [_checkTipBehind]
+	}
+
 	jobs: test: {
 		"runs-on": _repo.linuxMachine + _repo.overrideCacheTagDispatch
 
 		_packagesPublish
 
-		// We only want to run this workflow in the main repo
-		if: "github.repository == '\(_repo.githubRepositoryPath)' && (github.ref == 'refs/heads/\(_repo.defaultBranch)' || \(_repo.isTestDefaultBranch))"
+		needs: "changes"
+		if:    "needs.changes.outputs.deploy == 'true'"
 
 		steps: [
 			for v in _repo.checkoutCode {v},
@@ -99,4 +121,28 @@ workflows: tipdeploy: _repo.bashWorkflow & {
 			_deployTipCuelangOrg,
 		]
 	}
+}
+
+// _checkTipBehind decides whether a scheduled run has anything to deploy: it
+// compares the tip of cue-lang/cue with the commit the deployed site was
+// built against, recorded in tip.cue on the tip branch by
+// tipUseAlternativeCUE.bash. Every other event deploys unconditionally.
+// Neither side needs a checkout.
+_checkTipBehind: githubactions.#Step & {
+	name: "Check whether tip.cuelang.org is behind cue-lang/cue"
+	id:   "changes"
+	run: """
+		deploy=true
+		if [[ "$GITHUB_EVENT_NAME" == "schedule" ]]; then
+			want=$(git ls-remote https://github.com/cue-lang/cue refs/heads/master | cut -f1)
+			git init -q tip && cd tip
+			# A missing or unreachable tip branch deploys rather than blocking.
+			git fetch -q --depth=1 https://github.com/cue-lang/cuelang.org tip || true
+			if git show FETCH_HEAD:tip.cue 2>/dev/null | grep -q "${want:0:12}"; then
+				echo "tip.cuelang.org is already built against cue-lang/cue@$want"
+				deploy=false
+			fi
+		fi
+		echo "deploy=$deploy" | tee -a $GITHUB_OUTPUT
+		"""
 }
