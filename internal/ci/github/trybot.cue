@@ -495,10 +495,11 @@ _applyTipPatches: githubactions.#Step & {
 _useTipOfCUE: githubactions.#Step & {
 	name: "tip.cuelang.org: Configure the site to use the tip of cue-lang/cue"
 
-	// Get the latest commit hash from GerritHub, since GOPROXY can lag for up to 30 minutes.
-	// Gerrit's API adds a prefix line to JSON responses as XSSI protection, which we strip.
+	// Resolve the tip of cue-lang/cue on GitHub, where the public repository
+	// lives, and pin the site to that commit rather than to "master": GOPROXY
+	// can lag behind GitHub by up to 30 minutes.
 	run: """
-		sha=$(curl -fsSL https://review.gerrithub.io/projects/cue-lang%2Fcue/branches/master | tail -n +2 | jq -r .revision)
+		sha=$(git ls-remote https://github.com/cue-lang/cue refs/heads/master | cut -f1)
 		_scripts/tipUseAlternativeCUE.bash "$sha"
 		"""
 }
