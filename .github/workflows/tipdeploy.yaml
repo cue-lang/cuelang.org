@@ -7,11 +7,39 @@ name: tip deploy
       - ci/test
       - master
   workflow_dispatch: {}
+  schedule:
+    - cron: 27 4 * * *
 env: {}
 concurrency:
   group: tip deploy
   cancel-in-progress: false
 jobs:
+  changes:
+    defaults:
+      run:
+        shell: bash --noprofile --norc -euo pipefail {0}
+    permissions:
+      contents: read
+    steps:
+      - id: changes
+        name: Check whether tip.cuelang.org is behind cue-lang/cue
+        run: |-
+          deploy=true
+          if [[ "$GITHUB_EVENT_NAME" == "schedule" ]]; then
+          	want=$(git ls-remote https://github.com/cue-lang/cue refs/heads/master | cut -f1)
+          	git init -q tip && cd tip
+          	# A missing or unreachable tip branch deploys rather than blocking.
+          	git fetch -q --depth=1 https://github.com/cue-lang/cuelang.org tip || true
+          	if git show FETCH_HEAD:tip.cue 2>/dev/null | grep -q "${want:0:12}"; then
+          		echo "tip.cuelang.org is already built against cue-lang/cue@$want"
+          		deploy=false
+          	fi
+          fi
+          echo "deploy=$deploy" | tee -a $GITHUB_OUTPUT
+    runs-on: namespace-profile-linux-amd64;overrides.cache-tag=cue-dispatch-workflow
+    if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+    outputs:
+      deploy: ${{ steps.changes.outputs.deploy }}
   test:
     defaults:
       run:
@@ -21,7 +49,8 @@ jobs:
       id-token: write
       packages: write
     runs-on: namespace-profile-linux-amd64;overrides.cache-tag=cue-dispatch-workflow
-    if: github.repository == 'cue-lang/cuelang.org' && (github.ref == 'refs/heads/master' || (github.ref == 'refs/heads/ci/test'))
+    needs: changes
+    if: needs.changes.outputs.deploy == 'true'
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
