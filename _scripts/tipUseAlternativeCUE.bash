@@ -18,10 +18,9 @@ versionRef=${1:-master}
 # cd to the parent directory to that containing the script
 cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
-# GerritHub is the source of truth for cue-lang/cue, but the Go module proxy
-# fetches the repository from its GitHub mirror. Wait for GitHub to know about
-# the requested commit before asking the proxy for it, since the proxy caches a
-# 404 response for up to 30 minutes.
+# The Go module proxy fetches cue-lang/cue from GitHub. Wait for GitHub to know
+# about the requested commit before asking the proxy for it, since the proxy
+# caches a 404 response for up to 30 minutes.
 for i in 1 2 3 4 5; do
 	if curl -fsSL -o /dev/null "https://api.github.com/repos/cue-lang/cue/commits/$versionRef"; then
 		break
