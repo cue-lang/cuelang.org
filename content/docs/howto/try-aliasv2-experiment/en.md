@@ -10,6 +10,10 @@ tags: [language]
 export PATH=/cues/$CUELANG_CUE_PRERELEASE:$PATH
 {{{end}}}
 
+{{{with _script_ "en" "module"}}}
+cue mod init --language-version=v0.17.0 example.com
+{{{end}}}
+
 CUE v0.15.0-alpha.2 introduced the "aliasv2" experiment, which
 replaces alias syntax with a more consistent form.
 
@@ -44,6 +48,8 @@ experimental syntax as rewritten by `cue fix`:
 
 {{<columns>}}
 {{{with upload "en" "1 old"}}}
+# The old alias syntax only parses in a module below language version v0.18.0.
+#nofmt(current-syntax.cue)
 -- current-syntax.cue --
 // Refer to a field whose name is
 // not a valid identifier.
