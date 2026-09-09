@@ -384,6 +384,63 @@ index f6c67acb1..d0117d815 100644
  	name: X
  }
  {{{end}}}
+diff --git a/content/docs/language-guide/schemas-and-validation/composite-schemas/en.md b/content/docs/language-guide/schemas-and-validation/composite-schemas/en.md
+index f23acfc68..d1bebc509 100644
+--- a/content/docs/language-guide/schemas-and-validation/composite-schemas/en.md
++++ b/content/docs/language-guide/schemas-and-validation/composite-schemas/en.md
+@@ -56,7 +56,8 @@ a.b: field not allowed:
+ 
+ ## Extending Schemas
+ 
+-Schemas can combine with other schemas by using embedding.
++Schemas can combine with other schemas by embedding them with the trailing
++`...` operator, which opens the embedded schema.
+ This circumvents the usual limitation that no new fields can be added to a
+ definition.
+ 
+@@ -69,26 +70,22 @@ definition.
+ 	name?: string
+ }
+ #Mammal: {
+-	#Base // embedded
++	#Base... // embedded
+ 	lungCapacityL: number
+ }
+ #Dog: {
+-	#Mammal // embedded
++	#Mammal... // embedded
+ 	kind!: "dog"
+ 	house: string
+ }
+ -- out.cue --
+ #Base: {}
+-#Animal: {
+-    kind!: string
+-}
+-#Mammal: {
+-    lungCapacityL: number
+-}
++#Animal: kind!:         string
++#Mammal: lungCapacityL: number
+ #Dog: {
++    lungCapacityL: number
+     kind!:         "dog"
+     house:         string
+-    lungCapacityL: number
+ }
+ {{{end}}}
+ 
+@@ -124,8 +121,8 @@ literal map.
+ {{{end}}}
+ 
+ One cannot simply use `&` for this as it would trigger the closedness check.
+-Essentially, embedding allows recursively disabling the closedness check for a
+-definition.
++Essentially, the `...` operator disables the closedness check for the schema
++it follows.
+ 
+ {{{reference "cue-and-jsonschema"}}}
+ 
 diff --git a/content/docs/language-guide/templating/references/en.md b/content/docs/language-guide/templating/references/en.md
 index 39f2cf739..1896ad7a8 100644
 --- a/content/docs/language-guide/templating/references/en.md
