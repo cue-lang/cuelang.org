@@ -14,5 +14,7 @@ cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/.."
 
 patchPath="$(./_scripts/tipPatchPath.bash)"
 
-# ":^x" excludes changes to "x" from the diff.
-git diff HEAD -- . ":^$patchPath" >"$patchPath"
+# tipPatchApply.bash applies the patch with "git apply", which strips the a/
+# and b/ path prefixes, so write them regardless of the user's diff.noprefix
+# setting. ":^x" excludes changes to "x" from the diff.
+git diff --src-prefix=a/ --dst-prefix=b/ HEAD -- . ":^$patchPath" >"$patchPath"
