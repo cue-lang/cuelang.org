@@ -332,6 +332,32 @@ index 7d59b9f8c..ffbdc217f 100644
  	_OS: *path.Unix | path.Windows | path.Plan9
  	Dir:  path.Dir(X, _OS)
  	Base: path.Base(X, _OS)
+diff --git a/content/docs/howto/validate-integer-value-parity/en.md b/content/docs/howto/validate-integer-value-parity/en.md
+index 6f5637aef..9e15d964e 100644
+--- a/content/docs/howto/validate-integer-value-parity/en.md
++++ b/content/docs/howto/validate-integer-value-parity/en.md
+@@ -25,8 +25,8 @@ cmp stderr out
+ -- file.cue --
+ package example
+ 
+-#Even: X=(2 * div(X, 2)) | error("\(X) is not even")
+-#Odd:  X=(1 + 2*div(X, 2)) | error("\(X) is not odd")
++#Even: {let X = self, matchN(1, [2 * div(X, 2)]) | error("\(X) is not even")}
++#Odd:  {let X = self, matchN(1, [1 + 2*div(X, 2)]) | error("\(X) is not odd")}
+ 
+ even: [...#Even]
+ even: [42, 13, 0]
+@@ -61,8 +61,8 @@ package example
+ 
+ import "math"
+ 
+-#Even: X=math.MultipleOf(2) | error("\(X) is not even")
+-#Odd:  X=matchN(0, [#Even]) | error("\(X) is not odd")
++#Even: {let X = self, math.MultipleOf(2) | error("\(X) is not even")}
++#Odd:  {let X = self, matchN(0, [#Even]) | error("\(X) is not odd")}
+ 
+ // #Odd can also be defined without #Even:
+ #Odd: matchN(0, [math.MultipleOf(2)])
 diff --git a/content/docs/howto/validate-json-using-cue/en.md b/content/docs/howto/validate-json-using-cue/en.md
 index 4ac9e7d08..1485287c1 100644
 --- a/content/docs/howto/validate-json-using-cue/en.md
@@ -408,6 +434,52 @@ index e989ce957..7b2850383 100644
  	"\(a)_and_\(b)": "foobar"
  
  	// Valid references using a selector and
+diff --git a/content/docs/tour/references/aliases/en.md b/content/docs/tour/references/aliases/en.md
+index 2c131cefc..f83a95bfb 100644
+--- a/content/docs/tour/references/aliases/en.md
++++ b/content/docs/tour/references/aliases/en.md
+@@ -3,8 +3,11 @@ title: Aliases
+ weight: 30
+ ---
+ 
+-**Aliases** provide a way to refer to a value by a different identifier.
+-They are declared using an equals sign (`=`).
++**Aliases** provide a way to refer to a field by a different identifier.
++They are declared by following a field's label with a tilde (`~`) and the
++alias name in parentheses.
++The predeclared identifier `self` refers to the innermost enclosing struct,
++and can be bound with `let` to give a field's value a name.
+ 
+ An alias is typically used to access a field in an outer scope that has been
+ made inaccessible (or *shadowed*) by a field in some inner scope that has the
+@@ -23,19 +26,20 @@ cmp stdout out
+ -- file.cue --
+ // Alias A provides access to a top-level field
+ // with a name that is not a valid identifier.
+-A="a top level field": 1
++"a top level field"~(A): 1
+ 
+ // Alias B provides access to a dynamic field.
+-B=(#b): 2
+-#b:     "some dynamic field"
++(#b)~(B): 2
++#b:       "some dynamic field"
+ 
+ a: A
+ b: B
+ 
+-// Alias C refers to the value that's on the right
+-// hand side of field "c", and demonstrates one way
+-// that shadowed fields can be accessed.
+-c: C={
++// C refers to the value that's on the right hand
++// side of field "c", and demonstrates one way that
++// shadowed fields can be accessed.
++c: {
++	let C = self
+ 	d: 3
+ 	e: {
+ 		d: 4
 diff --git a/content/docs/tour/types/templates/en.md b/content/docs/tour/types/templates/en.md
 index 48a05ffaa..40c2796c4 100644
 --- a/content/docs/tour/types/templates/en.md
