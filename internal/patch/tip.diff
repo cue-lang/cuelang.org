@@ -25,11 +25,15 @@ index 97553c5cb..ba56c056d 100644
  >
  >This is a {{{def "test"}}}
 diff --git a/playground/impl_test.go b/playground/impl_test.go
-index c62074749..b53ec02c1 100644
+index c62074749..095fbf7e0 100644
 --- a/playground/impl_test.go
 +++ b/playground/impl_test.go
-@@ -80,8 +80,8 @@ var testTable = []testCase{
- 			[ID=_]: x: y: ID
+@@ -77,15 +77,15 @@ var testTable = []testCase{
+ 	{
+ 		In: inputCUE, Fn: functionExport, Out: outputCUE,
+ 		InVal: `
+-			[ID=_]: x: y: ID
++			[_]~(ID,_): x: y: ID
  			"foo": {}
  		`,
 -		OutVal: "foo: {\n\tx: {\n\t\ty: \"foo\"\n\t}\n}\n",
@@ -39,6 +43,11 @@ index c62074749..b53ec02c1 100644
  	{
  		In: inputCUE, Fn: functionExport, Out: outputJSON,
  		InVal: `
+-			[ID=_]: x: y: ID
++			[_]~(ID,_): x: y: ID
+ 			"foo": {}
+ 		`,
+ 		OutVal: "{\n    \"foo\": {\n        \"x\": {\n            \"y\": \"foo\"\n        }\n    }\n}\n",
 @@ -98,16 +98,18 @@ var testTable = []testCase{
  			x: string
  			y: (x): string
@@ -59,6 +68,6 @@ index c62074749..b53ec02c1 100644
 +		OutVal: `x: x2: "foo"
 +y: x.missing
 +`},
-
+ 
  	// Simple format checks; no errors
  	{
