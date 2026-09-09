@@ -1,3 +1,437 @@
+diff --git a/content/docs/concept/alias-and-reference-scopes/en.md b/content/docs/concept/alias-and-reference-scopes/en.md
+index a8623dc29..6a71054a6 100644
+--- a/content/docs/concept/alias-and-reference-scopes/en.md
++++ b/content/docs/concept/alias-and-reference-scopes/en.md
+@@ -214,7 +214,7 @@ cmp stdout out
+ }
+ 
+ #Config: {
+-	M=metadata: #Metadata
++	metadata~(M): #Metadata
+ 
+ 	serviceA: #BaseConfig & {
+ 		metadata: M
+diff --git a/content/docs/concept/how-cue-enables-boilerplate-removal/en.md b/content/docs/concept/how-cue-enables-boilerplate-removal/en.md
+index d54984a2f..6ac14e3c6 100644
+--- a/content/docs/concept/how-cue-enables-boilerplate-removal/en.md
++++ b/content/docs/concept/how-cue-enables-boilerplate-removal/en.md
+@@ -327,7 +327,7 @@ package config
+ 
+ import "strings"
+ 
+-app: [Name=_]: #App & _defaults & {
++app: [_]~(Name,_): #App & _defaults & {
+ 	name: strings.ToTitle(Name)
+ }
+ 
+@@ -402,7 +402,7 @@ package config
+ 
+ import "strings"
+ 
+-app: [Name=_]: #App & _defaults & {
++app: [_]~(Name,_): #App & _defaults & {
+ 	name: strings.ToTitle(Name)
+ }
+ 
+@@ -498,7 +498,7 @@ package config
+ 
+ import "strings"
+ 
+-app: [Name=_]: #App & _defaults & {
++app: [_]~(Name,_): #App & _defaults & {
+ 	name: strings.ToTitle(Name)
+ }
+ 
+diff --git a/content/docs/concept/how-cue-enables-configuration/en.md b/content/docs/concept/how-cue-enables-configuration/en.md
+index 4e7416472..0f7d3200d 100644
+--- a/content/docs/concept/how-cue-enables-configuration/en.md
++++ b/content/docs/concept/how-cue-enables-configuration/en.md
+@@ -418,7 +418,7 @@ job: {
+ 
+ // This template's constraints are unified with
+ // each member of the job struct.
+-job: [Name=_]: {
++job: [_]~(Name,_): {
+ 	name: Name
+ 	// command can be set, but has a default.
+ 	command: string | *"exec \(Name)"
+diff --git a/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/manual/services/cloud.cue b/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/manual/services/cloud.cue
+index b7b524d44..b996e29da 100644
+--- a/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/manual/services/cloud.cue
++++ b/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/manual/services/cloud.cue
+@@ -11,7 +11,7 @@ _base: {
+ 	kubernetes: {}
+ }
+ 
+-deployment: [Name=_]: _base & {
++deployment: [_]~(Name,_): _base & {
+ 	// Allow any string, but take Name by default.
+ 	name:     string | *Name
+ 	kind:     *"deployment" | "stateful" | "daemon"
+@@ -38,7 +38,7 @@ deployment: [Name=_]: _base & {
+ 		}
+ 	}
+ 
+-	volume: [Name=_]: {
++	volume: [_]~(Name,_): {
+ 		name:      string | *Name
+ 		mountPath: string
+ 		subPath:   string | *null
+@@ -47,10 +47,10 @@ deployment: [Name=_]: _base & {
+ 	}
+ }
+ 
+-service: [Name=_]: _base & {
++service: [_]~(Name,_): _base & {
+ 	name: *Name | string
+ 
+-	port: [Name=_]: {
++	port: [_]~(Name,_): {
+ 		name: string | *Name
+ 
+ 		port:     int
+diff --git a/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/quick/services/kitchen/kube.cue b/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/quick/services/kitchen/kube.cue
+index c4690b18d..5af8764b8 100644
+--- a/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/quick/services/kitchen/kube.cue
++++ b/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/quick/services/kitchen/kube.cue
+@@ -19,7 +19,7 @@ deployment: [string]: spec: template: {
+ 	}]
+ }
+ 
+-deployment: [ID=_]: spec: template: spec: {
++deployment: [_]~(ID,_): spec: template: spec: {
+ 	_hasDisks: *true | bool
+ 
+ 	// field comprehension using just "if"
+diff --git a/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/quick/services/kube.cue b/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/quick/services/kube.cue
+index 0ffedc787..3a4348d49 100644
+--- a/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/quick/services/kube.cue
++++ b/content/docs/draft/cbe-003_kubernetes_tutorial/_ref/quick/services/kube.cue
+@@ -1,6 +1,6 @@
+ package kube
+ 
+-service: [ID=_]: {
++service: [_]~(ID,_): {
+ 	apiVersion: "v1"
+ 	kind:       "Service"
+ 	metadata: {
+@@ -22,7 +22,7 @@ service: [ID=_]: {
+ 	}
+ }
+ 
+-deployment: [ID=_]: {
++deployment: [_]~(ID,_): {
+ 	apiVersion: "apps/v1"
+ 	kind:       "Deployment"
+ 	metadata: name: ID
+@@ -43,26 +43,26 @@ deployment: [ID=_]: {
+ 
+ #Component: string
+ 
+-daemonSet: [ID=_]: _spec & {
++daemonSet: [_]~(ID,_): _spec & {
+ 	apiVersion: "apps/v1"
+ 	kind:       "DaemonSet"
+ 	_name:      ID
+ }
+ 
+-statefulSet: [ID=_]: _spec & {
++statefulSet: [_]~(ID,_): _spec & {
+ 	apiVersion: "apps/v1"
+ 	kind:       "StatefulSet"
+ 	_name:      ID
+ }
+ 
+-deployment: [ID=_]: _spec & {
++deployment: [_]~(ID,_): _spec & {
+ 	apiVersion: "apps/v1"
+ 	kind:       "Deployment"
+ 	_name:      ID
+ 	spec: replicas: *1 | int
+ }
+ 
+-configMap: [ID=_]: {
++configMap: [_]~(ID,_): {
+ 	metadata: name: ID
+ 	metadata: labels: component: #Component
+ }
+diff --git a/content/docs/draft/cbe-003_kubernetes_tutorial/en.md b/content/docs/draft/cbe-003_kubernetes_tutorial/en.md
+index 6dad56acf..e98e02b35 100644
+--- a/content/docs/draft/cbe-003_kubernetes_tutorial/en.md
++++ b/content/docs/draft/cbe-003_kubernetes_tutorial/en.md
+@@ -216,7 +216,7 @@ Modify this file as below.
+ -- tmp/services/kube.cue --
+ package kube
+ 
+-service: [ID=_]: {
++service: [_]~(ID,_): {
+ 	apiVersion: "v1"
+ 	kind:       "Service"
+ 	metadata: {
+@@ -238,7 +238,7 @@ service: [ID=_]: {
+ 	}
+ }
+ 
+-deployment: [ID=_]: {
++deployment: [_]~(ID,_): {
+ 	apiVersion: "apps/v1"
+ 	kind:       "Deployment"
+ 	metadata: name: ID
+@@ -258,7 +258,7 @@ deployment: [ID=_]: {
+ }
+ {{{end}}}
+ 
+-By replacing the service and deployment name with `[ID=_]` we have changed the
++By replacing the service and deployment name with `[_]~(ID,_)` we have changed the
+ definition into a template matching any field.
+ CUE binds the field name to `ID` as a result.
+ During importing we used `metadata.name` as a key for the object names,
+@@ -380,26 +380,26 @@ We generalize the top-level template as follows:
+ -- tmp/services/kube2.cue --
+ package kube
+ 
+-daemonSet: [ID=_]: _spec & {
++daemonSet: [_]~(ID,_): _spec & {
+ 	apiVersion: "apps/v1"
+ 	kind:       "DaemonSet"
+ 	_name:      ID
+ }
+ 
+-statefulSet: [ID=_]: _spec & {
++statefulSet: [_]~(ID,_): _spec & {
+ 	apiVersion: "apps/v1"
+ 	kind:       "StatefulSet"
+ 	_name:      ID
+ }
+ 
+-deployment: [ID=_]: _spec & {
++deployment: [_]~(ID,_): _spec & {
+ 	apiVersion: "apps/v1"
+ 	kind:       "Deployment"
+ 	_name:      ID
+ 	spec: replicas: *1 | int
+ }
+ 
+-configMap: [ID=_]: {
++configMap: [_]~(ID,_): {
+ 	metadata: name: ID
+ 	metadata: labels: component: #Component
+ }
+@@ -658,7 +658,7 @@ directory with two disks), and generalize it:
+ -- tmp/services/kitchen/kube3.cue --
+ package kube
+ 
+-deployment: [ID=_]: spec: template: spec: {
++deployment: [_]~(ID,_): spec: template: spec: {
+ 	_hasDisks: *true | bool
+ 
+ 	// field comprehension using just "if"
+@@ -1036,7 +1036,7 @@ We define one top-level file with our generic definitions.
+ // file cloud.cue
+ package cloud
+ 
+-service: [Name=_]: {
++service: [_]~(Name,_): {
+     name: *Name | string // the name of the service
+ 
+     ...
+@@ -1047,7 +1047,7 @@ service: [Name=_]: {
+     }
+ }
+ 
+-deployment: [Name=_]: {
++deployment: [_]~(Name,_): {
+     name: *Name | string
+    ...
+ }
+@@ -1077,7 +1077,7 @@ The first step we took is to eliminate `statefulSet` and `daemonSet` and
+ rather just have a `deployment` allowing different kinds.
+ 
+ ```
+-deployment: [Name=_]: _base & {
++deployment: [_]~(Name,_): _base & {
+     name:     *Name | string
+     ...
+ ```
+@@ -1133,7 +1133,7 @@ to create a single definition for volumes, combining the information for
+ volume spec and volume mount.
+ 
+ ```
+-    volume: [Name=_]: {
++    volume: [_]~(Name,_): {
+         name:       *Name | string
+         mountPath:  string
+         subPath:    null | string
+diff --git a/content/docs/draft/cbe-004_mythic_beasts_dns/en.md b/content/docs/draft/cbe-004_mythic_beasts_dns/en.md
+index 78af24664..01d955ffe 100644
+--- a/content/docs/draft/cbe-004_mythic_beasts_dns/en.md
++++ b/content/docs/draft/cbe-004_mythic_beasts_dns/en.md
+@@ -168,7 +168,7 @@ zones?: {
+ -- shared.cue --
+ package dns
+ 
+-zones: [Zone=string]: {
++zones: [string]~(Zone,_): {
+ 	"@": {
+ 		MX: {
+ 			_mx_ttl: 3600
+@@ -309,7 +309,7 @@ command: update: {
+ 		token: "Bearer " + json.Unmarshal(login.response.body).access_token
+ 	}
+ 	for zone_name, records in _mythic_beast_zone_records {
+-		api_request="replace_\(zone_name)": http.Put & {
++		"replace_\(zone_name)"~(api_request): http.Put & {
+ 			// https://www.mythic-beasts.com/support/api/dnsv2#ep-put-zoneszonerecords
+ 			url: "https://api.mythic-beasts.com/dns/v2/zones/\(zone_name)/records?exclude-template&exclude-generated"
+ 			request: body: json.Marshal({"records": records})
+@@ -328,7 +328,7 @@ command: dump: cli.Print & {
+ }
+ 
+ // https://www.mythic-beasts.com/support/api/dnsv2#sec-request-body-json1
+-_mythic_beast_zone_records: [Zone=string]: [..._MythicBeastsZoneRecord]
++_mythic_beast_zone_records: [string]~(Zone,_): [..._MythicBeastsZoneRecord]
+ _mythic_beast_zone_records: {
+ 	for zone_name, zone_config in zones {
+ 		(zone_name): [
+diff --git a/content/docs/howto/list-no-duplicates/en.md b/content/docs/howto/list-no-duplicates/en.md
+index af0b70c34..a78d356f5 100644
+--- a/content/docs/howto/list-no-duplicates/en.md
++++ b/content/docs/howto/list-no-duplicates/en.md
+@@ -53,7 +53,7 @@ _items: {
+ 	joe: age:   30
+ 	alice: age: 35
+ }
+-_items: [name=string]: "name": name
++_items: [string]~(name,_): "name": name
+ 
+ items: [
+ 	for item in _items {
+diff --git a/content/docs/howto/refer-to-fields-whose-names-are-not-valid-identifiers/en.md b/content/docs/howto/refer-to-fields-whose-names-are-not-valid-identifiers/en.md
+index 95e5cb3d0..ab3a47da5 100644
+--- a/content/docs/howto/refer-to-fields-whose-names-are-not-valid-identifiers/en.md
++++ b/content/docs/howto/refer-to-fields-whose-names-are-not-valid-identifiers/en.md
+@@ -30,7 +30,7 @@ aStruct: "nested field": "a nested value"
+ package example
+ 
+ // Declare an alias
+-X="top level field": _
++"top level field"~(X): _
+ 
+ output: {
+ 	// Use the alias to refer to a top-level
+diff --git a/content/docs/howto/use-path-base-path-dir-path-ext-to-examine-path-filename-components/en.md b/content/docs/howto/use-path-base-path-dir-path-ext-to-examine-path-filename-components/en.md
+index 7d59b9f8c..ffbdc217f 100644
+--- a/content/docs/howto/use-path-base-path-dir-path-ext-to-examine-path-filename-components/en.md
++++ b/content/docs/howto/use-path-base-path-dir-path-ext-to-examine-path-filename-components/en.md
+@@ -28,7 +28,7 @@ package example
+ 
+ import "path"
+ 
+-[X=string]: {
++[string]~(X,_): {
+ 	_OS: *path.Unix | path.Windows | path.Plan9
+ 	Dir:  path.Dir(X, _OS)
+ 	Base: path.Base(X, _OS)
+diff --git a/content/docs/howto/validate-json-using-cue/en.md b/content/docs/howto/validate-json-using-cue/en.md
+index 4ac9e7d08..1485287c1 100644
+--- a/content/docs/howto/validate-json-using-cue/en.md
++++ b/content/docs/howto/validate-json-using-cue/en.md
+@@ -66,7 +66,7 @@ constraints for every person.
+ 	address: string
+ }
+ 
+-people: [X=string]: #Person & {
++people: [string]~(X,_): #Person & {
+ 	name: X
+ }
+ {{{end}}}
+diff --git a/content/docs/howto/validate-yaml-using-cue/en.md b/content/docs/howto/validate-yaml-using-cue/en.md
+index f6c67acb1..d0117d815 100644
+--- a/content/docs/howto/validate-yaml-using-cue/en.md
++++ b/content/docs/howto/validate-yaml-using-cue/en.md
+@@ -56,7 +56,7 @@ constraints for every person.
+ 	address: string
+ }
+ 
+-people: [X=string]: #Person & {
++people: [string]~(X,_): #Person & {
+ 	name: X
+ }
+ {{{end}}}
+diff --git a/content/docs/language-guide/templating/references/en.md b/content/docs/language-guide/templating/references/en.md
+index 39f2cf739..1896ad7a8 100644
+--- a/content/docs/language-guide/templating/references/en.md
++++ b/content/docs/language-guide/templating/references/en.md
+@@ -69,11 +69,11 @@ allowing those to be associated with an identifier.
+ 
+ {{{with code "en" "aliases"}}}
+ -- in.cue --
+-X="a-b": 1 // a-b must be quoted
+-b:       X
++"a-b"~(X): 1 // a-b must be quoted
++b:         X
+ 
+-Y=c: 2
+-d:   Y // equivalent to d: c
++c~(Y): 2
++d:     Y // equivalent to d: c
+ -- out.cue --
+ "a-b": 1
+ b:     1
+@@ -102,11 +102,13 @@ use value aliases.
+ 
+ {{{with code "en" "value-alias"}}}
+ -- in.cue --
+-a: X={
++a: {
++	let X = self
+ 	bar: X.foo
+ }
+ -- out.cue --
+ a: {
++    let X = self
+     bar: X.foo
+ }
+ {{{end}}}
+diff --git a/content/docs/tour/expressions/dynamic-fields/en.md b/content/docs/tour/expressions/dynamic-fields/en.md
+index e989ce957..7b2850383 100644
+--- a/content/docs/tour/expressions/dynamic-fields/en.md
++++ b/content/docs/tour/expressions/dynamic-fields/en.md
+@@ -25,7 +25,9 @@ a:       "foo"
+ b:       "bar"
+ (a + b): "foobar"
+ 
+-s: X={
++s: {
++	let X = self
++
+ 	"\(a)_and_\(b)": "foobar"
+ 
+ 	// Valid references using a selector and
+diff --git a/content/docs/tour/types/templates/en.md b/content/docs/tour/types/templates/en.md
+index 48a05ffaa..40c2796c4 100644
+--- a/content/docs/tour/types/templates/en.md
++++ b/content/docs/tour/types/templates/en.md
+@@ -14,8 +14,8 @@ Each combination of the pattern and a constraint that it applies is called a
+ [**pattern constraint**]({{< relref "docs/tour/basics/folding-structs" >}}).
+ Currently, patterns must either be instances of `string`, or must be `_`.
+ 
+-Including an alias in the pattern's square brackets makes the label of each
+-matched field available inside the template.
++Attaching an alias to the pattern makes the label of each matched field
++available inside the template.
+ 
+ <!--more-->
+ 
+@@ -31,7 +31,7 @@ job: {
+ 	postgres: replicas: 5
+ }
+ 
+-job: [Name=_]: {
++job: [_]~(Name,_): {
+ 	name:     Name // Name is an alias.
+ 	command:  string | *"exec \(Name)"
+ 	replicas: uint | *1
 diff --git a/internal/cmd/preprocessor/cmd/testdata/execute_transform_normalise.txtar b/internal/cmd/preprocessor/cmd/testdata/execute_transform_normalise.txtar
 index 97553c5cb..ba56c056d 100644
 --- a/internal/cmd/preprocessor/cmd/testdata/execute_transform_normalise.txtar
