@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "K9TL0PSMTDBM35JOUIKJDH05R381IIP4PHU073RK3BUCQERLGFHG===="
-									scriptHash: "184UNTVILN4M8S7MB9P9KAMTP68EQHP391AO9N1OT6OG2URK51R0===="
+									hash:       "J7IT0GT6LEJT94LJ2UH1FNRKK7QD3VGOR681ADB66J029LRMES6G===="
+									scriptHash: "C6V75AOTTE5FVDU8KQ4T7T0C0R9034741L3UR40H8E01LE2OJK30===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.0.0-goreleaser.202609101448:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -72,7 +72,7 @@ package site
 
 												Flags:
 												  -n, --dry-run          only run simulation
-												  -f, --force            force overwriting existing files
+												  -f, --force            overwrite existing regular files
 												  -o, --outfile string   filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
 												      --trace            trace computation
 

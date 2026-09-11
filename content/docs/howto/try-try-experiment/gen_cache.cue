@@ -7,16 +7,16 @@ package site
 					page: {
 						cache: {
 							code: {
-								"if-else before and after": "o9BVy8VZfr7yWB/ff4v2O9j5zJklYPg9zT9P7xV1pKE="
-								"try-bind":                 "/lzzYm44MKkQwnY/BcmdeQvhHYsR7kWwOzKDVeSxOjo="
-								"try-else":                 "UzzvyK+hiGby6hQXQKAgWXIQoD/b1+SsaZEpTA8xKHk="
+								"if-else before and after": "UXP7TSXC5zOXIHF3es075uojb44rPXcaZ3DcjzVBFqc="
+								"try-bind":                 "/Nq+EYreojS6esyRU06Yc/QBG6yl0v39EuMfUcOnHoo="
+								"try-else":                 "/nIpsCSdLLY5pnCky33qsf8ulgaIawrz6ipg+uDNMjI="
 							}
 							multi_step: {
-								hash:       "19D0RH91GGLQ6PKST9I3JF9DE44HFGKBQ3VKVNR0PDSS9OD6JBNG===="
-								scriptHash: "6QSED1UMQU6F0F95R42V8SCR7I126EM72GJCTQKOKB8VIIBLGP3G===="
+								hash:       "6MMLLJ7I3L06HMH14GMPEBJ0OP612H2FIGFAHN7NAUN5VEQBS4Q0===="
+								scriptHash: "1Q9NBPIKC2P9GLBVSV9AF2E54C510LUC0IP1CEBP8JNJJDLT7S5G===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.17.0:$PATH"
+									cmd:      "export PATH=/cues/v0.0.0-goreleaser.202609101448:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {

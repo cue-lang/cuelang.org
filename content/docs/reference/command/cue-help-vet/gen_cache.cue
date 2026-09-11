@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "IU38SNM5HCMOBGMTJD62FLBLG98P7F0410N4GC7JU7VKUNMM6RM0===="
-									scriptHash: "IDB5KSK5C5TCSS86QPM4IPU4N6VOJBT1OQVJE1COK20JTG3M0DD0===="
+									hash:       "CH0CFEOQUAJ5RBSG9M3597ICBNN3BH3UQSG64OVTIQNGGGKTEET0===="
+									scriptHash: "18RC69D9GOJ1BKP5T1PHBHQR9TODDP3N9C46VTUMRP9U6NS6VA6G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.0.0-goreleaser.202609101448:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -67,11 +67,11 @@ package site
 												      --list                     concatenate multiple objects into a list
 												      --merge                    merge non-CUE files (default true)
 												  -n, --name string              regexp filter for non-CUE file names in directories
-												  -p, --package string           package name for non-CUE files
+												  -p, --package string           package name for non-CUE files and CUE output
 												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
 												  -I, --proto_path stringArray   paths in which to search for imports
-												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
+												  -d, --schema stringArray       expression to select schema for evaluating values in non-CUE files
 												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:

@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "KJFOB86I4A31QUR2H2CQ1GS60D4B46CCIJ1P1RDGIAAK95E12C6G===="
-									scriptHash: "PO058O934B5UCO465DRJ29SHB0K7855D36AAR73V9B3GQSTRA3BG===="
+									hash:       "3DHVKQ6E2S1EJE6QMH2RKH1KMODM3I213PGVM9S7QHR9UHUI0510===="
+									scriptHash: "9MTDR92I4FPMDOFJMR9SVN6QOVP81AA8GGFHE4R67F7T47VVIUFG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.0.0-goreleaser.202609101448:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {

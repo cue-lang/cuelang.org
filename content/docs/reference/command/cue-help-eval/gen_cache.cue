@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "47BVGO90AOITODBC170I3ADQI8G5JGVFGI1S93SNEJVFUJ7SGHG0===="
-									scriptHash: "D2IB0PII6QQF918CUH2LJFAJQJ9PE90QSCRG2EI6OL7EA4JOAMVG===="
+									hash:       "5TRRPGE2O37A4SL32LRRVT7GI1FQ03C5644FQMR5HLQNG44K8TNG===="
+									scriptHash: "B78V8MF2F411PG635D1FU25GIIV6OEL3GQBUQEGUOME4Q17RB5F0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.0.0-goreleaser.202609101448:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -47,7 +47,7 @@ package site
 												  -a, --all                      show optional and hidden fields
 												  -c, --concrete                 require the evaluation to be concrete
 												  -e, --expression stringArray   evaluate this expression only
-												  -f, --force                    force overwriting existing files
+												  -f, --force                    overwrite existing regular files
 												  -t, --inject stringArray       set the value of a tagged field
 												  -T, --inject-vars              inject system variables in tags
 												      --list                     concatenate multiple objects into a list
@@ -55,11 +55,11 @@ package site
 												  -n, --name string              regexp filter for non-CUE file names in directories
 												      --out string               output format (run 'cue help filetypes' for more info)
 												  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
-												  -p, --package string           package name for non-CUE files
+												  -p, --package string           package name for non-CUE files and CUE output
 												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
 												  -I, --proto_path stringArray   paths in which to search for imports
-												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
+												  -d, --schema stringArray       expression to select schema for evaluating values in non-CUE files
 												  -A, --show-attributes          display field attributes
 												  -H, --show-hidden              display hidden fields
 												  -O, --show-optional            display optional fields

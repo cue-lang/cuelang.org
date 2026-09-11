@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "ARKMJ8ELP7T2V8LNPK8JP4J3H5J7AF1LO460AEON4U9OUU078060===="
-									scriptHash: "8VBI0J2ROMOG8SV0TC9UKJSF934KPMBA5O8FR50UVRVORSG1KP3G===="
+									hash:       "QO7B787CBBPNRPTNO28GE5NFP9P147JTMQ9NTEQ5UGMA1V3B8820===="
+									scriptHash: "C1D9LIMUPR7SAKJ35MNK2DVNSAN6Q9JHSD3695688G3CR0AN108G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.0.0-goreleaser.202609101448:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -72,7 +72,9 @@ package site
 												\t  accordingly, when possible.
 
 												\t- Maps translate to a CUE struct, where all elements are constrained to
-												\t  be of Go map element type. Like for JSON, maps may only have string keys.
+												\t  be of Go map element type. Like for JSON, map keys must be strings,
+												\t  integers, or types implementing MarshalText or UnmarshalText, and are
+												\t  all translated to string labels.
 
 												\t- Pointers translate to a sum type with the default value of null and
 												\t  the Go type as an alternative value.

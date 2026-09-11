@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "1VKQDP7P1EQCTQD3A57ORPRONI1I82O80PNGUK8OTRI6L4TL7MJ0===="
-									scriptHash: "B66G7RQJRSADVN3P2OCOULI8SOK23Q3MH9FTM1J2GSA8IL412RF0===="
+									hash:       "1E4JCCFJVVQ2AF8QHC32AQC66MGCCEGBJA4FERRI3LHVRBJ0T2R0===="
+									scriptHash: "U3FDI66DSE3QMHL68JP2NCK4HOEG057CVGBATKMRS3UL59H9BFE0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.0.0-goreleaser.202609101448:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -234,17 +234,17 @@ package site
 												      --dry-run                  show what files would be created
 												      --ext stringArray          match files with these extensions
 												      --files                    split multiple entries into different files
-												  -f, --force                    force overwriting existing files
+												  -f, --force                    overwrite existing regular files
 												      --list                     concatenate multiple objects into a list
 												      --merge                    merge non-CUE files (default true)
 												  -n, --name string              regexp filter for non-CUE file names in directories
 												  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
-												  -p, --package string           package name for non-CUE files
+												  -p, --package string           package name for non-CUE files and CUE output
 												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
 												  -I, --proto_path stringArray   paths in which to search for imports
 												  -R, --recursive                recursively parse string values
-												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
+												  -d, --schema stringArray       expression to select schema for evaluating values in non-CUE files
 												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:

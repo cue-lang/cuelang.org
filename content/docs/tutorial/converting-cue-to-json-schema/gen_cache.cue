@@ -7,20 +7,20 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.cue":     "BZLZooVGo7eGfqXvbIUO7kIJxWjGrkj96dtiX7cgtXM="
-								"good.json":      "CDTQjmSYtdcZrrdnmjL9vA0qbAie0YL6B6TKT6+RsgM="
-								"bad.json":       "P/J9R8EfpC9nrhDVIeO/5f0OU5/f8fij9KZ4PCyVFtA="
-								"bad.json fixed": "YI91Xy7AQBTzC1KEJnGWVeeGkM/hAjaM0T/Ocwi964A="
+								"schema.cue":     "OMoxxd5tBfwDnOHbXSdiDzsK4a24LHsocOIs6dKIBsc="
+								"good.json":      "sgoCxaL97VKE1DSZWe6KgLAKxJXJujHF0kZcE3nitDM="
+								"bad.json":       "GQG+azWLN/Xq7eBjQvCti31CTXw3AWniN/DQE/BIcGs="
+								"bad.json fixed": "pVFABF/Osl0BYZ2pF1wcVN9UZCOKktdfF2Q6Ds7Jf9w="
 							}
 							multi_step: {
-								hash:       "O6S2A59SMNDPKB2DDAPTH45488C5DR805PHH99TENPSQCBD3O5S0===="
-								scriptHash: "NR56U4K5GGIOULD3SBG940S9TPIOJT788OQMQ83B35PJ9OR40MPG===="
+								hash:       "GR4KPKV0PQ5NCKH88JPOVQGGO1RFQ2JPHSRADJ4FAGI1B7NO69CG===="
+								scriptHash: "2A5RA9M3RQ9OQTK27K5KC6L7C2RA3D099T3NB61DA5CV0UGHQDHG===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.17.0
+											cue version v0.0.0-goreleaser.202609101448
 											...
 
 											"""

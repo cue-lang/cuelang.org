@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "VJ64PV8T4LFBCSA0RO9B4HM1FCQ1IMQ89VVRSIS4QU6ENFAFBCU0===="
-									scriptHash: "AMOQMAHTI8OE7KU6GFFK0CTK03FAOALBOT35JOLQUCRIR6CKK2L0===="
+									hash:       "HB6JAS8PBAM9KHC5L4BUTM6UIVVOF1K76VA8L6QBI3GT6B7LQR1G===="
+									scriptHash: "H9B7FD4JL9ACCF5GLVBKD9K8ICP00C7P1B0707UACVHBVMOVH7R0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.0.0-goreleaser.202609101448:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -55,18 +55,21 @@ package site
 												    Spec change:   https://cuelang.org/cl/1217013
 												    Spec change:   https://cuelang.org/cl/1217014
 
-												  aliasv2 (preview: v0.15.0)
+												  aliasv2 (preview: v0.15.0, stable: v0.18.0)
 												    aliasv2 enables the use of 'self' identifier to refer to the
 												    enclosing struct and enables the postfix alias syntax (~X and ~(K,V)).
 												    The file where this experiment is enabled disallows the use of old prefix
-												    alias syntax (X=).
+												    alias syntax (X=). It is stable as of v0.18.0, so a file at that
+												    language version or later must use the postfix syntax.
 												    Proposal:      https://cuelang.org/issue/4014
 												    Spec change:   https://cuelang.org/cl/1222377
 												    Requires cue fix when upgrading
 
-												  explicitopen (preview: v0.15.0)
+												  explicitopen (preview: v0.15.0, stable: v0.18.0)
 												    explicitopen enables the postfix ... operator to explicitly open
-												    closed structs, allowing additional fields to be added.
+												    closed structs, allowing additional fields to be added. It is stable as
+												    of v0.18.0, so a file at that language version or later embeds strictly
+												    and may use the postfix ... operator; cue fix migrates older files.
 												    Proposal:      https://cuelang.org/issue/4032
 												    Spec change:   https://cuelang.org/cl/1221642
 												    Requires cue fix when upgrading
@@ -88,6 +91,10 @@ package site
 												    is evaluated conditionally") and is consistent with all mainstream
 												    languages.
 
+												  functions (preview: v0.18.0)
+												    functions enables experimental function signatures and native CUE
+												    function bodies.
+
 
 												## Global Experiments
 
@@ -100,29 +107,34 @@ package site
 
 												Available global experiments:
 
-												  cmdreferencepkg (preview: v0.13.0, default: v0.14.0, stable: v0.16.0)
-												    cmdreferencepkg requires referencing an imported tool package to declare tasks.
-												    Otherwise, declaring tasks via "$id" or "kind" string fields is allowed.
+												  modules (preview: v0.8.0, default: v0.9.0, stable: v0.11.0)
+												    modules enables support for the modules and package management proposal
+												    as described in https://cuelang.org/discussion/2939.
+
+												  evalv3 (preview: v0.9.0, default: v0.13.0, stable: v0.15.0)
+												    evalv3 enables the new CUE evaluator, addressing performance issues
+												    and bringing better algorithms for disjunctions, closedness, and cycles.
+
+												  yamlv3decoder (preview: v0.9.0, default: v0.9.0, stable: v0.11.0)
+												    yamlv3decoder swaps the old internal/third_party/yaml decoder with the new
+												    decoder implemented in internal/encoding/yaml on top of yaml.v3.
+
+												  embed (preview: v0.10.0, default: v0.12.0, stable: v0.14.0)
+												    embed enables support for embedded data files as described in
+												    https://cuelang.org/discussion/3264.
 
 												  decodeint64 (preview: v0.11.0, default: v0.12.0, stable: v0.13.0)
 												    decodeint64 changes [cuelang.org/go/cue.Value.Decode] to choose
 												    'int64' rather than 'int' as the default type for CUE integer values
 												    to ensure consistency with 32-bit platforms.
 
-												  embed (preview: v0.10.0, default: v0.12.0, stable: v0.14.0)
-												    embed enables support for embedded data files as described in
-												    https://cuelang.org/discussion/3264.
+												  toposort (preview: v0.11.0, default: v0.12.0, stable: v0.14.0)
+												    toposort enables topological sorting of struct fields.
+												    Provide feedback via https://cuelang.org/issue/3558.
 
-												  evalv3 (preview: v0.9.0, default: v0.13.0, stable: v0.15.0)
-												    evalv3 enables the new CUE evaluator, addressing performance issues
-												    and bringing better algorithms for disjunctions, closedness, and cycles.
-
-												  formatv2 (preview: v0.18.0)
-												    formatv2 selects the Wadler-Lindig pretty-printer as the
-												    implementation behind "cue fmt" and "cue/format".
-												    It only exists from v0.18.0 onwards; v0.17 knows about it solely so that
-												    CUE_EXPERIMENT=formatv2=0 is accepted across both versions. Enabling it
-												    is rejected, as the implementation is not present.
+												  cmdreferencepkg (preview: v0.13.0, default: v0.14.0, stable: v0.16.0)
+												    cmdreferencepkg requires referencing an imported tool package to declare tasks.
+												    Otherwise, declaring tasks via "$id" or "kind" string fields is allowed.
 
 												  keepvalidators (preview: v0.14.0, default: v0.14.0, stable: v0.15.0)
 												    keepvalidators prevents validators from simplifying into concrete values,
@@ -131,17 +143,20 @@ package site
 												    Spec change:  https://cuelang.org/cl/1217013
 												    Spec change:  https://cuelang.org/cl/1217014
 
-												  modules (preview: v0.8.0, default: v0.9.0, stable: v0.11.0)
-												    modules enables support for the modules and package management proposal
-												    as described in https://cuelang.org/discussion/2939.
+												  formatv2 (preview: v0.18.0, default: v0.18.0)
+												    formatv2 selects the Wadler-Lindig pretty-printer as the
+												    implementation behind "cue fmt" and "cue/format".
 
-												  toposort (preview: v0.11.0, default: v0.12.0, stable: v0.14.0)
-												    toposort enables topological sorting of struct fields.
-												    Provide feedback via https://cuelang.org/issue/3558.
+												  openapiv2 (preview: v0.18.0)
+												    openapiv2 selects the new whole-document OpenAPI implementation behind
+												    the openapi encoding used by "cue import" and "cue export", extracting
+												    and generating a complete OpenAPI document rather than only its schemas.
 
-												  yamlv3decoder (preview: v0.9.0, default: v0.9.0, stable: v0.11.0)
-												    yamlv3decoder swaps the old internal/third_party/yaml decoder with the new
-												    decoder implemented in internal/encoding/yaml on top of yaml.v3.
+												  yamlgoccy (preview: v0.18.0, default: v0.18.0)
+												    yamlgoccy selects the github.com/goccy/go-yaml based YAML decoder
+												    and encoder. The new decoder retains more precise position and
+												    comment information than the older github.com/go-yaml/yaml based
+												    implementation it replaces.
 
 												Each experiment's lifecycle tracks language versions as follows:
 												- preview:   experimental feature that can be enabled

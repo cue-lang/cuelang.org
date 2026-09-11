@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							code: {
-								"if-else before and after": "nbMEKBjDnLnbzjo/ckAKyt+i9WrxNYP01QGfMieBhbY="
-								"for-fallback":             "mnHGUQXz+Gub0W1VvZb6ice5+PySvePE37EF3thbB1g="
+								"if-else before and after": "iqNSi7Qi6HiUjEPs1NuFrDfY8jaZknhp/G3DXJuNGrY="
+								"for-fallback":             "zMl7OGE+bLlx97uzg/wQMVXwTfALpK3RHE9bdqjQ7e4="
 							}
 							multi_step: {
-								hash:       "19D0RH91GGLQ6PKST9I3JF9DE44HFGKBQ3VKVNR0PDSS9OD6JBNG===="
-								scriptHash: "6QSED1UMQU6F0F95R42V8SCR7I126EM72GJCTQKOKB8VIIBLGP3G===="
+								hash:       "6MMLLJ7I3L06HMH14GMPEBJ0OP612H2FIGFAHN7NAUN5VEQBS4Q0===="
+								scriptHash: "1Q9NBPIKC2P9GLBVSV9AF2E54C510LUC0IP1CEBP8JNJJDLT7S5G===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.17.0:$PATH"
+									cmd:      "export PATH=/cues/v0.0.0-goreleaser.202609101448:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
