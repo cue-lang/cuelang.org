@@ -11,7 +11,7 @@ _base: {
 	kubernetes: {}
 }
 
-deployment: [Name=_]: _base & {
+deployment: [_]~(Name,_): _base & {
 	// Allow any string, but take Name by default.
 	name:     string | *Name
 	kind:     *"deployment" | "stateful" | "daemon"
@@ -38,7 +38,7 @@ deployment: [Name=_]: _base & {
 		}
 	}
 
-	volume: [Name=_]: {
+	volume: [_]~(Name,_): {
 		name:      string | *Name
 		mountPath: string
 		subPath:   string | *null
@@ -47,10 +47,10 @@ deployment: [Name=_]: _base & {
 	}
 }
 
-service: [Name=_]: _base & {
+service: [_]~(Name,_): _base & {
 	name: *Name | string
 
-	port: [Name=_]: {
+	port: [_]~(Name,_): {
 		name: string | *Name
 
 		port:     int

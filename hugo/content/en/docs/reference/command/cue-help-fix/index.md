@@ -26,15 +26,17 @@ incompatible changes for which there is a cue fix. The --exp flag is used to
 change a file or package to use the new, experimental semantics. Experiments
 are enabled on a per-file basis.
 
-For example, to enable the "explicitopen" experiment for all files in a package,
-you would run:
+For example, to enable the "explicitopen" experiment for all files in a
+package whose module is on a language version before v0.18.0, which is where
+that experiment became stable, you would run:
 
 	cue fix . --exp=explicitopen
 
 For this to succeed, your current language version must support the experiment.
 If an experiment has not yet been accepted for the current version, an
 @experiment attribute is added in each affected file to mark the transition as
-complete.
+complete. An experiment which is already stable for that version needs no
+fix, as files use it without an attribute, and asking for one is an error.
 
 The special value --exp=all enables all experimental features that apply to the
 current version.

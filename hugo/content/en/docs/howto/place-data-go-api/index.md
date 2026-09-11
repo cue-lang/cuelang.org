@@ -40,9 +40,9 @@ input: {
 }
 
 output: """
-    Hello, \(input.name)!
-    How's the weather in \(input.location)?
-    """
+	Hello, \(input.name)!
+	How's the weather in \(input.location)?
+	"""
 {{< /code-tab >}}{{< code-tab name="input.json" language="json" area="right" >}}
 {
     "name": "Charlie"
@@ -116,8 +116,8 @@ func main() {
 {{< step stepNumber="5" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE3LjAKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.17.0
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjAuMC1nb3JlbGVhc2VyLjIwMjYwOTEwMTQ0OApnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.0.0-goreleaser.202609101448
 ...
 $ go mod tidy
 ...

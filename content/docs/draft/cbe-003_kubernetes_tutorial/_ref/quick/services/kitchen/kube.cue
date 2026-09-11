@@ -19,7 +19,7 @@ deployment: [string]: spec: template: {
 	}]
 }
 
-deployment: [ID=_]: spec: template: spec: {
+deployment: [_]~(ID,_): spec: template: spec: {
 	_hasDisks: *true | bool
 
 	// field comprehension using just "if"

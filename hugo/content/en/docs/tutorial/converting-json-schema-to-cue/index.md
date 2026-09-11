@@ -45,7 +45,7 @@ This tutorial is written using the following version of `cue`:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.17.0
+cue version v0.0.0-goreleaser.202609101448
 ...
 ````
 
@@ -130,7 +130,7 @@ package cuisine
 	close({
 		name!:    string
 		cuisine!: string
-		tables!: [...#table]
+		tables!:  [...#table]
 	})
 
 	#table: close({

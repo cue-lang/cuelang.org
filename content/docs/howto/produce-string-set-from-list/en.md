@@ -29,7 +29,7 @@ stringSet: {
 }
 -- out --
 stringList: ["d", "a", "b", "a", "c", "b", "b"]
-stringSet: ["a", "b", "c", "d"]
+stringSet:  ["a", "b", "c", "d"]
 {{{end}}}
 
 {{< info >}}

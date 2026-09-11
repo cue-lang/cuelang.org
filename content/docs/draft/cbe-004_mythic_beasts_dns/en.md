@@ -168,11 +168,11 @@ zones?: {
 -- shared.cue --
 package dns
 
-zones: [Zone=string]: {
+zones: [string]~(Zone,_): {
 	"@": {
 		MX: {
-			_mx_ttl: 3600
-			"aspmx.l.google.com": {pri: 1, ttl: _mx_ttl}
+			_mx_ttl:                   3600
+			"aspmx.l.google.com":      {pri: 1, ttl: _mx_ttl}
 			"alt1.aspmx.l.google.com": {pri: 5, ttl: _mx_ttl}
 			"alt2.aspmx.l.google.com": {pri: 5, ttl: _mx_ttl}
 			"alt3.aspmx.l.google.com": {pri: 10, ttl: _mx_ttl}
@@ -309,7 +309,7 @@ command: update: {
 		token: "Bearer " + json.Unmarshal(login.response.body).access_token
 	}
 	for zone_name, records in _mythic_beast_zone_records {
-		api_request="replace_\(zone_name)": http.Put & {
+		"replace_\(zone_name)"~(api_request): http.Put & {
 			// https://www.mythic-beasts.com/support/api/dnsv2#ep-put-zoneszonerecords
 			url: "https://api.mythic-beasts.com/dns/v2/zones/\(zone_name)/records?exclude-template&exclude-generated"
 			request: body: json.Marshal({"records": records})
@@ -328,7 +328,7 @@ command: dump: cli.Print & {
 }
 
 // https://www.mythic-beasts.com/support/api/dnsv2#sec-request-body-json1
-_mythic_beast_zone_records: [Zone=string]: [..._MythicBeastsZoneRecord]
+_mythic_beast_zone_records: [string]~(Zone,_): [..._MythicBeastsZoneRecord]
 _mythic_beast_zone_records: {
 	for zone_name, zone_config in zones {
 		(zone_name): [

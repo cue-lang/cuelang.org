@@ -29,7 +29,7 @@ aStruct: "nested field": "a nested value"
 package example
 
 // Declare an alias
-X="top level field": _
+"top level field"~(X): _
 
 output: {
 	// Use the alias to refer to a top-level

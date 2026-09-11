@@ -204,14 +204,14 @@ a configuration file (they are when enclosed in double quotes).
 $ cue eval ./mon/prometheus -e configMap.prometheus
 apiVersion: "v1"
 kind:       "ConfigMap"
-metadata: {
-    name: "prometheus"
-}
+metadata: name: "prometheus"
 data: {
     "alert.rules": """
         groups:
           - name: rules.yaml
             rules:
+              - alert: InstanceDown
+                expr: up == 0
 ...
 ````
 
@@ -257,7 +257,7 @@ Modify this file as below.
 {{< code-tab name="tmp/services/kube.cue" language="cue" area="top-left" >}}
 package kube
 
-service: [ID=_]: {
+service: [_]~(ID,_): {
 	apiVersion: "v1"
 	kind:       "Service"
 	metadata: {
@@ -279,7 +279,7 @@ service: [ID=_]: {
 	}
 }
 
-deployment: [ID=_]: {
+deployment: [_]~(ID,_): {
 	apiVersion: "apps/v1"
 	kind:       "Deployment"
 	metadata: name: ID
@@ -299,7 +299,7 @@ deployment: [ID=_]: {
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 
-By replacing the service and deployment name with `[ID=_]` we have changed the
+By replacing the service and deployment name with `[_]~(ID,_)` we have changed the
 definition into a template matching any field.
 CUE binds the field name to `ID` as a result.
 During importing we used `metadata.name` as a key for the object names,
@@ -395,23 +395,23 @@ $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 --- snapshot
 +++ snapshot2
 @@ -1,3 +1,9 @@
-+service: {}
++service:    {}
 +deployment: {}
 +// ---
-+service: {}
++service:    {}
 +deployment: {}
 +// ---
- service: {
-     bartender: {
-         apiVersion: "v1"
-@@ -208,6 +214,7 @@
-             selector: {
-                 app:    "maitred"
-                 domain: "prod"
-+                component: "frontend"
-             }
+ service: bartender: {
+     apiVersion: "v1"
+     kind:       "Service"
+@@ -175,6 +181,7 @@
+         selector: {
+             app:    "maitred"
+             domain: "prod"
++            component: "frontend"
          }
      }
+ }
 ...
 ````
 
@@ -427,10 +427,10 @@ The corresponding boilerplate can now be removed with `cue trim`.
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQpjdWUgdHJpbSAuLy4uLgpmaW5kIC4gfCBncmVwIGt1YmUuY3VlIHwgeGFyZ3Mgd2MgLWwgfCB0YWlsIC0x" }
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1822 total
+ 1832 total
 $ cue trim ./...
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1264 total
+ 1265 total
 ````
 
 `cue trim` removes configuration from files that is already generated
@@ -442,7 +442,7 @@ The following is proof that nothing changed semantically:
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIGV2YWwgLWMgLi8uLi4gPnNuYXBzaG90MgpkaWZmIC13dSBzbmFwc2hvdCBzbmFwc2hvdDIgfCB3YyAtbA==" }
 $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2 | wc -l
-587
+565
 ````
 
 We can do better, though.
@@ -454,26 +454,26 @@ We generalize the top-level template as follows:
 {{< code-tab name="tmp/services/kube2.cue" language="cue" area="top-left" >}}
 package kube
 
-daemonSet: [ID=_]: _spec & {
+daemonSet: [_]~(ID,_): _spec & {
 	apiVersion: "apps/v1"
 	kind:       "DaemonSet"
 	_name:      ID
 }
 
-statefulSet: [ID=_]: _spec & {
+statefulSet: [_]~(ID,_): _spec & {
 	apiVersion: "apps/v1"
 	kind:       "StatefulSet"
 	_name:      ID
 }
 
-deployment: [ID=_]: _spec & {
+deployment: [_]~(ID,_): _spec & {
 	apiVersion: "apps/v1"
 	kind:       "Deployment"
 	_name:      ID
 	spec: replicas: *1 | int
 }
 
-configMap: [ID=_]: {
+configMap: [_]~(ID,_): {
 	metadata: name: ID
 	metadata: labels: component: #Component
 }
@@ -635,7 +635,7 @@ deployment: breaddispatcher: spec: template: {
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="ZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ find . | grep kube.cue | xargs wc -l | tail -1
- 1009 total
+  997 total
 ````
 
 Another 150 lines lost!
@@ -688,14 +688,14 @@ $ cue eval -c ./... >snapshot2
 $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 --- snapshot
 +++ snapshot2
-@@ -170,6 +170,7 @@
-                 metadata: {
-                     annotations: {
-                         "prometheus.io.scrape": "true"
-+                        "prometheus.io.port":   "7080"
-                     }
-                     labels: {
-                         app:       "host"
+@@ -145,7 +145,10 @@
+         selector: {}
+         template: {
+             metadata: {
+-                annotations: "prometheus.io.scrape": "true"
++                annotations: {
++                    "prometheus.io.scrape": "true"
++                    "prometheus.io.port":   "7080"
 ...
 $ cp snapshot2 snapshot
 ````
@@ -705,7 +705,7 @@ Two lines with annotations added, improving consistency.
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHRyaW0gLi9mcm9udGVuZC8uLi4gLXMKZmluZCAuIHwgZ3JlcCBrdWJlLmN1ZSB8IHhhcmdzIHdjIC1sIHwgdGFpbCAtMQ==" }
 $ cue trim ./frontend/... -s
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  994 total
+  982 total
 ````
 
 Another 40 odd lines removed.
@@ -765,7 +765,7 @@ directory with two disks), and generalize it:
 {{< code-tab name="tmp/services/kitchen/kube3.cue" language="cue" area="top-left" >}}
 package kube
 
-deployment: [ID=_]: spec: template: spec: {
+deployment: [_]~(ID,_): spec: template: spec: {
 	_hasDisks: *true | bool
 
 	// field comprehension using just "if"
@@ -826,7 +826,7 @@ $ diff -wu snapshot snapshot2 --label snapshot --label snapshot2
 ...
 $ cp snapshot2 snapshot
 $ find . | grep kube.cue | xargs wc -l | tail -1
-  986 total
+  974 total
 ````
 
 The diff shows that we added the `_hasDisks` option, but otherwise reveals no
@@ -1153,7 +1153,7 @@ We define one top-level file with our generic definitions.
 // file cloud.cue
 package cloud
 
-service: [Name=_]: {
+service: [_]~(Name,_): {
     name: *Name | string // the name of the service
 
     ...
@@ -1164,7 +1164,7 @@ service: [Name=_]: {
     }
 }
 
-deployment: [Name=_]: {
+deployment: [_]~(Name,_): {
     name: *Name | string
    ...
 }
@@ -1194,7 +1194,7 @@ The first step we took is to eliminate `statefulSet` and `daemonSet` and
 rather just have a `deployment` allowing different kinds.
 
 ```
-deployment: [Name=_]: _base & {
+deployment: [_]~(Name,_): _base & {
     name:     *Name | string
     ...
 ```
@@ -1250,7 +1250,7 @@ to create a single definition for volumes, combining the information for
 volume spec and volume mount.
 
 ```
-    volume: [Name=_]: {
+    volume: [_]~(Name,_): {
         name:       *Name | string
         mountPath:  string
         subPath:    null | string

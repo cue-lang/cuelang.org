@@ -33,9 +33,7 @@ In programming languages this is called a *sum type*.
 fooInt: #X
 fooInt: {kind: "a", a: 43}
 -- out.cue --
-#Base: {
-    kind!: string
-}
+#Base: kind!: string
 #A: {
     kind!: "a"
     a:     int
@@ -67,12 +65,8 @@ all additional fields.
 
 #X: {#Base, ...} // anyof(#Base)
 -- out.cue --
-#Base: {
-    kind!: string
-}
-#X: {
-    kind!: string
-}
+#Base: kind!: string
+#X: kind!:    string
 {{{end}}}
 
 The following approach allows all implementations of `#Base` while discarding excess fields.

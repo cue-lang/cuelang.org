@@ -45,7 +45,7 @@ This tutorial is written using the following version of `cue`:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.17.0
+cue version v0.0.0-goreleaser.202609101448
 ...
 ````
 
@@ -62,8 +62,8 @@ Create a CUE file containing a schema for a conference event:
 @experiment(explicitopen)
 
 #Event: {
-	name:  string
-	venue: string
+	name:     string
+	venue:    string
 	sessions: [...#Session]
 }
 

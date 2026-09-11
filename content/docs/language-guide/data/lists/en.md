@@ -13,7 +13,7 @@ indexed by their position.
 {{{with code "en" "list-example"}}}
 #norun open lists
 -- in.cue --
-a: [1, 2]
+a:   [1, 2]
 "a": [1, 2, 3]
 -- out.cue --
 a: [1, 2, 3]

@@ -257,7 +257,7 @@ It is an error for any values passed to these operators to be invalid.
 
 {{{with code "en" "boolean-arithmetic-error"}}}
 -- in.cue --
-a: {}
+a:   {}
 err: true || a.bar
 -- out.err --
 err: undefined field: bar:
@@ -292,10 +292,10 @@ split: pathpkg.Split(path)
 sqrt: math.Sqrt(2)
 pi:   math.Pi
 -- out.cue --
-path: "path/to/dir"
+path:  "path/to/dir"
 split: ["path/to/", "dir"]
-sqrt: 1.4142135623730951
-pi:   3.14159265358979323846264338327950288419716939937510582097494459
+sqrt:  1.4142135623730951
+pi:    3.14159265358979323846264338327950288419716939937510582097494459
 {{{end}}}
 
 <!--

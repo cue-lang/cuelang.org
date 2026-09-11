@@ -216,7 +216,7 @@ Modify this file as below.
 -- tmp/services/kube.cue --
 package kube
 
-service: [ID=_]: {
+service: [_]~(ID,_): {
 	apiVersion: "v1"
 	kind:       "Service"
 	metadata: {
@@ -238,7 +238,7 @@ service: [ID=_]: {
 	}
 }
 
-deployment: [ID=_]: {
+deployment: [_]~(ID,_): {
 	apiVersion: "apps/v1"
 	kind:       "Deployment"
 	metadata: name: ID
@@ -258,7 +258,7 @@ deployment: [ID=_]: {
 }
 {{{end}}}
 
-By replacing the service and deployment name with `[ID=_]` we have changed the
+By replacing the service and deployment name with `[_]~(ID,_)` we have changed the
 definition into a template matching any field.
 CUE binds the field name to `ID` as a result.
 During importing we used `metadata.name` as a key for the object names,
@@ -380,26 +380,26 @@ We generalize the top-level template as follows:
 -- tmp/services/kube2.cue --
 package kube
 
-daemonSet: [ID=_]: _spec & {
+daemonSet: [_]~(ID,_): _spec & {
 	apiVersion: "apps/v1"
 	kind:       "DaemonSet"
 	_name:      ID
 }
 
-statefulSet: [ID=_]: _spec & {
+statefulSet: [_]~(ID,_): _spec & {
 	apiVersion: "apps/v1"
 	kind:       "StatefulSet"
 	_name:      ID
 }
 
-deployment: [ID=_]: _spec & {
+deployment: [_]~(ID,_): _spec & {
 	apiVersion: "apps/v1"
 	kind:       "Deployment"
 	_name:      ID
 	spec: replicas: *1 | int
 }
 
-configMap: [ID=_]: {
+configMap: [_]~(ID,_): {
 	metadata: name: ID
 	metadata: labels: component: #Component
 }
@@ -658,7 +658,7 @@ directory with two disks), and generalize it:
 -- tmp/services/kitchen/kube3.cue --
 package kube
 
-deployment: [ID=_]: spec: template: spec: {
+deployment: [_]~(ID,_): spec: template: spec: {
 	_hasDisks: *true | bool
 
 	// field comprehension using just "if"
@@ -1036,7 +1036,7 @@ We define one top-level file with our generic definitions.
 // file cloud.cue
 package cloud
 
-service: [Name=_]: {
+service: [_]~(Name,_): {
     name: *Name | string // the name of the service
 
     ...
@@ -1047,7 +1047,7 @@ service: [Name=_]: {
     }
 }
 
-deployment: [Name=_]: {
+deployment: [_]~(Name,_): {
     name: *Name | string
    ...
 }
@@ -1077,7 +1077,7 @@ The first step we took is to eliminate `statefulSet` and `daemonSet` and
 rather just have a `deployment` allowing different kinds.
 
 ```
-deployment: [Name=_]: _base & {
+deployment: [_]~(Name,_): _base & {
     name:     *Name | string
     ...
 ```
@@ -1133,7 +1133,7 @@ to create a single definition for volumes, combining the information for
 volume spec and volume mount.
 
 ```
-    volume: [Name=_]: {
+    volume: [_]~(Name,_): {
         name:       *Name | string
         mountPath:  string
         subPath:    null | string

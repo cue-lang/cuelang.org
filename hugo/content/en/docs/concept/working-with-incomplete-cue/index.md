@@ -157,8 +157,8 @@ func main() {
 
 We fetch the latest version of CUE, and tidy our Go module:
 
-````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE3LjAKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.17.0
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjAuMC1nb3JlbGVhc2VyLjIwMjYwOTEwMTQ0OApnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.0.0-goreleaser.202609101448
 ...
 $ go mod tidy
 ...
@@ -178,9 +178,7 @@ step1: {
 	database:         "transactions"
 	password:         string
 }
-step2: {
-	password: "Ch^ngeMeBef0r3GoL!ve"
-}
+step2: {password: "Ch^ngeMeBef0r3GoL!ve"}
 result: {
 	connectionString: "postgres://alex:Ch^ngeMeBef0r3GoL!ve@prod.db.example.com:5432/transactions"
 	system:           "postgres"

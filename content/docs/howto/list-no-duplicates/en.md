@@ -53,7 +53,7 @@ _items: {
 	joe: age:   30
 	alice: age: 35
 }
-_items: [name=string]: "name": name
+_items: [string]~(name,_): "name": name
 
 items: [
 	for item in _items {

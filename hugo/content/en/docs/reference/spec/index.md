@@ -281,6 +281,14 @@ TODO:
     order [by]
 -->
 
+#### Expressions
+
+The following keyword introduces a function literal.
+
+```
+func
+```
+
 
 ### Operators and punctuation
 
@@ -288,12 +296,12 @@ The following character sequences represent operators and punctuation:
 
 ```
 +     &&    ==    <     =     (     )
--     ||    !=    >     :     {     }
+-     ||    !=    >     :     {     }     ~     ->
 *     &     =~    <=    ?     [     ]     ,
 /     |     !~    >=    !     _|_   ...   .
 ```
 <!--
-Free tokens:  ; ~ ^
+Free tokens:  ; % ^
 // To be used:
   @   at: associative lists.
 
@@ -512,9 +520,9 @@ the string value.
 ```
 <!-- error:
 illegal character U+0027 ''' in escape sequence:
-    spec.md:503:5
+    4:5
 escape sequence is invalid Unicode code point:
-    spec.md:512:3
+    13:3
 -->
 
 These examples all represent the same string:
@@ -563,7 +571,7 @@ To include it is suffices to escape one of the quotes.
 ```
 <!-- error:
 unknown escape sequence:
-    spec.md:563:14
+    7:14
 -->
 
 This represents the same string as:
@@ -1079,11 +1087,11 @@ the result of which is the unification of all those fields.
 StructLit       = "{" { Declaration "," } "}" .
 Declaration     = Field | Ellipsis | Embedding | LetClause | attribute .
 Ellipsis        = "..." [ Expression ] .
-Embedding       = Comprehension | AliasExpr .
-Field           = Label ":" { Label ":" } AliasExpr { attribute } .
-Label           = [ identifier "=" ] LabelExpr .
-LabelExpr       = LabelName [ "?" | "!" ] | "[" AliasExpr "]" .
-LabelName       = identifier | simple_string_lit | "(" AliasExpr ")" .
+Embedding       = Comprehension | Expr .
+Field           = Label ":" { Label ":" } Expr { attribute } .
+Label           = LabelExpr [ Alias ] .
+LabelExpr       = LabelName [ "?" | "!" ] | "[" Expr "]" .
+LabelName       = identifier | simple_string_lit | "(" Expr ")" .
 
 attribute       = "@" identifier "(" attr_tokens ")" .
 attr_tokens     = { attr_token |
@@ -1256,9 +1264,9 @@ b: a & {
 ```
 <!-- error:
 missing ',' in struct literal:
-    spec.md:1253:8
+    7:8
 expected '}', found 'EOF':
-    spec.md:1260:3
+    14:3
 -->
 
 <!--
@@ -1440,45 +1448,26 @@ D: close({
 
 A struct may contain an _embedded value_, an operand used as a declaration.
 An embedded value of type struct is unified with the struct in which it is
-embedded, but disregarding the restrictions imposed by closed structs.
-So if an embedding resolves to a closed struct, the corresponding enclosing
-struct will also be closed, but may have fields that are not allowed if
-normal rules for closed structs were observed.
+embedded.
+
+Embeddings can be useful for composing larger schemas from smaller ones.
+The order of specification may imply a documented field order.
 
 If an embedded value is not of type struct, the struct may only have
 definitions or hidden fields. Regular fields are not allowed in such case.
 
-The result of `{ A }` is `A` for any `A` (including definitions).
-
 Syntactically, embeddings may be any expression.
 
 ```cue
-S1: {
-    a: 1
-    b: 2
-    {
-        c: 3
-    }
+Meta: {
+    kind: string
+    name: string
 }
-// S1 is { a: 1, b: 2, c: 3 }
-
-S2: close({
-    a: 1
-    b: 2
-    {
-        c: 3
-    }
-})
-// same as close(S1)
-
-S3: {
-    a: 1
-    b: 2
-    close({
-        c: 3
-    })
+Guzzler: {
+    Meta...
+    volume: number
 }
-// same as S2
+// Guzzler is { kind: string, name: string, volume: number }
 ```
 
 
@@ -1494,8 +1483,8 @@ to data and are never required to be concrete.
 Referencing a definition will recursively [close](#closed-structs) it.
 That is, a referenced definition will not unify with a struct
 that would add a field anywhere within the definition that it does not
-already define or explicitly allow with a pattern constraint or `...`.
-[Embedding](#embedding) allows bypassing this check.
+already define or explicitly allow with a pattern constraint, `...`,
+or the [spread operator](#spread-operator) (postfix `...`).
 
 If referencing a definition would always result in an error, implementations
 may report this inconsistency at the point of its declaration.
@@ -1609,56 +1598,51 @@ Combined: myStruct1 & myStruct2
 
 #### Aliases
 
-Aliases name values that can be referred to
+Aliases bind identifiers to a field or its name that can be referred to
 within the [scope](#declarations-and-scopes) in which they are declared.
 The name of an alias must be unique within its scope.
 
 ```ebnf
-AliasExpr  = [ identifier "=" ] Expression .
+Alias  = "~" ( identifier | "(" identifier [ "," ( identifier | "_" ) ] ")" ) .
 ```
 
-Aliases can appear in several positions:
+The alias is specified using a postfix `~` operator after a label. The single
+form `~V` or `~(V)` creates an alias referring to the field, while the
+dual form `~(K,V)` creates two aliases: one for the label and one for the field.
+The parenthesized single form `~(V)` is the canonical form;
+`cue fmt` normalizes `~V` to `~(V)`.
+The first position in the dual form can use `_` (blank identifier) to skip
+binding the label alias.
 
-<!--- TODO: consider allowing this. It should be considered whether
-having field aliases isn't already sufficient.
+Aliases resolve as follows:
 
-As a declaration in a struct (`X=value`):
+After a label (`label~(V): value` or `label~(K, V): value`):
 
-- binds identifier `X` to a value embedded within the struct.
---->
+- binds the identifier `V` to the field itself (not its value).
+- binds the identifier `K` to the label.
 
-In front of a Label (`X=label: value`):
+After a dynamic field (`(label)~(V): value` or `(label)~(K, V): value`):
 
-- binds the identifier to the same value as `label` would be bound
-  to if it were a valid identifier.
+- binds the identifier `V` to the field itself.
+- binds the identifier `K` to the concrete label resulting from evaluating `label`.
+- the same semantics applies when binding to an interpolated string label.
 
-In front of a dynamic field (`X=(label): value`):
+After a pattern constraint (`[expr]~(V): value` or `[expr]~(K, V): value`):
 
-- binds the identifier to the same value as `label` if it were a valid
-  static identifier.
-
-In front of a dynamic field expression (`(X=expr): value`):
-
-- binds the identifier to the concrete label resulting from evaluating `expr`.
-
-In front of a pattern constraint (`X=[expr]: value`):
-
-- binds the identifier to the same field as the matched by the pattern
-  within the instance of the field value (`value`).
-
-In front of a pattern constraint expression (`[X=expr]: value`):
-
-- binds the identifier to the concrete label that matches `expr`
+- binds the identifier `V` to the field matched by the pattern
+  within the scope of that field's value (`value`).
+- binds the identifier `K` to the concrete label that matches `expr`
   within the instances of the field value (`value`).
 
-Before a value (`foo: X=x`)
+Note that aliases are equivalent to referring to the field by name.
+Use `self` to refer to a field's value directly.
 
-- binds the identifier to the value it precedes within the scope of that value.
-
-Before a list element (`[ X=value, X+1 ]`) (Not yet implemented)
-
-- binds the identifier to the list element it precedes within the scope of the
-  list expression.
+```
+foo: {
+    let X = self
+    // X refers to the value of foo
+}
+```
 
 <!-- TODO: explain the difference between aliases and definitions.
      Now that you have definitions, are aliases really necessary?
@@ -1667,19 +1651,32 @@ Before a list element (`[ X=value, X+1 ]`) (Not yet implemented)
 
 ```cue
 // A field alias
-foo: X  // 4
-X="not an identifier": 4
-
-// A value alias
-foo: X={x: X.a}
-bar: foo & {a: 1}  // {a: 1, x: 1}
-
-// A label alias
-[Y=string]: { name: Y }
-foo: { value: 1 } // outputs: foo: { name: "foo", value: 1 }
+result1: X  // 4
+"not an identifier"~(X): 4
 ```
 
-<!-- TODO: also allow aliases as lists -->
+```cue
+// A field alias example
+foo~(F): {
+    x: F.a
+}
+bar: foo & {a: 1}  // {a: 1, x: 1}
+```
+
+```cue
+// A label alias with dual form
+[string]~(K, V): { name: K, add1: V.value+1 }
+foo: { value: 1 } // outputs: foo: { name: "foo", value: 1, add1: 2 }
+```
+
+```cue
+// Dynamic field with dual form
+("my" + "Field")~(K, V): { label: K, foo: 42 }
+value: V.foo
+// outputs: {myField: { label: "myField", value: 42 }, value: 42}
+```
+
+<!-- TODO: also allow aliases in lists -->
 
 
 #### Let declarations
@@ -1694,6 +1691,17 @@ let x = expr
 
 a: x + 1
 b: x + 2
+```
+
+Let declarations are commonly used with the [`self`](#self-from-v0150) keyword
+to create value aliases:
+
+```
+foo: {
+    let V = self
+    x: V.a
+    y: V.b
+}
 ```
 
 #### Shorthand notation for nested structs
@@ -1866,7 +1874,7 @@ of the predefined identifier, prefixed with `__`.
 
 ```
 Functions
-len close and or
+len close and or, for more see builtins
 
 Types
 null      The null type and value
@@ -1875,6 +1883,8 @@ int       All integral numbers
 float     All decimal floating-point numbers
 string    Any valid UTF-8 sequence
 bytes     Any valid byte sequence
+
+self      Refers to the inner scope
 
 Derived   Value
 number    int | float
@@ -2004,7 +2014,7 @@ a field, alias, or let declaration, or a parenthesized expression.
 
 ```ebnf
 Operand     = Literal | OperandName | "(" Expression ")" .
-Literal     = BasicLit | ListLit | StructLit .
+Literal     = BasicLit | ListLit | StructLit | FuncLit .
 BasicLit    = int_lit | float_lit | string_lit |
               null_lit | bool_lit | bottom_lit .
 OperandName = identifier | QualifiedIdent .
@@ -2049,7 +2059,34 @@ d: b.greeting  // "Hello, world!"
 e: c.greeting  // "Hello, you!"
 ```
 
+#### `self` (from v0.15.0)
 
+The [predeclared identifier](#predeclared-identifiers) `self` and `__self` refer
+to the innermost struct or list, or the top level if none exist.
+
+```
+a: {
+    b: {
+        c: self.d // refers to value of a.b.d (1)
+        d: 1
+    }
+    d: self // refers to value of a (cyclic)
+}
+e: self // refers to top level (cyclic)
+
+// lists
+f: [ 1, 2, self[0] ]  // refers to value of f[0]
+
+// implicit scope
+g: x: self // refers to value of g
+
+// naming using let
+let X = self
+h: a: b: c: X.f[0] // refers to the value of f[0] (1)
+
+// predeclared identifier redeclared
+i: self: x: y: z: self // refers to value of i.self (self redefined)
+```
 
 ### Primary expressions
 
@@ -2060,11 +2097,12 @@ PrimaryExpr =
 	Operand |
 	PrimaryExpr Selector |
 	PrimaryExpr Index |
-	PrimaryExpr Arguments .
+	PrimaryExpr Arguments |
+	PrimaryExpr "..." .
 
 Selector       = "." (identifier | simple_string_lit) .
 Index          = "[" Expression [ "," ] "]" .
-Argument       = Expression .
+Argument       = [ identifier ":" ] Expression .
 Arguments      = "(" [ ( Argument { "," Argument } ) [ "," ] ] ")" .
 ```
 <!---
@@ -2226,6 +2264,53 @@ x: [1, 2] | *[3, 4]
 y: int | *1
 z: x[y]  // 4
 ```
+
+
+
+### Spread Operator (`...`)
+
+For a [primary expression](#primary-expressions) `x` that evaluates to a struct
+or list, the spread operator
+
+```
+x...
+```
+
+unifies all elements of `x` into the current context disregarding closedness
+rules implied by `x`, recursively.
+
+The spread operator can be used to extend a struct or list. Applying it to a
+value of any other type is a no-op: `x...` evaluates to `x` unchanged.
+
+<!-- TODO(explicitopen): rejecting `...` on a value which is neither a struct
+     nor a list is the intended future behavior. It is not an error today
+     because `cue fix` appends `...` to embedded references whose resolved
+     type it cannot know, so tightening this needs the fixer to know
+     resolved types. -->
+
+If `x...` is used within a definition, normal closedness rules apply after the
+`x` is unified with any other fields.
+
+```
+#Base: foo: int
+#Def: {
+    #Base... // Unified with other fields within #Def.
+    bar: int
+}
+d: #Def & {baz: 2} // Error: baz is not allowed
+
+// Define a type that matches a collection of derived types.
+#Animal: genus!: string
+
+#Dog: { #Animal..., genus: "canis", says: "bark" }
+#Cat: { #Animal..., genus: "felis", says: "meow" }
+
+// Use #AnyAnimal in schema to allow any value that derives from #Animal.
+#AnyAnimal: { #Animal..., ... }
+
+#Schema: animal: #AnyAnimal // Dog, Cat or any other #Animal.
+```
+
 
 ### Operators
 
@@ -2599,6 +2684,253 @@ c3: T({ a: {b: 0} })  // _|_  // field a.b does not unify (0 & 1..10)
 ```
 -->
 
+### Function literals
+
+Function literals are an experimental feature,
+enabled per file with the `@experiment(functions)` attribute.
+
+A function literal denotes a function value:
+an opaque value that computes a result from a set of arguments when called.
+A function value unifies with itself and with
+[function types](#function-types);
+unification with any other value results in bottom (`_|_`).
+
+```ebnf
+FuncLit    = ClosedFunc | OpenFunc .
+ClosedFunc = "func" "(" [ ParamList [ "," ] ] ")" [ "->" Expression ] [ ":" Expression ] .
+OpenFunc   = "func" "(" [ ParamList "," ] "..." [ "," ] ")" [ "->" Expression ] .
+ParamList  = ParamDecl { "," ParamDecl } .
+ParamDecl  = Param | Embedding .
+Param      = identifier [ "~" identifier ] [ "!" | "?" ] ":" Expression { attribute } .
+```
+
+A parameter declaration is a restricted form of [declaration](#structs):
+let clauses, attribute declarations, and comprehensions are not permitted,
+and a parameter's label must be a single, non-definition identifier —
+multi-part, string, pattern, dynamic, and definition labels are not permitted.
+The blank identifier `_` declares an anonymous positional parameter and may
+not be marked optional or required, as it could never be bound.
+An embedded expression also declares an anonymous positional parameter.
+An ellipsis must be the final element of the list and marks a bodyless
+signature as [open](#function-types). An open signature cannot have a body.
+Attributes attached to a parameter are treated like field attributes;
+they do not influence evaluation.
+
+The parameters name the values that a call supplies and may constrain them.
+The expression following `->` constrains the result of a call.
+The expression following the final `:` is the body,
+which defines the result of a call. A literal with a body is a closed
+function value. A literal without a body denotes a
+[function type](#function-types), which may be open or closed.
+
+Parameters take the following forms:
+
+```
+a: int      named: bound by position or by the label a
+a!: int     required: must be bound, by label only
+a?: int     optional: may be left unbound, bound by label only
+_~x: int    positional-only: bound by position, referenced as x in the body
+int         anonymous: bound by position, not referable from the body
+```
+
+A parameter that cannot be bound by label — anonymous or positional-only —
+may not follow a parameter that is declared with a name.
+A parameter that can be bound by position —
+any parameter not marked required (`!`) or optional (`?`) —
+may not follow a required or optional parameter.
+Parameter names must be unique within a parameter list.
+The dual form of a postfix alias may not be used in a parameter.
+
+Parameter constraints and the result constraint are resolved in the scope
+in which the literal is declared, not in the body's scope,
+and may refer to a field of an enclosing scope.
+Referring to another parameter is reserved for a possible future extension
+and is an error.
+Within the body, parameters shadow fields of enclosing scopes.
+A function value captures the scope in which its literal is declared.
+
+```cue
+@experiment(functions)
+
+base:  10
+sum:   func(a: int, b: int) -> int: a + b
+add1:  func(_~x: int) -> int: x + 1
+pick:  func(a: int | *5) -> int: a
+key:   func(a!: int, b?: int) -> int: a
+scale: func(a: int) -> int: a * base // captures base
+
+limit: int | *7
+f:     func(a: string, b: limit) -> int: b // b's constraint refers to limit
+out:   f("shadow") // int | *7
+```
+
+Referring to a parameter from another parameter's constraint or from the
+result constraint is an error:
+
+```cue !
+@experiment(functions)
+
+f: func(x: int, y: >x) -> int: x
+```
+<!-- error:
+cannot refer to parameter "x" in a parameter constraint or return type:
+    3:22
+-->
+
+Parameters that can only be bound positionally must precede named parameters:
+
+```cue !
+@experiment(functions)
+
+bad: func(a: int, int) -> int: 1
+```
+<!-- error:
+positional parameter after named parameter:
+    3:19
+-->
+
+A parameter that can be bound positionally may not follow a
+required or optional parameter:
+
+```cue !
+@experiment(functions)
+
+bad: func(a?: int, b: int) -> int: b
+```
+<!-- error:
+positional parameter after named parameter:
+    3:20
+-->
+
+
+### Function types
+
+A function literal without a body denotes a function type.
+Calling a function type is an error.
+A trailing ellipsis marks a signature as open:
+an open type is a partial signature that admits parameters
+beyond the ones it declares.
+Without an ellipsis a signature is closed.
+An open type becomes callable only by unification with a closed function
+value or builtin that supplies its complete parameter slots and
+implementation. Unifying it with a closed bodyless signature still produces
+a function type and does not make it callable.
+
+Unifying two function types aligns every positionally bindable parameter —
+anonymous, positional-only, or plain named — one-to-one with the
+positionally bindable parameter at the same ordinal.
+For each aligned pair, an absent plain label is compatible with a present one,
+and the effective parameter acquires that label.
+If both parameters have plain labels, the labels must be identical;
+different labels for the same positional ordinal are incompatible.
+The same plain label may not identify different positional ordinals.
+A name-only parameter, marked required (`!`) or optional (`?`), matches by
+label.
+The result retains both signatures; the constraints of matched parameters
+and the result constraints apply jointly.
+Matched parameters must agree on requiredness.
+A parameter declared in only one of the types is an error
+unless the other type is open or the unmatched parameter is optional.
+The unified type is open only if both types are open.
+
+A plain name is part of the callable contract in addition to the parameter's
+position. When a signature is attached to a callable value by unification,
+its plain name supplies the label of a matched positional parameter that was
+otherwise unnamed. A signature may repeat that same label, but it may not
+supply a different label for the parameter.
+
+Unifying a function type with a function value tightens the value:
+the result is the function value with the type's parameter constraints
+and result constraint enforced on every call.
+Each parameter of the type must be declared by the value unless the unmatched
+parameter is optional,
+and unless the type is open,
+each parameter of the value must be declared by the type or be optional.
+Parameter constraints follow the same one-to-one parameter alignment as
+call labels.
+Whether a constraint of the type is compatible with the value
+is not decided at unification time:
+constraints are enforced when the tightened value is called,
+in the scope in which the type was declared.
+
+Builtin functions have a fixed sequence of positional parameter slots.
+This raw shape is not itself a CUE function type
+and does not form a second, independently closed parameter list.
+Unifying a function type with a builtin matches each positionally bindable
+parameter of the type to the builtin slot at the same position
+and records the type as an additional constraint on the builtin.
+The type's position-backed arity and closedness are checked against the
+builtin slots.
+A further attached type must also be compatible with the types already
+attached, but its positionally bindable parameters refer to those same slots.
+At each slot, an attached plain label may name an otherwise unnamed slot or
+repeat its existing label; a different plain label is incompatible.
+A required name-only parameter cannot be satisfied by a builtin.
+An unmatched optional name-only parameter may be attached because no call
+needs to bind it, but it contributes neither a raw slot nor a callable label.
+If another attached signature exposes the same label for a positional slot,
+the optional parameter's constraint follows that slot without adding a second
+slot or label.
+
+A plain parameter name in an attached type also names its matched builtin
+slot for calls. Before invoking the builtin, a labeled argument is resolved
+through the attached types and passed in that slot's positional argument.
+Compatible attached types must use the same plain label for a slot, if any;
+an unnamed type does not remove an existing label.
+Generated standard-library functions ordinarily carry declared CUE
+signatures attached in this way, so their parameter names are callable by
+label. Raw predeclared builtins, hand-registered functions without an
+attached signature, and bare validators do not acquire labels directly.
+At this experimental stage, a multi-parameter builtin's validator-constructor
+form remains a separate positional-only call path. Labels and constraints from
+an attached full-call signature are not projected into that constructor form.
+
+```cue
+@experiment(functions)
+
+import "strings"
+
+a: strings.Repeat("ab", count: 2) // "abab"
+
+// The package declaration names this slot s. A compatible anonymous type
+// constrains that positional slot without replacing its contract label.
+b: (func(string) -> string) & strings.ToUpper
+c: b("hi")      // "HI"
+d: b(s: "bye") // "BYE"
+
+// A second, different contract label for the slot is incompatible.
+e: (func(text: string) -> string) & strings.ToUpper // _|_
+```
+
+```cue
+@experiment(functions)
+
+T: func(a: int, ...) -> number // open: admits further parameters
+U: func(a: int) -> number      // closed
+
+f: T & (func(a: int, b: int) -> int: a + b)
+x: f(1, 2) // 3
+y: f(1)    // _|_ // missing argument b
+
+g:  U & (func(a: int) -> int: a)          // exact match
+g1: g(1)                                  // 1
+h:  U & (func(a: int, b?: int) -> int: a) // extra parameter is optional
+fromUnnamed: U & (func(_~v: int) -> int: v) // unnamed slot acquires label a
+r1: fromUnnamed(a: 1)                       // 1
+r2: fromUnnamed(2)                          // 2
+e1: U & (func(b: int) -> int: b)            // _|_ // labels a and b conflict
+e2: U & (func(a: int, b: int) -> int: a) // _|_ // b not admitted by closed U
+
+// Constraints are enforced per call, in the type's scope.
+s:  T & (func(a: string) -> int: 1)
+e3: s(1) // _|_ // conflicting values int and string
+
+Narrow: func(input: <10) -> int
+narrowed: Narrow & (func(_~x: int) -> int: x)
+e4: narrowed(input: 15) // _|_ // input's constraint follows slot 0
+```
+
+
 ### Calls
 
 Calls can be made to core library functions, called builtins.
@@ -2621,6 +2953,103 @@ to the function and the called function begins execution.
 The return parameters
 of the function are passed by value back to the calling function when the
 function returns.
+
+With the `functions` experiment, values of
+[function literals](#function-literals) may be called as well.
+An argument is positional or labeled;
+positional arguments must precede labeled arguments.
+Positional arguments bind the function's positional parameters in order;
+a labeled argument binds the effective contract label of a parameter.
+That label may be declared by the callable value itself or supplied by a
+compatible attached signature to an otherwise unnamed positional parameter.
+Arguments are evaluated in the scope of the caller.
+
+A call results in bottom (`_|_`) if it
+binds a parameter both by position and by label,
+labels a parameter that is unknown or not bindable by label,
+supplies more positional arguments than there are positional parameters,
+or leaves a required parameter unbound.
+Any other parameter may be left unbound if it is optional or
+if its constraint has a single default value.
+
+The result of a call is the unification of the body and the result
+constraint, evaluated with each parameter bound to the unification of
+its constraint and its argument, if any.
+
+```cue
+@experiment(functions)
+
+sum:  func(a: int, b: int) -> int: a + b
+key:  func(a!: int, b?: int) -> int: a
+pick: func(a: int | *5) -> int: a
+
+p: sum(1, 2)       // 3
+l: sum(a: 1, b: 2) // 3
+m: sum(1, b: 2)    // 3
+k: key(a: 4)       // 4
+d: pick()          // int | *5
+
+e1: sum(1, 2, 3)            // _|_ // too many positional arguments
+e2: sum(a: 1, b: 2, c: 3)   // _|_ // unknown argument c
+e3: sum(1, a: 2)            // _|_ // argument a provided by position and label
+e4: key(4)                  // _|_ // missing required argument a
+e5: sum(1)                  // _|_ // missing argument b
+e6: (func() -> string: 1)() // _|_ // conflicting values 1 and string
+```
+
+A call whose argument list ends in `...` is a partial application:
+it binds the given arguments and yields a function over the remaining
+parameters instead of evaluating the body.
+The bound arguments are retained;
+a later call combines them with its own arguments,
+and the body is evaluated once no parameter is left unbound.
+Partial applications may be chained.
+
+At this experimental stage, a function type must be attached before partial
+application. Unifying a function type with an already partially applied value
+is an error. A signature attached first remains in force, and its contract
+labels and constraints carry across to the remaining call surface.
+
+```cue
+@experiment(functions)
+
+add: func(a: int, b: int, c: int) -> int: a + b + c
+
+f: add(1, ...)    // a function of b and c
+g: f(2, ...)      // a function of c
+x: g(3)           // 6
+y: add(a: 1, ...)(2, 3) // 6
+```
+
+Recursion, direct or mutual, does not terminate in finite structure
+and results in a structural [cycle](#cycles) error.
+Calls do not otherwise constitute cycles:
+calls may be nested and repeated,
+including nested calls to the same function.
+
+```cue
+@experiment(functions)
+
+fib: func(n: int) -> int: fib(n-1) + fib(n-2)
+f:   fib(5) // _|_ // structural cycle
+
+twice: func(n: int) -> int: n + n
+t:     twice(twice(twice(2))) // 16
+```
+
+A positional argument may not follow a labeled argument:
+
+```cue !
+@experiment(functions)
+
+sum: func(a: int, b: int) -> int: a + b
+out: sum(a: 1, 2)
+```
+<!-- error:
+positional argument after labeled argument:
+    4:16
+-->
+
 
 
 ### Comprehensions
@@ -2768,9 +3197,29 @@ len([1, 2, ...])     2
 
 ### `close`
 
-The builtin function `close` converts a partially defined, or open, struct
-to a fully defined, or closed, struct.
+The builtin function `close` converts a partially defined—or open—struct
+to a fully defined—or closed—struct.
 
+### `__closeAll`
+
+The builtin function `__closeAll` recursively converts a partially defined,
+or open, struct to a fully defined, or closed, struct. It is a no-op for values
+that are not a struct or list.
+
+This builtin exists for the rewrites `cue fix` applies when migrating code
+written before language version v0.18.0: it is used instead of `__reclose` if
+it is known for sure a struct needs to be reclosed. It should not be used by
+users directly.
+
+### `__reclose`
+
+The builtin function `__reclose` closes a literal struct if any of its
+embedding that used a spread operator was closed. It is a no-op for all other
+values.
+
+This builtin exists for the rewrites `cue fix` applies when migrating code
+written before language version v0.18.0 to the semantics of that version. It
+should not be used by users directly.
 
 ### `and`
 

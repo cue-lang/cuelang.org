@@ -73,7 +73,7 @@ $ cue eval -s -e output
     type:      "a string"
     isANumber: false
 }, {
-    source: ["some", "list"]
+    source:    ["some", "list"]
     type:      "a list"
     isANumber: false
 }, {

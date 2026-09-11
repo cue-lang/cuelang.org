@@ -127,7 +127,6 @@ jobs:
 $ cue vet -c check.cue .github/workflows/deploy-to-ecs.yml -d 'Workflow'
 jobs.deploy."runs-on": conflicting values "ubuntu-latest" and "ubuntu-20.04":
     .github/workflows/deploy-to-ecs.yml:22:14
-    ./check.cue:6:3
     ./check.cue:7:16
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -260,7 +259,7 @@ App: {
 	name!:      !~#"\."# // no dots
 	memory:     >=1024 & <10240
 	replicas:   >=2
-	replicaMem: memory/replicas & >=1024
+	replicaMem: memory / replicas & >=1024
 }
 
 Config: {
@@ -287,7 +286,8 @@ output: Config & {
 	region:       deployment.region
 	clusterName:  deployment.cluster
 	id: strings.ToLower(strings.Join(
-		[appName, clusterName, region], "."))
+		[appName, clusterName, region], "."
+	))
 }
 {{< /code-tab >}}
 {{< code-tab name="values.yml" language="yaml" area="left" >}}
@@ -351,7 +351,7 @@ App: {
 	name:       !~#"\."# // no dots
 	memory:     >=1024 & <10240
 	replicas:   >=2
-	replicaMem: memory/replicas & >=1024
+	replicaMem: memory / replicas & >=1024
 }
 
 Config: {
@@ -365,7 +365,7 @@ Config: {
 {{< code-tab name="TERMINAL" language="" area="top" type="terminal" codetocopy="Y3VlIHZldCAtYyAuIHZhbHVlcy55bWwgLWQgJ3sgYXBwOiBBcHAgfSc=" >}}
 $ cue vet -c . values.yml -d '{ app: App }'
 app.replicaMem: invalid value 768.0 (out of bound >=1024):
-    ./policy.cue:9:32
+    ./policy.cue:9:34
     ./policy.cue:9:14
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -421,7 +421,7 @@ job: {
 
 // This template's constraints are unified with
 // each member of the job struct.
-job: [Name=_]: {
+job: [_]~(Name,_): {
 	name: Name
 	// command can be set, but has a default.
 	command: string | *"exec \(Name)"

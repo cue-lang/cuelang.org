@@ -129,10 +129,10 @@ pipelines: pipeline: steps: [{
 	command: "echo 'Tests'"
 	label:   ":hammer:"
 },
-	"wait", {
-		trigger:  "dependent-pipeline-example-deploy"
-		label:    ":rocket:"
-		branches: "master"
+"wait", {
+	trigger:  "dependent-pipeline-example-deploy"
+	label:    ":rocket:"
+	branches: "master"
 
 ==> .buildkite/pipeline.deploy.cue <==
 package buildkite
@@ -212,7 +212,7 @@ package buildkite
 	steps!: [...]
 	env?: [string]: string
 	agents?: {[string]: string} | [..._#kv]
-	_#kv: =~".+="
+	_#kv:    =~".+="
 	notify?: [...]
 }
 {{{end}}}
@@ -280,7 +280,7 @@ command: regenerate: {
 
 		clean: {
 			glob: file.Glob & {
-				glob: path.Join([_pipelineDir, "*.yml"], _goos)
+				glob:  path.Join([_pipelineDir, "*.yml"], _goos)
 				files: [...string]
 			}
 			for _, _filename in glob.files {
@@ -292,7 +292,7 @@ command: regenerate: {
 			for _pipelineName, _pipeline in pipelines
 			let _filename = _pipelineName + ".yml" {
 				"Generate \(_filename)": file.Create & {
-					$after: [for v in clean {v}]
+					$after:   [for v in clean {v}]
 					filename: path.Join([_pipelineDir, _filename], _goos)
 					contents: "# \(_donotedit)\n\n\(yaml.Marshal(_pipeline))"
 				}

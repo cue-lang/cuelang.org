@@ -14,8 +14,8 @@ Each combination of the pattern and a constraint that it applies is called a
 [**pattern constraint**]({{< relref "docs/tour/basics/folding-structs" >}}).
 Currently, patterns must either be instances of `string`, or must be `_`.
 
-Including an alias in the pattern's square brackets makes the label of each
-matched field available inside the template.
+Attaching an alias to the pattern makes the label of each matched field
+available inside the template.
 
 <!--more-->
 
@@ -29,7 +29,7 @@ job: {
 	postgres: replicas: 5
 }
 
-job: [Name=_]: {
+job: [_]~(Name,_): {
 	name:     Name // Name is an alias.
 	command:  string | *"exec \(Name)"
 	replicas: uint | *1

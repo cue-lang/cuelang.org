@@ -214,7 +214,7 @@ cmp stdout out
 }
 
 #Config: {
-	M=metadata: #Metadata
+	metadata~(M): #Metadata
 
 	serviceA: #BaseConfig & {
 		metadata: M

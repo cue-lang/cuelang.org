@@ -30,7 +30,7 @@ aList: [1, 2.0, 3, "four", 5, 5.0, false,
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
 $ cue vet -c
-aList: invalid value [1,2.0,3,"four",5,5.0,false,{a:1,b:"2",c:false},{a:1,b:"2",c:true},{a:1,b:2,c:false},{a:1,b:"2",c:false}] (does not satisfy list.UniqueItems): equal values at position 7 and 10:
+aList: invalid value [1,2.0,3,"four",5,5.0,false,{a:1,b:"2",c:false},{a:1,b:"2",c:true},{a:1,b:2,c:false},{a:1,b:"2",c:false}] (does not satisfy list.UniqueItems): equal value (5) at position 4 and 5:
     ./file.cue:5:8
     ./file.cue:6:8
 {{< /code-tab >}}

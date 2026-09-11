@@ -32,13 +32,11 @@ message: "Hello, \(#Name)!"
 	// ...
 }
 
-valid: #A & {n: 3}
+valid:   #A & {n: 3}
 invalid: #A & {N: 3}
 -- out --
 message: "Hello, world!"
-valid: {
-    n: 3
-}
+valid: n: 3
 invalid: {
     N: _|_ // invalid.N: field not allowed
     n: int

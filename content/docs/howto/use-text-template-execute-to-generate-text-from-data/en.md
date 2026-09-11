@@ -64,7 +64,7 @@ data: {
 		complete: false
 	},
 	]
-	complete: [for t in tasks if t.complete {t}]
+	complete:   [for t in tasks if t.complete {t}]
 	incomplete: [for t in tasks if !t.complete {t}]
 }
 -- out --

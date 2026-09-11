@@ -41,10 +41,10 @@ for k2, v2 in b {
 }
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-n1: 1
-n2: 2
-a: [1, 2]
-b: [3, 4]
+n1:   1
+n2:   2
+a:    [1, 2]
+b:    [3, 4]
 m0_0: 4
 m0_1: 5
 m1_0: 5
@@ -70,7 +70,7 @@ if len(a) == 0 {
 }
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-a: [1, 2, 3]
+a:  [1, 2, 3]
 n3: 3
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -90,7 +90,7 @@ let x = v + 4 {
 }
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-a: [1, 2, 3]
+a:  [1, 2, 3]
 n5: 5
 n6: 6
 n7: 7
@@ -125,7 +125,7 @@ list: [
 ]
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-a: [1, 2, 3]
+a:    [1, 2, 3]
 list: [0, 2, 4, 6, 10, 20, 11, 12, 13]
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -139,7 +139,7 @@ CUE has no switch or if-else construct, but these can be simulated using lists.
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue" area="top-left" >}}
 mem: 2Gi
-footprint: [// select first
+footprint: [ // select first
 	if mem < 1Gi {"small"},
 	if mem < 4Gi {"medium"},
 	"large",
