@@ -173,6 +173,8 @@ jobs:
         run: npm install
         working-directory: hugo
       - name: 'tip.cuelang.org: Configure the site to use the tip of cue-lang/cue'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |-
           sha=$(git ls-remote https://github.com/cue-lang/cue refs/heads/master | cut -f1)
           _scripts/tipUseAlternativeCUE.bash "$sha"

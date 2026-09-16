@@ -498,6 +498,12 @@ _useTipOfCUE: githubactions.#Step & {
 	// Resolve the tip of cue-lang/cue on GitHub, where the public repository
 	// lives, and pin the site to that commit rather than to "master": GOPROXY
 	// can lag behind GitHub by up to 30 minutes.
+	//
+	// The script asks api.github.com whether the commit has landed, via gh, so
+	// give gh a token: unauthenticated requests are limited to 60 per hour per
+	// IP, and runners share their egress IP with other tenants.
+	env: GH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
 	run: """
 		sha=$(git ls-remote https://github.com/cue-lang/cue refs/heads/master | cut -f1)
 		_scripts/tipUseAlternativeCUE.bash "$sha"
