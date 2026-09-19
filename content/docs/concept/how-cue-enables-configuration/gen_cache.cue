@@ -7,11 +7,11 @@ package site
 					page: {
 						cache: {
 							code: {
-								validate:           "4YtUHfOyJgXoa7jcPCj4Z2ASps2OhYVOBKhpnH8CPZU="
-								"type checking":    "VSPWW+phN5oYvH6OygjlX6FuLWBaR81ilwg9RG5TaJM="
-								"generate success": "axvqqkKeTfmDH1/+iUWEtQRlmyDPqDICVyqjQlNrplw="
-								"generate failure": "j4wPUmgQyUhoZxqyrIixMJ4D4Cth0BKJuk8+F8ZC350="
-								templates:          "IoUXJ9CGbRQddBACHjad36L8hGkcUno7tCxH/z0VCRI="
+								validate:           "97GJNSXftyLwNok8ZHjQ5X/A0Ub0X65l/ohNlulKpjE="
+								"type checking":    "v91pnUu8TW6McBpFC390jqV0UIvwmw4sMGiV7/XTICc="
+								"generate success": "FKoOH6O8Yv/DKcuuv1LvvDXNvAAjuVzX3ej/w4t33wQ="
+								"generate failure": "a8oU0ucHDNqcvC16xU7ZEv5Q9EWQK8pKz48pKlkNlng="
+								templates:          "2B2xuSgYfrDrV/9+Ors8DXrP8bIOA1InouxcQqVRddc="
 							}
 						}
 					}

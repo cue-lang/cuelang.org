@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "8LSDCFUVK0OC7V4IUFSHS8UA4FU23BJLRO254RPDDJ0VCFI47VM0===="
-									scriptHash: "UE8NQHULQCIGKU9J3AMCU0MP5BD9FHBLVK2I8QEPV21E665E89CG===="
+									hash:       "DJLQ1QDC99186OTR95DN6A0FPR778NUEP1M8SMTE5NLVF0VMG7S0===="
+									scriptHash: "OOP3S9BAR0C7IQRAQU0OT18GJO956TBTJP4LMQ9PKEG42MQ9AG0G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.2.0.20260918143709-50e1f64b6460:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -35,15 +35,17 @@ package site
 												change a file or package to use the new, experimental semantics. Experiments
 												are enabled on a per-file basis.
 
-												For example, to enable the "explicitopen" experiment for all files in a package,
-												you would run:
+												For example, to enable the "explicitopen" experiment for all files in a
+												package whose module is on a language version before v0.18.0, which is where
+												that experiment became stable, you would run:
 
 												\tcue fix . --exp=explicitopen
 
 												For this to succeed, your current language version must support the experiment.
 												If an experiment has not yet been accepted for the current version, an
 												@experiment attribute is added in each affected file to mark the transition as
-												complete.
+												complete. An experiment which is already stable for that version needs no
+												fix, as files use it without an attribute, and asking for one is an error.
 
 												The special value --exp=all enables all experimental features that apply to the
 												current version.

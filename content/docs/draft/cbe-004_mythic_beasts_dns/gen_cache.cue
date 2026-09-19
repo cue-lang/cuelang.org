@@ -7,16 +7,16 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"1": "AMlXDFprFVPgQnTQLDTvENfXffUjpWwBokUrKe+gcDI="
-								"2": "nm6JLJt9RZRp04VH4wz+ZuVi1RDToG18xDLpCajLMnM="
-								"3": "US22+sITqfj2peh4i9RdDwUG2etH+LpFT6zZlU9eU1M="
-								"4": "GIikdz9uiu3AKlrTuXq8ZkagME5ZTjoGGfmpV1Gb6N4="
-								"5": "wFjqY5IErexboFxCEPH99rpJvv5tJBZMwDw1JgXdUkc="
-								"6": "lUqb1eTADonKTosbf43Wi5pUdngQy/LT8Gqc4LFcKN0="
+								"1": "J+VI4u3q2x0QJ2mOfOGM7N9/rYvP9sc5JDEQw1HSQFw="
+								"2": "fi/asNUubH/W0PCv14HtaFX32JLPxfErNr6dm68Mdzk="
+								"3": "I1e1KYt/mOPwaPFl4vkVbgW1C/Ooxu5QsjDVnDjm63M="
+								"4": "moIfBUY8CT9DyZhU+YS4QVUeDa3q5seQNOM2vJ3GjC0="
+								"5": "3GhTgys+KgTWBTb9gUjw6DyCpHNBGta158rwx8Fsxs0="
+								"6": "vzqcSzehmvu9iVykGLYP31nVq3JRw+TCicPuFqy0pGw="
 							}
 							multi_step: {
-								hash:       "OHQLVL6VRQO12JGHROJKTFT4A7OA22CSDF01IO8IVOT8AO984F7G===="
-								scriptHash: "TBSD7E08FTER7Q7L3RJVPMEI6TPH95PCHEEJ47GV2E8D69I7L7DG===="
+								hash:       "E01E5LG5GJGN1T5ET6EM30B8JKV2UFA4KFFK0DK8RMUDUG83A3VG===="
+								scriptHash: "FSA0I8OK9NEDVD22VOU707U926VUFSSTASVP4GE4BF61L38H8B40===="
 								steps: [{
 									doc: """
 											# Actual command in CUE-By-Example guide:

@@ -7,29 +7,29 @@ package site
 					page: {
 						cache: {
 							code: {
-								"intro: references": "5GWibfhqejP9D5JCavKs0UjkNSj5M2XHL9Dx8JZ4/2Y="
+								"intro: references": "JDD7Fv0/mszAhozNr8V0fARSVYSgnN3+e2+GPaaNsvw="
 							}
 							upload: {
-								"baseline input":   "Y3bney8PxMl7C2Df6kQNYIbfwsLjfPB8xWH3W6xzblE="
-								"baseline output":  "gujUSWGWT7fzdJC1bSDl8NO0z8UjXKlCKECf7sioKkQ="
-								schema:             "CGZ1yto2peAzBTsUYZLB7w8VaUtGisd5hdy6PA+jmek="
-								"schema reupload":  "HNdujOTgIPV7KY2AjR6S5/CDuEGrAdKJlybOmnGniU0="
-								"schema output":    "Ty4GqtrayZn52jhT3nBsJMyoMU7SmQ70aJkLYzlw9DA="
-								defaults:           "0WiXm5yUm9lpGfwWuf/R1JyqdhJbvd/sxan/MInRgmQ="
-								"defaults output":  "IkD3lKjSHsN2k9p9sQOWGYT9MQRLA3WARVhnQgwzj2k="
-								name:               "yMIvdGwSmBDqmNfMadJrZ95vWn7/jmbgVfRPJJg1cdU="
-								"name output":      "Hvi7gVfLDy/bnf7IO1rifTm+lB1doShZpeYfysWkjBU="
-								"extra app":        "hezwWJbPvI12j7lzksONXAYnGLG54VBdaxKViR3MwfA="
-								"extra app output": "MI/I/ypQN1rwicnToQfbgm+Lay8E2pasd3bs+9lmAbU="
-								"pre-trim source":  "Pies9OoxgGIw0n1gx5Dre0D2g+gT495eN4wyRycUlE0="
-								"post-trim alpha":  "OHjlZ3xgcgAiNBUHJ+gTUTCOuXXmX2C8hEXgYdpO2A8="
-								"post-trim beta":   "IVKOJlxQhDHOilgtv7ptNg7YZyKtCkF0rOKkMOUd4ZU="
-								"post-trim gamma":  "T1sZNYYmM/IeB9Pq9vfqhEE6kj4xTtQo2wneRlzqfuM="
-								"post-trim output": "P7qdela9hnQ5klpeHRTQAEikGEdnwVfjRKJP6HudVU8="
+								"baseline input":   "0NelxzVpL7JlF8/LziSMeIIMLlnWqOmg0HKx5quOLm8="
+								"baseline output":  "DTvJlIOD7SJva4bOrj8I1A1eCHgkxpCHADpOtwrGcDc="
+								schema:             "mYhOkrDaTdc7QHZ3N0cycBIuOn/sPhN/MXO7Z1c9i6M="
+								"schema reupload":  "5bTEeEwzzPcBxRTWhFLuZn01+LCuc9/y1a6v6nK996w="
+								"schema output":    "mpU4WeNAIOcf/ixNecjNz9jq2XbfpZyhNmL9SDbk580="
+								defaults:           "fUwXE12tberoOG8hsVJjesFvdr6AyUjowN3JWtm8aqg="
+								"defaults output":  "YnUJqXruCfTeNngUioH1hL0LqaKnIN9CH3fBiAuxihw="
+								name:               "4f1LpIkubLmnXu1PvTUO0L27G1oz4Ym5IM2Kb33hbHk="
+								"name output":      "p2Sunj4Yz5KisZg29A3aFsBGkpqcF8up5Yb5b0hwEPQ="
+								"extra app":        "lPaQfg/MoyTpdvoe2uMVN1s/1jLz9XdcVnqTTDxjE5c="
+								"extra app output": "udPhLim6994W/aCprlPqTRbX1F/b+jgfusUETr+BauA="
+								"pre-trim source":  "1O/KPVGrbSH8yHy2yb9FfoYUJal4oSEhlNmjSkR7NKk="
+								"post-trim alpha":  "2tFXSOewVOyuaag90TnI24PVv6CUOaDhGFWCfGYiu/4="
+								"post-trim beta":   "tCf/F4sUhqBBxrSz5LvdzhuTyBhaXOvqfy4739ZjSx0="
+								"post-trim gamma":  "7PMvp1b+j1Sp6fLkUpinuVg1+u5EJRQ6k9dOnfy6BNA="
+								"post-trim output": "VeG0FsdD/2cVgoE+oN78Zo3ioWj8MEw4tKBk0aiBT7Q="
 							}
 							multi_step: {
-								hash:       "9U8NI3P4CMPPE53CO1CNE8Q73DC5T802HSB7UUC318QTRT0TADAG===="
-								scriptHash: "KOHOSQ50PPFAKGQVSRD4I3Q7TU957F05QL50M7RAI9OC7ASE4J9G===="
+								hash:       "N4UVO088VQSA8GCFMOV3DCTS1RGJLIIEKA3H78F42TAUQAVFTCDG===="
+								scriptHash: "JIPADP79TIMUIMVVO8STGAUSB5BK8PD9HO8VR1AGQAL09MO36AU0===="
 								steps: [{
 									doc:      ""
 									cmd:      "cue export -o configuration.yml"
