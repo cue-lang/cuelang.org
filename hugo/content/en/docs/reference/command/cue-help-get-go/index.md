@@ -59,7 +59,9 @@ Go structs are converted to cue structs adhering to the following conventions:
 	  accordingly, when possible.
 
 	- Maps translate to a CUE struct, where all elements are constrained to
-	  be of Go map element type. Like for JSON, maps may only have string keys.
+	  be of Go map element type. Like for JSON, map keys must be strings,
+	  integers, or types implementing MarshalText or UnmarshalText, and are
+	  all translated to string labels.
 
 	- Pointers translate to a sum type with the default value of null and
 	  the Go type as an alternative value.

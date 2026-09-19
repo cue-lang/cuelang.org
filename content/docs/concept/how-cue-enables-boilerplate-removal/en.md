@@ -327,7 +327,7 @@ package config
 
 import "strings"
 
-app: [Name=_]: #App & _defaults & {
+app: [_]~(Name,_): #App & _defaults & {
 	name: strings.ToTitle(Name)
 }
 
@@ -402,7 +402,7 @@ package config
 
 import "strings"
 
-app: [Name=_]: #App & _defaults & {
+app: [_]~(Name,_): #App & _defaults & {
 	name: strings.ToTitle(Name)
 }
 
@@ -498,7 +498,7 @@ package config
 
 import "strings"
 
-app: [Name=_]: #App & _defaults & {
+app: [_]~(Name,_): #App & _defaults & {
 	name: strings.ToTitle(Name)
 }
 

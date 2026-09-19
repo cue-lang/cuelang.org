@@ -50,7 +50,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{{end}}}
 {{<columns-separator>}}
@@ -78,7 +78,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{{end}}}
 {{<columns-separator>}}
@@ -148,7 +148,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{{end}}}
 {{<columns-separator>}}
@@ -177,7 +177,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{{end}}}
 {{<columns-separator>}}

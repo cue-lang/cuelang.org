@@ -146,8 +146,8 @@ Inspect the generated CUE code:
 package main
 
 #Config: {
-	vals: [...#Val] @go(Vals,[]Val)
-	level: int @go(Level)
+	vals:  [...#Val] @go(Vals,[]Val)
+	level: int       @go(Level)
 }
 
 #Val: {

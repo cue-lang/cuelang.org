@@ -271,7 +271,7 @@ It is an error for any values passed to these operators to be invalid.
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue" area="top-left" >}}
-a: {}
+a:   {}
 err: true || a.bar
 {{< /code-tab >}}
 {{< code-tab name="ERR" language="err" area="top-right" type="terminal" >}}
@@ -309,10 +309,10 @@ sqrt: math.Sqrt(2)
 pi:   math.Pi
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-path: "path/to/dir"
+path:  "path/to/dir"
 split: ["path/to/", "dir"]
-sqrt: 1.4142135623730951
-pi:   3.14159265358979323846264338327950288419716939937510582097494459
+sqrt:  1.4142135623730951
+pi:    3.14159265358979323846264338327950288419716939937510582097494459
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

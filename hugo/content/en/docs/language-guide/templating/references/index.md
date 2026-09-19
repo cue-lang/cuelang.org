@@ -71,11 +71,11 @@ allowing those to be associated with an identifier.
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue" area="top-left" >}}
-X="a-b": 1 // a-b must be quoted
-b:       X
+"a-b"~(X): 1 // a-b must be quoted
+b:         X
 
-Y=c: 2
-d:   Y // equivalent to d: c
+c~(Y): 2
+d:     Y // equivalent to d: c
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 "a-b": 1
@@ -106,12 +106,14 @@ use value aliases.
 
 {{< code-tabs >}}
 {{< code-tab name="CUE" language="cue" area="top-left" >}}
-a: X={
+a: {
+	let X = self
 	bar: X.foo
 }
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 a: {
+    let X = self
     bar: X.foo
 }
 {{< /code-tab >}}

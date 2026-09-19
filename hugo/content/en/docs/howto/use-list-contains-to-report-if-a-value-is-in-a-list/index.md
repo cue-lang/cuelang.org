@@ -22,7 +22,7 @@ import "list"
 
 // list.Contains searches through a list and reports if the given value is an
 // element of that list.
-containsIntTrue: list.Contains( [1, 2, 3, 4, 5], 4)
+containsIntTrue:  list.Contains([1, 2, 3, 4, 5], 4)
 containsIntFalse: list.Contains([1, 2, 3, 4, 5], 99)
 
 // _source is the example list searched through in this guide.
@@ -40,9 +40,9 @@ containsStringFalse: list.Contains(_source, "TWO")
 // The tracking issue for these rules is
 // https://github.com/cue-lang/docs-and-content/issues/49
 containsStructFalse: list.Contains(_source, {asInt: 3})
-containsStructTrue: list.Contains( _source, {asInt: 3, asString: "three"})
-containsListTrue: list.Contains( _source, [4, "four"])
-containsListFalse: list.Contains(_source, ["four", 4, 4.0])
+containsStructTrue:  list.Contains(_source, {asInt: 3, asString: "three"})
+containsListTrue:    list.Contains(_source, [4, "four"])
+containsListFalse:   list.Contains(_source, ["four", 4, 4.0])
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval

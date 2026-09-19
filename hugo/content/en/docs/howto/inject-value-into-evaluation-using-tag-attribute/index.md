@@ -119,8 +119,8 @@ A: [
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgLXQgYT0nWyJmb28iLCAiYmFyIl0n" >}}
 $ cue eval -t a='["foo", "bar"]'
 asString: "[\"foo\", \"bar\"]"
-asList: ["foo", "bar"]
-A: ["foo-with-suffix", "bar-with-suffix"]
+asList:   ["foo", "bar"]
+A:        ["foo-with-suffix", "bar-with-suffix"]
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

@@ -58,7 +58,8 @@ a.b: field not allowed:
 
 ## Extending Schemas
 
-Schemas can combine with other schemas by using embedding.
+Schemas can combine with other schemas by embedding them with the trailing
+`...` operator, which opens the embedded schema.
 This circumvents the usual limitation that no new fields can be added to a
 definition.
 
@@ -70,27 +71,23 @@ definition.
 	name?: string
 }
 #Mammal: {
-	#Base // embedded
+	#Base... // embedded
 	lungCapacityL: number
 }
 #Dog: {
-	#Mammal // embedded
+	#Mammal... // embedded
 	kind!: "dog"
 	house: string
 }
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
 #Base: {}
-#Animal: {
-    kind!: string
-}
-#Mammal: {
-    lungCapacityL: number
-}
+#Animal: kind!:         string
+#Mammal: lungCapacityL: number
 #Dog: {
+    lungCapacityL: number
     kind!:         "dog"
     house:         string
-    lungCapacityL: number
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}
@@ -129,8 +126,8 @@ literal map.
 {{{end}}}
 
 One cannot simply use `&` for this as it would trigger the closedness check.
-Essentially, embedding allows recursively disabling the closedness check for a
-definition.
+Essentially, the `...` operator disables the closedness check for the schema
+it follows.
 
 {{{reference "cue-and-jsonschema"}}}
 

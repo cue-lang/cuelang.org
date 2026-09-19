@@ -20,7 +20,7 @@ package example
 
 import "list"
 
-sorted: ["A", "B", "C"]
+sorted:   ["A", "B", "C"]
 unsorted: ["B", "C", "A"]
 
 sorted:   list.IsSortedStrings

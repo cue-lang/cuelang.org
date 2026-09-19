@@ -29,7 +29,7 @@ import "list"
 
 // both data fields are lists of numbers
 good_list: [...number]
-bad_list: [...number]
+bad_list:  [...number]
 
 // We introduce a hidden CUE field for each list
 // we want to check. Each hidden field unifies

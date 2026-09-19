@@ -111,7 +111,7 @@ import "strings"
 
 	// This is a very long comment for some reason, which will keep going and going
 	// past the point where it should probably have stopped.
-	children?: [...string]
+	children?:     [...string]
 	"home phone"?: string @deprecated()
 	...
 }
@@ -291,9 +291,9 @@ Let's start with a CUE definition:
 @experiment(explicitopen)
 
 #Team: {
-	name: string
+	name:    string
 	members: [...string]
-	lead?: string
+	lead?:   string
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 

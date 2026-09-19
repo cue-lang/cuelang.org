@@ -243,7 +243,7 @@ command: regenerate: {
 
 		clean: {
 			glob: file.Glob & {
-				glob: path.Join([_workflowDir, "*.yml"], _goos)
+				glob:  path.Join([_workflowDir, "*.yml"], _goos)
 				files: [...string]
 			}
 			for _, _filename in glob.files {
@@ -255,7 +255,7 @@ command: regenerate: {
 			for _workflowName, _workflow in workflows
 			let _filename = _workflowName + ".yml" {
 				"Generate \(_filename)": file.Create & {
-					$after: [for v in clean {v}]
+					$after:   [for v in clean {v}]
 					filename: path.Join([_workflowDir, _filename], _goos)
 					contents: "# \(_donotedit)\n\n\(yaml.Marshal(_workflow))"
 				}

@@ -45,7 +45,7 @@ This tutorial is written using the following version of `cue`:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZlcnNpb24=" }
 $ cue version
-cue version v0.17.0
+cue version v0.18.0-alpha.2.0.20260918143709-50e1f64b6460
 ...
 ````
 
@@ -62,8 +62,8 @@ Create a CUE file containing a schema for a conference event:
 @experiment(explicitopen)
 
 #Event: {
-	name:  string
-	venue: string
+	name:     string
+	venue:    string
 	sessions: [...#Session]
 }
 
@@ -98,16 +98,9 @@ $ cue def --out jsonschema -e '#Event' schema.cue
             "additionalProperties": false,
             "properties": {
                 "duration": {
-                    "allOf": [
-                        {
-                            "type": "number"
-                        },
-                        {
-                            "type": "integer",
-                            "exclusiveMinimum": 0,
-                            "maximum": 480
-                        }
-                    ]
+                    "type": "integer",
+                    "exclusiveMinimum": 0,
+                    "maximum": 480
                 },
                 "speaker": {
                     "type": "string"
@@ -214,7 +207,7 @@ Validate both data files against the generated JSON Schema:
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCBldmVudC5zY2hlbWEuanNvbiBnb29kLmpzb24gYmFkLmpzb24=" }
 $ cue vet event.schema.json good.json bad.json
 sessions.0.duration: invalid value 600 (out of bound <=480):
-    ./event.schema.json:16:30
+    ./event.schema.json:11:22
     ./bad.json:8:25
 ````
 

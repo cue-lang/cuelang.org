@@ -75,11 +75,7 @@ This creates a `cue.mod/local-module.cue` file holding the module replace:
 
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbG9jYWwtbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/local-module.cue
-deps: {
-	"example.com/greeting@v0": {
-		replaceWith: "./greeting"
-	}
-}
+deps: "example.com/greeting@v0": replaceWith: "./greeting"
 ````
 
 Your `cue.mod/module.cue` file is left untouched, so the module's published
@@ -88,14 +84,8 @@ requirements are unaffected:
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/module.cue
 module: "app.example/hello@v0"
-language: {
-	version: "v0.17.0"
-}
-deps: {
-	"example.com/greeting@v0": {
-		v: "v0.1.0"
-	}
-}
+language: version: "v0.17.0"
+deps: "example.com/greeting@v0": v: "v0.1.0"
 ````
 {{< /step >}}
 

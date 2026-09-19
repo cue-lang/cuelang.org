@@ -69,11 +69,11 @@ allowing those to be associated with an identifier.
 
 {{{with code "en" "aliases"}}}
 -- in.cue --
-X="a-b": 1 // a-b must be quoted
-b:       X
+"a-b"~(X): 1 // a-b must be quoted
+b:         X
 
-Y=c: 2
-d:   Y // equivalent to d: c
+c~(Y): 2
+d:     Y // equivalent to d: c
 -- out.cue --
 "a-b": 1
 b:     1
@@ -102,11 +102,13 @@ use value aliases.
 
 {{{with code "en" "value-alias"}}}
 -- in.cue --
-a: X={
+a: {
+	let X = self
 	bar: X.foo
 }
 -- out.cue --
 a: {
+    let X = self
     bar: X.foo
 }
 {{{end}}}

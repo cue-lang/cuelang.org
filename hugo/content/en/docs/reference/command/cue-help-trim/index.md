@@ -59,7 +59,7 @@ Usage:
 
 Flags:
   -n, --dry-run          only run simulation
-  -f, --force            force overwriting existing files
+  -f, --force            overwrite existing regular files
   -o, --outfile string   filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
       --trace            trace computation
 

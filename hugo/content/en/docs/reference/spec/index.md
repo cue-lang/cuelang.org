@@ -288,12 +288,12 @@ The following character sequences represent operators and punctuation:
 
 ```
 +     &&    ==    <     =     (     )
--     ||    !=    >     :     {     }
+-     ||    !=    >     :     {     }     ~
 *     &     =~    <=    ?     [     ]     ,
 /     |     !~    >=    !     _|_   ...   .
 ```
 <!--
-Free tokens:  ; ~ ^
+Free tokens:  ; % ^
 // To be used:
   @   at: associative lists.
 
@@ -512,9 +512,9 @@ the string value.
 ```
 <!-- error:
 illegal character U+0027 ''' in escape sequence:
-    spec.md:503:5
+    4:5
 escape sequence is invalid Unicode code point:
-    spec.md:512:3
+    13:3
 -->
 
 These examples all represent the same string:
@@ -563,7 +563,7 @@ To include it is suffices to escape one of the quotes.
 ```
 <!-- error:
 unknown escape sequence:
-    spec.md:563:14
+    7:14
 -->
 
 This represents the same string as:
@@ -1079,11 +1079,11 @@ the result of which is the unification of all those fields.
 StructLit       = "{" { Declaration "," } "}" .
 Declaration     = Field | Ellipsis | Embedding | LetClause | attribute .
 Ellipsis        = "..." [ Expression ] .
-Embedding       = Comprehension | AliasExpr .
-Field           = Label ":" { Label ":" } AliasExpr { attribute } .
-Label           = [ identifier "=" ] LabelExpr .
-LabelExpr       = LabelName [ "?" | "!" ] | "[" AliasExpr "]" .
-LabelName       = identifier | simple_string_lit | "(" AliasExpr ")" .
+Embedding       = Comprehension | Expr .
+Field           = Label ":" { Label ":" } Expr { attribute } .
+Label           = LabelExpr [ Alias ] .
+LabelExpr       = LabelName [ "?" | "!" ] | "[" Expr "]" .
+LabelName       = identifier | simple_string_lit | "(" Expr ")" .
 
 attribute       = "@" identifier "(" attr_tokens ")" .
 attr_tokens     = { attr_token |
@@ -1256,9 +1256,9 @@ b: a & {
 ```
 <!-- error:
 missing ',' in struct literal:
-    spec.md:1253:8
+    7:8
 expected '}', found 'EOF':
-    spec.md:1260:3
+    14:3
 -->
 
 <!--
@@ -1440,45 +1440,26 @@ D: close({
 
 A struct may contain an _embedded value_, an operand used as a declaration.
 An embedded value of type struct is unified with the struct in which it is
-embedded, but disregarding the restrictions imposed by closed structs.
-So if an embedding resolves to a closed struct, the corresponding enclosing
-struct will also be closed, but may have fields that are not allowed if
-normal rules for closed structs were observed.
+embedded.
+
+Embeddings can be useful for composing larger schemas from smaller ones.
+The order of specification may imply a documented field order.
 
 If an embedded value is not of type struct, the struct may only have
 definitions or hidden fields. Regular fields are not allowed in such case.
 
-The result of `{ A }` is `A` for any `A` (including definitions).
-
 Syntactically, embeddings may be any expression.
 
 ```cue
-S1: {
-    a: 1
-    b: 2
-    {
-        c: 3
-    }
+Meta: {
+    kind: string
+    name: string
 }
-// S1 is { a: 1, b: 2, c: 3 }
-
-S2: close({
-    a: 1
-    b: 2
-    {
-        c: 3
-    }
-})
-// same as close(S1)
-
-S3: {
-    a: 1
-    b: 2
-    close({
-        c: 3
-    })
+Guzzler: {
+    Meta...
+    volume: number
 }
-// same as S2
+// Guzzler is { kind: string, name: string, volume: number }
 ```
 
 
@@ -1494,8 +1475,8 @@ to data and are never required to be concrete.
 Referencing a definition will recursively [close](#closed-structs) it.
 That is, a referenced definition will not unify with a struct
 that would add a field anywhere within the definition that it does not
-already define or explicitly allow with a pattern constraint or `...`.
-[Embedding](#embedding) allows bypassing this check.
+already define or explicitly allow with a pattern constraint, `...`,
+or the [spread operator](#spread-operator) (postfix `...`).
 
 If referencing a definition would always result in an error, implementations
 may report this inconsistency at the point of its declaration.
@@ -1609,56 +1590,51 @@ Combined: myStruct1 & myStruct2
 
 #### Aliases
 
-Aliases name values that can be referred to
+Aliases bind identifiers to a field or its name that can be referred to
 within the [scope](#declarations-and-scopes) in which they are declared.
 The name of an alias must be unique within its scope.
 
 ```ebnf
-AliasExpr  = [ identifier "=" ] Expression .
+Alias  = "~" ( identifier | "(" identifier [ "," ( identifier | "_" ) ] ")" ) .
 ```
 
-Aliases can appear in several positions:
+The alias is specified using a postfix `~` operator after a label. The single
+form `~V` or `~(V)` creates an alias referring to the field, while the
+dual form `~(K,V)` creates two aliases: one for the label and one for the field.
+The parenthesized single form `~(V)` is the canonical form;
+`cue fmt` normalizes `~V` to `~(V)`.
+The first position in the dual form can use `_` (blank identifier) to skip
+binding the label alias.
 
-<!--- TODO: consider allowing this. It should be considered whether
-having field aliases isn't already sufficient.
+Aliases resolve as follows:
 
-As a declaration in a struct (`X=value`):
+After a label (`label~(V): value` or `label~(K, V): value`):
 
-- binds identifier `X` to a value embedded within the struct.
---->
+- binds the identifier `V` to the field itself (not its value).
+- binds the identifier `K` to the label.
 
-In front of a Label (`X=label: value`):
+After a dynamic field (`(label)~(V): value` or `(label)~(K, V): value`):
 
-- binds the identifier to the same value as `label` would be bound
-  to if it were a valid identifier.
+- binds the identifier `V` to the field itself.
+- binds the identifier `K` to the concrete label resulting from evaluating `label`.
+- the same semantics applies when binding to an interpolated string label.
 
-In front of a dynamic field (`X=(label): value`):
+After a pattern constraint (`[expr]~(V): value` or `[expr]~(K, V): value`):
 
-- binds the identifier to the same value as `label` if it were a valid
-  static identifier.
-
-In front of a dynamic field expression (`(X=expr): value`):
-
-- binds the identifier to the concrete label resulting from evaluating `expr`.
-
-In front of a pattern constraint (`X=[expr]: value`):
-
-- binds the identifier to the same field as the matched by the pattern
-  within the instance of the field value (`value`).
-
-In front of a pattern constraint expression (`[X=expr]: value`):
-
-- binds the identifier to the concrete label that matches `expr`
+- binds the identifier `V` to the field matched by the pattern
+  within the scope of that field's value (`value`).
+- binds the identifier `K` to the concrete label that matches `expr`
   within the instances of the field value (`value`).
 
-Before a value (`foo: X=x`)
+Note that aliases are equivalent to referring to the field by name.
+Use `self` to refer to a field's value directly.
 
-- binds the identifier to the value it precedes within the scope of that value.
-
-Before a list element (`[ X=value, X+1 ]`) (Not yet implemented)
-
-- binds the identifier to the list element it precedes within the scope of the
-  list expression.
+```
+foo: {
+    let X = self
+    // X refers to the value of foo
+}
+```
 
 <!-- TODO: explain the difference between aliases and definitions.
      Now that you have definitions, are aliases really necessary?
@@ -1667,19 +1643,32 @@ Before a list element (`[ X=value, X+1 ]`) (Not yet implemented)
 
 ```cue
 // A field alias
-foo: X  // 4
-X="not an identifier": 4
-
-// A value alias
-foo: X={x: X.a}
-bar: foo & {a: 1}  // {a: 1, x: 1}
-
-// A label alias
-[Y=string]: { name: Y }
-foo: { value: 1 } // outputs: foo: { name: "foo", value: 1 }
+result1: X  // 4
+"not an identifier"~(X): 4
 ```
 
-<!-- TODO: also allow aliases as lists -->
+```cue
+// A field alias example
+foo~(F): {
+    x: F.a
+}
+bar: foo & {a: 1}  // {a: 1, x: 1}
+```
+
+```cue
+// A label alias with dual form
+[string]~(K, V): { name: K, add1: V.value+1 }
+foo: { value: 1 } // outputs: foo: { name: "foo", value: 1, add1: 2 }
+```
+
+```cue
+// Dynamic field with dual form
+("my" + "Field")~(K, V): { label: K, foo: 42 }
+value: V.foo
+// outputs: {myField: { label: "myField", value: 42 }, value: 42}
+```
+
+<!-- TODO: also allow aliases in lists -->
 
 
 #### Let declarations
@@ -1694,6 +1683,17 @@ let x = expr
 
 a: x + 1
 b: x + 2
+```
+
+Let declarations are commonly used with the [`self`](#self-from-v0150) keyword
+to create value aliases:
+
+```
+foo: {
+    let V = self
+    x: V.a
+    y: V.b
+}
 ```
 
 #### Shorthand notation for nested structs
@@ -1866,7 +1866,7 @@ of the predefined identifier, prefixed with `__`.
 
 ```
 Functions
-len close and or
+len close and or, for more see builtins
 
 Types
 null      The null type and value
@@ -1875,6 +1875,8 @@ int       All integral numbers
 float     All decimal floating-point numbers
 string    Any valid UTF-8 sequence
 bytes     Any valid byte sequence
+
+self      Refers to the inner scope
 
 Derived   Value
 number    int | float
@@ -2049,7 +2051,34 @@ d: b.greeting  // "Hello, world!"
 e: c.greeting  // "Hello, you!"
 ```
 
+#### `self` (from v0.15.0)
 
+The [predeclared identifier](#predeclared-identifiers) `self` and `__self` refer
+to the innermost struct or list, or the top level if none exist.
+
+```
+a: {
+    b: {
+        c: self.d // refers to value of a.b.d (1)
+        d: 1
+    }
+    d: self // refers to value of a (cyclic)
+}
+e: self // refers to top level (cyclic)
+
+// lists
+f: [ 1, 2, self[0] ]  // refers to value of f[0]
+
+// implicit scope
+g: x: self // refers to value of g
+
+// naming using let
+let X = self
+h: a: b: c: X.f[0] // refers to the value of f[0] (1)
+
+// predeclared identifier redeclared
+i: self: x: y: z: self // refers to value of i.self (self redefined)
+```
 
 ### Primary expressions
 
@@ -2060,7 +2089,8 @@ PrimaryExpr =
 	Operand |
 	PrimaryExpr Selector |
 	PrimaryExpr Index |
-	PrimaryExpr Arguments .
+	PrimaryExpr Arguments |
+	PrimaryExpr "..." .
 
 Selector       = "." (identifier | simple_string_lit) .
 Index          = "[" Expression [ "," ] "]" .
@@ -2227,6 +2257,53 @@ y: int | *1
 z: x[y]  // 4
 ```
 
+
+
+### Spread Operator (`...`)
+
+For a [primary expression](#primary-expressions) `x` that evaluates to a struct
+or list, the spread operator
+
+```
+x...
+```
+
+unifies all elements of `x` into the current context disregarding closedness
+rules implied by `x`, recursively.
+
+The spread operator can be used to extend a struct or list. Applying it to a
+value of any other type is a no-op: `x...` evaluates to `x` unchanged.
+
+<!-- TODO(explicitopen): rejecting `...` on a value which is neither a struct
+     nor a list is the intended future behavior. It is not an error today
+     because `cue fix` appends `...` to embedded references whose resolved
+     type it cannot know, so tightening this needs the fixer to know
+     resolved types. -->
+
+If `x...` is used within a definition, normal closedness rules apply after the
+`x` is unified with any other fields.
+
+```
+#Base: foo: int
+#Def: {
+    #Base... // Unified with other fields within #Def.
+    bar: int
+}
+d: #Def & {baz: 2} // Error: baz is not allowed
+
+// Define a type that matches a collection of derived types.
+#Animal: genus!: string
+
+#Dog: { #Animal..., genus: "canis", says: "bark" }
+#Cat: { #Animal..., genus: "felis", says: "meow" }
+
+// Use #AnyAnimal in schema to allow any value that derives from #Animal.
+#AnyAnimal: { #Animal..., ... }
+
+#Schema: animal: #AnyAnimal // Dog, Cat or any other #Animal.
+```
+
+
 ### Operators
 
 Operators combine operands into expressions.
@@ -2235,8 +2312,8 @@ Operators combine operands into expressions.
 Expression = UnaryExpr | Expression binary_op Expression .
 UnaryExpr  = PrimaryExpr | unary_op UnaryExpr .
 
-binary_op  = "|" | "&" | "||" | "&&" | "==" | rel_op | add_op | mul_op  .
-rel_op     = "!=" | "<" | "<=" | ">" | ">=" | "=~" | "!~" .
+binary_op  = "|" | "&" | "||" | "&&" | rel_op | add_op | mul_op  .
+rel_op     = "==" | "!=" | "<" | "<=" | ">" | ">=" | "=~" | "!~" .
 add_op     = "+" | "-" .
 mul_op     = "*" | "/" .
 unary_op   = "+" | "-" | "!" | "*" | rel_op .
@@ -2768,9 +2845,29 @@ len([1, 2, ...])     2
 
 ### `close`
 
-The builtin function `close` converts a partially defined, or open, struct
-to a fully defined, or closed, struct.
+The builtin function `close` converts a partially defined—or open—struct
+to a fully defined—or closed—struct.
 
+### `__closeAll`
+
+The builtin function `__closeAll` recursively converts a partially defined,
+or open, struct to a fully defined, or closed, struct. It is a no-op for values
+that are not a struct or list.
+
+This builtin exists for the rewrites `cue fix` applies when migrating code
+written before language version v0.18.0: it is used instead of `__reclose` if
+it is known for sure a struct needs to be reclosed. It should not be used by
+users directly.
+
+### `__reclose`
+
+The builtin function `__reclose` closes a literal struct if any of its
+embedding that used a spread operator was closed. It is a no-op for all other
+values.
+
+This builtin exists for the rewrites `cue fix` applies when migrating code
+written before language version v0.18.0 to the semantics of that version. It
+should not be used by users directly.
 
 ### `and`
 

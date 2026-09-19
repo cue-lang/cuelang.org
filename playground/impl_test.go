@@ -77,15 +77,15 @@ var testTable = []testCase{
 	{
 		In: inputCUE, Fn: functionExport, Out: outputCUE,
 		InVal: `
-			[ID=_]: x: y: ID
+			[_]~(ID,_): x: y: ID
 			"foo": {}
 		`,
-		OutVal: "foo: {\n\tx: {\n\t\ty: \"foo\"\n\t}\n}\n",
-	},
+		OutVal: `foo: x: y: "foo"
+`},
 	{
 		In: inputCUE, Fn: functionExport, Out: outputJSON,
 		InVal: `
-			[ID=_]: x: y: ID
+			[_]~(ID,_): x: y: ID
 			"foo": {}
 		`,
 		OutVal: "{\n    \"foo\": {\n        \"x\": {\n            \"y\": \"foo\"\n        }\n    }\n}\n",
@@ -98,16 +98,18 @@ var testTable = []testCase{
 			x: string
 			y: (x): string
 		`,
-		OutVal: "x: string\ny: {\n\t(x): string\n}\n",
-	},
+		OutVal: `x: string
+y: (x): string
+`},
 	{
 		In: inputCUE, Fn: functionEval, Out: outputCUE,
 		InVal: `
 			x: x2: "foo"
 			y: x.missing
 		`,
-		OutVal: "x: {\n\tx2: \"foo\"\n}\ny: x.missing\n",
-	},
+		OutVal: `x: x2: "foo"
+y: x.missing
+`},
 
 	// Simple format checks; no errors
 	{
