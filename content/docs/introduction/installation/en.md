@@ -53,7 +53,7 @@ On macOS and Linux, `cue` can be installed using Homebrew
 
 {{{with script "en" "brew install"}}}
 #norun
-brew install cue-lang/tap/cue
+brew install cue
 {{{end}}}
 
 #### Install from Docker Hub

@@ -159,22 +159,22 @@ The above examples are created by using the `columns` and `columns-separator` [s
 
 ````
 ```bash
-brew install cue-lang/tap/cue
+brew install cue
 ```
 ````
 
 ```bash
-brew install cue-lang/tap/cue
+brew install cue
 ```
 
 With title
 
 ````
 ```vshell {title="V shell"}
-brew install cue-lang/tap/cue
+brew install cue
 ```
 ````
 
 ```vshell {title="V shell"}
-brew install cue-lang/tap/cue
+brew install cue
 ```
