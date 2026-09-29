@@ -47,8 +47,8 @@ have a specific reason to select a pre-release.
 On macOS and Linux, `cue` can be installed using Homebrew
 ([brew.sh](https://brew.sh)):
 
-````text { title="TERMINAL" type="terminal" codeToCopy="YnJldyBpbnN0YWxsIGN1ZS1sYW5nL3RhcC9jdWU=" }
-$ brew install cue-lang/tap/cue
+````text { title="TERMINAL" type="terminal" codeToCopy="YnJldyBpbnN0YWxsIGN1ZQ==" }
+$ brew install cue
 ````
 
 #### Install from Docker Hub
