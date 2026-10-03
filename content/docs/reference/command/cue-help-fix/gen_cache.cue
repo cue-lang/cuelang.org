@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "8LSDCFUVK0OC7V4IUFSHS8UA4FU23BJLRO254RPDDJ0VCFI47VM0===="
-									scriptHash: "UE8NQHULQCIGKU9J3AMCU0MP5BD9FHBLVK2I8QEPV21E665E89CG===="
+									hash:       "7HL6PQF05IB8C0PAV6OJKMHJI3CQCASDBPPMUBLKHK68OBGVP8EG===="
+									scriptHash: "ULENR0GI38PE0VPCB92KQ0170IE8GT3E7PNCB1KG6PDSREUEGD90===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.2.0.20261002131943-93402de82790:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -35,15 +35,17 @@ package site
 												change a file or package to use the new, experimental semantics. Experiments
 												are enabled on a per-file basis.
 
-												For example, to enable the "explicitopen" experiment for all files in a package,
-												you would run:
+												For example, to enable the "explicitopen" experiment for all files in a
+												package whose module is on a language version before v0.18.0, which is where
+												that experiment became stable, you would run:
 
 												\tcue fix . --exp=explicitopen
 
 												For this to succeed, your current language version must support the experiment.
 												If an experiment has not yet been accepted for the current version, an
 												@experiment attribute is added in each affected file to mark the transition as
-												complete.
+												complete. An experiment which is already stable for that version needs no
+												fix, as files use it without an attribute, and asking for one is an error.
 
 												The special value --exp=all enables all experimental features that apply to the
 												current version.
@@ -55,12 +57,12 @@ package site
 												      --exp strings          list of experiments to port
 												  -f, --force                rewrite even when there are errors
 												      --remove-list-commas   remove commas from multiline list elements (v0.17.0+)
+												  -s, --simplify             simplify output
 
 												Global Flags:
 												  -E, --all-errors     print all available errors
 												  -C, --chdir string   change working directory before running command (must be the first flag)
 												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
 
 												"""
 									}]

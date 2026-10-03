@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "GS0D937JHABU7GQFTCILOSIPQQ8CEM75F7P5J47AHJ0ACQ0E4IAG===="
-									scriptHash: "N5D385V4KO873QGEM6F84R4IUGTNG4M806O09PIVHLEQLTSSQ1JG===="
+									hash:       "P5I6RCR7B0H0LIEOD89U991R3LHDGGBANPGKU8FS0GT9Q2PKQPA0===="
+									scriptHash: "1NE3GU6CALT4K9TFCAMC00R2HAN4JAICR66N0I0HUTJFQEM98VPG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.2.0.20261002131943-93402de82790:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -39,7 +39,8 @@ package site
 												For instance, an exported definition "#foo" becomes "Foo",
 												and a nested definition like "#foo.#bar" becomes "Foo_Bar".
 
-												@go attributes can be used to override which name to be generated:
+												@go attributes can be used to override which name to be generated,
+												where a package attribute must follow the package clause and any imports:
 
 												\tpackage foo
 												\t@go(betterpkgname)
@@ -81,7 +82,6 @@ package site
 												  -E, --all-errors     print all available errors
 												  -C, --chdir string   change working directory before running command (must be the first flag)
 												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
 
 												"""
 									}]

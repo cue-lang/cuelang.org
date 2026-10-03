@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "ARKMJ8ELP7T2V8LNPK8JP4J3H5J7AF1LO460AEON4U9OUU078060===="
-									scriptHash: "8VBI0J2ROMOG8SV0TC9UKJSF934KPMBA5O8FR50UVRVORSG1KP3G===="
+									hash:       "1VIMD88HBT5TS68RRQQM2PQSRI29K5LR9OMSA8VO2RB0A60S170G===="
+									scriptHash: "2M6KHK4CP5OVF9OFRB0CJAHLLFTIQ68QL6FEGLTVOB62MQ25SSOG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.2.0.20261002131943-93402de82790:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -40,28 +40,50 @@ package site
 
 												Go structs are converted to cue structs adhering to the following conventions:
 
-												\t- field names are translated based on the definition of a "json" or "yaml"
-												\t  tag, in that order. A --codec flag can be used to change the priority of
-												\t  the tag search.
+												\t- each struct follows a single codec: the first one in the priority list
+												\t  given by the --codec flag, "json,yaml" by default, whose tag appears
+												\t  on any of its fields, or else the first codec. Field names are
+												\t  translated based on the tags of that codec.
 
-												\t- embedded structs marked with a json inline tag unify with struct
-												\t  definition. For instance, the Go struct
+												\t- the "jsonv2" codec reads "json" tags like the "json" codec, but follows
+												\t  encoding/json/v2 rather than the v1 API of encoding/json. For example,
+												\t  an "omitempty" option does not make a boolean or number optional, and
+												\t  types which encoding/json/v2 rejects are dropped, such as time.Duration
+												\t  or a struct whose json tags have invalid options.
 
-												\t    struct MyStruct {
-												\t\t\tCommon  json:",inline"
+												\t- the codec also decides how the fields are encoded: a field is optional
+												\t  if its tag has an "omitempty" or "omitzero" option, a "json" tag with
+												\t  a "string" option encodes a boolean, number, or string as a string,
+												\t  and a pointer field is not nullable under "toml", as TOML has no null.
+
+												\t- the fields of an embedded struct, or pointer to struct, are promoted
+												\t  like encoding/json does, unless the field's tag gives it a name.
+												\t  Under the "yaml" codec, they are only promoted with an "inline" option,
+												\t  following libraries like gopkg.in/yaml.v3. For instance, the Go struct
+
+												\t    type MyStruct struct {
+												\t\t\tCommon
 												\t\t\tField string
-												\t\t }
+												\t\t}
 
 												\t  translates to the CUE struct
 
-												\t\t #MyStruct: Common & {
-												\t\t\t Field: string
-												\t\t }
+												\t\t#MyStruct: {
+												\t\t\t#Common
+												\t\t\tField: string
+												\t\t}
 
-												\t- a type that implements MarshalJSON, UnmarshalJSON, MarshalYAML, or
-												\t  UnmarshalYAML is translated to top (_) to indicate it may be any
-												\t  value. For some Go core types for which the implementation of these
-												\t  methods is known, like time.Time, the type may be more specific.
+												\t  When some of the promoted fields are hidden by other fields
+												\t  with the same name, the remaining ones are added individually.
+												\t  An "embed" option also promotes the fields of a named field,
+												\t  or holds any other object members in a map or jsontext.Value.
+
+												\t- a type that implements MarshalJSON, UnmarshalJSON, MarshalJSONTo,
+												\t  UnmarshalJSONFrom, MarshalYAML, or UnmarshalYAML is translated to
+												\t  top (_) to indicate it may be any value. For some Go core types for
+												\t  which the implementation of these methods is known, like time.Time,
+												\t  the type may be more specific. These methods can be omitted with the
+												\t  --omit flag, as described below.
 
 												\t- a type implementing MarshalText or UnmarshalText is represented as
 												\t  the CUE type string
@@ -72,7 +94,9 @@ package site
 												\t  accordingly, when possible.
 
 												\t- Maps translate to a CUE struct, where all elements are constrained to
-												\t  be of Go map element type. Like for JSON, maps may only have string keys.
+												\t  be of Go map element type. Like for JSON, map keys must be strings,
+												\t  integers, floats, or types implementing MarshalText or UnmarshalText,
+												\t  and are all translated to string labels.
 
 												\t- Pointers translate to a sum type with the default value of null and
 												\t  the Go type as an alternative value.
@@ -81,6 +105,36 @@ package site
 												\t  the contents are rewritten to reflect the corresponding types in CUE.
 												\t  The @go attribute is added if the field name or type definition differs
 												\t  between the generated CUE and the original Go.
+
+
+												Omitting Declarations and Methods
+
+												The --omit flag leaves out the type and constant declarations matched by
+												any of its selectors written as pkg.Name. The package is given either by
+												its name, such as "v1", or by its import path, such as
+												"k8s.io/api/core/v1". Each element is a glob, such as "*" to match any
+												package, as understood by Go's path.Match. For example:
+
+												\t--omit='*.Internal*'                 # declarations in any package
+												\t--omit=v1.PodSpec                    # by package name
+												\t--omit=k8s.io/api/core/v1.PodSpec    # by import path
+
+												References to omitted types are translated to top, and the fields of an
+												omitted embedded struct are added individually.
+
+												A selector written as pkg.Name.Method instead translates the matched types
+												as if they lacked the matched methods among those which make a type
+												translate to top or string, such as MarshalJSON or UnmarshalText.
+												This is useful when a type only implements them to validate its input,
+												or to encode it the same way. For example:
+
+												\t--omit='v1.PodSpec.*'                # all encoding methods
+												\t--omit=v1.PodSpec.UnmarshalJSON      # just one of them
+												\t--omit='*.*.*YAML'                   # YAML methods of all types
+
+												Note how --omit=v1.PodSpec omits the type, whereas --omit='v1.PodSpec.*'
+												keeps the type and omits its encoding methods.
+												A selector which matches nothing is an error.
 
 
 												Native CUE Constraints
@@ -166,22 +220,38 @@ package site
 												this in the usual way by unifying the two definitions, in which case the more
 												restrictive enum interpretation of #Switch remains.
 
+
+												Alternatives
+
+												Go types cannot express enums, sum types, defaults, or most constraints,
+												so converting them to CUE is lossy. Use this command only when the schemas
+												you depend on are solely defined as Go types.
+
+												When the schemas are also defined in a format such as JSON Schema or OpenAPI,
+												"cue import" gives much more precise results. Schemas for many well-known
+												projects, such as Kubernetes or GitHub Actions, are already imported this way
+												and published as curated modules in the Central Registry. See:
+
+												\thttps://cue.dev/getting-started/schema-library/
+
+												When writing or maintaining the schemas yourself, write them in CUE and
+												generate Go types from them with "cue exp gengotypes".
+
 												Usage:
 												  cue get go [flags] [packages]
 
 												Flags:
-												      --codec string     comma-separated priority list of struct tags to use for field names (default "json,yaml")
-												  -e, --exclude string   comma-separated list of regexps of identifiers to omit
-												      --local            generates files in the main module locally
-												      --outfile string   generate one CUE file for a single Go package
-												  -p, --package string   package name for generated CUE files
-												  -v, --verbose          print information about progress
+												      --codec string       comma-separated priority list of codecs, such as json, jsonv2, yaml, or toml (default "json,yaml")
+												      --local              generates files in the main module locally
+												      --omit stringArray   comma-separated selectors of declarations or methods to omit, such as pkg.Name or pkg.Name.Method
+												      --outfile string     generate one CUE file for a single Go package
+												  -p, --package string     package name for generated CUE files
+												  -v, --verbose            print information about progress
 
 												Global Flags:
 												  -E, --all-errors     print all available errors
 												  -C, --chdir string   change working directory before running command (must be the first flag)
 												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
 
 												"""
 									}]

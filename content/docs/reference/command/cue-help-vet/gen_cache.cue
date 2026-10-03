@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "IU38SNM5HCMOBGMTJD62FLBLG98P7F0410N4GC7JU7VKUNMM6RM0===="
-									scriptHash: "IDB5KSK5C5TCSS86QPM4IPU4N6VOJBT1OQVJE1COK20JTG3M0DD0===="
+									hash:       "5TIHM470PN5B2GBL6R72VDOFRPIC2FCDSV94K2K0FLJHM0IJFQ2G===="
+									scriptHash: "5RRCE99SD62IH8GFNIBP97REQ2VOENTKNDEBIFH20PIAN47AI9U0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.2.0.20261002131943-93402de82790:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -66,19 +66,17 @@ package site
 												  -T, --inject-vars              inject system variables in tags
 												      --list                     concatenate multiple objects into a list
 												      --merge                    merge non-CUE files (default true)
-												  -n, --name string              regexp filter for non-CUE file names in directories
-												  -p, --package string           package name for non-CUE files
+												  -p, --package string           package name for non-CUE files and CUE output
 												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
 												  -I, --proto_path stringArray   paths in which to search for imports
-												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
+												  -d, --schema stringArray       expression to select schema for evaluating values in non-CUE files
 												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
 												  -E, --all-errors     print all available errors
 												  -C, --chdir string   change working directory before running command (must be the first flag)
 												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
 
 												"""
 									}]

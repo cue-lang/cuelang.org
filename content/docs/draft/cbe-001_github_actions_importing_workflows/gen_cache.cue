@@ -7,16 +7,16 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"4":  "O/vMyD3SH07EP4gQtDaon4PUv1657OICjiS7eukgcLg="
-								"5":  "6Pt3L/AzqQv9hD6oTKVL5xbMfAuoW3r+5kPJaToux9w="
-								"10": "RC9pfTEmVlfFCBJG6RdqMPT54v925Onu7mumWs7ShFc="
-								"11": "l6neDyptAjhIISat9FpZoBNn66k81lnTq8rSRG2Bsws="
-								"12": "tQTFNLVN9a1zu4dDadoV0bNQapQi1iG9NMo3hR06RvY="
-								"14": "6xWvPaYpHJUDyd1VbXAJEPq8g0Qu95UB9q4iSxf5HXk="
+								"4":  "zFVAOi7uQ14I+qGtImwkSxRe28DVV+kMkDl647KYIVM="
+								"5":  "lCei2QyFIYAhyqx8Kpzl3eWlqlKNAvVOPi4H69rxpwE="
+								"10": "yLi4GIIIQD8uIsBpkSMZyAot6fZukUYVuVVxxGZ6Cng="
+								"11": "2VhE2T5JCJPraII7LoXazte602vH7uv3rHhbD30P+gM="
+								"12": "5afOso0e5WN2rSl2/1OvdA7NDDwAZjuOS/nBYbh47tU="
+								"14": "FsxvmybVmgIE+3k2zUtuodD894dB6HnBNB3X96pQQrQ="
 							}
 							multi_step: {
-								hash:       "U6L3VKF392UFGLMGK7D2JKC2J5KO4VFIOELC4V35PNPDA84FRD20===="
-								scriptHash: "V6MFVA50A0EO31MT02SEL74V4D5N9JGMMGHCME73JE06JLCRC260===="
+								hash:       "GMC7I8076OAV77N3F0H2E2BKDV3LJ8GDM7Q50U959ACBH65OTP20===="
+								scriptHash: "MC5JITPUDMSLSBIME5J6TLAN4J30LHCEG8F21GQ7VLQFT6HEKFSG===="
 								steps: [{
 									doc:      "# Required to interact with the central registry."
 									cmd:      "mkdir -p $HOME/.config/cue"

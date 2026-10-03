@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "1VKQDP7P1EQCTQD3A57ORPRONI1I82O80PNGUK8OTRI6L4TL7MJ0===="
-									scriptHash: "B66G7RQJRSADVN3P2OCOULI8SOK23Q3MH9FTM1J2GSA8IL412RF0===="
+									hash:       "7H5HEKJ3ULIQ1FBJ18I1PEFTBHBE9J76O7IFOQ7F0T6280HHT0GG===="
+									scriptHash: "QUF2J4RFUL34OKP2FFDHC6TJ31UBU2CNT5L30VM8ITMLQL8KB9MG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.2.0.20261002131943-93402de82790:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -48,6 +48,11 @@ package site
 												Using the --ext flag in combination with a mode causes matched files to be
 												interpreted as the format indicated by the mode, overriding any other meaning
 												attributed to that extension.
+
+												The --name flag selects which files to import from directories by matching
+												a regular expression against their paths, taking precedence over the
+												extensions implied by the mode and --ext. Files given explicitly as arguments
+												are always imported.
 
 												auto mode
 
@@ -234,24 +239,23 @@ package site
 												      --dry-run                  show what files would be created
 												      --ext stringArray          match files with these extensions
 												      --files                    split multiple entries into different files
-												  -f, --force                    force overwriting existing files
+												  -f, --force                    overwrite existing regular files
 												      --list                     concatenate multiple objects into a list
 												      --merge                    merge non-CUE files (default true)
-												  -n, --name string              regexp filter for non-CUE file names in directories
+												  -n, --name string              regular expression to match the paths of files to import from directories
 												  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
-												  -p, --package string           package name for non-CUE files
+												  -p, --package string           package name for non-CUE files and CUE output
 												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
 												  -I, --proto_path stringArray   paths in which to search for imports
 												  -R, --recursive                recursively parse string values
-												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
+												  -d, --schema stringArray       expression to select schema for evaluating values in non-CUE files
 												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
 												  -E, --all-errors     print all available errors
 												  -C, --chdir string   change working directory before running command (must be the first flag)
 												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
 
 												"""
 									}]

@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "G0R16QJQQ52SMEKAFM6MSI35DHPOSDASLBRDRFFQLL1BBHRO1B00===="
-									scriptHash: "JOUUK6CUJNVJAFJCVQRT65O38BR9F2NOHSI38M2NHLVL59A7MHD0===="
+									hash:       "ETG3KIN4PGNAUA935SE6A2L3H0CQNDE5MJG6O0A19PT8C979H100===="
+									scriptHash: "LT3TI9JEKI3K8URS3K1SVG6BFUVULLCTJ50LCSLTA4N2ELT3MV2G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.2.0.20261002131943-93402de82790:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -27,6 +27,7 @@ package site
 												    json        .json           JSON files.
 												    yaml        .yaml/.yml      YAML files.
 												    toml        .toml           TOML files
+												    ini         .ini            INI files.
 												    jsonl       .jsonl/.ndjson  Line-separated JSON values.
 												    jsonschema                  JSON Schema.
 												    openapi                     OpenAPI schema.
@@ -85,12 +86,24 @@ package site
 												and influence the functioning of the codec. The tag they are
 												valid with is mentioned in parentheses at the end.
 
-												    strictFeatures\treport errors for lossy mappings. (jsonschema)
-												    strictKeywords\treport errors for unknown keywords (jsonschema)
-												    strict\t\t\treport errors for either of the above (jsonschema)
+												    strictFeatures  report errors for lossy mappings. (jsonschema)
+												    strictKeywords  report errors for unknown keywords (jsonschema)
+												    strict          report errors for either of the above (jsonschema)
 												    openOnlyWhenExplicit
-												    \t\t\t\trequire a schema to be explicitly opened before a
-												    \t\t\t\t... will be added to a struct (jsonschema)
+												                    require a schema to be explicitly opened before a
+												                    ... will be added to a struct (jsonschema)
+
+												    allSchemas      emit an entry under components.schemas for every
+												                    top-level schema, even when unreferenced (openapi)
+
+												    indentSequences
+												                    indent sequence elements relative to their
+												                    enclosing mapping key; true by default (yaml)
+
+												    flavor=<name>   read INI as the named tool does: git for
+												                    git-config, python for Python's configparser,
+												                    systemd for systemd unit files, or windows for
+												                    the Windows profile API (ini)
 
 												Many commands also support the --out and --outfile/-o flags.
 												The --out flag specifies the output type using a qualifier
@@ -99,6 +112,9 @@ package site
 
 												Note that jsonschema is currently experimental as an output type: the
 												form of generated schemas may change from release to release.
+
+												Note that ini is currently experimental: its flavors and the CUE it
+												decodes to may change from release to release.
 
 												Examples:
 

@@ -7,19 +7,19 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.json":         "Ji9jpJ0eV3rcee/EDXciSuq6J37IxmqHlqdgvbCJ/p4="
-								"schema.cue":          "TMbI1++Nnlkf5ernIhMm4giCMWcQOxmBwJfAWfNOIYM="
-								good:                  "80cknNEXUWiaVSmxTxE3pJfksC8YNfdO317uy8onL4s="
-								bad:                   "pPjVRN4b8B+hQGd82co6hZBzRBhH4E8bXrgLvTLfbHI="
-								"main go program":     "9uof5LzAZev9mnURVBbpYNzOFjTEGmHn8lj0w6g1smc="
-								"generate schema.cue": "/y7vVsFTRwNOQ2Yt5efgtpEG3EI12B0/2r32PxsdVIw="
-								"open.cue":            "RfrVMlN2EdJrFrwq+lT6PSvsYKFlf1yXXBIZClz4Xig="
-								"defs.cue":            "9nog5JJyo8i6s4w+eSFNqK9Ngs0TXa3aw3YIpg6B++I="
-								"gen main.go":         "j8p3jpTlcsSxcITHREXYYkzOXJsfj5FJ1oB9is+mrbI="
+								"schema.json":         "9ZVPy7ylhKDvphJ9ofZYHgYwztdnF/znkEUqfrz5F0Q="
+								"schema.cue":          "h0U3nx9fJsXvdLsWuJdEqa+/xQ0fjocMDGRdntv7ZZQ="
+								good:                  "iBzIK1mxb4JXn5Ja9wUjh8E8dkOf3xjdybxv5kDfKUE="
+								bad:                   "yYmF3ESRA7CEyivjs0TzC9Jku66hLl8TsD0gnZp7bGk="
+								"main go program":     "GuMAuGPciAyMiyOJIe41tpC3trFaJWsP0S6hbOawyTI="
+								"generate schema.cue": "Yd0P5qYuvRZTSgTaICIF0EbiXnUEG3FwXCy0e4t4PiE="
+								"open.cue":            "+FutKYAGfM0T8eL+qgDl9/sVe/ye92D2bTBJyyaJQNA="
+								"defs.cue":            "kQlVe3ghM6nhWI/CQ/LJstRwXS4bq7JKrco+cLFaC9w="
+								"gen main.go":         "iJl+bqPjYX4Haa2weLbOP74Uf6+Xb56QqAil2jYzoYs="
 							}
 							multi_step: {
-								hash:       "SFMTEL0I7U4LK6QSIT5BI25FN6N2GSLT40R2SITBPQ0NAKVUVFVG===="
-								scriptHash: "0PTHB4U1JU8EUTIUOUBDMRBDEJ5ABVNPNFTO40LSQ325RUONMJ90===="
+								hash:       "RCO4G4S427QR5DP57PMRMHFQJGQAEF84BEMVA9H6HDFHH1H1MTK0===="
+								scriptHash: "FQ8PUM6IE23KH0N5IEGET7RLNDIMSQMDEJFPISSADI8J0OO7KUTG===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -82,7 +82,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.17.0"
+									cmd:      "go get cuelang.org/go@v0.18.0-alpha.2.0.20261002131943-93402de82790"
 									exitCode: 0
 									output: """
 											...
@@ -285,6 +285,7 @@ package site
 									exitCode: 0
 									output: """
 											{
+											    "Hash": {},
 											    "Lbrace": {},
 											    "Elts": [
 											        {
@@ -293,7 +294,6 @@ package site
 											                "Name": "$schema",
 											                "Scope": null,
 											                "Node": null
-											            },
 											...
 
 											"""
