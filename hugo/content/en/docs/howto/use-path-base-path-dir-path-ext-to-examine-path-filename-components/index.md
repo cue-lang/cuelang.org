@@ -22,7 +22,7 @@ package example
 
 import "path"
 
-[X=string]: {
+[string]~(X,_): {
 	_OS: *path.Unix | path.Windows | path.Plan9
 	Dir:  path.Dir(X, _OS)
 	Base: path.Base(X, _OS)

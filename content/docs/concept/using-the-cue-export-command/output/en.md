@@ -50,7 +50,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{{end}}}
 {{<columns-separator>}}
@@ -78,7 +78,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{{end}}}
 {{<columns-separator>}}
@@ -148,7 +148,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{{end}}}
 {{<columns-separator>}}
@@ -177,7 +177,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{{end}}}
 {{<columns-separator>}}
@@ -229,7 +229,7 @@ nested: data: true
 aList: [1 + 1, 2 * 2, 3 / 3]
 -- out --
 nested: data: true
-aList: [2, 4, 1.0]
+aList: [2, 4, 1]
 {{{end}}}
 
 When emitting data encoded as CUE, as with all `cue export` invocations, the
@@ -276,7 +276,7 @@ aList: [1 + 1, 2 * 2, 3 / 3]
 package foo
 
 nested: data: true
-aList: [2, 4, 1.0]
+aList: [2, 4, 1]
 {{{end}}}
 
 ## Escaping HTML

@@ -31,7 +31,7 @@ B: ##"""
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="bottom" type="terminal" codetocopy="Y3VlIGV4cG9ydCBmaWxlLmN1ZSAtLW91dCB5YW1s" >}}
 $ cue export file.cue --out yaml
-A: The hazard symbol ☢ is Unicode code point "\U00002622".
+A: 'The hazard symbol ☢ is Unicode code point "\U00002622".'
 B: |-
   A regular expression can conveniently be written as:
       #"\d{3}"#

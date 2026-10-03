@@ -29,7 +29,8 @@ Generated Go type and field names may differ from the original CUE names by defa
 For instance, an exported definition "#foo" becomes "Foo",
 and a nested definition like "#foo.#bar" becomes "Foo_Bar".
 
-@go attributes can be used to override which name to be generated:
+@go attributes can be used to override which name to be generated,
+where a package attribute must follow the package clause and any imports:
 
 	package foo
 	@go(betterpkgname)
@@ -71,6 +72,5 @@ Global Flags:
   -E, --all-errors     print all available errors
   -C, --chdir string   change working directory before running command (must be the first flag)
   -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
 ````
 

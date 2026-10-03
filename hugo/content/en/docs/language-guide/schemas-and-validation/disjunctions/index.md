@@ -39,13 +39,13 @@ c: or(empty)
 empty: []
 
 withDefault: *2 | or([1, 2, 3, 4])
-x: withDefault & 3
+x:           withDefault & 3
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-a: 1 | 2 | 3 | 4 | 5
-b: 2
-c: or(empty)
-empty: []
+a:           1 | 2 | 3 | 4 | 5
+b:           2
+c:           or(empty)
+empty:       []
 withDefault: 2
 x:           3
 {{< /code-tab >}}

@@ -11,7 +11,8 @@ trim removes fields from structs that can be inferred from constraints
 
 A field, struct, or list is removed if it is implied by a constraint, such
 as from an optional field matching a required field, a list type value,
-a comprehension or any other implied content. It will modify the files in place.
+a comprehension or any other implied content. It will modify the files in place,
+except for standard input given as "-", which is written to standard output.
 
 
 Limitations
@@ -59,14 +60,14 @@ Usage:
 
 Flags:
   -n, --dry-run          only run simulation
-  -f, --force            force overwriting existing files
+  -f, --force            overwrite existing regular files
   -o, --outfile string   filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
+  -s, --simplify         simplify output
       --trace            trace computation
 
 Global Flags:
   -E, --all-errors     print all available errors
   -C, --chdir string   change working directory before running command (must be the first flag)
   -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
 ````
 

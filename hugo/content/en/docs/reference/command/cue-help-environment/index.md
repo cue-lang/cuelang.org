@@ -43,14 +43,28 @@ If an environment variable is unset or empty, sensible default setting is used.
 		Comma-separated list of debug flags to enable or disable, such as:
 
 		http
-			Log a JSON message per HTTP request and response made
+			http enables JSON logging per HTTP request and response made
 			when interacting with module registries.
+		strict
+			strict sets whether extra aggressive checking should be done.
+			This should typically default to true for pre-releases and default to
+			false otherwise.
+		logeval
+			logeval sets the log level for the evaluator.
+			There are currently only two levels:
+			0: no logging
+			1: logging
+		sharing
+			sharing enables structure sharing.
 		sortfields
-			Force fields in stucts to be sorted lexicographically.
+			sortfields forces fields in a struct to be sorted
+			lexicographically.
+		opendef
+			opendef disables the check for closedness of definitions.
 		toolsflow
-			Print task dependency mermaid graphs in 'cue cmd'.
+			toolsflow causes [cuelang.org/go/tools/flow] to print a task dependency mermaid graph.
 		parsertrace
-			Print a trace of parsed CUE productions.
+			parsertrace causes [cuelang.org/go/cue/parser] to print a trace of parsed productions.
 
 CUE_EXPERIMENT and CUE_DEBUG are comma-separated lists of key-value strings,
 where the value is a boolean "true" or "1" if omitted. For example:

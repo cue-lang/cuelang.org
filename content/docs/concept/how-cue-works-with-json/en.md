@@ -85,7 +85,7 @@ import "strings"
 	cluster!:    strings.MaxRunes(16)
 	region!:     #Region
 	repository!: =~#"^source\.company\.example/"#
-	tags?: [...#Tags]
+	tags?:       [...#Tags]
 }
 #Region: "APAC" | "IMEA"
 #Tags:   "prod" | "stage" | "qa" | "test" | "dev"
@@ -331,7 +331,6 @@ item.table: invalid value "{ \"width\": \"34\", \"height\": 23, \"depth\": 0.2 }
     ./furniture.cue:10:17
     ./furniture.cue:4:10
     ./furniture.cue:15:14
-    json.Validate:1:1
     json.Validate:1:12
 {{{end}}}
 

@@ -40,10 +40,10 @@ for k2, v2 in b {
 	"m\(k1)_\(k2)": v1 + v2
 }
 -- out.cue --
-n1: 1
-n2: 2
-a: [1, 2]
-b: [3, 4]
+n1:   1
+n2:   2
+a:    [1, 2]
+b:    [3, 4]
 m0_0: 4
 m0_1: 5
 m1_0: 5
@@ -67,7 +67,7 @@ if len(a) == 0 {
 	emptyList: true
 }
 -- out.cue --
-a: [1, 2, 3]
+a:  [1, 2, 3]
 n3: 3
 {{{end}}}
 
@@ -85,7 +85,7 @@ let x = v + 4 {
 	"n\(x)": x
 }
 -- out.cue --
-a: [1, 2, 3]
+a:  [1, 2, 3]
 n5: 5
 n6: 6
 n7: 7
@@ -118,7 +118,7 @@ list: [
 	for v in a {10 + v},
 ]
 -- out.cue --
-a: [1, 2, 3]
+a:    [1, 2, 3]
 list: [0, 2, 4, 6, 10, 20, 11, 12, 13]
 {{{end}}}
 
@@ -131,7 +131,7 @@ CUE has no switch or if-else construct, but these can be simulated using lists.
 {{{with code "en" "switch-if-else-pattern"}}}
 -- in.cue --
 mem: 2Gi
-footprint: [// select first
+footprint: [ // select first
 	if mem < 1Gi {"small"},
 	if mem < 4Gi {"medium"},
 	"large",
