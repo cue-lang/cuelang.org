@@ -24,8 +24,10 @@ price: 200
 -- out --
 authorisedBy: field is required but not present:
     ./file.cue:7:2
+    ./stock.yaml:1:1
 reason: field is required but not present:
     ./file.cue:6:2
+    ./stock.yaml:1:1
 {{{end}}}
 
 {{< info >}}

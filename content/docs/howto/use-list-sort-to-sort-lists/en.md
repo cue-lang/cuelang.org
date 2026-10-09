@@ -49,17 +49,11 @@ _sortAtSymbolCountDescending: {
 	y:    string
 	less: strings.Count(x, "@") > strings.Count(y, "@")
 }
-stringsCountDescending: list.Sort( ["X", "@@", "@"], _sortAtSymbolCountDescending)
+stringsCountDescending: list.Sort(["X", "@@", "@"], _sortAtSymbolCountDescending)
 -- out --
-sort: [1, 2.2, 3]
-stringsDescending: ["C", "B", "A"]
-structsCustom: [{
-    a: 1
-}, {
-    a: 2
-}, {
-    a: 3
-}]
+sort:                   [1, 2.2, 3]
+stringsDescending:      ["C", "B", "A"]
+structsCustom:          [{a: 1}, {a: 2}, {a: 3}]
 stringsCountDescending: ["@@", "@", "X"]
 {{{end}}}
 

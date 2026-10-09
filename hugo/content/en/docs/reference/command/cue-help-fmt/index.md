@@ -31,14 +31,14 @@ Usage:
   cue fmt [flags] [inputs]
 
 Flags:
-      --check   exits with non-zero status if any files are not formatted
-  -d, --diff    display diffs instead of rewriting files
-      --files   treat arguments as paths to files or directories to recursively format
+      --check      exits with non-zero status if any files are not formatted
+  -d, --diff       display diffs instead of rewriting files
+      --files      treat arguments as paths to files or directories to recursively format
+  -s, --simplify   simplify output
 
 Global Flags:
   -E, --all-errors     print all available errors
   -C, --chdir string   change working directory before running command (must be the first flag)
   -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
 ````
 

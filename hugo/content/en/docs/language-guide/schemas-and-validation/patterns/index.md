@@ -34,9 +34,7 @@ fooInt: #X
 fooInt: {kind: "a", a: 43}
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-#Base: {
-    kind!: string
-}
+#Base: kind!: string
 #A: {
     kind!: "a"
     a:     int
@@ -70,12 +68,8 @@ all additional fields.
 #X: {#Base, ...} // anyof(#Base)
 {{< /code-tab >}}
 {{< code-tab name="CUE" language="cue" area="top-right" type="terminal" >}}
-#Base: {
-    kind!: string
-}
-#X: {
-    kind!: string
-}
+#Base: kind!: string
+#X: kind!:    string
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

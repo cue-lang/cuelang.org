@@ -14,6 +14,7 @@ The cue tool supports the following file types:
     json        .json           JSON files.
     yaml        .yaml/.yml      YAML files.
     toml        .toml           TOML files
+    ini         .ini            INI files.
     jsonl       .jsonl/.ndjson  Line-separated JSON values.
     jsonschema                  JSON Schema.
     openapi                     OpenAPI schema.
@@ -72,12 +73,24 @@ The following tags are only valid in combination with other tags,
 and influence the functioning of the codec. The tag they are
 valid with is mentioned in parentheses at the end.
 
-    strictFeatures	report errors for lossy mappings. (jsonschema)
-    strictKeywords	report errors for unknown keywords (jsonschema)
-    strict			report errors for either of the above (jsonschema)
+    strictFeatures  report errors for lossy mappings. (jsonschema)
+    strictKeywords  report errors for unknown keywords (jsonschema)
+    strict          report errors for either of the above (jsonschema)
     openOnlyWhenExplicit
-    				require a schema to be explicitly opened before a
-    				... will be added to a struct (jsonschema)
+                    require a schema to be explicitly opened before a
+                    ... will be added to a struct (jsonschema)
+
+    allSchemas      emit an entry under components.schemas for every
+                    top-level schema, even when unreferenced (openapi)
+
+    indentSequences
+                    indent sequence elements relative to their
+                    enclosing mapping key; true by default (yaml)
+
+    flavor=<name>   read or write INI as the named tool does: git
+                    for git-config, python for Python's configparser,
+                    systemd for systemd unit files, or windows for
+                    the Windows profile API (ini)
 
 Many commands also support the --out and --outfile/-o flags.
 The --out flag specifies the output type using a qualifier
@@ -86,6 +99,10 @@ possibly prefixed with a qualifier.
 
 Note that jsonschema is currently experimental as an output type: the
 form of generated schemas may change from release to release.
+
+Note that ini is currently experimental: its flavors, the CUE it
+decodes to, and the INI it encodes to may change from release to
+release.
 
 Examples:
 

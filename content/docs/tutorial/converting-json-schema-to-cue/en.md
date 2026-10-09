@@ -130,7 +130,7 @@ package cuisine
 	close({
 		name!:    string
 		cuisine!: string
-		tables!: [...#table]
+		tables!:  [...#table]
 	})
 
 	#table: close({

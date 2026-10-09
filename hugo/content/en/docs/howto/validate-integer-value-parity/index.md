@@ -23,8 +23,8 @@ Using `error` is optional and can be omitted.
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 package example
 
-#Even: X=(2 * div(X, 2)) | error("\(X) is not even")
-#Odd:  X=(1 + 2*div(X, 2)) | error("\(X) is not odd")
+#Even: {let X = self, matchN(1, [2 * div(X, 2)]) | error("\(X) is not even")}
+#Odd:  {let X = self, matchN(1, [1 + 2*div(X, 2)]) | error("\(X) is not odd")}
 
 even: [...#Even]
 even: [42, 13, 0]
@@ -35,18 +35,21 @@ odd: [42, 13, 0]
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
 $ cue vet -c
 even.1: 13 is not even:
-    ./file.cue:3:28
-    ./file.cue:3:11
+    ./file.cue:3:52
+    ./file.cue:3:23
+    ./file.cue:3:30
     ./file.cue:6:11
     ./file.cue:7:12
 odd.0: 42 is not odd:
+    ./file.cue:4:54
+    ./file.cue:4:23
     ./file.cue:4:30
-    ./file.cue:4:11
     ./file.cue:9:10
     ./file.cue:10:7
 odd.2: 0 is not odd:
+    ./file.cue:4:54
+    ./file.cue:4:23
     ./file.cue:4:30
-    ./file.cue:4:11
     ./file.cue:9:10
     ./file.cue:10:15
 {{< /code-tab >}}
@@ -60,8 +63,8 @@ package example
 
 import "math"
 
-#Even: X=math.MultipleOf(2) | error("\(X) is not even")
-#Odd:  X=matchN(0, [#Even]) | error("\(X) is not odd")
+#Even: {let X = self, math.MultipleOf(2) | error("\(X) is not even")}
+#Odd:  {let X = self, matchN(0, [#Even]) | error("\(X) is not odd")}
 
 // #Odd can also be defined without #Even:
 #Odd: matchN(0, [math.MultipleOf(2)])
@@ -75,20 +78,20 @@ odd: [42, 13, 0]
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtYw==" >}}
 $ cue vet -c
 even.1: 13 is not even:
-    ./file.cue:5:31
-    ./file.cue:5:26
+    ./file.cue:5:44
+    ./file.cue:5:39
     ./file.cue:11:11
     ./file.cue:12:12
 odd.0: 42 is not odd:
-    ./file.cue:6:31
-    ./file.cue:6:10
-    ./file.cue:6:17
+    ./file.cue:6:44
+    ./file.cue:9:7
+    ./file.cue:9:14
     ./file.cue:14:10
     ./file.cue:15:7
 odd.2: 0 is not odd:
-    ./file.cue:6:31
-    ./file.cue:6:10
-    ./file.cue:6:17
+    ./file.cue:6:44
+    ./file.cue:9:7
+    ./file.cue:9:14
     ./file.cue:14:10
     ./file.cue:15:15
 {{< /code-tab >}}

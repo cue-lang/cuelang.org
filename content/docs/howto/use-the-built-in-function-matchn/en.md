@@ -253,11 +253,11 @@ package allButOne
 
 // A validates successfully.
 A: 42
-A: matchN(len(#C)-1, #C)
+A: matchN(len(#C) - 1, #C)
 
 // B fails to validate.
 B: 42.0
-B: matchN(len(#C)-1, #C)
+B: matchN(len(#C) - 1, #C)
 
 #C: [number, int, >100]
 -- out --
@@ -306,7 +306,7 @@ B: matchN(>0, [#C1, #C2]) & {
 // D validates successfully.
 D: [1, 2, 3] & matchN(1, [#F1, #F2, #F3])
 // E fails to validate.
-E: [11, 12, 13] & matchN(1, [#F1, #F2, #F3])
+E:   [11, 12, 13] & matchN(1, [#F1, #F2, #F3])
 #F1: [...>0]
 #F2: [...>10]
 #F3: [...>100]
@@ -323,12 +323,12 @@ B: invalid value {x:4.2,y:4.2,z:4.2} (does not satisfy matchN): 0 matched, expec
     ./composite.cue:9:4
     ./composite.cue:9:11
 E: invalid value [11,12,13] (does not satisfy matchN): 2 matched, expected 1:
-    ./composite.cue:24:19
-    ./composite.cue:24:4
-    ./composite.cue:24:26
+    ./composite.cue:24:21
+    ./composite.cue:24:6
+    ./composite.cue:24:28
 E.0: invalid value 11 (out of bound >100):
     ./composite.cue:27:10
-    ./composite.cue:24:5
+    ./composite.cue:24:7
 {{{end}}}
 
 ## Future enhancements

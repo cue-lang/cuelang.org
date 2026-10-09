@@ -25,10 +25,10 @@ package example
 import "list"
 
 unsorted: ["B", "C", "A"]
-sorted: list.SortStrings(unsorted)
+sorted:   list.SortStrings(unsorted)
 -- out --
 unsorted: ["B", "C", "A"]
-sorted: ["A", "B", "C"]
+sorted:   ["A", "B", "C"]
 {{{end}}}
 
 ## Related content

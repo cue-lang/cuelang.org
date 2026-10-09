@@ -29,7 +29,7 @@ import "list"
 
 // both data fields are lists of numbers
 good_list: [...number]
-bad_list: [...number]
+bad_list:  [...number]
 
 // We introduce a hidden CUE field for each list
 // we want to check. Each hidden field unifies
@@ -43,7 +43,6 @@ bad_list:  [ 1,2,3,100.5 ]
 -- out.err --
 _bad_sum: invalid value 106.5 (out of bound <=99.5):
     ./schema.cue:14:12
-    ./schema.cue:14:21
 {{{end}}}
 
 <!-- TODO: constraining these sums across package boundaries -->

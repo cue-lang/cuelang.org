@@ -30,7 +30,9 @@ d: c[5]
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgLWkgZmlsZS5jdWU=" >}}
 $ cue eval -i file.cue
 a: _|_ // a: conflicting values 2 and 1
-b: [50, _|_, // b.1: conflicting values 200 and 100
+b: [
+    50,
+    _|_, // b.1: conflicting values 200 and 100
 ]
 c: [0, 1, 2]
 d: _|_ // d: index out of range [5] with length 3
