@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "K9TL0PSMTDBM35JOUIKJDH05R381IIP4PHU073RK3BUCQERLGFHG===="
-									scriptHash: "184UNTVILN4M8S7MB9P9KAMTP68EQHP391AO9N1OT6OG2URK51R0===="
+									hash:       "2ILFR6R7DLLKOOITOJUP4GQTB09H275P4DK8OCCKDG96ADENTIN0===="
+									scriptHash: "O8MJBUB1L2S9O8DQCUAG5491F4VGSN8FMM5TK155Q90RLMABBVS0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.3.0.20261008224848-a4f52c2332e4:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -24,7 +24,8 @@ package site
 
 												A field, struct, or list is removed if it is implied by a constraint, such
 												as from an optional field matching a required field, a list type value,
-												a comprehension or any other implied content. It will modify the files in place.
+												a comprehension or any other implied content. It will modify the files in place,
+												except for standard input given as "-", which is written to standard output.
 
 
 												Limitations
@@ -72,15 +73,15 @@ package site
 
 												Flags:
 												  -n, --dry-run          only run simulation
-												  -f, --force            force overwriting existing files
+												  -f, --force            overwrite existing regular files
 												  -o, --outfile string   filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
+												  -s, --simplify         simplify output
 												      --trace            trace computation
 
 												Global Flags:
 												  -E, --all-errors     print all available errors
 												  -C, --chdir string   change working directory before running command (must be the first flag)
 												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
 
 												"""
 									}]

@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "J0TQUIT57SIKM96DUB9TV6LHHEJU4I2NK46MO0B9TKBQU8RLSQ6G===="
-									scriptHash: "HUG5MHNMAHQVHHF1BFM2NMADL0PK5KN5AD207C64FOQMDI4J3F20===="
+									hash:       "1DUVV5PM29L8ORC1U07LFHBJ3QPEPMP9S75T0SV0U8BEISJFS1K0===="
+									scriptHash: "0OOBV9CQRG4SQ6SMVJPI2440RUOETT6UC6BQGON3N8MERJ0T9MT0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.3.0.20261008224848-a4f52c2332e4:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -30,6 +30,7 @@ package site
 												  cue exp [command]
 
 												Available Commands:
+												  ast           inspect and manipulate CUE syntax trees
 												  gengotypes    generate Go types from CUE definitions
 												  writefs       remove and create files in bulk
 
@@ -37,7 +38,6 @@ package site
 												  -E, --all-errors     print all available errors
 												  -C, --chdir string   change working directory before running command (must be the first flag)
 												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
 
 												Use "cue exp [command] --help" for more information about a command.
 

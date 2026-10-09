@@ -7,22 +7,22 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial template":  "YQWfzrYNOq5Qu882SSogU1Ndsu4z+ZIYalz3lHR1HJE="
-								kube2:               "Z4XGXVz1rybVYylOLc63jIG/3ZdOo/WldeQFpIUTR6Q="
-								kube3:               "1306DQNLgQ+xwEbD1vhPwipaAPuX+IPLvgqSSxN3s1E="
-								"template frontend": "rTyXdCYU+hB/phl1a+kDPkZhY5fKDW4Q55RAW7AEcNY="
-								"template kitchen":  "nNnOGq+v/SL6YkDGkuhWIZHg3gcVGCuIIhWTOrfPiAs="
-								kitchen3:            "+1M24GX7q3XVxqaOLkpOwQM0C4WkL5yQVVpI/v21Mb8="
-								sous:                "9bw2jdWsruU4z4lQhMEORXBHJSr7TB2XWYZwf95LDyA="
-								"kube tool":         "OyZwEViP8bktrQQl535FqzVikai2waJk1A4LtinEKhw="
-								"ls tool":           "zq9FaXByjoyQ2NnZRXLFj6H6hb9KhvCOa48lG47FRVE="
-								"dump tool":         "d+6yCSgNAwDQ9e5lrQcH3a5qaoRnNEOCHpplZ8KH/S0="
-								"create tool":       "iQlNB3w6PiTy+f0ty9SmVuLHUtLbdBsVjhH3VZrpu1g="
-								kubectl:             "XSgE7wnRX5Ar8fA3QZPp9A/zDhWVqhoeZ/tItsQMhpY="
+								"initial template":  "yRzppu6qSTjDr6687wMLBt6jyalvJunGW63s0zPQXEY="
+								kube2:               "7xoNQd9mpjRScMDDo9rHId2CTj2qNjDMPoKSgrUwY00="
+								kube3:               "fN+lRkPeb7T41GHrhrhuQaTlRoRXzEeXlQygJ6iFRAE="
+								"template frontend": "Y/11r0scgSDVjbEt9YTlh/Ug2hdv+5ZU6qJ1EEgtiEM="
+								"template kitchen":  "g2ws8HNIkidr5oD/0ZO0h2Bq6ervM5FjaD5FtR+A8jA="
+								kitchen3:            "VF5ZWxh2PTOwhWeFkP2QPSeGVLCNVwy2aMbLTx6b2Dg="
+								sous:                "nAsmEjcIYt1uCoq4Z6caQR3ty32OyAtRPw7Z2wVL+uU="
+								"kube tool":         "HWeYyG/pKpbnHN/hg2HxWxophNE9xTGW8gSztQqPKHM="
+								"ls tool":           "kY8YyudQ0d/r/R20v8qCBMan09l2udLrcKc8qh/meBA="
+								"dump tool":         "wdcbzE/6xNZoGmA11qXOUlPHtx3IolgsFMIO3sJFQoA="
+								"create tool":       "Wcw8DQfDGlDoCKwJCOW8KJ0psdVl+Pj563xq8dOow24="
+								kubectl:             "lHeaiZalsBCTqXNHdZ/z7LFnl0veJl5aqu0ZFvKDZ38="
 							}
 							multi_step: {
-								hash:       "D1ARSAKT23CE03FEUOIVPO05ERS42CEO7KI3OAFFOOB8F4MCJ4EG===="
-								scriptHash: "L2DE6E9PKJL1HVTL4RM43Q87A1098Q7DRNSC1J9KJ8HRP7VJDIK0===="
+								hash:       "MM66PVUTPFQJR0QVAR270EDUG0NCJRM3ILP15A8EJTUH5R1MB9LG===="
+								scriptHash: "DL2CJ9R7IHOVQCL4OGDSVQC10958LVG3C0VVB2PST7QT8V9Q7PU0===="
 								steps: [{
 									doc:      "#ellipsis 5"
 									cmd:      "find ./original -type f | sort"
@@ -138,14 +138,14 @@ package site
 									output: #"""
 											apiVersion: "v1"
 											kind:       "ConfigMap"
-											metadata: {
-											    name: "prometheus"
-											}
+											metadata: name: "prometheus"
 											data: {
 											    "alert.rules": """
 											        groups:
 											          - name: rules.yaml
 											            rules:
+											              - alert: InstanceDown
+											                expr: up == 0
 											...
 
 											"""#
@@ -225,23 +225,23 @@ package site
 											--- snapshot
 											+++ snapshot2
 											@@ -1,3 +1,9 @@
-											+service: {}
+											+service:    {}
 											+deployment: {}
 											+// ---
-											+service: {}
+											+service:    {}
 											+deployment: {}
 											+// ---
-											 service: {
-											     bartender: {
-											         apiVersion: "v1"
-											@@ -208,6 +214,7 @@
-											             selector: {
-											                 app:    "maitred"
-											                 domain: "prod"
-											+                component: "frontend"
-											             }
+											 service: bartender: {
+											     apiVersion: "v1"
+											     kind:       "Service"
+											@@ -175,6 +181,7 @@
+											         selector: {
+											             app:    "maitred"
+											             domain: "prod"
+											+            component: "frontend"
 											         }
 											     }
+											 }
 											...
 
 											"""
@@ -255,7 +255,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1822 total
+											 1832 total
 
 											"""
 								}, {
@@ -268,7 +268,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1264 total
+											 1265 total
 
 											"""
 								}, {
@@ -281,7 +281,7 @@ package site
 									cmd:      "diff -wu snapshot snapshot2 | wc -l"
 									exitCode: 0
 									output: """
-											587
+											565
 
 											"""
 								}, {
@@ -371,7 +371,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											 1009 total
+											  997 total
 
 											"""
 								}, {
@@ -396,14 +396,14 @@ package site
 									output: """
 											--- snapshot
 											+++ snapshot2
-											@@ -170,6 +170,7 @@
-											                 metadata: {
-											                     annotations: {
-											                         "prometheus.io.scrape": "true"
-											+                        "prometheus.io.port":   "7080"
-											                     }
-											                     labels: {
-											                         app:       "host"
+											@@ -145,7 +145,10 @@
+											         selector: {}
+											         template: {
+											             metadata: {
+											-                annotations: "prometheus.io.scrape": "true"
+											+                annotations: {
+											+                    "prometheus.io.scrape": "true"
+											+                    "prometheus.io.port":   "7080"
 											...
 
 											"""
@@ -422,7 +422,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  994 total
+											  982 total
 
 											"""
 								}, {
@@ -463,7 +463,7 @@ package site
 									cmd:      "find . | grep kube.cue | xargs wc -l | tail -1"
 									exitCode: 0
 									output: """
-											  986 total
+											  974 total
 
 											"""
 								}, {

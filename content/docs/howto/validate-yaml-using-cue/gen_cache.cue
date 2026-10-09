@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial x.yaml": "VrxPPO4x4VjwZ2e/7B8xK5s/Ug/zTAWy/HiP/k8njJA="
-								"initial x.cue":  "NL5aolMDgf27uAYpP+d+rT44qoX1Aa9oVH5jJ3v0+gU="
-								"another person": "ua0c1VTn0WzLRBUZ6S6QdGLF5V10Ah41DSlQ5LEeWJI="
-								"fixed yaml":     "rtGv+rHJ2PLg23nQDWPSI1oEFxC0FZJn5wEz6mmOBdc="
+								"initial x.yaml": "V54TNitbAt4vU1RAvGQjnFCCW8HM17+SMUsncQ0gEAg="
+								"initial x.cue":  "t9j/3h1mVP50P92DGCjgXJtcwRZvbkckGXgWDTo11OI="
+								"another person": "LBqF/ZYrP0J0AEsO8yegZVCKZPFA1gxi99O2InRZFKs="
+								"fixed yaml":     "qvaZJ0thKcbirmWS2coSOBgRGpGQw25vbe48w6LfaNU="
 							}
 							multi_step: {
-								hash:       "UMRO99FQ3750QJ2PI0ACSMT6BNNQ6PT9KR7Q5J4JFGQSJ6K0UATG===="
-								scriptHash: "C4EFM89Q7KNVBA7IOJ3DV94IERP38E0P6JP82M64M56U8OD3P5B0===="
+								hash:       "TVLSOA3ETTV663H1OVVB35T90U3S28N0CR3U4I49H4LPPUOH670G===="
+								scriptHash: "FCVR3RQM9KMC4K4253KBPI107J84GMJJJ8ULKG41E4AVUBFH6UUG===="
 								steps: [{
 									doc:      ""
 									cmd:      "cue vet -c x.cue x.yaml"
@@ -27,7 +27,7 @@ package site
 									output: """
 											people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
 											    ./x.cue:3:11
-											    ./x.cue:7:21
+											    ./x.cue:7:25
 											    ./x.yaml:12:10
 
 											"""

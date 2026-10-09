@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "35HD925ANROJNBD27ON9N914N22T2TABH4N7LK8Q5FB1396E75HG===="
-									scriptHash: "E3669D12NB5F0LEA9D1PCB4Q5UUF1R54BGQB2TKJMRH2IHKM3RJ0===="
+									hash:       "RKN8R0N57TLN2V141MVGHLCAGBH8HUBGG0LQB8JKQ9R87Q27BUO0===="
+									scriptHash: "D6LPPCL5D7HMPPE937N2U8B3SCU48V5A3DBIEQNTJJ0ME2BB4SOG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.3.0.20261008224848-a4f52c2332e4:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -93,26 +93,24 @@ package site
 												Flags:
 												      --escape                   use HTML escaping
 												  -e, --expression stringArray   export this expression only
-												  -f, --force                    force overwriting existing files
+												  -f, --force                    overwrite existing regular files
 												  -t, --inject stringArray       set the value of a tagged field
 												  -T, --inject-vars              inject system variables in tags
 												      --list                     concatenate multiple objects into a list
 												      --merge                    merge non-CUE files (default true)
-												  -n, --name string              regexp filter for non-CUE file names in directories
 												      --out string               output format (run 'cue help filetypes' for more info)
 												  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
-												  -p, --package string           package name for non-CUE files
+												  -p, --package string           package name for non-CUE files and CUE output
 												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
 												  -I, --proto_path stringArray   paths in which to search for imports
-												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
+												  -d, --schema stringArray       expression to select schema for evaluating values in non-CUE files
 												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
 												  -E, --all-errors     print all available errors
 												  -C, --chdir string   change working directory before running command (must be the first flag)
 												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
 
 												"""
 									}]

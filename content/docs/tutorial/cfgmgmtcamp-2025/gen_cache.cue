@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"docker-compose.yml broken":          "B7/H5x+fNyXJY/bxZpfw5F7RCF2GjCrqSIVCwy1NYmU="
-								schema:                               "/1IWjyjnkceYQlz6U8y720q6i9FrgAGv9MxtVPUihnE="
-								"docker-compose.yaml fixed":          "DPcHmZFWLwTer6Z+CaTIPPgG1NXePkwn00bblgYBIdM="
-								"moreschema.cue":                     "IV6o6KjsdO8x1A9asL6JZ36Sou483jvTsbgRf8EOpDg="
-								"docker-compose.yaml really fixed":   "dlQyHL5QH1TJiHN9N3GbPvsQ6zIxUnfvSsFxm6Vc04Y="
-								"link splotpolicy and splotservice1": "K8ZVg9RbbJXVTIpX+AEScT+rZbZ4Ssib6y0EkR3ax1U="
+								"docker-compose.yml broken":          "gEiEAzU0fLhp6Fy5n7RUliRb9pD/vUg5lx/G70FtYUc="
+								schema:                               "iU87I8cBNWBO4snspHcgO2ounQq/y4fJ/X1uPJKxy2g="
+								"docker-compose.yaml fixed":          "pxES46HwtgeuJKBmZ++ItY1kPJYmy5Him1R5PuJvvcQ="
+								"moreschema.cue":                     "C3XxHzNtIflV9sOAI0dZrS2xd3xnvhfygBKyv0LQeF4="
+								"docker-compose.yaml really fixed":   "ZCfpBLPrE8lK0V/80faBPCdtdSECeKH5pho8qnP6yyc="
+								"link splotpolicy and splotservice1": "yQK6eyhECjYCJXuaS9pw500gurOkP9QyA7oVvERZ9CU="
 							}
 							multi_step: {
-								hash:       "44LR6IF2U5DB62PNJ4IBAHDP7M33MSEAU62EI7PCCL8F0MGJTT1G===="
+								hash:       "T6HJ7MKI8ID4NQVLDNP2PNDN2MO9M2FH8BARP0F8LF4A4K0839QG===="
 								scriptHash: "D400CN0SES1U7PK9SLC4NJT5DJ9RNFL9M51DT6ONBCC5N2KGFOP0===="
 								steps: [{
 									doc:      ""
@@ -46,6 +46,7 @@ package site
 									exitCode: 1
 									output: """
 											services: field is required but not present:
+											    ./docker-compose.yaml:1:1
 											    ./schema.cue:4:2
 
 											"""
@@ -70,14 +71,10 @@ package site
 									exitCode: 0
 									output: """
 											module: "cue.example"
-											language: {
-											\tversion: "v0.17.0"
-											}
-											deps: {
-											\t"github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
-											\t\tv:       "v0.0.1"
-											\t\tdefault: true
-											\t}
+											language: version: "v0.18.0"
+											deps: "github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
+											\tv:       "v0.0.1"
+											\tdefault: true
 											}
 
 											"""

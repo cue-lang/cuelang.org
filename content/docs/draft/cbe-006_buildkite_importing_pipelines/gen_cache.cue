@@ -7,17 +7,17 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"4":  "sgs8y0cOEWe3a5KAIsbcVACrfSnXvrpIssBiPwni2+A="
-								"5":  "/EskspM7YeP+tbGqsjFWCrLhHrCKzFcWVFV3tf7XtNE="
-								"8":  "HxWQ1rblrLk4I8ZdQvkem4/IYO7Vh4TSZSNWWwigDnY="
-								"9":  "gU9dig6q0OifhipVfKYUu0PfAAHCtbqbdlMecvymuTg="
-								"10": "iakeihsKMTK+jsj/03Ia5Qqsf0dhExBUdJ4OVh/0rTQ="
-								"11": "Pkv+IuRtV6dmKFWpJgtU+mGRuJFD5h+SHuLBxFvyyUw="
-								"13": "OrIgEb5KJCpyBPTqxbSoe1Te1rcKoAp4e1xkZkytA2o="
+								"4":  "PdECeaXZv+y+MJ9L/J0SMr2Cq6O12tZrrXnew70zRv0="
+								"5":  "UGctizaMyyE0HsRpaSTIxP/YxJiWITk3p6uBaWABx1I="
+								"8":  "/t2tiXfo0ECka3QvaBH5q+KXH1L1TsBSzZuOXR8zo9E="
+								"9":  "lUOFiFFW5qH/K/dovVmA8pzlXYj9l6TC39zL20OBivM="
+								"10": "xCgO+/SDwJzGDmPhfqFIo6enY13FuIWeWqqWudJqYEA="
+								"11": "yz/tjv5pf7LHFkuJdnHIsoqXxRRRjyBmSYNb3SMRYzg="
+								"13": "N0qF0Kwt933g0fCwj4E6tUio5L4gEXe3hM6dp2MR0ao="
 							}
 							multi_step: {
-								hash:       "S71URM2R4N3I2R6RV1JIARI260EJ9FL26GQVSPD7D1KEST67F830===="
-								scriptHash: "JCMG0Q6M584RR17KNKQ71CVC44GUJV1VKAVIN5PGGP60AGUFFSAG===="
+								hash:       "P671U1K3P76C74LVOIU71IV1ELN9FQBER4I27G5B1B30UF308IL0===="
+								scriptHash: "6PCMMADL1D500HF3CANFARQKE4LPETGN2TV80M9DD20K5T23UUAG===="
 								steps: [{
 									doc:      "# Set up example content as a git repo."
 									cmd:      "cd dependent-pipeline-example"

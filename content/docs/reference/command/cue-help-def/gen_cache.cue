@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "HDCUO6JHAES9J4AHP8UULVKRUKAHRE8L0S0FVBSDPC9GRFQJP2PG===="
-									scriptHash: "VBKDH98QBS5ESO1HMAG1H4VNP8P207NNT0ID4FJ6F0R81ESS3H10===="
+									hash:       "LC57UAEM1QOVFSO87LOPN6K1NRBF9L318BS7679NBOGPIRV5E23G===="
+									scriptHash: "7GDFD1QL0S42K2OAJULRHJPF9CF7GS9I4NRB393KM6JFTAAELBJ0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.3.0.20261008224848-a4f52c2332e4:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -34,20 +34,19 @@ package site
 
 												Flags:
 												  -e, --expression stringArray   evaluate this expression only
-												  -f, --force                    force overwriting existing files
+												  -f, --force                    overwrite existing regular files
 												  -t, --inject stringArray       set the value of a tagged field
 												  -T, --inject-vars              inject system variables in tags
 												      --inline-imports           expand references to non-core imports
 												      --list                     concatenate multiple objects into a list
 												      --merge                    merge non-CUE files (default true)
-												  -n, --name string              regexp filter for non-CUE file names in directories
 												      --out string               output format (run 'cue help filetypes' for more info)
 												  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
-												  -p, --package string           package name for non-CUE files
+												  -p, --package string           package name for non-CUE files and CUE output
 												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
 												      --proto_enum string        mode for rendering enums (int|json) (default "int")
 												  -I, --proto_path stringArray   paths in which to search for imports
-												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
+												  -d, --schema stringArray       expression to select schema for evaluating values in non-CUE files
 												  -A, --show-attributes          display field attributes
 												      --with-context             import as object with contextual data (see 'cue help flags' for details)
 
@@ -55,7 +54,6 @@ package site
 												  -E, --all-errors     print all available errors
 												  -C, --chdir string   change working directory before running command (must be the first flag)
 												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
 
 												"""
 									}]

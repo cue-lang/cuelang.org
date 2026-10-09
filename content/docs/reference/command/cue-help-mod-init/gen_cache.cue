@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "NMCJNV3OC111BVU7D0MTT1ABRPQBE8V4UEPCJICG1AOHJEFC0760===="
-									scriptHash: "1AV3TSPS6NJ2H5KDKEAIH5D5TSTRK7F0T7IKTM5QM1TUKDVIH1TG===="
+									hash:       "MIMUPUEURKQIBJ8BEB910F6M2RF6G7BHBOUF7KUFSJ5LRTT7II7G===="
+									scriptHash: "MBLAQIASA2KII8TRCDGDCE4KB8FOLVM0M8J3TAN35NHQCHULGL60===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-alpha.3.0.20261008224848-a4f52c2332e4:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -22,8 +22,7 @@ package site
 										output: """
 												Init initializes a cue.mod directory in the current directory, in effect
 												creating a new module rooted at the current directory. The cue.mod
-												directory must not already exist. A legacy cue.mod file in the current
-												directory is moved to the new subdirectory.
+												directory must not already exist.
 
 												If the module name is not provided, a default module path (cue.example) will be
 												used.
@@ -40,7 +39,6 @@ package site
 												  -E, --all-errors     print all available errors
 												  -C, --chdir string   change working directory before running command (must be the first flag)
 												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
 
 												"""
 									}]
