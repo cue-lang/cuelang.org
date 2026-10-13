@@ -1,4 +1,0 @@
-name: "Dependent Pipeline Example (Deploy)"
-steps:
-  - name: ":pipeline:"
-    command: "buildkite-agent pipeline upload .buildkite/pipeline.deploy.yml"
