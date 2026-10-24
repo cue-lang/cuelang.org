@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "BKKQDIMJ90VITRIFC4FVNMAROLG2T7P1CJN07AMD2S9VGG2HG59G===="
-									scriptHash: "33MIBU80P67CQK8AVRN8GCBF9S5EDUHGAE4R8KF5NRSAQPG4II5G===="
+									hash:       "NKE0T251BHB93FFML6V2PI1FL9KSVP3R1KIDE8953B300S6L867G===="
+									scriptHash: "TKCNJ4DAPM2TROV0GFN0651AHK66HU8NMQ2AUILJ4IO92K3S4MT0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.1.0.20261023142911-c9393fa32ac5:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -32,14 +32,14 @@ package site
 												  cue cmd [flags] <name> [inputs]
 
 												Flags:
-												  -t, --inject stringArray   set the value of a tagged field
-												  -T, --inject-vars          inject system variables in tags (default true)
+												  -t, --inject stringArray         set the value of a tagged field
+												  -T, --inject-vars[=true|false]   inject system variables in tags (default true)
+												      --language-version string    fallback language version for input outside a module (for example, v0.17.0)
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

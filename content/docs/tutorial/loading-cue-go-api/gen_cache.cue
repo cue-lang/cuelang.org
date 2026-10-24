@@ -7,12 +7,12 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"initial cue code": "m3AlsG5631X8wbznbMRkdF72u2YvpIe22q3gWmfMKk8="
-								"initial go code":  "kXkvw8i9prweACDPlKiuySe7kFBG7HD52QCkvBZO52g="
+								"initial cue code": "2K8LrMR181SK2nlEbLOJohsXSsLo5uwqlpLnoFJiilc="
+								"initial go code":  "9IUobI58NSgacFP5tyxGxC9W3UZNYIA7peGS49UCgdM="
 							}
 							multi_step: {
-								hash:       "PFOAABFB9V52I1AE1KO1R2PP7EH43C5UVUDHN3FA6C1KSKPSBDF0===="
-								scriptHash: "P4KE3KDSELANEH2IFCN40B84TFCL9V03BUELUG6PKOEDTP0OC460===="
+								hash:       "E589PQTRSI6A897COD3F3NM21E4G4QDOFUP1UK95ROHFUUDCF4E0===="
+								scriptHash: "8JNLIB3M11OT9LAFQGGNLKI2GBO9JTMV6IAK90KFG815OFDOFJC0===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -33,7 +33,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.17.0
+											cue version v0.18.0-rc.1.0.20261023142911-c9393fa32ac5
 											...
 
 											"""
@@ -71,7 +71,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.17.0"
+									cmd:      "go get cuelang.org/go@v0.18.0-rc.1.0.20261023142911-c9393fa32ac5"
 									exitCode: 0
 									output: """
 											...

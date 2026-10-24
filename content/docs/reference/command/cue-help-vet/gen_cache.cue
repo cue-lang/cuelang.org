@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "IU38SNM5HCMOBGMTJD62FLBLG98P7F0410N4GC7JU7VKUNMM6RM0===="
-									scriptHash: "IDB5KSK5C5TCSS86QPM4IPU4N6VOJBT1OQVJE1COK20JTG3M0DD0===="
+									hash:       "NE3HH7RILG8RNOEK5DETQPG8MVU5GABLQFKNMCJIQ1IRFTQEDB8G===="
+									scriptHash: "BUHMIU6PDAN42CNCKEHDT6J8QBEHKK0GI03PICAJENRE15IH5NT0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.1.0.20261023142911-c9393fa32ac5:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -61,24 +61,23 @@ package site
 												  cue vet [flags] [inputs]
 
 												Flags:
-												  -c, --concrete                 require the evaluation to be concrete, or set -c=false to allow incomplete values
-												  -t, --inject stringArray       set the value of a tagged field
-												  -T, --inject-vars              inject system variables in tags
-												      --list                     concatenate multiple objects into a list
-												      --merge                    merge non-CUE files (default true)
-												  -n, --name string              regexp filter for non-CUE file names in directories
-												  -p, --package string           package name for non-CUE files
-												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
-												      --proto_enum string        mode for rendering enums (int|json) (default "int")
-												  -I, --proto_path stringArray   paths in which to search for imports
-												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
-												      --with-context             import as object with contextual data (see 'cue help flags' for details)
+												  -c, --concrete[=true|false]       require the evaluation to be concrete, or set -c=false to allow incomplete values
+												  -t, --inject stringArray          set the value of a tagged field
+												  -T, --inject-vars[=true|false]    inject system variables in tags
+												      --language-version string     fallback language version for input outside a module (for example, v0.17.0)
+												      --list[=true|false]           concatenate multiple objects into a list
+												      --merge[=true|false]          merge non-CUE files (default true)
+												  -p, --package string              package name for non-CUE files and CUE output
+												  -l, --path stringArray            CUE expression for single path component (see 'cue help flags' for details)
+												      --proto_enum string           mode for rendering enums (int|json) (default "int")
+												  -I, --proto_path stringArray      paths in which to search for imports
+												  -d, --schema stringArray          expression to select schema for evaluating values in non-CUE files
+												      --with-context[=true|false]   import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

@@ -7,20 +7,20 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema.cue":     "BZLZooVGo7eGfqXvbIUO7kIJxWjGrkj96dtiX7cgtXM="
-								"good.json":      "CDTQjmSYtdcZrrdnmjL9vA0qbAie0YL6B6TKT6+RsgM="
-								"bad.json":       "P/J9R8EfpC9nrhDVIeO/5f0OU5/f8fij9KZ4PCyVFtA="
-								"bad.json fixed": "YI91Xy7AQBTzC1KEJnGWVeeGkM/hAjaM0T/Ocwi964A="
+								"schema.cue":     "JglIIBY05J1fwRmx6F/uWBfCicEeCWWtROOJCJA6ixQ="
+								"good.json":      "FwmjRpcF0QYFYASRkzQOBlOnPabC1XjJ9FHXE0nfcew="
+								"bad.json":       "K5it4MumNcWKQWXDrhwhFGc0lCjHrBZ32ceWtDLy1hM="
+								"bad.json fixed": "T0/0cC2bTwqstqkQ8YKTezNIZVE4TlaJjLe6yCqe99I="
 							}
 							multi_step: {
-								hash:       "O6S2A59SMNDPKB2DDAPTH45488C5DR805PHH99TENPSQCBD3O5S0===="
-								scriptHash: "NR56U4K5GGIOULD3SBG940S9TPIOJT788OQMQ83B35PJ9OR40MPG===="
+								hash:       "UVS44STDQJBKM286V2K7TD4GIGP26BOFG6L9D6MB99I927J59FJG===="
+								scriptHash: "2A5RA9M3RQ9OQTK27K5KC6L7C2RA3D099T3NB61DA5CV0UGHQDHG===="
 								steps: [{
 									doc:      "#ellipsis 1"
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.17.0
+											cue version v0.18.0-rc.1.0.20261023142911-c9393fa32ac5
 											...
 
 											"""
@@ -37,16 +37,9 @@ package site
 											            "additionalProperties": false,
 											            "properties": {
 											                "duration": {
-											                    "allOf": [
-											                        {
-											                            "type": "number"
-											                        },
-											                        {
-											                            "type": "integer",
-											                            "exclusiveMinimum": 0,
-											                            "maximum": 480
-											                        }
-											                    ]
+											                    "type": "integer",
+											                    "exclusiveMinimum": 0,
+											                    "maximum": 480
 											                },
 											                "speaker": {
 											                    "type": "string"
@@ -96,7 +89,7 @@ package site
 									exitCode: 1
 									output: """
 											sessions.0.duration: invalid value 600 (out of bound <=480):
-											    ./event.schema.json:16:30
+											    ./event.schema.json:11:22
 											    ./bad.json:8:25
 
 											"""

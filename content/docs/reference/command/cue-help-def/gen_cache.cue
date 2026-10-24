@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "HDCUO6JHAES9J4AHP8UULVKRUKAHRE8L0S0FVBSDPC9GRFQJP2PG===="
-									scriptHash: "VBKDH98QBS5ESO1HMAG1H4VNP8P207NNT0ID4FJ6F0R81ESS3H10===="
+									hash:       "7FCKKAJLMH6K6J7T0451G7QR7Q40DAGP4H3911M8GOENGM7ADPBG===="
+									scriptHash: "NKCDR5DMBLDO7NTEBTJ9DJ0OQTL5G9M3OGUCR1TC53E3G7MC7LS0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.1.0.20261023142911-c9393fa32ac5:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -33,29 +33,28 @@ package site
 												  cue def [flags] [inputs]
 
 												Flags:
-												  -e, --expression stringArray   evaluate this expression only
-												  -f, --force                    force overwriting existing files
-												  -t, --inject stringArray       set the value of a tagged field
-												  -T, --inject-vars              inject system variables in tags
-												      --inline-imports           expand references to non-core imports
-												      --list                     concatenate multiple objects into a list
-												      --merge                    merge non-CUE files (default true)
-												  -n, --name string              regexp filter for non-CUE file names in directories
-												      --out string               output format (run 'cue help filetypes' for more info)
-												  -o, --outfile string           filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
-												  -p, --package string           package name for non-CUE files
-												  -l, --path stringArray         CUE expression for single path component (see 'cue help flags' for details)
-												      --proto_enum string        mode for rendering enums (int|json) (default "int")
-												  -I, --proto_path stringArray   paths in which to search for imports
-												  -d, --schema string            expression to select schema for evaluating values in non-CUE files
-												  -A, --show-attributes          display field attributes
-												      --with-context             import as object with contextual data (see 'cue help flags' for details)
+												  -e, --expression stringArray         evaluate this expression only
+												  -f, --force[=true|false]             overwrite existing regular files
+												  -t, --inject stringArray             set the value of a tagged field
+												  -T, --inject-vars[=true|false]       inject system variables in tags
+												      --inline-imports[=true|false]    expand references to non-core imports
+												      --language-version string        fallback language version for input outside a module (for example, v0.17.0)
+												      --list[=true|false]              concatenate multiple objects into a list
+												      --merge[=true|false]             merge non-CUE files (default true)
+												      --out string                     output format (run 'cue help filetypes' for more info)
+												  -o, --outfile string                 filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
+												  -p, --package string                 package name for non-CUE files and CUE output
+												  -l, --path stringArray               CUE expression for single path component (see 'cue help flags' for details)
+												      --proto_enum string              mode for rendering enums (int|json) (default "int")
+												  -I, --proto_path stringArray         paths in which to search for imports
+												  -d, --schema stringArray             expression to select schema for evaluating values in non-CUE files
+												  -A, --show-attributes[=true|false]   display field attributes
+												      --with-context[=true|false]      import as object with contextual data (see 'cue help flags' for details)
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

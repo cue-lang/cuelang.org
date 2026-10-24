@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "FK5UNH6TNO787HNIEINIEA55J955BBCGR9VVHBQIL8EUMIVR39FG===="
-									scriptHash: "CIIIK09RG1M0TI798VOGHGT6JTQR39PBB4A8T92DFFT4V8PQBPVG===="
+									hash:       "4JG85UBKQQMT3UBV44GKUO7UK136J43QP8NBVRSBHMP7QK8DQ280===="
+									scriptHash: "9KATTTUPOKGDMPH1AMI493U719FF3A84RMUUGNAHNEQSJP12PB60===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.1.0.20261023142911-c9393fa32ac5:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -48,20 +48,19 @@ package site
 												  cue mod edit [flags]
 
 												Flags:
-												      --drop-replace string       remove a module replace from local-module.cue
-												      --drop-require string       remove a requirement
-												      --drop-source               remove the source field
-												      --language-version string   set language.version ('current' means current language version)
-												      --module string             set the module path
-												      --replace string            add a module replace (path@majorversion=replacement) to local-module.cue
-												      --require string            add a required module@version
-												      --source string             set the source field
+												      --drop-replace string        remove a module replace from local-module.cue
+												      --drop-require string        remove a requirement
+												      --drop-source[=true|false]   remove the source field
+												      --language-version string    set language.version ('current' means current language version)
+												      --module string              set the module path
+												      --replace string             add a module replace (path@majorversion=replacement) to local-module.cue
+												      --require string             add a required module@version
+												      --source string              set the source field
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]
