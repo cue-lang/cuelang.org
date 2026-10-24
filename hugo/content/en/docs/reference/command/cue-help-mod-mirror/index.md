@@ -43,17 +43,16 @@ Usage:
   cue mod mirror [module...] [flags]
 
 Flags:
-  -a, --all-versions   copy all available versions of the specified modules
-  -n, --dry-run        only run simulation
-      --from string    source registry (defaults to $CUE_REGISTRY)
-  -m, --mod            mirror the current main module's dependency modules by default
-      --no-deps        do not copy module dependencies
-      --to string      destination registry (defaults to $CUE_REGISTRY)
+  -a, --all-versions[=true|false]   copy all available versions of the specified modules
+  -n, --dry-run[=true|false]        only run simulation
+      --from string                 source registry (defaults to $CUE_REGISTRY)
+  -m, --mod[=true|false]            mirror the current main module's dependency modules by default
+      --no-deps[=true|false]        do not copy module dependencies
+      --to string                   destination registry (defaults to $CUE_REGISTRY)
 
 Global Flags:
-  -E, --all-errors     print all available errors
-  -C, --chdir string   change working directory before running command (must be the first flag)
-  -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
+  -E, --all-errors[=true|false]   print all available errors
+  -C, --chdir string              change working directory before running command (must be the first flag)
+  -i, --ignore[=true|false]       proceed in the presence of errors
 ````
 

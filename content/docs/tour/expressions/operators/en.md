@@ -44,7 +44,7 @@ b: "xxxOOO"
 c: 4
 d: 4.0
 e: 3.00000
-f: 3.0
+f: 3
 g: 3.0
 h: true
 i: false

@@ -30,18 +30,16 @@ message: "Hello, \(#Name)!"
 	// ...
 }
 
-valid: #A & {n: 3}
+valid:   #A & {n: 3}
 invalid: #A & {N: 3}
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgLWljIGZpbGUuY3Vl" >}}
 $ cue eval -ic file.cue
 message: "Hello, world!"
-valid: {
-    n: 3
-}
+valid: n: 3
 invalid: {
     N: _|_ // invalid.N: field not allowed
-    n: int
+    n: _|_ // invalid.n: incomplete value int
 }
 {{< /code-tab >}}
 {{< /code-tabs >}}

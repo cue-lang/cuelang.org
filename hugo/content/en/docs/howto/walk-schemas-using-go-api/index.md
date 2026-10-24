@@ -157,8 +157,8 @@ func structToType(name cue.Selector, val cue.Value) {
 {{< step stepNumber="6" >}}
 Add a dependency on `cuelang.org/go` and ensure the Go module is tidy:
 
-````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE3LjAKZ28gbW9kIHRpZHk=" }
-$ go get cuelang.org/go@v0.17.0
+````text { title="TERMINAL" type="terminal" codeToCopy="Z28gZ2V0IGN1ZWxhbmcub3JnL2dvQHYwLjE4LjAtcmMuMS4wLjIwMjYxMDIzMTQyOTExLWM5MzkzZmEzMmFjNQpnbyBtb2QgdGlkeQ==" }
+$ go get cuelang.org/go@v0.18.0-rc.1.0.20261023142911-c9393fa32ac5
 ...
 $ go mod tidy
 ...

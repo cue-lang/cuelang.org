@@ -49,23 +49,31 @@ Jsonnet, HCL, Flabbergast, Nix, JSONPath, Haskell, Objective-C, and Python.
 We annotate code blocks with syntax highlighting like ```ebnf.
 It turns out that we can use a space to add arbitrary text
 without breaking syntax highlighting in Hugo,
-so we use that to annotate code blocks with intent:
+so we use that to annotate CUE code blocks with intent,
+in the form ```cue [!] mode:
 
-* `cue` for standalone CUE files which we expect to parse OK;
-  we do not yet mark what we want to do with them (export, eval, vet)
-  nor do we record what the expected outcome is yet.
+* `cue vet` for CUE which we expect to validate OK.
+  A field followed by a `// _|_` comment must evaluate to an error,
+  which may be an incomplete one that validation does not report.
+
+* `cue parse` for CUE which we expect to parse OK,
+  but which we do not expect to validate,
+  such as when it refers to names declared in another code block.
 
 * `cue untested` for syntax that is CUE-like but invalid.
 
-* `cue parse` for CUE files which we expect parse OK,
-  but we do not expect to compile or evaluate correctly.
-
-* `cue ! parse` for CUE which we expect to fail parsing;
-  the error is recorded as an HTML comment after the code block.
-
 * `cue rows` for tables of input-output rows.
-  Just like `cue`, we do not yet mark what to do with them,
+  We do not yet mark what to do with them,
   but the output column is generally the expected outcome.
+
+A `!` before `parse` or `vet` expects that step to fail instead,
+such as `cue ! vet`, and the resulting error is recorded
+as an HTML comment right after the code block.
+
+Each code block is checked on its own, as if it were a single CUE file,
+so names declared by one block are not visible to any other.
+Run the checks with "go test ./doc/ref", and record the expected errors
+anew with "CUE_UPDATE=1 go test ./doc/ref".
 -->
 
 The syntax is specified using Extended Backus-Naur Form (EBNF):
@@ -288,12 +296,12 @@ The following character sequences represent operators and punctuation:
 
 ```
 +     &&    ==    <     =     (     )
--     ||    !=    >     :     {     }
+-     ||    !=    >     :     {     }     ~
 *     &     =~    <=    ?     [     ]     ,
 /     |     !~    >=    !     _|_   ...   .
 ```
 <!--
-Free tokens:  ; ~ ^
+Free tokens:  ; % ^
 // To be used:
   @   at: associative lists.
 
@@ -470,6 +478,7 @@ little_u_value   = `\` { `#` } "u" hex_digit hex_digit hex_digit hex_digit .
 big_u_value      = `\` { `#` } "U" hex_digit hex_digit hex_digit hex_digit
                            hex_digit hex_digit hex_digit hex_digit .
 unicode_value    = unicode_char | little_u_value | big_u_value | escaped_char .
+escaped_newline  = `\` { `#` } newline .
 interpolation    = "\" { `#` } "(" Expression ")" .
 
 string_lit       = simple_string_lit |
@@ -481,10 +490,10 @@ string_lit       = simple_string_lit |
 simple_string_lit    = `"` { unicode_value | interpolation } `"` .
 simple_bytes_lit     = `'` { unicode_value | interpolation | byte_value } `'` .
 multiline_string_lit = `"""` newline
-                             { unicode_value | interpolation | newline }
+                             { unicode_value | interpolation | escaped_newline | newline }
                              newline `"""` .
 multiline_bytes_lit  = "'''" newline
-                             { unicode_value | interpolation | byte_value | newline }
+                             { unicode_value | interpolation | byte_value | escaped_newline | newline }
                              newline "'''" .
 ```
 
@@ -512,9 +521,9 @@ the string value.
 ```
 <!-- error:
 illegal character U+0027 ''' in escape sequence:
-    spec.md:503:5
+    4:5
 escape sequence is invalid Unicode code point:
-    spec.md:512:3
+    13:3
 -->
 
 These examples all represent the same string:
@@ -547,8 +556,7 @@ lines in the string literal.
 A closing triple quote may not appear in the string.
 To include it is suffices to escape one of the quotes.
 
-<!-- TODO: should the backslash here work? -->
-```cue ! parse
+```cue vet
 """
     lily:
     out of the water
@@ -561,14 +569,10 @@ To include it is suffices to escape one of the quotes.
         — Nick Virgilio, Selected Haiku, 1988
     """
 ```
-<!-- error:
-unknown escape sequence:
-    spec.md:563:14
--->
 
 This represents the same string as:
 
-```cue
+```cue vet
 "lily:\nout of the water\nout of itself\n\n" +
 "bass\npicking bugs\noff the moon\n" +
 "    — Nick Virgilio, Selected Haiku, 1988"
@@ -1079,11 +1083,11 @@ the result of which is the unification of all those fields.
 StructLit       = "{" { Declaration "," } "}" .
 Declaration     = Field | Ellipsis | Embedding | LetClause | attribute .
 Ellipsis        = "..." [ Expression ] .
-Embedding       = Comprehension | AliasExpr .
-Field           = Label ":" { Label ":" } AliasExpr { attribute } .
-Label           = [ identifier "=" ] LabelExpr .
-LabelExpr       = LabelName [ "?" | "!" ] | "[" AliasExpr "]" .
-LabelName       = identifier | simple_string_lit | "(" AliasExpr ")" .
+Embedding       = Comprehension | Expr .
+Field           = Label ":" { Label ":" } Expr { attribute } .
+Label           = LabelExpr [ Alias ] .
+LabelExpr       = LabelName [ "?" | "!" ] | "[" Expr "]" .
+LabelName       = identifier | simple_string_lit | "(" Expr ")" .
 
 attribute       = "@" identifier "(" attr_tokens ")" .
 attr_tokens     = { attr_token |
@@ -1234,10 +1238,9 @@ defines that the value `v` should unify with any field in the resulting struct `
 whose label does not unify with any of the patterns of the pattern
 constraints defined for `a` _and_ for which there exists no field declaration
 in `a` with that label.
-The token `...` is a shorthand for `..._`.
-_Note_: default constraints of the form `..._` are not yet implemented.
+The token `...` is shorthand for `..._`, which allows any regular field.
+_Note_: no other default constraint is implemented yet.
 
-<!-- NOTE: default constraints not yet implemented -->
 ```cue ! parse
 a: {
     foo:      string  // foo is a string
@@ -1256,9 +1259,9 @@ b: a & {
 ```
 <!-- error:
 missing ',' in struct literal:
-    spec.md:1253:8
+    7:8
 expected '}', found 'EOF':
-    spec.md:1260:3
+    14:3
 -->
 
 <!--
@@ -1327,7 +1330,7 @@ future extensions and relaxations:
     additionalProperties and additionalItems.
 -->
 
-```cue
+```cue ! vet
 intMap: [string]: int
 intMap: {
     t1: 43
@@ -1341,12 +1344,17 @@ nameMap: [string]: {
 
 nameMap: hank: firstName: "Hank"
 ```
+<!-- error:
+intMap.t2: conflicting values 2.4 and int (mismatched types float and int):
+    1:19
+    4:9
+-->
 
 The optional field set defined by `nameMap` matches every field,
 in this case just `hank`, and unifies the associated constraint
 with the matched field, resulting in:
 
-```cue
+```cue vet
 nameMap: hank: {
     firstName: "Hank"
     nickName:  "Hank"
@@ -1360,7 +1368,7 @@ By default, structs are open to adding fields.
 Instances of an open struct `p` may contain fields not defined in `p`.
 This is makes it easy to add fields, but can lead to bugs:
 
-```cue
+```cue vet
 S: {
     field1: string
 }
@@ -1387,17 +1395,21 @@ A1: A & {
 
 A _closed struct_ `c` is a struct whose instances may not declare any field
 with a name that does not match the name of a field
-or the pattern of a pattern constraint defined in `c`.
+or the pattern of a pattern constraint defined in `c`,
+unless `c` declares a [`...`](#pattern-and-default-constraints).
 Hidden fields are excluded from this limitation.
-A struct that is the result of unifying any struct with a [`...`](#structs)
-declaration is defined for all regular fields.
-Closing a struct is equivalent to adding `..._|_` to it.
+A field is allowed in a unification of closed structs only if each of them
+allows it, so a `...` in one operand does not open another.
+Like any default constraint, a `...` applies only to the struct declaring it,
+not to those nested within it.
+Closing a struct is equivalent to adding `..._|_` to it;
+closing it recursively adds `..._|_` to every nested struct as well.
 
 Syntactically, structs are closed explicitly with the `close` builtin or
 implicitly and recursively by [definitions](#definitions-and-hidden-fields).
 
 
-```cue
+```cue ! vet
 A: close({
     field1: string
     field2: string
@@ -1409,9 +1421,16 @@ A1: A & {
 
 A2: A & {
     for k,v in { feild1: string } {
-        k: v
+        "\(k)": v
     }
 }  // _|_ feild1 not defined for A
+
+A3: A & {
+    ...
+    feild1: string
+} // _|_ feild1 not defined for A
+
+A4: A & close({})  // _|_ field1 and field2 not allowed by the empty struct
 
 C: close({
     [_]: _
@@ -1429,7 +1448,30 @@ D: close({
         "\(k)": v
     }
 })
+
+#E: {
+    e: {}
+    ...
+}
+
+E1: #E & {
+    e: feild1: string
+} // _|_ feild1 not defined for #E.e
 ```
+<!-- error:
+A1.feild1: field not allowed:
+    7:5
+A2.feild1: field not allowed:
+    12:9
+A3.feild1: field not allowed:
+    18:5
+A4.field1: field not allowed:
+    2:5
+A4.field2: field not allowed:
+    3:5
+E1.e.feild1: field not allowed:
+    46:8
+-->
 
 <!-- (jba) Somewhere it should be said that optional fields are only
      interesting inside closed structs. -->
@@ -1439,46 +1481,31 @@ D: close({
 #### Embedding
 
 A struct may contain an _embedded value_, an operand used as a declaration.
-An embedded value of type struct is unified with the struct in which it is
-embedded, but disregarding the restrictions imposed by closed structs.
-So if an embedding resolves to a closed struct, the corresponding enclosing
-struct will also be closed, but may have fields that are not allowed if
-normal rules for closed structs were observed.
+An embedded value of type struct is unified with the struct formed by the
+declarations around it. A [closed](#closed-structs) embedded value thus
+closes that struct, even one declaring a `...`,
+at each level where the value itself is closed.
+The [spread operator](#spread-operator) embeds a value without its
+closedness at any level.
+
+Embeddings can be useful for composing larger schemas from smaller ones.
+The order of specification may imply a documented field order.
 
 If an embedded value is not of type struct, the struct may only have
 definitions or hidden fields. Regular fields are not allowed in such case.
 
-The result of `{ A }` is `A` for any `A` (including definitions).
-
 Syntactically, embeddings may be any expression.
 
-```cue
-S1: {
-    a: 1
-    b: 2
-    {
-        c: 3
-    }
+```cue vet
+Meta: {
+    kind: string
+    name: string
 }
-// S1 is { a: 1, b: 2, c: 3 }
-
-S2: close({
-    a: 1
-    b: 2
-    {
-        c: 3
-    }
-})
-// same as close(S1)
-
-S3: {
-    a: 1
-    b: 2
-    close({
-        c: 3
-    })
+Guzzler: {
+    Meta...
+    volume: number
 }
-// same as S2
+// Guzzler is { kind: string, name: string, volume: number }
 ```
 
 
@@ -1494,13 +1521,13 @@ to data and are never required to be concrete.
 Referencing a definition will recursively [close](#closed-structs) it.
 That is, a referenced definition will not unify with a struct
 that would add a field anywhere within the definition that it does not
-already define or explicitly allow with a pattern constraint or `...`.
-[Embedding](#embedding) allows bypassing this check.
+already define or explicitly allow with a pattern constraint, `...`,
+or the [spread operator](#spread-operator) (postfix `...`).
 
 If referencing a definition would always result in an error, implementations
 may report this inconsistency at the point of its declaration.
 
-```cue
+```cue ! vet
 #MyStruct: {
     sub: field:    string
 }
@@ -1515,7 +1542,7 @@ myValue: #MyStruct & {
 }
 
 #D: {
-    #OneOf
+    #OneOf...
 
     c: int // adds this field.
 }
@@ -1526,30 +1553,63 @@ myValue: #MyStruct & {
 D1: #D & { a: 12, c: 22 }  // { a: 12, c: 22 }
 D2: #D & { a: 12, b: 33 }  // _|_ // cannot define both `a` and `b`
 ```
+<!-- error:
+D2: 2 errors in empty disjunction:
+D2.a: field not allowed:
+    24:12
+D2.b: field not allowed:
+    24:19
+myValue.sub.feild: field not allowed:
+    10:10
+-->
 
 
-```cue
+```cue ! vet
 #A: {a: int}
 
 B: {
     #A
-    b: c: int
+    a: 1
 }
 
 x: B
 x: d: 3  // not allowed, as closed by embedded #A
 
-y: B.b
-y: d: 3  // allowed as nothing closes b
-
-#B: {
+D: {
     #A
+    ...
+}
+
+v: D
+v: d: 3  // not allowed, as still closed by embedded #A
+
+C: {
+    #A...
     b: c: int
 }
 
-z: #B.b
-z: d: 3  // not allowed, as referencing #B closes b
+y: C
+y: d: 3  // allowed, as the spread operator does not close C
+
+z: C.b
+z: d: 3  // allowed, as nothing closes b
+
+#C: {
+    #A...
+    b: c: int
+}
+
+w: #C.b
+w: d: 3  // not allowed, as referencing #C closes b
 ```
+<!-- error:
+v.d: field not allowed:
+    17:4
+w.d: field not allowed:
+    36:4
+x.d: field not allowed:
+    9:4
+-->
 
 
 <!---
@@ -1571,7 +1631,8 @@ An attribute associates an identifier with a value, a balanced token sequence,
 which is a sequence of CUE tokens with balanced brackets (`()`, `[]`, and `{}`).
 The sequence may not contain interpolations.
 
-Fields, structs and packages can be associated with a set of attributes.
+Fields, structs, packages, and source files can be associated with
+a set of attributes.
 Attributes accumulate during unification, but implementations may remove
 duplicates that have the same source string representation.
 The interpretation of an attribute, including the handling of multiple
@@ -1581,19 +1642,35 @@ Field attributes define additional information about a field,
 such as a mapping to a protocol buffer <!-- TODO: add link --> tag or alternative
 name of the field when mapping to a different language.
 
+File attributes apply only to the source file in which they appear,
+such as enabling an experiment for that file,
+and are not part of the value of the package.
+They are the attributes in the preamble of a source file,
+as defined in [Source file organization](#source-file-organization).
+All other top-level attributes of a source file are package attributes,
+which belong to the value of the package
+in the same way that struct attributes belong to their struct.
 
-```cue
-// Package attributes
+
+```cue vet
+// File attribute
 @experiment(try)
+
+package example
+
+import "strings"
+
+// Package attribute
 @protobuf(proto3)
 
 myStruct1: {
-    // Struct attribute:
+    // Struct attribute
     @jsonschema(id="https://example.org/mystruct1.json")
 
     // Field attributes
     field: string @go(Field)
     attr:  int    @xml(,attr) @go(Attr)
+    name:  strings.ToTitle("example")
 }
 
 myStruct2: {
@@ -1609,77 +1686,85 @@ Combined: myStruct1 & myStruct2
 
 #### Aliases
 
-Aliases name values that can be referred to
+Aliases bind identifiers to a field or its name that can be referred to
 within the [scope](#declarations-and-scopes) in which they are declared.
 The name of an alias must be unique within its scope.
 
 ```ebnf
-AliasExpr  = [ identifier "=" ] Expression .
+Alias  = "~" ( identifier | "(" identifier [ "," ( identifier | "_" ) ] ")" ) .
 ```
 
-Aliases can appear in several positions:
+The alias is specified using a postfix `~` operator after a label. The single
+form `~V` or `~(V)` creates an alias referring to the field, while the
+dual form `~(K,V)` creates two aliases: one for the label and one for the field.
+The parenthesized single form `~(V)` is the canonical form;
+`cue fmt` normalizes `~V` to `~(V)`.
+The first position in the dual form can use `_` (blank identifier) to skip
+binding the label alias.
 
-<!--- TODO: consider allowing this. It should be considered whether
-having field aliases isn't already sufficient.
+Aliases resolve as follows:
 
-As a declaration in a struct (`X=value`):
+After a label (`label~(V): value` or `label~(K, V): value`):
 
-- binds identifier `X` to a value embedded within the struct.
---->
+- binds the identifier `V` to the field itself (not its value).
+- binds the identifier `K` to the label.
 
-In front of a Label (`X=label: value`):
+After a dynamic field (`(label)~(V): value` or `(label)~(K, V): value`):
 
-- binds the identifier to the same value as `label` would be bound
-  to if it were a valid identifier.
+- binds the identifier `V` to the field itself.
+- binds the identifier `K` to the concrete label resulting from evaluating `label`.
+- the same semantics applies when binding to an interpolated string label.
 
-In front of a dynamic field (`X=(label): value`):
+After a pattern constraint (`[expr]~(V): value` or `[expr]~(K, V): value`):
 
-- binds the identifier to the same value as `label` if it were a valid
-  static identifier.
-
-In front of a dynamic field expression (`(X=expr): value`):
-
-- binds the identifier to the concrete label resulting from evaluating `expr`.
-
-In front of a pattern constraint (`X=[expr]: value`):
-
-- binds the identifier to the same field as the matched by the pattern
-  within the instance of the field value (`value`).
-
-In front of a pattern constraint expression (`[X=expr]: value`):
-
-- binds the identifier to the concrete label that matches `expr`
+- binds the identifier `V` to the field matched by the pattern
+  within the scope of that field's value (`value`).
+- binds the identifier `K` to the concrete label that matches `expr`
   within the instances of the field value (`value`).
 
-Before a value (`foo: X=x`)
+Note that aliases are equivalent to referring to the field by name.
+Use `self` to refer to a field's value directly.
 
-- binds the identifier to the value it precedes within the scope of that value.
-
-Before a list element (`[ X=value, X+1 ]`) (Not yet implemented)
-
-- binds the identifier to the list element it precedes within the scope of the
-  list expression.
+```
+foo: {
+    let X = self
+    // X refers to the value of foo
+}
+```
 
 <!-- TODO: explain the difference between aliases and definitions.
      Now that you have definitions, are aliases really necessary?
      Consider removing.
 -->
 
-```cue
+```cue vet
 // A field alias
-foo: X  // 4
-X="not an identifier": 4
-
-// A value alias
-foo: X={x: X.a}
-bar: foo & {a: 1}  // {a: 1, x: 1}
-
-// A label alias
-[Y=string]: { name: Y }
-foo: { value: 1 } // outputs: foo: { name: "foo", value: 1 }
+result1: X  // 4
+"not an identifier"~(X): 4
 ```
 
-<!-- TODO: also allow aliases as lists -->
+```cue vet
+// A field alias example
+foo~(F): {
+    x: F.a
+}
+bar: foo & {a: 1}  // {a: 1, x: 1}
+```
+
+```cue vet
+// A label alias with dual form
+[string]~(K, V): { name: K, add1: V.value+1 }
+foo: { value: 1 } // outputs: foo: { name: "foo", value: 1, add1: 2 }
+```
+
+```cue vet
+// Dynamic field with dual form
+("my" + "Field")~(K, V): { label: K, foo: 42 }
+value: V.foo
+// outputs: {myField: { label: "myField", value: 42 }, value: 42}
+```
+
+<!-- TODO: also allow aliases in lists -->
 
 
 #### Let declarations
@@ -1689,11 +1774,22 @@ The identifier is only visible within the [scope](#declarations-and-scopes)
 in which it is declared.
 The identifier must be unique within its scope.
 
-```cue
+```cue parse
 let x = expr
 
 a: x + 1
 b: x + 2
+```
+
+Let declarations are commonly used with the [`self`](#self-from-v0150) keyword
+to create value aliases:
+
+```
+foo: {
+    let V = self
+    x: V.a
+    y: V.b
+}
 ```
 
 #### Shorthand notation for nested structs
@@ -1702,11 +1798,11 @@ A field whose value is a struct with a single field may be written as
 a colon-separated sequence of the two field names,
 followed by a colon and the value of that single field.
 
-```cue
+```cue vet
 job: myTask: replicas: 2
 ```
 expands to
-```cue
+```cue vet
 job: {
     myTask: {
         replicas: 2
@@ -1776,7 +1872,7 @@ ElementList   = Ellipsis | Embedding { "," Embedding } [ "," Ellipsis ] .
 
 Lists can be thought of as structs:
 
-```cue
+```cue vet
 List: *null | {
     Elem: _
     Tail: List
@@ -1786,11 +1882,11 @@ List: *null | {
 For closed lists, `Tail` is `null` for the last element, for open lists it is
 `*null | List`, defaulting to the shortest variant.
 For instance, the open list [ 1, 2, ... ] can be represented as:
-```cue
+```cue parse
 open: List & { Elem: 1, Tail: { Elem: 2 } }
 ```
 and the closed version of this list, [ 1, 2 ], as
-```cue
+```cue parse
 closed: List & { Elem: 1, Tail: { Elem: 2, Tail: null } }
 ```
 
@@ -1866,7 +1962,7 @@ of the predefined identifier, prefixed with `__`.
 
 ```
 Functions
-len close and or
+len close and or, for more see builtins
 
 Types
 null      The null type and value
@@ -1875,6 +1971,8 @@ int       All integral numbers
 float     All decimal floating-point numbers
 string    Any valid UTF-8 sequence
 bytes     Any valid byte sequence
+
+self      Refers to the inner scope
 
 Derived   Value
 number    int | float
@@ -1909,7 +2007,7 @@ such as regular fields or definitions starting with `#`.
 Any identifier starting with `_` is hidden from other packages;
 it resides in a separate namespace than namesake identifiers of other packages.
 
-```cue
+```cue vet
 package mypackage
 
 foo:   string  // visible outside mypackage
@@ -1943,7 +2041,7 @@ A field associates the value of an expression to a label within a struct.
 If this label is an identifier, it binds the field to that identifier,
 so the field's value can be referenced by writing the identifier.
 String labels are not bound to fields.
-```cue
+```cue ! vet
 a: {
     b: 2
     "s": 3
@@ -1953,6 +2051,17 @@ a: {
     e: a.s // 3
 }
 ```
+<!-- error:
+a.d: reference "s" not found:
+    6:8
+-->
+
+<!-- TODO: the annotation for e only holds because d is a compile-time error.
+If d were an evaluation error instead, such as 1 & 2, a would be bottom
+by the struct unification rule, and so would e, as selecting from bottom
+yields bottom; references such as c are unaffected.
+Consider moving d out of a so the example does not imply otherwise.
+-->
 
 If an expression may result in a value associated with a default value
 as described in [default values](#default-values), the field binds to this
@@ -2036,7 +2145,7 @@ the fields they were originally bound to.
 Implementations may use a different mechanism to evaluate as long as
 these semantics are maintained.
 
-```cue
+```cue vet
 a: {
     place:    string
     greeting: "Hello, \(place)!"
@@ -2049,7 +2158,34 @@ d: b.greeting  // "Hello, world!"
 e: c.greeting  // "Hello, you!"
 ```
 
+#### `self` (from v0.15.0)
 
+The [predeclared identifier](#predeclared-identifiers) `self` and `__self` refer
+to the innermost struct or list, or the top level if none exist.
+
+```
+a: {
+    b: {
+        c: self.d // refers to value of a.b.d (1)
+        d: 1
+    }
+    d: self // refers to value of a (cyclic)
+}
+e: self // refers to top level (cyclic)
+
+// lists
+f: [ 1, 2, self[0] ]  // refers to value of f[0]
+
+// implicit scope
+g: x: self // refers to value of g
+
+// naming using let
+let X = self
+h: a: b: c: X.f[0] // refers to the value of f[0] (1)
+
+// predeclared identifier redeclared
+i: self: x: y: z: self // refers to value of i.self (self redefined)
+```
 
 ### Primary expressions
 
@@ -2060,7 +2196,8 @@ PrimaryExpr =
 	Operand |
 	PrimaryExpr Selector |
 	PrimaryExpr Index |
-	PrimaryExpr Arguments .
+	PrimaryExpr Arguments |
+	PrimaryExpr "..." .
 
 Selector       = "." (identifier | simple_string_lit) .
 Index          = "[" Expression [ "," ] "]" .
@@ -2153,7 +2290,7 @@ the result of the expression is bottom (an error).
 In the latter case the expression is incomplete.
 The operand of a selector may be associated with a default.
 
-```cue
+```cue vet
 T: {
     x:     int
     y:     3
@@ -2216,7 +2353,7 @@ for `a` of struct type:
 - bottom (an error), otherwise
 
 
-```cue
+```cue ! vet
 a: [ 1, 2 ][1]     // 2
 b: [ 1, 2 ][2]     // _|_
 c: [ 1, 2, ...][2] // _|_
@@ -2226,6 +2363,58 @@ x: [1, 2] | *[3, 4]
 y: int | *1
 z: x[y]  // 4
 ```
+<!-- error:
+b: index out of range [2] with length 2:
+    2:13
+    2:4
+-->
+
+
+
+### Spread Operator (`...`)
+
+For a [primary expression](#primary-expressions) `x` that evaluates to a struct
+or list, the spread operator
+
+```
+x...
+```
+
+unifies all elements of `x` into the current context disregarding closedness
+rules implied by `x`, recursively.
+
+The spread operator can be used to extend a struct or list. Applying it to a
+value of any other type is a no-op: `x...` evaluates to `x` unchanged.
+
+<!-- TODO(explicitopen): rejecting `...` on a value which is neither a struct
+     nor a list is the intended future behavior. It is not an error today
+     because `cue fix` appends `...` to embedded references whose resolved
+     type it cannot know, so tightening this needs the fixer to know
+     resolved types. -->
+
+If `x...` is used within a definition, normal closedness rules apply after the
+`x` is unified with any other fields.
+
+```
+#Base: foo: int
+#Def: {
+    #Base... // Unified with other fields within #Def.
+    bar: int
+}
+d: #Def & {baz: 2} // Error: baz is not allowed
+
+// Define a type that matches a collection of derived types.
+#Animal: genus!: string
+
+#Dog: { #Animal..., genus: "canis", says: "bark" }
+#Cat: { #Animal..., genus: "felis", says: "meow" }
+
+// Use #AnyAnimal in schema to allow any value that derives from #Animal.
+#AnyAnimal: { #Animal..., ... }
+
+#Schema: animal: #AnyAnimal // Dog, Cat or any other #Animal.
+```
+
 
 ### Operators
 
@@ -2235,8 +2424,8 @@ Operators combine operands into expressions.
 Expression = UnaryExpr | Expression binary_op Expression .
 UnaryExpr  = PrimaryExpr | unary_op UnaryExpr .
 
-binary_op  = "|" | "&" | "||" | "&&" | "==" | rel_op | add_op | mul_op  .
-rel_op     = "!=" | "<" | "<=" | ">" | ">=" | "=~" | "!~" .
+binary_op  = "|" | "&" | "||" | "&&" | rel_op | add_op | mul_op  .
+rel_op     = "==" | "!=" | "<" | "<=" | ">" | ">=" | "=~" | "!~" .
 add_op     = "+" | "-" .
 mul_op     = "*" | "/" .
 unary_op   = "+" | "-" | "!" | "*" | rel_op .
@@ -2352,7 +2541,7 @@ String addition creates a new string by concatenating the operands.
 
 A string can be repeated by multiplying it:
 
-```cue parse
+```cue vet
 s: "etc. "*3  // "etc. etc. etc. "
 ```
 
@@ -2674,7 +2863,7 @@ LetClause           = "let" identifier "=" Expression .
 ElseClause          = "else" StructLit .
 ```
 
-```cue
+```cue vet
 a: [1, 2, 3, 4]
 b: [for x in a if x > 1 { x+1 }]  // [3, 4, 5]
 
@@ -2712,7 +2901,7 @@ The result of the expression is substituted as follows:
 - struct: illegal
 
 
-```cue
+```cue vet
 a: "World"
 b: "Hello \( a )!" // Hello World!
 ```
@@ -2734,9 +2923,30 @@ interpolation, it will be extra resilient: if any of the arguments to the
 interpolation fail, they will be printed as an expression. This allows failing
 expressions to be a part of the error message.
 
-```cue
+```cue ! vet
 a: 1/0 | error("infinity and beyond!: \(1/0)")
 ```
+<!-- error:
+a: infinity and beyond!: (1 / 0):
+    1:10
+    1:41
+-->
+
+To refer to the value being validated, enclose the validator in braces and use
+[`self`](#self-from-v0150):
+
+```cue ! vet
+#Option: {"one" | "two" | "three" | error("invalid option \(self)")}
+
+a: #Option & "four" // error: invalid option four
+```
+<!-- error:
+a: invalid option four:
+    1:37
+    1:11
+    3:4
+    3:14
+-->
 
 ### `len`
 
@@ -2768,9 +2978,30 @@ len([1, 2, ...])     2
 
 ### `close`
 
-The builtin function `close` converts a partially defined, or open, struct
-to a fully defined, or closed, struct.
+The builtin function `close` converts a partially defined—or open—struct
+or list to a fully defined—or closed—one.
+It closes only its argument, not the values nested within it.
 
+### `__closeAll`
+
+The builtin function `__closeAll` recursively converts a partially defined,
+or open, struct to a fully defined, or closed, struct. It is a no-op for values
+that are not a struct or list.
+
+This builtin exists for the rewrites `cue fix` applies when migrating code
+written before language version v0.18.0: it is used instead of `__reclose` if
+it is known for sure a struct needs to be reclosed. It should not be used by
+users directly.
+
+### `__reclose`
+
+The builtin function `__reclose` closes a literal struct if any of its
+embedding that used a spread operator was closed. It is a no-op for all other
+values.
+
+This builtin exists for the rewrites `cue fix` applies when migrating code
+written before language version v0.18.0 to the semantics of that version. It
+should not be used by users directly.
 
 ### `and`
 
@@ -2874,15 +3105,15 @@ It counts how many schemas unify successfully (without producing an error).
 The validator succeeds if the count satisfies the numeric constraint provided
 as the first argument.
 
-```cue
+```cue vet
 // Exactly 2 schemas must match
-value: "foo" & matchN(2, [string, !="bar", <4])  // true: string and !="bar" match
+value1: "foo" & matchN(2, [string, !="bar", <4])  // true: string and !="bar" match
 
 // At least 1 schema must match
-value: 5 & matchN(>=1, [int, >10])  // true: int matches
+value2: 5 & matchN(>=1, [int, >10])  // true: int matches
 
 // Exactly 0 schemas must match (none should match)
-value: "test" & matchN(0, [int, >100])  // true: neither matches
+value3: "test" & matchN(0, [int, >100])  // true: neither matches
 ```
 
 If the numeric constraint cannot be satisfied even with incomplete information,
@@ -2906,7 +3137,11 @@ If the condition unifies successfully, the "then" schema is applied;
 otherwise, the "else" schema is applied.
 The validator succeeds if the chosen schema unifies successfully with the value.
 
-```cue
+<!-- TODO: the first example is meant to validate; the "else" schema is
+     evaluated even though the condition matches. The error of the second
+     example is incomplete, so it is not recorded below. -->
+
+```cue ! vet
 // If value is a string, it must have length > 3; otherwise it must be > 10
 value: "hello" & matchIf(string, len(value) > 3, value > 10) // OK; len("hello") is >3
 
@@ -2916,6 +3151,12 @@ x: {a: 1} & matchIf({a: int}, {a: int, b!: int}, {a: string}) // error; missing 
 // If value is >5, it must be <10; otherwise it must be <3
 y: 2 & matchIf(>5, <10, <3) // OK; 2 is <3
 ```
+<!-- error:
+value: invalid operands "hello" and 10 to '>' (type string and int):
+    2:50
+    2:8
+    2:58
+-->
 
 
 ## Cycles
@@ -2929,7 +3170,7 @@ during evaluation according to the rules in this section.
 A _reference cycle_ occurs if a field references itself, either directly or
 indirectly.
 
-```cue
+```cue vet
 // x references itself
 x: x
 
@@ -2978,7 +3219,7 @@ and take `v` as the result of unification.
 <!-- Tomabechi's graph unification algorithm
 can detect such cycles at near-zero cost. -->
 
-```cue
+```cue vet
 // Configuration     Evaluated
 //
 //       c           Cycles in nodes of type struct evaluate
@@ -2999,7 +3240,7 @@ c: a & { z: 3 }      // c: { x: 1, y: 2, z: 3 }
 This rule also applies to field values that are disjunctions of unification
 operations of the above form.
 
-```cue
+```cue vet
 a: b&{x:1} | {y:1}  // {x:1,y:3,z:2} | {y:1}
 b: {x:2} | c&{z:2}  // {x:2} | {x:1,y:3,z:2}
 c: a&{y:3} | {z:3}  // {x:1,y:3,z:2} | {z:3}
@@ -3024,7 +3265,7 @@ evaluate to this value.
 
 A structural cycle is when a node references one of its ancestor nodes.
 It is possible to construct a structural cycle by unifying two acyclic values:
-```cue
+```cue ! vet
 // acyclic
 y: {
     f: h: g
@@ -3038,10 +3279,13 @@ x: {
 // introduces structural cycle
 z: x & y
 ```
+<!-- error:
+z.g: structural cycle
+-->
 Implementations should be able to detect such structural cycles dynamically.
 
 A structural cycle can result in infinite structure or evaluation loops.
-```cue
+```cue ! vet
 // infinite structure
 a: b: a
 
@@ -3051,6 +3295,11 @@ f: {
     out: n + (f & {n: 1}).out
 }
 ```
+<!-- error:
+a.b: structural cycle
+structural cycle:
+    7:15
+-->
 CUE must allow or disallow structural cycles under certain circumstances.
 
 If a node `a` references an ancestor node, we call it and any of its
@@ -3059,7 +3308,7 @@ So if `a` is cyclic, all of its descendants are also regarded as cyclic.
 A given node `x`, whose value is composed of the conjuncts `c1 & ... & cn`,
 is valid if any of its conjuncts is not cyclic.
 
-```cue
+```cue ! vet
 // Disallowed: a list of infinite length with all elements being 1.
 #List: {
     head: 1
@@ -3073,7 +3322,13 @@ a: {
 c: {
     d: a
 }
+```
+<!-- error:
+#List.tail: structural cycle
+c.d: structural cycle
+-->
 
+```cue vet
 // #List defines a list of arbitrary length. Because the recursive reference
 // is part of a disjunction, this does not result in a structural cycle.
 #List: {
@@ -3107,23 +3362,30 @@ in other instances.
 
 ### Source file organization
 
-Each source file consists of an optional package clause defining collection
-of files to which it belongs,
+Each source file consists of an optional package clause defining the
+collection of files to which it belongs,
 followed by a possibly empty set of import declarations that declare
 packages whose contents it wishes to use, followed by a possibly empty set of
 declarations.
+The package clause and the import declarations form the preamble of the file,
+and attributes may precede the package clause and the first import declaration.
+The attributes in the preamble are [file attributes](#attributes);
+all other top-level attributes are package attributes,
+including those directly following the package clause
+of a file without import declarations.
 
 Like with a struct, a source file may contain embeddings.
 Unlike with a struct, the embedded expressions may be any value.
 If the result of the unification of all embedded values is not a struct,
 it will be output instead of its enclosing file when exporting CUE
-to a data format
+to a data format.
 
 ```ebnf
-SourceFile = { attribute "," } [ PackageClause "," ] { ImportDecl "," } { Declaration "," } .
+SourceFile = [ FileAttrs PackageClause "," ] [ FileAttrs ImportDecl "," { ImportDecl "," } ] { Declaration "," } .
+FileAttrs  = { attribute "," } .
 ```
 
-```cue
+```cue vet
 "Hello \(#place)!"
 
 #place: "world"
@@ -3145,10 +3407,9 @@ The PackageName must not be a definition identifier.
 
 If the PackageName is the blank identifier (`_`), it is treated the same
 as if there were no package clause. This can be useful to allow adding
-package level attributes or doc comments to a CUE file without a package
-name.
+file attributes or doc comments to a CUE file without a package name.
 
-```cue
+```cue vet
 package math
 ```
 

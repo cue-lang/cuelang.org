@@ -36,7 +36,7 @@ command: doStuff: {
 	// The thankUser task prints a message after both readFile and echoGreeting are finished.
 	thankUser: cli.Print & {
 		$after: [readFile, echoGreeting]
-		text: "Thank you"
+		text:   "Thank you"
 	}
 }
 {{< /code-tab >}}

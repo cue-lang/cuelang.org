@@ -61,8 +61,8 @@ Create a CUE file containing a schema for a conference event:
 @experiment(explicitopen)
 
 #Event: {
-	name:  string
-	venue: string
+	name:     string
+	venue:    string
 	sessions: [...#Session]
 }
 

@@ -24,7 +24,9 @@ The file is overwritten on each `cue` invocation, without confirmation.
 
 {{{with _upload_ "en" "file"}}}
 -- someFile.cue --
-x: 1, y: 2.2, z: "3.33" // This hidden file's contents aren't important.
+x: 1
+y: 2.2
+z: "3.33" // This hidden file's contents aren't important.
 {{{end}}}
 
 {{{with script "en" "example"}}}

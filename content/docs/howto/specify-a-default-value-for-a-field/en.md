@@ -145,10 +145,10 @@ successfully used as a default:
 package example
 
 a: 5
-b: *( a + 10) | int
+b: *(a + 10) | int
 
 c: "hello"
-d: *( c + ", world!") | string
+d: *(c + ", world!") | string
 -- out.json --
 {
     "a": 5,
@@ -228,7 +228,9 @@ package example
 a: *"A" | _
 a: *int | _
 -- out.err --
-a: incomplete value "A" | int | _
+a: incomplete value "A" | int | _:
+    ./in.cue:3:4
+    ./in.cue:4:4
 {{{end}}}
 
 However, even if multiple defaults are provided and they unify successfully,

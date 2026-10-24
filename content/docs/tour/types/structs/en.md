@@ -40,4 +40,5 @@ A: {
 -- out --
 A.foo: field is required but not present:
     ./file.cue:2:2
+    ./file.cue:8:4
 {{{end}}}

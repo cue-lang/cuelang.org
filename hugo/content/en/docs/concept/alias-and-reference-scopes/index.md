@@ -215,7 +215,7 @@ The solution is: **use an alias!**
 }
 
 #Config: {
-	M=metadata: #Metadata
+	metadata~(M): #Metadata
 
 	serviceA: #BaseConfig & {
 		metadata: M
