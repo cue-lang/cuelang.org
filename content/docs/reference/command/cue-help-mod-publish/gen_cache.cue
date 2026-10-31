@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "O30K3OOK6COFS8UNGAO4F28TB0JE8UMTFMD69FV97PV255QH5R3G===="
-									scriptHash: "SO4G88TO2QKB0AJ1J9D840S98R8H5H0G7MH9OPVJOPRQK0MLA38G===="
+									hash:       "UPV9Q4S1R1VN8LIN3H4NM8VK9JDOEPSTB52C7RA4II41LM4072A0===="
+									scriptHash: "5L0VMJ5I8FDELKTOUFN51OF7KC04NLSF1N6RV8I408FUJK0JL240===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.3:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -38,15 +38,14 @@ package site
 												  cue mod publish <version> [flags]
 
 												Flags:
-												  -n, --dry-run      only run simulation
-												      --json         print verbose information in JSON format (implies --dry-run)
-												      --out string   write module contents to specified directory in OCI Image Layout format (implies --dry-run)
+												  -n, --dry-run[=true|false]   only run simulation
+												      --json[=true|false]      print verbose information in JSON format (implies --dry-run)
+												      --out string             write module contents to specified directory in OCI Image Layout format (implies --dry-run)
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

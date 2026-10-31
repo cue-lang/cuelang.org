@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "K9TL0PSMTDBM35JOUIKJDH05R381IIP4PHU073RK3BUCQERLGFHG===="
-									scriptHash: "184UNTVILN4M8S7MB9P9KAMTP68EQHP391AO9N1OT6OG2URK51R0===="
+									hash:       "GULQIOOK7QNM82MVG4FRPTEK4OV750SILNG3HNH13QIBTM6M2HJG===="
+									scriptHash: "Q12TTBQQ2Q9E0HIICNB2ONFJM78SJRHRDNBRRLQFC2KTQ32M6KDG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.3:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -24,7 +24,8 @@ package site
 
 												A field, struct, or list is removed if it is implied by a constraint, such
 												as from an optional field matching a required field, a list type value,
-												a comprehension or any other implied content. It will modify the files in place.
+												a comprehension or any other implied content. It will modify the files in place,
+												except for standard input given as "-", which is written to standard output.
 
 
 												Limitations
@@ -71,16 +72,17 @@ package site
 												  cue trim [flags] [inputs]
 
 												Flags:
-												  -n, --dry-run          only run simulation
-												  -f, --force            force overwriting existing files
-												  -o, --outfile string   filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
-												      --trace            trace computation
+												  -n, --dry-run[=true|false]      only run simulation
+												  -f, --force[=true|false]        overwrite existing regular files
+												      --language-version string   fallback language version for input outside a module (for example, v0.17.0)
+												  -o, --outfile string            filename or - for stdout with optional file prefix (run 'cue help filetypes' for more info)
+												  -s, --simplify[=true|false]     simplify output
+												      --trace[=true|false]        trace computation
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

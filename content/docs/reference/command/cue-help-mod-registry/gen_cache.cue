@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "QL8UVIG97C0KNGJOKBSR831RLBURK0G8BMVV1U7SNOD5VBLDME70===="
-									scriptHash: "OOPMOQMS0GEPGBGBSBOGFFH4BB3RPQOM21V90QGSI4P9NHEAP35G===="
+									hash:       "IQL37GIAHP5F61COPPUNA1M4N9PFQA8DJRCEMAPSE4O1PM8K3SI0===="
+									scriptHash: "4CS78LUECB7Q3I417VC1CPTCCNECVSN1192AE6E5TDA6MOJGMET0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.3:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -38,10 +38,9 @@ package site
 												  cue mod registry [listen-address] [flags]
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

@@ -7,13 +7,13 @@ package site
 					page: {
 						cache: {
 							upload: {
-								cue:  "RYX0tgsRl8Fz4DuRgBY/G6+0wEaW2JEEkGey3xPAxxU="
-								data: "lPxLe9W3LkthymYXKTsddySRwMQufHtnQ0+705E8li8="
-								go:   "+Ss5vfrcHLtSXC1/6SCsNItrmG1Zp/bvexiH5TafCgY="
+								cue:  "tWAAneapgRKIbr/S9D1h2c2RCkvBIwE0DAcyG4VifFE="
+								data: "0cUXqM+GUJo3pwTX8IGdcFsf0a8srClV8/KzGB6xy5s="
+								go:   "XumfUXX+BkMjEAdUBMCENEAZuYxd1ioLNmDI2TAItqc="
 							}
 							multi_step: {
-								hash:       "K8JUMPQRF5CSHI5D2K0RP0T1D5F52F726IGQ0PF22TINDKV8TMOG===="
-								scriptHash: "52IED33S0HBGE286PEQK68MFQ1HEC27CELAFIKARB5HSFESGB1TG===="
+								hash:       "A7E03AD6FUCPOL940BRKJRMKMA69PFTI1PC0GGOBP9HC6O19VOS0===="
+								scriptHash: "S98NTVUPOMR51HQ1J5HBVU3K0EDMKPMHM8DIGJO6BS8T1J6I1Q9G===="
 								steps: [{
 									doc:      ""
 									cmd:      "export GOMODCACHE=/caches/gomodcache"
@@ -89,7 +89,7 @@ package site
 											"""
 								}, {
 									doc:      "#ellipsis 0"
-									cmd:      "go get cuelang.org/go@v0.17.0"
+									cmd:      "go get cuelang.org/go@v0.18.0-rc.3"
 									exitCode: 0
 									output: """
 											...
@@ -117,9 +117,7 @@ package site
 											\tdatabase:         "transactions"
 											\tpassword:         string
 											}
-											step2: {
-											\tpassword: "Ch^ngeMeBef0r3GoL!ve"
-											}
+											step2: {password: "Ch^ngeMeBef0r3GoL!ve"}
 											result: {
 											\tconnectionString: "postgres://alex:Ch^ngeMeBef0r3GoL!ve@prod.db.example.com:5432/transactions"
 											\tsystem:           "postgres"

@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "KE8UK2GTU8OLVDIGDIVC6I2B444FSMAVT4GR08QDK0MVQKV673U0===="
-									scriptHash: "RUHTI34P83HOOE6T3OH2UDOESFKK7FEKJLGAFIVM3L29EA412MF0===="
+									hash:       "GDEPO6GRSQQ80O4DJV25G39SRIS79O4UUS825JM9JJUHJ0MIL6CG===="
+									scriptHash: "B8GNOI68BBCMD27UEPP170BT85POUFVP2TDG5UT867RQVMA87OI0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.3:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -36,14 +36,13 @@ package site
 												  cue mod tidy [flags]
 
 												Flags:
-												      --check        check for tidiness after fetching dependencies; fail if module.cue would be updated
-												      --local-only   only update cue.mod/local-module.cue, leaving cue.mod/module.cue unchanged
+												      --check[=true|false]        check for tidiness after fetching dependencies; fail if module.cue would be updated
+												      --local-only[=true|false]   only update cue.mod/local-module.cue, leaving cue.mod/module.cue unchanged
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

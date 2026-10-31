@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "NMCJNV3OC111BVU7D0MTT1ABRPQBE8V4UEPCJICG1AOHJEFC0760===="
-									scriptHash: "1AV3TSPS6NJ2H5KDKEAIH5D5TSTRK7F0T7IKTM5QM1TUKDVIH1TG===="
+									hash:       "DID605UB517QR7GBQ0JJFCML1I0A8317PC0CCSPJJLS857JRRCB0===="
+									scriptHash: "H1MPSBQ72RLFU32CEU49ED15DT2JN20JV41AMJ35FR82SQBV3AU0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.3:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -22,8 +22,7 @@ package site
 										output: """
 												Init initializes a cue.mod directory in the current directory, in effect
 												creating a new module rooted at the current directory. The cue.mod
-												directory must not already exist. A legacy cue.mod file in the current
-												directory is moved to the new subdirectory.
+												directory must not already exist.
 
 												If the module name is not provided, a default module path (cue.example) will be
 												used.
@@ -32,15 +31,14 @@ package site
 												  cue mod init [module] [flags]
 
 												Flags:
-												  -f, --force                     force moving old-style cue.mod file
+												  -f, --force[=true|false]        force moving old-style cue.mod file
 												      --language-version string   set the language version ('current' means current language version) (default "current")
 												      --source string             set the source field
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

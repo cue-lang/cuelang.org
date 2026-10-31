@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "8LSDCFUVK0OC7V4IUFSHS8UA4FU23BJLRO254RPDDJ0VCFI47VM0===="
-									scriptHash: "UE8NQHULQCIGKU9J3AMCU0MP5BD9FHBLVK2I8QEPV21E665E89CG===="
+									hash:       "NCJMF7V7O26STVBFCNSVUA30RQF70C9JHNU0MDI404V5VVNUNMB0===="
+									scriptHash: "MGF1RJ02DJB13HJEKKD3RBAALGGONT544IKOOUGVM10FTH660CJG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.3:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -24,7 +24,20 @@ package site
 												After you update to a new CUE release, fix helps make the necessary changes
 												to your program.
 
-												Without any packages, fix applies to all files within a module.
+												Without any packages, fix applies to every file of the module, from
+												whichever directory it is run: the files of the module's own tree, the
+												packages ./... denotes from the module root and _ and testdata
+												directories included, and every CUE file under cue.mod/gen, cue.mod/pkg
+												and cue.mod/usr, found by walking the module and rewritten one package at
+												a time without loading, so a package whose import cannot be resolved is
+												rewritten all the same. Symbolic links are handled as cue mod upgrade
+												handles them. A file the parser rejects at the module's language version
+												is skipped and reported. With packages named, the loader selects the
+												files, and its errors are reported.
+
+												A file that cannot be rewritten stops fix from writing anything, unless
+												-f is given, in which case the files that converted are written; either
+												way the errors are printed and the exit status is non-zero.
 
 
 												Experiments
@@ -35,32 +48,42 @@ package site
 												change a file or package to use the new, experimental semantics. Experiments
 												are enabled on a per-file basis.
 
-												For example, to enable the "explicitopen" experiment for all files in a package,
-												you would run:
+												For example, to enable the "explicitopen" experiment for all files in a
+												package whose module is on a language version before v0.18.0, which is where
+												that experiment became stable, you would run:
 
 												\tcue fix . --exp=explicitopen
 
 												For this to succeed, your current language version must support the experiment.
 												If an experiment has not yet been accepted for the current version, an
 												@experiment attribute is added in each affected file to mark the transition as
-												complete.
+												complete. An experiment which is already stable for that version needs no
+												fix, as files use it without an attribute, and asking for one is an error.
 
 												The special value --exp=all enables all experimental features that apply to the
 												current version.
+
+												A TODO(cue-fix) comment marks a construct whose rewritten form does not
+												mean what it did: the rewrite could not keep its behavior, and someone
+												must decide what the file should say. A NOTE(cue-fix) comment marks a
+												rewrite which keeps the behavior but may do more than needed, such as a
+												spread on an embedded reference the rewrite cannot see to be open or
+												closed; the file is correct as written, and the NOTE says what can go.
 
 												Usage:
 												  cue fix [flags] [packages]
 
 												Flags:
-												      --exp strings          list of experiments to port
-												  -f, --force                rewrite even when there are errors
-												      --remove-list-commas   remove commas from multiline list elements (v0.17.0+)
+												      --exp strings                       list of experiments to port
+												  -f, --force[=true|false]                rewrite even when there are errors
+												      --language-version string           fallback language version for input outside a module (for example, v0.17.0)
+												      --remove-list-commas[=true|false]   remove commas from multiline list elements (v0.17.0+)
+												  -s, --simplify[=true|false]             simplify output
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "V1D2BEN20KV0JNVS3HFA96VQCOGT5MCSRFIQ7V6ORKNAHCIN18G0===="
-									scriptHash: "F32SGEC9L6VRG34NDDFK127ETHCHA2OA528S7ML6BEQA7MESQB2G===="
+									hash:       "Q2QK0UQPT98G5PVSCH2E8TVHQ64F07AP31SOVGVKHBKMJEEM6K1G===="
+									scriptHash: "TQ06K068TN53DONKPBOUGMVI7BHD34RAIRBNT9NM5UB9DS55V4L0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.3:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -39,6 +39,7 @@ package site
 												  get         add non-CUE dependencies to the current module
 												  import      convert other formats to CUE files
 												  login       log into a CUE registry
+												  lsp         start or interact with a CUE Language Server instance
 												  mod         module maintenance
 												  trim        remove superfluous fields
 												  version     print the CUE version and build information
