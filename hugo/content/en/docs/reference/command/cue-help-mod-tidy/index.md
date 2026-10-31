@@ -24,14 +24,13 @@ Usage:
   cue mod tidy [flags]
 
 Flags:
-      --check        check for tidiness after fetching dependencies; fail if module.cue would be updated
-      --local-only   only update cue.mod/local-module.cue, leaving cue.mod/module.cue unchanged
+      --check[=true|false]        check for tidiness after fetching dependencies; fail if module.cue would be updated
+      --local-only[=true|false]   only update cue.mod/local-module.cue, leaving cue.mod/module.cue unchanged
 
 Global Flags:
-  -E, --all-errors     print all available errors
-  -C, --chdir string   change working directory before running command (must be the first flag)
-  -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
+  -E, --all-errors[=true|false]   print all available errors
+  -C, --chdir string              change working directory before running command (must be the first flag)
+  -i, --ignore[=true|false]       proceed in the presence of errors
 ````
 
 ## Related content

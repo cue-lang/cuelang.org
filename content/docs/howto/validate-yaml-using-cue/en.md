@@ -56,7 +56,7 @@ constraints for every person.
 	address: string
 }
 
-people: [X=string]: #Person & {
+people: [string]~(X,_): #Person & {
 	name: X
 }
 {{{end}}}

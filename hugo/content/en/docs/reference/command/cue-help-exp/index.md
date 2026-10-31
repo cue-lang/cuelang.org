@@ -17,14 +17,14 @@ Usage:
   cue exp [command]
 
 Available Commands:
+  ast           inspect and manipulate CUE syntax trees
   gengotypes    generate Go types from CUE definitions
   writefs       remove and create files in bulk
 
 Global Flags:
-  -E, --all-errors     print all available errors
-  -C, --chdir string   change working directory before running command (must be the first flag)
-  -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
+  -E, --all-errors[=true|false]   print all available errors
+  -C, --chdir string              change working directory before running command (must be the first flag)
+  -i, --ignore[=true|false]       proceed in the presence of errors
 
 Use "cue exp [command] --help" for more information about a command.
 ````

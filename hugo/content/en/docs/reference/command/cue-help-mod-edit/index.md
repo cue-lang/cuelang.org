@@ -36,19 +36,18 @@ Usage:
   cue mod edit [flags]
 
 Flags:
-      --drop-replace string       remove a module replace from local-module.cue
-      --drop-require string       remove a requirement
-      --drop-source               remove the source field
-      --language-version string   set language.version ('current' means current language version)
-      --module string             set the module path
-      --replace string            add a module replace (path@majorversion=replacement) to local-module.cue
-      --require string            add a required module@version
-      --source string             set the source field
+      --drop-replace string        remove a module replace from local-module.cue
+      --drop-require string        remove a requirement
+      --drop-source[=true|false]   remove the source field
+      --language-version string    set language.version ('current' means current language version)
+      --module string              set the module path
+      --replace string             add a module replace (path@majorversion=replacement) to local-module.cue
+      --require string             add a required module@version
+      --source string              set the source field
 
 Global Flags:
-  -E, --all-errors     print all available errors
-  -C, --chdir string   change working directory before running command (must be the first flag)
-  -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
+  -E, --all-errors[=true|false]   print all available errors
+  -C, --chdir string              change working directory before running command (must be the first flag)
+  -i, --ignore[=true|false]       proceed in the presence of errors
 ````
 

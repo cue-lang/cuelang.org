@@ -42,19 +42,20 @@ CUE: {
 	MisalignedConstraint: 0
 	SkippedNotification:  0
 	ResolveDep:           0
+	OrderEdges:           0
 	Freed:                4
 	Reused:               0
 	Allocs:               4
 	Retained:             0
 }
 Go: {
-	AllocBytes:   1954416
-	AllocObjects: 8582
+	AllocBytes:   927856
+	AllocObjects: 4414
 }
 Proc: {
-	UserNano:    1829000
-	SysNano:     4553000
-	MaxRssBytes: 19881984
+	UserNano:    0
+	SysNano:     4574000
+	MaxRssBytes: 19574784
 }
 ````
 

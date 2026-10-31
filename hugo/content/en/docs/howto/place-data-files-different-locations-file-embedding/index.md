@@ -29,7 +29,7 @@ _dates:  _ @embed(file=birthdays.json)
 
 // Validate the contents of the data files.
 _places: [_]: [string, ...string]
-_dates: [_]: =~#"^\d{4}-\d{2}-\d{2}$"#
+_dates: [_]:  =~#"^\d{4}-\d{2}-\d{2}$"#
 
 // Emit the selected data.
 jamie: {

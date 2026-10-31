@@ -51,7 +51,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
@@ -80,7 +80,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
@@ -148,7 +148,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
@@ -182,7 +182,7 @@ package one
 
 data: {
 	value: "A string"
-	list: [1, 2]
+	list:  [1, 2]
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 {{<columns-separator>}}
@@ -240,7 +240,7 @@ aList: [1 + 1, 2 * 2, 3 / 3]
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV4cG9ydCAtLW91dCBjdWU=" >}}
 $ cue export --out cue
 nested: data: true
-aList: [2, 4, 1.0]
+aList: [2, 4, 1]
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
@@ -289,7 +289,7 @@ $ cue export --out cue --package foo
 package foo
 
 nested: data: true
-aList: [2, 4, 1.0]
+aList: [2, 4, 1]
 {{< /code-tab >}}
 {{< /code-tabs >}}
 
