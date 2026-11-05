@@ -7,15 +7,15 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"create hello module":            "oqbYnk7yNTfcMatHIhx1b/v6R+7hYuS+k1aktGi5FU4="
-								"create local greeting checkout": "30gsEYdH4gbV4KKWva68WaOlNpakMBbaZdXXoYq/KHc="
+								"create hello module":            "oXS6xoXQEhumW6AFuVxE5XMjSBPIY/XuMc7bhOIpQIk="
+								"create local greeting checkout": "TsozjkXhgJZZlJM9moFaRUq7+S+Zmj2WPbj0nhRq53E="
 							}
 							multi_step: {
-								hash:       "ER9TSQHDQO3PFMOK1OMQEDD6K7VT3ANB7HBVGPKI2HIP539RHEG0===="
-								scriptHash: "CVC494O8AA2L13V32DG3ND957I2BJG6V1ACGHD6G7RQFHHNSL2CG===="
+								hash:       "3EMI3C251DTRGPSG4HEV4CU480F1FOFC8S4HRT0KQVID8RN4I0EG===="
+								scriptHash: "AB54M7LGB710T238FM51E6LB1GMJU832KHNLPB13566PGFAKEOU0===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.17.0:$PATH"
+									cmd:      "export PATH=/cues/v0.18.0-rc.3.0.20261104170309-b057976c6156:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {
@@ -28,11 +28,7 @@ package site
 									cmd:      "cat cue.mod/local-module.cue"
 									exitCode: 0
 									output: """
-											deps: {
-											\t"example.com/greeting@v0": {
-											\t\treplaceWith: "./greeting"
-											\t}
-											}
+											deps: "example.com/greeting@v0": replaceWith: "./greeting"
 
 											"""
 								}, {
@@ -41,14 +37,8 @@ package site
 									exitCode: 0
 									output: """
 											module: "app.example/hello@v0"
-											language: {
-											\tversion: "v0.17.0"
-											}
-											deps: {
-											\t"example.com/greeting@v0": {
-											\t\tv: "v0.1.0"
-											\t}
-											}
+											language: version: "v0.17.0"
+											deps: "example.com/greeting@v0": v: "v0.1.0"
 
 											"""
 								}, {

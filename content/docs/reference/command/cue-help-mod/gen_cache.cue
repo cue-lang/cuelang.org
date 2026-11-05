@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "SVLGHQ569HA4FOVHUUKVI45INLP93IOFEE8JR5RIJAPJ6GSPF1I0===="
-									scriptHash: "TA1GUUMLE5V2G4JUEFKCT0M4V988RL7TBQV3061AKO1MUND08CE0===="
+									hash:       "HVSJT5QHV509ALALBD25HU48SLVPB2CBHJ794K6DNL1339GVI090===="
+									scriptHash: "N1LC7AVR40LRG2G7FBTU92PHPH7VKOUVJDC18N57OREUVL39TKVG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.3.0.20261104170309-b057976c6156:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -43,12 +43,12 @@ package site
 												  rename      rename the current module
 												  resolve     Show how a module path resolves to a registry
 												  tidy        download and tidy module dependencies
+												  upgrade     upgrade the module to a new language version
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												Use "cue mod [command] --help" for more information about a command.
 

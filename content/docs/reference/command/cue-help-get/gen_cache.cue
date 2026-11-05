@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "6LPDCO71EMG5RKF3MPGALNBBF2F8QT5N2N5RKJJHVAUN9IQC4SCG===="
-									scriptHash: "IN9SCF46U7EQOJK93Q3QS1QK500OPCSP35HEKILVH8AF01OGTKN0===="
+									hash:       "EVGATLHKJ7H1ACET02VDQP63GA20UIRE82RAK6VESP0SLHHVEJF0===="
+									scriptHash: "ICKCV80BKVQR2KMU688RORAPQ1RVCSF25411SQQP1LCPAB8MK8CG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.3.0.20261104170309-b057976c6156:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -42,10 +42,9 @@ package site
 												  go          add Go dependencies to the current module
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												Use "cue get [command] --help" for more information about a command.
 

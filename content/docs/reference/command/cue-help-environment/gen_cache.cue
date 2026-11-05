@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "DJP01T7U0412AF14I1A9KH2QLOC1ME5OMOAULMI2OLTBQ7PLC6J0===="
-									scriptHash: "65F0PGS3V92J83NQ2EKFRNJ696N2RQGDMQ8TCIARAE10A7SH5FR0===="
+									hash:       "VF6M76U8NI5MP09NQI6U89PIVIJ8BDBG306Q5HVODFR7DS67ITK0===="
+									scriptHash: "OBNO5QUQCBGL8IDKJEF9P64I9LMSIT8D2SBH6VO8KVODEJ1O4MGG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.18.0-rc.3.0.20261104170309-b057976c6156:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -56,14 +56,26 @@ package site
 												\t\tComma-separated list of debug flags to enable or disable, such as:
 
 												\t\thttp
-												\t\t\tLog a JSON message per HTTP request and response made
+												\t\t\tEnables JSON logging per HTTP request and response made
 												\t\t\twhen interacting with module registries.
+												\t\tstrict
+												\t\t\tSets whether extra aggressive checking should be done.
+												\t\tlogeval
+												\t\t\tSets the log level for the evaluator.
+												\t\t\tThere are currently only two levels:
+												\t\t\t0: no logging
+												\t\t\t1: logging
+												\t\tsharing
+												\t\t\tEnables structure sharing.
 												\t\tsortfields
-												\t\t\tForce fields in stucts to be sorted lexicographically.
+												\t\t\tForces fields in a struct to be sorted
+												\t\t\tlexicographically.
+												\t\topendef
+												\t\t\tDisables the check for closedness of definitions.
 												\t\ttoolsflow
-												\t\t\tPrint task dependency mermaid graphs in 'cue cmd'.
+												\t\t\tCauses cuelang.org/go/tools/flow to print a task dependency mermaid graph.
 												\t\tparsertrace
-												\t\t\tPrint a trace of parsed CUE productions.
+												\t\t\tCauses cuelang.org/go/cue/parser to print a trace of parsed productions.
 
 												CUE_EXPERIMENT and CUE_DEBUG are comma-separated lists of key-value strings,
 												where the value is a boolean "true" or "1" if omitted. For example:
