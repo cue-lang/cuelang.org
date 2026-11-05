@@ -47,9 +47,9 @@ input: {
 }
 
 output: """
-    Hello, \(input.name)!
-    How's the weather in \(input.location)?
-    """
+	Hello, \(input.name)!
+	How's the weather in \(input.location)?
+	"""
 -- input.json --
 {
     "name": "Charlie"

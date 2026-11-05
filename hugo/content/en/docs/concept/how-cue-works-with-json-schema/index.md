@@ -111,7 +111,7 @@ import "strings"
 
 	// This is a very long comment for some reason, which will keep going and going
 	// past the point where it should probably have stopped.
-	children?: [...string]
+	children?:     [...string]
 	"home phone"?: string @deprecated()
 	...
 }
@@ -291,9 +291,9 @@ Let's start with a CUE definition:
 @experiment(explicitopen)
 
 #Team: {
-	name: string
+	name:    string
 	members: [...string]
-	lead?: string
+	lead?:   string
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 
@@ -543,6 +543,7 @@ func main() {
 ````text { title="TERMINAL" type="terminal" codeToCopy="Z28gcnVuIC4vZ2VuIGdlbmVyYXRlX3NjaGVtYS5jdWUgJyNUZWFtJw==" }
 $ go run ./gen generate_schema.cue '#Team'
 {
+    "Hash": {},
     "Lbrace": {},
     "Elts": [
         {
@@ -551,7 +552,6 @@ $ go run ./gen generate_schema.cue '#Team'
                 "Name": "$schema",
                 "Scope": null,
                 "Node": null
-            },
 ...
 ````
 ## Related content

@@ -28,9 +28,7 @@ content: dir: page: {
 >y: 5
 >}
 >-- out.cue --
->x: {
->    y: 5
->}
+>x: y: 5
 >{{{end}}}
 >
 >This is a {{{ def "test" }}}
@@ -45,9 +43,7 @@ content: dir: page: {
 >	y: 5
 >}
 >-- out.cue --
->x: {
->    y: 5
->}
+>x: y: 5
 >{{{end}}}
 >
 >This is a {{{def "test"}}}

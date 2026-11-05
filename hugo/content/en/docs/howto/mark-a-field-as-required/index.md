@@ -46,6 +46,7 @@ s1:
 {{< code-tab name="TERMINAL" language="err" area="bottom" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmV4YW1wbGUgZGF0YS55bWw=" >}}
 $ cue vet -c .:example data.yml
 "f-2": field is required but not present:
+    ./data.yml:1:1
     ./schema.cue:10:1
 {{< /code-tab >}}
 {{< /code-tabs >}}

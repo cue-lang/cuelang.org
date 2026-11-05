@@ -43,21 +43,25 @@ unifyFailA: A & [1, 2, 3, "4"]
 
 // E is built up incrementally as an example.
 // E has identical constraints to A.
-E: [...] // No type information; list is open.
+E: [...]          // No type information; list is open.
 E: [_, _, _, ...] // There are at least 3 elements.
-E: [...int] // All elements are ints.
-E: [1, ...] // Element 1 is made concrete.
-E: [_, 2, ...] // Element 2 is made concrete.
+E: [...int]       // All elements are ints.
+E: [1, ...]       // Element 1 is made concrete.
+E: [_, 2, ...]    // Element 2 is made concrete.
 E: [_, _, 3, ...] // Element 3 is made concrete.
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgLWkgZmlsZS5jdWU=" >}}
 $ cue eval -i file.cue
-A: [1, 2, 3]
-B: [1, 2, 3, 4]
-C: [1, 2, 3]
-D: [1, 2, 3]
+A:           [1, 2, 3]
+B:           [1, 2, 3, 4]
+C:           [1, 2, 3]
+D:           [1, 2, 3]
 unifyFailBC: _|_ // unifyFailBC: incompatible list lengths (3 and 4) (and 2 more errors)
-unifyFailA: [1, 2, 3, _|_, // unifyFailA.3: conflicting values "4" and int (mismatched types string and int)
+unifyFailA: [
+    1,
+    2,
+    3,
+    _|_, // unifyFailA.3: conflicting values "4" and int (mismatched types string and int)
 ]
 E: [1, 2, 3]
 {{< /code-tab >}}
@@ -84,15 +88,15 @@ rfc1918: {
 	// all the elements of each member - only
 	// those that need to be constrained by
 	// the rules of RFC1918.
-	"10.0.0.0/8": [10, ...]
+	"10.0.0.0/8":     [10, ...]
 	"192.168.0.0/16": [192, 168, ...]
-	"172.16.0.0/12": [172, >=16 & <=32, ...]
+	"172.16.0.0/12":  [172, >=16 & <=32, ...]
 }
 
 PrivateIP:
 	rfc1918."10.0.0.0/8" |
-	rfc1918."192.168.0.0/16" |
-	rfc1918."172.16.0.0/12"
+		rfc1918."192.168.0.0/16" |
+		rfc1918."172.16.0.0/12"
 
 valid: PrivateIP
 valid: [10, 2, 3, 4]
@@ -103,13 +107,13 @@ invalid: [203, 0, 113, 42] // validation failure
 {{< code-tab name="result.txt" language="txt" area="top-right" >}}
 IP: [uint8, uint8, uint8, uint8]
 rfc1918: {
-    "10.0.0.0/8": [10, uint8, uint8, uint8]
+    "10.0.0.0/8":     [10, uint8, uint8, uint8]
     "192.168.0.0/16": [192, 168, uint8, uint8]
-    "172.16.0.0/12": [172, uint & >=16 & <=32, uint8, uint8]
+    "172.16.0.0/12":  [172, uint & >=16 & <=32, uint8, uint8]
 }
 PrivateIP: [10, uint8, uint8, uint8] | [192, 168, uint8, uint8] | [172, uint & >=16 & <=32, uint8, uint8]
-valid: [10, 2, 3, 4]
-invalid: _|_ // invalid: 3 errors in empty disjunction: (and 3 more errors)
+valid:     [10, 2, 3, 4]
+invalid:   _|_ // invalid: 3 errors in empty disjunction: (and 3 more errors)
 {{< /code-tab >}}
 {{< /code-tabs >}}
 -->

@@ -14,15 +14,15 @@ Any valid CUE expression may be used inside escaped parentheses.
 exec cue export file.cue --out yaml
 cmp stdout out
 -- file.cue --
-m:     "You are \(#cost-#budget) dollars over budget!"
+m: "You are \(#cost-#budget) dollars over budget!"
 email: """
-   Here is a message from the finance team:
-   
-      \(m)
-   
-   Regards,
-     Your friends on the 12th floor
-   """
+	Here is a message from the finance team:
+	
+	   \(m)
+	
+	Regards,
+	  Your friends on the 12th floor
+	"""
 
 #cost:   102
 #budget: 88

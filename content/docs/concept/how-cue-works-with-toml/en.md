@@ -83,7 +83,7 @@ import "strings"
 	cluster!:    strings.MaxRunes(16)
 	region!:     #Region
 	repository!: =~#"^source\.company\.example/"#
-	tags?: [...#Tags]
+	tags?:       [...#Tags]
 }
 #Region: "APAC" | "IMEA"
 #Tags:   "prod" | "stage" | "qa" | "test" | "dev"

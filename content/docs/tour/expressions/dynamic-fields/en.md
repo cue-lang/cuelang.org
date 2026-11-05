@@ -25,7 +25,9 @@ a:       "foo"
 b:       "bar"
 (a + b): "foobar"
 
-s: X={
+s: {
+	let X = self
+
 	"\(a)_and_\(b)": "foobar"
 
 	// Valid references using a selector and

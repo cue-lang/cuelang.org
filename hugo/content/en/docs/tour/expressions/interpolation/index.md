@@ -12,15 +12,15 @@ Any valid CUE expression may be used inside escaped parentheses.
 
 {{< code-tabs >}}
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
-m:     "You are \(#cost-#budget) dollars over budget!"
+m: "You are \(#cost-#budget) dollars over budget!"
 email: """
-   Here is a message from the finance team:
-   
-      \(m)
-   
-   Regards,
-     Your friends on the 12th floor
-   """
+	Here is a message from the finance team:
+	
+	   \(m)
+	
+	Regards,
+	  Your friends on the 12th floor
+	"""
 
 #cost:   102
 #budget: 88

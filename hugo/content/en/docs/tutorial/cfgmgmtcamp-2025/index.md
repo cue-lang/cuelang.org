@@ -79,6 +79,7 @@ Validate your data file:
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y3VlIHZldCAtYyAuOnNwbG90cG9saWN5IGRvY2tlci1jb21wb3NlLnlhbWwgLWQgJyNXZWJTZXJ2aWNlJw==" }
 $ cue vet -c .:splotpolicy docker-compose.yaml -d '#WebService'
 services: field is required but not present:
+    ./docker-compose.yaml:1:1
     ./schema.cue:4:2
 ````
 
@@ -171,14 +172,10 @@ After `cue mod tidy` completes, check out the contents of `cue.mod/module.cue`:
 ````text { title="TERMINAL" type="terminal" codeToCopy="Y2F0IGN1ZS5tb2QvbW9kdWxlLmN1ZQ==" }
 $ cat cue.mod/module.cue
 module: "cue.example"
-language: {
-	version: "v0.17.0"
-}
-deps: {
-	"github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
-		v:       "v0.0.1"
-		default: true
-	}
+language: version: "v0.18.0"
+deps: "github.com/cue-tmp/jsonschema-pub/exp2/dockercompose@v0": {
+	v:       "v0.0.1"
+	default: true
 }
 ````
 
