@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "1LVF5TRP14FE8BPO1FDTSP86ERGHV636OPFGJHBS23IQ7GARR63G===="
-									scriptHash: "BVHFO83ETPQSQM2GFRNPUOUC660TQKUVQVUD4504UAQDCFUG4QCG===="
+									hash:       "L7EABJI3EKK67H04GA8QSO91UJCQUT40DOG5U2VIHJ2P0OLMJGVG===="
+									scriptHash: "FVNBSRI9F4IA3GT9PD1JKRO57PBL4OBHE79QM5K7N8B7OBSEBCIG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -130,6 +130,8 @@ package site
 												   cwd        working directory
 												   username   current username
 												   hostname   current hostname
+												   env        environment variables as a {[string]: string};
+												              use a hidden field to not export sensitive values
 												   rand       a random 128-bit integer
 
 

@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "GS0D937JHABU7GQFTCILOSIPQQ8CEM75F7P5J47AHJ0ACQ0E4IAG===="
-									scriptHash: "N5D385V4KO873QGEM6F84R4IUGTNG4M806O09PIVHLEQLTSSQ1JG===="
+									hash:       "3OGLQ2C1CGTFI3GFVVDDE4EEDOONR2AHNJCAJCNVD2OVUL1VMVN0===="
+									scriptHash: "9LLAQ91TU7BGKFR6JF2LS8UU88SL73196ELKE22P5KUBLOOOLKSG===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -39,7 +39,8 @@ package site
 												For instance, an exported definition "#foo" becomes "Foo",
 												and a nested definition like "#foo.#bar" becomes "Foo_Bar".
 
-												@go attributes can be used to override which name to be generated:
+												@go attributes can be used to override which name to be generated,
+												where a package attribute must follow the package clause and any imports:
 
 												\tpackage foo
 												\t@go(betterpkgname)
@@ -75,13 +76,13 @@ package site
 												  cue exp gengotypes [flags]
 
 												Flags:
-												  -o, --outfile string   generate one Go file for a single CUE package
+												      --language-version string   fallback language version for input outside a module (for example, v0.17.0)
+												  -o, --outfile string            generate one Go file for a single CUE package
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

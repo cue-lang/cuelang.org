@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "94I32P10M9C9HV5A3C3STBQ301RL8QO42PDNMAFEK3JRTUCM0JK0===="
-									scriptHash: "AOLNV6M19ICQ5TIHJEDHLPFGQVVL7RJUO0TFHCS8BJKAM9IB0D4G===="
+									hash:       "GU67F3UTSAJTVQOGM4P51S3H51A7IDCDHSTE0D67EE2DI45L6EMG===="
+									scriptHash: "AT4TN8NF0QR373DBT5UHO6MNLBTMH1IUTGCAIAL4GDPQF3454C5G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -37,9 +37,8 @@ package site
 												excluding hidden fields and definitions. Note that regular fields
 												may be produced by comprehensions or from the result of other tasks,
 												which can result in discovering more tasks.
-												To avoid this, set the CUE_EXPERIMENT=cmdreferencepkg experiment flag.
 
-												Inputs of tasks my refer to outputs of other tasks. The cue tool
+												Inputs of tasks may refer to outputs of other tasks. The cue tool
 												does a static analysis of the configuration and only starts tasks
 												that are fully specified. Upon completion of each task, cue
 												rewrites the instance, filling in the completed task, and
@@ -161,7 +160,7 @@ package site
 												\t// Tasks defines a hierarchy of tasks. A command completes if all
 												\t// tasks have run to completion.
 												\tTasks: Task | {
-												\t\t[name=Name]: Tasks
+												\t\t[Name]: Tasks
 												\t}
 
 												\t// Name defines a valid task or command name.

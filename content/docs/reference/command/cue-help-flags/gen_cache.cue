@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "KJFOB86I4A31QUR2H2CQ1GS60D4B46CCIJ1P1RDGIAAK95E12C6G===="
-									scriptHash: "PO058O934B5UCO465DRJ29SHB0K7855D36AAR73V9B3GQSTRA3BG===="
+									hash:       "48EOQ2ANULO6FAVKF36CNL5667J3HC2AI722QDOCUDMGNHA7H64G===="
+									scriptHash: "2E0KD4FBFJ5KCN0PDJJN5KIU3SVCR0MSQ1U3HUVS1C908HD36SJ0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -78,6 +78,27 @@ package site
 												combination with the import command.
 
 
+												Choosing the language version
+
+												The --language-version flag selects a fallback language version
+												for CUE that belongs to no module, such as files outside any
+												module, standard input, and the --expression and --schema flags,
+												and the target version of CUE that commands generate from it. It
+												accepts a canonical semantic version, such as v0.17.0.
+
+												The flag is only a fallback. The files of a module that declares a
+												language version keep that version, and a file's @version attribute
+												takes precedence. It is not an error if the flag applies to no
+												input, so the same command can be repeated while files move into
+												modules or gain @version attributes.
+
+												A file outside any module may declare its own version with a
+												@version(v0.17.0) file attribute. It must be the file's first
+												attribute, before the package clause and any @experiment attribute.
+												In a file of a module that declares a language version, it is an
+												error.
+
+
 												Examples:
 
 												# Put a value at a path based on its "kind" and "name" fields.
@@ -88,6 +109,9 @@ package site
 
 												# Base the path values on its kind and file name.
 												$ cue eval --with-context -l 'path.Base(filename)' -l data.kind foo.yaml
+
+												# Evaluate a file outside any module as written for v0.17.0.
+												$ cue eval --language-version v0.17.0 report.cue
 
 
 												"""

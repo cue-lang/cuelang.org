@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "7DMGKP85D9F6EJ9F1OPP3ASIECF9OF9225ILA11T0F4AI5AM8B80===="
-									scriptHash: "5AGS0RG3IDQFHPV1HJILRQUIBJTIVJ4D7BQQK9NV8NRL2T7PHD0G===="
+									hash:       "9OHSIENJD7NB3NMV8IM6JUUHVMCQR9GEKJ27ISH2O82DRNAT5IQG===="
+									scriptHash: "7U821P2DNS8GPP3SFJTVA58NHFEJKK7IMLANTBK5KKV1ESHLLUG0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -53,18 +53,17 @@ package site
 												  cue mod mirror [module...] [flags]
 
 												Flags:
-												  -a, --all-versions   copy all available versions of the specified modules
-												  -n, --dry-run        only run simulation
-												      --from string    source registry (defaults to $CUE_REGISTRY)
-												  -m, --mod            mirror the current main module's dependency modules by default
-												      --no-deps        do not copy module dependencies
-												      --to string      destination registry (defaults to $CUE_REGISTRY)
+												  -a, --all-versions[=true|false]   copy all available versions of the specified modules
+												  -n, --dry-run[=true|false]        only run simulation
+												      --from string                 source registry (defaults to $CUE_REGISTRY)
+												  -m, --mod[=true|false]            mirror the current main module's dependency modules by default
+												      --no-deps[=true|false]        do not copy module dependencies
+												      --to string                   destination registry (defaults to $CUE_REGISTRY)
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

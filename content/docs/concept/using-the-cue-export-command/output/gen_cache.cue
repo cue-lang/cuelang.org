@@ -8,23 +8,23 @@ package site
 						page: {
 							cache: {
 								code: {
-									"default output":             "iDIg5B/cGz6kv+czCCJosZ0cx9jXNOr+ALyglx58HOk="
-									"stdout yaml":                "WyZXHLCgiHph/ngfto0q+Oq/uJEd/AolRXHTLhauLMY="
-									"yaml:-":                     "a1ylpEPQ70mqGygv6pvnPJY0RoG5e3Sc2d4UJHR2Kvk="
-									"--out cue":                  "XjNtG9uafHsZwRtvgsnQzCQK1Es7OCmetouOY8mPQLs="
-									"--out cue no hidden fields": "Ndp95R/ovqujba0lBloAtLfbMunOuEWxDp0ysQavRpY="
-									"--out cue --package foo":    "RdTkmN6O3HGXRGE7UefWayjTi7fYUBUEaDz4ThtGOvw="
-									"--escape":                   "TGE+B9uy61e5C5Xn6jDxhZ1PF0taRY+jKvwRJywm0os="
+									"default output":             "gV2Wc3JJqrDhbQXvzG4Ou+1j+BFHbhImFOtR+ksLGqc="
+									"stdout yaml":                "mciOirc13iK/C/PjPO0J7b+TlC0TnGqCxbSiicp72D8="
+									"yaml:-":                     "JnSB32VR/8zGBS7RERxlD70xo6+n4KTlqi810g/gST0="
+									"--out cue":                  "gLRt6nlRxt3NIAkAYz6Sejv9JPA3E1w99P+IF0Vc4jw="
+									"--out cue no hidden fields": "VSC6qkF6KI94IEepVHqg9H+jNZrhFi8KiPaV6rBhPPI="
+									"--out cue --package foo":    "WGyeLkqkchKXOQPcAVsf8+Yz7gAgDjZ7FYNrPmtHIe4="
+									"--escape":                   "azAgZhL2ZvvkxpK6KMnHDHqXsQfcZoRFWhLjgu6lYzg="
 								}
 								upload: {
-									"--outfile data.yml":            "YxgDvJkvVbeXxAjgAOSM909jK2/HMpVrOhacmDxWj3g="
-									"--outfile data.txt":            "lDsDTOTAL4x3wOE/HLRg0x4Wv50nmXxJw/W3dLKiFdM="
-									"--outfile datafile --out json": "lIVvPU3MzQ8Os382BdXDQzhwiMdjARRF8459JS7GpGI="
-									"--outfile json:datafile":       "JNOp5QekWS/H5qpzqC9zGxRMtuTIhrC2+SE+6SkscJY="
+									"--outfile data.yml":            "8o1H6cq+CMTTfyGjqvaYHqnRnzvP+9dhuwxluCMx0eU="
+									"--outfile data.txt":            "787qG3OM6cWaiTAZugWyuStSwLWrwoRf1Lk48ipoEf0="
+									"--outfile datafile --out json": "0Y4YkJK9iTyKwBv2wzq1n46KCiXh5PIv4wDsKq/EqMM="
+									"--outfile json:datafile":       "G0a5F3MQqfh6VMm24gw4offCCIecIwE3VV0TFqGO6Ak="
 								}
 								multi_step: {
-									hash:       "G32UVPS1RNFBT0A54KISSA85K61G8H32A1ECA4HVAFJQEP2JE1N0===="
-									scriptHash: "TVTCOHK1K6IF54PI4CB62FSIBJMCMB1BAOO6SNBVQ897AIDDN7UG===="
+									hash:       "U31QCRULQRQECF84VLMSMMASBA8O5DPCLGFCP916UBUGIEPMCKSG===="
+									scriptHash: "L3L2DKT4LCBOMUFUINT11UNJ16TU1DRUIO6VISUNUVFMT2O7KFM0===="
 									steps: [{
 										doc:      ""
 										cmd:      "cue export --outfile data.yml"
