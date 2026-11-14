@@ -21,7 +21,7 @@ package example
 import "list"
 
 _unsorted: ["B", "C", "A"]
-_sorted: ["A", "B", "C"]
+_sorted:   ["A", "B", "C"]
 
 testUnsorted: list.IsSortedStrings(_unsorted)
 testSorted:   list.IsSortedStrings(_sorted)

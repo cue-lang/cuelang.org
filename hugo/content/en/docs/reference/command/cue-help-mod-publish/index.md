@@ -26,15 +26,14 @@ Usage:
   cue mod publish <version> [flags]
 
 Flags:
-  -n, --dry-run      only run simulation
-      --json         print verbose information in JSON format (implies --dry-run)
-      --out string   write module contents to specified directory in OCI Image Layout format (implies --dry-run)
+  -n, --dry-run[=true|false]   only run simulation
+      --json[=true|false]      print verbose information in JSON format (implies --dry-run)
+      --out string             write module contents to specified directory in OCI Image Layout format (implies --dry-run)
 
 Global Flags:
-  -E, --all-errors     print all available errors
-  -C, --chdir string   change working directory before running command (must be the first flag)
-  -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
+  -E, --all-errors[=true|false]   print all available errors
+  -C, --chdir string              change working directory before running command (must be the first flag)
+  -i, --ignore[=true|false]       proceed in the presence of errors
 ````
 
 ## Related content

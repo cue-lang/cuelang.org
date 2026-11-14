@@ -29,7 +29,7 @@ stringSet: {
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 stringList: ["d", "a", "b", "a", "c", "b", "b"]
-stringSet: ["a", "b", "c", "d"]
+stringSet:  ["a", "b", "c", "d"]
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

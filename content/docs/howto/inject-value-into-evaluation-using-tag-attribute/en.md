@@ -118,8 +118,8 @@ A: [
 ]
 -- out --
 asString: "[\"foo\", \"bar\"]"
-asList: ["foo", "bar"]
-A: ["foo-with-suffix", "bar-with-suffix"]
+asList:   ["foo", "bar"]
+A:        ["foo-with-suffix", "bar-with-suffix"]
 {{{end}}}
 
 ## Related content

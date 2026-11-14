@@ -37,7 +37,7 @@ RUN \
   --mount=type=cache,target=/cache/gocache \
   --mount=type=cache,target=/cache/gomodcache \
   export GOCACHE=/cache/gocache GOMODCACHE=/cache/gomodcache && \
-  GOBIN=/cues/v0.17.0 go install -trimpath cuelang.org/go/cmd/cue@v0.17.0
+  GOBIN=/cues/v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df go install -trimpath cuelang.org/go/cmd/cue@v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df
 
 RUN git clone https://github.com/cue-lang/libcue.git /libcue
 RUN git -C /libcue reset --hard 1c861cc9cdc5584f5d26b0a7112aa2afee74d4cf
@@ -57,14 +57,14 @@ ENV LC_ALL=C.UTF-8
 
 # Default to the default value of CUE. Guides can fix to a different
 # version explicitly
-ENV PATH="/cues/v0.17.0:${PATH}"
+ENV PATH="/cues/v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df:${PATH}"
 
 ENV PATH="/go/bin:/usr/local/go/bin:${PATH}"
-ENV CUELANG_CUE_LATEST="v0.17.0"
-ENV CUELANG_CUE_PRERELEASE="v0.17.0"
-ENV CUELANG_CUE_TIP="v0.17.0"
-ENV CUELANG_CUE_DEFAULT="v0.17.0"
-ENV CUELANG_CUE_PLAYGROUND="v0.17.0"
+ENV CUELANG_CUE_LATEST="v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df"
+ENV CUELANG_CUE_PRERELEASE="v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df"
+ENV CUELANG_CUE_TIP="v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df"
+ENV CUELANG_CUE_DEFAULT="v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df"
+ENV CUELANG_CUE_PLAYGROUND="v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df"
 
 WORKDIR /
 
@@ -78,7 +78,7 @@ RUN chown root:root /usr/bin/entrypoint.sh
 
 COPY --from=build /go/bin/testscript /go/bin
 COPY --from=build /go/bin/staticcheck /go/bin
-COPY --from=build /cues/v0.17.0/cue /cues/v0.17.0/cue
+COPY --from=build /cues/v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df/cue /cues/v0.19.0-0.dev.0.20261113115251-a5a9a9c5a2df/cue
 
 COPY --from=build /libcue/libcue.so /usr/local/lib/
 ENV LD_LIBRARY_PATH="/usr/local/lib"

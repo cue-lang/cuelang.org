@@ -45,6 +45,7 @@ s1:
   f3: 7
 -- out.err --
 "f-2": field is required but not present:
+    ./data.yml:1:1
     ./schema.cue:10:1
 {{{end}}}
 

@@ -30,12 +30,12 @@ import "net"
 
 // These fields represent the same valid IPv4 address.
 v4String: "198.51.100.14"
-v4Bytes: [198, 51, 100, 14]
+v4Bytes:  [198, 51, 100, 14]
 
 // Some invalid IPv4 addresses.
 tooManyOctets: "198.51.100.14.0"
 octetTooLarge: [300, 51, 100, 14]
-v6NotV4: "2001:0db8:85a3::8a2e:0370:7334"
+v6NotV4:       "2001:0db8:85a3::8a2e:0370:7334"
 -- out --
 octetTooLarge: invalid value [300,51,100,14] (does not satisfy net.IPv4): invalid IP byte value 300:
     ./file.cue:6:6
@@ -45,7 +45,7 @@ tooManyOctets: invalid value "198.51.100.14.0" (does not satisfy net.IPv4): Pars
     ./file.cue:13:16
 v6NotV4: invalid value "2001:0db8:85a3::8a2e:0370:7334" (does not satisfy net.IPv4):
     ./file.cue:6:6
-    ./file.cue:15:10
+    ./file.cue:15:16
 {{{end}}}
 
 ## Related content
