@@ -28,9 +28,7 @@ B: A & {
 	b: 42 // validation failure
 }
 -- out --
-A: {
-    a: int
-}
+A: a: int
 B: {
     a: int
     b: _|_ // B.b: field not allowed

@@ -21,12 +21,12 @@ package example
 import "list"
 
 unsorted: ["B", "C", "A"]
-sorted: list.SortStrings(unsorted)
+sorted:   list.SortStrings(unsorted)
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="right" type="terminal" codetocopy="Y3VlIGV2YWw=" >}}
 $ cue eval
 unsorted: ["B", "C", "A"]
-sorted: ["A", "B", "C"]
+sorted:   ["A", "B", "C"]
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

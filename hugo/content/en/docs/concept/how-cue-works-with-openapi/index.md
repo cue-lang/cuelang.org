@@ -145,6 +145,7 @@ info: {
 	title:   *"A schema for the pet API." | string
 	version: *"v1.2.3" | string
 }
+
 // Kind encodes the different pets we handle.
 #Kind: "cat" | "dog" | "goldfish"
 
@@ -181,13 +182,15 @@ making them available as the `#Pet` schema:
 $ cue vet -c api.pet.yaml jonathan.yml -d '#Pet'
 kind: 3 errors in empty disjunction:
 kind: conflicting values "cat" and "tortoise":
-    ./api.pet.yaml:11:7
+    ./api.pet.yaml:12:11
     ./api.pet.yaml:26:11
     ./jonathan.yml:2:7
 kind: conflicting values "dog" and "tortoise":
+    ./api.pet.yaml:13:11
     ./api.pet.yaml:26:11
     ./jonathan.yml:2:7
 kind: conflicting values "goldfish" and "tortoise":
+    ./api.pet.yaml:14:11
     ./api.pet.yaml:26:11
     ./jonathan.yml:2:7
 ````

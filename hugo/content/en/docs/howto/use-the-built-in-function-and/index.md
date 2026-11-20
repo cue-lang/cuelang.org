@@ -36,7 +36,16 @@ data: {
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIHZldCAtYyAuOmV4YW1wbGU=" >}}
 $ cue vet -c .:example
+c.0: incomplete value int:
+    ./example.cue:4:5
+c.1: incomplete value >99:
+    ./example.cue:4:10
+c.2: incomplete value <1000:
+    ./example.cue:4:15
 data.a: conflicting values 4.2 and int & >99 & <1000 (mismatched types float and int):
+    ./example.cue:4:5
+    ./example.cue:4:10
+    ./example.cue:4:15
     ./example.cue:10:5
 data.b: invalid value 42 (out of bound >99):
     ./example.cue:4:10

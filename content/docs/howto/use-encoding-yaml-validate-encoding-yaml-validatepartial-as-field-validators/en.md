@@ -71,6 +71,7 @@ data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.Validate)
     ./file.cue:16:7
     ./file.cue:17:7
     ./file.cue:26:2
+    yaml.Validate:1:1
 data: invalid value "a: 1\nb: \"two\"" (does not satisfy encoding/yaml.ValidatePartial): invalid value 1 (out of bound >99):
     ./file.cue:16:7
     ./file.cue:5:7

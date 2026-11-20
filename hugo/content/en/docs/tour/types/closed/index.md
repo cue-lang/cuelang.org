@@ -28,9 +28,7 @@ B: A & {
 {{< /code-tab >}}
 {{< code-tab name="TERMINAL" language="" area="top-right" type="terminal" codetocopy="Y3VlIGV2YWwgLWkgc3RydWN0cy5jdWU=" >}}
 $ cue eval -i structs.cue
-A: {
-    a: int
-}
+A: a: int
 B: {
     a: int
     b: _|_ // B.b: field not allowed

@@ -25,8 +25,10 @@ price: 200
 $ cue export file.cue stock.yaml
 authorisedBy: field is required but not present:
     ./file.cue:7:2
+    ./stock.yaml:1:1
 reason: field is required but not present:
     ./file.cue:6:2
+    ./stock.yaml:1:1
 {{< /code-tab >}}
 {{< /code-tabs >}}
 

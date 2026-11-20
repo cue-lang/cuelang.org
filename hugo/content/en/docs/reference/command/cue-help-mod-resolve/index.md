@@ -32,13 +32,12 @@ Usage:
   cue mod resolve [<modulepath>[@<version>] ...] [flags]
 
 Flags:
-      --deps   resolve all dependencies in the current module
+      --deps[=true|false]   resolve all dependencies in the current module
 
 Global Flags:
-  -E, --all-errors     print all available errors
-  -C, --chdir string   change working directory before running command (must be the first flag)
-  -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
+  -E, --all-errors[=true|false]   print all available errors
+  -C, --chdir string              change working directory before running command (must be the first flag)
+  -i, --ignore[=true|false]       proceed in the presence of errors
 ````
 
 ## Related content
