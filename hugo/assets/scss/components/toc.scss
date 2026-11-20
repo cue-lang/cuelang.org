@@ -38,7 +38,7 @@
 
         &:hover,
         &:focus {
-            color: $c-blue--light;
+            color: $c-blue;
 
             #{ $self }__text {
                 background-position-x: 0;
