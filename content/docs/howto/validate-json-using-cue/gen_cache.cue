@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"x.json":       "1BmaNshIF87UFdGT+tJS0S4s4WGzy2GDefSGdEK0gEg="
-								"x.cue":        "gqczRKOCbxNKlQNGDdCtiVoJ4OvLSkZcu9Jpyf5UsDY="
-								"x.json v2":    "ESSuIuzPHaKDcOC0UCHBGw/hV9qyC0++YNCWw3UC3es="
-								"fixed x.json": "mEGKREByChEbjWzTgpCe/f9OcfYG+sJA6EMvXGqP3pw="
+								"x.json":       "EWYrcfgoyoh+jmC6OChPx4gOPCn+Ri6UCNL5Ip096mY="
+								"x.cue":        "rCnrV9MKeRPyEPqt5v+YGuhdGf16Ki22gr+DiKLD7p4="
+								"x.json v2":    "1pxmmNrzMRh6F9JRwsSMMzW3UepMRLaabRnNynySkaU="
+								"fixed x.json": "2No7VF1LDEbRJ/JcHdvrbW+UKolJ5qu+3cDP8xpUwQ8="
 							}
 							multi_step: {
-								hash:       "UIH08ODUQPSOJ8NDVVRLI5Q7SDR6ISRVV15GL05MK4R1EHAMUFB0===="
-								scriptHash: "U165M0FDB210K43KGC992DB07G23RP7ULJKBO7O7UJ28GPM1DEFG===="
+								hash:       "TQTDOKT1LHRUKQNVT7K44O6224RPNCFRR944OGASFQ2G0H0LICC0===="
+								scriptHash: "AAA3CVDQRKSCMFV7CUP90CM199MG6USVJE9DE2KGITAA48SRPHGG===="
 								steps: [{
 									doc:      ""
 									cmd:      "cue vet -c x.cue x.json"
@@ -27,7 +27,7 @@ package site
 									output: """
 											people.Rob.age: conflicting values 42.2 and int (mismatched types float and int):
 											    ./x.cue:3:11
-											    ./x.cue:7:21
+											    ./x.cue:7:25
 											    ./x.json:15:20
 
 											"""

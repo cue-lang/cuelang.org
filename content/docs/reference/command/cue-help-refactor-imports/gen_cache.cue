@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "FIQ7I2AOFPN8AHFGHA1JTBTUPP45RCKQ4KT1FLPPCTDF45SHELSG===="
-									scriptHash: "1P3TU8NBHQ8GF9D3PL6IME1521HFOM2HQE7T4DG5GBGC1917JNL0===="
+									hash:       "T529UJNHE96E5IGVG95T9S2U8IHFEA72MRI5T9T7IMRM88K51CK0===="
+									scriptHash: "991L7U3MQPPS69IKVNELVMGEPL5QKFGG8UR0KSI8OB7JJ46490G0===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.19.0-0.dev.0.20261119142547-4feb85fac20e:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -88,16 +88,15 @@ package site
 												  cue refactor imports [<oldImportPath] <newImportPath> [flags]
 
 												Flags:
-												      --all-major      match all versions when major version omitted
-												      --exact          exact match for package path instead of prefix match
-												      --ident string   specify imported identifier (implies --exact)
-												      --update-ident   update imported identifier name too
+												      --all-major[=true|false]      match all versions when major version omitted
+												      --exact[=true|false]          exact match for package path instead of prefix match
+												      --ident string                specify imported identifier (implies --exact)
+												      --update-ident[=true|false]   update imported identifier name too
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]

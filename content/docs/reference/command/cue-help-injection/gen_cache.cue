@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "1LVF5TRP14FE8BPO1FDTSP86ERGHV636OPFGJHBS23IQ7GARR63G===="
-									scriptHash: "BVHFO83ETPQSQM2GFRNPUOUC660TQKUVQVUD4504UAQDCFUG4QCG===="
+									hash:       "TIJ1BH15KNDVHJCR7PMM66AKFTHT28T72R0JVKGF95RM1LGNLN00===="
+									scriptHash: "LUBITCFH92RJQIHK7NH9NP82IDE6SOJN8LHT28CUOGEVBKG2ID50===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.19.0-0.dev.0.20261119142547-4feb85fac20e:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -61,9 +61,10 @@ package site
 												Injecting values
 
 												The injection mechanism allows values to be injected into fields
-												that are not defined within the scope of a comprehension, list, or
-												optional field and that are marked with a "tag" attribute. For any
-												field of the form
+												that are marked with a "tag" attribute, that are labeled with an
+												identifier or a double-quoted string, and that are not defined
+												within a comprehension, list, pattern constraint, dynamic field,
+												optional field, or required field. For any field of the form
 
 												\tfield: x @tag(key)
 
@@ -130,6 +131,8 @@ package site
 												   cwd        working directory
 												   username   current username
 												   hostname   current hostname
+												   env        environment variables as a {[string]: string};
+												              use a hidden field to not export sensitive values
 												   rand       a random 128-bit integer
 
 

@@ -7,14 +7,14 @@ package site
 					page: {
 						cache: {
 							upload: {
-								"schema-v0.0.1":            "eTQxnK5tgwz6MPCpl5Kd9vRwOQg8ec6jkHMX2roz3VQ="
-								"config.cue":               "3s/QFFSbjYgFG1c7K+btkm/4Ynfbs2OsFnMv4t3ATQU="
-								"second-module-to-publish": "ZPrpIhhB+XFI5PVO/QWre3UXpkxEalH+TlnONS13Ny0="
-								"update-frostyapp":         "3ulxSeCI7HtObHQ0EAJsz1PyGrS15prH3WwPapauMFY="
-								"schema-v0.1.0":            "R6IbxSHjaR18Hn+qQEwBFlJawUVJbtFUOtyLb6U6j0E="
+								"schema-v0.0.1":            "N8k62+g5HONVXXAwjHMmcKK6YUpf71GPCWsxwZAS9do="
+								"config.cue":               "FfE/m1s9CR/UJy8eAqP255oGak+t0Mxy7OQIh2ftfH8="
+								"second-module-to-publish": "IOUptjee3AoZoLqvUxVbZYhloU7rWmkO8x2U38Dggy0="
+								"update-frostyapp":         "/FLBIeYDmCErOebaF0artCGAIuP3nQkadNIbQB1NkAY="
+								"schema-v0.1.0":            "19lhlj1tPzt2b4KoRYg1EerNU7NwJS6TUObjA5MPMgk="
 							}
 							multi_step: {
-								hash:       "AON16GEIQHUFRQO6DLTQPIIHPI0GP9FV2BUV28E9F256QECQO3U0===="
+								hash:       "KF4LQUK7I6129RTKDACGE0V23P4F5KVG9D8T4BR6098M8V91E6Q0===="
 								scriptHash: "MHNUU8GT0EEGLQCV7OVKG62H1EG7POGJ8ANFSN43U1OTV4QH2F3G===="
 								steps: [{
 									doc:      ""
@@ -40,7 +40,7 @@ package site
 									cmd:      "cue version"
 									exitCode: 0
 									output: """
-											cue version v0.17.0
+											cue version v0.19.0-0.dev.0.20261119142547-4feb85fac20e
 											...
 
 											"""
@@ -123,17 +123,9 @@ package site
 									exitCode: 0
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
-											language: {
-											\tversion: "v0.17.0"
-											}
-											source: {
-											\tkind: "git"
-											}
-											deps: {
-											\t"glacial-tech.example/frostyconfig@v0": {
-											\t\tv: "v0.0.1"
-											\t}
-											}
+											language: version: "v0.19.0"
+											source: kind:      "git"
+											deps: "glacial-tech.example/frostyconfig@v0": v: "v0.0.1"
 
 											"""
 								}, {
@@ -207,19 +199,11 @@ package site
 									exitCode: 0
 									output: """
 											module: "glacial-tech.example/frostyapp@v0"
-											language: {
-											\tversion: "v0.17.0"
-											}
-											source: {
-											\tkind: "git"
-											}
+											language: version: "v0.19.0"
+											source: kind:      "git"
 											deps: {
-											\t"glacial-tech.example/frostyconfig@v0": {
-											\t\tv: "v0.0.1"
-											\t}
-											\t"glacial-tech.example/frostytemplate@v0": {
-											\t\tv: "v0.0.1"
-											\t}
+											\t"glacial-tech.example/frostyconfig@v0": v:   "v0.0.1"
+											\t"glacial-tech.example/frostytemplate@v0": v: "v0.0.1"
 											}
 
 											"""
