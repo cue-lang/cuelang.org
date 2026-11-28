@@ -43,21 +43,23 @@ input: #Schema
 // transform the input into the output
 output: location: *input.owner.address | "Unknown"
 output: petsBySpecies: {
-	for s in #Species {(s): [
-		if input.pets != _|_
-		for pet in input.pets
-		if pet.species == s {{
-			Name: pet.name
-			if pet.age != _|_ {
-				Age: pet.age
-				DoB: 2023 - pet.age
-			}
-			if pet.breed != _|_ {
-				Breed: pet.breed
-			}
-			Owner: input.owner.name
-		}},
-	]}
+	for s in #Species {
+		(s): [
+			if input.pets != _|_
+			for pet in input.pets
+			if pet.species == s {{
+				Name: pet.name
+				if pet.age != _|_ {
+					Age: pet.age
+					DoB: 2023 - pet.age
+				}
+				if pet.breed != _|_ {
+					Breed: pet.breed
+				}
+				Owner: input.owner.name
+			}},
+		]
+	}
 }
 -- data.json --
 {

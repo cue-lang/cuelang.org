@@ -18,15 +18,15 @@ to the new standard syntax. It
 If there is no module path, it chooses an arbitrary path (test.example@v0).
 
 If the module.cue file is already compatible with the new syntax,
-it is just formatted without making any other changes.
+it is left unchanged unless its data needs normalizing,
+such as dropping a redundant default: false.
 
 Usage:
   cue mod fix [flags]
 
 Global Flags:
-  -E, --all-errors     print all available errors
-  -C, --chdir string   change working directory before running command (must be the first flag)
-  -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
+  -E, --all-errors[=true|false]   print all available errors
+  -C, --chdir string              change working directory before running command (must be the first flag)
+  -i, --ignore[=true|false]       proceed in the presence of errors
 ````
 

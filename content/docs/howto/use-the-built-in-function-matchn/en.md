@@ -181,6 +181,9 @@ B: invalid value 42 (does not satisfy matchN): 2 matched, expected 3:
     ./all-of.cue:11:4
     ./all-of.cue:13:11
     ./all-of.cue:14:4
+B: invalid value 42 (out of bound >100):
+    ./all-of.cue:13:25
+    ./all-of.cue:11:4
 B: invalid value 42 (does not satisfy matchN): 3 matched, expected 4:
     ./all-of.cue:14:4
     ./all-of.cue:11:4
@@ -224,6 +227,12 @@ B: matchN(0, [int])
 B: matchN(0, [string, number])
 B: matchN(0, [42, >100, strings.HasSuffix("4")])
 -- out --
+B: conflicting values 42 and string (mismatched types int and string):
+    ./not.cue:14:4
+    ./not.cue:17:15
+B: conflicting values 42 and strings.HasSuffix("4") (mismatched types int and string):
+    ./not.cue:14:4
+    ./not.cue:18:25
 B: invalid value 42 (does not satisfy matchN): 1 matched, expected 0:
     ./not.cue:16:4
     ./not.cue:14:4
@@ -236,6 +245,15 @@ B: invalid value 42 (does not satisfy matchN): 1 matched, expected 0:
     ./not.cue:16:4
     ./not.cue:17:11
     ./not.cue:18:4
+B: invalid value 42 (does not satisfy matchN): 1 matched, expected 0:
+    ./not.cue:18:4
+    ./not.cue:14:4
+    ./not.cue:16:4
+    ./not.cue:17:4
+    ./not.cue:18:11
+B: invalid value 42 (out of bound >100):
+    ./not.cue:18:19
+    ./not.cue:14:4
 {{{end}}}
 
 ## More complex uses
@@ -306,7 +324,7 @@ B: matchN(>0, [#C1, #C2]) & {
 // D validates successfully.
 D: [1, 2, 3] & matchN(1, [#F1, #F2, #F3])
 // E fails to validate.
-E: [11, 12, 13] & matchN(1, [#F1, #F2, #F3])
+E:   [11, 12, 13] & matchN(1, [#F1, #F2, #F3])
 #F1: [...>0]
 #F2: [...>10]
 #F3: [...>100]
@@ -323,12 +341,12 @@ B: invalid value {x:4.2,y:4.2,z:4.2} (does not satisfy matchN): 0 matched, expec
     ./composite.cue:9:4
     ./composite.cue:9:11
 E: invalid value [11,12,13] (does not satisfy matchN): 2 matched, expected 1:
-    ./composite.cue:24:19
-    ./composite.cue:24:4
-    ./composite.cue:24:26
+    ./composite.cue:24:21
+    ./composite.cue:24:6
+    ./composite.cue:24:28
 E.0: invalid value 11 (out of bound >100):
     ./composite.cue:27:10
-    ./composite.cue:24:5
+    ./composite.cue:24:7
 {{{end}}}
 
 ## Future enhancements

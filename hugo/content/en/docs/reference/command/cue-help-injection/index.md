@@ -48,9 +48,10 @@ For example:
 Injecting values
 
 The injection mechanism allows values to be injected into fields
-that are not defined within the scope of a comprehension, list, or
-optional field and that are marked with a "tag" attribute. For any
-field of the form
+that are marked with a "tag" attribute, that are labeled with an
+identifier or a double-quoted string, and that are not defined
+within a comprehension, list, pattern constraint, dynamic field,
+optional field, or required field. For any field of the form
 
 	field: x @tag(key)
 
@@ -117,6 +118,8 @@ The following variables are supported:
    cwd        working directory
    username   current username
    hostname   current hostname
+   env        environment variables as a {[string]: string};
+              use a hidden field to not export sensitive values
    rand       a random 128-bit integer
 
 ````

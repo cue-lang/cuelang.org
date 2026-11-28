@@ -153,6 +153,7 @@ info: {
 	title:   *"A schema for the pet API." | string
 	version: *"v1.2.3" | string
 }
+
 // Kind encodes the different pets we handle.
 #Kind: "cat" | "dog" | "goldfish"
 

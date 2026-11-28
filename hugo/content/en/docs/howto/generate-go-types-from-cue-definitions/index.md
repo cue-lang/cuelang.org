@@ -75,7 +75,7 @@ type Dog struct {
 	// A dog has at least one name.
 	Name string `json:"name"`
 
-	Age float64 `json:"age,omitempty"`
+	Age float64 `json:"age,omitzero"`
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 
@@ -151,7 +151,7 @@ type Dog struct {
 	// A dog has at least one name.
 	Name string `json:"name"`
 
-	Age float64 `json:"age,omitempty"`
+	Age float64 `json:"age,omitzero"`
 }
 {{< /code-tab >}}{{< /code-tabs >}}
 Notice these differences between the contents of

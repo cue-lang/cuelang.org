@@ -3,8 +3,11 @@ title: Aliases
 weight: 30
 ---
 
-**Aliases** provide a way to refer to a value by a different identifier.
-They are declared using an equals sign (`=`).
+**Aliases** provide a way to refer to a field by a different identifier.
+They are declared by following a field's label with a tilde (`~`) and the
+alias name in parentheses.
+The predeclared identifier `self` refers to the innermost enclosing struct,
+and can be bound with `let` to give a field's value a name.
 
 An alias is typically used to access a field in an outer scope that has been
 made inaccessible (or *shadowed*) by a field in some inner scope that has the
@@ -21,19 +24,20 @@ and can *only* be referenced within the scope in which they are defined.
 {{< code-tab name="file.cue" language="cue" area="top-left" >}}
 // Alias A provides access to a top-level field
 // with a name that is not a valid identifier.
-A="a top level field": 1
+"a top level field"~(A): 1
 
 // Alias B provides access to a dynamic field.
-B=(#b): 2
-#b:     "some dynamic field"
+(#b)~(B): 2
+#b:       "some dynamic field"
 
 a: A
 b: B
 
-// Alias C refers to the value that's on the right
-// hand side of field "c", and demonstrates one way
-// that shadowed fields can be accessed.
-c: C={
+// C refers to the value that's on the right hand
+// side of field "c", and demonstrates one way that
+// shadowed fields can be accessed.
+c: {
+	let C = self
 	d: 3
 	e: {
 		d: 4

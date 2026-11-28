@@ -76,7 +76,7 @@ type Dog struct {
 	// A dog has at least one name.
 	Name string `json:"name"`
 
-	Age float64 `json:"age,omitempty"`
+	Age float64 `json:"age,omitzero"`
 }
 {{{end}}}
 
@@ -153,7 +153,7 @@ type Dog struct {
 	// A dog has at least one name.
 	Name string `json:"name"`
 
-	Age float64 `json:"age,omitempty"`
+	Age float64 `json:"age,omitzero"`
 }
 {{{end}}}
 {{{with _script_ "en" "vet check"}}}

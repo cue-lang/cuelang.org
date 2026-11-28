@@ -78,15 +78,14 @@ Usage:
   cue refactor imports [<oldImportPath] <newImportPath> [flags]
 
 Flags:
-      --all-major      match all versions when major version omitted
-      --exact          exact match for package path instead of prefix match
-      --ident string   specify imported identifier (implies --exact)
-      --update-ident   update imported identifier name too
+      --all-major[=true|false]      match all versions when major version omitted
+      --exact[=true|false]          exact match for package path instead of prefix match
+      --ident string                specify imported identifier (implies --exact)
+      --update-ident[=true|false]   update imported identifier name too
 
 Global Flags:
-  -E, --all-errors     print all available errors
-  -C, --chdir string   change working directory before running command (must be the first flag)
-  -i, --ignore         proceed in the presence of errors
-  -s, --simplify       simplify output
+  -E, --all-errors[=true|false]   print all available errors
+  -C, --chdir string              change working directory before running command (must be the first flag)
+  -i, --ignore[=true|false]       proceed in the presence of errors
 ````
 
