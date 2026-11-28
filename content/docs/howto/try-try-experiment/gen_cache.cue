@@ -7,16 +7,16 @@ package site
 					page: {
 						cache: {
 							code: {
-								"if-else before and after": "o9BVy8VZfr7yWB/ff4v2O9j5zJklYPg9zT9P7xV1pKE="
-								"try-bind":                 "/lzzYm44MKkQwnY/BcmdeQvhHYsR7kWwOzKDVeSxOjo="
-								"try-else":                 "UzzvyK+hiGby6hQXQKAgWXIQoD/b1+SsaZEpTA8xKHk="
+								"if-else before and after": "a009DBzA26b/0ZW095ysgjPK23qVZBf39oz62/3NNm0="
+								"try-bind":                 "7i9JkSOGZbbFhMJvh2J6gequ/HyebrLE6hPXi8uDcV0="
+								"try-else":                 "fsS+B9q54AE/prKAPYF6Y3Q+n08eMO8Mv5ftPGjAbTs="
 							}
 							multi_step: {
-								hash:       "19D0RH91GGLQ6PKST9I3JF9DE44HFGKBQ3VKVNR0PDSS9OD6JBNG===="
-								scriptHash: "6QSED1UMQU6F0F95R42V8SCR7I126EM72GJCTQKOKB8VIIBLGP3G===="
+								hash:       "0IP6Q2OJPKQV0DBPL4HBUL4SDLHJ1R4KSP9QR5DT3PCAJN6F6VL0===="
+								scriptHash: "IUNQGCH7DTSGOJHL8E6MELUGEC24QTGD89MOAH7V827K5PHOFKPG===="
 								steps: [{
 									doc:      ""
-									cmd:      "export PATH=/cues/v0.17.0:$PATH"
+									cmd:      "export PATH=/cues/v0.19.0-0.dev.0.20261127222705-d53722b2b9cd:$PATH"
 									exitCode: 0
 									output:   ""
 								}, {

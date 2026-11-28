@@ -8,11 +8,11 @@ package site
 						page: {
 							cache: {
 								multi_step: {
-									hash:       "FK5UNH6TNO787HNIEINIEA55J955BBCGR9VVHBQIL8EUMIVR39FG===="
-									scriptHash: "CIIIK09RG1M0TI798VOGHGT6JTQR39PBB4A8T92DFFT4V8PQBPVG===="
+									hash:       "HFB33UNFQOMRVJLMM2O3MNPB4MRTPPUA4UB8PF1SLTJNIBDEOB80===="
+									scriptHash: "AJC0LVB81Q4KBE21SCI9LQ04H9PK7TQ1SF7L93IEDL7CHG39AN9G===="
 									steps: [{
 										doc:      ""
-										cmd:      "export PATH=/cues/v0.17.0:$PATH"
+										cmd:      "export PATH=/cues/v0.19.0-0.dev.0.20261127222705-d53722b2b9cd:$PATH"
 										exitCode: 0
 										output:   ""
 									}, {
@@ -41,27 +41,32 @@ package site
 												cue.mod/local-module.cue rather than cue.mod/module.cue.
 
 												The --module flag changes the module's path (the module.cue file's module field).
-												The --source flag changes the module's declared source.
-												The --drop-source flag removes the source field.
+												The --source flag sets the module's source, which determines the files that
+												'cue mod publish' includes in the module:
+
+												\tself  all files in the module directory
+												\tgit   only the files in the module directory tracked by git
+
+												The --drop-source flag removes the source field. For details on sources, see
+												https://cuelang.org/docs/reference/modules/#determining-zip-file-contents
 
 												Usage:
 												  cue mod edit [flags]
 
 												Flags:
-												      --drop-replace string       remove a module replace from local-module.cue
-												      --drop-require string       remove a requirement
-												      --drop-source               remove the source field
-												      --language-version string   set language.version ('current' means current language version)
-												      --module string             set the module path
-												      --replace string            add a module replace (path@majorversion=replacement) to local-module.cue
-												      --require string            add a required module@version
-												      --source string             set the source field
+												      --drop-replace string        remove a module replace from local-module.cue
+												      --drop-require string        remove a requirement
+												      --drop-source[=true|false]   remove the source field
+												      --language-version string    set language.version ('current' means current language version)
+												      --module string              set the module path
+												      --replace string             add a module replace (path@majorversion=replacement) to local-module.cue
+												      --require string             add a required module@version
+												      --source string              set the source field ("self" or "git")
 
 												Global Flags:
-												  -E, --all-errors     print all available errors
-												  -C, --chdir string   change working directory before running command (must be the first flag)
-												  -i, --ignore         proceed in the presence of errors
-												  -s, --simplify       simplify output
+												  -E, --all-errors[=true|false]   print all available errors
+												  -C, --chdir string              change working directory before running command (must be the first flag)
+												  -i, --ignore[=true|false]       proceed in the presence of errors
 
 												"""
 									}]
